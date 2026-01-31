@@ -1,0 +1,60 @@
+---
+title: "Μαθηματικά Γυμνασίου & Λυκείου"
+
+about:
+  template: solana
+  image: profile.jpg
+---
+
+```{=html}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Χαιρετισμός</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="greeting"></div>
+
+  <script>
+    const today = new Date();
+    const hour = today.getHours();
+    const minutes = today.getMinutes();
+    const pad = minutes < 10 ? "0" : "";
+
+    let message = `<p style="font-size: 18px; color: #0000A0;">Καλώς ήλθατε!!</p>`;
+
+    if (hour >= 6 && hour < 12) {
+      message += `<p style="font-size: 18px; color: Blue;">και .... Καλημέρα !</p>`;
+    } else if (hour >= 12 && hour < 18) {
+      message += `<p style="font-size: 18px; color: Red;">και ... Καλό απόγευμα !</p>`;
+    } else if (hour >= 18 && hour <= 23) {
+      message += `<p style="font-size: 18px; color: #FF8000;">και ... Καλησπέρα !</p>`;
+    } else if (hour >= 0 && hour < 4) {
+      message += `<p style="font-size: 18px; color: #8080FF;">Είναι πολύ αργά πιά, μήπως πρέπει να πάμε για ύπνο;</p>`;
+    } else if (hour >= 4 && hour < 6) {
+      message += `<p style="font-size: 18px; color: Green;">Τι έγινε; Ξυπνήσαμε νωρίς ή ξεμείναμε από χθες το βράδυ;</p>`;
+    }
+
+    const dateStr = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
+    const timeStr = `${hour}:${pad}${minutes}`;
+
+    message += `<p style="font-size: 16px; color: #808000;">Η ώρα είναι: ${timeStr}<br>Σήμερα: ${dateStr}</p>`;
+
+    document.getElementById("greeting").innerHTML = message;
+  </script>
+</body>
+</html>
+```
+
+Επιλέξτε βαθμίδα:
+
+-   [Γυμνάσιο](gymnasio/index.qmd)
+-   [Λύκειο](lykeio/index.qmd)
