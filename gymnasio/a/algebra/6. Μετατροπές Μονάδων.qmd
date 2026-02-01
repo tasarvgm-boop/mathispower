@@ -1,0 +1,297 @@
+---
+title: "6. Μετατροπές Μονάδων"
+author: "ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ"
+
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+date-format: "DD/MMMM/YYYY"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+- \usepackage{polyglossia}
+- \setmainlanguage{greek}
+- \setotherlanguage{english}
+- \setmainfont{Times New Roman}
+editor_options: 
+  markdown: 
+    wrap: sentence
+editor: visual
+---
+
+```{=html}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μονάδες Μέτρησης & Μετατροπές</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8fafc; }
+        .unit-card { transition: all 0.3s ease; }
+        .unit-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .arrow-right { display: inline-block; transform: rotate(0deg); }
+        @media (max-width: 768px) { .arrow-right { transform: rotate(90deg); display: block; margin: 10px auto; } }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="bg-indigo-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">📏 Μονάδες Μέτρησης</h1>
+            <span class="text-indigo-200 text-sm hidden md:inline">Μετατροπές & Πίνακες</span>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+
+        <!-- Introduction -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8 border-l-4 border-indigo-500">
+            <h2 class="text-xl font-bold text-indigo-700 mb-2">Γενικός Κανόνας Μετατροπών</h2>
+            <p class="mb-4">Για να μετατρέψουμε μια μονάδα μέτρησης σε μια άλλη:</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                    <span class="font-bold text-green-700">Από Μεγάλη σε Μικρή μονάδα</span>
+                    <p class="text-sm mt-1">Κάνουμε <strong>Πολλαπλασιασμό (\(\cdot\))</strong></p>
+                    <p class="text-xs text-gray-500 mt-1">"Κατεβαίνουμε τη σκάλα"</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <span class="font-bold text-red-700">Από Μικρή σε Μεγάλη μονάδα</span>
+                    <p class="text-sm mt-1">Κάνουμε <strong>Διαίρεση (\(:\))</strong></p>
+                    <p class="text-xs text-gray-500 mt-1">"Ανεβαίνουμε τη σκάλα"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Length (Μήκος) -->
+        <section class="mb-10">
+            <h3 class="text-2xl font-bold text-blue-600 mb-4 flex items-center">
+                <span class="bg-blue-100 p-2 rounded-full mr-3 text-xl">📏</span> Μήκος
+            </h3>
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-center">
+                        <thead class="bg-blue-50">
+                            <tr>
+                                <th class="p-4">Χιλιόμετρο (km)</th>
+                                <th class="p-4 text-blue-300">➜ <span class="text-xs">x1000</span></th>
+                                <th class="p-4 font-bold border-x-2 border-blue-200 bg-blue-100">Μέτρο (m)</th>
+                                <th class="p-4 text-blue-300">➜ <span class="text-xs">x10</span></th>
+                                <th class="p-4">Δεκατόμετρο (dm)</th>
+                                <th class="p-4 text-blue-300">➜ <span class="text-xs">x10</span></th>
+                                <th class="p-4">Εκατοστό (cm)</th>
+                                <th class="p-4 text-blue-300">➜ <span class="text-xs">x10</span></th>
+                                <th class="p-4">Χιλιοστό (mm)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-t">
+                                <td class="p-4">\(1 \text{ km}\)</td>
+                                <td>=</td>
+                                <td class="p-4 font-bold bg-blue-50">\(1.000 \text{ m}\)</td>
+                                <td>=</td>
+                                <td class="p-4">\(10.000 \text{ dm}\)</td>
+                                <td>=</td>
+                                <td class="p-4">\(100.000 \text{ cm}\)</td>
+                                <td>=</td>
+                                <td class="p-4">\(1.000.000 \text{ mm}\)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-blue-50 text-sm text-blue-800 border-t border-blue-100">
+                    <strong>Παράδειγμα:</strong> \( 5 \text{ m} = 5 \cdot 100 = 500 \text{ cm} \) &nbsp;|&nbsp; \( 300 \text{ mm} = 300 : 10 = 30 \text{ cm} \)
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Area (Εμβαδόν) -->
+        <section class="mb-10">
+            <h3 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                <span class="bg-green-100 p-2 rounded-full mr-3 text-xl">bf</span> Εμβαδόν (Επιφάνεια)
+            </h3>
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <div class="p-4 bg-yellow-50 border-b border-yellow-100 text-yellow-800 text-sm">
+                    ⚠️ Κάθε βήμα είναι <strong>\(\cdot 100\)</strong> ή <strong>\(: 100\)</strong> (2 μηδενικά).
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-center">
+                        <thead class="bg-green-50">
+                            <tr>
+                                <th class="p-4">Τετρ. Χιλιόμετρο (km²)</th>
+                                <th class="p-4 text-green-300">➜</th>
+                                <th class="p-4 font-bold border-x-2 border-green-200 bg-green-100">Τετρ. Μέτρο (m²)</th>
+                                <th class="p-4 text-green-300">➜</th>
+                                <th class="p-4">Τετρ. Δεκατόμετρο (dm²)</th>
+                                <th class="p-4 text-green-300">➜</th>
+                                <th class="p-4">Τετρ. Εκατοστό (cm²)</th>
+                                <th class="p-4 text-green-300">➜</th>
+                                <th class="p-4">Τετρ. Χιλιοστό (mm²)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-t">
+                                <td class="p-4">\(1 \text{ km}^2\)</td>
+                                <td>=</td>
+                                <td class="p-4 font-bold bg-green-50">\(1.000.000 \text{ m}^2\)</td>
+                                <td>=</td>
+                                <td class="p-4">\(100 \text{ dm}^2\) (από 1 m²)</td>
+                                <td>=</td>
+                                <td class="p-4">\(10.000 \text{ cm}^2\) (από 1 m²)</td>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <div class="p-4 bg-green-50 text-sm text-green-800 border-t border-green-100">
+                    <strong>Παράδειγμα:</strong> \( 2 \text{ m}^2 = 2 \cdot 100 = 200 \text{ dm}^2 \) &nbsp;|&nbsp; \( 500 \text{ cm}^2 = 500 : 10000 = 0,05 \text{ m}^2 \)
+                </div>
+                <div class="px-4 py-2 bg-gray-50 text-xs text-gray-500">
+                    * Στρέμμα: \(1 \text{ στρέμμα} = 1.000 \text{ m}^2\)
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Volume (Όγκος) -->
+        <section class="mb-10">
+            <h3 class="text-2xl font-bold text-purple-600 mb-4 flex items-center">
+                <span class="bg-purple-100 p-2 rounded-full mr-3 text-xl">🧊</span> Όγκος & Χωρητικότητα
+            </h3>
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <div class="p-4 bg-yellow-50 border-b border-yellow-100 text-yellow-800 text-sm">
+                     ⚠️ Κάθε βήμα είναι <strong>\(\cdot 1000\)</strong> ή <strong>\(: 1000\)</strong> (3 μηδενικά).
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-center">
+                        <thead class="bg-purple-50">
+                            <tr>
+                                <th class="p-4">Κυβ. Μέτρο (m³)</th>
+                                <th class="p-4 text-purple-300">➜</th>
+                                <th class="p-4 font-bold border-x-2 border-purple-200 bg-purple-100">Κυβ. Δεκατόμετρο (dm³) <br><span class="text-xs font-normal text-purple-800">(Λίτρο / Litre)</span></th>
+                                <th class="p-4 text-purple-300">➜</th>
+                                <th class="p-4">Κυβ. Εκατοστό (cm³) <br><span class="text-xs font-normal text-gray-500">(ml)</span></th>
+                                <th class="p-4 text-purple-300">➜</th>
+                                <th class="p-4">Κυβ. Χιλιοστό (mm³)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-t">
+                                <td class="p-4 font-bold">\(1 \text{ m}^3\)</td>
+                                <td>=</td>
+                                <td class="p-4 bg-purple-50">\(1.000 \text{ dm}^3\) <br> (\(1.000 \text{ L}\))</td>
+                                <td>=</td>
+                                <td class="p-4">\(1.000.000 \text{ cm}^3\) <br> (\(1.000.000 \text{ ml}\))</td>
+                                <td>=</td>
+                                <td class="p-4">\(10^9 \text{ mm}^3\)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="grid grid-cols-2 text-center text-sm border-t">
+                     <div class="p-3 bg-purple-100 text-purple-900 border-r border-purple-200">
+                        \( 1 \text{ L} = 1.000 \text{ ml} \)
+                     </div>
+                     <div class="p-3 bg-white text-gray-700">
+                        \( 1 \text{ ml} = 1 \text{ cm}^3 \)
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Mass (Μάζα) -->
+        <section class="mb-10">
+            <h3 class="text-2xl font-bold text-orange-600 mb-4 flex items-center">
+                <span class="bg-orange-100 p-2 rounded-full mr-3 text-xl">⚖️</span> Μάζα
+            </h3>
+            <div class="bg-white rounded-xl shadow p-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center">
+                    
+                    <div class="flex-1">
+                        <div class="font-bold text-lg">Τόνος (t)</div>
+                        <div class="text-sm text-gray-500">\(1 \text{ t} = 1.000 \text{ kg}\)</div>
+                    </div>
+
+                    <div class="text-orange-400 font-bold px-4">
+                        \(\xrightarrow{\cdot 1000}\) <br> \(\xleftarrow{: 1000}\)
+                    </div>
+
+                    <div class="flex-1 bg-orange-50 p-4 rounded-lg border border-orange-200">
+                        <div class="font-bold text-xl text-orange-800">Κιλό (kg)</div>
+                        <div class="text-sm text-orange-600">Βασική Μονάδα</div>
+                    </div>
+
+                    <div class="text-orange-400 font-bold px-4">
+                        \(\xrightarrow{\cdot 1000}\) <br> \(\xleftarrow{: 1000}\)
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="font-bold text-lg">Γραμμάριο (g)</div>
+                        <div class="text-sm text-gray-500">\(1 \text{ kg} = 1.000 \text{ g}\)</div>
+                    </div>
+
+                    <div class="text-orange-400 font-bold px-4">
+                        \(\xrightarrow{\cdot 1000}\) <br> \(\xleftarrow{: 1000}\)
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="font-bold text-lg">Χιλιοστόγραμμο (mg)</div>
+                        <div class="text-sm text-gray-500">\(1 \text{ g} = 1.000 \text{ mg}\)</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Time (Χρόνος) -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                <span class="bg-red-100 p-2 rounded-full mr-3 text-xl">⏱️</span> Χρόνος
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow p-5">
+                    <h4 class="font-bold text-gray-700 border-b pb-2 mb-3">Βασικές Μετατροπές</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between">
+                            <span>1 Λεπτό (min)</span>
+                            <span class="font-bold text-red-600">= 60 Δευτερόλεπτα (s)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>1 Ώρα (h)</span>
+                            <span class="font-bold text-red-600">= 60 Λεπτά (min)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>1 Ημέρα</span>
+                            <span class="font-bold text-red-600">= 24 Ώρες (h)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow p-5">
+                    <h4 class="font-bold text-gray-700 border-b pb-2 mb-3">Παραδείγματα</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Ώρες σε Λεπτά:</strong><br> \( 2 \text{ h} = 2 \cdot 60 = 120 \text{ min} \)</p>
+                        <p><strong>Λεπτά σε Ώρες:</strong><br> \( 180 \text{ min} = 180 : 60 = 3 \text{ h} \)</p>
+                        <p><strong>Ώρες σε Δευτερόλεπτα:</strong><br> \( 1 \text{ h} = 60 \cdot 60 = 3.600 \text{ s} \)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2024 Εκπαιδευτικό Υλικό - Μαθηματικά & Φυσική</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
