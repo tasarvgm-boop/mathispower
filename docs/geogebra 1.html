@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>9. Σύστημα Συντεταγμένων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +69,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -79,9 +112,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
@@ -97,15 +130,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+    <a class="dropdown-item" href="./gymnasio/a/index.html">
  <span class="dropdown-text">Α Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../gymnasio/b/index.qmd">
+    <a class="dropdown-item" href="./gymnasio/b/index.qmd">
  <span class="dropdown-text">Β Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../gymnasio/g/index.qmd">
+    <a class="dropdown-item" href="./gymnasio/g/index.qmd">
  <span class="dropdown-text">Γ Τάξη</span></a>
   </li>  
     </ul>
@@ -116,15 +149,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+    <a class="dropdown-item" href="./lykeio/a/index.qmd">
  <span class="dropdown-text">Α’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+    <a class="dropdown-item" href="./lykeio/b/index.qmd">
  <span class="dropdown-text">Β’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+    <a class="dropdown-item" href="./lykeio/g/index.qmd">
  <span class="dropdown-text">Γ’ Λυκείου</span></a>
   </li>  
     </ul>
@@ -140,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geogebra 1.html">9. Σύστημα Συντεταγμένων</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -151,38 +184,38 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../../../index.html" class="sidebar-logo-link">
+      <a href="./index.html" class="sidebar-logo-link">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+  <a href="./9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+  <a href="./9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">about</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../geogebra 1.html" class="sidebar-item-text sidebar-link">
+  <a href="./geogebra 1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+            <a href="./gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -191,79 +224,79 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="./gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/1 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/1 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/2 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/2 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Γενικά για τους Φυσικούς αριθμούς</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/3 Κλάσματα.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/3 Κλάσματα.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Κλάσματα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/4 Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/4 Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/5 Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/5 Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Δεκαδικοί αριθμοί</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/6. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/6. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/7 Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/7 Εξισώσεις.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Εξισώσεις</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/8. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/8. Ποσοστά.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Ποσοστά</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+  <a href="./gymnasio/a/algebra/9. Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
   </div>
 </li>
@@ -278,22 +311,45 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"><span class="header-section-number">1</span> </a>
+  <ul class="collapse">
+  <li><a href="#θεωρητικό-υπόβαθρο" id="toc-θεωρητικό-υπόβαθρο" class="nav-link" data-scroll-target="#θεωρητικό-υπόβαθρο"><span class="header-section-number">1.1</span> <strong>Θεωρητικό Υπόβαθρο</strong></a></li>
+  <li><a href="#λυμένες-ασκήσεις-αναλυτικά" id="toc-λυμένες-ασκήσεις-αναλυτικά" class="nav-link" data-scroll-target="#λυμένες-ασκήσεις-αναλυτικά"><span class="header-section-number">1.2</span> <strong>10 Λυμένες Ασκήσεις (Αναλυτικά)</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις-μόνο-1ο-τεταρτημόριο" id="toc-άλυτες-ασκήσεις-μόνο-1ο-τεταρτημόριο" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις-μόνο-1ο-τεταρτημόριο"><span class="header-section-number">1.3</span> <strong>10 Άλυτες Ασκήσεις (Μόνο 1ο Τεταρτημόριο)</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+<h1 class="title">9. Σύστημα Συντεταγμένων</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
   
     
   </div>
@@ -303,8 +359,91 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="section" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="section"><span class="header-section-number">1</span> </h2>
+<p>Θεωρία και ασκήσεις για το σύστημα ημιαξόνων στο 1ο τεταρτημόριο.</p>
+<section id="θεωρητικό-υπόβαθρο" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρητικό-υπόβαθρο"><span class="header-section-number">1.1</span> <strong>Θεωρητικό Υπόβαθρο</strong></h3>
+<p><strong>1. Ορισμός Συστήματος Ημιαξόνων</strong> Ένα <strong>ορθοκανονικό σύστημα ημιαξόνων</strong> αποτελείται από δύο ημιευθείες, την <span class="math inline">\(Ox\)</span> και την <span class="math inline">\(Oy\)</span>, οι οποίες είναι <strong>κάθετες μεταξύ τους</strong> στο σημείο <span class="math inline">\(O\)</span>.</p>
+<ul>
+<li><strong>Αρχή των ημιαξόνων:</strong> Είναι το σημείο <span class="math inline">\(O(0,0)\)</span>.</li>
+<li><strong>Ημιάξονας των τετμημένων (</strong><span class="math inline">\(Ox\)</span>): Ο οριζόντιος ημιάξονας.</li>
+<li><strong>Ημιάξονας των τεταγμένων (</strong><span class="math inline">\(Oy\)</span>): Ο κατακόρυφος ημιάξονας.</li>
+<li><strong>Ορθοκανονικό:</strong> Ονομάζεται έτσι γιατί οι άξονες είναι κάθετοι («ορθό-») και έχουν την ίδια μονάδα μέτρησης («-κανονικό»).</li>
+</ul>
+<p><strong>2. Το Διατεταγμένο Ζεύγος (Συντεταγμένες)</strong> Κάθε σημείο <span class="math inline">\(M\)</span> στο επίπεδο προσδιορίζεται από ένα <strong>διατεταγμένο ζεύγος</strong> αριθμών <span class="math inline">\((x, y)\)</span>, όπου η σειρά έχει σημασία.</p>
+<ul>
+<li><strong>Τετμημένη (</strong><span class="math inline">\(x\)</span>): Ο πρώτος αριθμός, που δείχνει την απόσταση από τον άξονα <span class="math inline">\(Oy\)</span>.</li>
+<li><strong>Τεταγμένη (</strong><span class="math inline">\(y\)</span>): Ο δεύτερος αριθμός, που δείχνει την απόσταση από τον άξονα <span class="math inline">\(Ox\)</span>.</li>
+</ul>
+<p><strong>3. Διαδικασία Εντοπισμού και Εύρεσης</strong></p>
+<ul>
+<li><strong>Εύρεση σημείου από συντεταγμένες:</strong> Ξεκινάμε από το <span class="math inline">\(O\)</span>, κινούμαστε δεξιά στον <span class="math inline">\(Ox\)</span> κατά <span class="math inline">\(x\)</span> μονάδες και μετά πάνω παράλληλα στον <span class="math inline">\(Oy\)</span> κατά <span class="math inline">\(y\)</span> μονάδες.</li>
+<li><strong>Εύρεση συντεταγμένων από σημείο:</strong> Φέρνουμε κάθετες από το σημείο προς τους άξονες. Το σημείο τομής με τον <span class="math inline">\(Ox\)</span> μας δίνει την τετμημένη και με τον <span class="math inline">\(Oy\)</span> την τεταγμένη.</li>
+</ul>
+<hr>
+<iframe src="https://www.geogebra.org/calculator/dqzjvr66?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<hr>
+</section>
+<section id="λυμένες-ασκήσεις-αναλυτικά" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="λυμένες-ασκήσεις-αναλυτικά"><span class="header-section-number">1.2</span> <strong>10 Λυμένες Ασκήσεις (Αναλυτικά)</strong></h3>
+<p><strong>Άσκηση 1: Εντοπισμός σημείου</strong> <span class="math inline">\(A(3, 4)\)</span></p>
+<ul>
+<li><strong>Διαδικασία:</strong> Ξεκινάμε από το <span class="math inline">\(O(0,0)\)</span>. Κινούμαστε δεξιά στον άξονα <span class="math inline">\(Ox\)</span> μέχρι τον αριθμό <span class="math inline">\(3\)</span>. Από εκεί, κινούμαστε κατακόρυφα προς τα πάνω κατά <span class="math inline">\(4\)</span> μονάδες.</li>
+<li><strong>Πράξεις:</strong> Τετμημένη <span class="math inline">\(x=3\)</span>, Τεταγμένη <span class="math inline">\(y=4\)</span>. Το σημείο τομής των βοηθητικών κάθετων γραμμών είναι το <span class="math inline">\(A\)</span>.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/jpx2ejbz?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><strong>Άσκηση 2: Σημείο στον άξονα</strong> <span class="math inline">\(Ox\)</span> * <strong>Εκφώνηση:</strong> Τοποθετήστε το σημείο <span class="math inline">\(B(5, 0)\)</span>. * <strong>Διαδικασία:</strong> Κάθε σημείο στον άξονα <span class="math inline">\(Ox\)</span> έχει τεταγμένη <span class="math inline">\(y=0\)</span>. * <strong>Πράξεις:</strong> Κινούμαστε στον <span class="math inline">\(Ox\)</span> δεξιά κατά <span class="math inline">\(5\)</span> μονάδες. Επειδή <span class="math inline">\(y=0\)</span>, το σημείο παραμένει πάνω στον άξονα.</p>
+<p><strong>Άσκηση 3: Σημείο στον άξονα</strong> <span class="math inline">\(Oy\)</span> * <strong>Εκφώνηση:</strong> Τοποθετήστε το σημείο <span class="math inline">\(\Gamma(0, 6)\)</span>. * <strong>Διαδικασία:</strong> Κάθε σημείο στον άξονα <span class="math inline">\(Oy\)</span> έχει τετμημένη <span class="math inline">\(x=0\)</span>. * <strong>Πράξεις:</strong> Επειδή <span class="math inline">\(x=0\)</span>, δεν κινούμαστε δεξιά. Κινούμαστε μόνο πάνω στον <span class="math inline">\(Oy\)</span> κατά <span class="math inline">\(6\)</span> μονάδες.</p>
+<p><strong>Άσκηση 4: Εύρεση συντεταγμένων από σχήμα</strong> * <strong>Εκφώνηση:</strong> Ένα σημείο <span class="math inline">\(M\)</span> απέχει <span class="math inline">\(2\)</span> μονάδες από τον άξονα <span class="math inline">\(Oy\)</span> και <span class="math inline">\(5\)</span> μονάδες από τον άξονα <span class="math inline">\(Ox\)</span>. Βρείτε τις συντεταγμένες του. * <strong>Διαδικασία:</strong> Η απόσταση από τον <span class="math inline">\(Oy\)</span> είναι η τετμημένη <span class="math inline">\(x\)</span> και η απόσταση από τον <span class="math inline">\(Ox\)</span> είναι η τεταγμένη <span class="math inline">\(y\)</span>. * <strong>Πράξεις:</strong> <span class="math inline">\(x = 2\)</span>, <span class="math inline">\(y = 5\)</span>. Άρα <span class="math inline">\(M(2, 5)\)</span>.</p>
+<p><strong>Άσκηση 5: Σχεδίαση γεωμετρικού σχήματος</strong> * <strong>Εκφώνηση:</strong> Ενώστε τα σημεία <span class="math inline">\(O(0,0), A(4,0), B(4,3), \Gamma(0,3)\)</span>. Τι σχήμα προκύπτει; * <strong>Διαδικασία:</strong> Τοποθετούμε τα σημεία και τα ενώνουμε διαδοχικά. * <strong>Πράξεις:</strong> Οι πλευρές <span class="math inline">\(OA\)</span> και <span class="math inline">\(\Gamma B\)</span> είναι οριζόντιες (μήκος <span class="math inline">\(4\)</span>), οι <span class="math inline">\(O\Gamma\)</span> και <span class="math inline">\(AB\)</span> κατακόρυφες (μήκος <span class="math inline">\(3\)</span>). Το σχήμα είναι ορθογώνιο παραλληλόγραμμο.</p>
+<p><strong>Άσκηση 6: Παραμετρική εύρεση (Σημείο στον</strong> <span class="math inline">\(Ox\)</span>) * <strong>Εκφώνηση:</strong> Αν το <span class="math inline">\(M(2x-8, 0)\)</span> είναι το σημείο <span class="math inline">\(B(4, 0)\)</span>, βρείτε το <span class="math inline">\(x\)</span>. * <strong>Διαδικασία:</strong> Εξισώνουμε τις τετμημένες αφού οι τεταγμένες είναι ήδη <span class="math inline">\(0\)</span>. * <strong>Πράξεις:</strong> <span class="math inline">\(2x - 8 = 4 \Rightarrow 2x = 4 + 8 \Rightarrow 2x = 12 \Rightarrow x = 6\)</span>.</p>
+<p><strong>Άσκηση 7: Παραμετρική εύρεση (Σημείο στον</strong> <span class="math inline">\(Oy\)</span>) * <strong>Εκφώνηση:</strong> Το σημείο <span class="math inline">\(A(x-3, 5)\)</span> βρίσκεται στον ημιάξονα <span class="math inline">\(Oy\)</span>. Βρείτε το <span class="math inline">\(x\)</span>. * <strong>Διαδικασία:</strong> Στον άξονα <span class="math inline">\(Oy\)</span>, η τετμημένη πρέπει να είναι <span class="math inline">\(0\)</span>. * <strong>Πράξεις:</strong> <span class="math inline">\(x - 3 = 0 \Rightarrow x = 3\)</span>. Το σημείο είναι το <span class="math inline">\(A(0, 5)\)</span>.</p>
+<p><strong>Άσκηση 8: Ευθεία παράλληλη στον</strong> <span class="math inline">\(Ox\)</span> * <strong>Εκφώνηση:</strong> Τα σημεία <span class="math inline">\(A(2, 4)\)</span> και <span class="math inline">\(B(x, 4)\)</span> βρίσκονται σε ευθεία παράλληλη στον <span class="math inline">\(Ox\)</span>. Τι παρατηρείτε; * <strong>Διαδικασία:</strong> Όλα τα σημεία σε ευθεία παράλληλη στον <span class="math inline">\(Ox\)</span> έχουν την ίδια τεταγμένη <span class="math inline">\(y\)</span>. * <strong>Πράξεις:</strong> Επαληθεύεται ότι <span class="math inline">\(y_A = y_B = 4\)</span>. Η τετμημένη <span class="math inline">\(x\)</span> μπορεί να είναι οποιοσδήποτε θετικός αριθμός.</p>
+<p><strong>Άσκηση 9: Μέσο ευθυγράμμου τμήματος στον</strong> <span class="math inline">\(Ox\)</span> * <strong>Εκφώνηση:</strong> Βρείτε το μέσο του τμήματος με άκρα <span class="math inline">\(K(2, 0)\)</span> και <span class="math inline">\(L(8, 0)\)</span>. * <strong>Διαδικασία:</strong> Επειδή τα σημεία είναι στον <span class="math inline">\(Ox\)</span>, βρίσκουμε το μέσο της απόστασης των τετμημένων. * <strong>Πράξεις:</strong> Απόσταση <span class="math inline">\(= 8 - 2 = 6\)</span>. Μισή απόσταση <span class="math inline">\(= 6 : 2 = 3\)</span>. Τετμημένη μέσου <span class="math inline">\(= 2 + 3 = 5\)</span>. Άρα <span class="math inline">\(M(5, 0)\)</span>.</p>
+<p><strong>Άσκηση 10: Υπολογισμός εμβαδού</strong> * <strong>Εκφώνηση:</strong> Βρείτε το εμβαδόν του τετραγώνου με κορυφές <span class="math inline">\(A(1,1), B(3,1), \Gamma(3,3), \Delta(1,3)\)</span>. * <strong>Διαδικασία:</strong> Υπολογίζουμε το μήκος της πλευράς από τη διαφορά των συντεταγμένων. * <strong>Πράξεις:</strong> Πλευρά <span class="math inline">\(AB = 3 - 1 = 2\)</span> μονάδες. Εμβαδόν <span class="math inline">\(E = \pi\lambda\epsilon\upsilon\rho\alpha^2 = 2 \times 2 = 4\)</span> τετραγωνικές μονάδες.</p>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις-μόνο-1ο-τεταρτημόριο" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="άλυτες-ασκήσεις-μόνο-1ο-τεταρτημόριο"><span class="header-section-number">1.3</span> <strong>10 Άλυτες Ασκήσεις (Μόνο 1ο Τεταρτημόριο)</strong></h3>
+<ol type="1">
+<li>Σχεδιάστε ένα ορθοκανονικό σύστημα ημιαξόνων με μονάδα <span class="math inline">\(1 \, cm\)</span> και τοποθετήστε τα σημεία: <span class="math inline">\(A(1, 2), B(4, 5), \Gamma(6, 3), \Delta(0, 5)\)</span>.</li>
+<li>Βρείτε τις συντεταγμένες των σημείων που βρίσκονται <span class="math inline">\(4\)</span> μονάδες δεξιά από τον <span class="math inline">\(Oy\)</span> και πάνω στον άξονα <span class="math inline">\(Ox\)</span>.</li>
+<li>Αν το σημείο <span class="math inline">\(A(3x-12, 8)\)</span> βρίσκεται στον άξονα των τεταγμένων (<span class="math inline">\(Oy\)</span>), υπολογίστε την τιμή του <span class="math inline">\(x\)</span>.</li>
+<li>Σημειώστε τα σημεία <span class="math inline">\(K(2, 2), \Lambda(6, 2), M(6, 6), N(2, 6)\)</span>. Ενώστε τα και ονομάστε το σχήμα που προκύπτει.</li>
+<li>Ποια είναι η τεταγμένη κάθε σημείου που ανήκει στον ημιάξονα <span class="math inline">\(Ox\)</span>; Δώστε τρία παραδείγματα τέτοιων σημείων.</li>
+<li>Ένα σημείο <span class="math inline">\(P\)</span> έχει συντεταγμένες <span class="math inline">\((5, 3)\)</span>. Ποιο είναι το σημείο που προκύπτει αν αυξήσουμε την τετμημένη του κατά <span class="math inline">\(2\)</span> και μειώσουμε την τεταγμένη του κατά <span class="math inline">\(1\)</span>;</li>
+<li>Τα σημεία <span class="math inline">\(A(4, \alpha)\)</span> και <span class="math inline">\(B(4, 7)\)</span> βρίσκονται σε ευθεία παράλληλη στον άξονα <span class="math inline">\(Oy\)</span>. Τι μπορείτε να πείτε για την τετμημένη τους;.</li>
+<li>Τοποθετήστε τα σημεία <span class="math inline">\(A(1, 1), B(5, 1), \Gamma(3, 5)\)</span>. Ενώστε τα και βρείτε τι είδους τρίγωνο σχηματίζεται (χρησιμοποιήστε χάρακα για να μετρήσετε τις πλευρές).</li>
+<li>Αν ένα σημείο <span class="math inline">\(M\)</span> ξεκινά από την αρχή <span class="math inline">\(O(0,0)\)</span>, κινείται <span class="math inline">\(7\)</span> μονάδες δεξιά και <span class="math inline">\(0\)</span> μονάδες πάνω, ποιες είναι οι τελικές του συντεταγμένες;</li>
+<li>Βρείτε την απόσταση μεταξύ των σημείων <span class="math inline">\(A(3, 2)\)</span> και <span class="math inline">\(B(9, 2)\)</span> πάνω στο επίπεδο.</li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
