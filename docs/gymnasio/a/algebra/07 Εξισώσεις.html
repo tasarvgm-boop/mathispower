@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>7. Εξισώσεις – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.qmd">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.qmd">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+ <span class="dropdown-text">Α’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+ <span class="dropdown-text">Β’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+ <span class="dropdown-text">Γ’ Λυκείου</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/07 Εξισώσεις.html">7. Εξισώσεις</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02 Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Γενικά για τους Φυσικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03 Κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04 Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05 Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Δεκαδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07 Εξισώσεις.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">7. Εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Ποσοστά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#θεωρία-η-έννοια-της-εξίσωσης-και-τρόποι-επίλυσης" id="toc-θεωρία-η-έννοια-της-εξίσωσης-και-τρόποι-επίλυσης" class="nav-link active" data-scroll-target="#θεωρία-η-έννοια-της-εξίσωσης-και-τρόποι-επίλυσης"><span class="header-section-number">0.1</span> <strong>Θεωρία: Η Έννοια της Εξίσωσης και Τρόποι Επίλυσης</strong></a></li>
+  <li><a href="#ασκήσεις-αναλυτικά-λυμένες" id="toc-ασκήσεις-αναλυτικά-λυμένες" class="nav-link" data-scroll-target="#ασκήσεις-αναλυτικά-λυμένες"><span class="header-section-number">0.2</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις-για-εξάσκηση" id="toc-άλυτες-ασκήσεις-για-εξάσκηση" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις-για-εξάσκηση"><span class="header-section-number">0.3</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></a></li>
+  <li><a href="#έλεγχος-και-επαλήθευση-παραδείγματα" id="toc-έλεγχος-και-επαλήθευση-παραδείγματα" class="nav-link" data-scroll-target="#έλεγχος-και-επαλήθευση-παραδείγματα"><span class="header-section-number">0.4</span> <strong>Έλεγχος και Επαλήθευση (Παραδείγματα)</strong></a></li>
+  <li><a href="#θεωρία-βήματα-και-στρατηγικές-επίλυσης" id="toc-θεωρία-βήματα-και-στρατηγικές-επίλυσης" class="nav-link" data-scroll-target="#θεωρία-βήματα-και-στρατηγικές-επίλυσης"><span class="header-section-number">0.5</span> <strong>Θεωρία: Βήματα και Στρατηγικές Επίλυσης</strong></a></li>
+  <li><a href="#ασκήσεις-αναλυτικά-λυμένες-1" id="toc-ασκήσεις-αναλυτικά-λυμένες-1" class="nav-link" data-scroll-target="#ασκήσεις-αναλυτικά-λυμένες-1"><span class="header-section-number">0.6</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις-για-εξάσκηση-1" id="toc-άλυτες-ασκήσεις-για-εξάσκηση-1" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις-για-εξάσκηση-1"><span class="header-section-number">0.7</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></a></li>
+  <li><a href="#θεωρία-μεθοδολογία-επίλυσης-προβλήματος" id="toc-θεωρία-μεθοδολογία-επίλυσης-προβλήματος" class="nav-link" data-scroll-target="#θεωρία-μεθοδολογία-επίλυσης-προβλήματος"><span class="header-section-number">0.8</span> <strong>Θεωρία: Μεθοδολογία Επίλυσης Προβλήματος</strong></a></li>
+  <li><a href="#ασκήσεις-αναλυτικά-λυμένες-2" id="toc-ασκήσεις-αναλυτικά-λυμένες-2" class="nav-link" data-scroll-target="#ασκήσεις-αναλυτικά-λυμένες-2"><span class="header-section-number">0.9</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις-για-εξάσκηση-2" id="toc-άλυτες-ασκήσεις-για-εξάσκηση-2" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις-για-εξάσκηση-2"><span class="header-section-number">0.10</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></a></li>
+  <li><a href="#σφάλματα-στη-λογική-της-εξίσωσης" id="toc-σφάλματα-στη-λογική-της-εξίσωσης" class="nav-link" data-scroll-target="#σφάλματα-στη-λογική-της-εξίσωσης"><span class="header-section-number">0.11</span> <strong>1. Σφάλματα στη Λογική της Εξίσωσης</strong></a></li>
+  <li><a href="#λάθη-στις-μαθηματικές-συμβάσεις-και-τη-γραφή" id="toc-λάθη-στις-μαθηματικές-συμβάσεις-και-τη-γραφή" class="nav-link" data-scroll-target="#λάθη-στις-μαθηματικές-συμβάσεις-και-τη-γραφή"><span class="header-section-number">0.12</span> <strong>2. Λάθη στις Μαθηματικές Συμβάσεις και τη Γραφή</strong></a></li>
+  <li><a href="#διαδικαστικά-και-μεθοδολογικά-λάθη" id="toc-διαδικαστικά-και-μεθοδολογικά-λάθη" class="nav-link" data-scroll-target="#διαδικαστικά-και-μεθοδολογικά-λάθη"><span class="header-section-number">0.13</span> <strong>3. Διαδικαστικά και Μεθοδολογικά Λάθη</strong></a></li>
+  <li><a href="#λάθη-στη-χρήση-εργαλείων" id="toc-λάθη-στη-χρήση-εργαλείων" class="nav-link" data-scroll-target="#λάθη-στη-χρήση-εργαλείων"><span class="header-section-number">0.14</span> <strong>4. Λάθη στη Χρήση Εργαλείων</strong></a></li>
+  <li><a href="#γενικά-βήματα-επίλυσης-προβλήματος" id="toc-γενικά-βήματα-επίλυσης-προβλήματος" class="nav-link" data-scroll-target="#γενικά-βήματα-επίλυσης-προβλήματος"><span class="header-section-number">0.15</span> <strong>Γενικά Βήματα Επίλυσης Προβλήματος</strong></a></li>
+  <li><a href="#διδακτικές-πρακτικές" id="toc-διδακτικές-πρακτικές" class="nav-link" data-scroll-target="#διδακτικές-πρακτικές"><span class="header-section-number">0.16</span> <strong>Διδακτικές Πρακτικές</strong></a></li>
+  <li><a href="#πρακτικές-συμβουλές-προς-τους-μαθητές" id="toc-πρακτικές-συμβουλές-προς-τους-μαθητές" class="nav-link" data-scroll-target="#πρακτικές-συμβουλές-προς-τους-μαθητές"><span class="header-section-number">0.17</span> <strong>Πρακτικές Συμβουλές προς τους Μαθητές</strong></a></li>
+  <li><a href="#οικονομικές-συναλλαγές-και-αγορές" id="toc-οικονομικές-συναλλαγές-και-αγορές" class="nav-link" data-scroll-target="#οικονομικές-συναλλαγές-και-αγορές"><span class="header-section-number">0.18</span> <strong>1. Οικονομικές Συναλλαγές και Αγορές</strong></a></li>
+  <li><a href="#μετρήσεις-βάρους-και-μάζας" id="toc-μετρήσεις-βάρους-και-μάζας" class="nav-link" data-scroll-target="#μετρήσεις-βάρους-και-μάζας"><span class="header-section-number">0.19</span> <strong>2. Μετρήσεις Βάρους και Μάζας</strong></a></li>
+  <li><a href="#χρονικός-προγραμματισμός-και-θερμοκρασία" id="toc-χρονικός-προγραμματισμός-και-θερμοκρασία" class="nav-link" data-scroll-target="#χρονικός-προγραμματισμός-και-θερμοκρασία"><span class="header-section-number">0.20</span> <strong>3. Χρονικός Προγραμματισμός και Θερμοκρασία</strong></a></li>
+  <li><a href="#λογική-και-κίνηση" id="toc-λογική-και-κίνηση" class="nav-link" data-scroll-target="#λογική-και-κίνηση"><span class="header-section-number">0.21</span> <strong>4. Λογική και Κίνηση</strong></a></li>
+  <li><a href="#προτεραιότητα-στη-δραστηριότητα-έναντι-της-θεωρίας" id="toc-προτεραιότητα-στη-δραστηριότητα-έναντι-της-θεωρίας" class="nav-link" data-scroll-target="#προτεραιότητα-στη-δραστηριότητα-έναντι-της-θεωρίας"><span class="header-section-number">0.22</span> <strong>1. Προτεραιότητα στη Δραστηριότητα έναντι της Θεωρίας</strong></a></li>
+  <li><a href="#ανάπτυξη-και-κρίση-συλλογισμών-μαθηματική-πρακτική-3" id="toc-ανάπτυξη-και-κρίση-συλλογισμών-μαθηματική-πρακτική-3" class="nav-link" data-scroll-target="#ανάπτυξη-και-κρίση-συλλογισμών-μαθηματική-πρακτική-3"><span class="header-section-number">0.23</span> <strong>2. Ανάπτυξη και Κρίση Συλλογισμών (Μαθηματική Πρακτική 3)</strong></a></li>
+  <li><a href="#στρατηγικές-διαχείρισης-προβλημάτων" id="toc-στρατηγικές-διαχείρισης-προβλημάτων" class="nav-link" data-scroll-target="#στρατηγικές-διαχείρισης-προβλημάτων"><span class="header-section-number">0.24</span> <strong>3. Στρατηγικές Διαχείρισης Προβλημάτων</strong></a></li>
+  <li><a href="#έλεγχος-και-επαλήθευση" id="toc-έλεγχος-και-επαλήθευση" class="nav-link" data-scroll-target="#έλεγχος-και-επαλήθευση"><span class="header-section-number">0.25</span> <strong>4. Έλεγχος και Επαλήθευση</strong></a></li>
+  <li><a href="#μεθοδικότητα-και-ακρίβεια" id="toc-μεθοδικότητα-και-ακρίβεια" class="nav-link" data-scroll-target="#μεθοδικότητα-και-ακρίβεια"><span class="header-section-number">0.26</span> <strong>5. Μεθοδικότητα και Ακρίβεια</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/07 Εξισώσεις.html">7. Εξισώσεις</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">7. Εξισώσεις</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ακολουθεί η θεωρία και οι ασκήσεις για τις εξισώσεις στο πεδίο των φυσικών και θετικών δεκαδικών αριθμών.</p>
+<section id="θεωρία-η-έννοια-της-εξίσωσης-και-τρόποι-επίλυσης" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="θεωρία-η-έννοια-της-εξίσωσης-και-τρόποι-επίλυσης"><span class="header-section-number">0.1</span> <strong>Θεωρία: Η Έννοια της Εξίσωσης και Τρόποι Επίλυσης</strong></h3>
+<p><strong>1. Τι είναι η εξίσωση;</strong> <strong>Εξίσωση</strong> ονομάζεται μια μαθηματική <strong>ισότητα</strong> που περιέχει έναν <strong>άγνωστο</strong> αριθμό, ο οποίος συνήθως συμβολίζεται με ένα γράμμα (όπως <span class="math inline">\(x, \psi, \omega\)</span> κ.λπ.). Η εξίσωση μοιάζει με μια <strong>ζυγαριά που ισορροπεί</strong>, όπου για να διατηρηθεί η ισορροπία, οποιαδήποτε μεταβολή γίνεται στο ένα μέλος πρέπει να γίνεται και στο άλλο.</p>
+<p><strong>2. Λύση και Επαλήθευση</strong> * <strong>Λύση ή ρίζα</strong> της εξίσωσης είναι ο αριθμός που, όταν αντικαταστήσει τον άγνωστο, επαληθεύει την ισότητα. * <strong>Επαλήθευση</strong> είναι η διαδικασία όπου τοποθετούμε τη λύση που βρήκαμε στη θέση του αγνώστου για να ελέγξουμε αν το αποτέλεσμα είναι σωστό.</p>
+<p><strong>3. Κανόνες Επίλυσης (με βάση τον ορισμό των πράξεων)</strong> Για να λύσουμε μια εξίσωση, χρησιμοποιούμε την <strong>αντίστροφη πράξη</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Μορφή Εξίσωσης</th>
+<th style="text-align: left;">Πράξη για τη Λύση</th>
+<th style="text-align: left;">Κανόνας</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha + x = \beta\)</span></td>
+<td style="text-align: left;"><strong>Αφαίρεση</strong></td>
+<td style="text-align: left;">Αφαιρούμε από το άθροισμα τον γνωστό προσθετέο: <span class="math inline">\(x = \beta - \alpha\)</span>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x - \alpha = \beta\)</span></td>
+<td style="text-align: left;"><strong>Πρόσθεση</strong></td>
+<td style="text-align: left;">Ο <span class="math inline">\(x\)</span> είναι ο μειωτέος. Τον βρίσκουμε προσθέτοντας στη διαφορά τον αφαιρετέο: <span class="math inline">\(x = \beta + \alpha\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha - x = \beta\)</span></td>
+<td style="text-align: left;"><strong>Αφαίρεση</strong></td>
+<td style="text-align: left;">Ο <span class="math inline">\(x\)</span> είναι ο αφαιρετέος. Τον βρίσκουμε αφαιρώντας από τον μειωτέο τη διαφορά: <span class="math inline">\(x = \alpha - \beta\)</span>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha \cdot x = \beta\)</span></td>
+<td style="text-align: left;"><strong>Διαίρεση</strong></td>
+<td style="text-align: left;">Ο <span class="math inline">\(x\)</span> είναι παράγοντας γινομένου. Τον βρίσκουμε διαιρώντας το γινόμενο με τον γνωστό παράγοντα: <span class="math inline">\(x = \beta : \alpha\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x : \alpha = \beta\)</span></td>
+<td style="text-align: left;"><strong>Πολλαπλασιασμός</strong></td>
+<td style="text-align: left;">Ο <span class="math inline">\(x\)</span> είναι ο διαιρετέος. Τον βρίσκουμε πολλαπλασιάζοντας το πηλίκο με τον διαιρέτη: <span class="math inline">\(x = \beta \cdot \alpha\)</span>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha : x = \beta\)</span></td>
+<td style="text-align: left;"><strong>Διαίρεση</strong></td>
+<td style="text-align: left;">Ο <span class="math inline">\(x\)</span> είναι ο διαιρέτης. Τον βρίσκουμε διαιρώντας τον διαιρετέο με το πηλίκο: <span class="math inline">\(x = \alpha : \beta\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ασκήσεις-αναλυτικά-λυμένες" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="ασκήσεις-αναλυτικά-λυμένες"><span class="header-section-number">0.2</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></h3>
+<ol type="1">
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(x + 12,5 = 30\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 30 - 12,5 \Rightarrow \mathbf{x = 17,5}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(45,8 + x = 100\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 100 - 45,8 \Rightarrow \mathbf{x = 54,2}\)</span></li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(x - 8,4 = 15,6\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 15,6 + 8,4 \Rightarrow \mathbf{x = 24}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(x - 120 = 45,5\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 45,5 + 120 \Rightarrow \mathbf{x = 165,5}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(50 - x = 12,4\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 50 - 12,4 \Rightarrow \mathbf{x = 37,6}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong><span class="math inline">\(1 - x = 0,25\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 1 - 0,25 \Rightarrow \mathbf{x = 0,75}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(4 \cdot x = 18\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 18 : 4 \Rightarrow \mathbf{x = 4,5}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(12,5 \cdot x = 100\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 100 : 12,5 \Rightarrow \mathbf{x = 8}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(x : 5 = 12,4\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 12,4 \cdot 5 \Rightarrow \mathbf{x = 62}\)</span>.</li>
+<li><strong>Να λυθεί η εξίσωση:</strong> <span class="math inline">\(100 : x = 8\)</span><br>
+<strong>Λύση:</strong> <span class="math inline">\(x = 100 : 8 \Rightarrow \mathbf{x = 12,5}\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις-για-εξάσκηση" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="άλυτες-ασκήσεις-για-εξάσκηση"><span class="header-section-number">0.3</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></h3>
+<ol type="1">
+<li>Να βρεθεί ο <span class="math inline">\(x\)</span> στην εξίσωση: <span class="math inline">\(x + 0,75 = 1,5\)</span>.</li>
+<li>Να λυθεί η εξίσωση: <span class="math inline">\(40,4 + \psi = 93,19\)</span>.</li>
+<li>Να βρεθεί η τιμή της μεταβλητής: <span class="math inline">\(\omega - 31 = 45\)</span>.</li>
+<li>Να βρεθεί ο <span class="math inline">\(x\)</span>: <span class="math inline">\(x - 0,05 = 0,95\)</span>.</li>
+<li>Ποια είναι η λύση της εξίσωσης; <span class="math inline">\(12,5 - x = 3,8\)</span>.</li>
+<li>Να υπολογιστεί ο άγνωστος: <span class="math inline">\(20,1 - \chi = 7\)</span>.</li>
+<li>Να λυθεί η εξίσωση: <span class="math inline">\(x \cdot 0,5 = 20\)</span>.</li>
+<li>Να βρεθεί ο άγνωστος παράγοντας: <span class="math inline">\(14 \cdot x = 11,2\)</span>.</li>
+<li>Να βρεθεί ο διαιρετέος στην εξίσωση: <span class="math inline">\(x : 0,2 = 50\)</span>.</li>
+<li>Να βρεθεί ο διαιρέτης: <span class="math inline">\(144 : x = 9\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="έλεγχος-και-επαλήθευση-παραδείγματα" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="έλεγχος-και-επαλήθευση-παραδείγματα"><span class="header-section-number">0.4</span> <strong>Έλεγχος και Επαλήθευση (Παραδείγματα)</strong></h3>
+<ul>
+<li><strong>Ερώτηση</strong>: Είναι ο αριθμός <strong>12</strong> η λύση της εξίσωσης <span class="math inline">\(x + 13 = 25\)</span>; <strong>Έλεγχος</strong>: Αντικαθιστούμε το <span class="math inline">\(x\)</span> με το 12: <span class="math inline">\(12 + 13 = 25\)</span>. Η ισότητα ισχύει, άρα το 12 είναι η λύση.</li>
+<li><strong>Ερώτηση</strong>: Είναι ο αριθμός <strong>3</strong> η λύση της εξίσωσης <span class="math inline">\(5 \cdot x = 15\)</span>; <strong>Έλεγχος</strong>: <span class="math inline">\(5 \cdot 3 = 15\)</span>. Ισχύει, άρα είναι η λύση.</li>
+</ul>
+<p>Για την επίλυση προβλημάτων με φυσικούς και δεκαδικούς αριθμούς που περιλαμβάνουν τις τέσσερις πράξεις, οι πηγές προτείνουν μια συστηματική προσέγγιση που συνδέει τη θεωρία με την πρακτική εφαρμογή.</p>
+</section>
+<section id="θεωρία-βήματα-και-στρατηγικές-επίλυσης" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="θεωρία-βήματα-και-στρατηγικές-επίλυσης"><span class="header-section-number">0.5</span> <strong>Θεωρία: Βήματα και Στρατηγικές Επίλυσης</strong></h3>
+<p>Η διαδικασία επίλυσης ενός προβλήματος δεν είναι απλή εκτέλεση πράξεων, αλλά μια πορεία <strong>μετάφρασης</strong> από τη φυσική γλώσσα στη μαθηματική. Τα βασικά βήματα είναι:</p>
+<ol type="1">
+<li><strong>Ανάγνωση και Κατανόηση</strong>: Προσεκτική μελέτη της εκφώνησης για τον εντοπισμό των <strong>δεδομένων</strong> (γνωστά στοιχεία) και των <strong>ζητουμένων</strong> (άγνωστα στοιχεία).</li>
+<li><strong>Σχεδιασμός</strong>: Επιλογή της κατάλληλης στρατηγικής και των πράξεων (πρόσθεση, αφαίρεση, πολλαπλασιασμός, διαίρεση) που απαιτούνται.</li>
+<li><strong>Εκτέλεση</strong>: Πραγματοποίηση των υπολογισμών. Στους <strong>δεκαδικούς αριθμούς</strong>, προσέχουμε την <strong>ευθυγράμμιση της υποδιαστολής</strong> στην πρόσθεση/αφαίρεση και τον σωστό υπολογισμό των δεκαδικών ψηφίων στον πολλαπλασιασμό.</li>
+<li><strong>Έλεγχος και Επαλήθευση</strong>: Εξέταση αν το αποτέλεσμα είναι <strong>λογικό</strong> σύμφωνα με τα δεδομένα του προβλήματος.</li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεις-αναλυτικά-λυμένες-1" class="level3" data-number="0.6">
+<h3 data-number="0.6" class="anchored" data-anchor-id="ασκήσεις-αναλυτικά-λυμένες-1"><span class="header-section-number">0.6</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></h3>
+<ol type="1">
+<li><strong>Πρόβλημα Κινηματογράφου (Πολλαπλασιασμός &amp; Αφαίρεση)</strong>: Πόσα ρέστα θα πάρω από 25 €, αν πληρώσω 3 εισιτήρια που κοστίζουν 7,20 € το ένα;
+<ul>
+<li><p><strong>Λύση</strong>:</p>
+<ol type="1">
+<li>Βρίσκω το συνολικό κόστος: <span class="math inline">\(7,20 \cdot 3 = 21,60\)</span> €.</li>
+<li>Αφαιρώ από το αρχικό ποσό: <span class="math inline">\(25 - 21,60 = 3,40\)</span> €.</li>
+</ol>
+<ul>
+<li><strong>Απάντηση</strong>: Θα πάρω <strong>3,40 €</strong> ρέστα.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Διανομής (Διαίρεση &amp; Πρόσθεση)</strong>: Τρεις φίλοι μοιράστηκαν 2000 €. Ο πρώτος πήρε 500 € περισσότερα από τον δεύτερο και ο τρίτος 300 € λιγότερα από τον δεύτερο.
+<ul>
+<li><p><strong>Λύση</strong>: Έστω <span class="math inline">\(x\)</span> το ποσό του δεύτερου. Ο πρώτος έχει <span class="math inline">\(x+500\)</span> και ο τρίτος <span class="math inline">\(x-300\)</span>.</p>
+<ol type="1">
+<li>Εξίσωση: <span class="math inline">\((x+500) + x + (x-300) = 2000 \Rightarrow 3x + 200 = 2000 \Rightarrow 3x = 1800 \Rightarrow x = 600\)</span>.</li>
+</ol>
+<ul>
+<li><strong>Απάντηση</strong>: Ο 1ος πήρε <strong>1100 €</strong>, ο 2ος <strong>600 €</strong> και ο 3ος <strong>300 €</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Φρούτων (Διαίρεση &amp; Αφαίρεση)</strong>: Ένας μανάβης αγόρασε 65 κιλά μπανάνες για 104 €. Επειδή κάποιες χάλασαν, πούλησε τις υπόλοιπες 0,4 € ακριβότερα το κιλό για να εισπράξει πάλι 104 €. Πόσα κιλά χάλασαν;
+<ul>
+<li><p><strong>Λύση</strong>:</p>
+<ol type="1">
+<li>Αρχική τιμή κιλού: <span class="math inline">\(104 : 65 = 1,6\)</span> €.</li>
+<li>Νέα τιμή πώλησης: <span class="math inline">\(1,6 + 0,4 = 2\)</span> €.</li>
+<li>Κιλά που πουλήθηκαν: <span class="math inline">\(104 : 2 = 52\)</span> κιλά.</li>
+<li>Κιλά που χάλασαν: <span class="math inline">\(65 - 52 = 13\)</span> κιλά.</li>
+</ol>
+<ul>
+<li><strong>Απάντηση</strong>: Χάλασαν <strong>13 κιλά</strong> μπανάνες.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Χυμού (Διαίρεση δεκαδικού)</strong>: 31 δοχεία περιέχουν συνολικά 85,25 λίτρα χυμό. Πόσα λίτρα έχει το κάθε δοχείο;
+<ul>
+<li><strong>Λύση</strong>: Εκτελώ τη διαίρεση <span class="math inline">\(85,25 : 31\)</span>.
+<ul>
+<li><span class="math inline">\(85,25 : 31 = 2,75\)</span>.</li>
+<li><strong>Απάντηση</strong>: Το κάθε δοχείο έχει <strong>2,75 λίτρα</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Πλούτωνα (Διαίρεση φυσικών)</strong>: Μια περιφορά του Πλούτωνα διαρκεί 90.958 ημέρες. Πόσα γήινα χρόνια είναι (1 έτος = 365 ημέρες);
+<ul>
+<li><strong>Λύση</strong>: <span class="math inline">\(90.958 : 365 \approx 249,2\)</span>.
+<ul>
+<li><strong>Απάντηση</strong>: Διαρκεί περίπου <strong>249,2 χρόνια</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Αγοράς Βιβλίου (Πρόσθεση &amp; Αφαίρεση)</strong>: Ο Σάκης αγόρασε βιβλίο (12,50 €) και τετράδιο. Έδωσε 20 € και πήρε 3,70 € ρέστα. Πόσο έκανε το τετράδιο;
+<ul>
+<li><p><strong>Λύση</strong>:</p>
+<ol type="1">
+<li>Συνολικά έξοδα: <span class="math inline">\(20 - 3,70 = 16,30\)</span> €.</li>
+<li>Κόστος τετραδίου: <span class="math inline">\(16,30 - 12,50 = 3,80\)</span> €.</li>
+</ol>
+<ul>
+<li><strong>Απάντηση</strong>: Το τετράδιο κόστισε <strong>3,80 €</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Ξενοδοχείου (Πολλαπλασιασμός)</strong>: Ένα ξενοδοχείο έχει 6 ορόφους, κάθε όροφος 26 δωμάτια και κάθε δωμάτιο 3 κρεβάτια. Πόσα άτομα χωράει;
+<ul>
+<li><strong>Λύση</strong>: <span class="math inline">\(6 \cdot 26 \cdot 3 = 156 \cdot 3 = 468\)</span>.
+<ul>
+<li><strong>Απάντηση</strong>: Χωράει <strong>468 άτομα</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Γεωμετρίας (Διαίρεση)</strong>: Περίμετρος ισοπλεύρου τριγώνου είναι 24,6 εκ. Πόσο είναι η κάθε πλευρά;
+<ul>
+<li><strong>Λύση</strong>: <span class="math inline">\(24,6 : 3 = 8,2\)</span>.
+<ul>
+<li><strong>Απάντηση</strong>: Η κάθε πλευρά είναι <strong>8,2 εκ.</strong></li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Ανακύκλωσης (Πρόσθεση)</strong>: Τα παιδιά μάζεψαν 8,640 κ. αλουμίνιο, 34,780 κ. γυαλί και 16,096 κ. χαρτί. Πόσο είναι το συνολικό βάρος;
+<ul>
+<li><strong>Λύση</strong>: <span class="math inline">\(8,640 + 34,780 + 16,096 = 59,516\)</span>.
+<ul>
+<li><strong>Απάντηση</strong>: Το συνολικό βάρος είναι <strong>59,516 κιλά</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Πρόβλημα Μπάσκετ (Πολλαπλασιασμός &amp; Πρόσθεση)</strong>: Παίκτης έβαλε 28 τρίποντα, 16 δίποντα και 26 ελεύθερες βολές (1 πόντος). Πόσους πόντους πέτυχε;
+<ul>
+<li><strong>Λύση</strong>: <span class="math inline">\((28 \cdot 3) + (16 \cdot 2) + 26 = 84 + 32 + 26 = 142\)</span>.
+<ul>
+<li><strong>Απάντηση</strong>: Πέτυχε <strong>142 πόντους</strong>.</li>
+</ul></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις-για-εξάσκηση-1" class="level3" data-number="0.7">
+<h3 data-number="0.7" class="anchored" data-anchor-id="άλυτες-ασκήσεις-για-εξάσκηση-1"><span class="header-section-number">0.7</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></h3>
+<ol type="1">
+<li><strong>Αγορές</strong>: Η Δήμητρα αγόρασε βιβλίο (14,72 €), κασετίνα (11,65 €) και μαρκαδόρους (2,84 €). Πόσα πλήρωσε συνολικά;</li>
+<li><strong>Λογαριασμοί</strong>: Ένας λογαριασμός ΔΕΗ είναι 285,80 € και του ΟΤΕ είναι 179,50 € λιγότερα. Πόσα πληρώθηκαν συνολικά;</li>
+<li><strong>Ποδηλάτης</strong>: Τρεις μέρες διάνυσε 39,6 χλμ, 99,78 χλμ και 68,92 χλμ. Πόση απόσταση διάνυσε συνολικά;</li>
+<li><strong>Άθροισμα</strong>: Το άθροισμα δύο αριθμών είναι 1.275,845. Ο ένας είναι 878,247. Ποιος είναι ο άλλος;</li>
+<li><strong>Μέλι</strong>: Το μεικτό βάρος ενός δοχείου με μέλι είναι 1,250 κιλά και το απόβαρο 0,350 κιλά. Πόσο είναι το καθαρό μέλι;</li>
+<li><strong>Ψαράς</strong>: Έπιασε 8,37 κ. μπαρμπούνια, 12,45 κ. σαρδέλες, 4,5 κ. λυθρίνια, 5 κ. τσιπούρες και 1,44 κ. γόπες. Πόσα κιλά έπιασε συνολικά;</li>
+<li><strong>Κουμπαράς</strong>: Η Μαρία έχει 163 € και ο Αλέξανδρος 0,98 € περισσότερα. Πόσα έχουν και οι δύο μαζί;</li>
+<li><strong>Κυλικείο</strong>: Πουλήθηκαν 185 πορτοκαλάδες προς 0,80 € η μία. Πόσα χρήματα εισπράχθηκαν;</li>
+<li><strong>Παραγωγός</strong>: Από 280 κ. σταφύλια βγήκαν 70 κ. κρασί, το οποίο μοιράστηκε σε 10 βαρελάκια. Πόσα κιλά κρασί έχει κάθε βαρελάκι;</li>
+<li><strong>Οικοδομή</strong>: Δύο χτίστες χτίζουν 2,58 μ. και 2,508 μ. την ημέρα αντίστοιχα. Πόσα μέτρα θα χτίσουν μαζί σε 2 ημέρες;</li>
+</ol>
+<p>===================================================</p>
+<p>Η επίλυση προβλημάτων με τη χρήση εξισώσεων αποτελεί τη «μετάφραση» μιας κατάστασης από τη φυσική γλώσσα στη μαθηματική γλώσσα των συμβόλων. Στο πεδίο των φυσικών και θετικών δεκαδικών αριθμών, η διαδικασία αυτή στηρίζεται στη διατήρηση της <strong>ισορροπίας</strong> (μοντέλο ζυγαριάς) και στη χρήση των <strong>αντίστροφων πράξεων</strong> για την απομόνωση του αγνώστου.</p>
+</section>
+<section id="θεωρία-μεθοδολογία-επίλυσης-προβλήματος" class="level3" data-number="0.8">
+<h3 data-number="0.8" class="anchored" data-anchor-id="θεωρία-μεθοδολογία-επίλυσης-προβλήματος"><span class="header-section-number">0.8</span> <strong>Θεωρία: Μεθοδολογία Επίλυσης Προβλήματος</strong></h3>
+<p>Για να λύσουμε ένα πρόβλημα με εξίσωση ακολουθούμε τα εξής βήματα:</p>
+<ol type="1">
+<li><p><strong>Προσδιορισμός του αγνώστου</strong>: Ορίζουμε με ένα γράμμα (συνήθως <span class="math inline">\(x\)</span>) την ποσότητα που μας ζητείται.</p></li>
+<li><p><strong>Καταγραφή δεδομένων</strong>: Εκφράζουμε τα γνωστά και άγνωστα στοιχεία σε σχέση με το <span class="math inline">\(x\)</span>.</p></li>
+<li><p><strong>Κατασκευή εξίσωσης</strong>: Μετατρέπουμε τις λεκτικές σχέσεις (π.χ. «αυξάνεται κατά», «διπλάσιο», «μοιράζεται») σε αριθμητικές πράξεις.</p></li>
+<li><p><strong>Επίλυση</strong>: Εφαρμόζουμε τον κανόνα της αντίστροφης πράξης ανάλογα με τη θέση του <span class="math inline">\(x\)</span>.</p></li>
+<li><p><strong>Επαλήθευση</strong>: Αντικαθιστούμε τον άγνωστο με την τιμή που βρήκαμε στην αρχική εξίσωση για να δούμε αν η ισότητα ισχύει.</p></li>
+</ol>
+</section>
+<section id="ασκήσεις-αναλυτικά-λυμένες-2" class="level3" data-number="0.9">
+<h3 data-number="0.9" class="anchored" data-anchor-id="ασκήσεις-αναλυτικά-λυμένες-2"><span class="header-section-number">0.9</span> <strong>10 Ασκήσεις Αναλυτικά Λυμένες</strong></h3>
+<ol type="1">
+<li><strong>Πρόβλημα Ηλικίας</strong>: Η ηλικία μιας μητέρας μειωμένη κατά 18 έτη είναι 25. Πόσο χρονών είναι η μητέρα;.</li>
+</ol>
+<p><strong>Λύση</strong>: - Έστω <span class="math inline">\(x\)</span> η ηλικία της μητέρας. Η εξίσωση είναι: <span class="math inline">\(x - 18 = 25\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(x = 25 + 18 \Rightarrow \mathbf{x = 43}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Η μητέρα είναι 43 ετών.</p>
+<ol start="2" type="1">
+<li><strong>Πρόβλημα Λεωφορείου</strong>: Σε ένα λεωφορείο υπήρχαν 53 επιβάτες. Σε μια στάση κατέβηκαν μερικοί (<span class="math inline">\(a\)</span>) και έμειναν 18. Πόσοι κατέβηκαν;.</li>
+</ol>
+<p><strong>Λύση</strong>: Η εξίσωση είναι: <span class="math inline">\(53 - a = 18\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(a = 53 - 18 \Rightarrow \mathbf{a = 35}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Κατέβηκαν 35 επιβάτες.</p>
+<ol start="3" type="1">
+<li><strong>Πρόβλημα Αγοράς</strong>: Η Δήμητρα αγόρασε σχολικά είδη αξίας 6,40 €. Αν της έμειναν 2,30 €, πόσα χρήματα είχε αρχικά;.</li>
+</ol>
+<p><strong>Λύση</strong>: Έστω <span class="math inline">\(x\)</span> τα αρχικά χρήματα. Η εξίσωση είναι: <span class="math inline">\(x - 6,40 = 2,30\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(x = 2,30 + 6,40 \Rightarrow \mathbf{x = 8,70}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Είχε αρχικά 8,70 €.</p>
+<ol start="4" type="1">
+<li><strong>Πρόβλημα Γεωμετρίας</strong>: Η περίμετρος ενός ισοσκελούς τριγώνου είναι 48,52 εκ. Αν η βάση του είναι 10,7 εκ., πόσο είναι η κάθε μία από τις ίσες πλευρές (<span class="math inline">\(x\)</span>);.</li>
+</ol>
+<p><strong>Λύση</strong>: Η περίμετρος είναι <span class="math inline">\(x + x + 10,7 = 48,52\)</span>, δηλαδή <span class="math inline">\(2x + 10,7 = 48,52\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(2x = 48,52 - 10,7 \Rightarrow 2x = 37,82 \Rightarrow x = 37,82 : 2 \Rightarrow \mathbf{x = 18,91}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Κάθε πλευρά είναι 18,91 εκ.</p>
+<ol start="5" type="1">
+<li><strong>Πρόβλημα Συσκευασίας</strong>: Σε πόσες θήκες (<span class="math inline">\(x\)</span>) μπορούμε να μοιράσουμε 176 αυγά, αν κάθε θήκη χωράει 4 αυγά;.</li>
+</ol>
+<p><strong>Λύση</strong>: Η εξίσωση είναι: <span class="math inline">\(176 : x = 4\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(x = 176 : 4 \Rightarrow \mathbf{x = 44}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Χρειαζόμαστε 44 θήκες.</p>
+<ol start="6" type="1">
+<li><p><strong>Πρόβλημα Εμβαδού</strong>: Σε ένα ορθογώνιο το πλάτος είναι 3 εκ. και το εμβαδόν 36 τ.εκ. Πόσο είναι το μήκος (<span class="math inline">\(x\)</span>);.</p>
+<p><strong>Λύση</strong>: Η εξίσωση του εμβαδού είναι: <span class="math inline">\(3 \cdot x = 36\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(x = 36 : 3 \Rightarrow \mathbf{x = 12}\)</span>.</p></li>
+</ol>
+<p><strong>Απάντηση</strong>: Το μήκος είναι 12 εκ.</p>
+<ol start="7" type="1">
+<li><p><strong>Πρόβλημα Διανομής</strong>: Τρεις φίλοι μοιράστηκαν 2.000 €. Ο πρώτος πήρε 500 € περισσότερα από τον δεύτερο (<span class="math inline">\(x\)</span>) και ο τρίτος 300 € λιγότερα από τον δεύτερο. Πόσα πήρε ο δεύτερος;.</p>
+<p><strong>Λύση</strong>: <span class="math inline">\((x + 500) + x + (x - 300) = 2.000 \Rightarrow 3x + 200 = 2.000\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(3x = 1.800 \Rightarrow x = 1.800 : 3 \Rightarrow \mathbf{x = 600}\)</span>.</p></li>
+</ol>
+<p><strong>Απάντηση</strong>: Ο δεύτερος πήρε 600 €.</p>
+<ol start="8" type="1">
+<li><p><strong>Πρόβλημα Ζυγαριάς</strong>: Ένας άγνωστος αριθμός κύβων (<span class="math inline">\(k\)</span>) μειώνεται κατά 4 και η ζυγαριά ισοροπεί όταν η άλλη πλευρά της ζυγαριάς έχει 10 κύβους. Πόσοι είναι οι κύβοι σε κάθε πλευρά;.</p>
+<p><strong>Λύση</strong>: Προφανώς η μια πλευρά έχει 10 κύβους. Η εξίσωση είναι: <span class="math inline">\(k - 4 = 10\)</span>.</p>
+<p><strong>Επίλυση</strong>: Η άλλη πλευρά θα έχει <span class="math inline">\(k = 10 + 4 \Rightarrow \mathbf{k = 14}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Υπάρχουν 14 κύβοι στη μια πλευρά και 10 στην άλλη.</p></li>
+<li><p><strong>Πρόβλημα Φρούτων</strong>: Ένας μανάβης αγόρασε 65 κιλά μπανάνες για 104 €. Επειδή κάποιες χάλασαν, πούλησε τις υπόλοιπες 0,4 € ακριβότερα το κιλό για να εισπράξει πάλι 104 €. Πόσα κιλά (<span class="math inline">\(x\)</span>) πούλησε;.</p></li>
+</ol>
+<p><strong>Λύση</strong>: Αρχική τιμή: <span class="math inline">\(104 : 65 = 1,6\)</span> €. Νέα τιμή: <span class="math inline">\(1,6 + 0,4 = 2\)</span> €. Εξίσωση: <span class="math inline">\(2 \cdot x = 104\)</span>.</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(x = 104 : 2 \Rightarrow \mathbf{x = 52}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Πούλησε 52 κιλά (άρα χάλασαν 13 κιλά).</p>
+<ol start="10" type="1">
+<li><strong>Πρόβλημα Αναλογίας</strong>: Μια συνταγή θέλει 6 αυγά και 0,75 κούπες ζάχαρη. Αν χρησιμοποιήσω 12 αυγά, πόση ζάχαρη (<span class="math inline">\(x\)</span>) θα χρειαστώ;.</li>
+</ol>
+<p><strong>Λύση</strong>: Η αναλογία είναι: <span class="math inline">\(12 : 6 = x : 0,75\)</span> (ή <span class="math inline">\(\frac{12}{6} = \frac{x}{0,75}\)</span>).</p>
+<p><strong>Επίλυση</strong>: <span class="math inline">\(6 \cdot x = 12 \cdot 0,75 \Rightarrow 6x = 9 \Rightarrow x = 9 : 6 \Rightarrow \mathbf{x = 1,5}\)</span>.</p>
+<p><strong>Απάντηση</strong>: Χρειάζονται 1,5 κούπες ζάχαρη.</p>
+</section>
+<section id="άλυτες-ασκήσεις-για-εξάσκηση-2" class="level3" data-number="0.10">
+<h3 data-number="0.10" class="anchored" data-anchor-id="άλυτες-ασκήσεις-για-εξάσκηση-2"><span class="header-section-number">0.10</span> <strong>10 Άλυτες Ασκήσεις για Εξάσκηση</strong></h3>
+<ol type="1">
+<li><p>Το δεκαπλάσιο ενός αριθμού είναι 32. Ποιος είναι ο αριθμός;.</p></li>
+<li><p>Αν σε έναν αριθμό προσθέσουμε 4,9 βρίσκουμε 15,83. Ποιος είναι ο αριθμός;.</p></li>
+<li><p>Ένας αριθμός ελαττώνεται κατά 5 και γίνεται 12,5. Ποιος είναι ο αριθμός;.</p></li>
+<li><p>Το γινόμενο του 14 επί έναν άγνωστο αριθμό είναι 11,2. Βρείτε τον άγνωστο.</p></li>
+<li><p>Ποιον αριθμό πρέπει να αφαιρέσω από το 89,45 για να βρω 44,006;.</p></li>
+<li><p>Ο Γιάννης έχει 1.500 € στην τράπεζα. Η Λίζα έχει τριπλάσια. Πόσα έχει η Λίζα;.</p></li>
+<li><p>Μια διαδρομή 292,5 μιλίων πρέπει να γίνει σε 9 ώρες. Με τι ταχύτητα ($x$) πρέπει να πηγαίνει το πλοίο;.</p></li>
+<li><p>Το άθροισμα δύο αριθμών είναι 1.275,845. Ο ένας είναι 878,247. Ποιος είναι ο άλλος;.</p></li>
+<li><p>Αν από το μισό ενός αριθμού αφαιρέσουμε το 7 βρίσκουμε 5. Ποιος είναι ο αριθμός;.</p></li>
+<li><p>Ένας εργάτης πήρε προκαταβολή 180 €, που ήταν το μισό της συνολικής του αμοιβής για 5 ημέρες. Ποιο ήταν το μεροκάματό του;.</p></li>
+</ol>
+<p>================================================</p>
+<p>Τα λάθη των μαθητών στις εξισώσεις και τα μαθηματικά γενικότερα χωρίζονται σε δομικά (λογικά), διαδικαστικά και σφάλματα μαθηματικών συμβάσεων.</p>
+</section>
+<section id="σφάλματα-στη-λογική-της-εξίσωσης" class="level3" data-number="0.11">
+<h3 data-number="0.11" class="anchored" data-anchor-id="σφάλματα-στη-λογική-της-εξίσωσης"><span class="header-section-number">0.11</span> <strong>1. Σφάλματα στη Λογική της Εξίσωσης</strong></h3>
+<ul>
+<li><p><strong>Σύγχυση Αντίστροφων Πράξεων</strong>: Το συχνότερο δομικό λάθος είναι η επιλογή λανθασμένης πράξης για την απομόνωση του αγνώστου. Ιδιαίτερα στην αφαίρεση, όταν ο άγνωστος είναι ο <strong>αφαιρετέος</strong> (π.χ. <span class="math inline">\(a - x = \beta\)</span>), πολλοί μαθητές προσπαθούν λανθασμένα να κάνουν πρόσθεση αντί για αφαίρεση.</p></li>
+<li><p><strong>Αδυναμία Επαλήθευσης</strong>: Οι μαθητές συχνά θεωρούν ότι η διαδικασία ολοκληρώθηκε μόλις βρουν μια τιμή για το <span class="math inline">\(x\)</span>, χωρίς να ελέγξουν αν η τιμή αυτή επαληθεύει την αρχική ισότητα ή αν το αποτέλεσμα είναι λογικό σύμφωνα με τα δεδομένα του προβλήματος.</p></li>
+<li><p><strong>Διαχείριση Μηδενικών στους Δεκαδικούς</strong>: Συχνά παρατηρείται σύγχυση κατά την προσθήκη ή αφαίρεση μηδενικών στο τέλος του δεκαδικού μέρους, γεγονός που οδηγεί σε λάθος εκτίμηση της αξίας του αριθμού (π.χ. σύγχυση μεταξύ <span class="math inline">\(2,6\)</span> και <span class="math inline">\(2,06\)</span>).</p></li>
+</ul>
+</section>
+<section id="λάθη-στις-μαθηματικές-συμβάσεις-και-τη-γραφή" class="level3" data-number="0.12">
+<h3 data-number="0.12" class="anchored" data-anchor-id="λάθη-στις-μαθηματικές-συμβάσεις-και-τη-γραφή"><span class="header-section-number">0.12</span> <strong>2. Λάθη στις Μαθηματικές Συμβάσεις και τη Γραφή</strong></h3>
+<ul>
+<li><p><strong>Κλασματικές Γραμμές</strong>: Οι μαθητές συχνά δεν τοποθετούν την κλασματική γραμμή στην ίδια ευθεία με το σύμβολο της ισότητας (<span class="math inline">\(=\)</span>) ή των πράξεων, γεγονός που προκαλεί παρανοήσεις στην ιεραρχία των υπολογισμών.</p></li>
+<li><p><strong>Δυνάμεις και Εκθέτες</strong>: Παραμελείται η σαφής διάκριση μεταξύ βάσης και εκθέτη (π.χ. το <span class="math inline">\(3^4\)</span> γράφεται ως <span class="math inline">\(34\)</span>), οδηγώντας σε λάθος αποτελέσματα.</p></li>
+<li><p><strong>Διάταξη Εξίσωσης</strong>: Απαγορεύεται η γραφή μιας εξίσωσης σε <strong>δύο σειρές</strong> ή η χρήση πολλών συμβόλων ισότητας στην ίδια σειρά, πρακτικές που μπερδεύουν τον λύτη.</p></li>
+<li><p><strong>Σύγχυση Αριθμών</strong>: Η κακή γραφή μπορεί να οδηγήσει στη σύγχυση αριθμών μεταξύ τους, όπως το <strong>1 με το 7</strong>, ακόμα και από τον ίδιο τον μαθητή.</p></li>
+</ul>
+</section>
+<section id="διαδικαστικά-και-μεθοδολογικά-λάθη" class="level3" data-number="0.13">
+<h3 data-number="0.13" class="anchored" data-anchor-id="διαδικαστικά-και-μεθοδολογικά-λάθη"><span class="header-section-number">0.13</span> <strong>3. Διαδικαστικά και Μεθοδολογικά Λάθη</strong></h3>
+</section>
+<ul>
+<li><p><strong>Μη Αναλυτική Επίλυση</strong>: Πολλοί μαθητές αποφεύγουν να λύνουν τις ασκήσεις βήμα-βήμα, με αποτέλεσμα να χάνουν μονάδες ή να κάνουν λάθη που θα απέφευγαν αν εργάζονταν μεθοδικά.</p></li>
+<li><p><strong>Χρήση Πρόχειρου</strong>: Οι πράξεις πρέπει να γράφονται δίπλα στη λύση της άσκησης (χωρίζουμε την σελίδα σε ένα μέρος κατά 1/3 όπου θα κάνουμε τις πράξεις) και όχι σε ξεχωριστά χαρτιά ή στο θράνιο, καθώς οι πράξεις αυτές βαθμολογούνται και βοηθούν στον εντοπισμό σφαλμάτων.</p></li>
+<li><p><strong>Βιασύνη και Παρορμητισμός</strong>: Ο παρορμητισμός στην τάξη και η επιθυμία για γρήγορη απάντηση οδηγούν συχνά σε λάθη σε ερωτήσεις που απαιτούν προσεκτική σκέψη.</p></li>
+<li><p><strong>Φιλολογικά Λάθη</strong>: Η παράλειψη τόνων ή η ορθογραφία μετρούν και στα μαθηματικά, καθώς αποτελούν μέρος της ακρίβειας που απαιτείται στο γραπτό.</p></li>
+</ul>
+<section id="λάθη-στη-χρήση-εργαλείων" class="level3" data-number="0.14">
+<h3 data-number="0.14" class="anchored" data-anchor-id="λάθη-στη-χρήση-εργαλείων"><span class="header-section-number">0.14</span> <strong>4. Λάθη στη Χρήση Εργαλείων</strong></h3>
+<ul>
+<li><strong>Υπολογιστής Τσέπης</strong>: Συχνά γίνονται λάθη στην πληκτρολόγηση συμβόλων ή της υποδιαστολής, ενώ οι μαθητές τείνουν να εμπιστεύονται τυφλά το αποτέλεσμα της μηχανής χωρίς να το εξετάζουν με τη λογική.</li>
+</ul>
+<p>===========================================================</p>
+<p>Για τη διδασκαλία και την αποτελεσματική επίλυση μαθηματικών προβλημάτων, προτείνουμε μια σειρά από δομημένες στρατηγικές και πρακτικές που ξεκινούν από την κατανόηση και φτάνουν μέχρι την επαλήθευση του αποτελέσματος.</p>
+</section>
+<section id="γενικά-βήματα-επίλυσης-προβλήματος" class="level3" data-number="0.15">
+<h3 data-number="0.15" class="anchored" data-anchor-id="γενικά-βήματα-επίλυσης-προβλήματος"><span class="header-section-number">0.15</span> <strong>Γενικά Βήματα Επίλυσης Προβλήματος</strong></h3>
+<p>Μια συστηματική πορεία περιλαμβάνει τα εξής στάδια:</p>
+<ul>
+<li><p><strong>Κατανόηση του προβλήματος</strong>: Προσεκτική ανάγνωση για τον εντοπισμό των <strong>δεδομένων</strong> (γνωστά στοιχεία) και των <strong>ζητουμένων</strong> (άγνωστα στοιχεία).</p></li>
+<li><p><strong>Σχεδιασμός και Μοντελοποίηση</strong>: Επιλογή της κατάλληλης στρατηγικής ή μαθηματικής πράξης και «μετάφραση» των λεκτικών σχέσεων σε μαθηματική γλώσσα (π.χ. εξισώσεις).</p></li>
+<li><p><strong>Εκτέλεση</strong>: Πραγματοποίηση των πράξεων με προσοχή και μεθοδικότητα.</p></li>
+<li><p><strong>Έλεγχος και Επαλήθευση</strong>: Εξέταση αν η λύση που βρέθηκε είναι λογική σύμφωνα με τα δεδομένα και αν επαληθεύει τις αρχικές συνθήκες του προβλήματος.</p></li>
+<li><p><strong>Στρατηγικές Επίλυσης</strong></p></li>
+</ul>
+<p>Ανάλογα με το επίπεδο και το είδος του προβλήματος, προτείνονται οι εξής πρακτικές:</p>
+<ul>
+<li><p><strong>Αναπαράσταση και Μοντελοποίηση</strong>: Χρήση υλικών (όπως κύβοι ή υλικό Dienes), σχεδίων, πινάκων και διαγραμμάτων για την οπτικοποίηση του προβλήματος.</p></li>
+<li><p><strong>Στρατηγικές Διαδικασίας</strong>: Περιλαμβάνουν τη <strong>λογική σκέψη</strong>, την <strong>ανάδρομη πορεία</strong> (ξεκινώντας από το τέλος), τη δημιουργία <strong>οργανωμένου καταλόγου</strong>, τη μέθοδο <strong>δοκιμής και ελέγχου</strong>, και την <strong>απλοποίηση</strong> του προβλήματος.</p></li>
+<li><p><strong>Μαθηματικές Μέθοδοι</strong>: Προτείνεται η χρήση της <strong>αναγωγής στην ακέραια μονάδα</strong> (εύρεση της τιμής της μίας μονάδας και μετά του συνόλου) και της <strong>απλής μεθόδου των τριών</strong> για προβλήματα αναλογιών.</p></li>
+<li><p><strong>Στρατηγικές Νοερών Υπολογισμών</strong>: Ανάλυση αριθμών, συμπλήρωση της δεκάδας και αξιοποίηση γνωστών αθροισμάτων ή ιδιοτήτων (αντιμεταθετική, προσεταιριστική) για τη διευκόλυνση των υπολογισμών.</p></li>
+</ul>
+</section>
+<section id="διδακτικές-πρακτικές" class="level3" data-number="0.16">
+<h3 data-number="0.16" class="anchored" data-anchor-id="διδακτικές-πρακτικές"><span class="header-section-number">0.16</span> <strong>Διδακτικές Πρακτικές</strong></h3>
+<p>Για τους εκπαιδευτικούς, η μεθοδολογία εστιάζει στην ανάπτυξη της κριτικής σκέψης:</p>
+<ul>
+<li><p><strong>Δραστηριότητες πριν τη θεωρία</strong>: Η θεωρία δεν πρέπει να είναι αυτοσκοπός, αλλά το αποτέλεσμα αναζήτησης και προβληματισμού μέσα από προκαταρκτικές δραστηριότητες.</p></li>
+<li><p><strong>Καλλιέργεια ακρίβειας</strong>: Έμφαση στη σωστή χρήση της μαθηματικής ορολογίας και των συμβόλων για την αποφυγή παρανοήσεων.</p></li>
+<li><p><strong>Διαχείριση δεδομένων</strong>: Διδασκαλία του εντοπισμού κατάλληλων πληροφοριών και της διαγραφής περιττών ή ελλιπών δεδομένων.</p></li>
+<li><p><strong>Ενθάρρυνση πολλαπλών λύσεων</strong>: Οι μαθητές πρέπει να ενθαρρύνονται να μαθαίνουν <strong>περισσότερους από έναν τρόπους</strong> επίλυσης για να νιώθουν πιο σίγουροι για το αποτέλεσμα.</p></li>
+</ul>
+</section>
+<section id="πρακτικές-συμβουλές-προς-τους-μαθητές" class="level3" data-number="0.17">
+<h3 data-number="0.17" class="anchored" data-anchor-id="πρακτικές-συμβουλές-προς-τους-μαθητές"><span class="header-section-number">0.17</span> <strong>Πρακτικές Συμβουλές προς τους Μαθητές</strong></h3>
+<p>Για την αποφυγή συνηθισμένων λαθών, προτείνονται οι εξής πρακτικές:</p>
+<ul>
+<li><p><strong>Αναλυτικές απαντήσεις</strong>: Οι ασκήσεις πρέπει να λύνονται αναλυτικά, βήμα-βήμα, καθώς και οι πράξεις βαθμολογούνται.</p></li>
+<li><p><strong>Γραφή πράξεων στο γραπτό</strong>: Οι πράξεις πρέπει να γράφονται δίπλα στην άσκηση και όχι σε πρόχειρο, και δεν πρέπει να σβήνονται.</p></li>
+<li><p><strong>Προσεκτική εικόνα γραπτού</strong>: Συστήνεται η γραφή μίας άσκησης ανά σελίδα με κενές σειρές για καθαρότητα και αποφυγή λαθών κατά τη μεταφορά.</p></li>
+<li><p><strong>Φιλολογική επιμέλεια</strong>: Τα φιλολογικά λάθη (τόνοι, ορθογραφία) μετρούν και στα μαθηματικά, ενώ τα γράμματα πρέπει να είναι ευανάγνωστα για να μην συγχέονται αριθμοί (π.χ. το 1 με το 7).</p></li>
+</ul>
+<p>=============================================================</p>
+<p>Υπάρχουν πολυάριθμα παραδείγματα από την καθημερινή ζωή όπου η στρατηγική της <strong>ανάδρομης πορείας</strong> (ξεκινώντας από το τέλος προς την αρχή) είναι απαραίτητη για την εύρεση της λύσης. Η μέθοδος αυτή βασίζεται στην εκτέλεση <strong>αντίστροφων πράξεων</strong> για την «εξουδετέρωση» των βημάτων που οδήγησαν στο τελικό αποτέλεσμα.</p>
+<p>Ορισμένα χαρακτηριστικά καθημερινά παραδείγματα είναι τα εξής:</p>
+</section>
+<section id="οικονομικές-συναλλαγές-και-αγορές" class="level3" data-number="0.18">
+<h3 data-number="0.18" class="anchored" data-anchor-id="οικονομικές-συναλλαγές-και-αγορές"><span class="header-section-number">0.18</span> <strong>1. Οικονομικές Συναλλαγές και Αγορές</strong></h3>
+<ul>
+<li><p><strong>Εύρεση αρχικού ποσού χρημάτων</strong>: Προβλήματα όπου κάποιος έχει ένα αρχικό ποσό, λαμβάνει ή ξοδεύει χρήματα και γνωρίζουμε μόνο το τελικό υπόλοιπο. Για παράδειγμα, αν ο Στέλιος πήρε χρήματα από τους γονείς του και τώρα έχει 46 €, πρέπει να πάμε «προς τα πίσω» αφαιρώντας τα ποσά που έλαβε για να βρούμε τι είχε αρχικά.</p></li>
+<li><p><strong>Υπολογισμός ρέστων</strong>: Όταν γνωρίζουμε το χαρτονόμισμα που δώσαμε και τα ρέστα που πήραμε, η ανάδρομη πορεία βοηθά να βρούμε την αξία των προϊόντων που αγοράσαμε.</p></li>
+<li><p><strong>Αρχική τιμή πριν από την έκπτωση</strong>: Όταν γνωρίζουμε την τελική τιμή ενός προϊόντος (π.χ. ενός υπολογιστή ή ενός ποδηλάτου) μετά από μια έκπτωση (π.χ. 20% ή 35%) και ζητείται η αρχική του αξία.</p></li>
+<li><p><strong>Τραπεζικοί λογαριασμοί</strong>: Υπολογισμός αρχικής κατάθεσης αν γνωρίζουμε το τρέχον υπόλοιπο μετά από μια σειρά κινήσεων (καταθέσεων ή αναλήψεων).</p></li>
+</ul>
+</section>
+<section id="μετρήσεις-βάρους-και-μάζας" class="level3" data-number="0.19">
+<h3 data-number="0.19" class="anchored" data-anchor-id="μετρήσεις-βάρους-και-μάζας"><span class="header-section-number">0.19</span> <strong>2. Μετρήσεις Βάρους και Μάζας</strong></h3>
+<ul>
+<li><p><strong>Ζυγαριά και ισορροπία</strong>: Αν μια ζυγαριά δείχνει το συνολικό βάρος δύο ατόμων (π.χ. 94,5 κιλά) και γνωρίζουμε το βάρος του ενός, εκτελούμε αφαίρεση (αντίστροφη της πρόσθεσης) για να βρούμε το βάρος του άλλου.</p></li>
+<li><p><strong>Το πρόβλημα της «πέτρας»</strong>: Ένα ιστορικό παράδειγμα από τη Μεσοποταμία αναφέρει μια πέτρα που ζυγίστηκε αφού αφαιρέθηκαν και προστέθηκαν κλασματικά μέρη του βάρους της. Για να βρεθεί το αρχικό βάρος, πρέπει να αντιστραφούν όλες οι πράξεις ξεκινώντας από την τελική ζύγιση.</p></li>
+</ul>
+</section>
+<section id="χρονικός-προγραμματισμός-και-θερμοκρασία" class="level3" data-number="0.20">
+<h3 data-number="0.20" class="anchored" data-anchor-id="χρονικός-προγραμματισμός-και-θερμοκρασία"><span class="header-section-number">0.20</span> <strong>3. Χρονικός Προγραμματισμός και Θερμοκρασία</strong></h3>
+<ul>
+<li><p><strong>Ώρα αναχώρησης</strong>: Αν πρέπει να βρίσκεσαι κάπου μια συγκεκριμένη ώρα (π.χ. στη θάλασσα στις 11:00 π.μ.) και η διαδρομή διαρκεί 2 ώρες, η ανάδρομη σκέψη σου υποδεικνύει την ώρα που πρέπει να ξεκινήσεις.</p></li>
+<li><p><strong>Μεταβολές Θερμοκρασίας</strong>: Εύρεση της θερμοκρασίας που επικρατούσε το μεσημέρι, αν γνωρίζουμε τη θερμοκρασία το βράδυ και όλες τις ενδιάμεσες αυξομειώσεις που μεσολάβησαν.</p></li>
+</ul>
+</section>
+<section id="λογική-και-κίνηση" class="level3" data-number="0.21">
+<h3 data-number="0.21" class="anchored" data-anchor-id="λογική-και-κίνηση"><span class="header-section-number">0.21</span> <strong>4. Λογική και Κίνηση</strong></h3>
+<ul>
+<li><p><strong>Προβλήματα με σκάλες</strong>: Ένας πυροσβέστης που ανεβοκατεβαίνει σκαλιά (π.χ. ανεβαίνει 3, κατεβαίνει 5, ανεβαίνει 7). Ξεκινώντας από την τελική του θέση, μπορούμε να βρούμε πόσα σκαλιά έχει συνολικά η σκάλα.</p></li>
+<li><p><strong>Αριθμομηχανές (Input-Output)</strong>: Όταν γνωρίζουμε τον αριθμό που «βγαίνει» από μια μηχανή και τον κανόνα λειτουργίας της, χρησιμοποιούμε την ανάδρομη πορεία για να βρούμε ποιος αριθμός «μπήκε» αρχικά.</p></li>
+</ul>
+<p>=======================================================</p>
+<p>Για την ανάπτυξη της κριτικής σκέψης στο πλαίσιο της διδασκαλίας των Μαθηματικών, προτείνουμε μια σειρά από πρακτικές που μετατοπίζουν το ενδιαφέρον από την απλή απομνημόνευση στην ενεργό ανακάλυψη και τον συλλογισμό.</p>
+<p>Οι κυριότερες διδακτικές πρακτικές περιλαμβάνουν:</p>
+</section>
+<section id="προτεραιότητα-στη-δραστηριότητα-έναντι-της-θεωρίας" class="level3" data-number="0.22">
+<h3 data-number="0.22" class="anchored" data-anchor-id="προτεραιότητα-στη-δραστηριότητα-έναντι-της-θεωρίας"><span class="header-section-number">0.22</span> <strong>1. Προτεραιότητα στη Δραστηριότητα έναντι της Θεωρίας</strong></h3>
+<ul>
+<li><p><strong>Δραστηριότητες πριν τη θεωρία</strong>: Η θεωρία δεν πρέπει να αποτελεί αυτοσκοπό, αλλά το αποτέλεσμα μιας αναζήτησης και ενός προβληματισμού που έχει προηγηθεί μέσα από συγκεκριμένες δραστηριότητες.</p></li>
+<li><p><strong>Περιορισμός της έτοιμης γνώσης</strong>: Προτείνεται ο περιορισμός της παρουσίασης έτοιμης θεωρίας, ώστε να δίνεται χώρος στους μαθητές να αναπτύξουν τη <strong>διαίσθηση</strong>, τη <strong>δοκιμή</strong>, την <strong>έρευνα</strong> και τη <strong>σύνθεση</strong>.</p></li>
+</ul>
+</section>
+<section id="ανάπτυξη-και-κρίση-συλλογισμών-μαθηματική-πρακτική-3" class="level3" data-number="0.23">
+<h3 data-number="0.23" class="anchored" data-anchor-id="ανάπτυξη-και-κρίση-συλλογισμών-μαθηματική-πρακτική-3"><span class="header-section-number">0.23</span> <strong>2. Ανάπτυξη και Κρίση Συλλογισμών (Μαθηματική Πρακτική 3)</strong></h3>
+</section>
+<ul>
+<li><p><strong>Επεξήγηση της σκέψης</strong>: Οι μαθητές ενθαρρύνονται να εξηγούν γραπτά ή προφορικά τον τρόπο που κατέληξαν σε μια λύση.</p></li>
+<li><p><strong>Αξιολόγηση της γνώμης των άλλων</strong>: Μια βασική πρακτική είναι ο σχολιασμός της άποψης κάποιου συμμαθητή (π.χ. «Ο Μιχάλης υποστηρίζει ότι… Συμφωνείς ή διαφωνείς;») και η τεκμηριωμένη αιτιολόγηση της απάντησης.</p></li>
+<li><p><strong>Διάλογος στην τάξη</strong>: Η τάξη αντιμετωπίζεται ως μια «διαδρομή από σκέψη σε σκέψη», όπου οι διαφορετικές ιδέες συνθέτουν τη νέα γνώση μέσω διαλόγου.</p></li>
+</ul>
+<section id="στρατηγικές-διαχείρισης-προβλημάτων" class="level3" data-number="0.24">
+<h3 data-number="0.24" class="anchored" data-anchor-id="στρατηγικές-διαχείρισης-προβλημάτων"><span class="header-section-number">0.24</span> <strong>3. Στρατηγικές Διαχείρισης Προβλημάτων</strong></h3>
+<ul>
+<li><p><strong>Ανάλυση δεδομένων</strong>: Οι μαθητές εκπαιδεύονται να εντοπίζουν τις κατάλληλες πληροφορίες, να <strong>διαγράφουν περιττά δεδομένα</strong> και να εντοπίζουν ελλείψεις που εμποδίζουν τη λύση.</p></li>
+<li><p><strong>Πολλαπλές λύσεις</strong>: Ενθαρρύνεται η εκμάθηση <strong>περισσότερων από έναν τρόπων επίλυσης</strong> για την ίδια άσκηση, ώστε ο μαθητής να νιώθει σίγουρος για το αποτέλεσμα και να αναπτύσσει ευελιξία σκέψης.</p></li>
+<li><p><strong>Αποφυγή απομνημόνευσης</strong>: Η στείρα απομνημόνευση μεθοδολογιών αποθαρρύνεται, με έμφαση στην κατανόηση του «γιατί» πίσω από κάθε πράξη.</p></li>
+</ul>
+</section>
+<section id="έλεγχος-και-επαλήθευση" class="level3" data-number="0.25">
+<h3 data-number="0.25" class="anchored" data-anchor-id="έλεγχος-και-επαλήθευση"><span class="header-section-number">0.25</span> <strong>4. Έλεγχος και Επαλήθευση</strong></h3>
+<ul>
+<li><p><strong>Έλεγχος λογικότητας</strong>: Μετά την επίλυση, ο μαθητής πρέπει να εξετάζει αν η απάντησή του είναι λογική σύμφωνα με τα δεδομένα του προβλήματος.</p></li>
+<li><p><strong>Επαλήθευση</strong>: Η διαδικασία της επαλήθευσης (τοποθέτηση της λύσης στην αρχική εξίσωση) θεωρείται κρίσιμη για την επιβεβαίωση της ορθότητας της σκέψης.</p></li>
+</ul>
+</section>
+<section id="μεθοδικότητα-και-ακρίβεια" class="level3" data-number="0.26">
+<h3 data-number="0.26" class="anchored" data-anchor-id="μεθοδικότητα-και-ακρίβεια"><span class="header-section-number">0.26</span> <strong>5. Μεθοδικότητα και Ακρίβεια</strong></h3>
+<ul>
+<li><p><strong>Προσεκτική σκέψη</strong>: Τονίζεται ότι οι δύσκολες ερωτήσεις δεν απαιτούν ταχύτητα αλλά <strong>προσεκτική και μεθοδική σκέψη</strong>, καθώς ο παρορμητισμός οδηγεί συχνά σε λάθη.</p></li>
+<li><p><strong>Χρήση σωστής ορολογίας</strong>: Η καλλιέργεια της ακρίβειας στη μαθηματική γλώσσα βοηθά στη σαφή επικοινωνία των ιδεών και στην αποφυγή παρανοήσεων.</p></li>
+</ul>
+<p>Συνολικά, ο στόχος αυτών των πρακτικών είναι να ασκηθεί ο μαθητής στην <strong>ανάλυση, τη γενίκευση και τις λογικές διεργασίες</strong>, διαμορφώνοντας τα διανοήματά του με τάξη και σαφήνεια.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
