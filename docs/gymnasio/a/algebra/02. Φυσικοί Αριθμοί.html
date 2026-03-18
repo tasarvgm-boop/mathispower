@@ -8,7 +8,7 @@
 
 <meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>2. Γενικά για τους Φυσικούς αριθμούς – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>02. Γενικά για τους Φυσικούς αριθμούς – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -75,64 +75,91 @@ ul.task-list li input[type="checkbox"] {
   MathJax.Hub.Config({
     TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../../styles.css" />
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Αναζήτηση"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Γυμνάσιο</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="/gymnasio/a/index.html">
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
  <span class="dropdown-text">Α Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/gymnasio/b/index.qmd">
+    <a class="dropdown-item" href="../../../gymnasio/b/index.qmd">
  <span class="dropdown-text">Β Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/gymnasio/g/index.qmd">
+    <a class="dropdown-item" href="../../../gymnasio/g/index.qmd">
  <span class="dropdown-text">Γ Τάξη</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Λύκειο</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="/lykeio/a/index.qmd">
- <span class="dropdown-text">Α&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+ <span class="dropdown-text">Α’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/lykeio/b/index.qmd">
- <span class="dropdown-text">Β&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+ <span class="dropdown-text">Β’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/lykeio/g/index.qmd">
- <span class="dropdown-text">Γ&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+ <span class="dropdown-text">Γ’ Λυκείου</span></a>
   </li>  
     </ul>
   </li>
@@ -144,171 +171,20 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html">02. Γενικά για τους Φυσικούς αριθμούς</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">about</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="/gymnasio/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2"  role="navigation" aria-expanded="true">
- <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Γεωμετρία</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="/gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2. Γενικά για τους Φυσικούς αριθμούς</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/03 Κλάσματα.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Κλάσματα</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/04 Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/05 Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Δεκαδικοί αριθμοί</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/07 Εξισώσεις.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Εξισώσεις</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Ποσοστά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.  Προβλήματα με Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.  Αντιστρόφως Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-  <div class="quarto-title-banner">
-    <div class="quarto-title column-body">
-      <h1 class="title">2. Γενικά για τους Φυσικούς αριθμούς</h1>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html">02. Γενικά για τους Φυσικούς αριθμούς</a></li></ol></nav>
+      <h1 class="title">02. Γενικά για τους Φυσικούς αριθμούς</h1>
                       </div>
   </div>
     
@@ -333,19 +209,327 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header>
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Ποσοστά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ορισμός-και-βασικά-χαρακτηριστικά" id="toc-ορισμός-και-βασικά-χαρακτηριστικά" class="nav-link active" data-scroll-target="#ορισμός-και-βασικά-χαρακτηριστικά"><span class="header-section-number">0.1</span> <strong>1. Ορισμός και Βασικά Χαρακτηριστικά</strong></a></li>
+  <li><a href="#κανόνες-διάταξης-και-σύγκρισης" id="toc-κανόνες-διάταξης-και-σύγκρισης" class="nav-link" data-scroll-target="#κανόνες-διάταξης-και-σύγκρισης"><span class="header-section-number">0.2</span> <strong>2. Κανόνες Διάταξης και Σύγκρισης</strong></a></li>
+  <li><a href="#βασικές-πράξεις-και-ιδιότητες" id="toc-βασικές-πράξεις-και-ιδιότητες" class="nav-link" data-scroll-target="#βασικές-πράξεις-και-ιδιότητες"><span class="header-section-number">0.3</span> <strong>3. Βασικές Πράξεις και Ιδιότητες</strong></a></li>
+  <li><a href="#κατηγοριοποίηση-αριθμών" id="toc-κατηγοριοποίηση-αριθμών" class="nav-link" data-scroll-target="#κατηγοριοποίηση-αριθμών"><span class="header-section-number">0.4</span> <strong>4. Κατηγοριοποίηση Αριθμών</strong></a></li>
+  <li><a href="#μέρος-1-θεωρία-και-κανόνες" id="toc-μέρος-1-θεωρία-και-κανόνες" class="nav-link" data-scroll-target="#μέρος-1-θεωρία-και-κανόνες"><span class="header-section-number">0.5</span> <strong>Μέρος 1: Θεωρία και Κανόνες</strong></a></li>
+  <li><a href="#μέρος-2-10-ασκήσεις-λυμένες" id="toc-μέρος-2-10-ασκήσεις-λυμένες" class="nav-link" data-scroll-target="#μέρος-2-10-ασκήσεις-λυμένες"><span class="header-section-number">0.6</span> <strong>Μέρος 2: 10 Ασκήσεις Λυμένες</strong></a></li>
+  <li><a href="#μέρος-3-10-ασκήσεις-χωρίς-λύση" id="toc-μέρος-3-10-ασκήσεις-χωρίς-λύση" class="nav-link" data-scroll-target="#μέρος-3-10-ασκήσεις-χωρίς-λύση"><span class="header-section-number">0.7</span> <strong>Μέρος 3: 10 Ασκήσεις χωρίς Λύση</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<p>Σε λίγο …..</p>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0">3. Κλάσματα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hYm91dC5odG1sYWJvdXQ=">about</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ==">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMg==">Α’ Γυμνασίου – Μαθηματικά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2dlb21ldHJpYS9pbmRleC5odG1szpPOtc+JzrzOtc+Ez4HOr86x">Γεωμετρία</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMw==">Άλγεβρα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDEuIM6mz4XPg865zrrOv86vIM6Rz4HOuc64zrzOv86vLmh0bWwwMS4tzqbPhc+DzrnOus6/zq8tzpHPgc65zrjOvM6/zq8tLS3OlM65zqzPhM6xzr7Oty0tLc6jz4TPgc6/zrPOs8+FzrvOv8+Azr/Or863z4POtw==">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDIuIM6mz4XPg865zrrOv86vIM6Rz4HOuc64zrzOv86vLmh0bWwyLi3Ok861zr3Ouc66zqwtzrPOuc6xLc+Ezr/Phc+CLc6mz4XPg865zrrOv8+Nz4ItzrHPgc65zrjOvM6/z43Pgg==">2. Γενικά για τους Φυσικούς αριθμούς</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDMgzprOu86sz4POvM6xz4TOsS5odG1sMy4tzprOu86sz4POvM6xz4TOsQ==">3. Κλάσματα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDQgzpTOtc66zrHOtM65zrrOrCDOus67zqzPg868zrHPhM6xIC0gzpTOtc66zrHOtM65zrrOv86vIM6xz4HOuc64zrzOv86vIC0gzpzOrc+Ez4HOt8+DzrcgzrzOtc6zzrXOuM+Ozr0uaHRtbDQuLc6UzrXOus6xzrTOuc66zqwtzrrOu86sz4POvM6xz4TOsS0tLc6UzrXOus6xzrTOuc66zr/Ory3Osc+BzrnOuM68zr/Ory0tLc6czq3PhM+BzrfPg863Lc68zrXOs861zrjPjs69">4. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDUgzpTOtc66zrHOtM65zrrOv86vIM6Rz4HOuc64zrzOv86vLmh0bWw1Li3OlM61zrrOsc60zrnOus6/zq8tzrHPgc65zrjOvM6/zq8=">5. Δεκαδικοί αριθμοί</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDYuIM6czrXPhM6xz4TPgc6/z4DOrc+CIM6czr/Ovc6szrTPic69Lmh0bWw2Li3OnM61z4TOsc+Ez4HOv8+Azq3Pgi3OnM6/zr3OrM60z4nOvQ==">6. Μετατροπές Μονάδων</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDcgzpXOvs65z4PPjs+DzrXOuc+CLmh0bWw3Li3Olc6+zrnPg8+Oz4POtc65z4I=">7. Εξισώσεις</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDguIM6gzr/Pg86/z4PPhM6sLmh0bWw4Li3OoM6/z4POv8+Dz4TOrA==">8. Ποσοστά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDkuICDOo8+Nz4PPhM63zrzOsSDOo8+Fzr3PhM61z4TOsc6zzrzOrc69z4nOvS5odG1sOS4tzqPPjc+Dz4TOt868zrEtzqPPhc69z4TOtc+EzrHOs868zq3Ovc+Jzr0=">9. Σύστημα Συντεταγμένων</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTAuIM6Rzr3Osc67zr/Os86vzrXPgiAtIM6Rzr3OrM67zr/Os86xIM+Azr/Pg86sLmh0bWwxMC4tzpHOvc6xzrvOv86zzq/Otc+CLS0tzpHOvc6szrvOv86zzrEtzqDOv8+Dzqw=">10. Αναλογίες - Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTEuICDOkc69zqzOu86/zrPOsSDPgM6/z4POrCAtIM6ZzrTOuc+Mz4TOt8+EzrXPgi5odG1sMTEuzpHOvc6szrvOv86zzrEtzqDOv8+DzqwtLS3Omc60zrnPjM+EzrfPhM61z4I=">11.Ανάλογα Ποσά - Ιδιότητες</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTIuIM6gz4HOv86yzrvOrs68zrHPhM6xIM68zrUgzpHOvc6szrvOv86zzrEgzqDOv8+DzqwuaHRtbDEyLi0tzqDPgc6/zrLOu86uzrzOsc+EzrEtzrzOtS3Okc69zqzOu86/zrPOsS3OoM6/z4POrA==">12. Προβλήματα με Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTMuICDOkc69z4TOuc+Dz4TPgc+Mz4bPic+CIM6Rzr3OrM67zr/Os86xIM6gzr/Pg86sLmh0bWwxMy4tLc6Rzr3PhM65z4PPhM+Bz4zPhs+Jz4ItzpHOvc6szrvOv86zzrEtzqDOv8+Dzqw=">13. Αντιστρόφως Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTQuICDOpM6/IM6zzrnOvc+MzrzOtc69zr8gz4TPic69IM6Rzr3PhM65z4PPhM+Bz4zPhs+Jz4IgzpHOvc6szrvOv86zz4nOvSDOoM6/z4PPjs69Lmh0bWwxNC4tzpHOvc+EzrnPg8+Ez4HPjM+Gz4nPgi3Okc69zqzOu86/zrPOsS3OoM6/z4POrC0tLc6TzrnOvc+MzrzOtc69zr8tzqDOr869zrHOus6xz4ItzrrOsc65Lc6gzrHPgc6sz4PPhM6xz4POty3OvM61Lc+DzrfOvM61zq/OsQ==">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpPPhc68zr3OrM+DzrnOvw==">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpEgzqTOrM6+zrc=">Α Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2EvaW5kZXguaHRtbA==">/gymnasio/a/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpIgzqTOrM6+zrc=">Β Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2IvaW5kZXgucW1k">/gymnasio/b/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpMgzqTOrM6+zrc=">Γ Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2cvaW5kZXgucW1k">/gymnasio/g/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpvPjc66zrXOuc6/">Λύκειο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpEnIM6bz4XOus61zq/Ov8+F">Α’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9hL2luZGV4LnFtZA==">/lykeio/a/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpInIM6bz4XOus61zq/Ov8+F">Β’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9iL2luZGV4LnFtZA==">/lykeio/b/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpMnIM6bz4XOus61zq/Ov8+F">Γ’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9nL2luZGV4LnFtZA==">/lykeio/g/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6Tz4XOvM69zqzPg865zr8=">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6RJy3Ok8+FzrzOvc6xz4POr86/z4Ut4oCTLc6czrHOuM63zrzOsc+EzrnOus6s">Α’ Γυμνασίου – Μαθηματικά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6GzrvOs861zrLPgc6x">Άλγεβρα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLTIuLc6TzrXOvc65zrrOrC3Os865zrEtz4TOv8+Fz4ItzqbPhc+DzrnOus6/z43Pgi3Osc+BzrnOuM68zr/Pjc+C">2. Γενικά για τους Φυσικούς αριθμούς</span></p>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">2. Γενικά για τους Φυσικούς αριθμούς – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">2. Γενικά για τους Φυσικούς αριθμούς – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">2. Γενικά για τους Φυσικούς αριθμούς – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
-</div>
+
+
+
+<p>Οι φυσικοί αριθμοί αποτελούν το θεμελιώδες σύνολο αριθμών (<span class="math inline">\(\mathbb{N}\)</span>) που χρησιμοποιείται για την καταμέτρηση αντικειμένων και διακρίνονται για τις εξής ιδιότητες και κανόνες διάταξης:</p>
+<section id="ορισμός-και-βασικά-χαρακτηριστικά" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="ορισμός-και-βασικά-χαρακτηριστικά"><span class="header-section-number">0.1</span> <strong>1. Ορισμός και Βασικά Χαρακτηριστικά</strong></h3>
+<ul>
+<li><strong>Σύνολο:</strong> Περιλαμβάνει τους αριθμούς <span class="math inline">\(\{0, 1, 2, 3, \dots\}\)</span>. Κάθε αριθμός προκύπτει από τον προηγούμενό του με την προσθήκη μίας μονάδας.</li>
+<li><strong>Άπειρο Σύνολο:</strong> Οι φυσικοί αριθμοί είναι άπειροι, καθώς δεν υπάρχει μέγιστος αριθμός· για κάθε <span class="math inline">\(n\)</span> υπάρχει πάντα ο επόμενός του, <span class="math inline">\(n+1\)</span>.</li>
+<li><strong>Ελάχιστο Στοιχείο:</strong> Το <strong>μηδέν (0)</strong> θεωρείται η αφετηρία της αριθμητικής ημιευθείας και το ελάχιστο στοιχείο του συνόλου.</li>
+<li><strong>Διακριτός Χαρακτήρας:</strong> Μεταξύ δύο διαδοχικών φυσικών αριθμών <span class="math inline">\(n\)</span> και <span class="math inline">\(n+1\)</span> <strong>δεν παρεμβάλλεται κανένας άλλος</strong> φυσικός αριθμός.</li>
+</ul>
+</section>
+<section id="κανόνες-διάταξης-και-σύγκρισης" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="κανόνες-διάταξης-και-σύγκρισης"><span class="header-section-number">0.2</span> <strong>2. Κανόνες Διάταξης και Σύγκρισης</strong></h3>
+<p>Η διάταξη επιτρέπει τη σύγκριση οποιωνδήποτε δύο φυσικών αριθμών βάσει των παρακάτω κανόνων:</p>
+<p>* <strong>Αρχή της Τριχοτομίας:</strong> Για κάθε ζεύγος αριθμών <span class="math inline">\(n, m\)</span>, ισχύει ακριβώς μία από τις σχέσεις: <span class="math inline">\(n = m\)</span>, <span class="math inline">\(n &lt; m\)</span> ή <span class="math inline">\(n &gt; m\)</span>.</p>
+<p>* <strong>Ορισμός Ανισότητας:</strong> Ο <span class="math inline">\(m\)</span> είναι μικρότερος του <span class="math inline">\(n\)</span> (<span class="math inline">\(m &lt; n\)</span>) αν υπάρχει ένας φυσικός αριθμός <span class="math inline">\(k \neq 0\)</span> τέτοιος ώστε <span class="math inline">\(n = m + k\)</span>.</p>
+<p>* <strong>Μεταβατική Ιδιότητα:</strong> Αν <span class="math inline">\(n &lt; m\)</span> και <span class="math inline">\(m &lt; k\)</span>, τότε <span class="math inline">\(n &lt; k\)</span>.</p>
+<p>* <strong>Αντισυμμετρική Ιδιότητα:</strong> Αν <span class="math inline">\(m \le n\)</span> και <span class="math inline">\(n \le m\)</span>, τότε αναγκαστικά <span class="math inline">\(m = n\)</span>.</p>
+<p>* <strong>Αριθμητική Ημιευθεία:</strong> Οι αριθμοί διατάσσονται πάνω σε μια ημιευθεία ξεκινώντας από το 0 και προχωρώντας προς τα δεξιά. Όσο πιο δεξιά βρίσκεται ένας αριθμός, τόσο μεγαλύτερος είναι.</p>
+<p>* <strong>Αρχή της Καλής Διάταξης:</strong> Κάθε μη κενό υποσύνολο των φυσικών αριθμών έχει ένα <strong>ελάχιστο στοιχείο</strong>.</p>
+</section>
+<section id="βασικές-πράξεις-και-ιδιότητες" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="βασικές-πράξεις-και-ιδιότητες"><span class="header-section-number">0.3</span> <strong>3. Βασικές Πράξεις και Ιδιότητες</strong></h3>
+<p>Οι φυσικοί αριθμοί διέπονται από συγκεκριμένες ιδιότητες κατά την εκτέλεση πράξεων:</p>
+<p>* <strong>Πρόσθεση:</strong> Είναι πράξη <strong>κλειστή</strong> στο <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p>Ισχύουν η <strong>αντιμεταθετική</strong> (<span class="math inline">\(a+\beta = \beta+a\)</span>),</p>
+<p>η <strong>προσεταιριστική</strong> <span class="math inline">\((a+\beta)+\gamma=a+(\beta+\gamma)\)</span></p>
+<p>και το <strong>0 ως ουδέτερο στοιχείο</strong> (<span class="math inline">\(a+0=a\)</span>).</p>
+<p>* <strong>Αφαίρεση:</strong> Είναι η αντίστροφη πράξη της πρόσθεσης.</p>
+<p>Μπορεί να εκτελεστεί μόνο αν ο <strong>μειωτέος είναι μεγαλύτερος ή ίσος του αφαιρετέου</strong> (<span class="math inline">\(a \ge \beta\)</span>).</p>
+<p>* <strong>Πολλαπλασιασμός:</strong> Ισχύουν</p>
+<p>η <strong>αντιμεταθετική</strong>, <span class="math inline">\(a\cdot\beta=\beta\cdot a\)</span></p>
+<p>η <strong>προσεταιριστική</strong> <span class="math inline">\((a\cdot \beta) \cdot \gamma=a\cdot(\beta\cdot\gamma)\)</span><br>
+και η <strong>επιμεριστική</strong> ιδιότητα ως προς την πρόσθεση και την αφαίρεση. <span class="math display">\[a\cdot(\beta+\gamma)=a\cdot\beta+a\cdot\gamma \]</span> <span class="math display">\[a\cdot(\beta-\gamma)=a\cdot\beta-a\cdot\gamma \]</span></p>
+<p>Το <strong>1 είναι το ουδέτερο στοιχείο</strong>, <span class="math inline">\(a\cdot1=a\)</span></p>
+<p>ενώ το <strong>0 είναι το απορροφητικό στοιχείο</strong> (<span class="math inline">\(a \cdot 0 = 0\)</span>).</p>
+<p>* <strong>Ευκλείδεια Διαίρεση:</strong> Για κάθε διαιρετέο <span class="math inline">\(\Delta\)</span> και διαιρέτη <span class="math inline">\(\delta\)</span>, υπάρχουν μοναδικά πηλίκο <span class="math inline">\(\pi\)</span> και υπόλοιπο <span class="math inline">\(\upsilon\)</span> ώστε <span class="math inline">\(\Delta = \delta \cdot \pi + \upsilon\)</span>, με τον περιορισμό <span class="math inline">\(0 \le \upsilon &lt; \delta\)</span>.</p>
+<p>* <strong>Δυνάμεις:</strong> Εκφράζουν το γινόμενο ίδιων παραγόντων (<span class="math inline">\(a^n\)</span>). Ισχύει <span class="math inline">\(a^1 = a\)</span> και <span class="math inline">\(a^0 = 1\)</span> (για <span class="math inline">\(a \neq 0\)</span>).</p>
+</section>
+<section id="κατηγοριοποίηση-αριθμών" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="κατηγοριοποίηση-αριθμών"><span class="header-section-number">0.4</span> <strong>4. Κατηγοριοποίηση Αριθμών</strong></h3>
+<ul>
+<li><strong>Άρτιοι (Ζυγοί):</strong> Τελειώνουν σε <span class="math inline">\(0, 2, 4, 6, 8\)</span>.</li>
+<li><strong>Περιττοί (Μονοί):</strong> Τελειώνουν σε <span class="math inline">\(1, 3, 5, 7, 9\)</span>.</li>
+<li><strong>Πρώτοι αριθμοί:</strong> Έχουν διαιρέτες μόνο τον εαυτό τους και τη μονάδα (π.χ. <span class="math inline">\(2, 3, 5, 7\)</span>).</li>
+<li><strong>Σύνθετοι αριθμοί:</strong> Έχουν περισσότερους από δύο διαιρέτες.</li>
+</ul>
+<p>Τέλος, η <strong>στρογγυλοποίηση</strong> αποτελεί σημαντικό κανόνα για την προσέγγιση φυσικών αριθμών: αν το ψηφίο στα δεξιά της θέσης στρογγυλοποίησης είναι <span class="math inline">\(0-4\)</span> ο αριθμός παραμένει ίδιος, ενώ αν είναι <span class="math inline">\(5-9\)</span> αυξάνεται κατά μία μονάδα.<br>
+</p>
+<p><br>
+————————————————————————<br>
+<br>
+Ακολουθεί μια παρουσίαση της θεωρίας των φυσικών αριθμών, μαζί με λυμένες και προτεινόμενες ασκήσεις.</p>
+</section>
+<section id="μέρος-1-θεωρία-και-κανόνες" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="μέρος-1-θεωρία-και-κανόνες"><span class="header-section-number">0.5</span> <strong>Μέρος 1: Θεωρία και Κανόνες</strong></h3>
+<p><strong>1. Ορισμός και Δομή</strong></p>
+<p>* Οι <strong>φυσικοί αριθμοί</strong> (<span class="math inline">\(\mathbb{N}\)</span>) είναι οι αριθμοί <span class="math inline">\(\{0, 1, 2, 3, \dots\}\)</span>. Ξεκινούν από το <strong>0</strong> (ελάχιστο στοιχείο) και είναι <strong>άπειροι</strong>.</p>
+<p>* Κάθε αριθμός προκύπτει από τον προηγούμενο με την προσθήκη της μονάδας (<span class="math inline">\(n+1\)</span>).</p>
+<p>* Διακρίνονται σε <strong>άρτιους</strong> (τελειώνουν σε 0, 2, 4, 6, 8) και <strong>περιττούς</strong> (τελειώνουν σε 1, 3, 5, 7, 9).</p>
+<p><strong>2. Διάταξη και Στρογγυλοποίηση</strong></p>
+<p>* <strong>Σύγκριση:</strong> Χρησιμοποιούμε τα σύμβολα <span class="math inline">\(&lt;, &gt;, =\)</span>. Ένας αριθμός <span class="math inline">\(a\)</span> είναι μικρότερος του <span class="math inline">\(\beta\)</span> αν βρίσκεται πιο αριστερά στην αριθμητική ημιευθεία.</p>
+<p><img src="images/clipboard-2265388674.png" class="img-fluid"></p>
+<p>* <strong>Κανόνας Στρογγυλοποίησης:</strong></p>
+<p>1. Επιλέγουμε τη θέση στρογγυλοποίησης.</p>
+<p>2. Εξετάζουμε το ψηφίο στα δεξιά:</p>
+<ul>
+<li><p>Αν είναι <strong>0-4</strong>: Το ψηφίο της θέσης παραμένει ίδιο.</p></li>
+<li><p>Αν είναι <strong>5-9</strong>: Το ψηφίο της θέσης αυξάνεται κατά 1.</p></li>
+</ul>
+<p>3. Όλα τα ψηφία δεξιά γίνονται μηδενικά.</p>
+<p><strong>3. Ευκλείδεια Διαίρεση και Διαιρετότητα</strong></p>
+<p>* <strong>Ταυτότητα:</strong> <span class="math inline">\(\Delta = \delta \cdot \pi + \upsilon\)</span>, με τον περιορισμό <span class="math inline">\(0 \le \upsilon &lt; \delta\)</span>.</p>
+<p>* <strong>Κριτήρια Διαιρετότητας:</strong></p>
+<ul>
+<li><p>Με το <strong>2</strong>: Λήγει σε 0, 2, 4, 6, 8.</p></li>
+<li><p>Με το <strong>5</strong>: Λήγει σε 0 ή 5.</p></li>
+<li><p>Με το <strong>3</strong> ή <strong>9</strong>: Το άθροισμα των ψηφίων του διαιρείται με το 3 ή 9 αντίστοιχα.</p></li>
+<li><p>Με το <strong>4</strong> ή <strong>25</strong>: Τα δύο τελευταία ψηφία διαιρούνται με το 4 ή 25.</p></li>
+</ul>
+<p>* <strong>ΜΚΔ &amp; ΕΚΠ:</strong> Ο Μέγιστος Κοινός Διαιρέτης είναι το γινόμενο των κοινών πρώτων παραγόντων με τον μικρότερο εκθέτη. Το Ελάχιστο Κοινό Πολλαπλάσιο είναι το γινόμενο κοινών και μη κοινών με τον μεγαλύτερο εκθέτη.</p>
+<hr>
+</section>
+<section id="μέρος-2-10-ασκήσεις-λυμένες" class="level3" data-number="0.6">
+<h3 data-number="0.6" class="anchored" data-anchor-id="μέρος-2-10-ασκήσεις-λυμένες"><span class="header-section-number">0.6</span> <strong>Μέρος 2: 10 Ασκήσεις Λυμένες</strong></h3>
+<ol type="1">
+<li><strong>Στρογγυλοποίηση:</strong> Στρογγυλοποιήστε τον αριθμό <strong>259.663</strong> στις Μονάδες Χιλιάδων (ΜΧ).
+<ul>
+<li><strong>Λύση:</strong> Η θέση ΜΧ είναι το 9. Το δεξί ψηφίο είναι το 6 (<span class="math inline">\(6 \ge 5\)</span>). Το 9 γίνεται 10, άρα η μονάδα μεταφέρεται στο 5, που γίνεται 6. Αποτέλεσμα: <strong>260.000</strong>.</li>
+</ul></li>
+<li><strong>Ευκλείδεια Διαίρεση:</strong> Αν ένας αριθμός διαιρεθεί με το 9, δίνει πηλίκο 73 και υπόλοιπο 4. Ποιος είναι ο αριθμός;
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(\Delta = \delta \cdot \pi + \upsilon \Rightarrow \Delta = 9 \cdot 73 + 4 = 657 + 4 = \mathbf{661}\)</span>.</li>
+</ul></li>
+<li><strong>Προτεραιότητα Πράξεων:</strong> Υπολογίστε την τιμή: <span class="math inline">\(4+(3-2)+(5-1)\cdot2+7-2\)</span>.
+<ul>
+<li><strong>Λύση:</strong>
+<ul>
+<li>πρώτα τις παρενθέσεις <span class="math inline">\(4+1+4\cdot2+7-2\)</span>.</li>
+<li>μετά τον πολλαπλασιασμό <span class="math inline">\(4+1+8+7-2\)</span>.</li>
+<li>Τέλος τις προσθέσεις και αφαιρέσεις με την σειρά που τις συναντάμε: <span class="math inline">\(20-2=\mathbf{18}\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Κριτήρια Διαιρετότητας:</strong> Εξετάστε αν ο αριθμός <strong>123.456</strong> διαιρείται με το 3.
+<ul>
+<li><strong>Λύση:</strong> Προσθέτουμε τα ψηφία: <span class="math inline">\(1+2+3+4+5+6 = 21\)</span>. Το 21 διαιρείται με το 3 (<span class="math inline">\(21:3=7\)</span>), άρα ο αριθμός <strong>διαιρείται με το 3</strong>.</li>
+</ul></li>
+<li><strong>ΕΚΠ:</strong> Βρείτε το ΕΚΠ των αριθμών 15 και 27.
+<ul>
+<li><strong>Λύση:</strong> Ανάλυση: <span class="math inline">\(15 = 3 \cdot 5\)</span> και <span class="math inline">\(27 = 3^3\)</span>. Το ΕΚΠ παίρνει κοινούς και μη κοινούς με μέγιστο εκθέτη: <span class="math inline">\(3^3 \cdot 5 = 27 \cdot 5 = \mathbf{135}\)</span>.</li>
+</ul></li>
+<li><strong>ΜΚΔ:</strong> Βρείτε τον ΜΚΔ των αριθμών 15 και 27.
+<ul>
+<li><strong>Λύση:</strong> Από την προηγούμενη ανάλυση (<span class="math inline">\(3 \cdot 5\)</span> και <span class="math inline">\(3^3\)</span>), ο ΜΚΔ παίρνει μόνο κοινούς με ελάχιστο εκθέτη: <strong>3</strong>.</li>
+</ul></li>
+<li><strong>Δυνάμεις:</strong> Υπολογίστε την τιμή της παράστασης: <span class="math inline">\(2^3 + 5^2 - 12^1\)</span>.
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(2^3 = 8\)</span>, <span class="math inline">\(5^2 = 25\)</span>, <span class="math inline">\(12^1 = 12\)</span>. Άρα <span class="math inline">\(8 + 25 - 12 = 33 - 12 = \mathbf{21}\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα Παράταξης:</strong> Μπορεί ένας καθηγητής να παρατάξει 168 μαθητές σε πλήρεις πεντάδες;
+<ul>
+<li><strong>Λύση:</strong> Εκτελούμε τη διαίρεση <span class="math inline">\(168 : 5\)</span>. Το 168 δεν λήγει σε 0 ή 5, άρα η διαίρεση αφήνει υπόλοιπο (<span class="math inline">\(168 = 5 \cdot 33 + 3\)</span>). <strong>Όχι</strong>, θα περισσέψουν 3 μαθητές.</li>
+</ul></li>
+<li><strong>Πρόβλημα Αποθήκευσης:</strong> Σε μια δισκέτα χωρούν 11 φωτογραφίες. Πόσες δισκέτες χρειάζονται για 180 φωτογραφίες;
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(180 : 11 \Rightarrow 180 = 11 \cdot 16 + 4\)</span>. Χρειάζονται 16 πλήρεις δισκέτες και μία ακόμα για τις 4 που περισσεύουν. Σύνολο: <strong>17 δισκέτες</strong>.</li>
+</ul></li>
+<li><strong>Ανάλυση σε Πρώτους Παράγοντες:</strong> Αναλύστε τον αριθμό 360.
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(360 = 2 \cdot 180 = 2^2 \cdot 90 = 2^3 \cdot 45 = 2^3 \cdot 3 \cdot 15 = 2^3 \cdot 3^2 \cdot 5\)</span>. Μορφή δυνάμεων: <span class="math inline">\(2^3 \cdot 3^2 \cdot 5\)</span>.</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="μέρος-3-10-ασκήσεις-χωρίς-λύση" class="level3" data-number="0.7">
+<h3 data-number="0.7" class="anchored" data-anchor-id="μέρος-3-10-ασκήσεις-χωρίς-λύση"><span class="header-section-number">0.7</span> <strong>Μέρος 3: 10 Ασκήσεις χωρίς Λύση</strong></h3>
+<ol type="1">
+<li>Στρογγυλοποιήστε τον αριθμό <strong>563.524.132.678</strong> στις Δεκάδες Εκατομμυρίων (ΔΕ).</li>
+<li>Υπολογίστε την τιμή της αριθμητικής παράστασης: <span class="math inline">\(5 \cdot 4^2 - (10 - 2) \cdot 3 + 2^3\)</span>.</li>
+<li>Εξετάστε ποιες από τις παρακάτω ισότητες είναι Ευκλείδειες διαιρέσεις:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(125 = 35 \cdot 3 + 20\)</span></li>
+<li>β) <span class="math inline">\(762 = 38 \cdot 19 + 40\)</span>.</li>
+</ul>
+<ol start="4" type="1">
+<li>Συμπληρώστε το ψηφίο που λείπει στον αριθμό <strong>83_</strong> ώστε να διαιρείται ταυτόχρονα με το 2 και το 5.</li>
+<li>Βρείτε το ΕΚΠ και τον ΜΚΔ των αριθμών <strong>8, 12 και 24</strong>.</li>
+<li>Γράψτε σε μορφή μιας δύναμης το γινόμενο: <span class="math inline">\(3 \cdot 3 \cdot 3 \cdot 3 \cdot a \cdot a \cdot a\)</span>.</li>
+<li>Τρία πλοία αναχωρούν μαζί. Το πρώτο επιστρέφει κάθε 3 μέρες, το δεύτερο κάθε 4 και το τρίτο κάθε 8. Μετά από πόσες μέρες θα ξανασυναντηθούν;.</li>
+<li>Ποια μπορεί να είναι τα δυνατά υπόλοιπα μιας διαίρεσης αν ο διαιρέτης είναι το 8;.</li>
+<li>Εφαρμόστε την επιμεριστική ιδιότητα για να υπολογίσετε το γινόμενο <span class="math inline">\(17 \cdot 18\)</span> χρησιμοποιώντας τη μορφή <span class="math inline">\(17 \cdot (20 - 2)\)</span>.</li>
+<li>Αναλύστε τον αριθμό <strong>2.520</strong> σε γινόμενο πρώτων παραγόντων.<br>
+</li>
+</ol>
+
+
+</section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -745,9 +929,9 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
- <!-- /content -->
+</div> <!-- /content -->
 
-</head><body class="nav-sidebar quarto-light">
+
 
 
 </body></html>
