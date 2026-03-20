@@ -75,64 +75,91 @@ ul.task-list li input[type="checkbox"] {
   MathJax.Hub.Config({
     TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../../styles.css" />
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Αναζήτηση"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Γυμνάσιο</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="/gymnasio/a/index.html">
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
  <span class="dropdown-text">Α Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/gymnasio/b/index.qmd">
+    <a class="dropdown-item" href="../../../gymnasio/b/index.qmd">
  <span class="dropdown-text">Β Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/gymnasio/g/index.qmd">
+    <a class="dropdown-item" href="../../../gymnasio/g/index.qmd">
  <span class="dropdown-text">Γ Τάξη</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Λύκειο</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="/lykeio/a/index.qmd">
- <span class="dropdown-text">Α&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+ <span class="dropdown-text">Α’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/lykeio/b/index.qmd">
- <span class="dropdown-text">Β&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+ <span class="dropdown-text">Β’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/lykeio/g/index.qmd">
- <span class="dropdown-text">Γ&#39; Λυκείου</span></a>
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+ <span class="dropdown-text">Γ’ Λυκείου</span></a>
   </li>  
     </ul>
   </li>
@@ -144,170 +171,19 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html">6. Μετατροπές Μονάδων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">about</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="/gymnasio/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2"  role="navigation" aria-expanded="true">
- <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Γεωμετρία</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="/gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03. Κλάσματα</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07. Εξισώσεις</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Ποσοστά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12.  Προβλήματα με Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13.  Αντιστρόφως Ανάλογα Ποσά</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="/gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-  <div class="quarto-title-banner">
-    <div class="quarto-title column-body">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html">6. Μετατροπές Μονάδων</a></li></ol></nav>
       <h1 class="title">6. Μετατροπές Μονάδων</h1>
                       </div>
   </div>
@@ -325,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">18 Μάρτιος 2026</p>
+        <p class="date">20 Μάρτιος 2026</p>
       </div>
     </div>
     
@@ -333,19 +209,1038 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header>
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/ 17. Δυνάμεις ρητών αριθμών .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Δυνάμεις ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Ποσοστά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Θετικοί και αρνητικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Θετικοί και αρνητικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μονάδες-μήκους" id="toc-μονάδες-μήκους" class="nav-link active" data-scroll-target="#μονάδες-μήκους"><span class="header-section-number">1</span> 1. Μονάδες Μήκους</a>
+  <ul class="collapse">
+  <li><a href="#βασικές-ασκήσεις-μετατροπών" id="toc-βασικές-ασκήσεις-μετατροπών" class="nav-link" data-scroll-target="#βασικές-ασκήσεις-μετατροπών"><span class="header-section-number">1.1</span> <strong>Βασικές Ασκήσεις Μετατροπών</strong></a></li>
+  <li><a href="#σύνθετα-προβλήματα-με-μήκος" id="toc-σύνθετα-προβλήματα-με-μήκος" class="nav-link" data-scroll-target="#σύνθετα-προβλήματα-με-μήκος"><span class="header-section-number">1.2</span> <strong>Σύνθετα Προβλήματα με Μήκος</strong></a></li>
+  <li><a href="#μεθοδολογία-επίλυσης" id="toc-μεθοδολογία-επίλυσης" class="nav-link" data-scroll-target="#μεθοδολογία-επίλυσης"><span class="header-section-number">1.3</span> <strong>Μεθοδολογία Επίλυσης</strong></a></li>
+  </ul></li>
+  <li><a href="#μονάδες-επιφάνειας-εμβαδού" id="toc-μονάδες-επιφάνειας-εμβαδού" class="nav-link" data-scroll-target="#μονάδες-επιφάνειας-εμβαδού"><span class="header-section-number">2</span> 2. Μονάδες Επιφάνειας (Εμβαδού)</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-και-κανόνες-μετατροπής" id="toc-θεωρία-και-κανόνες-μετατροπής" class="nav-link" data-scroll-target="#θεωρία-και-κανόνες-μετατροπής"><span class="header-section-number">2.1</span> <strong>Θεωρία και Κανόνες Μετατροπής</strong></a></li>
+  <li><a href="#ασκήσεις-μετατροπών" id="toc-ασκήσεις-μετατροπών" class="nav-link" data-scroll-target="#ασκήσεις-μετατροπών"><span class="header-section-number">2.2</span> <strong>Ασκήσεις Μετατροπών</strong></a></li>
+  <li><a href="#προβλήματα-εφαρμογής" id="toc-προβλήματα-εφαρμογής" class="nav-link" data-scroll-target="#προβλήματα-εφαρμογής"><span class="header-section-number">2.3</span> <strong>Προβλήματα Εφαρμογής</strong></a></li>
+  </ul></li>
+  <li><a href="#μονάδες-όγκου" id="toc-μονάδες-όγκου" class="nav-link" data-scroll-target="#μονάδες-όγκου"><span class="header-section-number">3</span> 3. Μονάδες Όγκου</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-και-κανόνες-μετατροπής-1" id="toc-θεωρία-και-κανόνες-μετατροπής-1" class="nav-link" data-scroll-target="#θεωρία-και-κανόνες-μετατροπής-1"><span class="header-section-number">3.1</span> <strong>Θεωρία και Κανόνες Μετατροπής</strong></a></li>
+  <li><a href="#ασκήσεις-μετατροπών-1" id="toc-ασκήσεις-μετατροπών-1" class="nav-link" data-scroll-target="#ασκήσεις-μετατροπών-1"><span class="header-section-number">3.2</span> <strong>Ασκήσεις Μετατροπών</strong></a></li>
+  <li><a href="#χρήση-σε-προβλήματα" id="toc-χρήση-σε-προβλήματα" class="nav-link" data-scroll-target="#χρήση-σε-προβλήματα"><span class="header-section-number">3.3</span> <strong>Χρήση σε Προβλήματα</strong></a></li>
+  </ul></li>
+  <li><a href="#μονάδες-μάζας" id="toc-μονάδες-μάζας" class="nav-link" data-scroll-target="#μονάδες-μάζας"><span class="header-section-number">4</span> 4. Μονάδες Μάζας</a>
+  <ul class="collapse">
+  <li><a href="#ασκήσεις-μετατροπών-2" id="toc-ασκήσεις-μετατροπών-2" class="nav-link" data-scroll-target="#ασκήσεις-μετατροπών-2"><span class="header-section-number">4.1</span> <strong>2. Ασκήσεις Μετατροπών</strong></a></li>
+  <li><a href="#προβλήματα-εφαρμογής-1" id="toc-προβλήματα-εφαρμογής-1" class="nav-link" data-scroll-target="#προβλήματα-εφαρμογής-1"><span class="header-section-number">4.2</span> <strong>3. Προβλήματα Εφαρμογής</strong></a></li>
+  <li><a href="#σύνδεση-με-άλλα-μεγέθη" id="toc-σύνδεση-με-άλλα-μεγέθη" class="nav-link" data-scroll-target="#σύνδεση-με-άλλα-μεγέθη"><span class="header-section-number">4.3</span> <strong>4. Σύνδεση με άλλα Μεγέθη</strong></a></li>
+  </ul></li>
+  <li><a href="#μονάδες-χρόνου" id="toc-μονάδες-χρόνου" class="nav-link" data-scroll-target="#μονάδες-χρόνου"><span class="header-section-number">5</span> 5. Μονάδες Χρόνου</a>
+  <ul class="collapse">
+  <li><a href="#θεωρητικές-αρχές-και-μονάδες" id="toc-θεωρητικές-αρχές-και-μονάδες" class="nav-link" data-scroll-target="#θεωρητικές-αρχές-και-μονάδες"><span class="header-section-number">5.1</span> <strong>Θεωρητικές Αρχές και Μονάδες</strong></a></li>
+  <li><a href="#κανόνες-μετατροπής" id="toc-κανόνες-μετατροπής" class="nav-link" data-scroll-target="#κανόνες-μετατροπής"><span class="header-section-number">5.2</span> <strong>Κανόνες Μετατροπής</strong></a></li>
+  <li><a href="#ασκήσεις-και-προβλήματα" id="toc-ασκήσεις-και-προβλήματα" class="nav-link" data-scroll-target="#ασκήσεις-και-προβλήματα"><span class="header-section-number">5.3</span> <strong>Ασκήσεις και Προβλήματα</strong></a></li>
+  </ul></li>
+  <li><a href="#σημείωση-για-τα-σφάλματα" id="toc-σημείωση-για-τα-σφάλματα" class="nav-link" data-scroll-target="#σημείωση-για-τα-σφάλματα"><span class="header-section-number">6</span> Σημείωση για τα Σφάλματα</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<p>xcvxcvxv</p>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0">07. Εξισώσεις</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2">05. Δεκαδικοί αριθμοί</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hYm91dC5odG1sYWJvdXQ=">about</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ==">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMg==">Α’ Γυμνασίου – Μαθηματικά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2dlb21ldHJpYS9pbmRleC5odG1szpPOtc+JzrzOtc+Ez4HOr86x">Γεωμετρία</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMw==">Άλγεβρα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDEuIM6mz4XPg865zrrOv86vIM6Rz4HOuc64zrzOv86vLmh0bWwwMS4tzqbPhc+DzrnOus6/zq8tzpHPgc65zrjOvM6/zq8tLS3OlM65zqzPhM6xzr7Oty0tLc6jz4TPgc6/zrPOs8+FzrvOv8+Azr/Or863z4POtw==">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDIuIM6mz4XPg865zrrOv86vIM6Rz4HOuc64zrzOv86vLmh0bWwwMi4tzpPOtc69zrnOus6sLc6zzrnOsS3PhM6/z4XPgi3Ops+Fz4POuc66zr/Pjc+CLc6xz4HOuc64zrzOv8+Nz4I=">02. Γενικά για τους Φυσικούς αριθμούς</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDMuIM6azrvOrM+DzrzOsc+EzrEuaHRtbDAzLi3Oms67zqzPg868zrHPhM6x">03. Κλάσματα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDQuIM6UzrXOus6xzrTOuc66zqwgzrrOu86sz4POvM6xz4TOsSAtIM6UzrXOus6xzrTOuc66zr/OryDOsc+BzrnOuM68zr/OryAtIM6czq3PhM+BzrfPg863IM68zrXOs861zrjPjs69Lmh0bWwwNC4tzpTOtc66zrHOtM65zrrOrC3Ous67zqzPg868zrHPhM6xLS0tzpTOtc66zrHOtM65zrrOv86vLc6xz4HOuc64zrzOv86vLS0tzpzOrc+Ez4HOt8+DzrctzrzOtc6zzrXOuM+Ozr0=">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDUuIM6UzrXOus6xzrTOuc66zr/OryDOkc+BzrnOuM68zr/Ory5odG1sMDUuLc6UzrXOus6xzrTOuc66zr/Ory3Osc+BzrnOuM68zr/Orw==">05. Δεκαδικοί αριθμοί</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDYuIM6czrXPhM6xz4TPgc6/z4DOrc+CIM6czr/Ovc6szrTPic69Lmh0bWw2Li3OnM61z4TOsc+Ez4HOv8+Azq3Pgi3OnM6/zr3OrM60z4nOvQ==">6. Μετατροπές Μονάδων</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDcuIM6Vzr7Ouc+Dz47Pg861zrnPgi5odG1sMDcuLc6Vzr7Ouc+Dz47Pg861zrnPgg==">07. Εξισώσεις</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDguIM6gzr/Pg86/z4PPhM6sLmh0bWw4Li3OoM6/z4POv8+Dz4TOrA==">8. Ποσοστά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMDkuICDOo8+Nz4PPhM63zrzOsSDOo8+Fzr3PhM61z4TOsc6zzrzOrc69z4nOvS5odG1sOS4tzqPPjc+Dz4TOt868zrEtzqPPhc69z4TOtc+EzrHOs868zq3Ovc+Jzr0=">9. Σύστημα Συντεταγμένων</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTAuIM6Rzr3Osc67zr/Os86vzrXPgiAtIM6Rzr3OrM67zr/Os86xIM+Azr/Pg86sLmh0bWwxMC4tzpHOvc6xzrvOv86zzq/Otc+CLS0tzpHOvc6szrvOv86zzrEtzqDOv8+Dzqw=">10. Αναλογίες - Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTEuICDOkc69zqzOu86/zrPOsSDPgM6/z4POrCAtIM6ZzrTOuc+Mz4TOt8+EzrXPgi5odG1sMTEuzpHOvc6szrvOv86zzrEtzqDOv8+DzqwtLS3Omc60zrnPjM+EzrfPhM61z4I=">11.Ανάλογα Ποσά - Ιδιότητες</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTIuIM6gz4HOv86yzrvOrs68zrHPhM6xIM68zrUgzpHOvc6szrvOv86zzrEgzqDOv8+DzqwuaHRtbDEyLi0tzqDPgc6/zrLOu86uzrzOsc+EzrEtzrzOtS3Okc69zqzOu86/zrPOsS3OoM6/z4POrA==">12. Προβλήματα με Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTMuICDOkc69z4TOuc+Dz4TPgc+Mz4bPic+CIM6Rzr3OrM67zr/Os86xIM6gzr/Pg86sLmh0bWwxMy4tLc6Rzr3PhM65z4PPhM+Bz4zPhs+Jz4ItzpHOvc6szrvOv86zzrEtzqDOv8+Dzqw=">13. Αντιστρόφως Ανάλογα Ποσά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9neW1uYXNpby9hL2FsZ2VicmEvMTQuICDOpM6/IM6zzrnOvc+MzrzOtc69zr8gz4TPic69IM6Rzr3PhM65z4PPhM+Bz4zPhs+Jz4IgzpHOvc6szrvOv86zz4nOvSDOoM6/z4PPjs69Lmh0bWwxNC4tzpHOvc+EzrnPg8+Ez4HPjM+Gz4nPgi3Okc69zqzOu86/zrPOsS3OoM6/z4POrC0tLc6TzrnOvc+MzrzOtc69zr8tzqDOr869zrHOus6xz4ItzrrOsc65Lc6gzrHPgc6sz4PPhM6xz4POty3OvM61Lc+DzrfOvM61zq/OsQ==">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpPPhc68zr3OrM+DzrnOvw==">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpEgzqTOrM6+zrc=">Α Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2EvaW5kZXguaHRtbA==">/gymnasio/a/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpIgzqTOrM6+zrc=">Β Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2IvaW5kZXgucW1k">/gymnasio/b/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpMgzqTOrM6+zrc=">Γ Τάξη</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2d5bW5hc2lvL2cvaW5kZXgucW1k">/gymnasio/g/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpvPjc66zrXOuc6/">Λύκειο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpEnIM6bz4XOus61zq/Ov8+F">Α’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9hL2luZGV4LnFtZA==">/lykeio/a/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpInIM6bz4XOus61zq/Ov8+F">Β’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9iL2luZGV4LnFtZA==">/lykeio/b/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6zpMnIM6bz4XOus61zq/Ov8+F">Γ’ Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2x5a2Vpby9nL2luZGV4LnFtZA==">/lykeio/g/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6Tz4XOvM69zqzPg865zr8=">Γυμνάσιο</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6RJy3Ok8+FzrzOvc6xz4POr86/z4Ut4oCTLc6czrHOuM63zrzOsc+EzrnOus6s">Α’ Γυμνασίου – Μαθηματικά</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLc6GzrvOs861zrLPgc6x">Άλγεβρα</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLTYuLc6czrXPhM6xz4TPgc6/z4DOrc+CLc6czr/Ovc6szrTPic69">6. Μετατροπές Μονάδων</span></p>
+
+
+
+<p>Ακολουθούν οι βασικές θεωρητικές αρχές και ενδεικτικές ασκήσεις για τις μονάδες μέτρησης, όπως προκύπτουν από τις πηγές:</p>
+<section id="μονάδες-μήκους" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μονάδες-μήκους"><span class="header-section-number">1</span> 1. Μονάδες Μήκους</h2>
+<p>Το <strong>μήκος</strong> είναι ένα θεμελιώδες φυσικό μέγεθος.</p>
+<p>* <strong>Βασική μονάδα:</strong> Το <strong>μέτρο (m)</strong>.</p>
+<p>* <strong>Πολλαπλάσια:</strong> 1 Χιλιόμετρο (km)= 1000 m.</p>
+<p>* <strong>Υποδιαιρέσεις:</strong> - Δεκατόμετρο ή δέκατο του μέτρου (dm) : <span class="math inline">\(1m = 10dm\)</span> - Eκατοστόμετρο (cm) : <span class="math inline">\(1dm=10cm\)</span> - Χιλιοστόμετρο (mm): <span class="math inline">\(1cm=10mm\)</span>. - Ναυτικό μίλι : 1 ναυτικό μίλι = <span class="math inline">\(1852m\)</span></p>
+<p>* <strong>Μετατροπές:</strong> Κάθε μονάδα είναι 10 φορές μεγαλύτερη από την αμέσως μικρότερή της. Για μετατροπή από μεγαλύτερη σε μικρότερη μονάδα πολλαπλασιάζουμε με το 10 (για κάθε «σκαλοπάτι»), ενώ από μικρότερη σε μεγαλύτερη διαιρούμε με το 10.</p>
+<div class="cell" data-fig-width="6" data-fig-height="3" data-out-width="100%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="576" height="288" viewbox="0.00 0.00 419.46 216.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(0.861086 0.861086) rotate(0) translate(7.2 243.65)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-7.2,7.2 -7.2,-243.65 479.93,-243.65 479.93,7.2 -7.2,7.2"></polygon>
+<!-- km -->
+<g id="node1" class="node">
+<title>km</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="27.73" cy="-190.18" rx="23.93" ry="23.93"></ellipse>
+<text text-anchor="middle" x="27.73" y="-185.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">km</text>
+</g>
+<!-- m -->
+<g id="node2" class="node">
+<title>m</title>
+<ellipse fill="#ffe082" stroke="#ffa000" stroke-width="2" cx="139.73" cy="-123.18" rx="19.03" ry="19.03"></ellipse>
+<text text-anchor="middle" x="139.73" y="-118.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">m</text>
+</g>
+<!-- km&#45;&#45;m -->
+<g id="edge1" class="edge">
+<title>km--m</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M48.65,-178.04C67.14,-166.78 94.72,-149.99 114.48,-137.95"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="116.5,-140.82 123.22,-132.63 112.86,-134.84 116.5,-140.82"></polygon>
+<text text-anchor="middle" x="87.73" y="-165.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- m&#45;&#45;km -->
+<g id="edge9" class="edge">
+<title>m--km</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M120.69,-120.85C106.67,-119.93 87.22,-120.65 72.6,-128.98 60.2,-136.05 50.4,-148.22 43.24,-159.85"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="40.19,-158.13 38.27,-168.55 46.27,-161.6 40.19,-158.13"></polygon>
+<text text-anchor="middle" x="87.73" y="-131.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- dm -->
+<g id="node3" class="node">
+<title>dm</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="237.73" cy="-123.18" rx="23.93" ry="23.93"></ellipse>
+<text text-anchor="middle" x="237.73" y="-118.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">dm</text>
+</g>
+<!-- m&#45;&#45;dm -->
+<g id="edge2" class="edge">
+<title>m--dm</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M158.79,-123.18C171.29,-123.18 188.3,-123.18 203.24,-123.18"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="203.66,-126.68 213.66,-123.18 203.66,-119.68 203.66,-126.68"></polygon>
+<text text-anchor="middle" x="186.73" y="-126.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 10</text>
+</g>
+<!-- dm&#45;&#45;m -->
+<g id="edge8" class="edge">
+<title>dm--m</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M216.46,-112.08C205,-107.12 190.35,-103 177.1,-105.98 173.34,-106.82 169.5,-108.11 165.8,-109.6"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="164.11,-106.52 156.47,-113.87 167.02,-112.89 164.11,-106.52"></polygon>
+<text text-anchor="middle" x="186.73" y="-108.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 10</text>
+</g>
+<!-- cm -->
+<g id="node4" class="node">
+<title>cm</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="340.73" cy="-123.18" rx="23.32" ry="23.32"></ellipse>
+<text text-anchor="middle" x="340.73" y="-118.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">cm</text>
+</g>
+<!-- dm&#45;&#45;cm -->
+<g id="edge3" class="edge">
+<title>dm--cm</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M261.9,-123.18C275.21,-123.18 292.14,-123.18 306.81,-123.18"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="307.01,-126.68 317.01,-123.18 307.01,-119.68 307.01,-126.68"></polygon>
+<text text-anchor="middle" x="289.73" y="-126.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 10</text>
+</g>
+<!-- cm&#45;&#45;dm -->
+<g id="edge7" class="edge">
+<title>cm--dm</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M319.7,-112.77C313.37,-110 306.22,-107.38 299.35,-105.98 289.33,-103.93 278.54,-105.68 268.88,-108.71"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="267.47,-105.5 259.3,-112.24 269.9,-112.07 267.47,-105.5"></polygon>
+<text text-anchor="middle" x="289.73" y="-108.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 10</text>
+</g>
+<!-- mm -->
+<g id="node5" class="node">
+<title>mm</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="445.73" cy="-123.18" rx="26.93" ry="26.93"></ellipse>
+<text text-anchor="middle" x="445.73" y="-118.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">mm</text>
+</g>
+<!-- cm&#45;&#45;mm -->
+<g id="edge4" class="edge">
+<title>cm--mm</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M364.33,-123.18C377.29,-123.18 393.87,-123.18 408.59,-123.18"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="408.91,-126.68 418.91,-123.18 408.91,-119.68 408.91,-126.68"></polygon>
+<text text-anchor="middle" x="391.73" y="-126.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 10</text>
+</g>
+<!-- mm&#45;&#45;cm -->
+<g id="edge6" class="edge">
+<title>mm--cm</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M421.71,-111.48C409.95,-106.88 395.36,-103.27 382.1,-105.98 378.45,-106.72 374.73,-107.81 371.09,-109.08"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="369.77,-105.84 361.75,-112.77 372.34,-112.35 369.77,-105.84"></polygon>
+<text text-anchor="middle" x="391.73" y="-108.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 10</text>
+</g>
+<!-- NM -->
+<g id="node6" class="node">
+<title>NM</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="27.73" cy="-53.18" rx="27.03" ry="27.03"></ellipse>
+<text text-anchor="middle" x="27.73" y="-48.98" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">NM</text>
+</g>
+<!-- NM&#45;&#45;m -->
+<g id="edge5" class="edge">
+<title>NM--m</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M51.25,-67.51C69.73,-79.27 95.82,-95.87 114.69,-107.88"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="113,-110.95 123.31,-113.37 116.75,-105.05 113,-110.95"></polygon>
+<text text-anchor="middle" x="87.73" y="-101.48" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1852</text>
+</g>
+</g>
+</svg>
 </div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">6. Μετατροπές Μονάδων – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">6. Μετατροπές Μονάδων – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">6. Μετατροπές Μονάδων – Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Μαθηματικά Γυμνασίου &amp; Λυκείου</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+<p></p></figure><p></p>
 </div>
+</div>
+</div>
+<p>* <strong>Ασκήσεις:</strong></p>
+<p>* Μετατροπή 3 m σε εκατοστά: <span class="math inline">\(3 \times 100 = 300\text{ cm}\)</span>.</p>
+<p>* Μετατροπή 4.000 mm σε δέκατα: <span class="math inline">\(4.000 : 100 = 40\text{ dm}\)</span>.</p>
+<p>* Υπολογισμός του μήκους ενός πλοίου πλάτους 21 m σε δέκατα, εκατοστά και χιλιοστά.</p>
+<p>Ακολουθούν ασκήσεις και προβλήματα σχετικά με τις μετατροπές μονάδων μήκους και την εφαρμογή τους, όπως προκύπτουν από τις πηγές:</p>
+<section id="βασικές-ασκήσεις-μετατροπών" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="βασικές-ασκήσεις-μετατροπών"><span class="header-section-number">1.1</span> <strong>Βασικές Ασκήσεις Μετατροπών</strong></h3>
+<p>Οι μετατροπές βασίζονται στην αρχή ότι για να πάμε σε <strong>μικρότερη μονάδα πολλαπλασιάζουμε</strong>, ενώ για να πάμε σε <strong>μεγαλύτερη μονάδα διαιρούμε</strong>.</p>
+<ul>
+<li><strong>Από μέτρα (m) σε μικρότερες μονάδες:</strong>
+<ul>
+<li><span class="math inline">\(3\text{ m} = 30\text{ dm}\)</span> (δέκατα).</li>
+<li><span class="math inline">\(2\text{ m} = 200\text{ cm}\)</span> (εκατοστά).</li>
+<li><span class="math inline">\(5\text{ m} = 5.000\text{ mm}\)</span> (χιλιοστά).</li>
+<li><span class="math inline">\(12,7\text{ m} = 1.270\text{ cm}\)</span> και <span class="math inline">\(12.700\text{ mm}\)</span>.</li>
+</ul></li>
+<li><strong>Από χιλιοστά (mm) σε μεγαλύτερες μονάδες:</strong>
+<ul>
+<li><span class="math inline">\(4.000\text{ mm} = 40\text{ dm}\)</span> (διαίρεση με το 100, καθώς ανεβαίνουμε δύο σκαλοπάτια).</li>
+<li><span class="math inline">\(2.000\text{ mm} = 200\text{ cm}\)</span>.</li>
+<li><span class="math inline">\(5.000\text{ mm} = 5\text{ m}\)</span>.</li>
+</ul></li>
+<li><strong>Μετατροπές με Χιλιόμετρα (km):</strong>
+<ul>
+<li><span class="math inline">\(4,5\text{ km} = 4.500\text{ m}\)</span>.</li>
+<li><span class="math inline">\(42,67\text{ km} = 426.700\text{ dm}\)</span> και <span class="math inline">\(4.267.000\text{ cm}\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="σύνθετα-προβλήματα-με-μήκος" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="σύνθετα-προβλήματα-με-μήκος"><span class="header-section-number">1.2</span> <strong>Σύνθετα Προβλήματα με Μήκος</strong></h3>
+<p>Η χρήση των μετατροπών είναι απαραίτητη για την επίλυση γεωμετρικών και πρακτικών προβλημάτων:</p>
+<ol type="1">
+<li><strong>Πρόβλημα Πλοίου:</strong> Το πλάτος του επιβατικού πλοίου «Νήσος Μύκονος» είναι <strong>21 μέτρα</strong>. Να υπολογιστεί το μήκος αυτό σε άλλες μονάδες.
+<ul>
+<li><strong>Δέκατα:</strong> <span class="math inline">\(21 \times 10 = 210\text{ dm}\)</span>.</li>
+<li><strong>Εκατοστά:</strong> <span class="math inline">\(21 \times 100 = 2.100\text{ cm}\)</span>.</li>
+<li><strong>Χιλιοστά:</strong> <span class="math inline">\(21 \times 1.000 = 21.000\text{ mm}\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα Επίστρωσης Δαπέδου:</strong> Ένα δάπεδο έχει σχήμα ορθογωνίου με διαστάσεις <strong>6,3 m και 4,8 m</strong>. Θέλουμε να το στρώσουμε με τετράγωνες πλάκες πλευράς <strong>30 cm</strong>. Πόσες πλάκες θα χρειαστούμε;.
+<ul>
+<li><em>Σημείωση:</em> Εδώ πρέπει πρώτα να μετατρέψουμε όλες τις μονάδες σε εκατοστά ή μέτρα πριν τον υπολογισμό του εμβαδού.</li>
+</ul></li>
+<li><strong>Περίμετρος και Εμβαδόν:</strong>
+<ul>
+<li>Το μήκος ενός ορθογωνίου είναι τριπλάσιο του πλάτους του. Αν το πλάτος είναι <strong>8 cm</strong>, βρείτε το εμβαδόν του.</li>
+<li>Αν η περίμετρος ενός τετραγώνου είναι <strong>68 cm</strong>, βρείτε το εμβαδόν του.</li>
+<li>Ένα ορθογώνιο έχει πλάτος <strong>6 m</strong> και περίμετρο <strong>30 m</strong>. Να βρεθεί το εμβαδόν του σε <span class="math inline">\(cm^2\)</span>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="μεθοδολογία-επίλυσης" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μεθοδολογία-επίλυσης"><span class="header-section-number">1.3</span> <strong>Μεθοδολογία Επίλυσης</strong></h3>
+<ul>
+<li><strong>Ομοιογένεια μονάδων:</strong> Για να κάνουμε πράξεις ανάμεσα σε μεγέθη (πρόσθεση, αφαίρεση, πολλαπλασιασμό), πρέπει όλα να είναι εκφρασμένα στην <strong>ίδια μονάδα μέτρησης</strong>.</li>
+<li><strong>Κανόνας 10:</strong> Στο δεκαδικό σύστημα του μέτρου (SI), κάθε μονάδα είναι <strong>10 φορές μεγαλύτερη</strong> από την αμέσως μικρότερή της (<span class="math inline">\(1\text{ m} = 10\text{ dm} = 100\text{ cm} = 1.000\text{ mm}\)</span>).</li>
+<li><strong>Σφάλματα:</strong> Κατά τη μέτρηση του μήκους με όργανα (μετροταινία, υποδεκάμετρο), υπάρχει πάντα ένα <strong>σφάλμα ανάγνωσης</strong>, το οποίο οφείλεται στην έλλειψη ακρίβειας των οργάνων ή της μεθόδου.</li>
+</ul>
+</section>
+</section>
+<section id="μονάδες-επιφάνειας-εμβαδού" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="μονάδες-επιφάνειας-εμβαδού"><span class="header-section-number">2</span> 2. Μονάδες Επιφάνειας (Εμβαδού)</h2>
+<section id="θεωρία-και-κανόνες-μετατροπής" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="θεωρία-και-κανόνες-μετατροπής"><span class="header-section-number">2.1</span> <strong>Θεωρία και Κανόνες Μετατροπής</strong></h3>
+<ul>
+<li><strong>Βασική μονάδα:</strong> Είναι το <strong>τετραγωνικό μέτρο (</strong><span class="math inline">\(m^2\)</span>), που αντιστοιχεί στην επιφάνεια ενός τετραγώνου με πλευρά 1 μέτρο.</li>
+<li><strong>Πολλαπλάσια και Υποδιαιρέσεις:</strong>
+<ul>
+<li><strong>Πολλαπλάσια:</strong> Τετραγωνικό χιλιόμετρο (<span class="math inline">\(Km^2\)</span>), τετραγωνικό δεκάμετρο (<span class="math inline">\(dam^2\)</span>) και το <strong>στρέμμα</strong> (1 στρέμμα = 1.000 <span class="math inline">\(m^2\)</span>).</li>
+<li><strong>Υποδιαιρέσεις:</strong> Τετραγωνικό δέκατο (<span class="math inline">\(dm^2\)</span>), τετραγωνικό εκατοστό (<span class="math inline">\(cm^2\)</span>), τετραγωνικό χιλιοστό (<span class="math inline">\(mm^2\)</span>).</li>
+</ul></li>
+<li><strong>Η «Σκάλα» των Μετατροπών:</strong> Επειδή το εμβαδόν προκύπτει από το γινόμενο δύο διαστάσεων, η σχέση μεταξύ των μονάδων βασίζεται στον <strong>αριθμό 100</strong> (<span class="math inline">\(10 \times 10\)</span>).
+<ul>
+<li>Για κάθε «σκαλοπάτι» που <strong>κατεβαίνουμε</strong> (από μεγαλύτερη σε μικρότερη μονάδα), <strong>πολλαπλασιάζουμε επί 100</strong>.</li>
+<li>Για κάθε «σκαλοπάτι» που <strong>ανεβαίνουμε</strong> (από μικρότερη σε μεγαλύτερη μονάδα), <strong>διαιρούμε με το 100</strong>.</li>
+<li><strong>Παράδειγμα:</strong> Για μετατροπή 2 σκαλοπατιών (π.χ. από <span class="math inline">\(m^2\)</span> σε <span class="math inline">\(cm^2\)</span>), πολλαπλασιάζουμε/διαιρούμε με το 10.000.</li>
+</ul></li>
+</ul>
+<div class="cell" data-fig-width="7" data-fig-height="3" data-out-width="100%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="288" viewbox="0.00 0.00 485.05 216.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(0.93435 0.93435) rotate(0) translate(7.2 223.98)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-7.2,7.2 -7.2,-223.98 511.93,-223.98 511.93,7.2 -7.2,7.2"></polygon>
+<!-- m2 -->
+<g id="node1" class="node">
+<title>m2</title>
+<ellipse fill="#ffe082" stroke="#ffa000" stroke-width="2" cx="26.73" cy="-115.5" rx="23.93" ry="23.93"></ellipse>
+<text text-anchor="start" x="17.78" y="-112.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">m</text>
+<text text-anchor="start" x="28.67" y="-112.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">2</text>
+</g>
+<!-- dm2 -->
+<g id="node2" class="node">
+<title>dm2</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="180.73" cy="-177.5" rx="28.83" ry="28.83"></ellipse>
+<text text-anchor="start" x="168.28" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">dm</text>
+<text text-anchor="start" x="186.17" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">2</text>
+</g>
+<!-- m2&#45;&gt;dm2 -->
+<g id="edge2" class="edge">
+<title>m2-&gt;dm2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M44.5,-132.07C53.38,-139.96 64.85,-148.88 76.6,-154.5 97.03,-164.28 121.74,-169.98 141.86,-173.26"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="141.5,-176.74 151.91,-174.76 142.53,-169.82 141.5,-176.74"></polygon>
+<text text-anchor="middle" x="91.73" y="-167.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 100</text>
+</g>
+<!-- Στρέμμα -->
+<g id="node5" class="node">
+<title>Στρέμμα</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="180.73" cy="-57.5" rx="45.92" ry="45.92"></ellipse>
+<text text-anchor="middle" x="180.73" y="-53.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">Στρέμμα</text>
+</g>
+<!-- m2&#45;&gt;Στρέμμα -->
+<g id="edge5" class="edge">
+<title>m2-&gt;Στρέμμα</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M49.5,-107.19C69.9,-99.41 101.17,-87.48 127.96,-77.26"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="129.5,-80.42 137.59,-73.58 127,-73.88 129.5,-80.42"></polygon>
+<text text-anchor="middle" x="91.73" y="-100.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- dm2&#45;&gt;m2 -->
+<g id="edge8" class="edge">
+<title>dm2-&gt;m2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M155.81,-162.44C141.92,-154.17 123.85,-144.22 106.85,-137.3 91.98,-131.25 74.88,-126.31 60.38,-122.66"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="60.9,-119.19 50.36,-120.24 59.26,-125.99 60.9,-119.19"></polygon>
+<text text-anchor="middle" x="91.73" y="-139.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 100</text>
+</g>
+<!-- cm2 -->
+<g id="node3" class="node">
+<title>cm2</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="332.73" cy="-177.5" rx="28.22" ry="28.22"></ellipse>
+<text text-anchor="start" x="320.67" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">cm</text>
+<text text-anchor="start" x="337.78" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">2</text>
+</g>
+<!-- dm2&#45;&gt;cm2 -->
+<g id="edge3" class="edge">
+<title>dm2-&gt;cm2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M209.94,-177.5C233.66,-177.5 267.77,-177.5 293.87,-177.5"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="294.15,-181 304.15,-177.5 294.14,-174 294.15,-181"></polygon>
+<text text-anchor="middle" x="266.73" y="-180.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 100</text>
+</g>
+<!-- cm2&#45;&gt;dm2 -->
+<g id="edge7" class="edge">
+<title>cm2-&gt;dm2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M306.16,-167.36C297.69,-164.48 288.12,-161.74 279.1,-160.3 258.79,-157.07 236.16,-160.63 217.83,-165.33"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="216.83,-161.98 208.14,-168.03 218.71,-168.72 216.83,-161.98"></polygon>
+<text text-anchor="middle" x="266.73" y="-162.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 100</text>
+</g>
+<!-- mm2 -->
+<g id="node4" class="node">
+<title>mm2</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="468.73" cy="-177.5" rx="31.83" ry="31.83"></ellipse>
+<text text-anchor="start" x="454.34" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">mm</text>
+<text text-anchor="start" x="476.12" y="-174.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">2</text>
+</g>
+<!-- cm2&#45;&gt;mm2 -->
+<g id="edge4" class="edge">
+<title>cm2-&gt;mm2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M361.17,-177.5C380.12,-177.5 405.65,-177.5 426.97,-177.5"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="427.05,-181 437.05,-177.5 427.05,-174 427.05,-181"></polygon>
+<text text-anchor="middle" x="398.73" y="-180.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 100</text>
+</g>
+<!-- mm2&#45;&gt;cm2 -->
+<g id="edge6" class="edge">
+<title>mm2-&gt;cm2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M438.86,-166.14C423.36,-161.37 403.89,-157.51 386.35,-160.3 380.71,-161.2 374.86,-162.61 369.2,-164.24"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="367.78,-161.02 359.29,-167.36 369.88,-167.69 367.78,-161.02"></polygon>
+<text text-anchor="middle" x="398.73" y="-162.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 100</text>
+</g>
+<!-- Στρέμμα&#45;&gt;m2 -->
+<g id="edge1" class="edge">
+<title>Στρέμμα-&gt;m2</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M135.29,-49.91C116.4,-48.65 94.62,-49.92 76.6,-58.3 63.67,-64.32 52.88,-75.61 44.76,-86.58"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="41.88,-84.59 39.07,-94.81 47.64,-88.57 41.88,-84.59"></polygon>
+<text text-anchor="middle" x="91.73" y="-61.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>* <strong>Ασκήσεις:</strong><br>
+</p>
+<ul>
+<li>Μετατροπή <span class="math inline">\(70\text{ }dm^2\)</span> σε <span class="math inline">\(mm^2\)</span>: <span class="math inline">\(70 \times 10.000 = 700.000\text{ }mm^2\)</span>.</li>
+</ul>
+<p>* Εύρεση εμβαδού ορθογωνίου με διαστάσεις 4,2 m και 11,5 dm σε <span class="math inline">\(m^2\)</span> και <span class="math inline">\(cm^2\)</span>.</p>
+<p>* Υπολογισμός πλήθους τετράγωνων πλακών πλευράς 30 cm που χρειάζονται για δάπεδο <span class="math inline">\(6,3\text{ m} \times 4,8\text{ m}\)</span>.</p>
+<p>Οι μονάδες επιφάνειας (εμβαδού) βασίζονται στον ορισμό του εμβαδού ως <strong>το γινόμενο δύο μηκών</strong> (μήκος x μήκος).</p>
+</section>
+<section id="ασκήσεις-μετατροπών" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="ασκήσεις-μετατροπών"><span class="header-section-number">2.2</span> <strong>Ασκήσεις Μετατροπών</strong></h3>
+<p>Με βάση τη θεωρία, μπορείτε να εξασκηθείτε στις παρακάτω μετατροπές:</p>
+<ol type="1">
+<li><strong>70</strong> <span class="math inline">\(dm^2\)</span> σε <span class="math inline">\(mm^2\)</span>: <span class="math inline">\(70 \times 10.000 = 700.000\text{ }mm^2\)</span>.</li>
+<li><strong>258</strong> <span class="math inline">\(mm^2\)</span> σε <span class="math inline">\(m^2\)</span>: <span class="math inline">\(258 : 1.000 .000 = 0,000258\text{ }m^2\)</span>.</li>
+<li><strong>5,23</strong> <span class="math inline">\(m^2\)</span> σε <span class="math inline">\(dm^2\)</span>: <span class="math inline">\(5,23 \times 100 = 523\text{ }dm^2\)</span>.</li>
+<li><strong>676</strong> <span class="math inline">\(cm^2\)</span> σε <span class="math inline">\(m^2\)</span>: <span class="math inline">\(676 : 10.000 = 0,0676\text{ }m^2\)</span>.</li>
+<li><strong>2.400</strong> <span class="math inline">\(m^2\)</span> σε στρέμματα: <span class="math inline">\(2.400 : 1.000 = 2,4\text{ στρέμματα}\)</span>.</li>
+</ol>
+</section>
+<section id="προβλήματα-εφαρμογής" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="προβλήματα-εφαρμογής"><span class="header-section-number">2.3</span> <strong>Προβλήματα Εφαρμογής</strong></h3>
+<p>Τα προβλήματα απαιτούν συχνά τη μετατροπή των διαστάσεων στην ίδια μονάδα πριν τον υπολογισμό του εμβαδού:</p>
+<ol type="1">
+<li><strong>Υπολογισμός Εμβαδού Ορθογωνίου:</strong> Ένα ορθογώνιο έχει διαστάσεις 4,2 m και 11,5 dm. Βρείτε το εμβαδόν του σε <span class="math inline">\(m^2\)</span>, <span class="math inline">\(dm^2\)</span> και <span class="math inline">\(cm^2\)</span>.
+<ul>
+<li><em>Υπόδειξη:</em> Μετατρέψτε το 11,5 dm σε 1,15 m. Τότε <span class="math inline">\(Εμβαδόν = 4,2 \times 1,15 = 4,83\text{ }m^2\)</span>.</li>
+</ul></li>
+<li><strong>Επίστρωση Δαπέδου:</strong> Ένα δάπεδο έχει διαστάσεις 6,3 m και 4,8 m. Θέλουμε να το στρώσουμε με τετράγωνες πλάκες πλευράς 30 cm. Πόσες πλάκες θα χρειαστούμε;</li>
+<li><strong>Εύρεση Περιμέτρου από Εμβαδόν:</strong> Το εμβαδόν ενός ορθογωνίου είναι 414 <span class="math inline">\(m^2\)</span>. Αν το πλάτος του είναι 18 m, βρείτε την περίμετρό του.</li>
+<li><strong>Σύνθετο Πρόβλημα Τετραγώνου-Ορθογωνίου:</strong> Ένα τετράγωνο έχει περίμετρο 0,6 m και το ίδιο εμβαδόν με ένα ορθογώνιο πλάτους 9 cm. Βρείτε το εμβαδόν του τετραγώνου σε <span class="math inline">\(m^2\)</span> και το μήκος του ορθογωνίου σε cm.</li>
+<li><strong>Σχέση Διαστάσεων:</strong> Το μήκος ενός ορθογωνίου είναι τριπλάσιο του πλάτους του. Αν το πλάτος είναι 8 cm, βρείτε το εμβαδόν του.</li>
+</ol>
+<p><strong>Σημείωση:</strong> Όταν εκφράζουμε εμβαδά με δεκαδικούς αριθμούς (π.χ. 8,2573 <span class="math inline">\(m^2\)</span>), κάθε <strong>ζεύγος δεκαδικών ψηφίων</strong> αντιστοιχεί στην αμέσως χαμηλότερη μονάδα (δηλαδή 8 <span class="math inline">\(m^2\)</span>, 25 <span class="math inline">\(dm^2\)</span> και 73 <span class="math inline">\(cm^2\)</span>), λόγω της σχέσης του 100 που διέπει τις μετατροπές.</p>
+</section>
+</section>
+<section id="μονάδες-όγκου" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="μονάδες-όγκου"><span class="header-section-number">3</span> 3. Μονάδες Όγκου</h2>
+<p>Ο <strong>όγκος</strong> είναι επίσης παράγωγο μέγεθος (μήκος x μήκος x μήκος).<br>
+* <strong>Βασική μονάδα:</strong> Το <strong>κυβικό μέτρο (</strong><span class="math inline">\(m^3\)</span>).<br>
+* <strong>Άλλες μονάδες:</strong> Το <strong>λίτρο (L)</strong>, που ισούται με <span class="math inline">\(1\text{ }dm^3\)</span>, και το <strong>μιλιλίτρ (mL)</strong>, που ισούται με <span class="math inline">\(1\text{ }cm^3\)</span>.<br>
+* <strong>Μετατροπές:</strong> Κάθε μονάδα είναι 1.000 φορές μεγαλύτερη από την αμέσως μικρότερή της (σχέση <span class="math inline">\(10^3\)</span>).<br>
+* <strong>Ασκήσεις:</strong><br>
+* Μετατροπή <span class="math inline">\(4,97\text{ }mm^3\)</span> σε <span class="math inline">\(dm^3\)</span>: <span class="math inline">\(4,97 : 1.000.000 = 4,97 \times 10^{-6}\text{ }dm^3\)</span>.</p>
+<div class="cell" data-fig-width="7" data-fig-height="3" data-out-width="100%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="288" viewbox="0.00 0.00 484.66 216.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(0.934042 0.934042) rotate(0) translate(7.2 224.05)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-7.2,7.2 -7.2,-224.05 511.68,-224.05 511.68,7.2 -7.2,7.2"></polygon>
+<!-- m3 -->
+<g id="node1" class="node">
+<title>m3</title>
+<ellipse fill="#ffe082" stroke="#ffa000" stroke-width="2" cx="24.48" cy="-108.5" rx="23.93" ry="23.93"></ellipse>
+<text text-anchor="start" x="15.54" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">m</text>
+<text text-anchor="start" x="26.43" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">3</text>
+</g>
+<!-- dm3 -->
+<g id="node2" class="node">
+<title>dm3</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="160.48" cy="-108.5" rx="40.59" ry="40.59"></ellipse>
+<text text-anchor="start" x="139.82" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">dm</text>
+<text text-anchor="start" x="157.7" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">3</text>
+<text text-anchor="start" x="164.7" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">=L</text>
+</g>
+<!-- m3&#45;&gt;dm3 -->
+<g id="edge1" class="edge">
+<title>m3-&gt;dm3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M48.52,-108.5C65.3,-108.5 88.68,-108.5 109.65,-108.5"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="109.71,-112 119.71,-108.5 109.71,-105 109.71,-112"></polygon>
+<text text-anchor="middle" x="84.48" y="-111.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- dm3&#45;&gt;m3 -->
+<g id="edge6" class="edge">
+<title>dm3-&gt;m3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M122.22,-95.04C105.98,-90.81 86.73,-88.02 69.36,-91.3 64.9,-92.14 60.31,-93.43 55.86,-94.93"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="54.57,-91.67 46.43,-98.45 57.02,-98.23 54.57,-91.67"></polygon>
+<text text-anchor="middle" x="84.48" y="-93.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- cm3 -->
+<g id="node3" class="node">
+<title>cm3</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="320.48" cy="-108.5" rx="47.88" ry="47.88"></ellipse>
+<text text-anchor="start" x="294.76" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">cm</text>
+<text text-anchor="start" x="311.87" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">3</text>
+<text text-anchor="start" x="318.87" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">=mL</text>
+</g>
+<!-- dm3&#45;&gt;cm3 -->
+<g id="edge2" class="edge">
+<title>dm3-&gt;cm3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M201.35,-108.5C219.89,-108.5 242.27,-108.5 262.54,-108.5"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="262.61,-112 272.61,-108.5 262.61,-105 262.61,-112"></polygon>
+<text text-anchor="middle" x="236.48" y="-111.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- cm3&#45;&gt;dm3 -->
+<g id="edge5" class="edge">
+<title>cm3-&gt;dm3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M274.64,-94.65C257.95,-91.07 238.83,-88.84 221.36,-91.3 217.38,-91.86 213.29,-92.62 209.21,-93.51"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="208.04,-90.19 199.15,-95.96 209.69,-97 208.04,-90.19"></polygon>
+<text text-anchor="middle" x="236.48" y="-93.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- mm3 -->
+<g id="node4" class="node">
+<title>mm3</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="471.48" cy="-108.5" rx="31.83" ry="31.83"></ellipse>
+<text text-anchor="start" x="457.09" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">mm</text>
+<text text-anchor="start" x="478.87" y="-105.3" font-family="Helvetica,sans-Serif" font-weight="bold" baseline-shift="super" font-size="14.00">3</text>
+</g>
+<!-- cm3&#45;&gt;mm3 -->
+<g id="edge3" class="edge">
+<title>cm3-&gt;mm3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M368.22,-108.5C387.81,-108.5 410.38,-108.5 429.33,-108.5"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="429.44,-112 439.44,-108.5 429.44,-105 429.44,-112"></polygon>
+<text text-anchor="middle" x="404.48" y="-111.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- mm3&#45;&gt;cm3 -->
+<g id="edge4" class="edge">
+<title>mm3-&gt;cm3</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M441.84,-97.01C434.7,-94.64 426.97,-92.51 419.61,-91.3 405.6,-89 390.49,-89.94 376.42,-92.28"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="375.55,-88.88 366.39,-94.21 376.87,-95.76 375.55,-88.88"></polygon>
+<text text-anchor="middle" x="404.48" y="-93.8" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Ο <strong>όγκος</strong> είναι ένα παράγωγο φυσικό μέγεθος που εκφράζει τον χώρο που καταλαμβάνει ένα σώμα. Σύμφωνα με τις πηγές, ακολουθούν οι θεωρητικοί κανόνες για τις μετατροπές και ενδεικτικές ασκήσεις:</p>
+<section id="θεωρία-και-κανόνες-μετατροπής-1" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="θεωρία-και-κανόνες-μετατροπής-1"><span class="header-section-number">3.1</span> <strong>Θεωρία και Κανόνες Μετατροπής</strong></h3>
+<ul>
+<li><strong>Ορισμός και Μονάδα:</strong> Ο όγκος ενός κύβου ορίζεται ως το γινόμενο των τριών ακμών του (μήκος x μήκος x μήκος). Η βασική μονάδα μέτρησης στο Διεθνές Σύστημα (SI) είναι το <strong>κυβικό μέτρο (</strong><span class="math inline">\(m^3\)</span>).</li>
+<li><strong>Σχέση με τη Χωρητικότητα:</strong> Ο όγκος συνδέεται άμεσα με το λίτρο. Ισχύει ότι:
+<ul>
+<li><span class="math inline">\(1\text{ }dm^3 = 1\text{ λίτρο (L)}\)</span>.</li>
+<li><span class="math inline">\(1\text{ }cm^3 = 1\text{ μιλιλίτρ (mL)}\)</span>.</li>
+</ul></li>
+<li><strong>Η «Σκάλα» των Μετατροπών:</strong> Επειδή ο όγκος προκύπτει από τρεις διαστάσεις, η σχέση μεταξύ των μονάδων βασίζεται στον αριθμό <strong>1.000</strong> (<span class="math inline">\(10 \times 10 \times 10\)</span> ή <span class="math inline">\(10^3\)</span>).
+<ul>
+<li>Για κάθε «σκαλοπάτι» που <strong>κατεβαίνουμε</strong> (από μεγαλύτερη σε μικρότερη μονάδα), <strong>πολλαπλασιάζουμε επί 1.000</strong>.</li>
+<li>Για κάθε «σκαλοπάτι» που <strong>ανεβαίνουμε</strong> (από μικρότερη σε μεγαλύτερη μονάδα), <strong>διαιρούμε με το 1.000</strong>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="ασκήσεις-μετατροπών-1" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="ασκήσεις-μετατροπών-1"><span class="header-section-number">3.2</span> <strong>Ασκήσεις Μετατροπών</strong></h3>
+<p>Μπορείτε να εξασκηθείτε στις παρακάτω μετατροπές που αναφέρονται στις πηγές:</p>
+<ol type="1">
+<li><strong>Μετατροπή</strong> <span class="math inline">\(4,97\text{ }mm^3\)</span> σε <span class="math inline">\(dm^3\)</span>: Επειδή ανεβαίνουμε δύο σκαλοπάτια (<span class="math inline">\(mm^3 \rightarrow cm^3 \rightarrow dm^3\)</span>), διαιρούμε με το <span class="math inline">\(1.000.000\)</span> (δηλαδή <span class="math inline">\(10^3 \times 10^3\)</span>).
+<ul>
+<li><span class="math inline">\(4,97 : 1.000 .000 = 4,97 \times 10^{-6}\text{ }dm^3\)</span>.</li>
+</ul></li>
+<li><strong>Μετατροπή</strong> <span class="math inline">\(743,592\text{ }m^3\)</span> σε <span class="math inline">\(dm^3\)</span> (L) και σε <span class="math inline">\(cm^3\)</span> (mL):
+<ul>
+<li>Για <span class="math inline">\(dm^3\)</span>: <span class="math inline">\(743,592 \times 1.000 = 743.592\text{ }dm^3\)</span> (ή λίτρα).</li>
+<li>Για <span class="math inline">\(cm^3\)</span>: <span class="math inline">\(743,592 \times 1.000 .000 = 743.592.000\text{ }cm^3\)</span> (ή mL).</li>
+</ul></li>
+<li><strong>Μετατροπή</strong> <span class="math inline">\(26,401\text{ }cm^3\)</span> (mL) σε <span class="math inline">\(m^3\)</span> και <span class="math inline">\(dm^3\)</span> (L):
+<ul>
+<li>Για <span class="math inline">\(dm^3\)</span>: <span class="math inline">\(26,401 : 1.000 = 0,026401\text{ }dm^3\)</span> (ή λίτρα).</li>
+<li>Για <span class="math inline">\(m^3\)</span>: <span class="math inline">\(26,401 : 1.000 .000 = 0,000026401\text{ }m^3\)</span>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="χρήση-σε-προβλήματα" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="χρήση-σε-προβλήματα"><span class="header-section-number">3.3</span> <strong>Χρήση σε Προβλήματα</strong></h3>
+<p>Σε πρακτικά προβλήματα, ο όγκος συχνά συνδέεται με τη μάζα μέσω της <strong>πυκνότητας (</strong><span class="math inline">\(\rho\)</span>). Η πυκνότητα ορίζεται ως το πηλίκο της μάζας προς τον όγκο (<span class="math inline">\(\rho = m/V\)</span>).</p>
+<ul>
+<li><strong>Παράδειγμα εφαρμογής:</strong> Αν γνωρίζετε τις διαστάσεις ενός σώματος (άρα τον όγκο του) και το υλικό του (άρα την πυκνότητά του), μπορείτε να υπολογίσετε τη μάζα του χρησιμοποιώντας τον τύπο <span class="math inline">\(m = \rho \cdot V\)</span>.</li>
+<li><strong>Προσοχή στις μονάδες:</strong> Όπως και στα άλλα μεγέθη, για να εκτελέσετε πράξεις (π.χ. υπολογισμό πυκνότητας), πρέπει ο όγκος και η μάζα να είναι εκφρασμένα σε συμβατές μονάδες (π.χ. <span class="math inline">\(kg\)</span> και <span class="math inline">\(m^3\)</span> ή <span class="math inline">\(g\)</span> και <span class="math inline">\(cm^3\)</span>).</li>
+</ul>
+</section>
+</section>
+<section id="μονάδες-μάζας" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="μονάδες-μάζας"><span class="header-section-number">4</span> 4. Μονάδες Μάζας</h2>
+<p>Η <strong>μάζα</strong> είναι θεμελιώδες μέγεθος.</p>
+<p>* <strong>Βασική μονάδα:</strong> Το <strong>χιλιόγραμμο (kg)</strong>, γνωστό και ως κιλό.</p>
+<p>* <strong>Πολλαπλάσια:</strong> Τόνος (tn), όπου <span class="math inline">\(1\text{ tn} = 1.000\text{ kg}\)</span>.</p>
+<p>* <strong>Υποδιαιρέσεις:</strong> Γραμμάριο (g), χιλιοστόγραμμο (mg).</p>
+<p>* <strong>Μετατροπές:</strong> Η σχέση μεταξύ τόνου, κιλού και γραμμαρίου είναι το 1.000.</p>
+<p>* <strong>Ασκήσεις:</strong> * Μετατροπή 1,2 τόνων σε κιλά: <span class="math inline">\(1,2 \times 1.000 = 1.200\text{ kg}\)</span>.</p>
+<p>* Πρόβλημα: Ένας παραγωγός θέλει να συσκευάσει 1,2 τόνους πορτοκάλια σε τελάρα των <span class="math inline">\(2\frac{1}{2}\)</span> κιλών. Πόσα τελάρα θα χρειαστεί;<br>
+- Λύση: Μετατρέπουμε τους τόνους σε κιλά 1,2 τονοι= 1,2 $$1000=1200 kg διαιρούμε την ποσότητα όλων των πορτοκαλιών με την ποσότητα που χωράει κάθε τελάρο <span class="math inline">\(1200:2\frac{1}{2}=1200:\frac{5}{2}=1200\times\frac{2}{5}\)</span> <span class="math inline">\(\frac{2400}{5}=480\)</span> Θα χρειαστεί 480 τελάρα</p>
+<ul>
+<li>Υπολογισμός βάρους 28 σοκολατών των 35 g η καθεμία και εύρεση του βάρους του άδειου κουτιού αν το συνολικό βάρος είναι 1,3 kg.</li>
+<li>Λύση: μετετρέπουμε τα kg σε gr <span class="math inline">\(1.3 kg\times1000=1300 gr\)</span> Βρίσκουμε το βάρος όλων των σοκολατών : <span class="math inline">\(28\times35 gr=980gr\)</span> αφαιρούμε το βάρος των σοκολατών από το μεικτό βάρος του κουτιού <span class="math inline">\(1300gr-980gr=320gr\)</span></li>
+</ul>
+<div class="cell" data-fig-width="7" data-fig-height="3" data-out-width="100%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="288" viewbox="0.00 0.00 477.49 216.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(0.920476 0.920476) rotate(0) translate(7.2 227.46)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-7.2,7.2 -7.2,-227.46 511.55,-227.46 511.55,7.2 -7.2,7.2"></polygon>
+<!-- tn -->
+<g id="node1" class="node">
+<title>tn</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="26.35" cy="-110.41" rx="19.03" ry="19.03"></ellipse>
+<text text-anchor="middle" x="26.35" y="-106.21" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">tn</text>
+</g>
+<!-- kg -->
+<g id="node2" class="node">
+<title>kg</title>
+<ellipse fill="#ffe082" stroke="#ffa000" stroke-width="2" cx="172.35" cy="-110.41" rx="21.43" ry="21.43"></ellipse>
+<text text-anchor="middle" x="172.35" y="-106.21" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">kg</text>
+</g>
+<!-- tn&#45;&gt;kg -->
+<g id="edge1" class="edge">
+<title>tn-&gt;kg</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M45.58,-110.41C69.47,-110.41 111.71,-110.41 140.59,-110.41"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="140.94,-113.91 150.94,-110.41 140.94,-106.91 140.94,-113.91"></polygon>
+<text text-anchor="middle" x="98.35" y="-113.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- kg&#45;&gt;tn -->
+<g id="edge6" class="edge">
+<title>kg-&gt;tn</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M152.37,-103.26C141.22,-99.44 126.75,-95.14 113.47,-93.21 100.17,-91.27 96.52,-91.21 83.22,-93.21 73.6,-94.66 63.34,-97.43 54.28,-100.34"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="52.99,-97.08 44.65,-103.61 55.24,-103.71 52.99,-97.08"></polygon>
+<text text-anchor="middle" x="98.35" y="-95.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- gr -->
+<g id="node3" class="node">
+<title>gr</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="320.35" cy="-110.41" rx="19.62" ry="19.62"></ellipse>
+<text text-anchor="middle" x="320.35" y="-106.21" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">gr</text>
+</g>
+<!-- kg&#45;&gt;gr -->
+<g id="edge2" class="edge">
+<title>kg-&gt;gr</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M193.65,-110.41C218.8,-110.41 261.82,-110.41 290.42,-110.41"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="290.6,-113.91 300.6,-110.41 290.6,-106.91 290.6,-113.91"></polygon>
+<text text-anchor="middle" x="247.35" y="-113.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- gr&#45;&gt;kg -->
+<g id="edge5" class="edge">
+<title>gr-&gt;kg</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M301.72,-103.61C290.64,-99.71 275.94,-95.2 262.47,-93.21 249.17,-91.24 245.53,-91.3 232.22,-93.21 222.24,-94.64 211.58,-97.36 202.11,-100.23"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="200.85,-96.96 192.4,-103.34 202.99,-103.63 200.85,-96.96"></polygon>
+<text text-anchor="middle" x="247.35" y="-95.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+<!-- mg -->
+<g id="node4" class="node">
+<title>mg</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="471.35" cy="-110.41" rx="23.93" ry="23.93"></ellipse>
+<text text-anchor="middle" x="471.35" y="-106.21" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">mg</text>
+</g>
+<!-- gr&#45;&gt;mg -->
+<g id="edge3" class="edge">
+<title>gr-&gt;mg</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M339.92,-110.41C364.2,-110.41 407.17,-110.41 437.13,-110.41"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="437.13,-113.91 447.13,-110.41 437.13,-106.91 437.13,-113.91"></polygon>
+<text text-anchor="middle" x="392.35" y="-113.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 1000</text>
+</g>
+<!-- mg&#45;&gt;gr -->
+<g id="edge4" class="edge">
+<title>mg-&gt;gr</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M448.59,-102.24C429.76,-96.16 401.77,-89.51 377.22,-93.21 367.74,-94.63 357.65,-97.35 348.69,-100.21"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="347.5,-96.92 339.15,-103.44 349.74,-103.55 347.5,-96.92"></polygon>
+<text text-anchor="middle" x="392.35" y="-95.71" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 1000</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Η <strong>μάζα</strong> είναι ένα θεμελιώδες φυσικό μέγεθος που μετράται με ζυγούς (ζυγαριές) και εκφράζει το πόσο δύσκολα ένα σώμα αρχίζει να κινείται ή σταματά.</p>
+<section id="ασκήσεις-μετατροπών-2" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="ασκήσεις-μετατροπών-2"><span class="header-section-number">4.1</span> <strong>2. Ασκήσεις Μετατροπών</strong></h3>
+<p>Στις πηγές περιλαμβάνονται οι παρακάτω ενδεικτικές μετατροπές:<br>
+* <strong>Από τόνους σε κιλά:</strong><br>
+* <span class="math inline">\(5\text{ tn} = 5.000\text{ kg}\)</span><br>
+* <span class="math inline">\(1,2\text{ tn} = 1.200\text{ kg}\)</span><br>
+* <span class="math inline">\(0,036\text{ tn} = 36\text{ kg}\)</span><br>
+* <strong>Από γραμμάρια σε κιλά:</strong><br>
+* <span class="math inline">\(2.000\text{ g} = 2\text{ kg}\)</span><br>
+* <span class="math inline">\(750\text{ g} = 0,75\text{ kg}\)</span><br>
+* <span class="math inline">\(15\text{ g} = 0,015\text{ kg}\)</span><br>
+* <strong>Συμμιγείς αριθμοί:</strong><br>
+* <span class="math inline">\(532\text{ kg } 750\text{ g} = 532,75\text{ kg}\)</span> ή <span class="math inline">\(532.750\text{ g}\)</span><br>
+* <span class="math inline">\(5\text{ tn } 250\text{ kg} = 5.250\text{ kg}\)</span> ή <span class="math inline">\(5,25\text{ tn}\)</span></p>
+</section>
+<section id="προβλήματα-εφαρμογής-1" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="προβλήματα-εφαρμογής-1"><span class="header-section-number">4.2</span> <strong>3. Προβλήματα Εφαρμογής</strong></h3>
+<p>Τα προβλήματα στις πηγές απαιτούν συνδυασμό μετατροπών και πράξεων:</p>
+<ol type="1">
+<li><strong>Πρόβλημα με πακέτα αλεύρι:</strong> Η Έλενα αγόρασε <strong>6 πακέτα</strong> αλεύρι των <strong>750 γραμμαρίων</strong> το καθένα. Πόσα κιλά ζυγίζουν όλα μαζί;
+<ul>
+<li><em>Λύση:</em> <span class="math inline">\(6 \times 750\text{ g} = 4.500\text{ g} = 4,5\text{ kg}\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα με σοκολατάκια:</strong> Ένα κουτί περιέχει <strong>28 σοκολατάκια</strong> των <strong>35 γραμμαρίων</strong>. Το συνολικό βάρος (κουτί και σοκολατάκια) είναι <strong>1,3 κιλά</strong>. Πόσο ζυγίζει το κουτί άδειο;
+<ul>
+<li><em>Λύση:</em> Τα σοκολατάκια ζυγίζουν <span class="math inline">\(28 \times 35\text{ g} = 980\text{ g}\)</span>. Το συνολικό βάρος είναι <span class="math inline">\(1,3\text{ kg} = 1.300\text{ g}\)</span>. Το άδειο κουτί είναι <span class="math inline">\(1.300 - 980 = 320\text{ g}\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα παραγωγού πορτοκαλιών:</strong> Ένας παραγωγός έχει <strong>1,2 τόνους</strong> πορτοκάλια και θέλει να τα συσκευάσει σε τελάρα των <span class="math inline">\(2,5\)</span> κιλών. Πόσα τελάρα θα χρειαστεί;
+<ul>
+<li><em>Λύση:</em> <span class="math inline">\(1,2\text{ tn} = 1.200\text{ kg}\)</span>. <span class="math inline">\(1.200 : 2,5 = 480\text{ τελάρα}\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα εργοστασίου σοκολάτας:</strong> Μια σοκολάτα ζυγίζει <strong>125 g</strong>. Συσκευάζονται σε κουτιά των <strong>20 τεμαχίων</strong> και αυτά σε κούτες των <strong>40 κουτιών</strong>. Πόσους τόνους ζυγίζουν οι σοκολάτες σε <strong>40 κούτες</strong>;</li>
+</ol>
+</section>
+<section id="σύνδεση-με-άλλα-μεγέθη" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="σύνδεση-με-άλλα-μεγέθη"><span class="header-section-number">4.3</span> <strong>4. Σύνδεση με άλλα Μεγέθη</strong></h3>
+<p>Η μάζα χρησιμοποιείται στις πηγές και για τον υπολογισμό άλλων παράγωγων μεγεθών:<br>
+</p>
+<ul>
+<li><strong>Πυκνότητα (</strong><span class="math inline">\(\rho\)</span>): Ορίζεται ως το πηλίκο της μάζας προς τον όγκο (<span class="math inline">\(\rho = m/V\)</span>).<br>
+</li>
+<li><strong>Δύναμη (N):</strong> Προκύπτει από το γινόμενο της μάζας επί την επιτάχυνση.<br>
+</li>
+<li><strong>Σφάλματα:</strong> Κατά τη μέτρηση της μάζας μπορεί να προκύψουν <strong>τυχαία</strong> ή <strong>συστηματικά σφάλματα</strong> (π.χ. σφάλμα μηδενός, όπου η ζυγαριά δεν δείχνει μηδέν ενώ είναι άδεια).</li>
+</ul>
+</section>
+</section>
+<section id="μονάδες-χρόνου" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="μονάδες-χρόνου"><span class="header-section-number">5</span> 5. Μονάδες Χρόνου</h2>
+<p>Ο <strong>χρόνος</strong> είναι θεμελιώδες μέγεθος και μετριέται με περιοδικά φαινόμενα.<br>
+* <strong>Βασική μονάδα:</strong> Το <strong>δευτερόλεπτο (s)</strong>.<br>
+* <strong>Πολλαπλάσια:</strong> Λεπτό (min), ώρα (h), ημέρα (d), εβδομάδα, μήνας, έτος.<br>
+* <strong>Μετατροπές:</strong> Δεν ακολουθούν το δεκαδικό σύστημα (εκτός από τα υποπολλαπλάσια του δευτερολέπτου όπως το ms). <span class="math inline">\(1\text{ d} = 24\text{ h}\)</span>, <span class="math inline">\(1\text{ h} = 60\text{ min}\)</span>, <span class="math inline">\(1\text{ min} = 60\text{ s}\)</span>.<br>
+* <strong>Ασκήσεις:</strong> * Μετατροπή 3.907 δευτερολέπτων σε συμμιγή αριθμό: <span class="math inline">\(3.907\text{ s} = 1\text{ h } 5\text{ min } 7\text{ s}\)</span>.<br>
+* Μετατροπή δεκαδικής ώρας 8,52 h σε δευτερόλεπτα: <span class="math inline">\(8,52 \times 3.600 = 30.672\text{ s}\)</span>.<br>
+* Υπολογισμός χρονικού διαστήματος από τις 9:56 π.μ. έως τις 19:26 μ.μ..</p>
+<div class="cell" data-fig-width="7" data-fig-height="3" data-out-width="100%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="288" viewbox="0.00 0.00 483.37 216.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(0.92529 0.92529) rotate(0) translate(7.2 226.24)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-7.2,7.2 -7.2,-226.24 515.2,-226.24 515.2,7.2 -7.2,7.2"></polygon>
+<!-- s -->
+<g id="node1" class="node">
+<title>s</title>
+<ellipse fill="#ffe082" stroke="#ffa000" stroke-width="2" cx="18" cy="-109.73" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="18" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">s</text>
+</g>
+<!-- min -->
+<g id="node2" class="node">
+<title>min</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="117" cy="-109.73" rx="26.93" ry="26.93"></ellipse>
+<text text-anchor="middle" x="117" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">min</text>
+</g>
+<!-- s&#45;&gt;min -->
+<g id="edge1" class="edge">
+<title>s-&gt;min</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M35.89,-109.73C48.06,-109.73 64.94,-109.73 80.06,-109.73"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="80.18,-113.23 90.18,-109.73 80.18,-106.23 80.18,-113.23"></polygon>
+<text text-anchor="middle" x="63" y="-113.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 60</text>
+</g>
+<!-- min&#45;&gt;s -->
+<g id="edge10" class="edge">
+<title>min-&gt;s</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M92.9,-97.69C81.12,-93 66.54,-89.41 53.37,-92.53 49.64,-93.41 45.86,-94.75 42.24,-96.32"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="40.58,-93.23 33.15,-100.79 43.66,-99.52 40.58,-93.23"></polygon>
+<text text-anchor="middle" x="63" y="-95.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 60</text>
+</g>
+<!-- h -->
+<g id="node3" class="node">
+<title>h</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="217" cy="-109.73" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="217" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">h</text>
+</g>
+<!-- min&#45;&gt;h -->
+<g id="edge2" class="edge">
+<title>min-&gt;h</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M143.74,-109.73C157.75,-109.73 175.06,-109.73 189.23,-109.73"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="189.34,-113.23 199.34,-109.73 189.34,-106.23 189.34,-113.23"></polygon>
+<text text-anchor="middle" x="171" y="-113.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 60</text>
+</g>
+<!-- h&#45;&gt;min -->
+<g id="edge9" class="edge">
+<title>h-&gt;min</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M201.74,-100.97C195.5,-97.62 187.94,-94.21 180.62,-92.53 170.83,-90.27 160.28,-91.67 150.67,-94.45"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="149.39,-91.19 141.08,-97.75 151.67,-97.81 149.39,-91.19"></polygon>
+<text text-anchor="middle" x="171" y="-95.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 60</text>
+</g>
+<!-- d -->
+<g id="node4" class="node">
+<title>d</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="307" cy="-109.73" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="307" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">d</text>
+</g>
+<!-- h&#45;&gt;d -->
+<g id="edge3" class="edge">
+<title>h-&gt;d</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M234.55,-109.73C247.01,-109.73 264.35,-109.73 278.83,-109.73"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="279.22,-113.23 289.22,-109.73 279.22,-106.23 279.22,-113.23"></polygon>
+<text text-anchor="middle" x="262" y="-113.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 24</text>
+</g>
+<!-- d&#45;&gt;h -->
+<g id="edge8" class="edge">
+<title>d-&gt;h</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M291.85,-100.79C285.85,-97.5 278.63,-94.18 271.62,-92.53 263.29,-90.56 260.7,-90.56 252.37,-92.53 248.64,-93.41 244.86,-94.75 241.24,-96.32"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="239.58,-93.23 232.15,-100.79 242.66,-99.52 239.58,-93.23"></polygon>
+<text text-anchor="middle" x="262" y="-95.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 24</text>
+</g>
+<!-- m -->
+<g id="node5" class="node">
+<title>m</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="399" cy="-109.73" rx="19.03" ry="19.03"></ellipse>
+<text text-anchor="middle" x="399" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">m</text>
+</g>
+<!-- d&#45;&gt;m -->
+<g id="edge4" class="edge">
+<title>d-&gt;m</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M324.92,-109.73C337.54,-109.73 355.07,-109.73 369.79,-109.73"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="369.91,-113.23 379.91,-109.73 369.91,-106.23 369.91,-113.23"></polygon>
+<text text-anchor="middle" x="352" y="-113.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 30</text>
+</g>
+<!-- m&#45;&gt;d -->
+<g id="edge7" class="edge">
+<title>m-&gt;d</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M382.25,-100.42C376.04,-97.25 368.71,-94.12 361.62,-92.53 353.27,-90.65 350.7,-90.56 342.37,-92.53 338.64,-93.41 334.86,-94.75 331.24,-96.32"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="329.58,-93.23 322.15,-100.79 332.66,-99.52 329.58,-93.23"></polygon>
+<text text-anchor="middle" x="352" y="-95.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 30</text>
+</g>
+<!-- y -->
+<g id="node6" class="node">
+<title>y</title>
+<ellipse fill="#e1f5fe" stroke="#01579b" stroke-width="2" cx="490" cy="-109.73" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="490" y="-105.53" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00">y</text>
+</g>
+<!-- m&#45;&gt;y -->
+<g id="edge5" class="edge">
+<title>m-&gt;y</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M418.44,-109.73C431.1,-109.73 448.1,-109.73 462.24,-109.73"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="462.38,-113.23 472.38,-109.73 462.38,-106.23 462.38,-113.23"></polygon>
+<text text-anchor="middle" x="445" y="-113.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">: 12</text>
+</g>
+<!-- y&#45;&gt;m -->
+<g id="edge6" class="edge">
+<title>y-&gt;m</title>
+<path fill="none" stroke="#424242" stroke-width="1.5" d="M474.85,-100.79C468.85,-97.5 461.63,-94.18 454.62,-92.53 446.29,-90.56 443.71,-90.61 435.37,-92.53 431.87,-93.33 428.32,-94.53 424.88,-95.93"></path>
+<polygon fill="#424242" stroke="#424242" stroke-width="1.5" points="423.22,-92.84 415.63,-100.24 426.17,-99.19 423.22,-92.84"></polygon>
+<text text-anchor="middle" x="445" y="-95.03" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">x 12</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Οι μετατροπές στις μονάδες χρόνου παρουσιάζουν ιδιαιτερότητες σε σχέση με τα άλλα μεγέθη, καθώς <strong>δεν ακολουθούν το δεκαδικό σύστημα</strong> (με εξαίρεση τα υποπολλαπλάσια του δευτερολέπτου), αλλά βασίζονται σε περιοδικά φαινόμενα.</p>
+<section id="θεωρητικές-αρχές-και-μονάδες" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="θεωρητικές-αρχές-και-μονάδες"><span class="header-section-number">5.1</span> <strong>Θεωρητικές Αρχές και Μονάδες</strong></h3>
+<ul>
+<li><strong>Βασική Μονάδα:</strong> Το <strong>δευτερόλεπτο (s)</strong> είναι η θεμελιώδης μονάδα στο Διεθνές Σύστημα (SI).</li>
+<li><strong>Πολλαπλάσια:</strong> Το λεπτό (min), η ώρα (h), η ημέρα (d), η εβδομάδα, ο μήνας και το έτος.</li>
+<li><strong>Βασικές Ισότητες:</strong>
+<ul>
+<li><span class="math inline">\(1\text{ d} = 24\text{ h}\)</span>.</li>
+<li><span class="math inline">\(1\text{ h} = 60\text{ min} = 3.600\text{ s}\)</span>.</li>
+<li><span class="math inline">\(1\text{ min} = 60\text{ s}\)</span>.</li>
+<li><span class="math inline">\(1\text{ d} = 1.440\text{ min} = 86.400\text{ s}\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="κανόνες-μετατροπής" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="κανόνες-μετατροπής"><span class="header-section-number">5.2</span> <strong>Κανόνες Μετατροπής</strong></h3>
+<ol type="1">
+<li><strong>Από μεγαλύτερη σε μικρότερη μονάδα:</strong> Πραγματοποιούμε <strong>πολλαπλασιασμό</strong> με τον αντίστοιχο συντελεστή (24, 60 ή 3.600) για κάθε «σκαλοπάτι» που κατεβαίνουμε.
+<ul>
+<li><em>Παράδειγμα:</em> <span class="math inline">\(8,52\text{ h}\)</span> σε δευτερόλεπτα: <span class="math inline">\(8,52 \times 3.600 = 30.672\text{ s}\)</span>.</li>
+</ul></li>
+<li><strong>Από μικρότερη σε μεγαλύτερη μονάδα:</strong> Πραγματοποιούμε <strong>διαίρεση</strong>.
+<ul>
+<li>Για να μετατρέψουμε δευτερόλεπτα σε <strong>συμμιγή αριθμό</strong> (ώρες, λεπτά, δευτερόλεπτα), κάνουμε διαδοχικές διαιρέσεις με το 60. Το υπόλοιπο της πρώτης διαίρεσης είναι τα δευτερόλεπτα, ενώ το πηλίκο (αν είναι <span class="math inline">\(&gt;60\)</span>) διαιρείται ξανά για να βρεθούν οι ώρες.</li>
+<li><em>Παράδειγμα:</em> <span class="math inline">\(3.907\text{ s} = 1\text{ h } 5\text{ min } 7\text{ s}\)</span>.</li>
+</ul></li>
+<li><strong>Μετατροπή Δεκαδικής ώρας σε Συμμιγή:</strong> Το δεκαδικό μέρος της ώρας πολλαπλασιάζεται επί 60 για να βρεθούν τα λεπτά, και το νέο δεκαδικό υπόλοιπο επί 60 για τα δευτερόλεπτα.
+<ul>
+<li><em>Παράδειγμα:</em> <span class="math inline">\(7,13\text{ h} = 7\text{ h} + (0,13 \times 60) = 7\text{ h } 7\text{ min } 48\text{ s}\)</span>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="ασκήσεις-και-προβλήματα" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="ασκήσεις-και-προβλήματα"><span class="header-section-number">5.3</span> <strong>Ασκήσεις και Προβλήματα</strong></h3>
+<p><strong>1. Βασικές Μετατροπές:</strong></p>
+<ul>
+<li><span class="math inline">\(3,4\text{ h} = 204\text{ min}\)</span> (αφού <span class="math inline">\(3,4 \times 60 = 204\)</span>).</li>
+<li><span class="math inline">\(960\text{ s} = 16\text{ min}\)</span> (αφού <span class="math inline">\(960 : 60 = 16\)</span>).</li>
+<li><span class="math inline">\(42\text{ min } 53\text{ s} = 2.573\text{ s}\)</span> (αφού <span class="math inline">\(42 \times 60 + 53 = 2.573\)</span>).</li>
+<li><span class="math inline">\(3\text{ h } 27\text{ min } 8\text{ s} = 12.428\text{ s}\)</span> (αφού <span class="math inline">\(3 \times 3.600 + 27 \times 60 + 8 = 12.428\)</span>).</li>
+</ul>
+<p><strong>2. Πρόβλημα Δραστηριοτήτων (Γιάννης):</strong></p>
+<p>Ο Γιάννης έπαιζε από τις 8:15 έως τις 11:30 και είδε τηλεόραση από τις 11:30 έως τις 12:00.</p>
+<ul>
+<li><p><strong>Χρόνος παιχνιδιού:</strong> <span class="math inline">\(3\text{ ώρες και } 15\text{ λεπτά}\)</span> (<span class="math inline">\(13\text{ τέταρτα}\)</span> ή <span class="math inline">\(195\text{ λεπτά}\)</span> ή <span class="math inline">\(11.700\text{ s}\)</span>).</p></li>
+<li><p><strong>Χρόνος τηλεόρασης:</strong> <span class="math inline">\(30\text{ λεπτά}\)</span> (<span class="math inline">\(2\text{ τέταρτα}\)</span> ή <span class="math inline">\(1.800\text{ s}\)</span>).</p></li>
+</ul>
+<p><strong>3. Πρόβλημα Δρομολογίου Αμαξοστοιχίας:</strong></p>
+<p>Μια αμαξοστοιχία ξεκινά από την Αθήνα στις <strong>10:20 π.μ.</strong> και η διαδρομή διαρκεί <strong>5 ώρες και 38 λεπτά</strong>. Ποια ώρα θα φτάσει στην Πάτρα;</p>
+<ul>
+<li><em>Λύση:</em> Προσθέτουμε τη διάρκεια στην ώρα αναχώρησης: <span class="math inline">\(10:20 + 5:38 = 15:58\)</span> (δηλαδή <strong>3:58 μ.μ.</strong>).</li>
+</ul>
+<p><strong>4. Υπολογισμός Χρονικού Διαστήματος:</strong> Να βρεθεί ο χρόνος που μεσολαβεί από τις <strong>9:56 π.μ.</strong> έως τις <strong>19:26 μ.μ.</strong>.</p>
+<ul>
+<li><em>Λύση:</em> Αφαιρούμε την ώρα έναρξης από την ώρα λήξης (<span class="math inline">\(19:26 - 9:56\)</span>). Επειδή <span class="math inline">\(26 &lt; 56\)</span>, δανειζόμαστε μία ώρα (<span class="math inline">\(60\text{ λεπτά}\)</span>) από τις 19, άρα <span class="math inline">\(18:86 - 9:56 = 9\text{ h } 30\text{ min}\)</span>.</li>
+</ul>
+<p><strong>Σημείωση:</strong> Στις μετρήσεις χρόνου, όπως και σε κάθε φυσικό μέγεθος, υπάρχει πάντα ένα <strong>σφάλμα ανάγνωσης</strong> που οφείλεται στην αντίδραση του χειριστή ή στην ακρίβεια του χρονομέτρου.</p>
+</section>
+</section>
+<section id="σημείωση-για-τα-σφάλματα" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="σημείωση-για-τα-σφάλματα"><span class="header-section-number">6</span> Σημείωση για τα Σφάλματα</h2>
+<p>Κάθε μέτρηση συνοδεύεται από ένα <strong>σφάλμα</strong>, το οποίο εκφράζει την έλλειψη ακρίβειας λόγω οργάνων ή μεθόδων. Διακρίνονται σε <strong>τυχαία</strong> (αναπόφευκτα) και <strong>συστηματικά</strong> (που μπορούν να διορθωθούν). Στις μετρήσεις χρησιμοποιούμε τη <strong>μέση τιμή</strong> πολλαπλών μετρήσεων για μεγαλύτερη ακρίβεια.</p>
+
+
+</section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -745,9 +1640,9 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
- <!-- /content -->
+</div> <!-- /content -->
 
-</head><body class="nav-sidebar quarto-light">
+
 
 
 </body></html>
