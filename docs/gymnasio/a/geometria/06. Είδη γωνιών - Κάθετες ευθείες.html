@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>06. Είδη γωνιών - Κάθετες ευθείες – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,60 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-red quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +119,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +171,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html">06. Είδη γωνιών - Κάθετες ευθείες</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html">06. Είδη γωνιών - Κάθετες ευθείες</a></li></ol></nav>
+      <h1 class="title">06. Είδη γωνιών - Κάθετες ευθείες</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">23 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">23 Μάρτιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,25 +230,25 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,11 +361,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
@@ -331,7 +398,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
   </div>
 </li>
@@ -341,16 +408,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
   </div>
 </li>
@@ -365,8 +432,8 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -392,34 +459,152 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#θεωρία-ταξινόμηση-γωνιών-βάσει-μέτρου" id="toc-θεωρία-ταξινόμηση-γωνιών-βάσει-μέτρου" class="nav-link active" data-scroll-target="#θεωρία-ταξινόμηση-γωνιών-βάσει-μέτρου"><span class="header-section-number">0.1</span> <strong>Θεωρία: Ταξινόμηση Γωνιών βάσει Μέτρου</strong></a></li>
+  <li><a href="#ασκήσεις-και-ερωτήσεις-αυτοαξιολόγησης" id="toc-ασκήσεις-και-ερωτήσεις-αυτοαξιολόγησης" class="nav-link" data-scroll-target="#ασκήσεις-και-ερωτήσεις-αυτοαξιολόγησης"><span class="header-section-number">0.2</span> <strong>Ασκήσεις και Ερωτήσεις Αυτοαξιολόγησης</strong></a></li>
+  <li><a href="#θεωρία-και-ιδιότητες" id="toc-θεωρία-και-ιδιότητες" class="nav-link" data-scroll-target="#θεωρία-και-ιδιότητες"><span class="header-section-number">0.3</span> <strong>Θεωρία και Ιδιότητες</strong></a></li>
+  <li><a href="#συμβολισμός-και-όργανα" id="toc-συμβολισμός-και-όργανα" class="nav-link" data-scroll-target="#συμβολισμός-και-όργανα"><span class="header-section-number">0.4</span> <strong>Συμβολισμός και Όργανα</strong></a></li>
+  <li><a href="#ενδεικτικές-ασκήσεις" id="toc-ενδεικτικές-ασκήσεις" class="nav-link" data-scroll-target="#ενδεικτικές-ασκήσεις"><span class="header-section-number">0.5</span> <strong>Ενδεικτικές Ασκήσεις</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<p>Οι γωνίες ταξινομούνται με βάση το άνοιγμά τους σε σχέση με την ορθή γωνία, η οποία ορίζεται ως το ένα τέταρτο μιας πλήρους περιστροφής. Η μέτρηση των γωνιών γίνεται σε μοίρες (°) με τη χρήση του μοιρογνωμονίου. Μία μοίρα υποδιαιρείται σε 60 πρώτα λεπτά (60’) και κάθε πρώτο λεπτό σε 60 δεύτερα λεπτά (60’’).</p>
+<section id="θεωρία-ταξινόμηση-γωνιών-βάσει-μέτρου" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="θεωρία-ταξινόμηση-γωνιών-βάσει-μέτρου"><span class="header-section-number">0.1</span> <strong>Θεωρία: Ταξινόμηση Γωνιών βάσει Μέτρου</strong></h3>
+<p>Σύμφωνα με το μέτρο τους (φ), οι γωνίες διακρίνονται στα εξής είδη:</p>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><strong>Μηδενική γωνία:</strong> Είναι η γωνία της οποίας το μέτρο είναι <span class="math inline">\(0^\circ\)</span>. Σε αυτή την περίπτωση, οι δύο ημιευθείες που αποτελούν τις πλευρές της γωνίας ταυτίζονται.</li>
+<li><strong>Οξεία γωνία:</strong> Είναι κάθε γωνία με μέτρο μεγαλύτερο από <span class="math inline">\(0^\circ\)</span> και μικρότερο από <span class="math inline">\(90^\circ\)</span> (<span class="math inline">\(0^\circ &lt; \phi &lt; 90^\circ\)</span>). Ορίζεται ως η γωνία που είναι μικρότερη από την ορθή.</li>
+<li><strong>Ορθή γωνία:</strong> Είναι η γωνία που έχει μέτρο ακριβώς <span class="math inline">\(90^\circ\)</span>. Οι πλευρές της ορθής γωνίας είναι ημιευθείες κάθετες μεταξύ τους.</li>
+<li><strong>Αμβλεία γωνία:</strong> Είναι η γωνία με μέτρο μεγαλύτερο από <span class="math inline">\(90^\circ\)</span> και μικρότερο από <span class="math inline">\(180^\circ\)</span> (<span class="math inline">\(90^\circ &lt; \phi &lt; 180^\circ\)</span>). Χαρακτηρίζεται ως μεγαλύτερη από την ορθή και μικρότερη από την ευθεία γωνία.</li>
+<li><strong>Ευθεία γωνία:</strong> Έχει μέτρο <span class="math inline">\(180^\circ\)</span>. Οι πλευρές της ευθείας γωνίας είναι αντικείμενες ημιευθείες.</li>
+<li><strong>Μη κυρτή γωνία (ή αντανακλαστική):</strong> Είναι η γωνία με μέτρο μεγαλύτερο από <span class="math inline">\(180^\circ\)</span> και μικρότερο από <span class="math inline">\(360^\circ\)</span> (<span class="math inline">\(180^\circ &lt; \phi &lt; 360^\circ\)</span>). Ορίζεται ως ο εξωτερικός χώρος που σχηματίζεται από δύο ημιευθείες με κοινή αρχή, μαζί με τα σημεία των ημιευθειών.</li>
+<li><strong>Πλήρης γωνία:</strong> Είναι η γωνία της οποίας το μέτρο είναι ίσο με <span class="math inline">\(360^\circ\)</span>. Στην πλήρη γωνία οι πλευρές συμπίπτουν μετά από μια πλήρη περιστροφή.</li>
+</ul>
+</div>
+<p>Η διάταξη των γωνιών από τη μικρότερη προς τη μεγαλύτερη είναι η εξής:</p>
+<p>Μηδενική <span class="math inline">\(\Rightarrow\)</span> Οξεία <span class="math inline">\(\Rightarrow\)</span> Ορθή <span class="math inline">\(\Rightarrow\)</span> Αμβλεία <span class="math inline">\(\Rightarrow\)</span> Ευθεία <span class="math inline">\(\Rightarrow\)</span> Μη κυρτή <span class="math inline">\(\Rightarrow\)</span> Πλήρης.</p>
+<hr>
+</section>
+<section id="ασκήσεις-και-ερωτήσεις-αυτοαξιολόγησης" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="ασκήσεις-και-ερωτήσεις-αυτοαξιολόγησης"><span class="header-section-number">0.2</span> <strong>Ασκήσεις και Ερωτήσεις Αυτοαξιολόγησης</strong></h3>
+<p><strong>1. Ερωτήσεις Σωστού/Λάθους:</strong></p>
+<p>* Μια οξεία γωνία μπορεί να είναι μεγαλύτερη από <span class="math inline">\(90^\circ\)</span>. (<strong>Λάθος</strong>).</p>
+<p>* Το άθροισμα των οξειών γωνιών ενός ορθογωνίου τριγώνου είναι <span class="math inline">\(90^\circ\)</span>. (<strong>Σωστό</strong>).</p>
+<p>* Το αμβλυγώνιο τρίγωνο έχει τρεις αμβλείες γωνίες. (<strong>Λάθος</strong>).</p>
+<p>* Κάθε τρίγωνο έχει οπωσδήποτε δύο οξείες γωνίες. (<strong>Σωστό</strong>).</p>
+<p>* Μια γωνία <span class="math inline">\(180^\circ\)</span> ονομάζεται ευθεία γωνία. (<strong>Σωστό</strong>).</p>
+<p><strong>2. Υπολογιστικές Ασκήσεις:</strong></p>
+<p>* <strong>Εύρεση συμπληρωματικής:</strong> Αν μια γωνία είναι <span class="math inline">\(35^\circ\)</span>, η συμπληρωματική της είναι <span class="math inline">\(90^\circ - 35^\circ = 55^\circ\)</span>.</p>
+<p>* <strong>Εύρεση παραπληρωματικής:</strong> Αν μια γωνία είναι <span class="math inline">\(125^\circ\)</span>, η παραπληρωματική της είναι <span class="math inline">\(180^\circ - 125^\circ = 55^\circ\)</span>.</p>
+<p>* <strong>Αναλογία γωνιών:</strong> Δύο γωνίες έχουν άθροισμα <span class="math inline">\(120^\circ\)</span> και η μία είναι διπλάσια από την άλλη. Πόσες μοίρες είναι η καθεμία;</p>
+<p>* <em>Λύση:</em> Έστω <span class="math inline">\(x\)</span> η μία γωνία και <span class="math inline">\(2x\)</span> η άλλη. <span class="math inline">\(x + 2x = 120^\circ \Rightarrow 3x = 120^\circ \Rightarrow x = 40^\circ\)</span>. Άρα οι γωνίες είναι <span class="math inline">\(40^\circ\)</span> και <span class="math inline">\(80^\circ\)</span>.</p>
+<p><strong>3. Αναγνώριση και Αντιστοίχιση:</strong> * Αντιστοιχίστε τις μοίρες με το είδος της γωνίας:</p>
+<p>* <span class="math inline">\(70^\circ\)</span>: Οξεία.</p>
+<p>* <span class="math inline">\(90^\circ\)</span>: Ορθή.</p>
+<p>* <span class="math inline">\(160^\circ\)</span>: Αμβλεία.</p>
+<p>* <span class="math inline">\(180^\circ\)</span>: Ευθεία.</p>
+<p><strong>4. Κατασκευαστικές Ασκήσεις:</strong></p>
+<p>* Σχεδιάστε με το μοιρογνωμόνιο μια γωνία <span class="math inline">\(120^\circ\)</span> (αμβλεία) και μια γωνία <span class="math inline">\(45^\circ\)</span> (οξεία).</p>
+<p>* Κατασκευάστε τη διχοτόμο μιας ορθής γωνίας (<span class="math inline">\(90^\circ\)</span>). Πόσες μοίρες θα είναι καθεμία από τις δύο νέες γωνίες;</p>
+<p>* <em>Απάντηση:</em> <span class="math inline">\(90^\circ : 2 = 45^\circ\)</span> η καθεμία.</p>
+<p><strong>5. Σύνθετη ερώτηση:</strong> * Ο Στέλιος μέτρησε μια οξεία γωνία και τη βρήκε <span class="math inline">\(120^\circ\)</span>. Είναι σωστή η μέτρησή του;</p>
+<p>* <em>Απάντηση:</em> Όχι, η μέτρηση είναι λανθασμένη, διότι η οξεία γωνία είναι πάντα μικρότερη από την ορθή (<span class="math inline">\(90^\circ\)</span>), ενώ οι <span class="math inline">\(120^\circ\)</span> αντιστοιχούν σε αμβλεία γωνία.</p>
+<p>Οι κάθετες ευθείες αποτελούν βασική έννοια της Γεωμετρίας, καθώς ορίζουν την καθετότητα, τις αποστάσεις και τα ύψη στα γεωμετρικά σχήματα.</p>
+</section>
+<section id="θεωρία-και-ιδιότητες" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="θεωρία-και-ιδιότητες"><span class="header-section-number">0.3</span> <strong>Θεωρία και Ιδιότητες</strong></h3>
+<ul>
+<li><p><strong>Ορισμός:</strong> Δύο ευθείες ονομάζονται κάθετες όταν τέμνονται σχηματίζοντας μία ορθή γωνία,.</p></li>
+<li><p><strong>Ορθή Γωνία:</strong> Η ορθή γωνία αντιστοιχεί σε $90^\circ$ και ορίζεται ως το ένα τέταρτο μιας πλήρους περιστροφής,.</p></li>
+<li><p><strong>Μοναδικότητα:</strong> Από οποιοδήποτε σημείο του επιπέδου, είτε αυτό ανήκει σε μια ευθεία είτε βρίσκεται εκτός αυτής, διέρχεται μία και μόνο μία κάθετος προς την ευθεία αυτή,.</p></li>
+<li><p><strong>Σχέση με Παράλληλες:</strong></p>
+<ul>
+<li><p>Δύο ευθείες που είναι κάθετες στην ίδια ευθεία (σε διαφορετικά σημεία της) είναι μεταξύ τους παράλληλες.</p></li>
+<li><p>Αν μια ευθεία είναι κάθετη σε μία από δύο παράλληλες ευθείες, τότε είναι υποχρεωτικά κάθετη και στην άλλη.</p></li>
+</ul></li>
+<li><p><strong>Απόσταση:</strong> Απόσταση ενός σημείου Α από μια ευθεία <span class="math inline">\(\epsilon\)</span> ονομάζεται το μήκος του κάθετου ευθύγραμμου τμήματος ΑΑ’ που άγεται από το σημείο προς την ευθεία,. Το τμήμα αυτό αποτελεί τη συντομότερη διαδρομή που ενώνει το σημείο με την ευθεία.</p></li>
+<li><p><strong>Μεσοκάθετος:</strong> Η ευθεία που είναι κάθετη σε ένα ευθύγραμμο τμήμα και διέρχεται από το μέσο του ονομάζεται μεσοκάθετος του τμήματος. Κάθε σημείο της μεσοκαθέτου ισαπέχει από τα άκρα του τμήματος.</p></li>
+</ul>
+</section>
+<section id="συμβολισμός-και-όργανα" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="συμβολισμός-και-όργανα"><span class="header-section-number">0.4</span> <strong>Συμβολισμός και Όργανα</strong></h3>
+<ul>
+<li><p><strong>Σύμβολο:</strong> Η καθετότητα μεταξύ δύο ευθειών <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> δηλώνεται με το σύμβολο <span class="math inline">\(\perp\)</span>, δηλαδή <span class="math inline">\(\epsilon_1 \perp \epsilon_2\)</span>.</p></li>
+<li><p><strong>Όργανα Σχεδίασης:</strong> Για τη σχεδίαση κάθετων ευθειών χρησιμοποιούμε τον <strong>γνώμονα</strong> (ορθογώνιο τρίγωνο),.</p></li>
+</ul>
+</section>
+<section id="ενδεικτικές-ασκήσεις" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="ενδεικτικές-ασκήσεις"><span class="header-section-number">0.5</span> <strong>Ενδεικτικές Ασκήσεις</strong></h3>
+<p><strong>Άσκηση 1 (Σχεδίαση):</strong> Δίνεται μια ευθεία <span class="math inline">\(\epsilon\)</span> και ένα σημείο Α που βρίσκεται εκτός αυτής. Να σχεδιάσετε την ευθεία <span class="math inline">\(\epsilon_1\)</span> που διέρχεται από το Α και είναι κάθετη στην <span class="math inline">\(\epsilon\)</span>,.</p>
+<ul>
+<li><strong>Λύση:</strong> Τοποθετούμε τη μία κάθετη πλευρά του γνώμονα πάνω στην ευθεία <span class="math inline">\(\epsilon\)</span> και μετακινούμε τον γνώμονα μέχρι η άλλη κάθετη πλευρά του να περάσει από το σημείο Α. Στη συνέχεια χαράσσουμε την ευθεία,.</li>
+</ul>
+<p><strong>Άσκηση 2 (Συμπλήρωση Κενών):</strong></p>
+<ol type="1">
+<li><p>Για να σχεδιάσουμε κάθετες ευθείες, χρησιμοποιούμε τον <strong>……………..</strong>.</p></li>
+<li><p>Η απόσταση είναι η πιο <strong>……………..</strong> διαδρομή που ενώνει το σημείο με την ευθεία.</p></li>
+<li><p>Τα ύψη ενός τριγώνου διέρχονται από το <strong>……………..</strong>.</p></li>
+<li><p><em>(Λύσεις: 1. γνώμονα, 2. σύντομη, 3. ίδιο σημείο)</em>.</p></li>
+</ol>
+<p><strong>Άσκηση 3 (Σωστό/Λάθος):</strong></p>
+<ol type="1">
+<li><p>Από ένα σημείο Α μπορούμε να φέρουμε πολλές κάθετες σε μια ευθεία. (<strong>Λ</strong>, μόνο μία).</p></li>
+<li><p>Δύο ευθείες κάθετες στο ίδιο επίπεδο είναι παράλληλες μεταξύ τους. (<strong>Σ</strong>).</p></li>
+</ol>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Το κάθετο τμήμα από μια κορυφή ενός τριγώνου προς την απέναντι πλευρά ονομάζεται <strong>ύψος</strong> του τριγώνου για την πλευρά αυτή.Τα τρία ύψη του τριγώνου τέμνονται σε ένα σημείο που ονομάζεται <strong>ορθόκεντρο</strong>.</p>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Στο παρακάτω miniapp μετακινήστε τις κορυφές του τριγώνου.</p>
+<p>Τι παρατηρείτε για το ορθόκεντρο Η;</p>
+<p>Που βρίσκεται όταν το τρίγωνο είναι οξυγώνιο;</p>
+<p>Που βρίσκεται όταν το τρίγωνο είναι ορθογώνιο;</p>
+<p>Που βρίσκεται όταν το τρίγωνο είναι αμβλυγώνιο;</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/yj8w8dwy?embed" width="600" height="400" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><strong>Άσκηση 4 (Εφαρμογή σε σχήματα):</strong> Να σχεδιάσετε τα τρία ύψη ενός οξυγώνιου τριγώνου χρησιμοποιώντας τον γνώμονα και να επιβεβαιώσετε ότι τέμνονται στο εσωτερικό του τριγώνου,.</p>
+<p>Κάντε το ίδιο για άνα ορθογώνιο τρίγωνο και ένα αμβλυγώνιο. τι παρατηρείτε; που βρίσκεται το</p>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>υπό κατασκευή ……..</p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -447,12 +632,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
