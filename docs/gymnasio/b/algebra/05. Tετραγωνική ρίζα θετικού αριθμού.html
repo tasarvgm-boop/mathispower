@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>05. Tετραγωνική ρίζα θετικού αριθμού – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,69 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +128,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +180,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html">05. Tετραγωνική ρίζα θετικού αριθμού</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html">05. Tετραγωνική ρίζα θετικού αριθμού</a></li></ol></nav>
+      <h1 class="title">05. Tετραγωνική ρίζα θετικού αριθμού</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">15 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -181,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -397,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -410,9 +486,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -443,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">05. Tετραγωνική ρίζα θετικού αριθμού</span></a>
   </div>
 </li>
@@ -455,7 +531,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,33 +557,283 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#τετραγωνική-ρίζα-ενός-θετικού-αριθμού" id="toc-τετραγωνική-ρίζα-ενός-θετικού-αριθμού" class="nav-link active" data-scroll-target="#τετραγωνική-ρίζα-ενός-θετικού-αριθμού"><span class="header-section-number">1</span> Τετραγωνική ρίζα ενός θετικού αριθμού</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-τετραγωνικής-ρίζας" id="toc-θεωρία-τετραγωνικής-ρίζας" class="nav-link" data-scroll-target="#θεωρία-τετραγωνικής-ρίζας"><span class="header-section-number">1.1</span> <strong>1. Θεωρία Τετραγωνικής Ρίζας</strong></a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.2</span> Παραδείγματα</a></li>
+  <li><a href="#προβλήματα-καθημερινής-πρακτικής-επιστημών" id="toc-προβλήματα-καθημερινής-πρακτικής-επιστημών" class="nav-link" data-scroll-target="#προβλήματα-καθημερινής-πρακτικής-επιστημών"><span class="header-section-number">1.3</span> <strong>Προβλήματα Καθημερινής Πρακτικής &amp; Επιστημών</strong></a></li>
+  <li><a href="#ασκήσεις-για-εξάσκηση" id="toc-ασκήσεις-για-εξάσκηση" class="nav-link" data-scroll-target="#ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.4</span> <strong>2. Ασκήσεις για Εξάσκηση</strong></a></li>
+  <li><a href="#β.-προβλήματα" id="toc-β.-προβλήματα" class="nav-link" data-scroll-target="#β.-προβλήματα"><span class="header-section-number">1.5</span> Β. Προβλήματα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης-σωστόλάθος" id="toc-ερωτήσεις-κατανόησης-σωστόλάθος" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης-σωστόλάθος"><span class="header-section-number">1.6</span> <strong>Ερωτήσεις Κατανόησης (Σωστό/Λάθος)</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="τετραγωνική-ρίζα-ενός-θετικού-αριθμού" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="τετραγωνική-ρίζα-ενός-θετικού-αριθμού"><span class="header-section-number">1</span> Τετραγωνική ρίζα ενός θετικού αριθμού</h2>
+<p>Η <strong>τετραγωνική ρίζα ενός θετικού αριθμού</strong> είναι μια βασική έννοια της Άλγεβρας που συνδέεται άμεσα με το εμβαδόν του τετραγώνου και το Πυθαγόρειο θεώρημα.</p>
+<section id="θεωρία-τετραγωνικής-ρίζας" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-τετραγωνικής-ρίζας"><span class="header-section-number">1.1</span> <strong>1. Θεωρία Τετραγωνικής Ρίζας</strong></h3>
+<section id="ορισμός-και-συμβολισμός" class="level4" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="ορισμός-και-συμβολισμός"><span class="header-section-number">1.1.1</span> <strong>Ορισμός και Συμβολισμός</strong></h4>
+<ul>
+<li><strong>Τετραγωνική ρίζα</strong> ενός θετικού αριθμού <span class="math inline">\(\alpha\)</span> ονομάζεται ο <strong>θετικός αριθμός x</strong>, ο οποίος, όταν υψωθεί στο τετράγωνο, δίνει τον αριθμό <span class="math inline">\(\alpha\)</span>. δηλαδή <span class="math display">\[\sqrt{a}=x \quad \text {αν } \quad x^2=α\]</span></li>
+<li>Συμβολίζεται με <span class="math inline">\(\sqrt{\alpha}\)</span>.</li>
+<li>Ο αριθμός <span class="math inline">\(\alpha\)</span> κάτω από τη ρίζα ονομάζεται <strong>υπόρριζη ποσότητα</strong>, ενώ το σύμβολο <span class="math inline">\(\sqrt{ \quad}\)</span> ονομάζεται <strong>ριζικό</strong>.</li>
+<li>Επειδή <span class="math inline">\(0^2 = 0\)</span>, ορίζουμε ότι <span class="math inline">\(\sqrt{0} = 0\)</span>.</li>
+</ul>
+</section>
+<section id="βασικές-ιδιότητες" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="βασικές-ιδιότητες"><span class="header-section-number">1.1.2</span> <strong>Βασικές Ιδιότητες</strong></h4>
+<ul>
+<li>Αν <span class="math inline">\(\sqrt{\alpha} = x\)</span>, τότε πρέπει υποχρεωτικά ο <span class="math inline">\(x\)</span> να είναι <strong>θετικός ή μηδέν</strong> (<span class="math inline">\(x \geq 0\)</span>) και το τετράγωνό του να ισούται με την υπόρριζη ποσότητα (<span class="math inline">\(x^2 = \alpha\)</span>).</li>
+<li>Για κάθε θετικό αριθμό <span class="math inline">\(\alpha\)</span>, ισχύει η σχέση: <span class="math inline">\((\sqrt{\alpha})^2 = \alpha\)</span>.</li>
+<li><strong>Δεν ορίζεται ρίζα αρνητικού αριθμού</strong>, καθώς δεν υπάρχει πραγματικός αριθμός που το τετράγωνό του να είναι αρνητικός (π.χ. η <span class="math inline">\(\sqrt{-25}\)</span> δεν έχει νόημα).</li>
+<li><strong>Προσοχή:</strong> Είναι λάθος να γράφουμε <span class="math inline">\(\sqrt{25} = -5\)</span>, διότι η τετραγωνική ρίζα εξ ορισμού είναι θετικός αριθμός. Επίσης, <span class="math inline">\(\sqrt{(-5)^2} = \sqrt{25} = 5\)</span>.</li>
+</ul>
+</section>
+<section id="πράξεις-με-ρίζες" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="πράξεις-με-ρίζες"><span class="header-section-number">1.1.3</span> <strong>Πράξεις με Ρίζες</strong></h4>
+<ul>
+<li><strong>Γινόμενο:</strong> Η ρίζα ενός γινομένου ισούται με το γινόμενο των ριζών: <span class="math inline">\(\sqrt{\alpha \cdot \beta} = \sqrt{\alpha} \cdot \sqrt{\beta}\)</span>.</li>
+<li><strong>Πηλίκο:</strong> Η ρίζα ενός πηλίκου ισούται με το πηλίκο των ριζών: <span class="math inline">\(\sqrt{\frac{\alpha}{\beta}} = \frac{\sqrt{\alpha}}{\sqrt{\beta}}\)</span>.</li>
+<li><strong>Άθροισμα (Προσοχή!):</strong> Γενικά ισχύει ότι <span class="math inline">\(\sqrt{\alpha + \beta} \neq \sqrt{\alpha} + \sqrt{\beta}\)</span>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.2</span> Παραδείγματα</h3>
+<section id="λυμένες-ασκήσεις" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="λυμένες-ασκήσεις"><span class="header-section-number">1.2.1</span> <strong>Λυμένες Ασκήσεις</strong></h4>
+<ol type="1">
+<li><strong>Υπολογισμός Ριζών Φυσικών Αριθμών:</strong> Να βρεθούν οι αριθμοί <span class="math inline">\(\sqrt{25}, \sqrt{49}, \sqrt{64}, \sqrt{121}\)</span>.
+<ul>
+<li><strong>Λύση:</strong> Αναζητούμε θετικούς αριθμούς που το τετράγωνό τους δίνει την υπόρριζη ποσότητα.
+<ul>
+<li><span class="math inline">\(5^2 = 25\)</span>, άρα <span class="math inline">\(\sqrt{25} = 5\)</span>.</li>
+<li><span class="math inline">\(7^2 = 49\)</span>, άρα <span class="math inline">\(\sqrt{49} = 7\)</span>.</li>
+<li><span class="math inline">\(8^2 = 64\)</span>, άρα <span class="math inline">\(\sqrt{64} = 8\)</span>.</li>
+<li><span class="math inline">\(11^2 = 121\)</span>, άρα <span class="math inline">\(\sqrt{121} = 11\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Υπολογισμός Ριζών Δεκαδικών Αριθμών:</strong> Να υπολογιστούν οι ρίζες <span class="math inline">\(\sqrt{16}, \sqrt{0,16}, \sqrt{0,0016}\)</span>.
+<ul>
+<li><strong>Λύση:</strong>
+<ul>
+<li><span class="math inline">\(4^2 = 16\)</span>, άρα <span class="math inline">\(\sqrt{16} = 4\)</span>.</li>
+<li><span class="math inline">\((0,4)^2 = 0,16\)</span>, άρα <span class="math inline">\(\sqrt{0,16} = 0,4\)</span>.</li>
+<li><span class="math inline">\((0,04)^2 = 0,0016\)</span>, άρα <span class="math inline">\(\sqrt{0,0016} = 0,04\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Εύρεση Πλευράς σε Ορθογώνιο Τρίγωνο:</strong> Σε ορθογώνιο τρίγωνο η υποτείνουσα είναι <span class="math inline">\(3,5\)</span> και η μία κάθετη πλευρά <span class="math inline">\(2,8\)</span>. Να βρεθεί η άλλη κάθετη πλευρά <span class="math inline">\(\beta\)</span>.
+<ul>
+<li><strong>Λύση:</strong> Από το <strong>Πυθαγόρειο θεώρημα</strong> ισχύει <span class="math inline">\(\beta^2 + 2,8^2 = 3,5^2\)</span>.
+<ul>
+<li><span class="math inline">\(\beta^2 + 7,84 = 12,25 \Rightarrow \beta^2 = 4,41\)</span>.</li>
+<li>Επομένως, <span class="math inline">\(\beta = \sqrt{4,41} = 2,1\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Υπολογισμός Υποτείνουσας:</strong> Σε ορθογώνιο τρίγωνο οι κάθετες πλευρές είναι <span class="math inline">\(15\text{ cm}\)</span> και <span class="math inline">\(20\text{ cm}\)</span>. Να υπολογιστεί η υποτείνουσα <span class="math inline">\(B\Gamma\)</span>.
+<ul>
+<li><strong>Λύση:</strong> Από το Πυθαγόρειο θεώρημα έχουμε <span class="math inline">\(B\Gamma^2 = 15^2 + 20^2\)</span>.
+<ul>
+<li><span class="math inline">\(B\Gamma^2 = 225 + 400 = 625\)</span>.</li>
+<li>Άρα, <span class="math inline">\(B\Gamma = \sqrt{625} = 25\text{ cm}\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Προσέγγιση Άρρητου Αριθμού:</strong> Να βρεθεί η ρητή προσέγγιση του <span class="math inline">\(\sqrt{13}\)</span> με τρία δεκαδικά ψηφία.
+<ul>
+<li><strong>Λύση:</strong> Με διαδοχικές δοκιμές τετραγώνων βρίσκουμε ότι <span class="math inline">\(3,605^2 = 12,996\)</span> και <span class="math inline">\(3,606^2 = 13,003\)</span>.</li>
+<li>Άρα, η προσέγγιση του <span class="math inline">\(\sqrt{13}\)</span> είναι <span class="math inline">\(3,605\)</span>.</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="προβλήματα-καθημερινής-πρακτικής-επιστημών" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="προβλήματα-καθημερινής-πρακτικής-επιστημών"><span class="header-section-number">1.3</span> <strong>Προβλήματα Καθημερινής Πρακτικής &amp; Επιστημών</strong></h3>
+<ol type="1">
+<li><p><strong>Αρχιτεκτονική (Τετραγωνική Βάση):</strong> Μια αρχιτέκτων πρέπει να χτίσει σπίτι με τετραγωνική βάση εμβαδού <span class="math inline">\(289\text{ m}^2\)</span>. Ποιο πρέπει να είναι το μήκος <span class="math inline">\(x\)</span> κάθε πλευράς;</p>
+<ul>
+<li><strong>Λύση:</strong> Το εμβαδό τετραγώνου είναι <span class="math inline">\(E = x^2\)</span>.</li>
+<li>Πρέπει <span class="math inline">\(x^2 = 289\)</span>, οπότε αναζητούμε την τετραγωνική ρίζα του <span class="math inline">\(289\)</span>.</li>
+<li>Με δοκιμές βρίσκουμε ότι <span class="math inline">\(17^2 = 289\)</span>, άρα <span class="math inline">\(x = \sqrt{289} = 17\text{ m}\)</span>.</li>
+</ul></li>
+<li><p><strong>Χωροταξία (Μεταφορά Επίπλου):</strong> Μπορούμε να σηκώσουμε όρθιο ένα ντουλάπι ύψους <span class="math inline">\(2,1\text{ m}\)</span> και πλάτους <span class="math inline">\(0,7\text{ m}\)</span> σε ένα δωμάτιο ύψους <span class="math inline">\(2,2\text{ m}\)</span>;</p>
+<ul>
+<li><strong>Λύση:</strong> Για να σηκωθεί, πρέπει η διαγώνιος <span class="math inline">\(\delta\)</span> του ντουλαπιού να είναι μικρότερη ή ίση με το ύψος του δωματίου (<span class="math inline">\(2,2\text{ m}\)</span>).</li>
+<li><span class="math inline">\(\delta^2 = 2,1^2 + 0,7^2 = 4,41 + 0,49 = 4,90\)</span>.</li>
+<li><span class="math inline">\(\delta = \sqrt{4,90} \approx 2,21\text{ m}\)</span>.</li>
+<li>Επειδή <span class="math inline">\(2,21 &gt; 2,2\)</span>, <strong>δεν μπορούμε</strong> να σηκώσουμε όρθιο το ντουλάπι.</li>
+</ul></li>
+<li><p><strong>Γεωγραφία/Αποστάσεις (Οδοιπορικό):</strong> Κατά τη μετακίνηση από την πόλη Α στην πόλη Β (<span class="math inline">\(20\text{ km}\)</span>) και μετά στο χωριό Γ (<span class="math inline">\(13\text{ km}\)</span>), όπου οι διαδρομές είναι κάθετες, ποια είναι η απόσταση ΑΓ;</p></li>
+</ol>
+<p><img src="images/clipboard-1978095660.png" class="img-fluid" width="279"></p>
+<ul>
+<li><strong>Λύση:</strong> Η απόσταση ΑΓ είναι η υποτείνουσα ορθογωνίου τριγώνου.</li>
+<li><span class="math inline">\(A\Gamma^2 = 20^2 + 13^2 = 400 + 169 = 569\)</span>.</li>
+<li>Άρα, <span class="math inline">\(A\Gamma = \sqrt{569} \approx 23,85\text{ km}\)</span>.</li>
+</ul>
+<hr>
+</section>
+<section id="ασκήσεις-για-εξάσκηση" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.4</span> <strong>2. Ασκήσεις για Εξάσκηση</strong></h3>
+<section id="α.-υπολογισμός-ριζών" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="α.-υπολογισμός-ριζών"><span class="header-section-number">1.4.1</span> <strong>Α. Υπολογισμός Ριζών</strong></h4>
+<ol type="1">
+<li><p>Να υπολογίσετε τις ρίζες: <span class="math inline">\(\sqrt{81}\)</span>, <span class="math inline">\(\sqrt{0,81}\)</span> και <span class="math inline">\(\sqrt{8100}\)</span>.</p></li>
+<li><p>Να βρείτε τις τιμές: <span class="math inline">\(\sqrt{121}\)</span>, <span class="math inline">\(\sqrt{1,21}\)</span> και <span class="math inline">\(\sqrt{0,0121}\)</span>.</p></li>
+<li><p>Να υπολογίσετε τα πηλίκα: <span class="math inline">\(\sqrt{\frac{9}{4}}\)</span> και <span class="math inline">\(\sqrt{\frac{144}{25}}\)</span>.</p></li>
+<li><p><strong>Υπολογίστε τις τιμές:</strong> <span class="math inline">\(\sqrt{4}\)</span>, <span class="math inline">\(\sqrt{0,04}\)</span>, <span class="math inline">\(\sqrt{400}\)</span> και <span class="math inline">\(\sqrt{40000}\)</span>.</p></li>
+<li><p><strong>Υπολογίστε τις τιμές των παραστάσεων:</strong> <span class="math inline">\(\sqrt{\frac{400}{49}}\)</span> και <span class="math inline">\(\sqrt{\frac{36}{121}}\)</span>.</p></li>
+<li><p><strong>Υπολογίστε τους αριθμούς:</strong> <span class="math inline">\(\sqrt{36}\)</span> και <span class="math inline">\(\sqrt{18+18}\)</span>.</p></li>
+<li><p><strong>Βρείτε το αποτέλεσμα των πράξεων:</strong> <span class="math inline">\(\sqrt{18 \cdot 18}\)</span> και <span class="math inline">\((\sqrt{18})^2\)</span>.</p></li>
+<li><p><strong>Λύστε τις παρακάτω εξισώσεις για θετικό</strong> <span class="math inline">\(x\)</span>:<br>
+</p></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(x^2 = 16\)</span><br>
+</p></li>
+<li><p><span class="math inline">\(x^2 = 121\)</span>.</p></li>
+</ul>
+<ol start="12" type="1">
+<li><p><strong>Υπολογίστε με προσέγγιση τριών δεκαδικών ψηφίων τις ρίζες:</strong> <span class="math inline">\(\sqrt{3}\)</span>, <span class="math inline">\(\sqrt{50}\)</span> και <span class="math inline">\(\sqrt{72}\)</span>.</p></li>
+<li><p><strong>Υπολογίστε την τιμή της σύνθετης παράστασης:</strong> <span class="math inline">\(\sqrt{7+\sqrt{2+\sqrt{1+\sqrt{9}}}}\)</span></p></li>
+<li><p>Να υπολογίσετε το αποτέλεσμα της παράστασης: <span class="math inline">\(\sqrt{32+32}\)</span> και <span class="math inline">\(\sqrt{12 \cdot 12}\)</span>.</p></li>
+<li><p>Να αποδείξετε ότι: <span class="math inline">\(\sqrt{\sqrt{4} + \sqrt{9} + 2} = 2\)</span>.</p></li>
+<li><p>Να συμπληρώσετε τον κατάλληλο αριθμό στο κουτάκι ώστε να ισχύει: <span class="math inline">\((\sqrt{x})^2 = 5\)</span>.</p></li>
+<li><p>Να λύσετε τις εξισώσεις: (α) <span class="math inline">\(x^2 = 9\)</span>, (β) <span class="math inline">\(x^2 = 64\)</span>, (γ) <span class="math inline">\(x^2 = \frac{100}{81}\)</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="β.-προβλήματα" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="β.-προβλήματα"><span class="header-section-number">1.5</span> Β. Προβλήματα</h3>
+<ol type="1">
+<li><p><strong>Πρόβλημα Κατασκευής:</strong> Μια αρχιτέκτονας πρέπει να χτίσει ένα σπίτι με τετραγωνική βάση εμβαδού 289 <span class="math inline">\(m^2\)</span>. Ποιο πρέπει να είναι το μήκος <span class="math inline">\(x\)</span> κάθε πλευράς της βάσης;.</p></li>
+<li><p><strong>Προσέγγιση Πλευράς:</strong> Ένα τετράγωνο έχει εμβαδόν 12 <span class="math inline">\(cm^2\)</span>. Να βρείτε, με προσέγγιση εκατοστού, το μήκος της πλευράς του.</p></li>
+<li><p><strong>Πυθαγόρειο Θεώρημα:</strong> Σε ένα ορθογώνιο τρίγωνο η υποτείνουσα είναι 13 cm και η μία κάθετη πλευρά έχει μήκος 5 cm. Χρησιμοποιήστε την τετραγωνική ρίζα για να βρείτε το μήκος της άλλης κάθετης πλευράς.</p></li>
+<li><p><strong>Πυθαγόρειο Θεώρημα:</strong> Σε ορθογώνιο τρίγωνο οι κάθετες πλευρές είναι <span class="math inline">\(3\text{ cm}\)</span> και <span class="math inline">\(4\text{ cm}\)</span>. Να υπολογίσετε την υποτείνουσα χρησιμοποιώντας ρίζα.</p></li>
+<li><p>Να βρείτε τη διαγώνιο ενός ορθογωνίου γηπέδου με διαστάσεις <span class="math inline">\(65\text{ m}\)</span> και <span class="math inline">\(72\text{ m}\)</span>.</p></li>
+</ol>
+<p><img src="images/clipboard-619221695.png" class="img-fluid" width="328"></p>
+</section>
+<section id="ερωτήσεις-κατανόησης-σωστόλάθος" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-σωστόλάθος"><span class="header-section-number">1.6</span> <strong>Ερωτήσεις Κατανόησης (Σωστό/Λάθος)</strong></h3>
+<ul>
+<li>Η σχέση <span class="math inline">\(\sqrt{16} = 8\)</span> είναι σωστή; (<strong>Λάθος</strong>, είναι 4).</li>
+<li>Ισχύει ότι <span class="math inline">\(\sqrt{16+9} = 5\)</span>; (<strong>Σωστό</strong>, γιατί <span class="math inline">\(\sqrt{25} = 5\)</span>).</li>
+<li>Υπάρχει η ρίζα <span class="math inline">\(\sqrt{-9}\)</span>; (<strong>Λάθος</strong>, δεν υπάρχει για αρνητικούς).</li>
+<li>Αν <span class="math inline">\(x &gt; 1\)</span>, τότε <span class="math inline">\(\sqrt{x} &lt; x &lt; x^2\)</span>; (<strong>Σωστό</strong>)</li>
+</ul>
+<ol type="1">
+<li><strong>Σχέση</strong> <span class="math inline">\(y = \sqrt{x}\)</span>: Αν <span class="math inline">\(y = \sqrt{x}\)</span> για δύο αριθμούς <span class="math inline">\(x, y\)</span>, ο αριθμός <span class="math inline">\(x\)</span> πρέπει να είναι πάντα θετικός ή μηδέν. Στην περίπτωση αυτή, επιλέξτε ποια από τις παρακάτω σχέσεις ισχύει: α) <span class="math inline">\(x^2 = y\)</span>, β) <span class="math inline">\(y^2 = x\)</span> ή γ) <span class="math inline">\(x^2 = y^2\)</span>.</li>
+<li><strong>Λύσεις Εξίσωσης</strong>: Η εξίσωση <span class="math inline">\(x^2 = 16\)</span> έχει ως λύσεις: α) μόνο το 4, β) μόνο το -4, ή γ) το 4 και το -4;.</li>
+<li><strong>Αντιστοίχιση Ριζών</strong>: Αντιστοιχίστε τους αριθμούς της πρώτης στήλης με την τετραγωνική τους ρίζα στη δεύτερη στήλη:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Αριθμοί</th>
+<th style="text-align: center;">Τετραγωνική ρίζα</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">81</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">144</td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Έλεγχος Ισοτήτων</strong>: Χαρακτηρίστε τις παρακάτω προτάσεις ως Σωστές (Σ) ή Λανθασμένες (Λ):
+<ul>
+<li><span class="math inline">\(\sqrt{16} = 8\)</span>.</li>
+<li><span class="math inline">\(\sqrt{9} = 3\)</span>.</li>
+<li><span class="math inline">\(\sqrt{0,4} = 0,2\)</span>.</li>
+<li><span class="math inline">\(\sqrt{100} = 50\)</span>.</li>
+</ul></li>
+<li><strong>Ρίζα Αθροίσματος</strong>: Εξετάστε αν η πρόταση <span class="math inline">\(\sqrt{16+9} = 5\)</span> είναι σωστή και εξηγήστε αν το αποτέλεσμα της ρίζας ενός αθροίσματος ισούται με το άθροισμα των ριζών των προσθετέων.</li>
+<li><strong>Ρίζες Αρνητικών Αριθμών</strong>: Εξηγήστε γιατί η παράσταση <span class="math inline">\(\sqrt{-9}\)</span> δεν έχει νόημα στο σύνολο των πραγματικών αριθμών.</li>
+<li><strong>Εύρεση Αγνώστου</strong> <span class="math inline">\(x\)</span>: Αν γνωρίζετε ότι <span class="math inline">\(\sqrt{x} = 9\)</span>, ποια είναι η τιμή του <span class="math inline">\(x\)</span>; Επιλέξτε ανάμεσα στα:
+<ul>
+<li>α) 3,</li>
+<li>β) 81,</li>
+<li>γ) ±81,</li>
+<li>ή δ) η σχέση είναι αδύνατη.</li>
+</ul></li>
+<li><strong>Ύπαρξη Λύσης</strong>: Είναι δυνατόν να βρεθεί θετικός αριθμός <span class="math inline">\(x\)</span> τέτοιος ώστε <span class="math inline">\(\sqrt{x} = -16\)</span>; Δικαιολογήστε την απάντησή σας.</li>
+<li><strong>Προσέγγιση Άρρητων</strong>: Αν ο αριθμός <span class="math inline">\(\sqrt{2}\)</span> βρίσκεται ανάμεσα στο 1,41 και το 1,42, πώς ονομάζονται οι αριθμοί 1,41 και 1,42 σε σχέση με τη <span class="math inline">\(\sqrt{2}\)</span>;.</li>
+<li><strong>Σύγκριση Μεγεθών</strong>: Αν ένας αριθμός <span class="math inline">\(a\)</span> είναι μεγαλύτερος από το 1 (π.χ. <span class="math inline">\(a=9\)</span>), τοποθετήστε σε σειρά από τον μικρότερο στον μεγαλύτερο τους αριθμούς <span class="math inline">\(\sqrt{a}, a, a^2\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -535,12 +861,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
