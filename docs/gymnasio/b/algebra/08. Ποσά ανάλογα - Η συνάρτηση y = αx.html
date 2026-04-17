@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>08. Ποσά ανάλογα - Η συνάρτηση y = αx – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,74 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +133,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +185,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html">08. Ποσά ανάλογα - Η συνάρτηση y = αx</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html">08. Ποσά ανάλογα - Η συνάρτηση y = αx</a></li></ol></nav>
+      <h1 class="title">08. Ποσά ανάλογα - Η συνάρτηση y = αx</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">16 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">20 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -181,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -397,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -410,9 +491,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -461,7 +542,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">08. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
   </div>
 </li>
@@ -473,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -499,33 +580,244 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-συνάρτηση-της-μορφής-y-alpha-x-εκφράζει-τη-σχέση-μεταξύ-δύο-ανάλογων-ποσών." id="toc-η-συνάρτηση-της-μορφής-y-alpha-x-εκφράζει-τη-σχέση-μεταξύ-δύο-ανάλογων-ποσών." class="nav-link active" data-scroll-target="#η-συνάρτηση-της-μορφής-y-alpha-x-εκφράζει-τη-σχέση-μεταξύ-δύο-ανάλογων-ποσών."><span class="header-section-number">1</span> Η συνάρτηση της μορφής <span class="math inline">\(y = \alpha x\)</span> εκφράζει τη σχέση μεταξύ δύο <strong>ανάλογων ποσών</strong>.</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία" id="toc-θεωρία" class="nav-link" data-scroll-target="#θεωρία"><span class="header-section-number">1.1</span> Θεωρία</a></li>
+  <li><a href="#ασκήσεις-και-προβλήματα-για-τη-συνάρτηση-y-alpha-x-και-τα-ανάλογα-ποσά" id="toc-ασκήσεις-και-προβλήματα-για-τη-συνάρτηση-y-alpha-x-και-τα-ανάλογα-ποσά" class="nav-link" data-scroll-target="#ασκήσεις-και-προβλήματα-για-τη-συνάρτηση-y-alpha-x-και-τα-ανάλογα-ποσά"><span class="header-section-number">1.2</span> ασκήσεις και προβλήματα για τη συνάρτηση <span class="math inline">\(y = \alpha x\)</span> και τα ανάλογα ποσά:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-συνάρτηση-της-μορφής-y-alpha-x-εκφράζει-τη-σχέση-μεταξύ-δύο-ανάλογων-ποσών." class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-συνάρτηση-της-μορφής-y-alpha-x-εκφράζει-τη-σχέση-μεταξύ-δύο-ανάλογων-ποσών."><span class="header-section-number">1</span> Η συνάρτηση της μορφής <span class="math inline">\(y = \alpha x\)</span> εκφράζει τη σχέση μεταξύ δύο <strong>ανάλογων ποσών</strong>.</h2>
+<section id="θεωρία" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία"><span class="header-section-number">1.1</span> Θεωρία</h3>
+<ul>
+<li><strong>Ορισμός:</strong> Δύο ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι ανάλογα όταν ο λόγος των αντίστοιχων τιμών τους είναι σταθερός: <span class="math inline">\(\frac{y}{x} = \alpha\)</span>. Ο αριθμός <span class="math inline">\(\alpha\)</span> ονομάζεται συντελεστής αναλογίας ή <strong>κλίση</strong> της ευθείας.</li>
+<li><strong>Γραφική Παράσταση:</strong> Είναι πάντοτε μια <strong>ευθεία γραμμή</strong> που διέρχεται από την αρχή των αξόνων <span class="math inline">\(O(0,0)\)</span>.</li>
+</ul>
+</section>
+<p><br>
+<iframe src="https://www.geogebra.org/calculator/ycbdnurh?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe></p>
+<p><br>
+</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μετακινήστε (κλικ και σύρτε) τον δρομέα α για να αλλάξετε την τιμή του α.</p>
+<p>Τι παρατηρείτε;</p>
+<ul>
+<li><p>Όταν το α είναι θετικό</p></li>
+<li><p>Όταν το α είναι αρνητικό</p></li>
+</ul>
+</div>
+</div>
+<ul>
+<li><strong>Η σημασία του</strong> <span class="math inline">\(\alpha\)</span>:
+<ul>
+<li>Αν <span class="math inline">\(\alpha &gt; 0\)</span>, η ευθεία βρίσκεται στο 1ο και 3ο τεταρτημόριο.</li>
+<li>Αν <span class="math inline">\(\alpha &lt; 0\)</span>, η ευθεία βρίσκεται στο 2ο και 4ο τεταρτημόριο.</li>
+<li>Η κλίση υπολογίζεται από το λόγο της κατακόρυφης μεταβολής προς την οριζόντια μεταβολή: <span class="math inline">\(\alpha = \frac{\Delta y}{\Delta x}=εφ \hat{θ}\)</span>.</li>
+</ul></li>
+<li><strong>Ειδικές Περιπτώσεις:</strong> Η ευθεία <span class="math inline">\(y = x\)</span> είναι η διχοτόμος των γωνιών του 1ου και 3ου τεταρτημορίου, ενώ η <span class="math inline">\(y = -x\)</span> του 2ου και 4ου.</li>
+</ul>
+<section id="ασκήσεις-και-προβλήματα-για-τη-συνάρτηση-y-alpha-x-και-τα-ανάλογα-ποσά" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ασκήσεις-και-προβλήματα-για-τη-συνάρτηση-y-alpha-x-και-τα-ανάλογα-ποσά"><span class="header-section-number">1.2</span> ασκήσεις και προβλήματα για τη συνάρτηση <span class="math inline">\(y = \alpha x\)</span> και τα ανάλογα ποσά:</h3>
+<ol type="1">
+<li><strong>Συμπλήρωση Πίνακα:</strong> Αν τα ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι ανάλογα με συντελεστή <span class="math inline">\(\alpha=3\)</span> (<span class="math inline">\(y=3x\)</span>), συμπλήρωσε τον παρακάτω πίνακα και στη συνέχεια κάνε την γραφική παράσταση.</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 8
+    a["x"] b["-3"] c["-2"] d["-1"] e["0"] f["1"] g["2"] h["3"]
+    k["y"] l["   "] m["  "] n["  "] p["  "] s["  "] t["  "] q["  "]
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Εύρεση Εξίσωσης:</strong> Βρες την εξίσωση της ευθείας που διέρχεται από την αρχή των αξόνων <span class="math inline">\(O(0,0)\)</span> και από το σημείο <span class="math inline">\(A(2, 6)\)</span>.</li>
+<li><strong>Πρόβλημα Ταχύτητας:</strong> Ένα αυτοκίνητο κινείται με σταθερή ταχύτητα <span class="math inline">\(70\)</span> χλμ/ώρα. Εκφράστε την απόσταση <span class="math inline">\(S\)</span> ως συνάρτηση του χρόνου <span class="math inline">\(t\)</span>. Κάντε την γραφική παράσταση της <span class="math inline">\(S\)</span> συναρτήσει του χρόνου <span class="math inline">\(t\)</span></li>
+<li><strong>Αύξηση Τιμών:</strong> Οι τιμές των προϊόντων αυξήθηκαν κατά <span class="math inline">\(20\%\)</span>. Βρες τη σχέση που εκφράζει τη νέα τιμή <span class="math inline">\(y\)</span> ως συνάρτηση της παλιάς τιμής <span class="math inline">\(x\)</span> και αφού συμπληρώσετε τον πίνακα, να κάνετε την γραφική παράστασταση.</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 8
+    a["x €"] b["20 €"] c["60 €"] d["100"] e["110"] f["140"] g["200"] h["300"]
+    k["y €"] l["   "] m["  "] n["  "] p["  "] s["  "] t["  "] q["  "]
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li><strong>Γραφική Παράσταση:</strong> Σχεδίασε σε ορθογώνιο σύστημα αξόνων την ευθεία <span class="math inline">\(y = -0,82x\)</span>, βρίσκοντας ένα επιπλέον σημείο εκτός από την αρχή των αξόνων.</li>
+<li><strong>Παραγωγή Προϊόντος:</strong> Μια εταιρεία παράγει <span class="math inline">\(0,4\)</span> λίτρα χυμό από κάθε κιλό πορτοκάλια.</li>
+</ol>
+<ul>
+<li>Εκφράστε την ποσότητα χυμού <span class="math inline">\(y\)</span> ως συνάρτηση των κιλών πορτοκαλιών <span class="math inline">\(x\)</span>.</li>
+<li>Κάντε ένα πίνακα τιμών με 4 διαφορετικές τιμές του <span class="math inline">\(x\)</span>.</li>
+<li>Κάντε την γραφική παράσταση.</li>
+</ul>
+<ol start="7" type="1">
+<li><strong>Γεωμετρία:</strong> Εκφράστε την περίμετρο <span class="math inline">\(Π\)</span> ενός τετραγώνου ως συνάρτηση της πλευράς του <span class="math inline">\(x\)</span> και εξήγησε γιατί τα ποσά αυτά είναι ανάλογα.</li>
+<li><strong>Ισοτιμία Νομισμάτων:</strong> Αν η ισοτιμία είναι <span class="math inline">\(100\)</span> € προς <span class="math inline">\(108\)</span> $, βρες τη συνάρτηση <span class="math inline">\(y = \alpha x\)</span> που μετατρέπει τα ευρώ (<span class="math inline">\(x\)</span>) σε δολάρια (<span class="math inline">\(y\)</span>).</li>
+</ol>
+<ul>
+<li>Πόσα € είναι τα 238 $.</li>
+<li>Πόσα $ είναι τα 340 €.</li>
+</ul>
+<ol start="9" type="1">
+<li><strong>Υπολογισμός Κλίσης:</strong> Βρες την κλίση <span class="math inline">\(\alpha\)</span> μιας ευθείας που διέρχεται από την αρχή των αξόνων και το σημείο <span class="math inline">\(A(-1, 3)\)</span>.</li>
+<li><strong>Θεωρία Τεταρτημορίων:</strong> Εξήγησε σε ποια τεταρτημόρια βρίσκεται η ευθεία <span class="math inline">\(y = \alpha x\)</span> όταν ο συντελεστής <span class="math inline">\(\alpha\)</span> είναι θετικός και σε ποια όταν είναι αρνητικός.</li>
+<li>Αν τα ποσά κ και λ είναι ανάλογα , να συμπληρώσετε τον πίνακα.</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 8
+    a["κ"] b["5 "] c["12"] d[" "] e["16"] f[" "] g["28"] h[" "]
+    k["λ"] l[" 4"] m["  "] n[" 12 "] p["  "] s["16"] t["  "] q["18"]
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol start="12" type="1">
+<li>Ποιά από τα παρακάτω γραφήματα είναι γραφήματα ανάλογων ποσών</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Γράφημα 1</th>
+<th style="text-align: center;">Γράφημα 2</th>
+<th style="text-align: center;">Γράφημα 3</th>
+<th style="text-align: center;">Γράφημα 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/clipboard-1733277434.png" class="img-fluid"></td>
+<td style="text-align: center;"><img src="images/clipboard-2182059121.png" class="img-fluid"></td>
+<td style="text-align: center;"><img src="images/clipboard-300253391.png" class="img-fluid"></td>
+<td style="text-align: center;"><img src="images/clipboard-3354567943.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<ol start="13" type="1">
+<li><p>Να σχεδιάσετε σε ορθογώνιο σύστημα αξόνων μια ευθεία η οποία να διέρχεται από την αρχή Ο των αξόνων και να έχει κλίση <span class="math inline">\(a=1,2\)</span></p></li>
+<li><p>Ποιά ευθεία από τις πατακάτω έχει κλίση α=0,8</p></li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ευθεία 1</th>
+<th style="text-align: center;">Ευθεία 2</th>
+<th style="text-align: center;">Ευθεία 3</th>
+<th style="text-align: center;">Ευθεία 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(y=\frac{4}{5}x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(y=-0,8x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(y=\frac{8}{5}x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(y=-\frac{8}{10}x\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -553,12 +845,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
