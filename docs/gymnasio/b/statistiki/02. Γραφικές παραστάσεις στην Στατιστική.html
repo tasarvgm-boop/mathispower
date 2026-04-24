@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Στατιστική – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>02. Γραφικές παραστάσεις στην Στατιστική – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html">02. Γραφικές παραστάσεις στην Στατιστική</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html">02. Γραφικές παραστάσεις στην Στατιστική</a></li></ol></nav>
+      <h1 class="title">02. Γραφικές παραστάσεις στην Στατιστική</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">24 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -181,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -397,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -496,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">02. Γραφικές παραστάσεις στην Στατιστική</span></a>
   </div>
 </li>
@@ -508,7 +586,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -534,33 +612,363 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#γραφικές-παραστάσεις-στην-στατιστική" id="toc-γραφικές-παραστάσεις-στην-στατιστική" class="nav-link active" data-scroll-target="#γραφικές-παραστάσεις-στην-στατιστική"><span class="header-section-number">1</span> Γραφικές παραστάσεις στην Στατιστική</a>
+  <ul class="collapse">
+  <li><a href="#εικονόγραμμα" id="toc-εικονόγραμμα" class="nav-link" data-scroll-target="#εικονόγραμμα"><span class="header-section-number">1.1</span> Εικονόγραμμα</a></li>
+  <li><a href="#ραβδόγραμμα" id="toc-ραβδόγραμμα" class="nav-link" data-scroll-target="#ραβδόγραμμα"><span class="header-section-number">1.2</span> <strong>Ραβδόγραμμα</strong></a></li>
+  <li><a href="#κυκλικό-διάγραμμα" id="toc-κυκλικό-διάγραμμα" class="nav-link" data-scroll-target="#κυκλικό-διάγραμμα"><span class="header-section-number">1.3</span> <strong>Κυκλικό διάγραμμα</strong></a></li>
+  <li><a href="#χρονόγραμμα" id="toc-χρονόγραμμα" class="nav-link" data-scroll-target="#χρονόγραμμα"><span class="header-section-number">1.4</span> <strong>Χρονόγραμμα</strong></a></li>
+  <li><a href="#εξάσκηση" id="toc-εξάσκηση" class="nav-link" data-scroll-target="#εξάσκηση"><span class="header-section-number">1.5</span> Εξάσκηση</a></li>
+  <li><a href="#παράδειγμα" id="toc-παράδειγμα" class="nav-link" data-scroll-target="#παράδειγμα"><span class="header-section-number">1.6</span> Παράδειγμα</a></li>
+  <li><a href="#παράδειγμα-1" id="toc-παράδειγμα-1" class="nav-link" data-scroll-target="#παράδειγμα-1"><span class="header-section-number">1.7</span> Παράδειγμα</a></li>
+  <li><a href="#παράδειγμα-2" id="toc-παράδειγμα-2" class="nav-link" data-scroll-target="#παράδειγμα-2"><span class="header-section-number">1.8</span> Παράδειγμα</a></li>
+  <li><a href="#παράδειγμα-3" id="toc-παράδειγμα-3" class="nav-link" data-scroll-target="#παράδειγμα-3"><span class="header-section-number">1.9</span> Παράδειγμα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης-3" id="toc-ερωτήσεις-κατανόησης-3" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης-3"><span class="header-section-number">1.10</span> Ερωτήσεις κατανόησης</a></li>
+  <li><a href="#παράδειγμα-με-όλα" id="toc-παράδειγμα-με-όλα" class="nav-link" data-scroll-target="#παράδειγμα-με-όλα"><span class="header-section-number">1.11</span> Παράδειγμα με όλα</a></li>
+  <li><a href="#ερώτηση-επιλογής" id="toc-ερώτηση-επιλογής" class="nav-link" data-scroll-target="#ερώτηση-επιλογής"><span class="header-section-number">1.12</span> Ερώτηση επιλογής</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Στατιστική</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="γραφικές-παραστάσεις-στην-στατιστική" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="γραφικές-παραστάσεις-στην-στατιστική"><span class="header-section-number">1</span> Γραφικές παραστάσεις στην Στατιστική</h2>
+<section id="εικονόγραμμα" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="εικονόγραμμα"><span class="header-section-number">1.1</span> Εικονόγραμμα</h3>
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα που χρησιμοποιεί εικόνες ή σύμβολα για να παρουσιάσει δεδομένα. Κάθε εικόνα αντιστοιχεί σε έναν αριθμό μονάδων που ορίζεται στο υπόμνημα.</p>
+<p>Πώς χρησιμοποιούνται:</p>
+<p>Διαλέγεις ένα εικονίδιο (π.χ. ένα ανθρωπάκι) και ορίζεις τι “αξίζει” (π.χ. 1 ανθρωπάκι = 5 μαθητές). Μετά βάζεις τόσα εικονίδια όσα χρειάζονται.</p>
+<p>Χρησιμοποιείται κυρίως για απλά, ευχάριστα δεδομένα — ιδανικό για μικρότερες ηλικίες και παρουσιάσεις.</p>
+</section>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Να σημειώσουμε ότι πάντα σε όλα τα διαγράμματα παρουσίασης δεδομένων θα πρέπει να υπάρχει <strong>τίτλος</strong> που θα εξηγεί τι ακριβώς παρουσιάζει το διάγραμμα.</p>
+<p>Επίσης σε κάθε διάγραμμα θα πρέπει να υπάρχουν όλα τα απαραίτητα στοιχεία που αναφέρουν τις μεταβλητές και τα ποσά ή ποσοστά για κάθε μεταβλητή.</p>
+</div>
+</div>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-2008442564.png" class="img-fluid"></p>
+<section id="ραβδόγραμμα" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ραβδόγραμμα"><span class="header-section-number">1.2</span> <strong>Ραβδόγραμμα</strong></h3>
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα με <strong>οριζόντιες ή κατακόρυφες ράβδους</strong> (μπάρες) που δείχνουν ποσότητες. Το μήκος κάθε ράβδου αντιστοιχεί στην τιμή που παρουσιάζει.</p>
+<p>Ιδανικό για <strong>σύγκριση κατηγοριών</strong> μεταξύ τους.</p>
+</section>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-3206562024.png" class="img-fluid"></p>
+<section id="κυκλικό-διάγραμμα" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="κυκλικό-διάγραμμα"><span class="header-section-number">1.3</span> <strong>Κυκλικό διάγραμμα</strong></h3>
+<p><strong>Τι είναι;</strong></p>
+<p>Ένας <strong>κύκλος χωρισμένος σε τομείς</strong> (σαν πίτα), όπου κάθε τομέας δείχνει το ποσοστό που καταλαμβάνει κάθε κατηγορία από το σύνολο.</p>
+<p>Ιδανικό για να δείξουμε <strong>πώς μοιράζεται ένα σύνολο (100%)</strong> σε κατηγορίες.</p>
+</section>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-1483143088.png" class="img-fluid"></p>
+<p><strong>Πως χωρίζω τον κύκλο</strong></p>
+<ul>
+<li><p>μετατρέπω την κατηγορία σε ποσοστό <span class="math inline">\(\dfrac{\text{Ποσό κατηγορίας}}{\text{Συνολο όλων των κατηγοριών (Όλο το δείγμα)}}\)</span></p></li>
+<li><p>Κάνω αναγωγή στο μέρος του κυκλικού δίσκου. Αφού όλος ο δίσκος είναι <span class="math inline">\(360^0\)</span>, και το συνολικό ποσοστό των κατηγοριών θα είναι φυσικά 100%, θα πρέπει το α% της κατηγορίας να αντιστοιχεί σε <span class="math inline">\(α\% \cdot{360^0}\)</span></p></li>
+</ul>
+<p>Ετσι για το παραπάνω παράδειγμα θα έχουμε</p>
+<p>για το 40% ==&gt; <span class="math inline">\(40\% \cdot {360^0}=144^0\)</span></p>
+<p>για το 25% ==&gt; <span class="math inline">\(25\% \cdot {360^0}=90^0\)</span></p>
+<p>για το 20% ==&gt; <span class="math inline">\(20\% \cdot {360^0}=72^0\)</span></p>
+<p>για το 15% ==&gt; <span class="math inline">\(15\% \cdot {360^0}=54^0\)</span></p>
+<p>Σύνολα: <em>Ποσοστά</em> 100% <em>Μοίρες</em> <span class="math inline">\(360^0\)</span></p>
+<section id="χρονόγραμμα" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="χρονόγραμμα"><span class="header-section-number">1.4</span> <strong>Χρονόγραμμα</strong></h3>
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα που δείχνει πώς <strong>μεταβάλλεται μια ποσότητα με το χρόνο</strong>. Στον οριζόντιο άξονα (x) έχουμε τον χρόνο και στον κατακόρυφο (y) την ποσότητα.</p>
+<p>Ιδανικό για να δούμε <strong>τάσεις, αυξήσεις, μειώσεις</strong> μέσα σε χρονική περίοδο.</p>
+</section>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-2107151219.png" class="img-fluid"></p>
+<section id="εξάσκηση" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="εξάσκηση"><span class="header-section-number">1.5</span> Εξάσκηση</h3>
+<hr>
+<p><strong>1) Εικονογράμματα – για να “μετράω με εικόνες”</strong></p>
+</section>
+<section id="παράδειγμα" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="παράδειγμα"><span class="header-section-number">1.6</span> Παράδειγμα</h3>
+<p>“Στην τάξη ρωτήσαμε ποιο κατοικίδιο οι μαθητές έχουν και πήραμε τις παρακάτω απαντήσεις.”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Γάτα: 8 μαθητές<br>
+</li>
+<li>Σκύλος: 6 μαθητές<br>
+</li>
+<li>Ψάρι: 4 μαθητές</li>
+</ul>
+<p><strong>Κανόνας εικονογράμματος</strong> <code>Παρουσιάστε τα δεδομένα με ένα εικονόγραμμα όπου 1 εικονίδιο = 2 μαθητές</code></p>
+<p>Άρα</p>
+<ul>
+<li>Γάτα: 8 → 4 εικονίδια<br>
+</li>
+<li>Σκύλος: 6 → ▭ εικονίδια<br>
+</li>
+<li>Ψάρι: 4 → ▭ εικονίδια</li>
+</ul>
+<section id="ερωτήσεις-κατανόησης" class="level4" data-number="1.6.1">
+<h4 data-number="1.6.1" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης"><span class="header-section-number">1.6.1</span> Ερωτήσεις κατανόησης</h4>
+<p>“Ποιο είναι το πιο συχνό;”<br>
+“Πόσο περισσότερες είναι οι γάτες από τα ψάρια;”<br>
+“Αν είχαμε 10 μαθητές με γάτα, τι πρόβλημα θα είχαμε με τα εικονίδια;”</p>
+<hr>
+<p><strong>2) Ραβδόγραμμα – για γρήγορη σύγκριση</strong></p>
+</section>
+</section>
+<section id="παράδειγμα-1" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="παράδειγμα-1"><span class="header-section-number">1.7</span> Παράδειγμα</h3>
+<p>“ Ρωτήσαμε τους μαθητές με τι μέσο έρχονται στο σχολείο και μας είπαν:”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Με τα πόδια: 10<br>
+</li>
+<li>Λεωφορείο: 7<br>
+</li>
+<li>Αυτοκίνητο: 5</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Ραβδόγραμμα</strong> .</p>
+<section id="ερωτήσεις-κατανόησης-1" class="level4" data-number="1.7.1">
+<h4 data-number="1.7.1" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-1"><span class="header-section-number">1.7.1</span> Ερωτήσεις κατανόησης</h4>
+<p>“Πόσοι περισσότεροι πάνε με πόδια απ’ ότι με λεοφωρείο;</p>
+<p>“Πόση είναι η διαφορά μεγαλύτερου–μικρότερου;”</p>
+<p>“Πόσοι είναι συνολικά οι μαθητές;”</p>
+<hr>
+<p><strong>3) Κυκλικό διάγραμμα (πίτας) – για “κομμάτια του 100%”</strong></p>
+</section>
+</section>
+<section id="παράδειγμα-2" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="παράδειγμα-2"><span class="header-section-number">1.8</span> Παράδειγμα</h3>
+<p>“Ρωτήσαμε τους μαθητές πώς μοιράζεται ο ελεύθερος χρόνος τους μέσα σε 1 ημέρα και μας είπαν:”</p>
+<p><strong>Δεδομένα (σε ώρες, σύνολο 24)</strong></p>
+<ul>
+<li>Ύπνος: 8 ώρες<br>
+</li>
+<li>Σχολείο/διάβασμα: 10 ώρες<br>
+</li>
+<li>Χόμπι/οθόνες/βόλτα: 6 ώρες</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Κυκλικό διάγραμμα</strong> .</p>
+<section id="ερωτήσεις-κατανόησης-2" class="level4" data-number="1.8.1">
+<h4 data-number="1.8.1" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-2"><span class="header-section-number">1.8.1</span> Ερωτήσεις κατανόησης</h4>
+<p>“Ποιο κομμάτι είναι μεγαλύτερο;”<br>
+“Αν ο ύπνος γίνει 9 ώρες, ποιο κομμάτι θα μεγαλώσει και ποιο θα μικρύνει;”</p>
+<hr>
+<p><strong>4) Χρονογράμματα – για αλλαγή στον χρόνο (τάση)</strong></p>
+</section>
+</section>
+<section id="παράδειγμα-3" class="level3" data-number="1.9">
+<h3 data-number="1.9" class="anchored" data-anchor-id="παράδειγμα-3"><span class="header-section-number">1.9</span> Παράδειγμα</h3>
+<p>“Μετρήσαμε την Θερμοκρασία στην πόλη μας σε 5 μέρες και βρήκαμε ότι:”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Δευτέρα: 18°C<br>
+</li>
+<li>Τρίτη: 20°C<br>
+</li>
+<li>Τετάρτη: 19°C<br>
+</li>
+<li>Πέμπτη: 22°C<br>
+</li>
+<li>Παρασκευή: 21°C</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Χρονόγραμμα</strong> .</p>
+</section>
+<section id="ερωτήσεις-κατανόησης-3" class="level3" data-number="1.10">
+<h3 data-number="1.10" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-3"><span class="header-section-number">1.10</span> Ερωτήσεις κατανόησης</h3>
+<p>“Ποια μέρα είχαμε τη μεγαλύτερη θερμοκρασία;”<br>
+“Μεταξύ ποιων ημερών η αύξηση ήταν μεγαλύτερη;”<br>
+“Αν συνεχίσει έτσι, τι περίπου περιμένεις το Σάββατο;”</p>
+</section>
+<section id="παράδειγμα-με-όλα" class="level3" data-number="1.11">
+<h3 data-number="1.11" class="anchored" data-anchor-id="παράδειγμα-με-όλα"><span class="header-section-number">1.11</span> Παράδειγμα με όλα</h3>
+<section id="η-β2-κατέγραψε-πόσα-λεπτά-διάβασε-κάθε-μέρα-για-5-μέρες." class="level4" data-number="1.11.1">
+<h4 data-number="1.11.1" class="anchored" data-anchor-id="η-β2-κατέγραψε-πόσα-λεπτά-διάβασε-κάθε-μέρα-για-5-μέρες."><span class="header-section-number">1.11.1</span> «Η Β2 κατέγραψε πόσα λεπτά διάβασε κάθε μέρα για 5 μέρες.</h4>
+<p>Επίσης, σε μια έρευνα στην τάξη, οι μαθητές είπαν ποιο μάθημα διαβάζουν περισσότερο και <em>πώς μοιράζουν</em> συνολικά τον χρόνο διαβάσματος.»</p>
+<p>Κάντε τα αντίστοιχα διαγράμματα και απαντήστε στις ερωτήσεις</p>
+<p><strong>1) Εικονογράμμα:</strong> <strong>Πόσοι μαθητές διαβάζουν πάνω από 1 ώρα την ημέρα</strong></p>
+<p><strong>Δεδομένα (έρευνα τάξης)</strong> Από 20 μαθητές:</p>
+<ul>
+<li>Πάνω από 60′: 10 μαθητές</li>
+<li>30′–60′: 6 μαθητές</li>
+<li>Κάτω από 30′: 4 μαθητές</li>
+</ul>
+<p><strong>Εικονογράμμα (κανόνας)</strong> Θέτεις <code>1 βιβλιαράκι = 2 μαθητές</code>.</p>
+<p>Άρα:</p>
+<ul>
+<li>Πάνω από 60′ → 10 μαθητές → 5 βιβλιαράκια</li>
+<li>30′–60′ → 6 μαθητές → 3 βιβλιαράκια</li>
+<li>Κάτω από 30′ → 4 μαθητές → 2 βιβλιαράκια</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποια κατηγορία έχει τους περισσότερους μαθητές;</li>
+<li>Πόσοι περισσότεροι διαβάζουν πάνω από 60′ σε σχέση με κάτω από 30′;</li>
+<li>Αν το σύνολο ήταν 24 μαθητές και οι αναλογίες ίδιες, πόσοι θα ήταν “πάνω από 60′”;</li>
+</ol>
+<p><strong>2) Ραβδόγραμμα:</strong> Ποιο μάθημα διαβάζουν περισσότερο.</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Μαθηματικά: 8<br>
+</li>
+<li>Γλώσσα: 6<br>
+</li>
+<li>Ιστορία: 4<br>
+</li>
+<li>Φυσική: 2</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποιο μάθημα έχει τη μεγαλύτερη ράβδο;<br>
+</li>
+<li>Πόσοι περισσότεροι διάλεξαν Μαθηματικά από Φυσική;<br>
+</li>
+<li>Αν προστεθούν 3 μαθητές στη Γλώσσα, ποιο μάθημα θα βγει πρώτο;</li>
+</ol>
+<hr>
+<p><strong>3) Κυκλικό διάγραμμα:</strong> Πώς μοιράζεται το 100% του συνολικού διαβάσματος</p>
+<p><strong>Δεδομένα</strong> (Αν υποθέσουμε ότι σύνολο χρόνου διαβάσματος μιας μέρας = 2 ώρες = 120′)</p>
+<ul>
+<li>Μαθηματικά: 60′<br>
+</li>
+<li>Γλώσσα: 30′<br>
+</li>
+<li>Ιστορία: 20′<br>
+</li>
+<li>Φυσική: 10′</li>
+</ul>
+<p>Σε ποσοστά:</p>
+<ul>
+<li>Μαθηματικά: 60/120 = 50%<br>
+</li>
+<li>Γλώσσα: 25%<br>
+</li>
+<li>Ιστορία: 16,7% (περίπου 17%)<br>
+</li>
+<li>Φυσική: 8,3% (περίπου 8%)</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποιο μάθημα πήρε το μεγαλύτερο ποσοστό;<br>
+</li>
+<li>Μαθηματικά + Γλώσσα μαζί τι ποσοστό είναι; (75%)<br>
+</li>
+<li>Αν η Φυσική διπλασιαστεί (από 10′ σε 20′) χωρίς να αλλάξει το σύνολο 120′, τι πρέπει να μειωθεί; (κάποιο άλλο κομμάτι)</li>
+</ol>
+<hr>
+<p><strong>4) Χρονογράφημα:</strong> Πώς αλλάζει ο χρόνος διαβάσματος μέσα στην εβδομάδα</p>
+<p><strong>Δεδομένα</strong> (λεπτά διαβάσματος ανά μέρα) - Δευτέρα: 40′<br>
+</p>
+<ul>
+<li>Τρίτη: 50′<br>
+</li>
+<li>Τετάρτη: 35′<br>
+</li>
+<li>Πέμπτη: 60′<br>
+</li>
+<li>Παρασκευή: 45′</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποια μέρα ήταν η μεγαλύτερη τιμή;<br>
+</li>
+<li>Από ποια μέρα σε ποια είχαμε τη μεγαλύτερη αύξηση; (Τετάρτη → Πέμπτη, +25′)<br>
+</li>
+<li>Ποια μέρα είχαμε “πτώση” σε σχέση με την προηγούμενη; (Τρίτη→Τετάρτη, Πέμπτη→Παρασκευή)</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="ερώτηση-επιλογής" class="level3" data-number="1.12">
+<h3 data-number="1.12" class="anchored" data-anchor-id="ερώτηση-επιλογής"><span class="header-section-number">1.12</span> Ερώτηση επιλογής</h3>
+<p>Αν</p>
+<ul>
+<li><p>Θέλω να δείξω <strong>ποιο μέρος του συνόλου</strong> πήρε κάθε μάθημα. Ποιο διάγραμμα ταιριάζει;<br>
+Απάντηση: <strong>_____________</strong>.</p></li>
+<li><p>Θέλω να δείξω <strong>πώς αλλάζει</strong> κάτι μέσα στο χρόνο;<br>
+Απάντηση: <strong>_______________</strong>.</p></li>
+<li><p>Θέλω να <strong>συγκρίνω κατηγορίες</strong> (μαθήματα) γρήγορα.<br>
+Απάντηση: <strong>__________________</strong>.</p></li>
+<li><p>Θέλω κάτι <strong>πιο παιχνιδιάρικο/οπτικό</strong> για μικρούς αριθμούς.<br>
+Απάντηση: <strong>____________________</strong>.</p></li>
+</ul>
+<p><a href="Φύλλο Εργασίας_ Διαγράμματα (Αθλητισμός).pdf" download="Φύλλο Εργασίας_ Διαγράμματα (Αθλητισμός).pdf">Κατεβάστε ένα Test</a></p>
+<hr>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -588,12 +996,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
