@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Στατιστική – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>05. Μέση τιμή - Διάμεσος – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-bluelight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html">05. Μέση τιμή - Διάμεσος</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html">05. Μέση τιμή - Διάμεσος</a></li></ol></nav>
+      <h1 class="title">05. Μέση τιμή - Διάμεσος</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">28 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -181,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -397,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -514,7 +592,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">05. Μέση τιμή - Διάμεσος</span></a>
   </div>
 </li>
@@ -526,7 +604,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -552,33 +630,321 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μέση-τιμή---διάμεσος" id="toc-μέση-τιμή---διάμεσος" class="nav-link active" data-scroll-target="#μέση-τιμή---διάμεσος"><span class="header-section-number">1</span> Μέση τιμή - Διάμεσος</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-μέση-τιμή-και-διάμεσος" id="toc-θεωρία-μέση-τιμή-και-διάμεσος" class="nav-link" data-scroll-target="#θεωρία-μέση-τιμή-και-διάμεσος"><span class="header-section-number">1.1</span> <strong>Θεωρία: Μέση Τιμή και Διάμεσος</strong></a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.2</span> <strong>Παραδείγματα</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις-για-εξάσκηση" id="toc-άλυτες-ασκήσεις-για-εξάσκηση" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.3</span> <strong>Άλυτες Ασκήσεις για Εξάσκηση</strong></a></li>
+  </ul></li>
+  <li><a href="#μέση-τιμή---διάμεσος-ομαδοποιημένων-παρατηρήσεων" id="toc-μέση-τιμή---διάμεσος-ομαδοποιημένων-παρατηρήσεων" class="nav-link" data-scroll-target="#μέση-τιμή---διάμεσος-ομαδοποιημένων-παρατηρήσεων"><span class="header-section-number">2</span> Μέση τιμή - Διάμεσος ομαδοποιημένων παρατηρήσεων</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-ομαδοποιημένες-παρατηρήσεις" id="toc-θεωρία-ομαδοποιημένες-παρατηρήσεις" class="nav-link" data-scroll-target="#θεωρία-ομαδοποιημένες-παρατηρήσεις"><span class="header-section-number">2.1</span> <strong>Θεωρία: Ομαδοποιημένες Παρατηρήσεις</strong></a></li>
+  <li><a href="#λυμένες-ασκήσεις" id="toc-λυμένες-ασκήσεις" class="nav-link" data-scroll-target="#λυμένες-ασκήσεις"><span class="header-section-number">2.2</span> <strong>5 Λυμένες Ασκήσεις</strong></a></li>
+  <li><a href="#άλυτες-ασκήσεις" id="toc-άλυτες-ασκήσεις" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις"><span class="header-section-number">2.3</span> <strong>Άλυτες Ασκήσεις</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/statistiki/index.html">Στατιστική</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Στατιστική</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μέση-τιμή---διάμεσος" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μέση-τιμή---διάμεσος"><span class="header-section-number">1</span> Μέση τιμή - Διάμεσος</h2>
+<section id="θεωρία-μέση-τιμή-και-διάμεσος" class="level3" style="background-color: #baace6; border: 2px solid #2f3e50; color: #27f5a; padding: 15px; border-radius: 5px;" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-μέση-τιμή-και-διάμεσος"><span class="header-section-number">1.1</span> <strong>Θεωρία: Μέση Τιμή και Διάμεσος</strong></h3>
+<p><strong>1. Μέση Τιμή (ή Μέσος Όρος)</strong> Η μέση τιμή ενός συνόλου παρατηρήσεων είναι το πηλίκο του αθροίσματος των τιμών των παρατηρήσεων διά του πλήθους τους.</p>
+<p>* <strong>Τύπος:</strong> <span class="math inline">\(\text{Μέση τιμή} = \dfrac{\text{Άθροισμα παρατηρήσεων}}{\text{Πλήθος παρατηρήσεων}}\)</span>.</p>
+<p><strong>2. Διάμεσος</strong> Διάμεσος ενός συνόλου παρατηρήσεων που είναι τοποθετημένες σε <strong>αύξουσα σειρά</strong> είναι η τιμή που βρίσκεται ακριβώς στη μέση.</p>
+<p>* Αν το πλήθος των παρατηρήσεων είναι <strong>περιττός αριθμός</strong>, η διάμεσος είναι η μεσαία παρατήρηση.</p>
+<p>* Αν το πλήθος είναι <strong>άρτιος αριθμός</strong>, η διάμεσος είναι ο μέσος όρος των δύο μεσαίων παρατηρήσεων.</p>
+</section>
+<hr>
+<section id="παραδείγματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.2</span> <strong>Παραδείγματα</strong></h3>
+<p><strong>Άσκηση 1: Υπολογισμός Μέσης Τιμής</strong> Η Έλενα πήρε τους εξής βαθμούς στην Ιστορία: 16, 14, 18, 18 και 14. Ποιος είναι ο γενικός της βαθμός;</p>
+<p>* <strong>Λύση:</strong></p>
+<p>Προσθέτουμε τους βαθμούς: 16 + 14 + 18 + 18 + 14 = 80.</p>
+<p>Διαιρούμε με το πλήθος <span class="math inline">\(Ν=5\)</span>: <span class="math inline">\(\quad \dfrac{80}{5} = 16\quad\)</span>. Άρα η μέση τιμή είναι 16.</p>
+<p><strong>Άσκηση 2: Διάμεσος με περιττό πλήθος</strong> Να βρεθεί η διάμεσος των τιμών: 3, 5, 2, 7, 3, 2, 4, 6, 6, 4, 3.</p>
+<p>* <strong>Λύση:</strong></p>
+<p>Τις βάζουμε σε σειρά: 2, 2, 3, 3, 3, <strong>4</strong>, 4, 5, 6, 6, 7.</p>
+<p>Το πλήθος είναι 11 (περιττός). Η μεσαία τιμή (6η στη σειρά) είναι το 4. Άρα Διάμεσος = 4.</p>
+<p><strong>Άσκηση 3: Διάμεσος με άρτιο πλήθος</strong> Να βρεθεί η διάμεσος των τιμών: 12, 15, 14, 17, 13, 18, 15, 16, 13, 17, 12, 11.</p>
+<p>* <strong>Λύση:</strong></p>
+<p>Σε αύξουσα σειρά: 11, 12, 12, 13, 13, <strong>14, 15</strong>, 15, 16, 17, 17, 18.</p>
+<p>Το πλήθος είναι 12 (άρτιος). Οι δύο μεσαίες είναι το 14 και το 15.</p>
+<p><span class="math inline">\(\text{Διάμεσος} = \dfrac{14 + 15}{2} = 14,5\)</span>.</p>
+<p><strong>Άσκηση 4: Μέσος όρος δύο ομάδων (Σύνθετη Μέση Τιμή)</strong> Σε μια ομάδα μπάσκετ 14 αθλητές έχουν μέσο ύψος 188 cm και 16 αθλήτριες έχουν 178 cm. Ποιο είναι το μέσο ύψος όλης της ομάδας;</p>
+<ul>
+<li><strong>Λύση:</strong></li>
+</ul>
+<p>Συνολικό ύψος αθλητών: <span class="math inline">\(14 \cdot 188 = 2632\)</span> cm.</p>
+<p>Συνολικό ύψος μαθητριών: <span class="math inline">\(16 \cdot 178 = 2848\)</span> cm.</p>
+<p>Άθροισμα: 2632 + 2848 = 5480 cm.</p>
+<p>Πλήθος αθλητών: 14 + 16 = 30.</p>
+<p>Μέση τιμή: <span class="math inline">\(\dfrac{5480}{30} = 182,67 \quad cm\)</span>.</p>
+<p><strong>Άσκηση 5: Διάμεσος σε πίνακα συχνοτήτων (μη ομαδοποιημένο)</strong> Μια ομάδα πέτυχε τέρματα σε 15 αγώνες οπως δείχνει ο παρακάτω πίνακας:</p>
+<p><img src="images/clipboard-3541656338.png" class="img-fluid"></p>
+<p>* <strong>Λύση:</strong> Το πλήθος είναι 15 (περιττός), άρα η διάμεσος είναι η 8η παρατήρηση.</p>
+<p>Συσσωρευμένες συχνότητες:</p>
+<p>2 (για το 0),</p>
+<p>2+3=5 (για το 1),</p>
+<p>5+3=8 (για το 2).</p>
+<p>Η 8η παρατήρηση είναι το 2. Άρα Διάμεσος = 2.</p>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις-για-εξάσκηση" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="άλυτες-ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.3</span> <strong>Άλυτες Ασκήσεις για Εξάσκηση</strong></h3>
+<ol type="1">
+<li><p><strong>Θερμοκρασίες:</strong> Οι μεσημεριανές θερμοκρασίες ενός δεκαημέρου ήταν:</p>
+<p>15, 17, 15, 16, 18, 15, 14, 15, 16, 19.</p>
+<p>Βρείτε τη μέση τιμή και τη διάμεσο.</p></li>
+<li><p><strong>Σύγκριση Μαθητών:</strong></p></li>
+</ol>
+<p>Ο μαθητής Α έχει βαθμούς 18, 17, 16, 19, 20 και</p>
+<p>ο μαθητής Β έχει 19, 19, 18, 18, 19.</p>
+<p>Ποιος έχει καλύτερο μέσο όρο;</p>
+<ol start="3" type="1">
+<li><p><strong>Απουσίες:</strong> Σε ένα δείγμα 17 μαθητών καταγράφηκαν οι απουσίες τους. Αν η μέση τιμή είναι 15 και προστεθεί ένας μαθητής με 55 απουσίες, πώς θα αλλάξει ο μέσος όρος;</p></li>
+<li><p><strong>Εύρεση Άγνωστης Τιμής:</strong> Η μέση τιμή 5 αριθμών είναι 18. Αν οι τέσσερις είναι 10, 15, 20, 25, ποιος είναι ο πέμπτος;.</p></li>
+<li><p><strong>Μπάσκετ:</strong> Τα ύψη 8 αθλητών είναι: 172, 175, 183, 177, 190, 193, 189, 195 cm. Βρείτε τη διάμεσο.</p></li>
+<li><p><strong>Μισθοί:</strong> Οι μηνιαίες αποδοχές 4 εργαζομένων είναι 700€, 800€, 900€ και 2100€. Γιατί η διάμεσος (850€) αντιπροσωπεύει καλύτερα τους περισσότερους από τη μέση τιμή (1125€);</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η επιλογή ανάμεσα στη μέση τιμή και τη διάμεσο εξαρτάται κυρίως από το αν υπάρχουν ακραίες τιμές στο δείγμα σου:</p>
+<ul>
+<li><strong>Μέση Τιμή:</strong> Είναι κατάλληλη όταν οι παρατηρήσεις είναι σχετικά κοντά η μία στην άλλη. Το μειονέκτημά της είναι ότι <strong>επηρεάζεται σημαντικά από ακραίες τιμές</strong> (πολύ μεγάλες ή πολύ μικρές), οι οποίες μπορούν να την «τραβήξουν» προς το μέρος τους, με αποτέλεσμα να μην δίνει σωστή εικόνα για το σύνολο.</li>
+<li><strong>Διάμεσος:</strong> Ενδείκνυται όταν υπάρχουν πολύ μεγάλες ή πολύ μικρές τιμές που αποκλίνουν από τις υπόλοιπες. Η διάμεσος <strong>δεν επηρεάζεται από τις ακραίες τιμές</strong> και συχνά «προσεγγίζει» καλύτερα την πραγματικότητα για τους περισσότερους,.</li>
+</ul>
+<p><strong>Παράδειγμα:</strong> Αν σε μια επιχείρηση 7 εργαζόμενοι παίρνουν κάτω από 1000€ και 2 διευθυντές παίρνουν πάνω από 2000€, η μέση τιμή θα αυξηθεί λόγω των δύο μεγάλων μισθών. Σε αυτή την περίπτωση, η διάμεσος (η τιμή που βρίσκεται ακριβώς στη μέση) αντιπροσωπεύει καλύτερα τις αποδοχές της πλειοψηφίας των εργαζομένων.</p>
+</div>
+</div>
+<ol start="7" type="1">
+<li><p><strong>Παιδιά Οικογενειών:</strong> Σε 15 οικογένειες ο αριθμός των παιδιών είναι: 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5, 1, 2. Βρείτε τη διάμεσο.</p></li>
+<li><p><strong>Διαγώνισμα:</strong> Σε ένα τεστ με άριστα το 20, 11 μαθητές πήραν: 5, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20. Βρείτε τη μεσαία παρατήρηση.</p></li>
+<li><p><strong>Μεταβολή Τιμών:</strong> Αν σε όλες τις παρατηρήσεις ενός συνόλου προσθέσουμε τον αριθμό 5, πώς θα επηρεαστεί η μέση τιμή και η διάμεσος;.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="μέση-τιμή---διάμεσος-ομαδοποιημένων-παρατηρήσεων" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="μέση-τιμή---διάμεσος-ομαδοποιημένων-παρατηρήσεων"><span class="header-section-number">2</span> Μέση τιμή - Διάμεσος ομαδοποιημένων παρατηρήσεων</h2>
+<section id="θεωρία-ομαδοποιημένες-παρατηρήσεις" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="θεωρία-ομαδοποιημένες-παρατηρήσεις"><span class="header-section-number">2.1</span> <strong>Θεωρία: Ομαδοποιημένες Παρατηρήσεις</strong></h3>
+<ul>
+<li><strong>Κέντρο Κλάσης:</strong> Είναι ο μέσος όρος των δύο άκρων μιας κλάσης. Για την κλάση 40–46, το κέντρο είναι <span class="math inline">\(\dfrac{40+46}{2} = 43\)</span>.</li>
+<li><strong>Εκτίμηση Μέσης Τιμής:</strong> Όταν οι τιμές είναι σε κλάσεις, δεν ξέρουμε την ακριβή τιμή κάθε παρατήρησης. Θεωρούμε ότι όλες οι παρατηρήσεις μιας κλάσης αντιπροσωπεύονται από το κέντρο της.
+<ol type="1">
+<li>Βρίσκουμε τα κέντρα των κλάσεων.</li>
+<li>Πολλαπλασιάζουμε κάθε κέντρο με τη συχνότητα της κλάσης.</li>
+<li>Προσθέτουμε τα γινόμενα και διαιρούμε με το συνολικό πλήθος.</li>
+</ol></li>
+<li><strong>Διάμεσος:</strong> Στις ομαδοποιημένες παρατηρήσεις, η διάμεσος είναι η τιμή που χωρίζει το δείγμα σε δύο ίσα μέρη. Συνήθως αναζητούμε την κλάση στην οποία ανήκει η μεσαία παρατήρηση.</li>
+</ul>
+</section>
+<hr>
+<section id="λυμένες-ασκήσεις" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="λυμένες-ασκήσεις"><span class="header-section-number">2.2</span> <strong>5 Λυμένες Ασκήσεις</strong></h3>
+<p><strong>Άσκηση 1: Μέση τιμή βαθμολογίας</strong></p>
+<p>Δίνονται οι βαθμοί 25 μαθητών σε κλάσεις, βρείτε την μέση τιμή:</p>
+<p>* <strong>Λύση:</strong></p>
+<p><img src="images/clipboard-4095257399.png" class="img-fluid"></p>
+<p>1. Κέντρα κλάσεων: 2, 6, 10, 14, 18.</p>
+<p>2. Γινόμενα: <span class="math inline">\((1 \cdot 2) + (2 \cdot 6) + (6 \cdot 10) + (10 \cdot 14) + (6 \cdot 18) = 2 + 12 + 60 + 140 + 108 = 322\)</span>.</p>
+<p>3. Μέση τιμή: <span class="math inline">\(\dfrac{322}{25} = 12,88\)</span>.</p>
+<p><strong>Άσκηση 2: Μέση ηλικία παιδιών</strong> Σε μια πόλη 200 παιδιά παρουσίασαν αλλεργία όπως φαίνεται στον παρακάτω πίνακα:</p>
+<p><img src="images/clipboard-3676132945.png" class="img-fluid"></p>
+<p>* <strong>Λύση:</strong></p>
+<p>1. Κέντρα: 1, 3, 5, 7, 9, 11.</p>
+<p>2. Άθροισμα γινομένων:</p>
+<p><span class="math inline">\((50 \cdot 1) + (40 \cdot 3) + (60 \cdot 5) + (30 \cdot 7) + (10 \cdot 9) + (10 \cdot 11) =\)</span></p>
+<p><span class="math inline">\(=50 + 120 + 300 + 210 + 90 + 110 = 880\)</span>.</p>
+<ol start="3" type="1">
+<li>Μέση ηλικία: <span class="math inline">\(\dfrac{880}{200} = 4,4\)</span> έτη.</li>
+</ol>
+<p><strong>Άσκηση 4: Μέση τιμή ηλικίας φιλάθλων</strong> Σε δείγμα 200 φιλάθλων τένις ο πίνακας κατανομής συχνοτήτων είναι ο παρακάτω.</p>
+<p><img src="images/clipboard-614558198.png" class="img-fluid"></p>
+<p>* <strong>Λύση:</strong></p>
+<p>1. Κέντρα: 12, 18, 24, 30, 36, 42.</p>
+<p>2. Άθροισμα:</p>
+<p><span class="math inline">\((24 \cdot 12) + (48 \cdot 18) + (56 \cdot 24) + (36 \cdot 30) + (24 \cdot 36) + (12 \cdot 42) =\)</span></p>
+<p><span class="math inline">\(=288 + 864 + 1344 + 1080 + 864 + 504 = 4944\)</span>.</p>
+<ol start="3" type="1">
+<li>Μέση τιμή: <span class="math inline">\(\dfrac{4944}{200} = 24,72\)</span> έτη.</li>
+</ol>
+<p><strong>Άσκηση 5: Μέση τιμή τιμών πώλησης</strong> Σε 20 σημεία πώλησης είχαμε τις τιμές πώλησης ως εξής: 45–47 (2 σημεία), 47–49 (3), 49–51 (7), 51–53 (5), 53–55 (3).</p>
+<p>Να βρείτε την μέση τιμή και την διάμεσο</p>
+<p><img src="images/clipboard-2444923646.png" class="img-fluid"></p>
+<p>* <strong>Λύση: Μέση τιμή</strong></p>
+<p>1. Κέντρα: 46, 48, 50, 52, 54.</p>
+<p>2. Άθροισμα: <span class="math inline">\((2 \cdot 46) + (3 \cdot 48) + (7 \cdot 50) + (5 \cdot 52) + (3 \cdot 54) =\)</span></p>
+<p><span class="math inline">\(=92 + 144 + 350 + 260 + 162 = 1008\)</span>.</p>
+<p>3. Μέση τιμή: <span class="math inline">\(\dfrac{1008}{20} = 50,4\)</span>.</p>
+<ul>
+<li><strong>Διάμεσος</strong></li>
+</ul>
+<ol type="1">
+<li><strong>Εύρεση της θέσης:</strong> Επειδή το συνολικό πλήθος των παρατηρήσεων είναι <span class="math inline">\(N = 20\)</span> (άρτιος αριθμός), η διάμεσος είναι ο μέσος όρος της <strong>10ης</strong> και της <strong>11ης</strong> παρατήρησης.</li>
+<li><strong>Εύρεση της κλάσης:</strong> Υπολογίζουμε τις συσσωρευμένες συχνότητες για να δούμε πού πέφτουν αυτές οι παρατηρήσεις:
+<ul>
+<li>1η κλάση (45–47): <strong>2</strong> σημεία.</li>
+<li>2η κλάση (47–49): 2 + 3 = <strong>5</strong> σημεία.</li>
+<li>3η κλάση (49–51): 5 + 7 = <strong>12</strong> σημεία. Αφού η 3η κλάση φτάνει μέχρι τη 12η παρατήρηση, τόσο η 10η όσο και η 11η τιμή βρίσκονται στην κλάση <strong>49–51</strong>.</li>
+</ul></li>
+<li><strong>Υπολογισμός τιμής:</strong> Στα ομαδοποιημένα δεδομένα, θεωρούμε ότι οι παρατηρήσεις μιας κλάσης αντιπροσωπεύονται από το <strong>κέντρο</strong> της.
+<ul>
+<li>Κέντρο κλάσης 49–51: <span class="math inline">\((49 + 51) / 2 =\)</span> <strong>50</strong>.</li>
+</ul></li>
+</ol>
+<p>Άρα, η εκτίμηση της διαμέσου είναι <strong>50</strong>.</p>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="άλυτες-ασκήσεις"><span class="header-section-number">2.3</span> <strong>Άλυτες Ασκήσεις</strong></h3>
+<ol type="1">
+<li><strong>Ταχύτητες:</strong> Η τροχαία έλεγξε 50 αυτοκίνητα και βρήκε τα εξής:</li>
+</ol>
+<p>60–80 km/h (έτρεχαν 5 αυτοκίνητα),</p>
+<p>80–100 (έτρεχαν 8 αυτοκίνητα),</p>
+<p>100–120 (έτρεχαν 15 αυτοκίνητα),</p>
+<p>120–140 (έτρεχαν 12 αυτοκίνητα),</p>
+<p>140–160 (έτρεχαν 7 αυτοκίνητα),</p>
+<p>160–180 (έτρεχαν 3 αυτοκίνητα).</p>
+<pre><code>Βρείτε τη μέση ταχύτητα.</code></pre>
+<ol start="2" type="1">
+<li><strong>Ηλικίες Υπαλλήλων:</strong> Σε σύνολο 120 ατόμων βρήκαμε ότι :</li>
+</ol>
+<p>20–30 ετών (ήταν 12 άτομα),</p>
+<p>30–40 (ήταν 36 άτομα),</p>
+<p>40–50 (ήταν x άτομα),</p>
+<p>50–60 (ήταν 48 άτομα).</p>
+<pre><code>Βρείτε τη συχνότητα x και τη μέση ηλικία.</code></pre>
+<ol start="3" type="1">
+<li><strong>Απουσίες:</strong> Σε δείγμα 60 μαθητών μετρήσαμε τις απουσίες που έκαναν το β τρίμηνο και πήραμε τα εξής αποτελέσματα:</li>
+</ol>
+<p>0 ημέρες (35 μαθητές),</p>
+<p>1 ημέρα (12 μαθητές),</p>
+<p>2 ημέρες (8 μαθητές),</p>
+<p>3 ημέρες (2 μαθητές),</p>
+<p>4 ημέρες (3 μαθητές).</p>
+<pre><code>Βρείτε τη μέση τιμή και τη διάμεσο.</code></pre>
+<ol start="4" type="1">
+<li><strong>Βαθμολογία Τεστ:</strong> Οι βαθμοί 20 μαθητών ομαδοποιήθηκαν ως εξής:</li>
+</ol>
+<p>0–4 μονάδες ==&gt; (1 μαθητής),</p>
+<p>4–8 μονάδες ==&gt; (4 μαθητές),</p>
+<p>8–12 μονάδες ==&gt; (5 μαθητές),</p>
+<p>12–16 μονάδες ==&gt; (6 μαθητές),</p>
+<p>16–20 μονάδες ==&gt; (4 μαθητές).</p>
+<pre><code>Υπολογίστε την εκτίμηση της μέσης τιμής.</code></pre>
+<ol start="5" type="1">
+<li><strong>Ημέρες Ξεκούρασης:</strong> Ομαδοποιήστε τις παρατηρήσεις</li>
+</ol>
+<p>2, 3, 1, 2, 6, 1, 1, 2, 0, 5, 4, 7, 2, 4, 7</p>
+<p>σε κλάσεις πλάτους 2 (0–2, 2–4 κ.λπ.) και βρείτε τη μέση τιμή.</p>
+<ol start="6" type="1">
+<li>Ο αριθμός των τροχαίων παραβάσεων στην Εθνική Οδό, που έγινε κατά τη διάρκεια ενός μήνα ανά ημέρα, ήταν:</li>
+</ol>
+<p>261, 211, 223, 282, 272, 211, 233, 267, 247, 243, 207, 221, 294, 201, 249, 214, 242, 211, 262, 285, 298, 272, 214, 232, 215, 272, 245, 241, 263, 242.</p>
+<p>α) Να ομαδοποιήσετε τα δεδομένα σε πέντε κλάσεις ίσου πλάτους. <strong>200–220</strong>, <strong>220–240</strong>, <strong>240–260</strong>, <strong>260–280</strong> και <strong>280–300</strong></p>
+<p>β) Να κατασκευάσετε τον πίνακα συχνοτήτων.</p>
+<p>γ) Να βρείτε την μέση τιμή και την διάμεσο</p>
+<ol start="7" type="1">
+<li><strong>Ασθένειες:</strong> Μετρήσαμε τις ημέρες που ασθένησαν 80 εργαζόμενοι σε διάστημα ενός έτους και βρήκαμε ότι:</li>
+</ol>
+<p>0–10 ημέρες ασθένησε το (35%),</p>
+<p>10–20 ημέρες ασθένησε το (40%),</p>
+<p>20–30 ημέρες ασθένησε το (15%),</p>
+<p>30–40 ημέρες ασθένησε το (10%).</p>
+<pre><code>Βρείτε τη μέση τιμή των ημερών ασθένειας.</code></pre>
+<ol start="8" type="1">
+<li><strong>Ύψος Μαθητών:</strong> 20 μαθητές έχουν ύψη σε κλάσεις:</li>
+</ol>
+<p>1,5–1,6 m (5 μαθητές),</p>
+<p>1,6–1,7 (6 μαθητές),</p>
+<p>1,7–1,8 (8 μαθητές),</p>
+<p>1,8–1,9 (1 μαθητές).</p>
+<pre><code>Βρείτε τη μέση τιμή.</code></pre>
+<ol start="9" type="1">
+<li><p><strong>Θερμοκρασίες Νοεμβρίου:</strong> Κατασκευάστε πίνακα συχνοτήτων για τις τιμές 10, 14, 12, 16… (30 παρατηρήσεις δικές σας) και βρείτε τη μέση θερμοκρασία και τη διάμεσο.</p></li>
+<li><p><strong>Βάρος Μαθητών:</strong> 80 μαθητές ομαδοποιήθηκαν σε κλάσεις πλάτους 6 kg ανάλογα με το βάρος τους</p></li>
+</ol>
+<p>(40–46, 46–52 κ.λπ.) με συχνότητες 8, 13, 26, 20, 7, 4, 2. (πόσες κλάσεις θα δημιουργήσετε;)</p>
+<pre><code>Βρείτε την εκτίμηση της μέσης τιμής.</code></pre>
+<ol start="11" type="1">
+<li><strong>Ομαδοποίηση:</strong> Ομαδοποιήστε τις παρατηρήσεις 2, 3, 1, 2, 6, 1, 1, 2, 0, 5 σε δύο κλάσεις (0-3 και 3-6) και βρείτε την εκτίμηση της μέσης τιμής.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -606,12 +972,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
