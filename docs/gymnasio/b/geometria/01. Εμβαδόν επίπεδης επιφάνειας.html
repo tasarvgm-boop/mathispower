@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>01. Εμβαδόν επίπεδης επιφάνειας – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,22 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6a8276bf55561bdbc268162d41bd1f7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-b6a8276bf55561bdbc268162d41bd1f7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -56,37 +58,80 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -97,15 +142,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="./gymnasio/a/index.html">
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
  <span class="dropdown-text">Α Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./gymnasio/b/index.html">
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
  <span class="dropdown-text">Β Τάξη</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./gymnasio/g/index.html">
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
  <span class="dropdown-text">Γ Τάξη</span></a>
   </li>  
     </ul>
@@ -116,15 +161,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="./lykeio/a/index.qmd">
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
  <span class="dropdown-text">Α’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lykeio/b/index.qmd">
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
  <span class="dropdown-text">Β’ Λυκείου</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lykeio/g/index.qmd">
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
  <span class="dropdown-text">Γ’ Λυκείου</span></a>
   </li>  
     </ul>
@@ -137,32 +182,66 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Μαθηματικά Γυμνασίου &amp; Λυκείου</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html">01. Εμβαδόν επίπεδης επιφάνειας</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html">01. Εμβαδόν επίπεδης επιφάνειας</a></li></ol></nav>
+      <h1 class="title">01. Εμβαδόν επίπεδης επιφάνειας</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">about</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -171,119 +250,119 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03. Κλάσματα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07. Εξισώσεις</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Ποσοστά</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12. Προβλήματα με Ανάλογα Ποσά</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. Αντιστρόφως Ανάλογα Ποσά</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/15. Θετικοί και αρνητικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/15. Θετικοί και αρνητικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">15. Θετικοί και αρνητικοί αριθμοί</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/algebra/17. Δυνάμεις ρητών αριθμών .html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/17. Δυνάμεις ρητών αριθμών .html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">17. Δυνάμεις ρητών αριθμών</span></a>
   </div>
 </li>
@@ -291,100 +370,100 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/03. Μέτρηση του μήκους-Απόσταση σημείων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση του μήκους-Απόσταση σημείων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03. Μέτρηση μήκους - Απόσταση σημείων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/09. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/09. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">09. Kύκλος και στοιχεία του κύκλου</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/10. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/10. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10. Συμμετρία ως προς άξονα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/11. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/11. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/12. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/12. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12. Συμμετρία ως προς σημείο</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/13.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/13.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/14. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/14. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">14. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/a/geometria/15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο</span></a>
   </div>
 </li>
@@ -394,79 +473,79 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/03. Επίλυση τύπων και προβλημάτων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων και προβλημάτων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03. Επίλυση τύπων και προβλημάτων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/04. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/04. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04. Ανισώσεις α βαθμού</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05. Tετραγωνική ρίζα θετικού αριθμού</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/06. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/06. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/07.  Η έννοια της συνάρτησης Γραφική παράσταση.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/07.  Η έννοια της συνάρτησης Γραφική παράσταση.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07. Η έννοια της συνάρτησης Γραφική παράσταση</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/09. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/09. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">09. Η συνάρτηση y = αx+β</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/algebra/10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</span></a>
   </div>
 </li>
@@ -474,16 +553,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
   </div>
 </li>
@@ -491,40 +570,40 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/statistiki/01. Πληθυσμός Δείγμα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/01. Πληθυσμός Δείγμα.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Πληθυσμός - Δείγμα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02. Γραφικές παραστάσεις στην Στατιστική</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/statistiki/03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/statistiki/04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05. Μέση τιμή - Διάμεσος</span></a>
   </div>
 </li>
@@ -536,20 +615,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
   </div>
 </li>
@@ -562,67 +641,146 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Μαθηματικά Γυμνασίου &amp; Λυκείου</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header> 
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-  <meta charset="UTF-8">
-  <title>Χαιρετισμός</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-  <div id="greeting"></div>
-  <script>
-    const today = new Date();
-    const hour = today.getHours();
-    const minutes = today.getMinutes();
-    const pad = minutes < 10 ? "0" : "";
-    let message = `<p style="font-size: 18px; color: #0000A0;">Καλώς ήλθατε!!</p>`;
-    if (hour >= 6 && hour < 12) {
-      message += `<p style="font-size: 18px; color: Blue;">και .... Καλημέρα !</p>`;
-    } else if (hour >= 12 && hour < 18) {
-      message += `<p style="font-size: 18px; color: Red;">και ... Καλό απόγευμα !</p>`;
-    } else if (hour >= 18 && hour <= 23) {
-      message += `<p style="font-size: 18px; color: #FF8000;">και ... Καλησπέρα !</p>`;
-    } else if (hour >= 0 && hour < 4) {
-      message += `<p style="font-size: 18px; color: #8080FF;">Είναι πολύ αργά πιά, μήπως πρέπει να πάμε για ύπνο;</p>`;
-    } else if (hour >= 4 && hour < 6) {
-      message += `<p style="font-size: 18px; color: Green;">Τι έγινε; Ξυπνήσαμε νωρίς ή ξεμείναμε από χθες το βράδυ;</p>`;
-    }
-    const dateStr = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
-    const timeStr = `${hour}:${pad}${minutes}`;
-    message += `<p style="font-size: 16px; color: #808000;">Η ώρα είναι: ${timeStr}<br>Σήμερα: ${dateStr}</p>`;
-    document.getElementById("greeting").innerHTML = message;
-  </script>
-<p>Επιλέξτε βαθμίδα:</p>
-<ul>
-<li><a href="./gymnasio/index.html">Γυμνάσιο</a></li>
-<li><a href="lykeio/index.qmd">Λύκειο</a></li>
-</ul>
-
-
-</main></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εμβαδόν-επίπεδης-επιφάνειας." id="toc-εμβαδόν-επίπεδης-επιφάνειας." class="nav-link active" data-scroll-target="#εμβαδόν-επίπεδης-επιφάνειας."><span class="header-section-number">1</span> Εμβαδόν επίπεδης επιφάνειας.</a>
+  <ul class="collapse">
+  <li><a href="#εξασκήσου" id="toc-εξασκήσου" class="nav-link" data-scroll-target="#εξασκήσου"><span class="header-section-number">1.2</span> Εξασκήσου</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
-    <img src="profile.jpg" class="about-image
-  rounded " style="width: 15em;">
-  </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εμβαδόν-επίπεδης-επιφάνειας." class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εμβαδόν-επίπεδης-επιφάνειας."><span class="header-section-number">1</span> Εμβαδόν επίπεδης επιφάνειας.</h2>
+<p>Δίνονται δύο ορθογώνια τρίγωνα με κάθετες πλευρές 6 cm και ένα τετράγωνο πλευράς 6 cm. Μπορείτε χρησιμοποιώντας τα τρία αυτά σχήματα να κατασκευάσετε νέα σχήματα ίδιου εμβαδού;</p>
+<p><img src="images/clipboard-4250106597.png" class="img-fluid"></p>
+<p>Εάν χρησιμοποιήσουμε σαν μονάδα μέτρησης το τετραγωνάκι 1 cm<sup>2</sup> θα έχουμε:</p>
+<ol type="1">
+<li>Εμβαδόν κάθε τριγώνου Ε<sub>τριγώνου</sub> =18 cm<sup>2</sup></li>
+<li>Εμβαδόν τετραγώνου Ε<sub>τετραγώνου</sub> =36 cm<sup>2</sup></li>
+</ol>
+<p>Αρα συνολικό εμβαδόν νέων σχημάτων Ε<sub>νέων&nbsp;σχημάτων</sub> =18+18+36=72 cm<sup>2</sup></p>
+<p><strong>Κατασκευή νέων σχημάτων</strong></p>
+<ol type="1">
+<li>Μπορούμε να κατασκευάσουμε ένα ορθογώνιο με βάση 12 και ύψος 6<br>
+<br>
+<img src="images/clipboard-1188042025.png" class="img-fluid"></li>
+<li>Μπορούμε να κατασκευάσουμε ένα παραλληλόγραμμο με βάση 12 και ύψος 6<br>
+<br>
+<img src="images/clipboard-2129508454.png" class="img-fluid"></li>
+<li>και ένα ορθογώνιο τρίγωνο με κάθετες πλευρές 12 cm<br>
+<br>
+<img src="images/clipboard-895784379.png" class="img-fluid"></li>
+<li>Μπορείτε να κατασκευάσετε και ένα τραπέζιο με το ίδιο εμβαδό;</li>
+</ol>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Το <strong>εμβαδόν</strong> μιας επίπεδης επιφάνειας είναι ένας θετικός αριθμός που εκφράζει την έκταση που καταλαμβάνει η επιφάνεια αυτή στο επίπεδο. Ο αριθμός αυτός προκύπτει από τη σύγκριση της επιφάνειας με μια καθορισμένη <strong>μονάδα μέτρησης</strong>.</p>
+<section id="θεωρία-μέσα-από-παραδείγματα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-μέσα-από-παραδείγματα"><span class="header-section-number">1.1</span> Θεωρία μέσα από παραδείγματα</h3>
+<ol type="1">
+<li><strong>Ίσο εμβαδόν σε διαφορετικά σχήματα:</strong> Φαντάσου ένα τετράγωνο και δύο ίσα ορθογώνια τρίγωνα. Αν τα ενώσεις με διαφορετικούς τρόπους, μπορείς να σχηματίσεις ένα μεγάλο ορθογώνιο, ένα τραπέζιο ή ένα μεγάλο τρίγωνο. Παρόλο που τα σχήματα διαφέρουν, καταλαμβάνουν την ίδια έκταση (έχουν το ίδιο εμβαδόν), επειδή αποτελούνται από τα ίδια ακριβώς στοιχεία. <span style="color: brown"><strong>Δες τα σχήματα παραπάνω</strong></span></li>
+<li><strong>Μέτρηση με «τετραγωνάκια»:</strong> Αν χωρίσουμε ένα τετράγωνο πλευράς 5 cm σε μικρότερα τετραγωνάκια πλευράς 1 cm, θα δούμε ότι χωράνε ακριβώς <span class="math inline">\(5 \cdot 5 = 25\)</span> τέτοια κομμάτια. Άρα το εμβαδόν του είναι <span class="math inline">\(25\text{ cm}^2\)</span>.</li>
+<li><strong>Μονάδες Μέτρησης:</strong> Ως βασική μονάδα χρησιμοποιούμε το <strong>τετραγωνικό μέτρο (</strong><span class="math inline">\(m^2\)</span>), που είναι το εμβαδόν ενός τετραγώνου με πλευρά 1 μέτρο.</li>
+</ol>
+</section>
 </div>
- <!-- /main -->
+<section id="εξασκήσου" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="εξασκήσου"><span class="header-section-number">1.2</span> Εξασκήσου</h3>
+<ol type="1">
+<li><p><img src="images/clipboard-701126789.png" class="img-fluid"></p></li>
+<li><p><img src="images/clipboard-801792434.png" class="img-fluid"></p></li>
+<li><p><img src="images/clipboard-3650350812.png" class="img-fluid"></p></li>
+<li><p><img src="images/clipboard-782573150.png" class="img-fluid"></p></li>
+</ol>
+<ul>
+<li><p>Μετρήστε και το εμβαδόν με τριγωνάκια=μισό τετραγωνάκι</p></li>
+<li><p>και με ορθογώνια =2 τετργωνάκια. συγκρίνετε όλα τα αποτελέσματα και από τις τρεις μετρήσεις . Πως δικαιολογείτε τα αποτελέσματα;</p></li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Να υπολογίσετε το εμβαδόν των παρακάτω σχημάτων με μονάδα μέτρησης ενα τετραγωνάκι.<br>
+<br>
+<img src="images/clipboard-3513343995.png" class="img-fluid"></li>
+<li>Να υπολογίσετε το εμβαδόν των παρακάτω σχημάτων με μονάδα μέτρησης ενα τετραγωνάκι.<br>
+<br>
+<img src="images/clipboard-1676339628.png" class="img-fluid"></li>
+<li>Να υπολογίσετε το εμβαδόν των παρακάτω σχημάτων με μονάδα μέτρησης ενα τετραγωνάκι.<br>
+<br>
+<img src="images/clipboard-3108412958.png" class="img-fluid"></li>
+<li>Να υπολογίσετε το εμβαδόν του παρακάτω σχήματος με μονάδα μέτρησης ενα τριγωνάκι.<br>
+<br>
+<img src="images/clipboard-1098911998.png" class="img-fluid"></li>
+<li>Να υπολογίσετε το εμβαδόν των παρακάτω σχημάτων με μονάδα μέτρησης ενα τετραγωνάκι.<br>
+<br>
+<img src="images/clipboard-2180018653.png" class="img-fluid"></li>
+<li>Να υπολογίσετε το εμβαδόν του παρακάτω σχήματος με μονάδα μέτρησης ενα τριγωνάκι.<br>
+<br>
+<img src="images/clipboard-3276630617.png" class="img-fluid"></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -639,12 +797,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
