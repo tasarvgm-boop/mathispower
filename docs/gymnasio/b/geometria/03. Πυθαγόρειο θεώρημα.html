@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>03. Πυθαγόρειο θεώρημα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html">03. Πυθαγόρειο θεώρημα</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html">03. Πυθαγόρειο θεώρημα</a></li></ol></nav>
+      <h1 class="title">03. Πυθαγόρειο θεώρημα</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">30 Απρίλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -163,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -172,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -181,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -294,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -397,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -406,7 +484,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -475,9 +553,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -496,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
   </div>
 </li>
@@ -506,7 +584,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -549,7 +627,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -575,33 +653,191 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#πυθαγόρειο-θεώρημα" id="toc-πυθαγόρειο-θεώρημα" class="nav-link active" data-scroll-target="#πυθαγόρειο-θεώρημα"><span class="header-section-number">1</span> Πυθαγόρειο θεώρημα</a>
+  <ul class="collapse">
+  <li><a href="#το-αντίστροφο-του-πυθαγορείου-θεωρήματος" id="toc-το-αντίστροφο-του-πυθαγορείου-θεωρήματος" class="nav-link" data-scroll-target="#το-αντίστροφο-του-πυθαγορείου-θεωρήματος"><span class="header-section-number">1.2</span> Το Αντίστροφο του Πυθαγορείου Θεωρήματος</a></li>
+  <li><a href="#ιστορικό-σημείωμα" id="toc-ιστορικό-σημείωμα" class="nav-link" data-scroll-target="#ιστορικό-σημείωμα"><span class="header-section-number">1.3</span> Ιστορικό Σημείωμα</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="πυθαγόρειο-θεώρημα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="πυθαγόρειο-θεώρημα"><span class="header-section-number">1</span> Πυθαγόρειο θεώρημα</h2>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Το Πυθαγόρειο θεώρημα είναι ένα από τα πιο σημαντικά και κομψά θεωρήματα της Γεωμετρίας με πάμπολλες εφαρμογές στην καθημερινή ζωή και την επιστήμη.</p>
+<section id="η-θεωρία-του-θεωρήματος" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-θεωρία-του-θεωρήματος"><span class="header-section-number">1.1</span> Η Θεωρία του Θεωρήματος</h3>
+<p>Σύμφωνα με το θεώρημα, σε κάθε <strong>ορθογώνιο τρίγωνο</strong>, το άθροισμα των τετραγώνων των δύο κάθετων πλευρών είναι ίσο με το τετράγωνο της υποτείνουσας. Αν συμβολίσουμε την υποτείνουσα ως <span class="math inline">\(\alpha\)</span> και τις δύο κάθετες πλευρές ως <span class="math inline">\(\beta\)</span> και <span class="math inline">\(\gamma\)</span>, τότε ο μαθηματικός τύπος είναι: <span class="math display">\[\alpha^2 = \beta^2 + \gamma^2\]</span>.</p>
+<p>Γεωμετρικά, αυτό σημαίνει ότι αν κατασκευάσουμε τετράγωνα πάνω σε κάθε πλευρά του τριγώνου, το εμβαδόν του τετραγώνου της υποτείνουσας ισούται με το άθροισμα των εμβαδών των άλλων δύο τετραγώνων.</p>
+</section>
+</div>
+<p><br>
+<strong>Κλασική απόδειξη</strong><br>
+<iframe src="https://www.geogebra.org/calculator/e3cng24u?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe><br>
+</p>
+<p>Οι αποδείξεις των Leonardo da Vinci και Albert Einstein είναι ιδιαίτερα δημοφιλείς για την κομψότητα και την απλότητά τους.</p>
+<p><strong>Η Απόδειξη του Leonardo da Vinci</strong></p>
+<p>Ο Da Vinci χρησιμοποίησε μια έξυπνη γεωμετρική συμμετρία, δημιουργώντας δύο πανομοιότυπα εξάγωνα. Η απόδειξη βασίζεται στο γεγονός ότι αν αφαιρέσουμε τα ίδια τρίγωνα και από τα δύο σχήματα, τα εμβαδά που απομένουν (<span class="math inline">\(a^2+β^2\)</span> στο ένα και <span class="math inline">\(γ^2\)</span> στο άλλο) πρέπει να είναι ίσα.<br>
+</p>
+<iframe src="https://www.geogebra.org/calculator/pnpjw6cs?embed" width="740" height="800" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><br>
+</p>
+<p><strong>Η Απόδειξη του Albert Einstein</strong> Ο Einstein, σε ηλικία μόλις 12 ετών, ανακάλυψε μια απόδειξη που βασίζεται στην ομοιότητα τριγώνων και όχι στην αναδιάταξη σχημάτων. Χώρισε το αρχικό ορθογώνιο τρίγωνο σε δύο μικρότερα (επίσης ορθογώνια και όμοια με το αρχικό) φέρνοντας το ύψος προς την υποτείνουσα.</p>
+<p><img src="images/clipboard-1915195278.png" class="img-fluid"></p>
+<ul>
+<li>Η λογική: Το εμβαδόν κάθε όμοιου τριγώνου είναι ανάλογο του τετραγώνου της υποτείνουσάς του. Εφόσον το μεγάλο τρίγωνο (εμβαδόν <span class="math inline">\(E_γ\)</span>) αποτελείται από τα δύο μικρότερα (<span class="math inline">\(E_α\)</span> και <span class="math inline">\(E_β\)</span>), ισχύει <span class="math inline">\(E_α + E_β = E_γ\)</span>, γεγονός που οδηγεί απευθείας στο <span class="math inline">\(α^2 + β^2 = γ^2\)</span>.</li>
+<li>Η απόδειξη: Χρειάζονται οι γνώσεις για τα όμοια σχήματα που όμως δεν διδάσκονται σε αυτή τη τάξη.</li>
+</ul>
+<p><strong>Απόδειξη Garfield του Πυθαγόρειου θεωρήματος (Προέδρου των ΗΠΑ)</strong></p>
+<iframe src="https://www.geogebra.org/calculator/mgnuupum?embed" width="740" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-note callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ακολουθήστε τις Οδηγίες
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Πατήστε το κουμπί <strong>Περιστροφή</strong></li>
+<li>Πατήστε το κουμπί <strong>Μεταφορά</strong></li>
+</ul>
+<p>Σχηματίζεται ένα τραπέζιο με βάσεις τιε κάθετες πλευρές του ορθογωνίου τριγώνου ΑΒΓ και ύψος το άθροισμα τους. Υπολογίζουμε το εμβαδόν από αυτά τα στοιχεία.</p>
+<p>Επίσης το τραπέζιο αποτελείται από τα 3 τρίγωνα. Τα δύο ίδια ορθογώνια ΑΒΓ και το λευκό Ορθογώνιο ισοσκελές με κάθετες πλευρές την υποτείνουσα του ΑΒΓ. Υπολογίζουμε το εμβαδόν του.</p>
+<p>Τα δύο εμβαδά προφανώς είναι ίσα αφού μιλάμε για το ίδιο σχήμα. Εξισώνουμε και μετά από αναγωγές προκύπτει το <span class="math inline">\(α^2+β^2=γ^2\)</span></p>
+</div>
+</div>
+<p><strong>Δείτε και το βίντεο</strong></p>
+<p>{<a href="https://www.youtube.com/watch?v=SxQkY6s5DPI" class="uri">https://www.youtube.com/watch?v=SxQkY6s5DPI</a>}</p>
+<p><br>
+</p>
+<p><strong>Η Γεωμετρική Απόδειξη</strong></p>
+<p>Μία από τις βασικές αποδείξεις που διδάσκονται στη Β’ Γυμνασίου βασίζεται στη σύγκριση εμβαδών μέσα σε δύο ίσα τετράγωνα πλευράς <span class="math inline">\((\beta + \gamma)\)</span>:<br>
+</p>
+<p><img src="images/clipboard-569355848.png" class="img-fluid"></p>
+<ul>
+<li><p>Το πρώτο τετράγωνο χωρίζεται σε 4 ίσα ορθογώνια τρίγωνα και δύο τετράγωνα με πλευρές <span class="math inline">\(\beta\)</span> και <span class="math inline">\(\gamma\)</span> αντίστοιχα (εμβαδά <span class="math inline">\(\beta^2\)</span> και <span class="math inline">\(\gamma^2\)</span>).</p></li>
+<li><p>Το δεύτερο τετράγωνο χωρίζεται στα ίδια 4 τρίγωνα και σε ένα τετράγωνο πλευράς <span class="math inline">\(\alpha\)</span> (εμβαδόν <span class="math inline">\(\alpha^2\)</span>).</p></li>
+<li><p>Επειδή τα μεγάλα τετράγωνα είναι ίσα, αν αφαιρέσουμε τα 4 τρίγωνα και από τα δύο, τα εμβαδά που απομένουν πρέπει να είναι ίσα.</p></li>
+</ul>
+<p>Έτσι προκύπτει η σχέση <span class="math inline">\(\beta^2 + \gamma^2 = \alpha^2\)</span>.</p>
+<section id="το-αντίστροφο-του-πυθαγορείου-θεωρήματος" class="level3" style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="το-αντίστροφο-του-πυθαγορείου-θεωρήματος"><span class="header-section-number">1.2</span> Το Αντίστροφο του Πυθαγορείου Θεωρήματος</h3>
+<p>Το αντίστροφο θεώρημα μας επιτρέπει να ελέγξουμε αν ένα τρίγωνο είναι ορθογώνιο: Αν το τετράγωνο της μεγαλύτερης πλευράς ενός τριγώνου είναι ίσο με το άθροισμα των τετραγώνων των άλλων δύο πλευρών, τότε η γωνία που βρίσκεται απέναντι από τη μεγαλύτερη πλευρά είναι ορθή.</p>
+</section>
+<p><br>
+</p>
+<p><a href="Το Πυθαγόρειο Θεώρημα.pdf" download="Το Πυθαγόρειο Θεώρημα.pdf">Δείτε εδώ μια γενική σύνοψη</a><br>
+</p>
+<section id="ιστορικό-σημείωμα" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ιστορικό-σημείωμα"><span class="header-section-number">1.3</span> Ιστορικό Σημείωμα</h3>
+<p>Αν και η ανακάλυψη αποδίδεται στον <strong>Πυθαγόρα τον Σάμιο</strong> (περίπου 585-500 π.Χ.), το θεώρημα χρησιμοποιούνταν από τους Βαβυλώνιους και τους Κινέζους έως και 1.000 χρόνια νωρίτερα. Οι αρχαίοι Αιγύπτιοι το χρησιμοποιούσαν πρακτικά για την κατασκευή ορθών γωνιών χρησιμοποιώντας ένα σκοινί με 13 κόμπους (σχηματίζοντας πλευρές 3, 4 και 5 μονάδων).</p>
+<hr>
+<p>Το Πυθαγόρειο θεώρημα δεν είναι απλώς μια μαθηματική εξίσωση, αλλά ένα εργαλείο με πολυάριθμες εφαρμογές σε προβλήματα της πραγματικής ζωής, από τις κατασκευές μέχρι την τεχνολογία.</p>
+<p>Οι πιο συνηθισμένες εφαρμογές του στην καθημερινότητα περιλαμβάνουν:</p>
+<ul>
+<li><strong>Υπολογισμός Αποστάσεων και Διαδρομών:</strong> Το θεώρημα χρησιμοποιείται για να βρεθεί η συντομότερη απόσταση μεταξύ δύο σημείων στο επίπεδο. Για παράδειγμα, μπορεί να υπολογιστεί η απόσταση μιας πόλης από μια άλλη ή η απόσταση που πρέπει να διανύσει ένα πλοίο για να φτάσει στο λιμάνι, όταν γνωρίζουμε τις συντεταγμένες της θέσης του.</li>
+<li><strong>Χωροταξία και Μεταφορά Αντικειμένων:</strong> Μια πολύ πρακτική εφαρμογή αφορά τη δυνατότητα μετακίνησης αντικειμένων μέσα σε έναν χώρο. Συγκεκριμένα, αν θέλουμε να σηκώσουμε όρθιο ένα ψηλό έπιπλο (π.χ. ένα ντουλάπι) σε ένα δωμάτιο, πρέπει να υπολογίσουμε τη διαγώνιό του χρησιμοποιώντας το Πυθαγόρειο θεώρημα. Αν η διαγώνιος είναι μεγαλύτερη από το ύψος του ταβανιού, το έπιπλο δεν μπορεί να σηκωθεί όρθιο.</li>
+<li><strong>Τεχνολογία και Συσκευές:</strong> Η διαγώνιος των οθονών στην τηλεόραση, τα κινητά τηλέφωνα και τους υπολογιστές υπολογίζεται με βάση αυτό το θεώρημα. Αν γνωρίζουμε το μήκος και το πλάτος μιας οθόνης, μπορούμε να βρούμε πόσες ίντσες είναι η διαγώνιός της, ή αντίστροφα, αν γνωρίζουμε τη διαγώνιο και τον λόγο των πλευρών, μπορούμε να βρούμε τις ακριβείς διαστάσεις της συσκευής.</li>
+<li><strong>Οικοδομικές και Τεχνικές Εργασίες:</strong> Οι τεχνίτες το χρησιμοποιούν για να «γωνιάσουν» τις κατασκευές τους, δηλαδή να εξασφαλίσουν ότι μια γωνία είναι ακριβώς 90 μοίρες. Για παράδειγμα, αν ένας τεχνίτης μετρήσει 30 cm στο ένα δοκάρι και 40 cm στο άλλο, τότε για να είναι η γωνία ορθή, η απόσταση μεταξύ των άκρων τους πρέπει να είναι ακριβώς 50 cm (<span class="math inline">\(30^2 + 40^2 = 50^2\)</span>). Επίσης, χρησιμοποιείται για να ελεγχθεί αν ένα ράφι είναι απόλυτα οριζόντιο σε σχέση με τον τοίχο.</li>
+<li><strong>Αθλητισμός:</strong> Μπορούμε να υπολογίσουμε τη διαγώνιο ενός ορθογώνιου γηπέδου (π.χ. ποδοσφαίρου ή μπάσκετ) αν γνωρίζουμε τις διαστάσεις του.</li>
+<li><strong>Γεωμετρικά Στερεά και Σχεδιασμός:</strong> Το θεώρημα εφαρμόζεται και σε τρισδιάστατα σχήματα, όπως για τον υπολογισμό της γενέτειρας (πλάγιας πλευράς) ενός κώνου ή του ύψους μιας πυραμίδας.</li>
+</ul>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Σε ορθογώνιο τρίγωνο με κάθετες α = 6 cm και β = 8 cm. Βρες την υποτείνουσα γ.</p></li>
+<li><p>Ένα ορθογώνιο τρίγωνο έχει κάθετη α = 9 cm και υποτείνουσα γ = 15 cm. Βρες τη β.</p></li>
+<li><p>Ένα τρίγωνο με πλευρές 5, 12, 13 είναι ορθογώνιο;</p></li>
+<li><p>Ισοσκελές τρίγωνο έχει βάση 16 cm και ίσες πλευρές 10 cm. Βρες το ύψος του.</p></li>
+</ol>
+<p><img src="images/clipboard-996852907.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Ένα ορθογώνιο παραλληλόγραμμο έχει μήκος 15 cm και πλάτος 20 cm. Βρες τη διαγώνιό του.</li>
+</ol>
+<p><img src="images/clipboard-1015977638.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Μια σκάλα μήκους 13 m ακουμπά σε τοίχο. Η βάση απέχει 5 m από τον τοίχο. Σε ποιο ύψος φτάνει;</li>
+</ol>
+<p><img src="images/clipboard-2634334414.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>Δύο σημεία σε πλέγμα απέχουν 7 μονάδες οριζόντια και 24 μονάδες κάθετα. Βρες την απόστασή τους.</li>
+</ol>
+<p><img src="images/clipboard-1332964345.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Ένα ορθογώνιο κουτί έχει πάτο με διαστάσεις 9 cm × 12 cm. Χωράει ένα κοντάρι 17 cm στον πάτο; Βρες τη διαγώνιο του πάτου.</li>
+<li>Δέντρο έσπασε και το κορυφαίο τμήμα (<strong>10 m</strong>) ακουμπά στο έδαφος σε απόσταση&nbsp;<strong>6 m</strong>&nbsp;μακριά από τον κορμό. Ποιο είναι το ύψος του κορμού που έμεινε όρθιος;</li>
+</ol>
+<p><img src="images/clipboard-1450846344.png" class="img-fluid"></p>
+<ol start="10" type="1">
+<li><p>Σε ένα ορθογώνιο τρίγωνο η υποτείνουσα είναι 10 cm και η μία κάθετη πλευρά είναι 6 cm. Βρείτε το εμβαδόν του τριγώνου.</p></li>
+<li><p>Δίνεται τραπέζιο με βάσεις 10 cm και 16 cm. Αν η μη παράλληλη πλευρά που είναι κάθετη στις βάσεις είναι 8 cm, υπολογίστε την άλλη (πλάγια) πλευρά του τραπεζίου.</p></li>
+<li><p>Ένας ρόμβος έχει διαγωνίους 16 cm και 12 cm. Υπολογίστε το μήκος της πλευράς του ρόμβου.</p></li>
+<li><p>Οι ίντσες μιας τηλεόρασης αναφέρονται στη διαγώνιό της. Αν μια τηλεόραση έχει πλάτος 32 ίντσες και ύψος 24 ίντσες, πόσες ίντσες είναι η τηλεόραση;</p></li>
+<li><p>Ένα παιδί θέλει να πάει από το σημείο Α στο σημείο Γ. Αν περπατήσει 80 μέτρα ανατολικά (σημείο Β) και μετά 60 μέτρα βόρεια (σημείο Γ), πόσα μέτρα θα είχε γλιτώσει αν πήγαινε κατευθείαν διαγώνια από το Α στο Γ;</p></li>
+<li><p>Ένα σκάφος ξεκινά από ένα λιμάνι, κινείται 12 μίλια νότια και μετά 5 μίλια δυτικά. Πόση είναι η απόσταση του σκάφους από το λιμάνι σε ευθεία γραμμή;</p></li>
+<li><p>Ένα δέντρο έχει ύψος 12 μέτρα. Αν η απόσταση από την κορυφή του δέντρου μέχρι το τέλος της σκιάς του στο έδαφος είναι 15 μέτρα, πόσο μήκος έχει η σκιά του δέντρου;</p></li>
+<li><p>Σε ένα γήπεδο ποδοσφαίρου με διαστάσεις 100μ. μήκος και 60μ. πλάτος, ένας παίκτης τρέχει από τη μία γωνία στην ακριβώς απέναντι διαγώνια γωνία. Πόση απόσταση διάνυσε; (Δώστε την απάντηση με προσέγγιση ενός δεκαδικού).</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: blue;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Να τηρείτε τον παρακάτω κανόνα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σε όλα αυτά τα προβλήματα, δοκιμάστε πρώτα να κάνετε ένα πρόχειρο σχήμα (ένα ορθογώνιο τρίγωνο) και να σημειώσετε ποια πλευρά είναι η υποτείνουσα.</p>
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -629,12 +865,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
