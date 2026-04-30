@@ -1,0 +1,145 @@
+---
+title: "Πίνακας Τριγωνομετρικών Αριθμών"
+subtitle: "sin(θ), cos(θ) και tan(θ) για θ = 0° έως 90°"
+author: "ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ"
+date: today
+date-format: "DD MMMM YYYY"
+lang: el
+format:
+  html:
+    theme: cosmo
+    page-layout: full
+    toc: false
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: setup
+
+library(knitr)
+library(kableExtra)
+
+fmt <- if (knitr::is_html_output()) "html" else "latex"
+
+degrees  <- 0:90          # 91 γωνίες
+sin_vals <- sin(degrees * pi / 180)
+cos_vals <- cos(degrees * pi / 180)
+tan_vals <- tan(degrees * pi / 180)
+
+# ── βοηθητικές συναρτήσεις ──────────────────────────────────────────────────
+
+fmt_val <- function(x, limit = 999) {
+  if (is.na(x) || abs(x) > limit) "—"
+  else formatC(round(x, 4), digits = 4, format = "f")
+}
+
+# Κλίμακα χρώματος ανάλογα με απόλυτη τιμή (0→1)
+color_scale <- function(x, invert = FALSE) {
+  v <- if (invert) 1 - abs(x) else abs(x)
+  if      (is.na(x) || abs(x) > 999) "#888888"
+  else if (abs(x) < 0.001)            "#888888"
+  else if (v < 0.25)                  "#1F4E79"
+  else if (v < 0.50)                  "#2E75B6"
+  else if (v < 0.75)                  "#7030A0"
+  else                                "#C00000"
+}
+
+color_tan <- function(x) {
+  if (is.na(x) || abs(x) > 999) "#888888"
+  else if (x < 0)                "#C00000"
+  else if (abs(x) > 5)           "#CC6600"
+  else if (abs(x) > 1)           "#7030A0"
+  else                           "#1F4E79"
+}
+
+# Δημιουργία μπλοκ για cbind — ΙΣΟΥ μεγέθους
+make_block <- function(degs, svals, cvals, tvals) {
+  data.frame(
+    deg = cell_spec(paste0(degs,"°"), fmt, bold=TRUE, color="#1F4E79"),
+    sin = cell_spec(sapply(svals, fmt_val),
+                    fmt, color=sapply(svals, color_scale),
+                    bold=abs(svals)>0.99),
+    cos = cell_spec(sapply(cvals, fmt_val),
+                    fmt, color=sapply(cvals, function(x) color_scale(x, invert=TRUE)),
+                    bold=abs(cvals)>0.99),
+    tan = cell_spec(sapply(tvals, function(x) fmt_val(x, 999)),
+                    fmt, color=sapply(tvals, color_tan),
+                    bold=abs(tvals)>5 & abs(tvals)<999),
+    stringsAsFactors = FALSE
+  )
+}
+
+# 91 γωνίες → 3 μπλοκ 31/31/29 → padding στο τρίτο για ίσο μέγεθος
+idx1 <- 1:31          # 0°–30°
+idx2 <- 32:62         # 31°–61°
+idx3 <- 63:91         # 62°–90°  (29 γωνίες)
+
+b1 <- make_block(degrees[idx1], sin_vals[idx1], cos_vals[idx1], tan_vals[idx1])
+b2 <- make_block(degrees[idx2], sin_vals[idx2], cos_vals[idx2], tan_vals[idx2])
+b3 <- make_block(degrees[idx3], sin_vals[idx3], cos_vals[idx3], tan_vals[idx3])
+
+# Padding 2 κενές γραμμές στο b3 για cbind
+pad <- nrow(b1) - nrow(b3)
+if (pad > 0) {
+  empty <- data.frame(
+    deg = rep("", pad), sin = rep("", pad),
+    cos = rep("", pad), tan = rep("", pad),
+    stringsAsFactors = FALSE
+  )
+  b3 <- rbind(b3, empty)
+}
+
+combined <- cbind(b1, b2, b3)
+colnames(combined) <- c(
+  "θ","ημ(θ)","συν(θ)","εφ(θ)",
+  "θ","ημ(θ)","συν(θ)","εφ(θ)",
+  "θ","ημ(θ)","συν(θ)","εφ(θ)"
+)
+
+# Γωνίες-κλειδιά για κίτρινο φόντο (0,30,45,60,90)
+key_angles <- c(0, 30, 45, 60, 90)
+key_rows   <- which(degrees[idx1] %in% key_angles)
+
+# ── πίνακας ──────────────────────────────────────────────────────────────────
+
+kbl(
+  combined,
+  booktabs = TRUE,
+  escape   = FALSE,
+  align    = rep(c("r","r","r","r"), 3),
+  linesep  = "",
+  caption  = "Τριγωνομετρικοί αριθμοί ημ(θ), συν(θ), εφ(θ) για 0° – 90°"
+) |>
+  kable_styling(
+    bootstrap_options = c("striped","hover","condensed","bordered"),
+    stripe_color      = "#EBF3FC",
+    font_size         = 12,
+    full_width        = FALSE,
+    position          = "center"
+  ) |>
+  add_header_above(
+    c("0° – 30°"=4, "31° – 61°"=4, "62° – 90°"=4),
+    bold=TRUE, color="white", background="#1F4E79"
+  ) |>
+  column_spec(c(1,5,9),  width="50px", bold=TRUE) |>
+  column_spec(c(2,6,10), width="75px") |>
+  column_spec(c(3,7,11), width="75px") |>
+  column_spec(c(4,8,12), width="75px") |>
+  row_spec(key_rows, background="#FFF2CC") |>
+  footnote(
+    general = c(
+      "<span style='color:#1F4E79;font-weight:bold'>■</span> Μπλε σκούρο: 0,00–0,25 &emsp;
+       <span style='color:#2E75B6;font-weight:bold'>■</span> Μπλε: 0,25–0,50 &emsp;
+       <span style='color:#7030A0;font-weight:bold'>■</span> Μωβ: 0,50–0,75 &emsp;
+       <span style='color:#C00000;font-weight:bold'>■</span> Κόκκινο: 0,75–1,00",
+      "<span style='color:#CC6600;font-weight:bold'>■</span> Πορτοκαλί (tan): |tan| > 5 &emsp;
+       <span style='background:#FFF2CC;padding:1px 6px'>■</span> Κίτρινο: χαρακτηριστικές γωνίες (0°,30°,45°,60°,90°)",
+      "Για θ=90° η εφ δεν ορίζεται (—)"
+    ),
+    general_title="Υπόμνημα:",
+    escape=FALSE, footnote_as_chunk=TRUE
+  )
+```
+

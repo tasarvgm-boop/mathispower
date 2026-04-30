@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>04. Εφαπτομένη οξείας γωνίας – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-b6a8276bf55561bdbc268162d41bd1f7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+ <span class="dropdown-text">Α’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+ <span class="dropdown-text">Β’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+ <span class="dropdown-text">Γ’ Λυκείου</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html">04. Εφαπτομένη οξείας γωνίας</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html">04. Εφαπτομένη οξείας γωνίας</a></li></ol></nav>
+      <h1 class="title">04. Εφαπτομένη οξείας γωνίας</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">1 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Ποσοστά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Θετικοί και αρνητικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Θετικοί και αρνητικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Δυνάμεις ρητών αριθμών .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Δυνάμεις ρητών αριθμών</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση του μήκους-Απόσταση σημείων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση μήκους - Απόσταση σημείων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων και προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων και προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07.  Η έννοια της συνάρτησης Γραφική παράσταση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια της συνάρτησης Γραφική παράσταση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Στατιστική</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/01. Πληθυσμός Δείγμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πληθυσμός - Δείγμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γραφικές παραστάσεις στην Στατιστική</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέση τιμή - Διάμεσος</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ιστορικά-στοιχεία-για-την-τριγωνομετρία" id="toc-ιστορικά-στοιχεία-για-την-τριγωνομετρία" class="nav-link active" data-scroll-target="#ιστορικά-στοιχεία-για-την-τριγωνομετρία"><span class="header-section-number">1</span> Ιστορικά στοιχεία για την τριγωνομετρία</a></li>
+  <li><a href="#εφαπτομένη-οξείας-γωνίας" id="toc-εφαπτομένη-οξείας-γωνίας" class="nav-link" data-scroll-target="#εφαπτομένη-οξείας-γωνίας"><span class="header-section-number">2</span> Εφαπτομένη οξείας γωνίας</a>
+  <ul class="collapse">
+  <li><a href="#ορισμός" id="toc-ορισμός" class="nav-link" data-scroll-target="#ορισμός"><span class="header-section-number">2.1</span> Ορισμός</a></li>
+  <li><a href="#η-εφαπτομένη-είναι-μια-τριγωνομετρική-συνάρτηση-που-συνδέει-τη-γωνία-ενός-ορθογωνίου-τριγώνου-με-το-λόγο-του-απέναντι-πλευράς-προς-την-παρακείμενη-πλευρά." id="toc-η-εφαπτομένη-είναι-μια-τριγωνομετρική-συνάρτηση-που-συνδέει-τη-γωνία-ενός-ορθογωνίου-τριγώνου-με-το-λόγο-του-απέναντι-πλευράς-προς-την-παρακείμενη-πλευρά." class="nav-link" data-scroll-target="#η-εφαπτομένη-είναι-μια-τριγωνομετρική-συνάρτηση-που-συνδέει-τη-γωνία-ενός-ορθογωνίου-τριγώνου-με-το-λόγο-του-απέναντι-πλευράς-προς-την-παρακείμενη-πλευρά."><span class="header-section-number">2.2</span> Η εφαπτομένη είναι μια τριγωνομετρική συνάρτηση που συνδέει τη γωνία ενός ορθογωνίου τριγώνου με το λόγο του απέναντι πλευράς προς την παρακείμενη πλευρά.</a></li>
+  <li><a href="#κατασκευή-μιας-γωνίας-όταν-γνωρίζουμε-την-εφαπτομένη-της." id="toc-κατασκευή-μιας-γωνίας-όταν-γνωρίζουμε-την-εφαπτομένη-της." class="nav-link" data-scroll-target="#κατασκευή-μιας-γωνίας-όταν-γνωρίζουμε-την-εφαπτομένη-της."><span class="header-section-number">2.3</span> Κατασκευή μιας γωνίας όταν γνωρίζουμε την εφαπτομένη της.</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">2.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ιστορικά-στοιχεία-για-την-τριγωνομετρία" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ιστορικά-στοιχεία-για-την-τριγωνομετρία"><span class="header-section-number">1</span> Ιστορικά στοιχεία για την τριγωνομετρία</h2>
+<p>Η τριγωνομετρία έχει μια πλούσια ιστορία που εκτείνεται σε πάνω από δύο χιλιάδες χρόνια, ξεκινώντας από την ανάγκη των ανθρώπων να κατανοήσουν και να μετρήσουν τον κόσμο γύρω τους.</p>
+<ul>
+<li><strong>Ετυμολογία και Ορισμός:</strong> Η λέξη «Τριγωνομετρία» προδίδει την προέλευσή της, καθώς ασχολείται με τη μέτρηση των στοιχείων των τριγώνων. Το 1789, ο Γάλλος μαθηματικός D’ Alembert την περιέγραψε εύστοχα ως την «τέχνη να βρίσκεις τα άγνωστα στοιχεία ενός τριγώνου με τα λιγότερα μέσα που διαθέτεις».</li>
+<li><strong>Πρώιμη Ανάπτυξη και Αστρονομία:</strong> Η επιστήμη αυτή αναπτύχθηκε αρχικά από τους αρχαίους Έλληνες για να εξυπηρετήσει τις ανάγκες της <strong>Αστρονομίας</strong> και της <strong>Γεωγραφίας</strong>. Οι αρχαίοι αστρονόμοι παρατήρησαν ότι οι έννοιες του ημιτόνου, του συνημιτόνου και της εφαπτομένης προέκυπταν φυσικά από τη μελέτη των άστρων. Πίστευαν ότι τα αστέρια κινούνταν πάνω σε μια τεράστια νοητή σφαίρα και, καθώς ήταν αδύνατο να μετρήσουν άμεσα τις αποστάσεις μεταξύ των πλανητών, προσπάθησαν να τις υπολογίσουν μέσω των γωνιών που σχημάτιζαν.</li>
+<li><strong>Σημαντικές Προσωπικότητες:</strong>
+<ul>
+<li><strong>Ίππαρχος (2ος αι. π.Χ.):</strong> Θεωρείται ένας από τους θεμελιωτές της τριγωνομετρίας. Εφεύρε τον <strong>αστρολάβο</strong>, ένα όργανο μέτρησης γωνιών που επέτρεπε τον υπολογισμό του ύψους των αστεριών και τη γωνιακή τους απόσταση.</li>
+<li><strong>Αρίσταρχος ο Σάμιος και Πτολεμαίος:</strong> Συνεισέφεραν σημαντικά βρίσκοντας σχέσεις μεταξύ των πλευρών και των γωνιών των τριγώνων για αστρονομικούς σκοπούς. Ο Πτολεμαίος χρησιμοποίησε τριγωνομετρικούς πίνακες στο περίφημο έργο του «Γεωγραφία».</li>
+</ul></li>
+<li><strong>Τριγωνομετρικοί Πίνακες και Εργαλεία:</strong> Οι πρώτοι τριγωνομετρικοί πίνακες δημιουργήθηκαν πριν από περίπου δύο χιλιάδες χρόνια για να διευκολύνουν τους αστρονομικούς υπολογισμούς. Ο υπολογισμός αυτών των αριθμών ήταν εξαιρετικά επίπονος και άρχισε να απλοποιείται μόλις μετά τον 17ο αιώνα μ.Χ., ενώ σήμερα είναι πλέον απλός με τη χρήση υπολογιστών τσέπης.</li>
+<li><strong>Εφαρμογές στη Ναυσιπλοΐα:</strong> Οι αρχαίοι Έλληνες χρησιμοποιούσαν τον αστρολάβο για να χαράζουν την πορεία τους τη νύχτα στη θάλασσα. Αιώνες αργότερα, ο Χριστόφορος Κολόμβος βασιζόταν στο έργο “Ephemerides Astronomicae” του Regiomontanus κατά τη διάρκεια των ταξιδιών του.</li>
+<li><strong>Εξέλιξη και Σύγχρονη Χρήση:</strong> Παρόλο που ξεκίνησε από τη μελέτη της σφαίρας (ουράνιος θόλος), η τριγωνομετρία βρήκε τεράστια εφαρμογή στο επίπεδο. Σήμερα, οι εφαρμογές της επεκτείνονται στη Φυσική (βολές), την Οπτική (ανάκλαση), τη Στατική (αντοχή υλικών) και πολλές άλλες θετικές και κοινωνικές επιστήμες.</li>
+</ul>
+<hr>
+<p>Οι αρχαίοι, και ιδιαίτερα οι Έλληνες ναυτικοί και αστρονόμοι, χρησιμοποιούσαν τον <strong>αστρολάβο</strong> ως ένα πολυεργαλείο για τον προσανατολισμό και τη ναυσιπλοΐα, βασιζόμενοι στις εξής λειτουργίες:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-384760283.png" class="img-fluid figure-img" width="319"></p>
+<figcaption>Ο αστρολάβος του Ίππαρχου . Πηγή: Internet</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-39084974.png" class="img-fluid figure-img" width="272"></p>
+<figcaption>Περσικός αστρολάβος του 18ου αιώνα. Πηγή Internet</figcaption>
+</figure>
+</div>
+<p><code>Ανά τους αιώνες υπήρξαν πολλοί διαφορετικοί τύποι αστρολάβων</code></p>
+<ul>
+<li><strong>Μέτρηση του ύψους των ουράνιων σωμάτων:</strong> Η κύρια χρήση του αστρολάβου ήταν η μέτρηση του ύψους ενός αστεριού πάνω από τον ορίζοντα. Οι ναυτικοί στόχευαν το αστέρι χρησιμοποιώντας έναν περιστρεφόμενο κανόνα (χάρακα) στο κέντρο ενός βαθμονομημένου δίσκου.</li>
+<li><strong>Προσδιορισμός θέσης και χρόνου:</strong> Μέσω του ύψους των αστεριών, μπορούσαν να προσδιορίσουν τη χρονική στιγμή της παρατήρησης. Γνωρίζοντας τη θέση συγκεκριμένων άστρων, όπως η Σελήνη ή οι τότε γνωστοί πλανήτες (Ερμής, Αφροδίτη, Άρης, Δίας, Κρόνος), μπορούσαν να υπολογίσουν τη θέση τους πάνω στη νοητή ουράνια σφαίρα.</li>
+<li><strong>Υπολογισμός αποστάσεων με τριγωνομετρία:</strong> Ο αστρολάβος επέτρεπε τη μέτρηση γωνιακών αποστάσεων μεταξύ δύο αστεριών. Με τη χρήση αυτών των γωνιών και των αρχών της τριγωνομετρίας, οι αρχαίοι μπορούσαν να υπολογίσουν αποστάσεις που ήταν αδύνατο να μετρηθούν άμεσα, όπως οι αποστάσεις μεταξύ πλανητών ή η πορεία ενός πλοίου.</li>
+<li><strong>Χάραξη πορείας τη νύχτα:</strong> Ήταν το βασικό όργανο για τη ναυσιπλοΐα κατά τη διάρκεια της νύχτας, επιτρέποντας στους αρχαίους Έλληνες να χαράζουν πορεία στο πέλαγος όταν δεν υπήρχαν ορατά σημεία ξηράς.</li>
+</ul>
+<p>Εφευρέθηκε από τον Ίππαρχο τον 2ο αιώνα π.Χ. και αποτέλεσε το σημαντικότερο ναυτικό όργανο μέχρι και τον Μεσαίωνα, οπότε και αντικαταστάθηκε από τον εξάντα.</p>
+<p>Είναι εντυπωσιακό πώς ένα τόσο παλιό όργανο συνδύαζε την αστρονομία με τα μαθηματικά για πρακτικούς σκοπούς.</p>
+<hr>
+</section>
+<section id="εφαπτομένη-οξείας-γωνίας" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="εφαπτομένη-οξείας-γωνίας"><span class="header-section-number">2</span> Εφαπτομένη οξείας γωνίας</h2>
+<iframe src="https://www.geogebra.org/calculator/egcjpuxr?embed" width="800" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: blue;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ακολουθήστε τις οδηγίες
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Αλλάξτε διαδοχικά 3 φορές θέση στο σημείο Α. Σε κάθε θέση υπολογίστε τον λόγο <span class="math inline">\(\dfrac{AB}{OΑ}\)</span></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(\dfrac{AB}{OΑ} = ..........\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{AB}{OΑ} = ..........\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{AB}{OΑ} = ..........\)</span></p></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Τι παρατηρείτε; Αν και τα τμήματα αλλάζουν μέγεθος ο λόγος <span class="math inline">\(\dfrac{AB}{OΑ}\)</span> _______________________.</p></li>
+<li><p>Αλλάξτε τώρα την γωνία <span class="math inline">\(\hat ω\)</span> μετακινώντας πάνω κάτω το σημείο Ψ.</p></li>
+</ol>
+<p>Ξανακάντε τα βήματα 1, 2. Τι παρατηρείτε; Όταν η γωνία αλλάζει τότε αλλάζει και ο _________________.</p>
+<ol start="4" type="1">
+<li>Επαναλάβατε το βήμα 3 για δυο ακόμη διαφορετικές τιμέ της γωνίας. Τι παρατηρείτε;</li>
+</ol>
+</div>
+</div>
+<section id="ορισμός" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="ορισμός"><span class="header-section-number">2.1</span> Ορισμός</h3>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η εφαπτομένη μιας οξείας γωνίας <span class="math inline">\(\omega\)</span> σε ένα ορθογώνιο τρίγωνο ορίζεται ως ο σταθερός λόγος της απέναντι κάθετης πλευράς προς την προσκείμενη κάθετη πλευρά της γωνίας αυτής. Συμβολίζεται με <span class="math inline">\(\text{εφ}\hat ω\)</span> και η μαθηματική της έκφραση είναι: <span class="math display">\[\text{εφ}\hat ω = \frac{\text{απέναντι κάθετη πλευρά}}{\text{προσκείμενη κάθετη πλευρά}}\]</span>.</p>
+<p>Εδώ είναι μερικά βασικά χαρακτηριστικά που αξίζει να γνωρίζετε:</p>
+<ul>
+<li><p><strong>Μεταβολή:</strong> Όταν μια οξεία γωνία μεγαλώνει, η εφαπτομένη της αυξάνεται επίσης.</p></li>
+<li><p><strong>Κλίση Ευθείας:</strong> Στη γεωμετρία, η κλίση μιας ευθείας με εξίσωση <span class="math inline">\(y = \alpha x\)</span> είναι ίση με την εφαπτομένη της γωνίας που σχηματίζει η ευθεία με τον άξονα <span class="math inline">\(x'x\)</span> και όταν πρόκειται για ανηφορικό ή κατηφορικό δρόμο συνήθως μετριέται σε ποσοστό. Για δρόμο που σχηματίζει με το οριζόντιο επίπεδο γωνία που έχει εφαπτομένη πχ 0,1456 λέμε ο δρόμος έχει κλίση 14,56%. Αυτό σημαίνει ότι για κάθε εκατό μέτρα στο οριζόντιο επίπεδο ο δρόμος ανεβαίνει 14,56 μέτρα.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="η-εφαπτομένη-είναι-μια-τριγωνομετρική-συνάρτηση-που-συνδέει-τη-γωνία-ενός-ορθογωνίου-τριγώνου-με-το-λόγο-του-απέναντι-πλευράς-προς-την-παρακείμενη-πλευρά." class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="η-εφαπτομένη-είναι-μια-τριγωνομετρική-συνάρτηση-που-συνδέει-τη-γωνία-ενός-ορθογωνίου-τριγώνου-με-το-λόγο-του-απέναντι-πλευράς-προς-την-παρακείμενη-πλευρά."><span class="header-section-number">2.2</span> Η εφαπτομένη είναι μια τριγωνομετρική συνάρτηση που συνδέει τη γωνία ενός ορθογωνίου τριγώνου με το λόγο του απέναντι πλευράς προς την παρακείμενη πλευρά.</h3>
+<p>Στην καθημερινή ζωή, η εφαπτομένη χρησιμοποιείται σε πολλές πρακτικές εφαρμογές που σχετίζονται με γωνίες, μέτρηση και κλίσεις.</p>
+<p>Παραδείγματα:</p>
+<ol type="1">
+<li><p><strong>Αρχιτεκτονική και κατασκευές</strong><br>
+Στις κατασκευές, η εφαπτομένη χρησιμοποιείται για τον υπολογισμό κλίσεων σκεπών, κλιμάκων ή ράμπων. Αν γνωρίζουμε το ύψος και την οριζόντια απόσταση, μπορούμε εύκολα να βρούμε τη γωνία κλίσης:</p></li>
+<li><p><strong>Μηχανική και φύση των δρόμων</strong><br>
+Οι μηχανικοί δρόμων χρησιμοποιούν την εφαπτομένη για να καθορίσουν την κλίση των δρόμων σε ανηφορικά ή κατηφορικά τμήματα, ώστε να είναι ασφαλής η διέλευση των οχημάτων.</p></li>
+<li><p><strong>Υψομετρικές μετρήσεις</strong><br>
+Η εφαπτομένη εφαρμόζεται σε γεωμέτρηση και χαρτογράφηση για τον υπολογισμό υψομετρικών διαφορών σε βουνά ή λόφους χρησιμοποιώντας όργανα μέτρησης γωνίας (π.χ. τοπογραφικά όργανα).</p></li>
+<li><p><strong>Ρομποτική και μηχανολογία</strong><br>
+Σε εφαρμογές ρομποτικής και μηχανολογίας, η εφαπτομένη χρησιμοποιείται για τον υπολογισμό γωνιών κίνησης αρθρώσεων και για τον σχεδιασμό μηχανών με κλίσεις και κίνηση σε καθορισμένη πορεία.</p></li>
+<li><p><strong>Καθημερινές καταστάσεις</strong><br>
+Ακόμα και σε απλές καθημερινές δραστηριότητες, όπως υπολογισμός ύψους δέντρου ή σηματοδότη, η εφαπτομένη βοηθάει: με τη μέτρηση απόστασης από το δέντρο και τη γωνία ανύψωσης της όρασης, μπορούμε να υπολογίσουμε το ύψος του δέντρου.</p></li>
+</ol>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Η εφαπτομένη είναι ένα εργαλείο που επιτρέπει τον υπολογισμό γωνιών και αποστάσεων με βάση συγκεκριμένα μήκη, κάνοντας τη μέτρηση και τον σχεδιασμό πρακτικών εφαρμογών πολύ απλή και ακριβή. Χρησιμοποιείται ευρέως σε διάφορους τομείς από την καθημερινή ζωή έως την επιστήμη και τη μηχανική.</p>
+</section>
+<section id="κατασκευή-μιας-γωνίας-όταν-γνωρίζουμε-την-εφαπτομένη-της." class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="κατασκευή-μιας-γωνίας-όταν-γνωρίζουμε-την-εφαπτομένη-της."><span class="header-section-number">2.3</span> Κατασκευή μιας γωνίας όταν γνωρίζουμε την εφαπτομένη της.</h3>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Για να κατασκευάσουμε μια γωνία όταν γνωρίζουμε την εφαπτομένη της, βασιζόμαστε στον ορισμό της εφαπτομένης:</p>
+<p><span class="math display">\[εφ(\theta) = \frac{\text{απέναντι πλευρά}}{\text{προσκείμενη πλευρά}}\]</span></p>
+<p>Δηλαδή, αν η εφαπτομένη είναι ένας αριθμός (π.χ. ( <span class="math inline">\(εφ\theta = α\)</span> )), μπορούμε να τον εκφράσουμε ως λόγο δύο μηκών και να κατασκευάσουμε ένα ορθογώνιο τρίγωνο.</p>
+<section id="βήματα-κατασκευής" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="βήματα-κατασκευής"><span class="header-section-number">2.3.1</span> Βήματα κατασκευής</h4>
+<ol type="1">
+<li><p><strong>Θεώρησε ότι</strong> <span class="math display">\[εφ(\theta) = \frac{m}{n}\]</span> (αν δεν δίνεται ως κλάσμα, πάρε π.χ. (<span class="math inline">\(α = \frac{α}{1}\)</span>)).</p></li>
+<li><p><strong>Σχεδίασε ένα ευθύγραμμο τμήμα</strong> μήκους (n) (προσκείμενη πλευρά).</p></li>
+<li><p><strong>Στο ένα άκρο</strong>, ύψωσε κάθετη ευθεία.</p></li>
+<li><p><strong>Πάνω στην κάθετο</strong>, πάρε μήκος (m) (απέναντι πλευρά).</p></li>
+<li><p><strong>Ένωσε το άκρο του (n)</strong> με το άκρο του (m)<strong>.</strong></p></li>
+<li><p>Η γωνία που σχηματίζεται στη βάση είναι η ζητούμενη γωνία (<span class="math inline">\(\theta\)</span>).</p></li>
+</ol>
+<hr>
+<p><strong>Παράδειγμα</strong></p>
+<p>Αν ( <span class="math inline">\(εφ\theta = \frac{3}{4}\)</span> ):</p>
+<ul>
+<li>σχεδιάζεις βάση 4 μονάδων</li>
+<li>υψώνεις κάθετο 3 μονάδων</li>
+<li>ενώνεις τα άκρα → η γωνία στη βάση είναι η ( <span class="math inline">\(\theta\)</span> )</li>
+</ul>
+<hr>
+<p><strong>Σημαντική ιδέα</strong></p>
+<p>Ουσιαστικά χρησιμοποιείς ένα ορθογώνιο τρίγωνο όπου:</p>
+<ul>
+<li>η μία κάθετη πλευρά = αριθμητής</li>
+<li>η άλλη = παρονομαστής</li>
+</ul>
+<p>και έτσι «μεταφράζεις» την εφαπτομένη σε γεωμετρική κατασκευή.</p>
+</section>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Να θυμάστε</p>
+<p>η ισότητα <span class="math inline">\(εφθ=\dfrac{m}{n}\)</span> είναι ένας τύπος με 3 όρους, άρα μπορεί να επιλυθεί κατά τα γνωστά.</p>
+<ul>
+<li><p><span class="math inline">\(m=n\cdotεφθ\)</span></p></li>
+<li><p><span class="math inline">\(n=\dfrac{m}{εφθ}\)</span></p></li>
+<li><p>Σε συνδυασμό με το πυθαγόρειο θεώρημα, αν σε ένα ορθογώνιο τρίγωνο γνωρίζουμε δύο στοιχεία του μπορούμε να βρούμε τα υπόλοιπα στοιχεία του τριγώνου.</p>
+<ul>
+<li>Γνωρίζουμε δύο πλευρές ==&gt; από το πυθαγόρειο θεώρημα βρίσκουμε την τρίτη και μετά τις γωνίες από την εφαπτομένη.</li>
+<li>Γνωρίζουμε μια κάθετη πλευρά και μια οξεία γωνία ==&gt; βρίσκουμε την άλλη κάθετη πλευρά από την εφαπτομένη, την άλλη οξεία γωνία σαν συμπληρωματική της γνωστής γωνίας και την υποτείνουσ από το πυθαγόρειο θεώρημα.</li>
+<li>Γνωρίζουμε τις δύο κάθετες πλευρές ==&gt; βρίσκουμε την υποτείνουσα από το Πυθαγόρειο θεώρημα και τις γωνίες με τριγωνομετρία.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="ασκήσεις" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">2.4</span> Ασκήσεις</h3>
+<p><strong>Άσκηση 1</strong></p>
+<p>Ένα τρίγωνο έχει οξεία γωνία <span class="math inline">\(\hat B = 30^ο\)</span>. Η απέναντι πλευρά της γωνίας είναι 3,4 cm και η προσκείμενη πλευρά 6,1 cm. Επαληθεύστε αν η εφαπτομένη της γωνίας είναι σωστή. <span class="math inline">\(εφ30^ο=0,5\)</span> Εξηγήστε γιατί! <img src="images/clipboard-378087153.png" class="img-fluid"></p>
+<p><strong>Άσκηση 2: Υπολογισμός Γωνίας</strong></p>
+<p>Στα παρακάτω ορθογώνια τρίγωνα να υπολογίσετε τις σημειωμένες γωνίες.</p>
+<a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" target="_blank">
+Ανατρέξτε στους τριγωνομετρικούς πίνακες
+</a>
+  
+<p><img src="images/clipboard-2458858068.png" class="img-fluid" width="282">.<img src="images/clipboard-2319746721.png" class="img-fluid" width="269"></p>
+<p><strong>Άσκηση 3: Πλάτη Κεκλιμένου Επιπέδου</strong></p>
+<p>Μια ράμπα έχει ύψος 2 m και μήκος 5 m. Βρείτε τη γωνία κλίσης. Σχεδιάστε το σχήμα.</p>
+<p><strong>Άσκηση 4: Κλίση Οδού</strong></p>
+<p>Μια οδός έχει κλίση 12,84%. Σε μια οριζόντια απόσταση 120 m, πόσο ανεβαίνει ο δρόμος. (Ποιο είναι το κατακόρυφο ύψος; Κάντε ένα σχήμα)</p>
+<p><img src="images/clipboard-908740928.png" class="img-fluid" width="411"></p>
+<p><strong>Άσκηση 5: Υπολογισμός Απόστασης</strong></p>
+<p>Ένα κτίριο φαίνεται από έναν παρατηρητή υπό γωνία 60°. Αν η παρατηρητής είναι 10 m από τη βάση του κτιρίου, ποιο είναι το ύψος του κτιρίου αν ο παρατηρητής έχει ύψος 1,78 m;</p>
+<p><img src="images/clipboard-2333734060.png" class="img-fluid"></p>
+<p><strong>Άσκηση 6: Υπολογισμός πλευράς</strong> Βρείτε την πλευρά x στο παρακάτω σχήμα.</p>
+<p><img src="images/clipboard-932671146.png" class="img-fluid"></p>
+<p><strong>Άσκηση 7 :</strong> Υπολογίστε το συνολικό ύψος του σπιτιού μέχρι την κορυφή της σκεπής.</p>
+<p><img src="images/clipboard-2070366011.png" class="img-fluid"></p>
+<p><strong>Άσκηση 8: Πύργος και Σκιά</strong></p>
+<p>Ένας πύργος δημιουργεί σκιά 12 m όταν οι ακτίνες του ήλιου πέφτουν υπο γωνία 45°. Ποιο είναι το ύψος του πύργου;</p>
+<p><strong>Άσκηση 9</strong></p>
+<p>Να υπολογίσετε το ύψος στο παρακάτω ισοσκελές τρίγωνο.</p>
+<p><img src="images/clipboard-3761981199.png" class="img-fluid"></p>
+<p><strong>Άσκηση 10</strong></p>
+<p>Το ύψος του φάρου 38 m, φαίνεται απο τα δύο πλοία Α και Β υπό γωνία <span class="math inline">\(39^ο\)</span> και <span class="math inline">\(27^ο\)</span> αντίστοιχα. Πόση απόσταση απέχουν τα πλοία μεταξύ τους.</p>
+<p><img src="images/clipboard-2855831918.png" class="img-fluid" width="539"></p>
+<p><strong>Άσκηση 11</strong></p>
+<p>Ο Σωκράτης απέχει 1,6 m από τον καθρέπτη ΑΒ. Σε σχέση με το τον ορίζοντα του ματιού του βλέπει το πάνω μέρος Β του καθρέπτη υπό γωνία <span class="math inline">\(27^ο\)</span> και το κάτω μέρος Α υπο γωνία <span class="math inline">\(38^ο\)</span>. Πόσο είναι το ύψος του καθρέπτη;</p>
+<p><img src="images/clipboard-77242206.png" class="img-fluid" width="408"></p>
+<ol start="12" type="1">
+<li><p><strong>Βασικός Υπολογισμός:</strong> Σε ορθογώνιο τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> (<span class="math inline">\(\hat{A}=90^{\circ}\)</span>), οι κάθετες πλευρές είναι <span class="math inline">\(ΑΒ = 15\)</span> cm και <span class="math inline">\(ΑΓ = 20\)</span> cm. Υπολογίστε την <span class="math inline">\(\text{εφ}\hat{B}\)</span> και την <span class="math inline">\(\text{εφ}\hat{\Gamma}\)</span>.</p></li>
+<li><p><strong>Χρήση Πυθαγορείου:</strong> Δίνεται ορθογώνιο τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με υποτείνουσα <span class="math inline">\(ΒΓ = 13\)</span> cm και κάθετη πλευρά <span class="math inline">\(ΑΒ = 5\)</span> cm. Βρείτε την εφαπτομένη της γωνίας <span class="math inline">\(\hat{B}\)</span>.</p></li>
+<li><p><strong>Γεωμετρική Κατασκευή:</strong> Σχεδιάστε μια οξεία γωνία <span class="math inline">\(\omega\)</span> τέτοια ώστε <span class="math inline">\(\text{εφ}\omega = \frac{1}{5}\)</span>.</p></li>
+<li><p><strong>Πρόβλημα Τουρίστα:</strong> Ένας τουρίστας ύψους <span class="math inline">\(1,80\)</span> m στέκεται σε απόσταση <span class="math inline">\(45\)</span> m από έναν πύργο και παρατηρεί την κορυφή του υπό γωνία <span class="math inline">\(32^{\circ}\)</span>. Ποιο είναι το συνολικό ύψος του πύργου; (δίνεται <span class="math inline">\(\text{εφ}32^{\circ} \approx 0,62\)</span>).</p></li>
+<li><p><strong>Κλίση Ευθείας:</strong> Βρείτε την κλίση της ευθείας που διέρχεται από την αρχή των αξόνων <span class="math inline">\(Ο(0,0)\)</span> και το σημείο <span class="math inline">\(Α(-1, 3)\)</span>. Πώς σχετίζεται αυτή η κλίση με την εφαπτομένη της γωνίας που σχηματίζει η ευθεία με τον άξονα <span class="math inline">\(x'x\)</span>;</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: blue;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Να τηρείτε τον παρακάτω κανόνα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σε όλα αυτά τα προβλήματα, δοκιμάστε πρώτα να κάνετε ένα πρόχειρο σχήμα (ένα ορθογώνιο τρίγωνο) και να σημειώσετε ποια πλευρά είναι η υποτείνουσα.</p>
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
