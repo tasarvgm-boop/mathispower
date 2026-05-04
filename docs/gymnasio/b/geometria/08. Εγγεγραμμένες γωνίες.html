@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>08. Εγγεγραμμένες γωνίες – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html">08. Εγγεγραμμένες γωνίες</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html">08. Εγγεγραμμένες γωνίες</a></li></ol></nav>
+      <h1 class="title">08. Εγγεγραμμένες γωνίες</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">5 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -532,7 +610,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
   </div>
 </li>
@@ -542,7 +620,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -585,7 +663,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -611,33 +689,252 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εγγεγραμμένη-γωνία" id="toc-εγγεγραμμένη-γωνία" class="nav-link active" data-scroll-target="#εγγεγραμμένη-γωνία"><span class="header-section-number">1</span> Εγγεγραμμένη γωνία</a>
+  <ul class="collapse">
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εγγεγραμμένη-γωνία" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εγγεγραμμένη-γωνία"><span class="header-section-number">1</span> Εγγεγραμμένη γωνία</h2>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Μια <strong>εγγεγραμμένη γωνία</strong> είναι η γωνία της οποίας η κορυφή βρίσκεται πάνω σε έναν κύκλο και οι πλευρές της τέμνουν τον κύκλο αυτό. Το τμήμα του κύκλου που βρίσκεται ανάμεσα στις πλευρές της ονομάζεται αντίστοιχο τόξο της.</p>
+<p>Μια <strong>επίκεντρη γωνία</strong> είναι η γωνία που έχει την κορυφή της στο κέντρο ενός κύκλου και οι πλευρές της είναι ακτίνες του κύκλου αυτού.</p>
+<ul>
+<li><strong>Πλήρης κύκλος:</strong> Ένας ολόκληρος κύκλος αντιστοιχεί σε μια επίκεντρη γωνία <span class="math inline">\(360^\circ\)</span>.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/h3rr57tg?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μετακινώντας το σημείο Ρ (ακτίνα του κύκλου), αλλάζετε μέγεθος στον κύκλο. Τι παρατηρείτε ; Τι συμβαίνει με το μέγεθος της γωνίας και του αντίστοιχου τόξου;.</p>
+<p>Μετακινήστε το σημείο Β ή το σημείο Γ για να αλλάξετε την γωνία. Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη της γωνίας και του τόξου;</p>
+</div>
+</div>
+<section id="συμπεράσματα---ιδιότητες" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="συμπεράσματα---ιδιότητες"><span class="header-section-number">1.1</span> Συμπεράσματα - Ιδιότητες</h3>
+<ul>
+<li><p><strong>Σχέση με την επίκεντρη:</strong> Κάθε εγγεγραμμένη γωνία ισούται με το μισό της επίκεντρης γωνίας που έχει το ίδιο αντίστοιχο τόξο.</p></li>
+<li><p><strong>Μέτρο τόξου:</strong> Το μέτρο της εγγεγραμμένης γωνίας είναι ίσο με το μισό του μέτρου του αντίστοιχου τόξου της.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μετακινήστε το σημείο Α για να αλλάξετε την κορυφή της γωνία; πάνω στον κύκλο.</p>
+<p>Κάθε νέα θέση αντιστοιχεί σε μιά νέα εγγεγραμμένη γωνία.</p>
+<p>Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη των γωνιών και του τόξου;</p>
+</div>
+</div>
+<ul>
+<li><strong>Γωνίες στο ίδιο τόξο:</strong> Όλες οι εγγεγραμμένες γωνίες που βαίνουν στο ίδιο τόξο (ή σε ίσα τόξα) είναι ίσες μεταξύ τους.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Κάντε την επίκεντρη γωνία <span class="math inline">\(180^ο\)</span> μετακινώντας το σημείο Β ή Γ. Επιλέξτε το σημείο και πατήστε <kbd>Shift</kbd> + <kbd>Βελάκια</kbd>.</p>
+<p>Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη των γωνιών και του τόξου;</p>
+</div>
+</div>
+<ul>
+<li><strong>Γωνία σε ημικύκλιο:</strong> Κάθε εγγεγραμμένη γωνία που βαίνει σε ημικύκλιο είναι πάντα ορθή (90°).</li>
+</ul>
+</section>
+</div>
+<section id="ασκήσεις" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</h3>
+<p><strong>Βασικές Ασκήσεις (Κατανόηση)</strong></p>
+<ol type="1">
+<li><strong>Υπολογισμός Τόξου:</strong> Σε έναν κύκλο <span class="math inline">\((O, \rho)\)</span>, μια επίκεντρη γωνία <span class="math inline">\(\widehat{AOB}\)</span> είναι <span class="math inline">\(70^\circ\)</span>. Πόσες μοίρες είναι το αντίστοιχο (μικρό) τόξο <span class="math inline">\(\overparen{AB}\)</span>;</li>
+<li><strong>Σχέση Γωνιών</strong>: Μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{AB}\)</span>, το οποίο είναι <span class="math inline">\(120^\circ\)</span>. Να βρείτε το μέτρο της γωνίας <span class="math inline">\(\widehat{A\Gamma B}\)</span>.</li>
+<li><strong>Από Εγγεγραμμένη σε Επίκεντρη</strong>: Αν μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{M}\)</span> είναι <span class="math inline">\(45^\circ\)</span>, πόσο είναι το μέτρο της αντίστοιχης επίκεντρης γωνίας που βαίνει στο ίδιο τόξο;</li>
+<li><strong>Ημικύκλιο</strong>: Δίνεται ένας κύκλος με διάμετρο <span class="math inline">\(AB\)</span>. Αν πάρουμε ένα τυχαίο σημείο <span class="math inline">\(\Gamma\)</span> πάνω στον κύκλο, πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span>;</li>
+<li><strong>Σχέση Εγγεγραμμένης και Επίκεντρης:</strong> Αν μια επίκεντρη γωνία σε έναν κύκλο είναι <span class="math inline">\(80^\circ\)</span>, πόσες μοίρες είναι η εγγεγραμμένη γωνία που βαίνει στο ίδιο τόξο;</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Κάθε εγγεγραμμένη γωνία ισούται με το μισό της επίκεντρης που έχει το ίδιο αντίστοιχο τόξο.</p>
+<ol start="6" type="1">
+<li><strong>Υπολογισμός Γωνιών Τριγώνου:</strong> Σε έναν κύκλο θεωρούμε τρία σημεία <span class="math inline">\(Α, Β, Γ\)</span> έτσι ώστε το τόξο <span class="math inline">\(AB = 120^\circ\)</span> και το τόξο <span class="math inline">\(BΓ = 100^\circ\)</span>. Υπολογίστε τις γωνίες του τριγώνου <span class="math inline">\(ABΓ\)</span>.</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Η εγγεγραμμένη γωνία έχει μέτρο ίσο με το μισό του μέτρου του αντίστοιχου τόξου της (π.χ. <span class="math inline">\(\hat{A} = \dfrac{\overparen{BΓ}}{2}\)</span>).</p>
+<p><strong>Ασκήσεις Εφαρμογής (Συνδυαστικές)</strong></p>
+<ol type="1">
+<li><strong>Τρίγωνο και Κύκλος</strong>: Σε έναν κύκλο, μια χορδή <span class="math inline">\(AB\)</span> είναι ίση με την ακτίνα του κύκλου <span class="math inline">\(\rho\)</span>.</li>
+</ol>
+<ul>
+<li>α) Υπολογίστε την επίκεντρη γωνία <span class="math inline">\(\widehat{AOB}\)</span>.</li>
+<li>β) Υπολογίστε μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span> που βαίνει στο τόξο <span class="math inline">\(\overparen{AB}\)</span>.</li>
+</ul>
+<ol start="2" type="1">
+<li><p><strong>Άθροισμα Τόξων:</strong> Ένας κύκλος χωρίζεται από τρία σημεία <span class="math inline">\(A, B, \Gamma\)</span> σε τρία τόξα <span class="math inline">\(\overparen{AB}, \overparen{B\Gamma}, \overparen{\Gamma A}\)</span> που έχουν αναλογία <span class="math inline">\(2:3:4\)</span>. Να βρείτε τις μοίρες κάθε τόξου και τις γωνίες του τριγώνου <span class="math inline">\(AB\Gamma\)</span>.</p></li>
+<li><p><strong>Ορθογώνιο Τρίγωνο</strong>: Σε κύκλο <span class="math inline">\((O, \rho)\)</span>, το τόξο <span class="math inline">\(\overparen{AB}\)</span> είναι <span class="math inline">\(80^\circ\)</span>. Αν η χορδή <span class="math inline">\(A\Gamma\)</span> είναι διάμετρος, βρείτε όλες τις γωνίες του τριγώνου <span class="math inline">\(AB\Gamma\)</span>.</p></li>
+<li><p><strong>Παράλληλες Χορδές</strong>: Σε έναν κύκλο φέρνουμε δύο παράλληλες χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span>. Αν το τόξο <span class="math inline">\(\overparen{A\Gamma}\)</span> είναι <span class="math inline">\(50^\circ\)</span>, αποδείξτε ότι το τόξο <span class="math inline">\(\overparen{B\Delta}\)</span> είναι επίσης <span class="math inline">\(50^\circ\)</span> και υπολογίστε την εγγεγραμμένη γωνία που βαίνει στο τόξο <span class="math inline">\(\overparen{B\Delta}\)</span>.<br>
+<strong>tip</strong>: Σχεδιάστε την τέμνουσα ΒΓ. (Εντός εναλλάξ γωνίες ………………)</p></li>
+<li><p><strong>Εύρεση Τόξου από Γωνία:</strong> Αν μια εγγεγραμμένη γωνία <span class="math inline">\(\phi\)</span> είναι <span class="math inline">\(25^\circ\)</span>, πόσο είναι το μέτρο του αντίστοιχου τόξου στο οποίο βαίνει;</p></li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Το τόξο είναι διπλάσιο της αντίστοιχης εγγεγραμμένης γωνίας.</p>
+<ol start="6" type="1">
+<li><strong>Άλγεβρα και Τόξα:</strong> Σε κύκλο με διάμετρο <span class="math inline">\(BΔ\)</span>, τα διαδοχικά τόξα <span class="math inline">\(BΓ\)</span> και <span class="math inline">\(ΓΔ\)</span> εκφράζονται ως <span class="math inline">\(5x + 10^\circ\)</span> και <span class="math inline">\(x + 50^\circ\)</span> αντίστοιχα. Βρείτε την τιμή του <span class="math inline">\(x\)</span>.</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Εφόσον η <span class="math inline">\(BΔ\)</span> είναι διάμετρος, το άθροισμα των τόξων <span class="math inline">\(BΓ + ΓΔ\)</span> ισούται με ένα ημικύκλιο (<span class="math inline">\(180^\circ\)</span>).</p>
+<ol start="7" type="1">
+<li><strong>Γωνίες στο ίδιο Τόξο:</strong> Αν δύο εγγεγραμμένες γωνίες <span class="math inline">\(\hat{\alpha}\)</span> και <span class="math inline">\(\hat{\beta}\)</span> βαίνουν στο ίδιο τόξο <span class="math inline">\(BΓ\)</span>, ποια είναι η σχέση μεταξύ τους;</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Οι εγγεγραμμένες γωνίες ενός κύκλου που βαίνουν στο ίδιο τόξο είναι μεταξύ τους ίσες.</p>
+<p><strong>Προχωρημένες Ασκήσεις (Σύνθετες)</strong></p>
+<ol type="1">
+<li><p><strong>Τετράπλευρο σε Κύκλο</strong>: Σε έναν κύκλο είναι εγγεγραμμένο τετράπλευρο <span class="math inline">\(AB\Gamma \Delta\)</span>. Αν η γωνία <span class="math inline">\(\widehat{A}\)</span> είναι <span class="math inline">\(85^\circ\)</span>, πόσες μοίρες είναι η απέναντι γωνία <span class="math inline">\(\widehat{\Gamma}\)</span>;<br>
+<br>
+(<strong>Υπόδειξη</strong>: Σκεφτείτε τα τόξα στα οποία βαίνουν, τι άθροισμα έχουν;).</p></li>
+<li><p><strong>Σύνθετο Σχήμα:</strong> Δίνεται κύκλος <span class="math inline">\((O, \rho)\)</span> και μια επίκεντρη γωνία <span class="math inline">\(\widehat{AOB} = 100^\circ\)</span>. Προεκτείνουμε την ακτίνα <span class="math inline">\(AO\)</span> προς το μέρος του <span class="math inline">\(O\)</span> μέχρι να τμήσει τον κύκλο στο σημείο <span class="math inline">\(\Gamma\)</span>. Υπολογίστε τη γωνία <span class="math inline">\(\widehat{B\Gamma A}\)</span> και το τόξο <span class="math inline">\(\overparen{B\Gamma}\)</span>.</p></li>
+<li><p><strong>Δείκτες Ρολογιού:</strong> Πόσες μοίρες τόξο διαγράφει η άκρη του ωροδείκτη ενός ρολογιού σε <span class="math inline">\(3\)</span> ώρες;</p></li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Οι <span class="math inline">\(12\)</span> ώρες αντιστοιχούν σε πλήρη κύκλο <span class="math inline">\(360^\circ\)</span>, οπότε οι <span class="math inline">\(3\)</span> ώρες αντιστοιχούν στο <span class="math inline">\(1/4\)</span> του κύκλου (<span class="math inline">\(90^\circ\)</span>).</p>
+<ol start="4" type="1">
+<li><strong>Τρίγωνο με Αναλογία Τόξων:</strong> Σε ημικύκλιο διαμέτρου <span class="math inline">\(AB = 6\text{ cm}\)</span>, δίνεται σημείο <span class="math inline">\(Γ\)</span> τέτοιο ώστε το τόξο <span class="math inline">\(AΓ\)</span> να είναι διπλάσιο από το τόξο <span class="math inline">\(BΓ\)</span>. Υπολογίστε τις γωνίες του τριγώνου <span class="math inline">\(ABΓ\)</span>. <strong>Σκεπτικό:</strong> Το άθροισμα των τόξων <span class="math inline">\(AΓ + BΓ\)</span> είναι <span class="math inline">\(180^\circ\)</span>. Με την αναλογία <span class="math inline">\(2:1\)</span>, βρίσκουμε τα τόξα και στη συνέχεια τις εγγεγραμμένες γωνίες.</li>
+</ol>
+<p><strong>Πιο σύνθετες ασκήσεις</strong></p>
+<ol type="1">
+<li><p><strong>Παράλληλες Χορδές</strong> Σε έναν κύκλο, οι χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> είναι παράλληλες. Αν το τόξο <span class="math inline">\(A\Gamma\)</span> είναι <span class="math inline">\(40^{\circ}\)</span> και το τόξο <span class="math inline">\(AB\)</span> είναι <span class="math inline">\(100^{\circ}\)</span>, υπολόγισε:</p>
+<ol type="1">
+<li><p>Το μέτρο του τόξου <span class="math inline">\(B\Delta\)</span>.</p></li>
+<li><p>Το μέτρο του τόξου <span class="math inline">\(\Gamma \Delta\)</span> (αν γνωρίζεις ότι τα τόξα <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> δεν τέμνονται).</p></li>
+</ol></li>
+<li><p><strong>Το Εγγεγραμμένο Τετράπλευρο</strong> Ένα τετράπλευρο <span class="math inline">\(ABΓΔ\)</span> είναι εγγεγραμμένο σε κύκλο. Αν η γωνία <span class="math inline">\(\hat{A}\)</span> είναι <span class="math inline">\(2x + 10^{\circ}\)</span> και η απέναντι γωνία <span class="math inline">\(\hat{Γ}\)</span> είναι <span class="math inline">\(x + 20^{\circ}\)</span>:</p>
+<ul>
+<li>Βρες την τιμή του <span class="math inline">\(x\)</span></li>
+<li>Υπολόγισε τις γωνίες <span class="math inline">\(\hat{A}\)</span> και <span class="math inline">\(\hat{Γ}\)</span>.</li>
+</ul></li>
+</ol>
+<p>(Σκέψου: άν η γωνια Α ήταν <span class="math inline">\(50^ο\)</span>, πόσο θα είναι το αντίστοιχο της τόξο ΒΓ; Πόσο θα είναι το μεγάλο συμπληρωματικό τόξο ΒΓ; άρα πόση θα είναι η γωνία <span class="math inline">\(\hatΓ\)</span>; Προσθεσέτε τες. Πόσο κάνει; <span class="math inline">\(180^{\circ}\)</span>).</p>
+<p>Συνέχισε με την άσκηση.</p>
+<ol start="3" type="1">
+<li><strong>Γωνία Χορδής και Εφαπτομένης</strong> Σε ένα σημείο <span class="math inline">\(A\)</span> ενός κύκλου φέρνουμε την εφαπτομένη <span class="math inline">\((\epsilon)\)</span>. Από το <span class="math inline">\(A\)</span> φέρνουμε μια χορδή <span class="math inline">\(AB\)</span> που σχηματίζει με την εφαπτομένη γωνία <span class="math inline">\(65^{\circ}\)</span>.
+<ul>
+<li>Πόσες μοίρες είναι το τόξο <span class="math inline">\(AB\)</span>;</li>
+<li>Αν <span class="math inline">\(M\)</span> είναι ένα σημείο στο μεγάλο τόξο <span class="math inline">\(AB\)</span>, πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(A\hat{M}B\)</span>;<br>
+<br>
+<img src="images/clipboard-905338036.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<p>(Σκέψου: Η εφαπτομένη είναι κάθετη στην ακτίνα. Άρα πόσο θα είναι η γωνία <span class="math inline">\(\widehat{ΟΑΒ}\)</span>. Προέκτεινε την ακτίνα ΟΑ μέχρι να τμήσει τον κύκλο στο σημείο Γ. Τι γωνία είναι η <span class="math inline">\(\widehat{ΑΒΓ}\)</span>; Επομένως πόση είναι η γωνία <span class="math inline">\(\hatΓ\)</span>). Συνέκρινέ την με τν γωνία <span class="math inline">\(A\hat{M}B\)</span></p>
+<ol start="4" type="1">
+<li><p><strong>Διάμετρος και Διχοτόμος</strong> Έστω κύκλος με διάμετρο <span class="math inline">\(AB\)</span>. Παίρνουμε ένα σημείο <span class="math inline">\(\Gamma\)</span> στον κύκλο τέτοιο ώστε το τόξο <span class="math inline">\(B\Gamma\)</span> να είναι <span class="math inline">\(60^{\circ}\)</span>. Φέρνουμε τη διχοτόμο της εγγεγραμμένης γωνίας <span class="math inline">\(B\hat{A}\Gamma\)</span>, η οποία τέμνει τον κύκλο στο σημείο <span class="math inline">\(\Delta\)</span>.</p>
+<ul>
+<li><p>Υπολόγισε τη γωνία <span class="math inline">\(B\hat{A}\Gamma\)</span>.</p></li>
+<li><p>Υπολόγισε το τόξο <span class="math inline">\(\Gamma \Delta\)</span>.<br>
+<img src="images/clipboard-2009115220.png" class="img-fluid"></p></li>
+</ul></li>
+<li><p><strong>Τεμνόμενες Χορδές</strong> (Εσωτερική Γωνία) Δύο χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> τέμνονται σε ένα σημείο <span class="math inline">\(E\)</span> <strong>μέσα</strong> στον κύκλο. Αν το τόξο <span class="math inline">\(A\Gamma = 50^{\circ}\)</span> και το τόξο <span class="math inline">\(B\Delta = 70^{\circ}\)</span>, υπολόγισε τη γωνία <span class="math inline">\(A\hat{E}\Gamma\)</span>.<br>
+<em>Σκέψου ότι: η γωνία</em> <span class="math inline">\(\hat{ΑΒΓ}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΑΓ}\)</span>, άρα ……………….. Η γωνία <span class="math inline">\(\widehat{ΒΑΔ}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΒΔ}\)</span>, άρα ………………………. Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΑΕΒ}\)</span> μπορείς τώρα να υπολογίσεις την γωνία <span class="math inline">\(A\hat{E}\Gamma\)</span> (εξωτερική γωνία)<br>
+<br>
+<img src="images/clipboard-784730655.png" class="img-fluid"></p></li>
+<li><p><strong>Εξωτερική Γωνία</strong> Από ένα σημείο <span class="math inline">\(P\)</span> <strong>έξω</strong> από τον κύκλο φέρνουμε δύο τέμνουσες που ορίζουν στον κύκλο δύο τόξα: το μεγάλο τόξο <span class="math inline">\(110^{\circ}\)</span> και το μικρό τόξο <span class="math inline">\(30^{\circ}\)</span>. Πόσες μοίρες είναι η γωνία <span class="math inline">\(\hat{P}\)</span> που σχηματίζεται;<br>
+<br>
+<img src="images/clipboard-104752854.png" class="img-fluid"><br>
+<em>Σκέψου: Η</em> <span class="math inline">\(B\hat{A}Δ\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΒΔ}\)</span></p>
+<p>Η γωνία <span class="math inline">\(Α\hat{Δ}Γ\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΑΓ}\)</span></p>
+<p>Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΑΔΡ}\)</span> η γωνία <span class="math inline">\(Δ\hat{Α}Ρ\)</span> ……………….. . Η γωνία <span class="math inline">\(A\hat{Δ}Γ\)</span> ισούτε ……………….</p>
+<p>Συνεχίστε …………………..</p></li>
+<li><p><strong>Ισοσκελές Τρίγωνο και Κέντρο</strong> Σε κύκλο κέντρου <span class="math inline">\(O\)</span>, το τρίγωνο <span class="math inline">\(OAB\)</span> είναι ισόπλευρο.</p>
+<ul>
+<li><p>Πόσες μοίρες είναι η επίκεντρη γωνία <span class="math inline">\(A\hat{O}B\)</span>;</p></li>
+<li><p>Αν <span class="math inline">\(M\)</span> είναι ένα σημείο στην περιφέρεια του κύκλου (εκτός του τόξου <span class="math inline">\(AB\)</span>), πόσες μοίρες είναι η γωνία <span class="math inline">\(A\hat{M}B\)</span>;</p></li>
+</ul></li>
+<li><p><strong>Συνδυασμός Γεωμετρίας</strong> Σε έναν κύκλο με διάμετρο <span class="math inline">\(AB\)</span>, παίρνουμε σημείο <span class="math inline">\(\Gamma\)</span> ώστε η γωνία <span class="math inline">\(A\hat{B}\Gamma = 40^{\circ}\)</span>.</p>
+<ul>
+<li><p>Υπολόγισε τη γωνία <span class="math inline">\(B\hat{A}\Gamma\)</span>.</p></li>
+<li><p>Φέρνουμε την εφαπτομένη στο σημείο <span class="math inline">\(B\)</span>. Αν η προέκταση της χορδής <span class="math inline">\(A\Gamma\)</span> τέμνει την εφαπτομένη στο σημείο <span class="math inline">\(\Delta\)</span>, υπολόγισε τη γωνία <span class="math inline">\(B\hat{\Delta}\Gamma\)</span>.</p></li>
+</ul></li>
+</ol>
+<p>*Σκέψου: Η εφαπτομένη είναι κάθετη στην ακτίνα ΟΒ, άρα η γωνία <span class="math inline">\(Γ\hat{Β}Δ\)</span> είναι ίση …………..<br>
+Η γωνία <span class="math inline">\(Α\hat{Γ}Β\)</span> βαίνει ………………… άρα……………</p>
+<ol start="9" type="1">
+<li><strong>Το “Αστέρι” στον Κύκλο</strong> Έχουμε έναν κύκλο και χωρίζουμε την περιφέρειά του σε 5 ίσα τόξα με τα σημεία <span class="math inline">\(A, B, \Gamma, \Delta, E\)</span>.
+<ul>
+<li>Πόσες μοίρες είναι το κάθε τόξο;</li>
+<li>Πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(A\hat{\Gamma}B\)</span>;</li>
+<li>Αν ενώσουμε τα σημεία <span class="math inline">\(A \rightarrow \Gamma \rightarrow E \rightarrow B \rightarrow \Delta \rightarrow A\)</span>, πόσες μοίρες είναι η γωνία στην “κορυφή” <span class="math inline">\(A\)</span> του αστεριού που σχηματίστηκε;<br>
+<br>
+<img src="images/clipboard-3821609175.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Να τηρείτε τον παρακάτω κανόνα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σε αυτά τα προβλήματα, δοκιμάστε πρώτα να κάνετε ένα πρόχειρο σχήμα και ακολουθείστε τους κανόνες.</p>
+</div>
+</div>
+<p><span class="math inline">\(\overparen{AB}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{AB}\)</span></p>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -665,12 +962,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
