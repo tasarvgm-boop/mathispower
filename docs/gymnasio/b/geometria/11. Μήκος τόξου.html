@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>11. Μήκος τόξου – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html">11. Μήκος τόξου</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html">11. Μήκος τόξου</a></li></ol></nav>
+      <h1 class="title">11. Μήκος τόξου</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">9 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -550,7 +628,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11. Μήκος τόξου</span></a>
   </div>
 </li>
@@ -560,7 +638,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -603,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -629,33 +707,319 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μήκος-τόξου" id="toc-μήκος-τόξου" class="nav-link active" data-scroll-target="#μήκος-τόξου"><span class="header-section-number">1</span> Μήκος τόξου</a>
+  <ul class="collapse">
+  <li><a href="#αποδείξεις-των-τύπων" id="toc-αποδείξεις-των-τύπων" class="nav-link" data-scroll-target="#αποδείξεις-των-τύπων"><span class="header-section-number">1.1</span> Αποδείξεις των τύπων</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.2</span> Παραδείγματα</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μήκος-τόξου" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μήκος-τόξου"><span class="header-section-number">1</span> Μήκος τόξου</h2>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><p><strong>Μήκος τόξου:</strong> Για να υπολογίσουμε το μήκος ενός τόξου <span class="math inline">\(l\)</span> σε μοίρες (<span class="math inline">\(\mu^\circ\)</span>), χρησιμοποιούμε τον τύπο <span class="math inline">\(l = 2\pi\rho \cdot \frac{\mu}{360}\)</span>.</p></li>
+<li><p><strong>Ακτίνιο (rad):</strong> Είναι μονάδα μέτρησης τόξων. 1 Ακτίνιο είναι το τόξο που έχει μήκος ίσο με την ακτίνα <span class="math inline">\(\rho\)</span> του κύκλου.<br>
+Αν ένας κύκλος έχει ακτίνα 4 cm ==&gt; και 1 ακτίνιο αυτού του κύκλου θα έχει μήκος 4 cm. Αν ένας κύκλος έχει ακτίνα 14,8 cm ==&gt; και 1 ακτίνιο αυτού του κύκλου θα έχει μήκος 14,8 cm. ………………. ……………….. <img src="images/clipboard-3523907028.png" class="img-fluid" width="523"></p></li>
+<li><p><strong>Σχέση μήκους τόξου και ακτινίων:</strong> Το μήκος ενός τόξου <span class="math inline">\(l\)</span> που αντιστοιχεί σε γωνία <span class="math inline">\(\alpha\)</span> ακτινίων δίνεται από τη σχέση <span class="math inline">\(l = \alpha \cdot \rho\)</span>.</p></li>
+<li><p><strong>Σχέση μοιρών και ακτινίων:</strong> Η μετατροπή μεταξύ μοιρών (<span class="math inline">\(\mu\)</span>) και ακτινίων (<span class="math inline">\(\alpha\)</span>) γίνεται μέσω της αναλογίας <span class="math inline">\(\frac{\mu}{180} = \frac{\alpha}{\pi}\)</span>.</p></li>
+</ul>
 </div>
+<p><br>
+</p>
+<section id="αποδείξεις-των-τύπων" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="αποδείξεις-των-τύπων"><span class="header-section-number">1.1</span> Αποδείξεις των τύπων</h3>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><p><strong>Μήκος τόξου (σε μοίρες):</strong> Προκύπτει με την απλή μέθοδο των τριών.</p></li>
+<li><p>Γνωρίζουμε ότι ένας πλήρης κύκλος <span class="math inline">\(360^\circ\)</span> έχει μήκος ίσο με την περιφέρεια <span class="math inline">\(L = 2\pi\rho\)</span>. Επομένως, αν ένα τόξο <span class="math inline">\(\mu\)</span> μοιρών έχει μήκος <span class="math inline">\(l\)</span> τότε θα ισχύει<br>
+</p></li>
+</ul>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#bbb;border-spacing:0;}
+.tg td{background-color:#E0FFEB;border-color:#bbb;border-style:solid;border-width:1px;color:#594F4F;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#9DE0AD;border-color:#bbb;border-style:solid;border-width:1px;color:#493F3F;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lmh{border-color:#009901;text-align:center;vertical-align:top}
+</style>
+
+<table class="tg caption-top table">
+<thead>
+<tr class="header">
+<th class="tg-0lmh" data-quarto-table-cell-role="th">Τόξο</th>
+<th class="tg-0lmh" data-quarto-table-cell-role="th">Μήκος</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-0lmh">\(360^\circ\)</td>
+<td class="tg-0lmh">2πρ</td>
+</tr>
+<tr class="even">
+<td class="tg-0lmh">\(μ^\circ\)</td>
+<td class="tg-0lmh">l</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\frac{360^o}{μ^o}=\frac{2πρ}{l}\]</span> Λύνοντας θα έχουμε : <span class="math inline">\(l = 2\pi\rho \cdot \frac{\mu}{360}\)</span>.</p>
+<ul>
+<li><strong>Μήκος τόξου (σε ακτίνια):</strong> Το ακτίνιο (rad) ορίζεται ως η μονάδα μέτρησης όπου το τόξο έχει μήκος ίσο με την ακτίνα <span class="math inline">\(\rho\)</span> του κύκλου. Iσχύει ότι:</li>
+</ul>
+<p><br>
+</p>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#bbb;border-spacing:0;}
+.tg td{background-color:#E0FFEB;border-color:#bbb;border-style:solid;border-width:1px;color:#594F4F;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#9DE0AD;border-color:#bbb;border-style:solid;border-width:1px;color:#493F3F;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lmh{border-color:#009901;text-align:center;vertical-align:top}
+</style>
+
+<table class="tg caption-top table">
+<thead>
+<tr class="header">
+<th class="tg-0lmh" data-quarto-table-cell-role="th">Τόξο</th>
+<th class="tg-0lmh" data-quarto-table-cell-role="th">Μήκος</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-0lmh">\(360^\circ\)</td>
+<td class="tg-0lmh">\(2π \textbf{ ακτίνια (ακτίνες) (rad)}\)</td>
+</tr>
+<tr class="even">
+<td class="tg-0lmh">\(\textbf{α ακτίνια}\)</td>
+<td class="tg-0lmh">\(l=α\cdot\textbf{ακτίνες}=α\cdotρ\)</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+<p>Συνεπώς, αν μια γωνία είναι <span class="math inline">\(\alpha\)</span> ακτίνια, το μήκος του αντίστοιχου τόξου <span class="math inline">\(l\)</span> θα είναι το γινόμενο της γωνίας επί την ακτίνα: <span class="math inline">\(l = \alpha \cdot \rho\)</span>.</p>
+<ul>
+<li><p><strong>Σχέση μοιρών και ακτινίων:</strong> Η σχέση αυτή προκύπτει αν εξισώσουμε τους δύο παραπάνω τύπους για το ίδιο μήκος τόξου <span class="math inline">\(l\)</span>: <span class="math display">\[2\pi\rho \cdot \frac{\mu}{360} = \alpha\cdot\rho\]</span>.</p>
+<p>Απλοποιώντας την ακτίνα <span class="math inline">\(\rho\)</span> και από τα δύο μέλη και διαιρώντας το 2 με το 360, καταλήγουμε στην αναλογία: <span class="math display">\[\frac{\mu}{180} = \frac{\alpha}{\pi}\]</span>.</p></li>
+</ul>
+</div>
+<p><br>
+</p>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.2</span> Παραδείγματα</h3>
+<p><strong>1. Μήκος τόξου (σε μοίρες)</strong></p>
+<p>* <strong>Παράδειγμα 1:</strong> Υπολογισμός του μήκους ενός τεταρτοκυκλίου (τόξο <span class="math inline">\(90^\circ\)</span>) σε κύκλο με ακτίνα <span class="math inline">\(\rho = 8\)</span> cm.</p>
+<p>Εφαρμόζοντας τον τύπο <span class="math inline">\(l = 2\pi\rho \cdot \frac{\mu}{360}\)</span>, προκύπτει <span class="math inline">\(l = 2 \cdot 3,14 \cdot 8 \cdot \frac{90}{360} \approx 12,56\)</span> cm.</p>
+<p>* <strong>Παράδειγμα 2:</strong> Εύρεση της ακτίνας όταν γνωρίζουμε το μήκος.</p>
+<p>Αν ένα τόξο <span class="math inline">\(30^\circ\)</span> έχει μήκος <span class="math inline">\(l = 1,3\)</span> cm, τότε από τη σχέση <span class="math inline">\(l = \frac{\pi\rho\mu}{180}\)</span> βρίσκουμε <span class="math inline">\(1,3 = 3,14 \cdot \rho \cdot \frac{30}{180}\)</span>, άρα <span class="math inline">\(\rho \approx 2,48\)</span> cm.</p>
+<p><strong>2. Ακτίνιο (rad)</strong></p>
+<p>* <strong>Παράδειγμα 1:</strong> Διάταξη τόξων από το μικρότερο στο μεγαλύτερο. Για να συγκρίνουμε τόξα όπως τα <span class="math inline">\(\frac{\pi}{4}\)</span> rad, <span class="math inline">\(\frac{3\pi}{2}\)</span> rad και <span class="math inline">\(25^\circ\)</span>, τα μετατρέπουμε όλα στην ίδια μονάδα (π.χ. <span class="math inline">\(\frac{\pi}{4} \text{ rad} = 45^\circ\)</span>).</p>
+<p>* <strong>Παράδειγμα 2:</strong> Αντιστοίχιση πλήρους κύκλου. Ένας πλήρης κύκλος <span class="math inline">\(360^\circ\)</span> αντιστοιχεί σε <span class="math inline">\(2\pi\)</span> ακτίνια, ενώ ένας ημικύκλιος <span class="math inline">\(180^\circ\)</span> αντιστοιχεί σε <span class="math inline">\(\pi\)</span> ακτίνια.</p>
+<p><strong>3. Σχέση μήκους τόξου και ακτινίων (</strong><span class="math inline">\(l = \alpha \cdot \rho\)</span>)</p>
+<p>* <strong>Παράδειγμα 1:</strong> Σύγκριση τόξων σε διαφορετικούς κύκλους.</p>
+<p>Σε έναν κύκλο ακτίνας <span class="math inline">\(\rho\)</span>, ένα ημικύκλιο (<span class="math inline">\(\alpha = \pi\)</span> rad) έχει μήκος <span class="math inline">\(l = \pi\rho\)</span>. Σε έναν κύκλο διπλάσιας ακτίνας <span class="math inline">\(2\rho\)</span>, ένα τεταρτοκύκλιο (<span class="math inline">\(\alpha = \frac{\pi}{2}\)</span> rad) έχει επίσης μήκος <span class="math inline">\(l = \frac{\pi}{2} \cdot 2\rho = \pi\rho\)</span>.</p>
+<p>* <strong>Παράδειγμα 2:</strong> Υπολογισμός ακτίνας από τόξο σε rad. Αν ένας κυκλικός τομέας γωνίας <span class="math inline">\(120^\circ\)</span> (που ισούται με <span class="math inline">\(\frac{2\pi}{3}\)</span> rad) έχει μήκος τόξου <span class="math inline">\(6\pi\)</span> cm, η ακτίνα του κύκλου είναι <span class="math inline">\(\rho = \frac{l}{\alpha} = \frac{6\pi}{\frac{2\pi}{3}} = 9\)</span> cm.</p>
+<p><strong>4. Σχέση μοιρών και ακτινίων (</strong><span class="math inline">\(\frac{\mu}{180} = \frac{\alpha}{\pi}\)</span>)</p>
+<p>* <strong>Παράδειγμα 1:</strong> Μετατροπή από μοίρες σε ακτίνια. Για να βρούμε πόσα rad είναι οι <span class="math inline">\(225^\circ\)</span>, λύνουμε την αναλογία: <span class="math inline">\(\frac{225}{180} = \frac{\alpha}{\pi}\)</span>, που δίνει <span class="math inline">\(\alpha = \frac{5\pi}{4}\)</span> rad.</p>
+<p>* <strong>Παράδειγμα 2:</strong> Μετατροπή από ακτίνια σε μοίρες. Για να μετατρέψουμε τα <span class="math inline">\(\frac{\pi}{3}\)</span> rad σε μοίρες, έχουμε: <span class="math inline">\(\frac{\mu}{180} = \frac{\frac{\pi}{3}}{\pi} \Rightarrow \mu = \frac{180}{3} = 60^\circ\)</span>.</p>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p><strong>Μετατροπή μοιρών σε ακτίνια</strong> Μετέτρεψε τις παρακάτω γωνίες από μοίρες σε ακτίνια:<br>
+α) 90°  β) 180°  γ) 270°  δ) 360°  ε) 60°</p></li>
+<li><p><strong>Μετατροπή ακτινίων σε μοίρες</strong> Μετέτρεψε σε μοίρες:<br>
+α) <span class="math inline">\(\frac{\pi}{2}\)</span>  β) <span class="math inline">\(\pi\)</span>  γ) <span class="math inline">\(2\pi\)</span>  δ) <span class="math inline">\(\frac{3\pi}{2}\)</span>  ε) <span class="math inline">\(\frac{\pi}{3}\)</span></p></li>
+<li><p><strong>Μήκος τόξου – βασικός τύπος</strong> Δίνεται κύκλος ακτίνας (ρ = 10) cm.<br>
+Υπολόγισε το μήκος τόξου γωνίας <span class="math inline">\(θ = 60^\circ\)</span> (μετατρέποντάς την πρώτα σε ακτίνια).</p></li>
+<li><p><strong>Μήκος τόξου από ακτίνια</strong></p></li>
+</ol>
+<p>Σε κύκλο ακτίνας (ρ = 8) m, ένα τόξο αντιστοιχεί σε επίκεντρη γωνία <span class="math inline">\(θ = \frac{\pi}{4}\)</span> rad.<br>
+Βρες το μήκος του τόξου.</p>
+<ol start="5" type="1">
+<li><strong>Ημικύκλιο</strong></li>
+</ol>
+<p>Ένα ημικύκλιο έχει ακτίνα (ρ = 5) cm.<br>
+Πόση είναι η περίμετρος του σχήματος;<br>
+<img src="images/clipboard-1514408160.png" class="img-fluid" width="336"></p>
+<ol start="6" type="1">
+<li><strong>Τεταρτοκύκλιο</strong></li>
+</ol>
+<p>Υπολόγισε την περίμετρο ενός τεταρτοκύκλιου (γωνία 90°) ακτίνας (ρ = 12) m.<br>
+<img src="images/clipboard-121588629.png" class="img-fluid" width="336"></p>
+<ol start="7" type="1">
+<li><strong>Τομέας κύκλου – μήκος τόξου</strong></li>
+</ol>
+<p>Μια επίκεντρη γωνία σε κύκλο ακτίνας 9 cm είναι <span class="math inline">\(120^\circ\)</span><br>
+Βρες το μήκος του αντίστοιχου τόξου της.</p>
+<ol start="8" type="1">
+<li><strong>Εύρεση ακτίνας από μήκος τόξου</strong></li>
+</ol>
+<p>Ένα τόξο μήκους <span class="math inline">\(15\pi\)</span> cm αντιστοιχεί σε επίκεντρη γωνία <span class="math inline">\(\frac{5\pi}{6}\)</span> rad.<br>
+Βρες την ακτίνα του κύκλου. <em>Θυμήσου :</em><span class="math inline">\(l=αρ\)</span></p>
+<ol start="9" type="1">
+<li><strong>Εύρεση γωνίας σε μοίρες</strong></li>
+</ol>
+<p>Το μήκος ενός τόξου είναι 8 cm σε κύκλο ακτίνας 12 cm.<br>
+Βρες την κεντρική γωνία σε μοίρες ( <span class="math inline">\(\pi \approx 3,14\)</span>).</p>
+<p><em>(Υπόδειξη: πρώτα βρες την γωνία σε rad</em> <span class="math inline">\(l=αρ\)</span>, μετά μετέτρεψε)</p>
+<ol start="10" type="1">
+<li><strong>Σύνθετο σχήμα – περίμετρος</strong></li>
+</ol>
+<p>Ένα σχήμα αποτελείται από ένα ορθογώνιο πλάτους 4 cm και μήκους 10 cm, και πάνω στη μικρή πλευρά του είναι προσαρμοσμένο ένα ημικύκλιο (με διάμετρο ίση με το πλάτος).<br>
+Βρες την περίμετρο του σχήματος.<br>
+<img src="images/clipboard-1871666308.png" class="img-fluid"></p>
+<p><em>(Σχέδιο: ορθογώνιο με ημικύκλιο πάνω στη μία μικρή πλευρά)</em></p>
+<hr>
+<hr>
+<ol start="11" type="1">
+<li><strong>Τεταρτοκύκλιο + τετράγωνο</strong></li>
+</ol>
+<p>Σχεδιάζουμε ένα τετράγωνο πλευράς 10 cm. Πάνω σε κάθε πλευρά του εξωτερικά κατασκευάζουμε ένα ημικύκλιο με ακτίνα ίση με την πλευρά.<br>
+</p>
+<p><img src="images/clipboard-4064949184.png" class="img-fluid"><br>
+Να βρεθεί το <strong>συνολικό μήκος της κόκκινης γραμμής</strong> που σχηματίζεται από τα <strong>τέσσερα τόξα</strong> (περίμετρος του “λουλουδιού”).</p>
+<hr>
+<ol start="12" type="1">
+<li><strong>Δύο ημικύκλια – περίμετρος “σταδίου”</strong></li>
+</ol>
+<p>Ένα στάδιο αποτελείται από ένα ορθογώνιο μήκους 20 m και πλάτους 10 m, με δύο ημικύκλια στις μικρές πλευρές (διάμετρος = πλάτος).<br>
+<img src="images/clipboard-611951362.png" class="img-fluid" width="460"></p>
+<p>Βρες την περίμετρο του σταδίου.</p>
+<hr>
+<ol start="13" type="1">
+<li>Ένας τομέας κύκλου ακτίνας (ρ = 12) cm έχει γωνία (120^).<br>
+Πάνω στη χορδή του τόξου κατασκευάζουμε, <strong>προς τα έξω</strong> από τον τομέα, ένα ισόπλευρο τρίγωνο (με βάση τη χορδή).<br>
+<img src="images/clipboard-1947744428.png" class="img-fluid" width="441"><br>
+Να βρεθεί η <strong>περίμετρος του σύνθετου σχήματος</strong> που αποτελείται από: - το τόξο του τομέα - τις δύο ίσες πλευρές του ισόπλευρου τριγώνου (χωρίς τη βάση) (<span style="color: green;">Πράσινο χρώμα</span>)</li>
+</ol>
+<p><strong>Λύση</strong></p>
+<p><strong>1. Μήκος τόξου</strong><br>
+begin{equation}</p>
+<p>Γωνία <span class="math inline">\(\theta = 120^\circ = \frac{2\pi}{3}\)</span> rad<br>
+<span class="math inline">\(l_{\text{τόξου}} = ρ \cdot \theta = 12 \cdot \frac{2\pi}{3} = 8\pi \text{ cm}\)</span> end{equation}</p>
+<p><strong>2. Μήκος χορδής (βάση τριγώνου)</strong> Σχεδιάζουμε το ύψος ΑΔ ==&gt; ΒΒ’=2ΒΔ και χρησιμοποιούμε τριγωνομρτρία <span class="math inline">\(\text{χορδή} = 2ΒΔ=2ρ ημ(\frac{\theta}{2}) = 2 \cdot 12 \cdot ημ(60^\circ) = 24 \cdot \frac{\sqrt{3}}{2} = 12\sqrt{3} \text{ cm}\)</span></p>
+<p><strong>3. Πλευρές ισόπλευρου τριγώνου</strong><br>
+Οι δύο πλευρές που δεν είναι βάση είναι ίσες με τη βάση (ισόπλευρο):<br>
+<span class="math inline">\(ΒΓ=Β'Γ=ΒΒ' = 12\sqrt{3} \text{ cm}\)</span><br>
+Άρα οι δύο αυτές πλευρές μαζί: <span class="math inline">\(ΒΓ+Β'Γ = 24\sqrt{3} \text{ cm}\)</span></p>
+<p><strong>4. Περίμετρος ζητούμενου σχήματος</strong><br>
+<span class="math inline">\(\Pi = L_{\text{τόξου}} + ΒΓ+Β'Γ = 8\pi + 24\sqrt{3} \text{ cm}\)</span><br>
+Αριθμητικά: <span class="math inline">\(8\pi \approx 25,13, \quad 24\sqrt{3} \approx 41,57\)</span><br>
+<span class="math inline">\(\Pi \approx 66,70 \text{ cm}\)</span></p>
+<ol start="14" type="1">
+<li><strong>Τρεις κύκλοι εφαπτόμενοι – τμήμα περιμέτρου</strong></li>
+</ol>
+<p>Τρεις ίσοι κύκλοι ακτίνας (ρ = 6) cm εφάπτονται εξωτερικά μεταξύ τους, σχηματίζοντας ένα ισόπλευρο τρίγωνο με τα κέντρα τους. Μεταξύ των κύκλων σχηματίζονται “<em>καμπύλες <span style="color: red;">κόκκινα</span> και <span style="color: green;">πράσινα</span> χρώματα</em>” (σχήμα Reuleaux).<br>
+Βρες το μήκος των <span style="color: red;">κόκκινων</span> και <span style="color: green;">πράσινων</span> τόξων.<br>
+<img src="images/clipboard-4256993095.png" class="img-fluid" width="409"></p>
+<ol start="15" type="1">
+<li>Τεταρτοκύκλιο και ορθογώνιο</li>
+</ol>
+<p>Ορθογώνιο μήκους 15 cm και πλάτους 8 cm. Στη μία μεγάλη πλευρά (μήκος) εξωτερικά και με κέντρο την κορυφή του ορθογωνίου, προσαρμόζεται τεταρτοκύκλιο ακτίνας 8 cm (ακτίνα = πλάτος).<br>
+Βρες την περίμετρο του νέου σχήματος.<br>
+</p>
+<p><img src="images/clipboard-1581334078.png" class="img-fluid"><br>
+</p>
+<ol start="16" type="1">
+<li><strong>Μήκος τόξου από χορδή</strong></li>
+</ol>
+<p>Σε κύκλο ακτίνας 10 cm, μια χορδή έχει μήκος 10 cm.<br>
+Πόσο είναι το μήκος του μικρότερου τόξου που αντιστοιχεί στη χορδή;<br>
+(Υπόδειξη: βρες γωνία από ισόπλευρο τρίγωνο)</p>
+<ol start="17" type="1">
+<li><strong>Τέσσερα ημικύκλια – περίμετρος σχήματος</strong></li>
+</ol>
+<p>Σχεδιάζουμε τετράγωνο πλευράς 12 cm. Σε κάθε πλευρά του, εσωτερικά του τετραγώνου, κατασκευάζουμε ημικύκλιο με διάμετρο την πλευρά.<br>
+</p>
+<p><img src="images/clipboard-1145305787.png" class="img-fluid"><br>
+Βρες την περίμετρο του εσωτερικού σχήματος <span style="color: red;">κόκκινο χρώμα</span> που σχηματίζεται (τα 4 ημικύκλια τέμνονται).</p>
+<ol start="18" type="1">
+<li><strong>Μετάβαση από μοίρες σε ακτίνια σε σύνθετο σχήμα</strong></li>
+</ol>
+<p>Ένα σκαθάρι περπατάει σε κυκλική τροχιά ακτίνας 5 m κινείται από σημείο Α σε σημείο Β διαγράφοντας τόξο (<span class="math inline">\(72^\circ\)</span>), μετά σε ευθεία ΒΓ μήκους 6 m, και τέλος διαγράφι ένα τόξο ΓΔ ( <span class="math inline">\(\frac{5\pi}{6}\)</span> ) rad. Τα τόξα είναι ίδιας ακτίνας.<br>
+Βρες το συνολικό μήκος διαδρομής.</p>
+<p><strong>Λύση</strong></p>
+<p>Τόξο <span class="math inline">\(72° = 72\cdot\dfrac{\pi}{180} = \dfrac{2\pi}{5} rad → μήκος =5\cdot \dfrac{2\pi}{5} = 2\pi \approx 6,28 m\)</span>.<br>
+Τόξο <span class="math inline">\(\dfrac{5\pi}{6} rad → μήκος =5\cdot \dfrac{5\pi}{6} = \dfrac{25\pi}{6} \approx 13,09 m\)</span>.<br>
+Ευθύγραμμο τμήμα 6 m.<br>
+Σύνολο: <span class="math inline">\(2\pi + 6 + \dfrac{25\pi}{6} = (\dfrac{12\pi}{6} + \dfrac{25\pi}{6}) + 6 = \dfrac{37\pi}{6} + 6 \approx 19,37 + 6 = 25,37\)</span> m.</p>
+<hr>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -683,12 +1047,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
