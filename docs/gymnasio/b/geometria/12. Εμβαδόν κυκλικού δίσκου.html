@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>12. Εμβαδόν κυκλικού δίσκου – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html">12. Εμβαδόν κυκλικού δίσκου</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html">12. Εμβαδόν κυκλικού δίσκου</a></li></ol></nav>
+      <h1 class="title">12. Εμβαδόν κυκλικού δίσκου</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">10 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -556,7 +634,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
   </div>
 </li>
@@ -566,7 +644,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -609,7 +687,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -635,33 +713,230 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εμβαδόν-κυκλικού-δίσκου" id="toc-εμβαδόν-κυκλικού-δίσκου" class="nav-link active" data-scroll-target="#εμβαδόν-κυκλικού-δίσκου"><span class="header-section-number">1</span> Εμβαδόν κυκλικού δίσκου</a>
+  <ul class="collapse">
+  <li><a href="#πώς-εξηγείται-ο-τύπος-του-εμβαδού" id="toc-πώς-εξηγείται-ο-τύπος-του-εμβαδού" class="nav-link" data-scroll-target="#πώς-εξηγείται-ο-τύπος-του-εμβαδού"><span class="header-section-number">1.1</span> Πώς εξηγείται ο τύπος του εμβαδού;</a></li>
+  <li><a href="#παραδείγματα-από-τη-γεωμετρία" id="toc-παραδείγματα-από-τη-γεωμετρία" class="nav-link" data-scroll-target="#παραδείγματα-από-τη-γεωμετρία"><span class="header-section-number">1.2</span> Παραδείγματα από τη Γεωμετρία</a></li>
+  <li><a href="#παραδείγματα-από-τη-φύση-και-την-καθημερινή-ζωή" id="toc-παραδείγματα-από-τη-φύση-και-την-καθημερινή-ζωή" class="nav-link" data-scroll-target="#παραδείγματα-από-τη-φύση-και-την-καθημερινή-ζωή"><span class="header-section-number">1.3</span> Παραδείγματα από τη Φύση και την Καθημερινή Ζωή</a></li>
+  <li><a href="#εφαρμογές" id="toc-εφαρμογές" class="nav-link" data-scroll-target="#εφαρμογές"><span class="header-section-number">1.4</span> εφαρμογές</a></li>
+  <li><a href="#άλυτες-ασκήσεις" id="toc-άλυτες-ασκήσεις" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις"><span class="header-section-number">1.5</span> Άλυτες Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εμβαδόν-κυκλικού-δίσκου" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εμβαδόν-κυκλικού-δίσκου"><span class="header-section-number">1</span> Εμβαδόν κυκλικού δίσκου</h2>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Το εμβαδόν ενός κυκλικού δίσκου εκφράζει την έκταση που καταλαμβάνει η επιφάνειά του στο επίπεδο. Ο υπολογισμός του βασίζεται στον τύπο <span class="math inline">\(E = \pi\rho^2\)</span>, όπου <span class="math inline">\(\rho\)</span> είναι η ακτίνα του κύκλου και <span class="math inline">\(\pi\)</span> ο γνωστός άρρητος αριθμός που προσεγγιστικά ισούται με 3,14.</p>
 </div>
+<section id="πώς-εξηγείται-ο-τύπος-του-εμβαδού" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="πώς-εξηγείται-ο-τύπος-του-εμβαδού"><span class="header-section-number">1.1</span> Πώς εξηγείται ο τύπος του εμβαδού;</h3>
+<p>Η προέλευση του τύπου εξηγείται γεωμετρικά αν χωρίσουμε τον κυκλικό δίσκο σε πάρα πολλά μικρά και ίσα μέρη (τομείς). Αν κόψουμε αυτά τα κομμάτια και τα επανατοποθετήσουμε κατάλληλα, σχηματίζουν μια επιφάνεια που προσεγγίζει ένα ορθογώνιο παραλληλόγραμμο.</p>
+<p>* Η <strong>βάση</strong> αυτού του ορθογωνίου ισούται με το μισό του μήκους του κύκλου, δηλαδή <span class="math inline">\(\pi\rho\)</span>.</p>
+<p>* Το <strong>ύψος</strong> του ορθογωνίου ισούται με την ακτίνα <span class="math inline">\(\rho\)</span> του κύκλου.</p>
+<p>* Επομένως, το εμβαδόν προκύπτει από το γινόμενο βάσης επί ύψος: <span class="math inline">\(\pi\rho \cdot \rho = \pi\rho^2\)</span>.<br>
+</p>
+<iframe src="https://www.geogebra.org/calculator/ucvvmypn?embed" width="740" height="650" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><br>
+</p>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Σύρετε τον δρομέα στην αρχή αν δεν είναι ήδη.</p></li>
+<li><p>“Κλίκ” στο κουμπί <a class="btn btn-primary btn-sm">Κίνηση</a></p></li>
+<li><p>Δές τι συμβαίνει καθώς προοδευτικά αυξάνονται οι φέτες.</p></li>
+</ul>
+</div>
+</div>
+<p><br>
+</p>
+</section>
+<section id="παραδείγματα-από-τη-γεωμετρία" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα-από-τη-γεωμετρία"><span class="header-section-number">1.2</span> Παραδείγματα από τη Γεωμετρία</h3>
+<ul>
+<li><strong>Κυκλικός δακτύλιος:</strong> Είναι η περιοχή που βρίσκεται ανάμεσα σε δύο ομόκεντρους κύκλους με διαφορετικές ακτίνες (<span class="math inline">\(R\)</span> και <span class="math inline">\(\rho\)</span>). Το εμβαδόν του υπολογίζεται αφαιρώντας το εμβαδόν του μικρού δίσκου από τον μεγάλο (<span class="math inline">\(E = \pi R^2 - \pi\rho^2\)</span>).</li>
+<li><strong>Μεταβολή ακτίνας:</strong> Αν τριπλασιάσουμε την ακτίνα ενός κύκλου, το εμβαδόν του δεν τριπλασιάζεται αλλά εννιαπλασιάζεται (<span class="math inline">\(3^2\)</span>), λόγω του τετραγώνου στον τύπο.</li>
+</ul>
+</section>
+<section id="παραδείγματα-από-τη-φύση-και-την-καθημερινή-ζωή" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παραδείγματα-από-τη-φύση-και-την-καθημερινή-ζωή"><span class="header-section-number">1.3</span> Παραδείγματα από τη Φύση και την Καθημερινή Ζωή</h3>
+<ul>
+<li><strong>Αστρονομία:</strong> Ο λόγος του μήκους της περιφέρειας προς τη διάμετρο (<span class="math inline">\(\pi\)</span>) παραμένει σταθερός (περίπου 3,14) για όλους τους πλανήτες, όπως η Γη, ο Άρης και η Σελήνη.</li>
+<li><strong>Οικονομία &amp; Κατανάλωση:</strong> Στις πιτσαρίες, η σύγκριση της τιμής ανάλογα με τη διάμετρο της πίτσας (μικρή, μεσαία, μεγάλη) βασίζεται στον υπολογισμό του εμβαδού για να δούμε ποια προσφορά συμφέρει πραγματικά.</li>
+<li><strong>Φυσικό περιβάλλον:</strong> Η διατομή του κορμού ενός δέντρου μπορεί να θεωρηθεί κυκλικός δίσκος για τον υπολογισμό της αξίας της ξυλείας του.</li>
+<li><strong>Εφαρμογές:</strong> Η επιφάνεια που καθαρίζει ο υαλοκαθαριστήρας ενός αυτοκινήτου καθώς κινείται διαγράφει έναν κυκλικό τομέα.</li>
+</ul>
+</section>
+<section id="εφαρμογές" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="εφαρμογές"><span class="header-section-number">1.4</span> εφαρμογές</h3>
+<ol type="1">
+<li><strong>Απλός υπολογισμός:</strong> Να βρεθεί το εμβαδόν κυκλικού δίσκου με ακτίνα <span class="math inline">\(\rho = 5\)</span> cm.<br>
+<strong>Λύση:</strong> Χρησιμοποιούμε τον τύπο <span class="math inline">\(E = \pi\rho^2\)</span> με <span class="math inline">\(\pi \approx 3,14\)</span>. <span class="math inline">\(E = 3,14 \cdot 5^2 = 3,14 \cdot 25 = 78,5\)</span> cm².</li>
+<li><strong>Από το μήκος στο εμβαδόν:</strong> Αν το μήκος ενός κύκλου είναι <span class="math inline">\(L = 6,28\)</span> cm, να βρείτε το εμβαδόν του.<br>
+<strong>Λύση:</strong> Από τον τύπο <span class="math inline">\(L = 2\pi\rho\)</span> βρίσκουμε την ακτίνα: <span class="math inline">\(6,28 = 2 \cdot 3,14 \cdot \rho\)</span>, άρα <span class="math inline">\(6,28 = 6,28 \cdot \rho\)</span>, οπότε <span class="math inline">\(\rho = 1\)</span> cm. Τότε, <span class="math inline">\(E = \pi\rho^2 = 3,14 \cdot 1^2 = 3,14\)</span> cm².</li>
+<li><strong>Μεταβολή ακτίνας:</strong> Αν τριπλασιάσουμε την ακτίνα ενός κύκλου, πόσο θα αυξηθεί το εμβαδόν του;<br>
+<strong>Λύση:</strong> Αν η αρχική ακτίνα είναι <span class="math inline">\(\rho\)</span>, το αρχικό εμβαδόν είναι <span class="math inline">\(E = \pi\rho^2\)</span>. Η νέα ακτίνα είναι <span class="math inline">\(3\rho\)</span>. Το νέο εμβαδόν θα είναι <span class="math inline">\(E' = \pi(3\rho)^2 = \pi \cdot 9\rho^2 = 9E\)</span>. Επομένως, το εμβαδόν εννιαπλασιάζεται.</li>
+<li><strong>Κυκλικός δακτύλιος:</strong> Να βρείτε το εμβαδόν κυκλικού δακτυλίου αν η μεγάλη ακτίνα είναι <span class="math inline">\(R = 3\)</span> cm και η μικρή <span class="math inline">\(\rho = 2\)</span> cm.<br>
+<strong>Λύση:</strong> Το εμβαδόν του δακτυλίου ισούται με τη διαφορά των εμβαδών των δύο δίσκων: <span class="math inline">\(E = \pi R^2 - \pi\rho^2\)</span>. <span class="math inline">\(E = 3,14 \cdot 3^2 - 3,14 \cdot 2^2 = 3,14(9 - 4) = 3,14 \cdot 5 = 15,7\)</span> cm².</li>
+<li><strong>Σύνθετο πρόβλημα (Πίτσα):</strong> Μια μικρή πίτσα έχει διάμετρο 20 cm και κοστίζει 7 €, ενώ μια μεγάλη έχει διάμετρο 30 cm και κοστίζει 12 €. Ποια συμφέρει περισσότερο;<br>
+<strong>Λύση:</strong> Υπολογίζουμε το εμβαδόν κάθε πίτσας (<span class="math inline">\(\rho = \dfrac{\delta}{2}\)</span>).
+<ul>
+<li>Μικρή: <span class="math inline">\(\rho = 10\)</span> cm, <span class="math inline">\(E \approx 314\)</span> cm². Τιμή ανά cm²: <span class="math inline">\(\dfrac{7}{314} \approx 0,0223\)</span> €.</li>
+<li>Μεγάλη: <span class="math inline">\(\rho = 15\)</span> cm, <span class="math inline">\(E \approx 706,85\)</span> cm². Τιμή ανά cm²: <span class="math inline">\(\dfrac{12}{706,85} \approx 0,017\)</span> €.</li>
+<li>Συμφέρει η μεγάλη πίτσα γιατί έχει μικρότερη τιμή ανά μονάδα επιφάνειας.</li>
+</ul></li>
+<li>Ενας κυκλικός δίσκος έχει ακτίνα <span class="math inline">\(ρ = 5\)</span> cm. Να βρεθούν:
+<ul>
+<li>α) Η περίμετρος του κύκλου που τον ορίζει.</li>
+<li>β) Το εμβαδόν του δίσκου.<br>
+(Δίνεται <span class="math inline">\(\pi \approx 3,14\)</span>).<br>
+<strong>Λύση</strong>
+<ul>
+<li>α) Περίμετρος: <span class="math inline">\(L = 2\pi r = 2 \cdot 3,14 \cdot 5 = 31,4\)</span> cm.</li>
+<li>β) Εμβαδόν: <span class="math inline">\(E = \pi r^2 = 3,14 \cdot 5^2 = 3,14 \cdot 25 = 78,5\)</span> cm².</li>
+</ul></li>
+</ul></li>
+<li>Ένας δίσκος ακτίνας 20 cm κόβεται σε 8 ίσες φέτες (ξεκινώντας πάντα από το κέντρο του).
+<ul>
+<li>α) Να βρείτε το μήκος του τόξου ενός τομέα.</li>
+<li>β) Να βρείτε το εμβαδόν ενός τομέα.<br>
+<strong>Λύση</strong></li>
+<li>α) Γωνία φέτας: <span class="math inline">\(\dfrac{360^\circ}{8} = 45^\circ\)</span>.</li>
+<li>Μήκος τόξου: <span class="math inline">\(\frac{45}{360} \cdot 2\pi ρ = \frac{1}{8} \cdot 2 \cdot 3,14 \cdot 20 = \frac{1}{8} \cdot 125,6 = 15,7\)</span> cm.</li>
+<li>β) Εμβαδόν τομέα: <span class="math inline">\(\dfrac{45}{360} \cdot \pi ρ^2 = \dfrac{1}{8} \cdot 3,14 \cdot 400 = \dfrac{1}{8} \cdot 1256 = 157\)</span> cm².</li>
+</ul></li>
+<li>Δύο κυκλικοί δίσκοι έχουν ακτίνες <span class="math inline">\(ρ_1 = 10\)</span> cm και <span class="math inline">\(ρ_2 = 6\)</span> cm. Βρείτε:
+<ul>
+<li>α) Πόσες φορές μεγαλύτερη είναι η περίμετρος του μεγάλου δίσκου από τη μικρή;<br>
+</li>
+<li>β) Πόσες φορές μεγαλύτερο είναι το εμβαδόν του μεγάλου δίσκου;<br>
+<strong>Λύση</strong></li>
+<li>α) <span class="math inline">\(\dfrac{2\pi ρ_1}{2\pi ρ_2} = \dfrac{ρ_1}{ρ_2} = \dfrac{10}{6} = \dfrac{5}{3} \approx 1,67\)</span> φορές.</li>
+<li>β) <span class="math inline">\(\dfrac{\pi ρ_1^2}{\pi ρ_2^2} = \left(\dfrac{ρ_1}{ρ_2}\right)^2 = \left(\dfrac{10}{6}\right)^2 = \dfrac{100}{36} = \dfrac{25}{9} \approx 2,78\)</span> φορές.</li>
+</ul></li>
+<li>Ένας κύκλος ακτίνας 14 cm αντιστοιχεί σε 100% μιας πίτσας. Κόβουμε μια φέτα γωνίας 120°.
+<ul>
+<li>Να βρείτε το βάρος του τομέα, αν όλη η πίτσα ζυγίζει 900 g, και στη συνέχεια</li>
+<li>Να υπολογίσετε το βάρος ανά cm².<br>
+<strong>Λύση</strong></li>
+<li>Εμβαδόν όλης της πίτσας: <span class="math inline">\(E = \pi r^2 = 3,14 \cdot 196 = 615,44\)</span> cm².</li>
+<li>Κλάσμα φέτας: <span class="math inline">\(\dfrac{120}{360} = \dfrac{1}{3}\)</span>.</li>
+<li>Εμβαδόν φέτας: <span class="math inline">\(\dfrac{615,44}{3} \approx 205,147\)</span> cm².</li>
+<li>Βάρος τομέα: <span class="math inline">\(\dfrac{900}{3} = 300\)</span> g.</li>
+<li>Βάρος ανά cm²: <span class="math inline">\(\dfrac{900}{615,44} \approx 1,462\)</span> g/cm² (ή <span class="math inline">\(\dfrac{300}{205,147} \approx 1,462\)</span> ).</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="άλυτες-ασκήσεις" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="άλυτες-ασκήσεις"><span class="header-section-number">1.5</span> Άλυτες Ασκήσεις</h3>
+<ol type="1">
+<li><p>Υπολογίστε το εμβαδόν κυκλικού δίσκου με ακτίνα <span class="math inline">\(\rho = 4\)</span> cm.</p></li>
+<li><p>Βρείτε το εμβαδόν κύκλου με διάμετρο <span class="math inline">\(\delta = 10\)</span> cm.</p></li>
+<li><p>Ένας κύκλος έχει εμβαδόν <span class="math inline">\(E = 28,26\)</span> cm². Πόση είναι η ακτίνα του;</p></li>
+<li><p>Μια ροτόντα (στρογγυλό τραπέζι) έχει περίμετρο 5,026 m. Ποιο είναι το εμβαδόν του δίσκου που περικλείει;</p></li>
+<li><p>Αν διπλασιάσουμε την ακτίνα ενός κύκλου, πόσες φορές αυξάνεται το εμβαδόν του;</p></li>
+<li><p>Να βρείτε το εμβαδόν κυκλικού δακτυλίου που ορίζεται από δύο ομόκεντρους κύκλους με ακτίνες 10 cm και 7 cm.</p></li>
+<li><p>Ένας κυκλικός δίσκος έχει εμβαδόν <span class="math inline">\(144\pi\)</span> cm². Πόσο είναι το μήκος του κύκλου του;</p></li>
+<li><p>Ένα τετράγωνο έχει πλευρά 6 cm.</p>
+<ul>
+<li>Βρείτε το εμβαδόν του κυκλικού δίσκου που είναι εγγεγραμμένος στο τετράγωνο.</li>
+<li>Βρείτε το εμβαδόν του κυκλικού δίσκου που είναι περιγγεγραμμένος στο τετράγωνο.</li>
+</ul></li>
+<li><p>Βρείτε το εμβαδόν κυκλικού δίσκου που είναι περιγεγραμμένος σε ορθογώνιο διαστάσεων 6 cm και 8 cm.<br>
+</p>
+<p><br>
+<img src="images/clipboard-766921411.png" class="img-fluid" width="283"><br>
+</p></li>
+<li><p>Ποια είναι η ακτίνα ενός κύκλου που έχει εμβαδόν αριθμητικά ίσο με το μήκος του;</p></li>
+<li><p>Ένας κυκλικός δίσκος έχει ακτίνα 7 cm. Υπολόγισε την περίμετρο και το εμβαδόν του. (π = 3,14)</p></li>
+<li><p>Το εμβαδόν ενός κυκλικού δίσκου είναι 314 cm². Να βρεθεί η ακτίνα και η περίμετρός του. (π = 3,14)</p></li>
+<li><p>Ένας κύκλος έχει μήκος περιφέρειας 43,96 cm. Βρες την ακτίνα του και το εμβαδόν του δίσκου. (π = 3,14)</p></li>
+<li><p>Δύο κύκλοι έχουν ακτίνες 8 cm και 4 cm. Πόσες φορές μεγαλύτερη είναι η περίμετρος του πρώτου; Πόσες φορές μεγαλύτερο το εμβαδόν του;</p></li>
+<li><p>Κόβουμε έναν κυκλικό δίσκο ακτίνας 12 cm σε 6 ίσες φέτες. Να βρεθεί η κεντρική γωνία, το μήκος τόξου και το εμβαδόν κάθε φέτας. (π = 3,14)</p></li>
+<li><p>Ένας κυκλικός δίσκος ακτίνας 15 cm αντιστοιχεί σε ολόκληρη τούρτα. Κόβουμε ένα κομμάτι γωνίας 90°. Πόσο εμβαδόν έχει το κομμάτι; Αν η τούρτα ζυγίζει 1200 g, πόσο ζυγίζει το κομμάτι;</p></li>
+<li><p>Η ακτίνα ενός δίσκου αυξάνεται κατά 20%. Να βρεθεί η ποσοστιαία αύξηση του εμβαδού του. (Αναλογία: νέα ακτίνα = 1,2ρ, οπότε νέο εμβαδόν = 1,44 φορές)</p></li>
+<li><p>Δύο δίσκοι έχουν εμβαδά 100π cm² και 64π cm². Βρες τις ακτίνες τους και την αναλογία περιμέτρων.</p></li>
+<li><p>Δίνεται ένας δίσκος εμβαδού 200,96 cm² (πάρτε π=3,14). Βρες την ακτίνα. Στη συνέχεια, φτιάξε μια φέτα 120° και βρες το μήκος τόξου του.</p></li>
+<li><p>Σε έναν κυκλικό δίσκο ακτίνας 18 cm, σχεδιάζουμε δύο ομόκεντρους κύκλους ακτίνων 6 cm και 12 cm, χωρίζοντας τον δίσκο σε 3 ζώνες (δίσκο – δακτυλίους). Βρες το εμβαδόν κάθε ζώνης.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -689,12 +964,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
