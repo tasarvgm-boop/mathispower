@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>15. Πρίσμα και κύλινδρος – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/15. Πρίσμα και κύλινδρος.html">15. Πρίσμα και κύλινδρος</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/15. Πρίσμα και κύλινδρος.html">15. Πρίσμα και κύλινδρος</a></li></ol></nav>
+      <h1 class="title">15. Πρίσμα και κύλινδρος</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">14 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">14 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +559,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -574,7 +652,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/15. Πρίσμα και κύλινδρος.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/15. Πρίσμα και κύλινδρος.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">15. Πρίσμα και κύλινδρος</span></a>
   </div>
 </li>
@@ -584,7 +662,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -627,7 +705,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -653,33 +731,344 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ορθό-πρίσμα" id="toc-ορθό-πρίσμα" class="nav-link active" data-scroll-target="#ορθό-πρίσμα"><span class="header-section-number">1</span> Ορθό Πρίσμα</a></li>
+  <li><a href="#κύλινδρος" id="toc-κύλινδρος" class="nav-link" data-scroll-target="#κύλινδρος"><span class="header-section-number">2</span> Κύλινδρος</a>
+  <ul class="collapse">
+  <li><a href="#πως-προκύπτουν-οι-τύποι-μια-απλή-διαισθητική-ερμηνεία" id="toc-πως-προκύπτουν-οι-τύποι-μια-απλή-διαισθητική-ερμηνεία" class="nav-link" data-scroll-target="#πως-προκύπτουν-οι-τύποι-μια-απλή-διαισθητική-ερμηνεία"><span class="header-section-number">2.1</span> Πως προκύπτουν οι τύποι (μια απλή διαισθητική ερμηνεία)</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">2.2</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ορθό-πρίσμα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ορθό-πρίσμα"><span class="header-section-number">1</span> Ορθό Πρίσμα</h2>
+<p><img src="images/clipboard-3161682013.png" class="img-fluid" width="341"></p>
+<p><img src="images/clipboard-2096646805.png" class="img-fluid" width="488"></p>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι:</strong> Είναι ένα στερεό σώμα με δύο βάσεις που είναι ίσα πολύγωνα και παράλληλα μεταξύ τους. Οι παράπλευρες (πλαϊνές) έδρες του είναι πάντα ορθογώνια παραλληλόγραμμα.</p>
+<p><strong>Βασικοί Τύποι:</strong></p>
+<p>* <strong>Παράπλευρο Εμβαδόν (</strong><span class="math inline">\(E_π\)</span>): Το γινόμενο της περιμέτρου της βάσης επί το ύψος.</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(E_π = \text{Περίμετρος βάσης} \cdot \upsilon\)</span>.</p>
+<p>* <strong>Ολικό Εμβαδόν (</strong><span class="math inline">\(E_{ολ}\)</span>): Το άθροισμα του παράπλευρου εμβαδού και των εμβαδών των δύο βάσεων.</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(E_{ολ} = E_π + 2E_β\)</span>.</p>
+<p>* <strong>Όγκος (</strong><span class="math inline">\(V\)</span>): Το γινόμενο του εμβαδού της βάσης επί το ύψος.</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(V = E_β \cdot \upsilon\)</span>.</p>
 </div>
+<p><strong>Ειδικά για τον κύβο ακμής α:</strong></p>
+<p><img src="images/clipboard-2081175181.png" class="img-fluid" width="294"></p>
+<p><strong>Επιφάνεια</strong>: Ο κύβος αποτελείται από 6 τετράγωνα πλευράς α, άρα το <span class="math inline">\(Ε_{κύβου}=6α^2\)</span></p>
+<p><strong>Όγκος</strong>: Το εμβαδόν της βάσης είναι <span class="math inline">\(α^2\)</span> και το ύψος α , άρα <span class="math inline">\(V=α^3\)</span></p>
+<p><strong>Παράδειγμα για πρίσμα:</strong> Έστω ένα τριγωνικό πρίσμα με ύψος <span class="math inline">\(\upsilon = 8\text{ cm}\)</span> και βάση ορθογώνιο τρίγωνο με κάθετες πλευρές <span class="math inline">\(3\text{ cm}\)</span> και <span class="math inline">\(4\text{ cm}\)</span>.<br>
+</p>
+<p><br>
+<img src="images/clipboard-2549547240.png" class="img-fluid" width="197"></p>
+<p>1. <strong>Βάση:</strong> Η υποτείνουσα της βάσης είναι <span class="math inline">\(5\text{ cm}\)</span>. Η περίμετρος είναι <span class="math inline">\(3+4+5 = 12\text{ cm}\)</span> και το εμβαδό βάσης <span class="math inline">\(E_β = \frac{3 \cdot 4}{2} = 6\text{ cm}^2\)</span>.</p>
+<p>2. <strong>Εμβαδόν:</strong> <span class="math inline">\(E_π = 12 \cdot 8 = 96\text{ cm}^2\)</span>. Το <span class="math inline">\(E_{ολ} = 96 + 2 \cdot 6 = 108\text{ cm}^2\)</span>.</p>
+<p>3. <strong>Όγκος:</strong> <span class="math inline">\(V = 6 \cdot 8 = 48\text{ cm}^3\)</span>.</p>
+<hr>
+</section>
+<section id="κύλινδρος" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="κύλινδρος"><span class="header-section-number">2</span> Κύλινδρος</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/clipboard-2633580902.png" class="img-fluid" width="158"></td>
+<td><img src="images/clipboard-2287783410.png" class="img-fluid" width="156"></td>
+</tr>
+<tr class="even">
+<td><img src="images/clipboard-2935834355.png" class="img-fluid" width="147"></td>
+<td><img src="images/clipboard-2935834355.png" class="img-fluid" width="147"></td>
+</tr>
+<tr class="odd">
+<td><img src="images/clipboard-1848887991.png" class="img-fluid" width="162"></td>
+<td><img src="images/clipboard-1012106708.png" class="img-fluid" width="361"></td>
+</tr>
+</tbody>
+</table>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι:</strong> Αποτελείται από δύο ίσους και παράλληλους κυκλικούς δίσκους (βάσεις) και μια παράπλευρη επιφάνεια που, αν την «ξετυλίξουμε», έχει σχήμα ορθογωνίου.</p>
+<p><strong>Βασικοί Τύποι:</strong></p>
+<p>* <strong>Παράπλευρο Εμβαδόν (</strong><span class="math inline">\(E_π\)</span>): Η περίμετρος της βάσης (<span class="math inline">\(2\pi\rho\)</span>) επί το ύψος (<span class="math inline">\(\upsilon\)</span>).</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(E_π = 2\pi\rho \cdot \upsilon\)</span>.</p>
+<p>* <strong>Ολικό Εμβαδόν (</strong><span class="math inline">\(E_{ολ}\)</span>): Το παράπλευρο εμβαδόν συν τα εμβαδά των δύο κυκλικών βάσεων.</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(E_{ολ} = 2\pi\rho\upsilon + 2\pi\rho^2\)</span>.</p>
+<p>* <strong>Όγκος (</strong><span class="math inline">\(V\)</span>): Το εμβαδό της κυκλικής βάσης (<span class="math inline">\(\pi\rho^2\)</span>) επί το ύψος (<span class="math inline">\(\upsilon\)</span>).</p>
+<p>* <em>Τύπος:</em> <span class="math inline">\(V = \pi\rho^2 \cdot \upsilon\)</span>.</p>
+</div>
+<p><strong>Παράδειγμα:</strong> Ένας κύλινδρος έχει ακτίνα βάσης <span class="math inline">\(\rho = 4\text{ cm}\)</span> και ύψος <span class="math inline">\(\upsilon = 12\text{ cm}\)</span>.</p>
+<p>1. <strong>Εμβαδόν:</strong> <span class="math inline">\(E_π = 2\pi \cdot 4 \cdot 12 = 96\pi \text{ cm}^2\)</span>. Το εμβαδό των δύο βάσεων είναι <span class="math inline">\(2 \cdot (\pi \cdot 4^2) = 32\pi \text{ cm}^2\)</span>. Άρα <span class="math inline">\(E_{ολ} = 96\pi + 32\pi = 128\pi \text{ cm}^2\)</span>.</p>
+<p>2. <strong>Όγκος:</strong> <span class="math inline">\(V = \pi \cdot 4^2 \cdot 12 = \pi \cdot 16 \cdot 12 = 192\pi \text{ cm}^3\)</span>.</p>
+<p><br>
+</p>
+<section id="πως-προκύπτουν-οι-τύποι-μια-απλή-διαισθητική-ερμηνεία" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="πως-προκύπτουν-οι-τύποι-μια-απλή-διαισθητική-ερμηνεία"><span class="header-section-number">2.1</span> Πως προκύπτουν οι τύποι (μια απλή διαισθητική ερμηνεία)</h3>
+<p>Ο τύπος του όγκου (<span class="math inline">\(V = E_β \cdot \upsilon\)</span>) προκύπτει από το γινόμενο του εμβαδού της βάσης επί το ύψος του στερεού. Γεωμετρικά, μπορείς να το φανταστείς ως την «εξώθηση» (extrusion) της βάσης προς τα πάνω κατά το μήκος του ύψους.</p>
+<p>Ουσιαστικά, πολλαπλασιάζοντας την επιφάνεια της βάσης με το ύψος, υπολογίζεις συνολικά τον τρισδιάστατο χώρο που καταλαμβάνει το σώμα. Είναι σαν να «<strong>στοιβάζεις</strong>» την ίδια επιφάνεια βάσης τόσες φορές όσες ορίζει το ύψος του σχήματος. Για παράδειγμα:</p>
+<ul>
+<li>Στο <strong>πρίσμα</strong>, αν η βάση είναι ένα πολύγωνο με εμβαδό <span class="math inline">\(E_β\)</span>, ο όγκος γεμίζει όλο τον χώρο ανάμεσα στις δύο βάσεις.</li>
+<li>Στον <strong>κύλινδρο</strong>, η βάση είναι κυκλικός δίσκος (<span class="math inline">\(\pi\rho^2\)</span>), οπότε ο όγκος είναι <span class="math inline">\(\pi\rho^2 \cdot \upsilon\)</span>.</li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">2.2</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Να συμπληρώσετε τον παρακάτω πίνακα</li>
+</ol>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#aabcfe;border-spacing:0;}
+.tg td{background-color:#e8edff;border-color:#aabcfe;border-style:solid;border-width:1px;color:#669;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#b9c9fe;border-color:#aabcfe;border-style:solid;border-width:1px;color:#039;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-x6vl{border-color:inherit;color:#663234;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-g5dp{background-color:#fe996b;border-color:inherit;color:#3531ff;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-ssv0{border-color:inherit;color:#009901;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-ssmn{background-color:#D2E4FC;border-color:inherit;color:#663234;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-svo0{background-color:#D2E4FC;border-color:inherit;text-align:center;vertical-align:top}
+</style>
+
+<table class="tg caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="tg-g5dp" data-quarto-table-cell-role="th">Σχήμα</th>
+<th class="tg-ssv0" data-quarto-table-cell-role="th">Εμβαδόν βάσεων</th>
+<th class="tg-ssv0" data-quarto-table-cell-role="th">Εμβαδόν παράπλευρης<br>
+Επιφάνειας</th>
+<th class="tg-ssv0" data-quarto-table-cell-role="th">Εμβαδόν ολικής<br>
+επιφάνειας</th>
+<th class="tg-ssv0" data-quarto-table-cell-role="th">Όγκος</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-ssmn">Πρίσμα με βάση τετράγωνο πλευράς 4 cm και ύψος 5 cm</td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+</tr>
+<tr class="even">
+<td class="tg-x6vl">Πρίσμα με βάση ισόπλευρο τρίγωνο πλευράς 6 cm και ύψος 8 cm</td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+</tr>
+<tr class="odd">
+<td class="tg-ssmn">Πρίσμα με βάση κανονικό εξάγωνο πλευράς 5 cm και ύψος 10 cm</td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+</tr>
+<tr class="even">
+<td class="tg-x6vl">Κύλινδρος με ακτίνα βάσης 4 m και ύψος 10 m</td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+</tr>
+<tr class="odd">
+<td class="tg-ssmn">Κύλινδρος με διάμετρο βάσης 6 cm και ύψος 8 cm</td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+</tr>
+<tr class="even">
+<td class="tg-x6vl">Κύλινδρος με περίμετρο βάσης 31,415 dm και ύψος 84 cm&nbsp;&nbsp;&nbsp;</td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+<td class="tg-c3ow"></td>
+</tr>
+<tr class="odd">
+<td class="tg-ssmn">Κύβος με ακμή 3,8 dm</td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+<td class="tg-svo0"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><p><strong>Τριγωνικό Πρίσμα:</strong> Βρες το εμβαδόν παράπλευρης επιφάνειας πρίσματος με ύψος <span class="math inline">\(10\text{ cm}\)</span> και βάση ορθογώνιο τρίγωνο με κάθετες πλευρές <span class="math inline">\(5\text{ cm}\)</span> και <span class="math inline">\(5\text{ cm}\)</span> .</p></li>
+<li><p><strong>Ορθογώνιο Παραλληλεπίπεδο:</strong> Υπολόγισε τον όγκο ενός δωματίου με διαστάσεις: πλάτος <span class="math inline">\(4\text{ m}\)</span>, μήκος <span class="math inline">\(5\text{ m}\)</span> και ύψος <span class="math inline">\(3\text{ m}\)</span> .</p></li>
+<li><p><strong>Κύβος:</strong> Αν η ακμή ενός κύβου είναι <span class="math inline">\(7\text{ cm}\)</span>, να εκφράσεις το εμβαδό της έδρας του και τον όγκο του σε μορφή δύναμης .</p></li>
+<li><p><strong>Παράπλευρο Εμβαδόν:</strong> Ένα πρίσμα έχει βάση τετράπλευρο με πλευρές <span class="math inline">\(3, 4, 6\)</span> και <span class="math inline">\(5\text{ cm}\)</span>. Αν το ύψος του είναι <span class="math inline">\(7\text{ cm}\)</span>, βρες το <span class="math inline">\(E_π\)</span> .</p></li>
+<li><p><strong>Ολικό Εμβαδόν:</strong> Πρίσμα με ολικό του εμβαδόν <span class="math inline">\(109,856\text{ cm}^2\)</span> έχει βάσεις ισόπλευρα τρίγωνα πλευράς <span class="math inline">\(4\text{ cm}\)</span>. Υπολόγισε το ύψος του .</p></li>
+<li><p><strong>Όγκος Πρίσματος:</strong> Ορθό τριγωνικό πρίσμα έχει βάση ορθογώνιο τρίγωνο με κάθετες πλευρές <span class="math inline">\(6\text{ cm}\)</span> και <span class="math inline">\(8\text{ cm}\)</span>. Αν ο όγκος του είναι <span class="math inline">\(168\text{ cm}^3\)</span>, βρες το ύψος του .</p></li>
+<li><p><strong>Ακμή Κύβου από Εμβαδόν:</strong> Το εμβαδόν της παράπλευρης επιφάνειας ενός κύβου είναι <span class="math inline">\(144\text{ cm}^2\)</span>. Βρες τον όγκο του.</p></li>
+<li><p><strong>Υπολογισμός Ύψους:</strong> Ένα ορθογώνιο παραλληλεπίπεδο έχει μήκος <span class="math inline">\(4\text{ m}\)</span>, πλάτος <span class="math inline">\(3\text{ m}\)</span> και όγκο <span class="math inline">\(120\text{ m}^3\)</span>. Πόσο είναι το ύψος του;</p></li>
+<li><p><strong>Τετραγωνικό Πρίσμα:</strong> Κανονικό τετραγωνικό πρίσμα έχει πλευρά βάσης <span class="math inline">\(6\text{ cm}\)</span> και ύψος <span class="math inline">\(10\text{ cm}\)</span>. Βρες το <span class="math inline">\(E_{ολ}\)</span> και τον όγκο.</p></li>
+<li><p><strong>Σύνθετη Βάση:</strong> Ένα πρίσμα ύψους <span class="math inline">\(5\text{ cm}\)</span> έχει βάση πεντάγωνο που αποτελείται από ένα ορθογώνιο και ένα τραπέζιο. Αν το εμβαδόν της βάσης είναι <span class="math inline">\(176\text{ cm}^2\)</span> και η περίμετρος <span class="math inline">\(56\text{ cm}\)</span>, βρες το ολικό εμβαδόν.</p></li>
+<li><p><strong>Εμβαδόν Επιφάνειας:</strong> Κύλινδρος έχει ακτίνα βάσης <span class="math inline">\(\rho = 3\text{ cm}\)</span> και ύψος <span class="math inline">\(\upsilon = 5\text{ cm}\)</span>. Βρες το <span class="math inline">\(E_π\)</span> και το <span class="math inline">\(E_{ολ}\)</span> .</p></li>
+<li><p><strong>Υπολογισμός με Διάμετρο:</strong> Ένας κύλινδρος έχει διάμετρο βάσης <span class="math inline">\(10\text{ cm}\)</span> και ύψος <span class="math inline">\(8\text{ cm}\)</span>. Βρες το εμβαδόν της παράπλευρης επιφάνειάς του .</p></li>
+<li><p><strong>Δεξαμενή Καυσίμων:</strong> Κλειστή κυλινδρική δεξαμενή έχει ύψος <span class="math inline">\(20\text{ m}\)</span> και ακτίνα <span class="math inline">\(30\text{ m}\)</span>. Πόσα τετραγωνικά μέτρα λαμαρίνας χρειάστηκαν για την κατασκευή της;</p></li>
+<li><p><strong>Όγκος Κυλίνδρου:</strong> Ένας κύλινδρος έχει ακτίνα <span class="math inline">\(4\text{ cm}\)</span> και ύψος <span class="math inline">\(12\text{ cm}\)</span>. Υπολόγισε τον όγκο του .</p></li>
+<li><p><strong>Αντίστροφο Πρόβλημα:</strong> Κύλινδρος έχει όγκο <span class="math inline">\(90\pi\text{ cm}^3\)</span> και ύψος <span class="math inline">\(10\text{ cm}\)</span>. Βρες την ακτίνα της βάσης του.</p></li>
+<li><p><strong>Κυρτή Επιφάνεια:</strong> Το εμβαδόν της κυρτής επιφάνειας κυλίνδρου είναι <span class="math inline">\(251,2\text{ cm}^2\)</span> και η ακτίνα του <span class="math inline">\(5\text{ cm}\)</span>. Βρες το ύψος του.</p></li>
+<li><p><strong>Μονάδες Μέτρησης:</strong> Κύλινδρος έχει εμβαδόν βάσης <span class="math inline">\(100\text{ mm}^2\)</span> και ύψος <span class="math inline">\(0,2\text{ m}\)</span>. Υπολόγισε τον όγκο του σε <span class="math inline">\(\text{mm}^3\)</span>.</p></li>
+<li><p><strong>Περίμετρος Βάσης:</strong> Κύλινδρος έχει περίμετρο βάσης <span class="math inline">\(12\pi\text{ cm}\)</span> και ύψος <span class="math inline">\(10\text{ cm}\)</span>. Βρες το ολικό του εμβαδόν .</p></li>
+<li><p><strong>Όγκος από Ύψος:</strong> Αν ένας κύλινδρος έχει όγκο <span class="math inline">\(175\pi\text{ m}^3\)</span> και ύψος <span class="math inline">\(7\text{ m}\)</span>, βρες την ακτίνα της βάσης του .</p></li>
+<li><p><strong>Κύλινδρος μέσα σε Πρίσμα:</strong> Ένας κύλινδρος είναι τοποθετημένος μέσα σε ένα τετραγωνικό πρίσμα με πλευρά βάσης <span class="math inline">\(10\text{ cm}\)</span> και ύψος <span class="math inline">\(20\text{ cm}\)</span>, έτσι ώστε να εφάπτεται στις πλευρές (έδρες) του πρίσματος. Βρες τον όγκο που μένει κενός ανάμεσα στο πρίσμα και τον κύλινδρο .</p></li>
+<li><p><strong>Μετασχηματισμός Στερεού:</strong> Ένα στερεό αποτελείται από έναν κύλινδρο (ακτίνας 5 cm και ύψους 7 cm) που έχει στο εσωτερικό του ένα κενό σε σχήμα τετραγωνικού πρίσματος το οποίο εφάπτεται στο εσωτερικό του κυλίνδρου. Να υπολογίσετε τον όγκο του στερεού και την συνολική του επιφάνεια. <em>Προσοχή! Οι βάσεις του αποτεούνται από κυκλικούς δίσκους από τους οποίους έχουμε αφαιρέσει ένα τετράγωνο</em></p></li>
+<li><p><strong>Κύλινδρος πάνω σε Ορθογώνιο Πρίσμα</strong> Ένα στερεό αποτελείται από:</p></li>
+</ol>
+<ul>
+<li><p>ορθογώνιο παραλληλεπίπεδο διαστάσεων <span class="math inline">\(12 \text{ cm} \times 8 \text{ cm} \times 6 \text{ cm}\)</span>,</p></li>
+<li><p>και κύλινδρο τοποθετημένο πάνω του με:</p>
+<ul>
+<li>ακτίνα (3) cm,</li>
+<li>ύψος (8) cm.</li>
+</ul></li>
+</ul>
+<p>Να υπολογίσετε:</p>
+<ul>
+<li>τον συνολικό όγκο του στερεού</li>
+<li>το συνολικό εξωτερικό εμβαδόν του στερεού</li>
+</ul>
+<p>(να μην υπολογιστεί η κοινή επιφάνεια επαφής)</p>
+<ol start="24" type="1">
+<li><strong>Κυλινδρική Σήραγγα μέσα σε Πρίσμα</strong> Ένα ορθογώνιο πρίσμα έχει:</li>
+</ol>
+<ul>
+<li>μήκος (20) cm,</li>
+<li>πλάτος (10) cm,</li>
+<li>ύψος (10) cm.</li>
+</ul>
+<p>Μέσα του ανοίγεται κυλινδρική σήραγγα ακτίνας (3) cm που διαπερνά όλο το μήκος του πρίσματος.</p>
+<p>Να υπολογίσετε:</p>
+<ul>
+<li>τον όγκο του αρχικού πρίσματος</li>
+<li>τον όγκο του κυλίνδρου που αφαιρέθηκε</li>
+<li>τον όγκο που απομένει</li>
+</ul>
+<ol start="25" type="1">
+<li><strong>Πύργος με Πρίσμα και Κύλινδρο</strong> Ένα κτίριο αποτελείται από:</li>
+</ol>
+<ul>
+<li><p>τετραγωνικό πρίσμα βάσης πλευράς (10) m και ύψους (15) m,</p></li>
+<li><p>και κυλινδρικό πύργο στην οροφή με:</p>
+<ul>
+<li>ακτίνα (4) m,</li>
+<li>ύψος (6) m.</li>
+</ul></li>
+</ul>
+<p>Να βρείτε:</p>
+<ul>
+<li>τον συνολικό όγκο του κτιρίου</li>
+<li>το συνολικό εξωτερικό εμβαδόν</li>
+<li>πόσα χρήματα θα δώσουμε για να το βάψουμε αν κάθε <span class="math inline">\(m^2\)</span> κοστίζει 0,8 €</li>
+</ul>
+<ol start="26" type="1">
+<li><strong>Δοχείο Σύνθετου Σχήματος</strong> Ένα δοχείο αποτελείται από:</li>
+</ol>
+<ul>
+<li>κύλινδρο ακτίνας (5) cm και ύψους (12) cm,</li>
+<li>πάνω στον οποίο υπάρχει εξαγωνικό πρίσμα ύψους (8) cm.</li>
+</ul>
+<p>Το εμβαδόν της εξαγωνικής βάσης είναι: <span class="math inline">\(54\text{ cm}^2\)</span></p>
+<p>Να υπολογίσετε:</p>
+<ul>
+<li>τον όγκο κάθε μέρους</li>
+<li>τον συνολικό όγκο του δοχείου</li>
+<li>το συνολικό εμβαδόν των εξωτερικών επιφανειών</li>
+</ul>
+<ol start="27" type="1">
+<li><strong>Συνδυασμός με Κοινή Βάση</strong> Ένα στερεό αποτελείται από:</li>
+</ol>
+<ul>
+<li>κύλινδρο ύψους (10) cm και ακτίνας (4) cm,</li>
+<li>και ορθό πρίσμα ίδιου ύψους που έχει τετραγωνική βάση πλευράς (8) cm.</li>
+</ul>
+<p>Τα δύο στερεά ενώνονται από τη βάση τους.</p>
+<p>Να υπολογίσετε:</p>
+<ul>
+<li>τον συνολικό όγκο</li>
+<li>το συνολικό εξωτερικό εμβαδόν</li>
+<li>ποιο μέρος καταλαμβάνει μεγαλύτερο όγκο και κατά πόσο</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -707,12 +1096,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
