@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-galgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</a></li></ol></nav>
+      <h1 class="title">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">20 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">21 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -483,7 +561,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -602,7 +680,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -645,7 +723,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -658,9 +736,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -679,7 +757,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
   </div>
 </li>
@@ -694,33 +772,321 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#πολυώνυμα---πρόσθεση-και-αφαίρεση-πολυωνύμων" id="toc-πολυώνυμα---πρόσθεση-και-αφαίρεση-πολυωνύμων" class="nav-link active" data-scroll-target="#πολυώνυμα---πρόσθεση-και-αφαίρεση-πολυωνύμων"><span class="header-section-number">1</span> Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</a>
+  <ul class="collapse">
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="πολυώνυμα---πρόσθεση-και-αφαίρεση-πολυωνύμων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="πολυώνυμα---πρόσθεση-και-αφαίρεση-πολυωνύμων"><span class="header-section-number">1</span> Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</h2>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Πολυώνυμο</strong> ονομάζουμε την αλγεβρική παράσταση που αποτελείται από <strong>αθροίσματα μη όμοιων μονωνύμων</strong>. Πρόκειται για μια έκφραση κατασκευασμένη από μεταβλητές (αγνώστους) και σταθερές (αριθμούς), χρησιμοποιώντας αποκλειστικά τις πράξεις της πρόσθεσης, της αφαίρεσης, του πολλαπλασιασμού και των <strong>μη αρνητικών ακεραίων δυνάμεων</strong>. Τα μονώνυμα που απαρτίζουν το πολυώνυμο ονομάζονται <strong>όροι</strong> του, ενώ οι αριθμητικοί παράγοντες αυτών των μονωνύμων είναι οι <strong>συντελεστές</strong> του πολυωνύμου.</p>
+<section id="βασικοί-ορισμοί-και-έννοιες" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="βασικοί-ορισμοί-και-έννοιες"><span class="header-section-number">1.1</span> Βασικοί Ορισμοί και Έννοιες</h3>
+<ul>
+<li><strong>Βαθμός Πολυωνύμου:</strong> Ως βαθμός ενός πολυωνύμου ως προς μία ή περισσότερες μεταβλητές ορίζεται ο <strong>μεγαλύτερος από τους βαθμούς των όρων του</strong>.</li>
+<li><strong>Σταθερό Πολυώνυμο:</strong> Κάθε αριθμός εκτός του μηδενός θεωρείται σταθερό πολυώνυμο και έχει <strong>βαθμό μηδέν</strong>.</li>
+<li><strong>Μηδενικό Πολυώνυμο:</strong> Ο αριθμός 0 ονομάζεται μηδενικό πολυώνυμο και είναι το μόνο που <strong>δεν έχει βαθμό</strong>.</li>
+<li><strong>Διάταξη:</strong> Ένα πολυώνυμο γράφεται συνήθως κατά τις <strong>φθίνουσες δυνάμεις</strong> της μεταβλητής του, δηλαδή από τον όρο με τον μεγαλύτερο εκθέτη προς αυτόν με τον μικρότερο.</li>
+<li><strong>Πλήρες και Ελλιπές:</strong> Ένα πολυώνυμο λέγεται <strong>πλήρες</strong> όταν περιέχει όλες τις δυνάμεις της μεταβλητής από τον μέγιστο βαθμό έως το μηδέν, ενώ σε αντίθετη περίπτωση ονομάζεται <strong>ελλιπές</strong>.</li>
+<li><strong>Ίσα Πολυώνυμα:</strong> Δύο πολυώνυμα είναι ίσα αν έχουν τον ίδιο βαθμό και οι συντελεστές των αντίστοιχων δυνάμεων είναι ίσοι.</li>
+</ul>
+</section>
 </div>
+<section id="παραδείγματα-πολυωνύμων" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα-πολυωνύμων"><span class="header-section-number">1.1.1</span> Παραδείγματα Πολυωνύμων</h4>
+<ol type="1">
+<li>Η παράσταση <span class="math inline">\(3x^2 - 7x - 12\)</span> είναι ένα πολυώνυμο δευτέρου βαθμού ως προς <span class="math inline">\(x\)</span>.</li>
+<li>Η παράσταση <span class="math inline">\(2x^2y - 5xy + y^2 + \frac{1}{3}\)</span> είναι ένα πολυώνυμο ως προς <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span>.</li>
+<li>Η έκφραση <span class="math inline">\(x^2 - \dfrac{x}{4} + 7\)</span> αποτελεί πολυώνυμο, καθώς η διαίρεση με σταθερά επιτρέπεται.</li>
+<li>Το <span class="math inline">\(P(x) = x^4 + 2x^3 - 5x^2 + 3x + 10\)</span> είναι ένα πολυώνυμο γραμμένο κατά τις <strong>φθίνουσες δυνάμεις</strong> του <span class="math inline">\(x\)</span>.</li>
+<li>Η παράσταση <span class="math inline">\(y^3 - 3xy^2 + 2x^3\)</span> είναι πολυώνυμο τρίτου βαθμού ως προς <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span>.</li>
+</ol>
+</section>
+<section id="παραδείγματα-παραστάσεων-που-δεν-είναι-πολυώνυμα" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored"><span class="header-section-number">1.1.2</span> Παραδείγματα Παραστάσεων που ΔΕΝ είναι Πολυώνυμα</h4>
+<ol type="1">
+<li>Η παράσταση <span class="math inline">\(x^2 - \dfrac{4}{x} + 7x^{\dfrac{3}{2}}\)</span> <strong>δεν είναι πολυώνυμο</strong>, διότι περιέχει διαίρεση με τη μεταβλητή <span class="math inline">\(x\)</span> και εκθέτη που δεν είναι φυσικός αριθμός.</li>
+<li>Η παράσταση <span class="math inline">\(4x^3 - 5x^2 + \dfrac{2}{x} - 1\)</span> δεν είναι πολυώνυμο, επειδή ο όρος <span class="math inline">\(\dfrac{2}{x}\)</span> δεν είναι μονώνυμο.</li>
+<li>Εκφράσεις που περιέχουν μεταβλητή ως εκθέτη, όπως η <span class="math inline">\((5 + y)^x\)</span>, δεν θεωρούνται πολυώνυμα.</li>
+<li>Οποιαδήποτε αλγεβρική παράσταση περιέχει <strong>αρνητικούς εκθέτες</strong> στις μεταβλητές της δεν είναι ακέραια και επομένως δεν είναι πολυώνυμο.</li>
+</ol>
+<p><br>
+</p>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η <strong>αναγωγή ομοίων όρων</strong> είναι η διαδικασία με την οποία μια αλγεβρική παράσταση γράφεται με την απλούστερη δυνατή μορφή της. Η διαδικασία αυτή συνίσταται στην πρόσθεση ή αφαίρεση των ομοίων όρων (μονωνύμων) μιας παράστασης.</p>
+<section id="ορισμός-και-βασικές-έννοιες" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ορισμός-και-βασικές-έννοιες"><span class="header-section-number">1.2</span> Ορισμός και Βασικές Έννοιες</h3>
+<ul>
+<li><strong>Όμοια μονώνυμα:</strong> Ονομάζονται τα μονώνυμα που έχουν το <strong>ίδιο κύριο μέρος</strong>, δηλαδή τις ίδιες μεταβλητές υψωμένες στους ίδιους εκθέτες.</li>
+<li><strong>Μηχανισμός αναγωγής:</strong> Η αναγωγή βασίζεται στην <strong>επιμεριστική ιδιότητα</strong>. Για να προσθέσουμε όμοια μονώνυμα, προσθέτουμε τους συντελεστές τους και διατηρούμε το ίδιο κύριο μέρος.</li>
+<li><strong>Περιορισμός:</strong> Προσθέσεις και αφαιρέσεις επιτρέπονται <strong>μόνο μεταξύ ομοίων μονωνύμων</strong>. Το άθροισμα ανόμοιων μονωνύμων δεν μπορεί να απλοποιηθεί σε έναν όρο και παράγει ένα πολυώνυμο.</li>
+</ul>
+</section>
+</div>
+</section>
+<section id="παραδείγματα-αναγωγής-ομοίων-όρων" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored"><span class="header-section-number">1.2.1</span> Παραδείγματα Αναγωγής Ομοίων Όρων</h4>
+<p><strong>1. Απλά παραδείγματα με μία μεταβλητή:</strong><br>
+* <span class="math inline">\(3\alpha + 5\alpha = (3 + 5)\alpha = 8\alpha\)</span><br>
+* <span class="math inline">\(2x - 4x + 5x = (2 - 4 + 5)x = 3x\)</span><br>
+* <span class="math inline">\(-5x^2 + 2x^2 = (-5 + 2)x^2 = -3x^2\)</span><br>
+* <span class="math inline">\(7x - 8x - x = 7x - 9x = -2x\)</span> (σημειώνεται ότι το <span class="math inline">\(-x\)</span> εννοείται ως <span class="math inline">\(-1x\)</span>)</p>
+<p><strong>2. Παραδείγματα με πολλές μεταβλητές:</strong><br>
+* <span class="math inline">\(-7x^2y + 4x^2y = (-7 + 4)x^2y = -3x^2y\)</span><br>
+* <span class="math inline">\(4\alpha x^2 - 6\alpha x^2 + \alpha x^2 = (4 - 6 + 1)\alpha x^2 = -\alpha x^2\)</span><br>
+* <span class="math inline">\(0,25\alpha\beta - 0,35\alpha\beta + 0,5\alpha\beta = 0,4\alpha\beta\)</span></p>
+<p><strong>3. Αναγωγή μέσα σε πολυώνυμα (ομαδοποίηση):</strong><br>
+* Στην παράσταση <span class="math inline">\(3\alpha - 2\beta - 2\alpha + \beta\)</span>, ομαδοποιούμε τα <span class="math inline">\(\alpha\)</span> με τα <span class="math inline">\(\alpha\)</span> και τα <span class="math inline">\(\beta\)</span> με τα <span class="math inline">\(\beta\)</span>: <span class="math inline">\((3\alpha - 2\alpha) + (-2\beta + \beta) = 1\alpha - 1\beta = \alpha - \beta\)</span><br>
+* Στο πολυώνυμο <span class="math inline">\(A = -2xy^2 + y^3 + 2x^3 - xy^2\)</span>, οι όροι <span class="math inline">\(-2xy^2\)</span> και <span class="math inline">\(-xy^2\)</span> είναι όμοιοι: <span class="math inline">\(A = -3xy^2 + y^3 + 2x^3\)</span></p>
+<p><strong>4. Σύνθετη αναγωγή μετά από πράξεις:</strong><br>
+* <span class="math inline">\((2x^2 + 2x - 3) + (9x^2 - 3x + 2) + (4x^2 + 4x - 5) =\)</span> <span class="math inline">\((2 + 9 + 4)x^2 + (2 - 3 + 4)x + (-3 + 2 - 5) = 15x^2 + 3x - 6\)</span><br>
+* <span class="math inline">\((-5x^2 + 4x - 3) - (x^2 - 2x + 1) + (3x^2 + x) = -3x^2 + 7x - 4\)</span></p>
+<p><br>
+</p>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η πρόσθεση και η αφαίρεση πολυωνύμων αποτελούν θεμελιώδεις πράξεις της άλγεβρας, οι οποίες βασίζονται στην έννοια της <strong>αναγωγής ομοίων όρων</strong>. Η διαδικασία αυτή επιτρέπει την απλοποίηση σύνθετων αλγεβρικών παραστάσεων συνδυάζοντας μονώνυμα που έχουν το ίδιο κύριο μέρος.</p>
+<section id="ορισμοί-και-μηχανισμός-πράξεων" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ορισμοί-και-μηχανισμός-πράξεων"><span class="header-section-number">1.3</span> Ορισμοί και Μηχανισμός Πράξεων</h3>
+<ul>
+<li><strong>Πρόσθεση Πολυωνύμων:</strong> Για να προσθέσουμε δύο ή περισσότερα πολυώνυμα, χρησιμοποιούμε την <strong>προσεταιριστική ιδιότητα</strong>, τοποθετώντας όλους τους όρους τους σε ένα κοινό άθροισμα και στη συνέχεια συνδυάζουμε τους όμοιους όρους. Ο συντελεστής κάθε όρου του νέου πολυωνύμου είναι το άθροισμα των συντελεστών των αντίστοιχων δυνάμεων της μεταβλητής.</li>
+<li><strong>Αφαίρεση Πολυωνύμων:</strong> Η αφαίρεση ενός πολυωνύμου επιτυγχάνεται <strong>προσθέτοντας στο πρώτο πολυώνυμο το αντίθετο του δεύτερου</strong>. Στην πράξη, αυτό σημαίνει ότι αλλάζουμε τα πρόσημα όλων των όρων του πολυωνύμου που βρίσκεται μέσα στην παρένθεση με το αρνητικό πρόσημο μπροστά.</li>
+<li><strong>Βαθμός Αποτελέσματος:</strong> Ο βαθμός του πολυωνύμου που προκύπτει από την πρόσθεση ή την αφαίρεση είναι <strong>ίσος ή μικρότερος</strong> από τον βαθμό του πολυωνύμου με τον μεγαλύτερο βαθμό. Για παράδειγμα, αν προσθέσουμε ένα πολυώνυμο 2ου βαθμού και ένα 3ου βαθμού, το αποτέλεσμα θα είναι 3ου βαθμού, εκτός αν ο μεγιστοβάθμιος όρος απαλειφθεί.</li>
+</ul>
+</section>
+</div>
+<p><br>
+</p>
+</section>
+<section id="παραδείγματα-πρόσθεσης-και-αφαίρεσης" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="παραδείγματα-πρόσθεσης-και-αφαίρεσης"><span class="header-section-number">1.3.1</span> Παραδείγματα Πρόσθεσης και Αφαίρεσης</h4>
+<p><strong>1. Απλή Αφαίρεση με αναγωγή:</strong> <span class="math inline">\((2x^3 - x) - (x^3 - 5x^2 + x - 1)\)</span> <span class="math inline">\(= 2x^3 - x - x^3 + 5x^2 - x + 1\)</span> (αλλαγή προσήμων λόγω του πλην) <span class="math inline">\(= x^3 + 5x^2 - 2x + 1\)</span>.</p>
+<p><strong>2. Πρόσθεση με δεκαδικούς συντελεστές:</strong> <span class="math inline">\((0,4x^3 + 2,3x^2) + (3,6x^3 - 0,3x^2 + 4)\)</span> <span class="math inline">\(= 0,4x^3 + 2,3x^2 + 3,6x^3 - 0,3x^2 + 4\)</span> <span class="math inline">\(= 4x^3 + 2x^2 + 4\)</span>.</p>
+<p><strong>3. Σύνθετες πράξεις μεταξύ πολυωνύμων:</strong> Έστω <span class="math inline">\(A(x) = 2x^3 - x^2 + x - 4\)</span> και <span class="math inline">\(B(x) = -3x^3 + 5x - 2\)</span>. Για την αφαίρεση <span class="math inline">\(A(x) - B(x)\)</span>: <span class="math inline">\((2x^3 - x^2 + x - 4) - (-3x^3 + 5x - 2)\)</span> <span class="math inline">\(= 2x^3 - x^2 + x - 4 + 3x^3 - 5x + 2\)</span> <span class="math inline">\(= 5x^3 - x^2 - 4x - 2\)</span>.</p>
+<p><strong>4. Χρήση επιμεριστικής ιδιότητας πριν την αναγωγή:</strong> <span class="math inline">\(3(x^2 - 2x + 1) - 2(x^2 + x)\)</span> <span class="math inline">\(= 3x^2 - 6x + 3 - 2x^2 - 2x\)</span> <span class="math inline">\(= x^2 - 8x + 3\)</span> (πληροφορία από τη γενική θεωρία για την επιμεριστική και την αναγωγή).</p>
+</section>
+<section id="σημαντικές-παρατηρήσεις" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="σημαντικές-παρατηρήσεις"><span class="header-section-number">1.3.2</span> Σημαντικές Παρατηρήσεις</h4>
+<ul>
+<li><strong>Όμοιοι όροι</strong> είναι εκείνοι που έχουν ακριβώς τις ίδιες μεταβλητές με τους ίδιους εκθέτες.</li>
+<li>Προσθέσεις και αφαιρέσεις επιτρέπονται <strong>μόνο μεταξύ ομοίων όρων</strong>. Αν οι όροι είναι ανόμοιοι, η παράσταση δεν μπορεί να απλοποιηθεί περαιτέρω και παραμένει ως πολυώνυμο.</li>
+<li>Κατά τη γραφή του τελικού αποτελέσματος, είναι προτιμότερο να διατάσσουμε το πολυώνυμο κατά τις <strong>φθίνουσες δυνάμεις</strong> της μεταβλητής (από τον μεγαλύτερο εκθέτη προς τον μικρότερο).</li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η γραφή ενός πολυωνύμου κατά τις <strong>φθίνουσες δυνάμεις</strong> της μεταβλητής του σημαίνει ότι διατάσσουμε τους όρους του ξεκινώντας από εκείνον με τον μεγαλύτερο εκθέτη και καταλήγοντας σε εκείνον με τον μικρότερο.</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Να γράψετε το πολυώνυμο <span class="math inline">\(P(x) = 8x - 4x^2 + 2x^5 -6 + 2x^3-x^4\)</span> κατά τις φθίνουσες δυνάμεις του <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Να διατάξετε το πολυώνυμο <span class="math inline">\(A(x) = -2x^2 + 8 + 2x^4 + 7x-3x^3\)</span> κατά τις φθίνουσες δυνάμεις της μεταβλητής του.</p></li>
+<li><p>Δίνεται η παράσταση <span class="math inline">\(B(x) = -x^3 - 2x + x^2 - 1\)</span>. Να γραφτεί ως πολυώνυμο διατεταγμένο κατά τις φθίνουσες δυνάμεις του <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Δίνεται το πολυώνυμο <strong><span class="math inline">\(A = -2x^2y + y^2 - 3x^4 - 5xy^2\)</span></strong>. Να βρείτε την <strong>αριθμητική τιμή</strong> του για <strong><span class="math inline">\(x = 2\)</span></strong> και <strong><span class="math inline">\(y = -1\)</span></strong>.</p></li>
+<li><p>Να υπολογίσετε την αριθμητική τιμή των παρακάτω παραστάσεων για τις δοθείσες τιμές:</p></li>
+</ol>
+<p>α) <strong><span class="math inline">\(-2xy^3 + x^2y - 4\)</span></strong> για <strong><span class="math inline">\(x = -2\)</span></strong> και <strong><span class="math inline">\(y = 1\)</span></strong>.</p>
+<p>β) <strong><span class="math inline">\(\dfrac{2}{3}x\omega^2 + \dfrac{1}{2}\omega^3\)</span></strong> για <strong><span class="math inline">\(x = 3\)</span></strong> και <strong><span class="math inline">\(\omega = -2\)</span></strong>.</p>
+<ul>
+<li><p><strong>Λύση:</strong></p>
+<ul>
+<li><p>Για την (α): <span class="math inline">\(-2(-2) \cdot 1^3 + (-2)^2 \cdot 1 - 4 = 4 \cdot 1 + 4 \cdot 1 - 4 = 4 + 4 - 4 = \mathbf{4}\)</span>.</p></li>
+<li><p>Για την (β): <span class="math inline">\(\dfrac{2}{3} \cdot 3 \cdot (-2)^2 + \dfrac{1}{2}(-2)^3 = 2 \cdot 4 + \frac{1}{2}(-8) = 8 - 4 = \mathbf{4}\)</span>.</p></li>
+</ul></li>
+</ul>
+<ol start="6" type="1">
+<li>Για το πολυώνυμο <span class="math inline">\(P(x) = 2x^3 + 2x^2 - 5x + 7\)</span>, να αποδείξετε ότι</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(2P(-2)=3P(1)\)</span></p></li>
+<li><p><span class="math inline">\(P(4)=-(10P(-3)-7)\)</span></p></li>
+<li><p><span class="math inline">\(P(2)=-\dfrac{3}{2}P(-3)\)</span></p></li>
+<li><p><strong>Για <span class="math inline">\(x = -2\)</span>:</strong> <span class="math inline">\(P(-2) = 2(-2)^3 + 2(-2)^2 - 5(-2) + 7\)</span> <span class="math inline">\(P(-2) = 2(-8) + 2(4) + 10 + 7\)</span> = ……………..</p></li>
+<li><p><strong>Για <span class="math inline">\(x = 2\)</span>:</strong> <span class="math inline">\(P(2) = 2(2)^3 + 2(2)^2 - 5(2) + 7\)</span> = …………………</p></li>
+<li><p><strong>Για <span class="math inline">\(x = 1\)</span>:</strong> <span class="math inline">\(P(1) = 2(1)^3 + 2(1)^2 - 5(1) + 7\)</span> = ………………..</p></li>
+<li><p><strong>Για <span class="math inline">\(x = -3\)</span>:</strong> <span class="math inline">\(P(-3) = 2(-3)^3 + 2(-3)^2 - 5(-3) + 7\)</span> = ……………..</p></li>
+<li><p><strong>Για <span class="math inline">\(x = 4\)</span>:</strong> <span class="math inline">\(P(4) = 2(4)^3 + 2(4)^2 - 5(4) + 7\)</span> = …………………</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σημειώνεται ότι κατά τους υπολογισμούς ακολουθείται η <strong>προτεραιότητα των πράξεων</strong>, όπου προηγούνται οι δυνάμεις, ακολουθούν οι πολλαπλασιασμοί και τέλος οι προσθέσεις και οι αφαιρέσεις.</p>
+<p><strong>Σημείωση:</strong> Κατά την αντικατάσταση τιμών, είναι σημαντικό να χρησιμοποιούνται <strong>παρενθέσεις</strong> για τους αρνητικούς αριθμούς, ώστε να αποφεύγονται λάθη στα πρόσημα.</p>
+</div>
+</div>
+<ol start="7" type="1">
+<li><p>Να εκτελέσετε τις πράξεις στην παράσταση: <span class="math inline">\((8x^3 -2 x^2) - (x^3 - 5x^2 + 6x - 7)\)</span>.<br>
+</p></li>
+<li><p>Να απλοποιήσετε την παράσταση: <span class="math inline">\(-3x^2y - (2xy^2 - yx^2) + (3xy^2 - xy^3)\)</span>.<br>
+</p></li>
+<li><p>Να βρείτε το αποτέλεσμα της αφαίρεσης: <span class="math inline">\((4\alpha^2 - 3\alpha\beta) - (\beta^2 + 4\alpha\beta) - (\alpha^2 + \beta^2)\)</span>.<br>
+</p></li>
+<li><p>Να κάνετε τις πράξεις, προσέχοντας τις παρενθέσεις και τις αγκύλες: <span class="math inline">\(2κ^2 - [6κ - 3 - (κ^2 + 7κ)]\)</span>.<br>
+</p></li>
+<li><p>Να υπολογίσετε τη διαφορά των παρακάτω πολυωνύμων με κλασματικούς συντελεστές: <span class="math inline">\((\dfrac{1}{3}x^2 - \dfrac{3}{4}x + 1) - (\dfrac{1}{6}x + \dfrac{4}{3}x^2 - \dfrac{1}{3})\)</span>.<br>
+</p></li>
+<li><p>Να εκτελέσετε την πρόσθεση πολυωνύμων με δεκαδικούς συντελεστές: <span class="math inline">\((0,8λ^3 + 1,8λ^2) + (2,1λ^3 - 2,4λ^2 + 5)\)</span>.<br>
+</p></li>
+<li><p>Δίνονται τα πολυώνυμα <span class="math inline">\(A(z) = 5z^3 - 2z^2 + z - 8\)</span> και <span class="math inline">\(B(z) = -7z^3 + 3z - 2\)</span>. Να βρείτε το πολυώνυμο <span class="math inline">\(A(z) - B(z)\)</span>.<br>
+</p></li>
+<li><p>Με τα πολυώνυμα <span class="math inline">\(A(z)\)</span> και <span class="math inline">\(Β(z)\)</span> της προηγούμενης άσκησης και με το <span class="math inline">\(\Gamma(z) = 6z^2 - 5z + 8\)</span>, να υπολογίσετε το <span class="math inline">\(A(z) + \Gamma(z)\)</span> και το <span class="math inline">\(2Α(z)+Β(z)-2Γ(z)\)</span>.<br>
+</p></li>
+<li><p>Να βρείτε το πολυώνυμο που προκύπτει από την πράξη: <span class="math inline">\(\Gamma(Z) - [A(Z) + 2B(z)]\)</span>, χρησιμοποιώντας τα <span class="math inline">\(A, B, \Gamma\)</span> των ασκήσεων 13 και 14.<br>
+</p></li>
+<li><p>Αν το πολυώνυμο <span class="math inline">\(P(x) = (-7x^2 + 3x - 3) - (2x^2 - 4x + 7) + (5x^2 - x)\)</span> είναι ίσο με το <span class="math inline">\(Q(x) = \alpha x^2 + \beta x + \gamma\)</span>, να βρείτε τις τιμές των <span class="math inline">\(\alpha, \beta, \gamma\)</span>.</p></li>
+<li><p>Ποιο πολυώνυμο πρέπει να προσθέσουμε στο <span class="math inline">\(2x^2 + 5x + 7\)</span> για να βρούμε ως άθροισμα το <span class="math inline">\(8x^2 + 4x - 5\)</span>;.<br>
+</p></li>
+<li><p>Μια ομάδα μπάσκετ έδωσε 9 αγώνες. Αν νίκησε σε <span class="math inline">\(x\)</span> αγώνες (2 βαθμοί ανά νίκη) και έχασε στους υπόλοιπους (1 βαθμός ανά ήττα), να δείξετε ότι η αλγεβρική παράσταση των συνολικών βαθμών της είναι το πολυώνυμο <span class="math inline">\(P = x + 9\)</span>.<br>
+</p></li>
+<li><p>Η επιφάνεια ενός σταδίου αποτελείται από ένα ορθογώνιο μήκους 80+x m και πλάτους <span class="math inline">\(2x\)</span> και δύο ημικυκλικούς δίσκους ακτίνας <span class="math inline">\(x\)</span> προσαρτημένους στο πλάτος του ορθογωνίου. Να βρείτε το πολυώνυμο που εκφράζει την περίμετρο <span class="math inline">\(Π\)</span> και το εμβαδόν του <span class="math inline">\(E\)</span>.<br>
+</p></li>
+<li><p>Ένα ορθογώνιο οικόπεδο έχει πλάτος <span class="math inline">\(x\)</span> και μήκος <span class="math inline">\(x + 5\)</span>. Αν το μήκος του ελαττωθεί κατά 3m και το πλάτος του κατά 1m, να αποδείξετε ότι το εμβαδόν του θα μειωθεί κατά το πολυώνυμο <span class="math inline">\(4x + 2\)</span> τετραγωνικά μέτρα.</p></li>
+<li><p>Να υπολογιστεί το άθροισμα των πολυωνύμων: <span class="math inline">\(P(x) = 3x^2 - 5x + 2\)</span> και <span class="math inline">\(Q(x) = -x^2 + 4x - 7\)</span>.</p></li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Γράφουμε το άθροισμα: <span class="math inline">\((3x^2 - 5x + 2) + (-x^2 + 4x - 7)\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Καταργούμε τις παρενθέσεις: <span class="math inline">\(3x^2 - 5x + 2 - x^2 + 4x - 7\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ομαδοποιούμε τους όμοιους όρους: <span class="math inline">\((3x^2 - x^2) + (-5x + 4x) + (2 - 7)\)</span>.</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Εκτελούμε τις πράξεις: <span class="math inline">\(2x^2 - x - 5\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="22" type="1">
+<li><p>Να υπολογιστεί η διαφορά των πολυωνύμων: <span class="math inline">\(P(x) = 4x^3 - 2x + 1\)</span> και <span class="math inline">\(Q(x) = x^3 + 5x - 3\)</span>.</p></li>
+<li><p>Να βρεθεί το αποτέλεσμα της πράξης: <span class="math inline">\((2x^2 + 3x - 5) + (x^2 - 3x + 5)\)</span>.</p></li>
+<li><p>Να υπολογιστεί η διαφορά: <span class="math inline">\((5x^2 - 4x + 8) - (2x^2 - 4x + 3)\)</span>.</p></li>
+<li><p>Να απλοποιηθεί η παράσταση: <span class="math inline">\((x^3 - 2x^2 + 1) + (-x^3 + 2x^2 - 1)\)</span>.</p></li>
+<li><p>Να βρεθεί το άθροισμα: <span class="math inline">\((7x^4 - 3x^2 + x) + (2x^2 - 4x - 5)\)</span>.</p></li>
+<li><p>Να αφαιρεθεί το πολυώνυμο <span class="math inline">\(Q(x) = 6x - 4\)</span> από το <span class="math inline">\(P(x) = 8x + 2\)</span>.</p></li>
+<li><p>Να υπολογιστεί το αποτέλεσμα της πράξης: <span class="math inline">\((10x^2 - 5x) - (3x^2 + 2x) + x^2\)</span>.</p></li>
+<li><p>Να βρεθεί το άθροισμα των πολυωνύμων: <span class="math inline">\(P(x) = x^3 + 1\)</span> και <span class="math inline">\(Q(x) = x^2 - 1\)</span>.</p></li>
+<li><p>Να εκτελεστεί η αφαίρεση: <span class="math inline">\((0.5x^2 + 1.2x) - (0.2x^2 - 0.8x)\)</span>.</p></li>
+<li><p>Το εμβαδόν ενός ορθογωνίου παραλληλογράμμου δίνεται από το πολυώνυμο <span class="math inline">\(A(x) = 5x^2 + 3x - 2\)</span>. Αν αφαιρέσουμε ένα τετράγωνο με εμβαδόν <span class="math inline">\(B(x) = 2x^2 - x + 1\)</span>, ποιο είναι το εναπομείναν εμβαδόν;</p></li>
+<li><p>Ένας έμπορος έχει δύο αποθήκες με εμπορεύματα. Η ποσότητα των προϊόντων στην πρώτη αποθήκη εκφράζεται από το πολυώνυμο <span class="math inline">\(P(x) = 10x + 50\)</span> και στη δεύτερη από το <span class="math inline">\(Q(x) = 5x + 30\)</span>. Ποια είναι η συνολική ποσότητα των προϊόντων στις δύο αποθήκες;</p></li>
+<li><p>Ένα δρομέας τρέχει σε μια διαδρομή. Την πρώτη ώρα καλύπτει <span class="math inline">\(D_1(t) = 3t^2 + 2t\)</span> χιλιόμετρα και τη δεύτερη ώρα καλύπτει <span class="math inline">\(D_2(t) = 2t^2 - t\)</span> χιλιόμετρα. Πόση είναι η συνολική απόσταση που διένυσε ο δρομέας;</p></li>
+<li><p>Το συνολικό κέρδος μιας εταιρείας είναι <span class="math inline">\(K(x) = 20x^2 + 500x\)</span>. Τα έξοδα της εταιρείας είναι <span class="math inline">\(E(x) = 15x^2 + 200x\)</span>. Ποιο είναι το καθαρό κέρδος (Κέρδος - Έξοδα);</p></li>
+<li><p>Δύο πολυώνυμα έχουν άθροισμα <span class="math inline">\(S(x) = 6x^2 - 4x + 10\)</span>. Αν το ένα πολυώνυμο είναι <span class="math inline">\(P(x) = 2x^2 + x - 3\)</span>, ποιο είναι το άλλο πολυώνυμο <span class="math inline">\(Q(x)\)</span>;</p></li>
+<li><p>Να υπολογιστεί το άθροισμα των πολυωνύμων δύο μεταβλητών: <span class="math inline">\(P(x, y) = 3x^2y - 5xy^2 + 2\)</span> και <span class="math inline">\(Q(x, y) = -x^2y + 4xy^2 - 7\)</span>.</p></li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Γράφουμε το άθροισμα: <span class="math inline">\((3x^2y - 5xy^2 + 2) + (-x^2y + 4xy^2 - 7)\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Καταργούμε τις παρενθέσεις: <span class="math inline">\(3x^2y - 5xy^2 + 2 - x^2y + 4xy^2 - 7\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ομαδοποιούμε τους όμοιους όρους (ίδιο μέρος μεταβλητών): <span class="math inline">\((3x^2y - x^2y) + (-5xy^2 + 4xy^2) + (2 - 7)\)</span>.</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Εκτελούμε τις πράξεις στους συντελεστές: <span class="math inline">\((3-1)x^2y + (-5+4)xy^2 - 5 = 2x^2y - xy^2 - 5\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="37" type="1">
+<li><p>Να υπολογιστεί η διαφορά των πολυωνύμων: <span class="math inline">\(P(x, y, z) = 4xy + 3z - 2\)</span> και <span class="math inline">\(Q(x, y, z) = xy - z + 5\)</span>.</p></li>
+<li><p>Να βρεθεί το αποτέλεσμα της πράξης: <span class="math inline">\((x^2 - 2xy + y^2) + (3x^2 + 5xy - 2y^2)\)</span>.</p></li>
+<li><p>Να υπολογιστεί η διαφορά: <span class="math inline">\((10aβ^2 - 3a^2β + 5) - (2aβ^2 + 4a^2β - 1)\)</span>.</p></li>
+<li><p>Να απλοποιηθεί η παράσταση: <span class="math inline">\((x^2 + y^2 - z^2) - (x^2 - y^2 + z^2) + (2y^2 - 2z^2)\)</span>.</p></li>
+<li><p>Το εμβαδόν της βάσης ενός ορθογωνίου παραλληλεπιπέδου είναι <span class="math inline">\(E_1 = 3xy + 2x\)</span> και η επιφάνεια του καλύμματος είναι <span class="math inline">\(E_2 = xy + 5x\)</span>. Ποιο είναι το άθροισμα των δύο επιφανειών;</p></li>
+<li><p>Η περίμετρος ενός ορθογωνίου με πλευρές <span class="math inline">\(x+y\)</span> και <span class="math inline">\(x-y\)</span> είναι <span class="math inline">\(P_1\)</span>. Αν προσθέσουμε ένα άλλο ορθώνιο με πλευρές <span class="math inline">\(2x\)</span> και <span class="math inline">\(3y\)</span>, ποια είναι η συνολική περίμετρος; (Σημείωση: Περίμετρος ορθογωνίου = <span class="math inline">\(2 \cdot (\text{μήκος} + \text{πλάτος})\)</span>).</p></li>
+<li><p>Ένα πολυώνυμο <span class="math inline">\(P(x,y)\)</span> αντιπροσωπεύει το συνολικό κόστος υλικών: <span class="math inline">\(P(x, y) = 10x^2y + 5xy^2\)</span>. Αν αφαιρεθεί ένα μέρος του κόστους <span class="math inline">\(Q(x, y) = 3x^2y - 2xy^2\)</span>, ποιο είναι το εναπομείναν κόστος;</p></li>
+<li><p>Να βρεθεί το άθροισμα των πολυωνύμων: <span class="math inline">\(A = a^3 + β^3 + γ^3 - 3aβγ\)</span> και <span class="math inline">\(B = -a^3 - β^3 - γ^3 + 5aβγ\)</span>.</p></li>
+<li><p>Να υπολογιστεί η παράσταση: <span class="math inline">\((x^2y - xy^2 + x) - (x^2y + xy^2 - x) + (2xy^2)\)</span>.</p></li>
+</ol>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: ##d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -748,12 +1114,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
