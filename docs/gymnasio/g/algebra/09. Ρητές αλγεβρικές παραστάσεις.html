@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>09. Ρητές αλγεβρικές παραστάσεις – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,28 +58,71 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-galgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -86,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -138,17 +182,51 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html">09. Ρητές αλγεβρικές παραστάσεις</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html">09. Ρητές αλγεβρικές παραστάσεις</a></li></ol></nav>
+      <h1 class="title">09. Ρητές αλγεβρικές παραστάσεις</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">20 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">27 Μάιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -169,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -178,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -187,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -412,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -483,7 +561,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -602,7 +680,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -645,7 +723,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -658,9 +736,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -715,7 +793,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
   </div>
 </li>
@@ -730,33 +808,181 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ρητές-αλγεβρικές-παραστάσεις" id="toc-ρητές-αλγεβρικές-παραστάσεις" class="nav-link active" data-scroll-target="#ρητές-αλγεβρικές-παραστάσεις"><span class="header-section-number">1</span> Ρητές αλγεβρικές παραστάσεις</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία" id="toc-θεωρία" class="nav-link" data-scroll-target="#θεωρία"><span class="header-section-number">1.1</span> Θεωρία</a></li>
+  <li><a href="#παραδείγματα-απλοποίησης" id="toc-παραδείγματα-απλοποίησης" class="nav-link" data-scroll-target="#παραδείγματα-απλοποίησης"><span class="header-section-number">1.2</span> Παραδείγματα Απλοποίησης</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ρητές-αλγεβρικές-παραστάσεις" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ρητές-αλγεβρικές-παραστάσεις"><span class="header-section-number">1</span> Ρητές αλγεβρικές παραστάσεις</h2>
+<section id="θεωρία" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία"><span class="header-section-number">1.1</span> Θεωρία</h3>
+<p>Μια <strong>ρητή αλγεβρική παράσταση</strong> (ή ρητό αλγεβρικό κλάσμα) ορίζεται ως κάθε κλάσμα του οποίου και οι δύο όροι (αριθμητής και παρονομαστής) είναι ακέραια πολυώνυμα.</p>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>1. Περιορισμοί μεταβλητών:</strong> Στις ρητές παραστάσεις, οι μεταβλητές (τα γράμματα) δεν μπορούν να πάρουν οποιαδήποτε τιμή.</p>
+<p><strong>Ο παρονομαστής ενός κλάσματος δεν επιτρέπεται να είναι μηδέν</strong>, καθώς τότε η παράσταση δεν έχει νόημα πραγματικού αριθμού.</p>
+<p>Επομένως, όταν γράφουμε μια ρητή παράσταση, υποθέτουμε πάντα ότι οι μεταβλητές παίρνουν τιμές τέτοιες ώστε ο παρονομαστής να παραμένει διάφορος του μηδενός.</p>
+<p><strong>2. Διαδικασία Απλοποίησης:</strong> Η απλοποίηση μιας ρητής παράστασης αποσκοπεί στη μετατροπή της σε μια πιο απλή μορφή, διαιρώντας και τους δύο όρους της με το ίδιο πολυώνυμο. Η διαδικασία περιλαμβάνει δύο βασικά βήματα:<br>
+* <strong>Ανάλυση σε γινόμενο:</strong> Αναλύουμε τόσο τον αριθμητή όσο και τον παρονομαστή σε γινόμενα παραγόντων (παραγοντοποίηση).<br>
+* <strong>Διαγραφή κοινών παραγόντων:</strong> Διαγράφουμε τους κοινούς παράγοντες που εμφανίζονται και στους δύο όρους. Αυτή η ενέργεια ισοδυναμεί με τη διαίρεση των όρων του κλάσματος με τον Μέγιστο Κοινό Διαιρέτη (Μ.Κ.Δ.) τους.</p>
 </div>
+<hr>
+</section>
+<section id="παραδείγματα-απλοποίησης" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα-απλοποίησης"><span class="header-section-number">1.2</span> Παραδείγματα Απλοποίησης</h3>
+<p><strong>Παράδειγμα 1 (με μονώνυμα):</strong> Έστω η παράσταση: <span class="math display">\[\frac{4\alpha x^{2}y}{6\alpha^{3}x^{2}}\]</span> Διαιρούμε και τους δύο όρους με το μονώνυμο <span class="math inline">\(2\alpha x^{2}\)</span> (που είναι ο κοινός τους παράγοντας) και προκύπτει:(Στην πραγματικότητα εφαρμόζουμε τις ιδιότητες των δυνάμεων για κάθε μεταβλητή και απλοποιούμε τους συντελεστές <span class="math inline">\(\dfrac{α}{α^3}=\dfrac{1}{α^2}\)</span>, <span class="math inline">\(\dfrac{x^2}{x^2}=1\)</span>) <span class="math display">\[\frac{2y}{3\alpha^{2}}\]</span> όπου υποθέτουμε ότι οι μεταβλητές δεν μηδενίζουν τον αρχικό παρονομαστή.</p>
+<p><strong>Παράδειγμα 2 (με πολυώνυμα):</strong> Έστω η παράσταση: <span class="math display">\[\frac{x^{2}+2xy+y^{2}}{x^{2}+xy}\]</span><br>
+</p>
+<p>* Παραγοντοποιούμε τον αριθμητή (ως ανάπτυγμα τετραγώνου): <span class="math inline">\(x^{2}+2xy+y^{2} = (x+y)^{2}\)</span>.<br>
+</p>
+<p>* Παραγοντοποιούμε τον παρονομαστή (βγάζοντας κοινό παράγοντα): <span class="math inline">\(x^{2}+xy = x(x+y)\)</span>.</p>
+<p>* Το κλάσμα γίνεται: <span class="math inline">\(\dfrac{(x+y)^{2}}{x(x+y)}\)</span><br>
+</p>
+<p>* Διαγράφουμε τον κοινό παράγοντα <span class="math inline">\((x+y)\)</span> και έχουμε το τελικό αποτέλεσμα <span class="math display">\[\require{cancel}\dfrac{(x+y)^{\cancel{2}}}{x \cancel{(x+y)}}=\]</span> : <span class="math display">\[\frac{x+y}{x}\]</span>.</p>
+<p><strong>Παράδειγμα 3 (με τριώνυμο):</strong> Έστω η παράσταση: <span class="math display">\[\dfrac{x^{2}-4}{x^{2}+5x+6}\]</span><br>
+</p>
+<ul>
+<li>Παραγοντοποιούμε τον αριθμητή (διαφορά τετραγώνων): <span class="math inline">\(x^{2}-4 = (x+2)(x-2)\)</span>.</li>
+</ul>
+<p>* Παραγοντοποιούμε τον παρονομαστή (ανάλυση τριωνύμου): <span class="math inline">\(x^{2}+5x+6 = (x+2)(x+3)\)</span>.</p>
+<p>* Η παράσταση γίνεται: <span class="math inline">\(\dfrac{(x+2)(x-2)}{(x+2)(x+3)}\)</span><br>
+</p>
+<ul>
+<li>Διαγράφουμε τον κοινό παράγοντα <span class="math inline">\((x+2)\)</span> <span class="math display">\[\dfrac{\cancel{(x+2)}(x-2)}{\cancel{(x+2)}(x+3)}\]</span> και προκύπτει: <span class="math display">\[\frac{x-2}{x+3}\]</span> για <span class="math inline">\(x \neq -2\)</span> και <span class="math inline">\(x \neq -3\)</span>.</li>
+</ul>
+<p><strong>Σημείωση:</strong> Είναι σημαντικό να γίνεται απλοποίηση των ρητών κλασμάτων πριν από την εκτέλεση οποιασδήποτε πράξης (πρόσθεση, πολλαπλασιασμός κ.λπ.), καθώς και στο τελικό αποτέλεσμα των πράξεων αυτών.</p>
+<hr>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<p>Α. Να βρείτε για ποιες τιμές των μεταβλητών ορίζουνται οι παρακάτω ρητές αλγεβρικές παραστάσεις.</p>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{5}{2x-6}\)</span>.</li>
+<li><span class="math inline">\(\dfrac{7x+1}{2x^{2}-3}\)</span></li>
+<li><span class="math inline">\(\dfrac{2x^{2}+3}{x^{2}-4x+4}\)</span>.</li>
+<li><span class="math inline">\(\dfrac{3x-1}{x^{2}-7x+10}\)</span>.</li>
+<li><span class="math inline">\(\dfrac{-3}{x^{3}-4x}\)</span>.</li>
+</ol>
+<ol start="2" type="A">
+<li>Να κάνετε απλοποίηση των παρακάτω ρητών αλγεβρικών παραστάσεων.</li>
+</ol>
+<ol type="1">
+<li><p>Μορφή: Μονώνυμο / Μονώνυμο<br>
+Στις περιπτώσεις αυτές, η απλοποίηση γίνεται με τη διαίρεση των συντελεστών και την εφαρμογή των ιδιοτήτων των δυνάμεων στους εγγράμματους όρους.</p>
+<ol type="1">
+<li><p><span class="math inline">\(\dfrac{6x^{2}}{9x}\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{6\alpha^{2}\beta}{2\alpha^{3}\beta\gamma}\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{-12\alpha^{4}x^{2}y}{-15\alpha^{4}y^{2}}\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{27\alpha^{3}\beta^{2}\omega\psi}{18\alpha^{3}\beta~\omega^{2}\psi^{3}}\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{4\alpha x^{2}y}{6\alpha^{3}x^{2}}\)</span></p></li>
+</ol></li>
+<li><p>Μορφή: Πολυώνυμο / Μονώνυμο<br>
+Για την απλοποίηση, διαιρούμε κάθε όρο του πολυωνύμου στον αριθμητή με το μονώνυμο του παρονομαστή.</p>
+<ol start="6" type="1">
+<li><span class="math inline">\(\dfrac{12x^{5}-6x^{4}-3x^{3}}{-3x^{3}}\)</span></li>
+<li><span class="math inline">\(\dfrac{10x^{2}y^{2}+15x^{5}y^{2}+20x^{3}y^{4}}{-5x^{2}y^{2}}\)</span></li>
+<li><span class="math inline">\(\dfrac{2x^{3}y^{2}-6x^{2}y^{3}+3x^{2}y^{2}}{3x^{2}y^{2}}\)</span></li>
+<li><span class="math inline">\(\dfrac{\alpha^{2}\beta^{3}x-3\alpha^{3}\beta^{2}x+\alpha^{2}\beta x}{-\alpha^{2}\beta x}\)</span></li>
+<li><span class="math inline">\(\dfrac{20x^{4}-16x^{3}-7x^{2}}{-2x^{2}}\)</span></li>
+</ol></li>
+<li><p>Μορφή: Πολυώνυμο / Πολυώνυμο (Απλές μορφές)<br>
+Εδώ απαιτείται η εξαγωγή κοινού παράγοντα τόσο στον αριθμητή όσο και στον παρονομαστή πριν τη διαγραφή τους.</p>
+<ol start="11" type="1">
+<li><span class="math inline">\(\dfrac{3\alpha-3\beta}{4\alpha-4\beta}\)</span></li>
+<li><span class="math inline">\(\dfrac{4x^{2}-xy}{12xy-3y^{2}}\)</span></li>
+<li><span class="math inline">\(\dfrac{x^{2}+x}{x^{3}-x}\)</span></li>
+<li><span class="math inline">\(\dfrac{x^{2}+xy}{x^{2}+2xy+y^{2}}\)</span></li>
+<li><span class="math inline">\(\dfrac{3x^{2}+3x}{2x^{3}-2x}\)</span></li>
+</ol></li>
+<li><p>Μορφή: Πολυώνυμα / Πολυώνυμα (Σύνθετες μορφές)<br>
+Αυτές οι ασκήσεις απαιτούν συνδυασμό μεθόδων παραγοντοποίησης, όπως χρήση ταυτοτήτων (διαφορά τετραγώνων, ανάπτυγμα τετραγώνου), ομαδοποίηση όρων ή ανάλυση τριωνύμου.</p>
+<ol start="16" type="1">
+<li><span class="math inline">\(\dfrac{x^{2}-9}{x^{2}-4x+3}\)</span></li>
+<li><span class="math inline">\(\dfrac{(3x-2y)^{2}}{4y^{2}-9x^{2}}\)</span></li>
+<li><span class="math inline">\(\dfrac{x^{3}+2x^{2}-2-x}{x^{2}+3x+2}\)</span></li>
+<li><span class="math inline">\(\dfrac{x^{2}-6x+9}{x^{2}-4x+3}\)</span></li>
+<li><span class="math inline">\(\dfrac{(\alpha\beta-1)^{2}-(\alpha+1)^{2}}{\alpha\beta+\alpha+\beta+1}\)</span></li>
+</ol></li>
+</ol>
+<p><strong>Σημείωση:</strong> Κατά την επίλυση των παραπάνω ασκήσεων, θεωρούμε πάντα ότι οι μεταβλητές παίρνουν τιμές τέτοιες ώστε οι παρονομαστές να είναι διάφοροι του μηδενός.</p>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: ##d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -784,12 +1010,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
