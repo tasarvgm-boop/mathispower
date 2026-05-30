@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>14. Ανισότητες - Ανισώσεις με έναν άγνωστο – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-b6a8276bf55561bdbc268162d41bd1f7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-galgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.qmd">
+ <span class="dropdown-text">Α’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.qmd">
+ <span class="dropdown-text">Β’ Λυκείου</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.qmd">
+ <span class="dropdown-text">Γ’ Λυκείου</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</a></li></ol></nav>
+      <h1 class="title">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">20 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">1 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Φυσικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γενικά για τους Φυσικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Μέτρηση μεγεθών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Δεκαδικοί Αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Δεκαδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Μετατροπές Μονάδων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Μετατροπές Μονάδων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Ποσοστά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Ποσοστά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14.  Το γινόμενο των Αντιστρόφως Ανάλογων Ποσών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Αντιστρόφως Ανάλογα Ποσά - Γινόμενο-Πίνακας και Παράσταση με σημεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Θετικοί και αρνητικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Θετικοί και αρνητικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Οι ρητοί ως δεκαδικοί και περιοδικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Δυνάμεις ρητών αριθμών .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Δυνάμεις ρητών αριθμών</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση του μήκους-Απόσταση σημείων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση μήκους - Απόσταση σημείων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Παραλληλόγραμμο - Ορθογώνιο - Ρόμβος - Τετράγωνο - Τραπέζιο - Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων και προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων και προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07.  Η έννοια της συνάρτησης Γραφική παράσταση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια της συνάρτησης Γραφική παράσταση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Πρίσμα και κύλινδρος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Πρίσμα και κύλινδρος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Πυραμίδα και Κώνος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Πυραμίδα και Κώνος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Στατιστική</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/01. Πληθυσμός Δείγμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πληθυσμός - Δείγμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/02. Γραφικές παραστάσεις στην Στατιστική.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γραφικές παραστάσεις στην Στατιστική</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Κατανομή συχνοτήτων και σχετικών συχνοτήτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Γραφική παρουσίαση ομαδοποιημένων παρατηρήσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/statistiki/05. Μέση τιμή - Διάμεσος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέση τιμή - Διάμεσος</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γεωμετρία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ανισότητες---ανισώσεις-με-έναν-άγνωστο" id="toc-ανισότητες---ανισώσεις-με-έναν-άγνωστο" class="nav-link active" data-scroll-target="#ανισότητες---ανισώσεις-με-έναν-άγνωστο"><span class="header-section-number">1</span> Ανισότητες - Ανισώσεις με έναν άγνωστο</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία" id="toc-θεωρία" class="nav-link" data-scroll-target="#θεωρία"><span class="header-section-number">1.1</span> Θεωρία</a></li>
+  <li><a href="#ιδιότητες-των-ανισοτήτων" id="toc-ιδιότητες-των-ανισοτήτων" class="nav-link" data-scroll-target="#ιδιότητες-των-ανισοτήτων"><span class="header-section-number">1.3</span> 2. Ιδιότητες των Ανισοτήτων</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.4</span> 4. Παραδείγματα</a></li>
+  <li><a href="#ανισώσεις-πρώτου-βαθμού-μ-έναν-άγνωστο" id="toc-ανισώσεις-πρώτου-βαθμού-μ-έναν-άγνωστο" class="nav-link" data-scroll-target="#ανισώσεις-πρώτου-βαθμού-μ-έναν-άγνωστο"><span class="header-section-number">1.5</span> Ανισώσεις πρώτου βαθμού μ’ έναν άγνωστο</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ανισότητες---ανισώσεις-με-έναν-άγνωστο" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ανισότητες---ανισώσεις-με-έναν-άγνωστο"><span class="header-section-number">1</span> Ανισότητες - Ανισώσεις με έναν άγνωστο</h2>
+<section id="θεωρία" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία"><span class="header-section-number">1.1</span> Θεωρία</h3>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η έννοια της διάταξης στα μαθηματικά, αφορά τον τρόπο με τον οποίο συγκρίνουμε και ιεραρχούμε στοιχεία ενός συνόλου, είτε πρόκειται για αριθμούς είτε για άλλα αντικείμενα.</p>
+<section id="θεωρία-διάταξης-στους-πραγματικούς-αριθμούς-mathbbr" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="θεωρία-διάταξης-στους-πραγματικούς-αριθμούς-mathbbr"><span class="header-section-number">1.2</span> 1. Θεωρία Διάταξης στους Πραγματικούς Αριθμούς (<span class="math inline">\(\mathbb{R}\)</span>)</h3>
+<p>Στο σύνολο των πραγματικών αριθμών, η διάταξη ορίζεται με βάση τη διαφορά μεταξύ δύο αριθμών. Λέμε ότι ο πραγματικός αριθμός <span class="math inline">\(\alpha\)</span> είναι μεγαλύτερος από τον <span class="math inline">\(\beta\)</span> (<span class="math inline">\(\alpha &gt; \beta\)</span>), όταν η διαφορά <span class="math inline">\(\alpha - \beta\)</span> είναι θετικός αριθμός.</p>
+<ul>
+<li><strong>Γεωμετρική Ερμηνεία:</strong> Πάνω στον άξονα των πραγματικών αριθμών, αν <span class="math inline">\(\alpha &gt; \beta\)</span>, τότε το σημείο που αντιστοιχεί στον <span class="math inline">\(\alpha\)</span> βρίσκεται <strong>δεξιά</strong> από το σημείο που αντιστοιχεί στον <span class="math inline">\(\beta\)</span>.</li>
+</ul>
+<script type="text/tikz">
+\begin{tikzpicture}
+  \node (b) at (2,0)     [red,above]   {$\beta$};
+  \node (a) at ( 4,0)    [red,above]  {$\alpha$};
+  \draw [->] (-2,0) node [above] {x'} -- (6,0) node [above] {x};
+   \fill (2,0)    circle (1pt);
+  \fill (4,0) circle (1pt);
+ 
+  
+\end{tikzpicture}
+</script>
+<p><br>
+</p>
+<ul>
+<li><strong>Βασικές Παρατηρήσεις:</strong>
+<ul>
+<li>Κάθε θετικός αριθμός είναι μεγαλύτερος από το μηδέν (<span class="math inline">\(\alpha &gt; 0\)</span>) και κάθε αρνητικός μικρότερος από το μηδέν (<span class="math inline">\(\beta &lt; 0\)</span>).</li>
+</ul></li>
+</ul>
+<script type="text/tikz">
+\begin{tikzpicture}
+  \node (b) at (-2,0)     [brown,above]   {$\beta$};
+  \node (a) at ( 2,0)    [blue,above]  {$\alpha$};
+  \draw [->] (-4,0) [brown] node [above] {x'} -- (0,0) node [above] {0};
+  \draw [->] (0,0)  [blue]  -- (4,0) node [above] {x};
+   \fill (2,0)    circle (1pt);
+  \fill (4,0) circle (1pt);
+ 
+  
+\end{tikzpicture}
+</script>
+<p><br>
+* Κάθε θετικός αριθμός είναι μεγαλύτερος από οποιονδήποτε αρνητικό.</p>
+</section>
+</div>
+<p><br>
+<br>
+</p>
+</section>
+<section id="ιδιότητες-των-ανισοτήτων" class="level3" style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ιδιότητες-των-ανισοτήτων"><span class="header-section-number">1.3</span> 2. Ιδιότητες των Ανισοτήτων</h3>
+<section id="μεταβατική-ιδιότητα" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="μεταβατική-ιδιότητα"><span class="header-section-number">1.3.1</span> 1. Μεταβατική Ιδιότητα</h4>
+<p><strong>Πρόταση:</strong> Αν <span class="math inline">\(\alpha &gt; \beta\)</span> και <span class="math inline">\(\beta &gt; \gamma\)</span>, τότε <span class="math inline">\(\alpha &gt; \gamma\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>* Από την υπόθεση <span class="math inline">\(\alpha &gt; \beta \implies \alpha - \beta &gt; 0\)</span>.</p>
+<p>* Από την υπόθεση <span class="math inline">\(\beta &gt; \gamma \implies \beta - \gamma &gt; 0\)</span>.</p>
+<p>* Προσθέτοντας τις δύο θετικές διαφορές, το αποτέλεσμα είναι επίσης θετικό: <span class="math inline">\((\alpha - \beta) + (\beta - \gamma) &gt; 0 \implies \alpha - \gamma &gt; 0\)</span>.</p>
+<p>* Συνεπώς, <span class="math inline">\(\alpha &gt; \gamma\)</span>.</p>
+</section>
+<section id="ιδιότητα-της-πρόσθεσης" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="ιδιότητα-της-πρόσθεσης"><span class="header-section-number">1.3.2</span> 2. Ιδιότητα της Πρόσθεσης</h4>
+<p><strong>Πρόταση:</strong> <span class="math inline">\(\alpha &gt; \beta \iff \alpha + \gamma &gt; \beta + \gamma\)</span> για κάθε <span class="math inline">\(\gamma \in \mathbb{R}\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>* <span class="math inline">\(\alpha &gt; \beta \iff \alpha - \beta &gt; 0\)</span>.</p>
+<p>* Προσθέτουμε και αφαιρούμε το <span class="math inline">\(\gamma\)</span>: <span class="math inline">\(\alpha - \beta + \gamma + (-\gamma) &gt; 0\)</span>.</p>
+<p>* Αναδιατάσσουμε τους όρους: <span class="math inline">\((\alpha + \gamma) - (\beta + \gamma) &gt; 0\)</span>.</p>
+<p>* Αυτό σημαίνει ότι <span class="math inline">\(\alpha + \gamma &gt; \beta + \gamma\)</span>.</p>
+</section>
+<section id="πολλαπλασιασμός-με-θετικό-αριθμό" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="πολλαπλασιασμός-με-θετικό-αριθμό"><span class="header-section-number">1.3.3</span> 3. Πολλαπλασιασμός με Θετικό Αριθμό</h4>
+<p><strong>Πρόταση:</strong> Αν <span class="math inline">\(\alpha &gt; \beta\)</span> και <span class="math inline">\(\gamma &gt; 0\)</span>, τότε <span class="math inline">\(\alpha\gamma &gt; \beta\gamma\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>* Αφού <span class="math inline">\(\alpha &gt; \beta\)</span>, τότε <span class="math inline">\(\alpha - \beta &gt; 0\)</span>.</p>
+<p>* Επειδή τόσο το <span class="math inline">\((\alpha - \beta)\)</span> όσο και το <span class="math inline">\(\gamma\)</span> είναι θετικοί αριθμοί, το γινόμενό τους είναι επίσης θετικό: <span class="math inline">\((\alpha - \beta) \cdot \gamma &gt; 0\)</span>.</p>
+<p>* Εφαρμόζοντας την επιμεριστική ιδιότητα: <span class="math inline">\(\alpha\gamma - \beta\gamma &gt; 0\)</span>.</p>
+<p>* Άρα, <span class="math inline">\(\alpha\gamma &gt; \beta\gamma\)</span>.</p>
+</section>
+<section id="πολλαπλασιασμός-με-αρνητικό-αριθμό" class="level4" data-number="1.3.4">
+<h4 data-number="1.3.4" class="anchored" data-anchor-id="πολλαπλασιασμός-με-αρνητικό-αριθμό"><span class="header-section-number">1.3.4</span> 4. Πολλαπλασιασμός με Αρνητικό Αριθμό</h4>
+<p><strong>Πρόταση:</strong> Αν <span class="math inline">\(\alpha &gt; \beta\)</span> και <span class="math inline">\(\gamma &lt; 0\)</span>, τότε <span class="math inline">\(\alpha\gamma &lt; \beta\gamma\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>* Αφού <span class="math inline">\(\gamma &lt; 0\)</span>, τότε ο αντίθετός του είναι θετικός: <span class="math inline">\(-\gamma &gt; 0\)</span>.</p>
+<p>* Σύμφωνα με την προηγούμενη ιδιότητα (πολλαπλασιασμός με θετικό), έχουμε: <span class="math inline">\(\alpha(-\gamma) &gt; \beta(-\gamma) \implies -\alpha\gamma &gt; -\beta\gamma\)</span>.</p>
+<p>* Αυτό σημαίνει ότι <span class="math inline">\(-\alpha\gamma - (-\beta\gamma) &gt; 0 \implies -\alpha\gamma + \beta\gamma &gt; 0\)</span>.</p>
+<p>* Άρα <span class="math inline">\(\beta\gamma - \alpha\gamma &gt; 0\)</span>, που σημαίνει <span class="math inline">\(\beta\gamma &gt; \alpha\gamma\)</span> ή <span class="math inline">\(\alpha\gamma &lt; \beta\gamma\)</span>.</p>
+</section>
+<section id="πρόσθεση-κατά-μέλη" class="level4" data-number="1.3.5">
+<h4 data-number="1.3.5" class="anchored" data-anchor-id="πρόσθεση-κατά-μέλη"><span class="header-section-number">1.3.5</span> 5. Πρόσθεση κατά Μέλη</h4>
+<p><strong>Πρόταση:</strong> Αν <span class="math inline">\(\alpha &gt; \beta\)</span> και <span class="math inline">\(\gamma &gt; \delta\)</span>, τότε <span class="math inline">\(\alpha + \gamma &gt; \beta + \delta\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>* <span class="math inline">\(\alpha &gt; \beta \iff \alpha - \beta &gt; 0\)</span> και <span class="math inline">\(\gamma &gt; \delta \iff \gamma - \delta &gt; 0\)</span>.</p>
+<p>* Το άθροισμα δύο θετικών αριθμών είναι θετικό: <span class="math inline">\((\alpha - \beta) + (\gamma - \delta) &gt; 0\)</span>.</p>
+<p>* Αναδιατάσσοντας τους όρους προκύπτει: <span class="math inline">\((\alpha + \gamma) - (\beta + \delta) &gt; 0\)</span>.</p>
+<p>* Συνεπώς, <span class="math inline">\(\alpha + \gamma &gt; \beta + \delta\)</span>.</p>
+</section>
+<section id="αντίθετοι-αριθμοί" class="level4" data-number="1.3.6">
+<h4 data-number="1.3.6" class="anchored" data-anchor-id="αντίθετοι-αριθμοί"><span class="header-section-number">1.3.6</span> 6. Αντίθετοι Αριθμοί</h4>
+<p><strong>Πρόταση:</strong> <span class="math inline">\(\alpha &gt; \beta \iff -\alpha &lt; -\beta\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Η ιδιότητα αυτή προκύπτει άμεσα αν πολλαπλασιάσουμε τα μέλη της ανισότητας <span class="math inline">\(\alpha &gt; \beta\)</span> με τον αρνητικό αριθμό <span class="math inline">\(-1\)</span>.</p>
+<p>Η φορά της ανισότητας αλλάζει, δίνοντας <span class="math inline">\((-1)\alpha &lt; (-1)\beta\)</span>, δηλαδή <span class="math inline">\(-\alpha &lt; -\beta\)</span>.</p>
+</section>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.4</span> 4. Παραδείγματα</h3>
+<ul>
+<li><strong>Παράδειγμα Σύγκρισης:</strong> <span class="math inline">\(\sqrt{2} &gt; 1\)</span> επειδή η διαφορά <span class="math inline">\(\sqrt{2} - 1 \approx 1,414 - 1 = 0,414\)</span>, που είναι θετικός αριθμός.</li>
+<li><strong>Παράδειγμα Πολλαπλασιασμού:</strong> Έστω η ανισότητα <span class="math inline">\(5 &gt; -2\)</span>.
+<ul>
+<li>Πολλαπλασιάζοντας με το <span class="math inline">\(3\)</span>: <span class="math inline">\(15 &gt; -6\)</span> (η φορά μένει ίδια).</li>
+<li>Πολλαπλασιάζοντας με το <span class="math inline">\(-3\)</span>: <span class="math inline">\(-15 &lt; 6\)</span> (η φορά αλλάζει).</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="ανισώσεις-πρώτου-βαθμού-μ-έναν-άγνωστο" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ανισώσεις-πρώτου-βαθμού-μ-έναν-άγνωστο"><span class="header-section-number">1.5</span> Ανισώσεις πρώτου βαθμού μ’ έναν άγνωστο</h3>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Μια <strong>ανίσωση πρώτου βαθμού με έναν άγνωστο</strong> είναι κάθε παράσταση που μπορεί να πάρει τη μορφή <span class="math inline">\(\alpha x + \beta &gt; 0\)</span> ή <span class="math inline">\(\alpha x + \beta &lt; 0\)</span>, όπου <span class="math inline">\(\alpha, \beta\)</span> είναι γνωστοί πραγματικοί αριθμοί και <span class="math inline">\(x\)</span> ο άγνωστος πραγματικός αριθμός.</p>
+<section id="θεωρία-και-κανόνες-επίλυσης" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="θεωρία-και-κανόνες-επίλυσης"><span class="header-section-number">1.5.1</span> 1. Θεωρία και Κανόνες Επίλυσης</h4>
+<p>Η επίλυση μιας ανίσωσης συνίσταται στον προσδιορισμό όλων των τιμών του αγνώστου (σύνολο λύσεων) που την επαληθεύουν. Η διαδικασία βασίζεται στη μετατροπή της αρχικής ανίσωσης σε διαδοχικές ισοδύναμες ανισώσεις, μέχρι να φτάσουμε σε μια απλή μορφή όπως <span class="math inline">\(x &gt; \alpha\)</span> ή <span class="math inline">\(x &lt; \alpha\)</span>.</p>
+<p>Οι βασικοί κανόνες που επιτρέπουν αυτούς τους μετασχηματισμούς είναι (όπως ήδη αναφέραμε):</p>
+<p>* <strong>Μεταφορά όρων:</strong> Μπορούμε να μεταφέρουμε έναν όρο από το ένα μέλος στο άλλο αλλάζοντας το πρόσημό του.</p>
+<p>* <strong>Πολλαπλασιασμός/Διαίρεση με θετικό αριθμό:</strong> Αν πολλαπλασιάσουμε ή διαιρέσουμε και τα δύο μέλη με τον ίδιο <strong>θετικό</strong> αριθμό, η φορά της ανίσωσης <strong>διατηρείται</strong>.</p>
+<p>* <strong>Πολλαπλασιασμός/Διαίρεση με αρνητικό αριθμό:</strong> Αν πολλαπλασιάσουμε ή διαιρέσουμε και τα δύο μέλη με τον ίδιο <strong>αρνητικό</strong> αριθμό, η φορά της ανίσωσης <strong>πρέπει να αλλάξει</strong> (το <span class="math inline">\(&gt;\)</span> γίνεται <span class="math inline">\(&lt;\)</span> και αντίστροφα).</p>
+<p>* <strong>Απαλοιφή παρονομαστών:</strong> Πολλαπλασιάζουμε όλους τους όρους με το Ελάχιστο Κοινό Πολλαπλάσιο (Ε.Κ.Π.) των παρονομαστών.</p>
+</section>
+<section id="βήματα-επίλυσης" class="level4" data-number="1.5.2">
+<h4 data-number="1.5.2" class="anchored" data-anchor-id="βήματα-επίλυσης"><span class="header-section-number">1.5.2</span> 2. Βήματα Επίλυσης</h4>
+<ol type="1">
+<li>Εκτέλεση πράξεων για την απαλοιφή παρονομαστών και παρενθέσεων.</li>
+<li>Χωρισμός γνωστών όρων από αγνώστους.</li>
+<li>Αναγωγή ομοίων όρων ώστε η ανίσωση να πάρει τη μορφή <span class="math inline">\(\alpha x &gt; \gamma\)</span> ή <span class="math inline">\(\alpha x &lt; \gamma\)</span>.</li>
+<li>Διαίρεση με τον συντελεστή του αγνώστου (προσοχή στη φορά αν ο συντελεστής είναι αρνητικός).</li>
+</ol>
+</section>
+</div>
+<section id="παραδείγματα-1" class="level4" data-number="1.5.3">
+<h4 data-number="1.5.3" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.5.3</span> 3. Παραδείγματα</h4>
+<p><strong>Παράδειγμα 1 (Απλή ανίσωση):</strong> Να λυθεί η ανίσωση <span class="math inline">\(3x - 5 &gt; 0\)</span>.</p>
+<ul>
+<li><span class="math inline">\(3x - 5 &gt; 0 \Leftrightarrow 3x &gt; 5 \Leftrightarrow x &gt; \dfrac{5}{3}\)</span>. Η λύση περιλαμβάνει όλους τους πραγματικούς αριθμούς που είναι μεγαλύτεροι από το <span class="math inline">\(5/3\)</span>.</li>
+</ul>
+<p><strong>Παράδειγμα 2 (Με αρνητικό συντελεστή):</strong></p>
+<p>Να λυθεί η ανίσωση <span class="math inline">\(-4x + 3 &lt; 5\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(-4x &lt; 5 - 3 \Leftrightarrow -4x &lt; 2\)</span></p></li>
+<li><p>Διαιρούμε με το <span class="math inline">\(-4\)</span> και αλλάζουμε τη φορά: <span class="math inline">\(x &gt; \dfrac{2}{-4} \Leftrightarrow x &gt; -\dfrac{1}{2}\)</span>.</p></li>
+</ul>
+<p><strong>Παράδειγμα 3 (Με κλάσματα):</strong></p>
+<p>Να λυθεί η ανίσωση <span class="math inline">\(\dfrac{7x}{3} - \dfrac{3x+4}{4} \ge x + \dfrac{5}{2}\)</span>.</p>
+<ul>
+<li><p>Πολλαπλασιάζουμε με το Ε.Κ.Π.(3, 4, 2) = 12:</p>
+<p><span class="math inline">\(12 \cdot \dfrac{7x}{3} - 12 \cdot \dfrac{3x+4}{4} \ge 12x + 12 \cdot \dfrac{5}{2}\)</span></p></li>
+<li><p><span class="math inline">\(4(7x) - 3(3x+4) \ge 12x + 6 \cdot 5\)</span></p></li>
+<li><p><span class="math inline">\(28x - 9x - 12 \ge 12x + 30\)</span></p></li>
+<li><p><span class="math inline">\(19x - 12 \ge 12x + 30 \Leftrightarrow 7x \ge 42 \Leftrightarrow x \ge 6\)</span>.</p></li>
+</ul>
+<p><strong>Παράδειγμα 4 που καταλήγει σε</strong> <span class="math inline">\(x &lt; α\)</span></p>
+<p>Να λυθεί η ανίσωση: <span class="math display">\[\dfrac{x-3}{2} + \dfrac{x-1}{3} &gt; \dfrac{2x-2}{4} + \dfrac{3x+4}{3}\]</span></p>
+<p><strong>Βήματα επίλυσης:</strong> 1. Πολλαπλασιάζουμε όλα τα μέλη με το Ε.Κ.Π. των παρονομαστών (12) για να τους απαλείψουμε: <span class="math display">\[6(x-3) + 4(x-1) &gt; 3(2x-2) + 4(3x+4)\]</span> 2. Εκτελούμε τις πράξεις: <span class="math display">\[6x - 18 + 4x - 4 &gt; 6x - 6 + 12x + 16\]</span> 3. Χωρίζουμε γνωστούς από αγνώστους και κάνουμε αναγωγή ομοίων όρων: <span class="math display">\[6x + 4x - 6x - 12x &gt; 18 + 4 - 6 + 16\]</span> <span class="math display">\[-8x &gt; 32\]</span> 4. Διαιρούμε με τον συντελεστή του <span class="math inline">\(x\)</span> (-8). Επειδή ο αριθμός είναι αρνητικός, η φορά αλλάζει από <span class="math inline">\(&gt;\)</span> σε <span class="math inline">\(&lt;\)</span>: <span class="math display">\[x &lt; \frac{32}{-8} \implies \mathbf{x &lt; -4}\]</span></p>
+<hr>
+<p><strong>Παράδειγμα 5 που καταλήγει σε</strong> <span class="math inline">\(x \le a\)</span></p>
+<p>Έστω η ανίσωση: <span class="math display">\[\frac{x-5}{2} \le \frac{2x-7}{4} - \frac{x+1}{9}\]</span></p>
+<p><strong>Βήματα επίλυσης:</strong> 1. Βρίσκουμε το Ε.Κ.Π. των παρονομαστών (36) και πολλαπλασιάζουμε όλους τους όρους: <span class="math display">\[18(x-5) \le 9(2x-7) - 4(x+1)\]</span> 2. Εκτελούμε τις πράξεις: <span class="math display">\[18x - 90 \le 18x - 63 - 4x - 4\]</span> 3. Μεταφέρουμε τους αγνώστους στο πρώτο μέλος: <span class="math display">\[18x - 18x + 4x \le 90 - 63 - 4\]</span> 4. Κάνουμε την αναγωγή: <span class="math display">\[4x \le 23\]</span> 5. Διαιρούμε με το 4 (θετικός αριθμός, η φορά παραμένει ίδια): <span class="math display">\[\mathbf{x \le \frac{23}{4}} \quad (\text{ή } x \le 5,75)\]</span></p>
+<ul>
+<li><p><strong>Παράδειγμα 6 αδύνατη με το σύμβολο του μεγαλύτερου (&gt;) :</strong> <span class="math display">\[\frac{x+2}{2} - \frac{x-4}{2} &gt; 5\]</span> Πολλαπλασιάζοντας με το Ε.Κ.Π. (2), έχουμε: <span class="math display">\[x + 2 - (x - 4) &gt; 10 \implies x + 2 - x + 4 &gt; 10 \implies 0x + 6 &gt; 10 \implies \mathbf{0x &gt; 4}\]</span> Επειδή το <span class="math inline">\(0\)</span> δεν είναι ποτέ μεγαλύτερο του <span class="math inline">\(4\)</span>, η ανίσωση δεν έχει λύση.</p></li>
+<li><p><strong>Παράδειγμα 7 αδύνατη με το σύμβολο του μικρότερου (&lt;) :</strong> <span class="math display">\[\frac{x+8}{4} - \frac{x+2}{4} &lt; 1\]</span> Πολλαπλασιάζοντας με το 4, έχουμε: <span class="math display">\[x + 8 - (x + 2) &lt; 4 \implies x + 8 - x - 2 &lt; 4 \implies 0x + 6 &lt; 4 \implies \mathbf{0x &lt; -2}\]</span> Καθώς το <span class="math inline">\(0\)</span> δεν είναι μικρότερο από έναν αρνητικό αριθμό, η ανίσωση είναι αδύνατη.</p></li>
+<li><p><strong>Παράδειγμα 8 ταυτότητα με το σύμβολο του μεγαλύτερου (&gt;) :</strong> <span class="math display">\[\frac{x+2}{3} - \frac{2x+1}{2} &gt; \frac{2x-3}{6} - x\]</span> Πολλαπλασιάζοντας με το Ε.Κ.Π. (6), προκύπτει: <span class="math display">\[2(x + 2) - 3(2x + 1) &gt; 2x - 3 - 6x \implies 2x + 4 - 6x - 3 &gt; -4x - 3 \implies -4x + 1 &gt; -4x - 3 \implies \mathbf{0x &gt; -4}\]</span> Η σχέση αυτή αληθεύει για κάθε πραγματικό αριθμό, αφού το <span class="math inline">\(0\)</span> είναι πάντα μεγαλύτερο από το <span class="math inline">\(-4\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 9 ταυτότητα με το σύμβολο του μικρότερου (&lt;) :</strong> <span class="math display">\[\frac{2x-1}{3} - \frac{x-3}{4} &lt; \frac{5x+2}{12} + 1\]</span> Πολλαπλασιάζοντας με το Ε.Κ.Π. (12), προκύπτει: <span class="math display">\[4(2x - 1) - 3(x - 3) &lt; 5x + 2 + 12 \implies 8x - 4 - 3x + 9 &lt; 5x + 14 \implies 5x + 5 &lt; 5x + 14 \implies \mathbf{0x &lt; 9}\]</span> Η ανίσωση αυτή είναι αόριστη και αληθεύει για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>, καθώς το <span class="math inline">\(0\)</span> είναι πάντα μικρότερο από το <span class="math inline">\(9\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 10: Απλές ανισώσεις με πραγματικούς αριθμούς</strong></p>
+<p>Να βρεθούν οι τιμές του <span class="math inline">\(x\)</span> για τις οποίες συναληθεύουν οι ανισώσεις:</p></li>
+</ul>
+<ol type="1">
+<li><span class="math inline">\(3x - 5 &lt; 0\)</span></li>
+<li><span class="math inline">\(4x + 3 &gt; 0\)</span></li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>Επιλύουμε την πρώτη: <span class="math inline">\(3x - 5 &lt; 0 \Leftrightarrow 3x &lt; 5 \Leftrightarrow x &lt; \dfrac{5}{3}\)</span>.</p>
+<p>Επιλύουμε τη δεύτερη: <span class="math inline">\(4x + 3 &gt; 0 \Leftrightarrow 4x &gt; -3 \Leftrightarrow x &gt; -\dfrac{3}{4}\)</span>.</p>
+<p>Σχεδιάζουμε τις λύσεις στον ίδιο άξονα πραγματικών αριθμών. Οι ανισώσεις συναληθεύουν για τις τιμές του <span class="math inline">\(x\)</span> που βρίσκονται μεταξύ του <span class="math inline">\(-\frac{3}{4}\)</span> και του <span class="math inline">\(\frac{5}{3}\)</span>.</p>
+<p><strong>Σύνολο κοινών λύσεων:</strong> <span class="math inline">\(-\dfrac{3}{4} &lt; x &lt; \dfrac{5}{3}\)</span>.</p>
+<p><strong>Παράδειγμα 11: Ανισώσεις που απαιτούν πράξεις</strong></p>
+<p>Να βρεθούν οι τιμές του <span class="math inline">\(x\)</span> για τις οποίες συναληθεύουν οι ανισώσεις:</p>
+<ol type="1">
+<li><span class="math inline">\(3x - 1 &lt; x + 5\)</span></li>
+<li><span class="math inline">\(2(x - 5) &gt; x - 15\)</span></li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>Λύνουμε την πρώτη: <span class="math inline">\(3x - x &lt; 5 + 1 \Leftrightarrow 2x &lt; 6 \Leftrightarrow \mathbf{x &lt; 3}\)</span>.</p>
+<p>Λύνουμε τη δεύτερη: <span class="math inline">\(2x - 10 &gt; x - 15 \Leftrightarrow 2x - x &gt; 10 - 15 \Leftrightarrow \mathbf{x &gt; -5}\)</span>.</p>
+<p>Οι τιμές που ικανοποιούν και τις δύο είναι εκείνες για τις οποίες ισχύει <span class="math inline">\(-5 &lt; x &lt; 3\)</span>.</p>
+<p><strong>Γενικός Κανόνας:</strong> Για να βρούμε πού συναληθεύουν δύο ανισώσεις, τις επιλύουμε χωριστά και στη συνέχεια τοποθετούμε τα αποτελέσματα σε έναν κοινό άξονα για να εντοπίσουμε το διάστημα όπου οι γραφικές παραστάσεις των λύσεων συμπίπτουν,.</p>
+</section>
+<section id="γραφική-παράσταση-λύσεων" class="level4" data-number="1.5.4">
+<h4 data-number="1.5.4" class="anchored" data-anchor-id="γραφική-παράσταση-λύσεων"><span class="header-section-number">1.5.4</span> 4. Γραφική Παράσταση Λύσεων</h4>
+<p>Οι λύσεις παριστάνονται πάνω στον άξονα των πραγματικών αριθμών. Χρησιμοποιούμε μια παχιά γραμμή ή βέλος για να δείξουμε το διάστημα των λύσεων.</p>
+<ul>
+<li><p>Αν η ανίσωση είναι <strong>αυστηρή</strong> (<span class="math inline">\(&gt; , &lt;\)</span>), το σημείο ορίου σημειώνεται με λευκή κουκίδα (κυκλάκι), υποδηλώνοντας ότι ο αριθμός αυτός δεν περιλαμβάνεται.</p></li>
+<li><p>Αν η ανίσωση είναι <strong>μη αυστηρή</strong> (<span class="math inline">\(\ge, \le\)</span>), το σημείο ορίου περιλαμβάνεται στις λύσεις.</p></li>
+</ul>
+<p><span style="color: green;"><em>Για το παράδειγμα 1</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-4,0) -- (8,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-3,...,8}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=white] (1.67,0) circle (2pt);
+    \node[below] at (1.67,0) {$\frac{5}{3}$};
+
+    
+    \draw[very thick,->] (1.67,0) -- (1.67,0.3) -- (6.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 2</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-4,0) -- (4,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-3,...,3}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=white] (-0.5,0) circle (2pt);
+    \node[below] at (-0.5,0) {$-\frac{1}{2}$};
+
+    
+    \draw[very thick,->] (-.5,0) -- (-0.5,0.3) -- (3.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 3</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-4,0) -- (10,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-3,...,9}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=red] (6,0) circle (2pt);
+    \node[below] at (6,0) {$6$};
+
+    
+    \draw[very thick,->] (6,0) -- (6,0.3) -- (8.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 4</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-10,0) -- (5,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-9,...,4}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=white] (-4,0) circle (2pt);
+    \node[below] at (-4,0) {$-4$};
+
+    
+    \draw[very thick,->] (-4,0) -- (-4,0.3) -- (-8.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 5</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-5,0) -- (10,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-4,...,9}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=red] (5.75,0) circle (2pt);
+    \node[below] at (5.75,0) {$5,75$};
+
+    
+    \draw[very thick,->] (5.75,0) -- (5.75,0.3) -- (-4.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 10</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-5,0) -- (10,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-4,...,9}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=white] (-0.75,0) circle (2pt);
+    \node[below] at (-0.75,0) {$-\frac{3}{4}$};
+
+    \draw[fill=white] (1.67,0) circle (2pt);
+    \node[below] at (1.67,0) {$\frac{5}{3}$};
+    
+    \draw[very thick,->] (-0.75,0) -- (-0.75,0.4) -- (4.5,0.4);
+    \draw[very thick,->] (1.67,0) -- (1.67,0.3) -- (-4.5,0.3);
+\end{tikzpicture}
+
+</script>
+<p><br>
+</p>
+<p><span style="color: green;"><em>Για το παράδειγμα 11</em></span></p>
+<script type="text/tikz">
+\begin{tikzpicture}
+    
+    \draw[->] (-10,0) -- (10,0);
+    \node[above] at (0,0) {$0$};
+    \draw[fill=blue] (0,0) circle (2pt);
+    
+    \foreach \x in {-9,...,9}
+        \draw (\x,0.1) -- (\x,-0.1)
+              node[below] {\x};
+    
+    \draw[fill=white] (-5,0) circle (2pt);
+    \node[below] at (-5,0) {$-5$};
+
+    \draw[fill=white] (3,0) circle (2pt);
+    \node[below] at (3,0) {$3$};
+    
+    \draw[very thick,->] (-5,0) -- (-5,0.4) -- (5.5,0.4);
+    \draw[very thick,->] (3,0) -- (3,0.3) -- (-7.5,0.3);
+\end{tikzpicture}
+
+</script>
+</section>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</h3>
+<p><strong>Α. Σύγκριση Αριθμών και Βασικές Σχέσεις</strong></p>
+<ol type="1">
+<li><p><strong>Σύγκριση αρρήτων:</strong> Να αντικαταστήσετε το ερωτηματικό (;) με ένα από τα σύμβολα &lt;, &gt; ώστε οι παρακάτω προτάσεις να είναι αληθείς:</p>
+<ul>
+<li>α) <span class="math inline">\(7 + \sqrt{5}\)</span> ; <span class="math inline">\(7 + \sqrt{6}\)</span></li>
+<li>β) <span class="math inline">\(3\sqrt{17}\)</span> ; <span class="math inline">\(12\)</span></li>
+<li>γ) <span class="math inline">\(-5\sqrt{26}\)</span> ; <span class="math inline">\(-25\)</span></li>
+<li>δ) <span class="math inline">\(\dfrac{1}{3}\pi\)</span> ; <span class="math inline">\(1\)</span></li>
+</ul></li>
+<li><p><strong>Μεταβλητές και Διάταξη:</strong> Αν <span class="math inline">\(\alpha, \beta, \gamma \in \mathbb{R}\)</span> και ισχύει <span class="math inline">\(\alpha &gt; \beta\)</span>, να συγκρίνετε τους αριθμούς:</p>
+<ul>
+<li>α) <span class="math inline">\(2\alpha - 3\gamma\)</span> και <span class="math inline">\(2\beta - 3\gamma\)</span></li>
+</ul>
+<p><strong>Λύση</strong> Έχουμε <span class="math inline">\(α&gt;β\)</span> πολλαπλασιάζουμε και τα δύο μέλη με 2 , έτσι παίρνουμε <span class="math inline">\(α&gt;β \Leftrightarrow 2a&gt;2b\)</span> αφαιρούμε και από τα δύο μέλη το <span class="math inline">\(-3γ\)</span> οπότε <span class="math inline">\(2α-3γ&gt;2β-3γ\)</span></p>
+<ul>
+<li>β) <span class="math inline">\(2\gamma - 3\alpha\)</span> και <span class="math inline">\(2\gamma - 3\beta\)</span></li>
+</ul></li>
+<li><p><strong>Σύγκριση Δεκαδικών:</strong> Να τοποθετήσετε το κατάλληλο σύμβολο ανισότητας ανάμεσα στους αριθμούς:</p>
+<ul>
+<li>α) <span class="math inline">\(0,50\)</span> και <span class="math inline">\(0,49\)</span></li>
+<li>β) <span class="math inline">\(0,97860\)</span> και <span class="math inline">\(0,97849\)</span></li>
+<li>γ) <span class="math inline">\(0,9\)</span> και <span class="math inline">\(1\)</span></li>
+<li>δ) <span class="math inline">\(0,110\)</span> και <span class="math inline">\(0,1\bar{1}\)</span></li>
+</ul></li>
+<li><p><strong>Σύγκριση Ριζικών:</strong> Να υπολογίσετε και να συγκρίνετε τις παραστάσεις <span class="math inline">\(\sqrt{9} + \sqrt{16}\)</span> και <span class="math inline">\(\sqrt{9+16}\)</span>. Ισχύει γενικά η ισότητα <span class="math inline">\(\sqrt{\alpha} + \sqrt{\beta} = \sqrt{\alpha+\beta}\)</span> για θετικούς αριθμούς;</p></li>
+</ol>
+<p><strong>Β. Αποδείξεις Ανισωτικών Σχέσεων</strong></p>
+<ol type="1">
+<li><p><strong>Θεμελιώδης Ανισότητα:</strong> Να αποδείξετε ότι για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha, \beta\)</span> ισχύει η σχέση <span class="math inline">\(\alpha^2 + \beta^2 \ge 2\alpha\beta\)</span>.</p></li>
+<li><p><strong>Ανισότητα Αθροίσματος:</strong> Να αποδείξετε ότι για κάθε <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> ισχύει <span class="math inline">\(2(\alpha^2 + \beta^2) \ge (\alpha + \beta)^2\)</span>.</p></li>
+<li><p><strong>Αντίστροφοι Αριθμοί:</strong> Να αποδείξετε ότι αν <span class="math inline">\(\alpha &gt; 0\)</span>, τότε <span class="math inline">\(\alpha + \frac{1}{\alpha} \ge 2\)</span>. Ποια είναι η αντίστοιχη σχέση αν <span class="math inline">\(\alpha &lt; 0\)</span>;</p></li>
+<li><p><strong>Ανισότητα Τριών Όρων:</strong> Να αποδείξετε ότι για κάθε <span class="math inline">\(\alpha, \beta, \gamma \in \mathbb{R}\)</span> ισχύει η σχέση <span class="math inline">\(\alpha^2 + \beta^2 + \gamma^2 \ge \alpha\beta + \beta\gamma + \gamma\alpha\)</span>.</p>
+<p><strong>Λύση</strong></p>
+<p>Αν υποθέσουμε χωρίς βλάβη της γενικότητας οτι <span class="math inline">\(α&gt;β&gt;γ\)</span>, τότε</p>
+<p><span class="math inline">\(α&gt;β \Leftrightarrow α^2&gt;αβ\)</span>, πολλαπλασιάζουμε και τα δύο μέλη με <span class="math inline">\(α\)</span></p>
+<p><span class="math inline">\(β&gt;γ \Leftrightarrow β^2&gt;βγ\)</span>, πολλαπλασιάζουμε και τα δύο μέλη με <span class="math inline">\(β\)</span></p>
+<p><span class="math inline">\(α&gt;γ\)</span> ……………………………………………………….</p>
+<p>=====================================================================</p>
+<p>προσθέτουμε ………………….</p></li>
+<li><p><strong>Δυνάμεις και Διάταξη:</strong> Για κάθε <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span>, να αποδείξετε την ανισότητα <span class="math inline">\(\alpha^4 + \beta^4 \ge \alpha^3\beta + \alpha\beta^3\)</span>.</p>
+<p><strong>Λύση:</strong></p>
+<p>Για να αποδείξουμε την ανισότητα, θα εξετάσουμε τη διαφορά των δύο μελών και θα δείξουμε ότι είναι μη αρνητική (<span class="math inline">\(\ge 0\)</span>).</p></li>
+</ol>
+<p><strong>Μεταφέρουμε όλους τους όρους στο πρώτο μέλος:</strong></p>
+<p><span class="math display">\[\alpha^4 + \beta^4 - \alpha^3\beta - \alpha\beta^3 \ge 0\]</span></p>
+<p><strong>Ομαδοποιούμε τους όρους για να κάνουμε παραγοντοποίηση:</strong></p>
+<p><span class="math display">\[(\alpha^4 - \alpha^3\beta) + (\beta^4 - \alpha\beta^3) \ge 0\]</span> <span class="math display">\[\alpha^3(\alpha - \beta) - \beta^3(\alpha - \beta) \ge 0\]</span></p>
+<p><strong>Βγάζουμε κοινό παράγοντα το</strong> <span class="math inline">\((\alpha - \beta)\)</span>:</p>
+<p><span class="math display">\[(\alpha^3 - \beta^3)(\alpha - \beta) \ge 0\]</span></p>
+<p><strong>Χρησιμοποιούμε την ταυτότητα της διαφοράς κύβων:</strong></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(\alpha^3 - \beta^3 = (\alpha - \beta)(\alpha^2 + \alpha\beta + \beta^2)\)</span>. Αντικαθιστώντας στην παράσταση, έχουμε: <span class="math display">\[(\alpha - \beta)(\alpha^2 + \alpha\beta + \beta^2)(\alpha - \beta) \ge 0\]</span> <span class="math display">\[(\alpha - \beta)^2(\alpha^2 + \alpha\beta + \beta^2) \ge 0\]</span></p>
+<p><strong>Ανάλυση των παραγόντων:</strong></p>
+<ul>
+<li><p>Ο παράγοντας <span class="math inline">\((\alpha - \beta)^2\)</span> είναι πάντα <span class="math inline">\(\ge 0\)</span> για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha, \beta\)</span>, καθώς είναι τετράγωνο.</p></li>
+<li><p>Ο παράγοντας <span class="math inline">\(\alpha^2 + \alpha\beta + \beta^2\)</span> μπορεί να γραφτεί στη μορφή συμπλήρωσης τετραγώνου ως <span class="math inline">\((\alpha + \dfrac{\beta}{2})^2 + \dfrac{3\beta^2}{4}\)</span>, επομένως είναι επίσης πάντα <span class="math inline">\(\ge 0\)</span>.</p></li>
+</ul>
+<p>ή πολλαπλασιάζοντας με 4 θα γίνει</p>
+<p><span class="math inline">\(4a^2+4aβ+4β^2=(2α)^2+2\cdot2aβ+β^2+3β^2=(2α+β)^2+3β^2\)</span> Θετικό σαν άθροισμα τετραγώνων.</p>
+<p><strong>Συμπέρασμα:</strong></p>
+<p>Επειδή το γινόμενο δύο μη αρνητικών όρων είναι πάντα μη αρνητικό, η ανισότητα <span class="math inline">\(\alpha^4 + \beta^4 \ge \alpha^3\beta + \alpha\beta^3\)</span> αληθεύει για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha, \beta\)</span>. Η ισότητα ισχύει μόνο όταν <span class="math inline">\(\alpha = \beta\)</span>.</p>
+<ol start="6" type="1">
+<li><strong>Κλασματική Ανισότητα:</strong> Αν <span class="math inline">\(\alpha, \beta, \gamma\)</span> είναι θετικοί πραγματικοί αριθμοί, αποδείξτε ότι: <span class="math display">\[\frac{\alpha+\beta}{\gamma} + \frac{\beta+\gamma}{\alpha} + \frac{\gamma+\alpha}{\beta} \ge 6\]</span> <strong>Λύση</strong></li>
+</ol>
+<p>Πολλαπλασιάστε και τα δύο μέλη με αβγ</p>
+<p>ομαδοποιήστε το <span class="math inline">\(1^ο\)</span> μέλος της παράστασης που θα προκύψει</p>
+<p><span class="math inline">\(β(α^2+γ^2)+α(β^2+γ^2)+..............= 2αβγ+2αβγ+2αβγ\)</span></p>
+<p>Μεταφέρετε τα 2αβγ και παραγοντοποιήστε ανά ομάδες</p>
+<p><span class="math inline">\(β(α^2+γ^2-2αγ)+ ......................\ge 0\)</span></p>
+<p>……………………………………..</p>
+<p>…………………………………….</p>
+<p><strong>Γ. Απόλυτες Τιμές και Ιδιότητες</strong></p>
+<ol type="1">
+<li><p><strong>Απόλυτη Τιμή και Τετράγωνο:</strong> Για κάθε <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> με <span class="math inline">\(\beta \neq 0\)</span>, να αποδείξετε την ισοδυναμία: <span class="math inline">\(|\alpha| &lt; |\beta| \iff \alpha^2 &lt; \beta^2\)</span>.</p></li>
+<li><p><strong>Τριγωνική Ανισότητα:</strong> Για οποιουσδήποτε πραγματικούς αριθμούς <span class="math inline">\(x, y\)</span>, να αποδείξετε ότι <span class="math inline">\(|x + y| \le |x| + |y|\)</span>.</p></li>
+<li><p><strong>Διαφορά Απολύτων:</strong> Για κάθε <span class="math inline">\(x, y \in \mathbb{R}\)</span>, να αποδείξετε ότι ισχύει η σχέση <span class="math inline">\(|x - y| \ge |x| - |y|\)</span>.</p></li>
+<li><p><strong>Σύνθετη Σχέση:</strong> Αν <span class="math inline">\(\alpha, \beta\)</span> είναι πραγματικοί αριθμοί με <span class="math inline">\(\alpha^2 &lt; 9\beta^2\)</span>, να αποδείξετε ότι ισχύει η ανισωτική σχέση: <span class="math display">\[\left| \frac{\alpha}{\beta} \right| - \left| \frac{\beta}{\alpha} \right| &lt; \frac{8}{3}\]</span></p></li>
+</ol>
+<p><strong>Ασκήσεις Ανισώσεων Α΄ Βαθμού</strong></p>
+<ol type="1">
+<li><p><strong>Απλή ανίσωση:</strong> <span class="math inline">\(x + 5 &gt; 8\)</span>.</p></li>
+<li><p><strong>Βασική μορφή:</strong> <span class="math inline">\(3x - 5 &gt; 0\)</span>.</p></li>
+<li><p><strong>Αρνητικός συντελεστής:</strong> <span class="math inline">\(-4x + 3 &lt; 5\)</span> (Προσοχή στην αλλαγή φοράς κατά τη διαίρεση με το -4).</p></li>
+<li><p><strong>Περίπτωση ταυτότητας:</strong> <span class="math inline">\(0x + 10 &gt; 0\)</span> (Εξετάστε αν αληθεύει για κάθε πραγματικό αριθμό).</p></li>
+<li><p><strong>Αδύνατη ανίσωση:</strong> <span class="math inline">\(0x - 8 &gt; 0\)</span>.</p></li>
+<li><p><strong>Μεταβλητή και στα δύο μέλη:</strong> <span class="math inline">\(7x - 12 &lt; x - 18\)</span>.</p></li>
+<li><p><strong>Με κλασματικούς όρους:</strong> <span class="math inline">\(\dfrac{x-3}{4} - \dfrac{x-2}{3} &gt; x - \dfrac{x-1}{2}\)</span>.</p></li>
+<li><p><strong>Ανάπτυγμα τετραγώνων:</strong> <span class="math inline">\((x+5)^2 - 2(3x-6) &gt; (x-3)^2 - 3(2x+5)\)</span>.</p></li>
+<li><p><strong>Εγγράμματη (με παράμετρο λ):</strong> <span class="math inline">\(\lambda x - 3 &lt; 2x + 7\)</span> (Διερεύνηση λύσεων ανάλογα με την τιμή του <span class="math inline">\(\lambda\)</span>).</p></li>
+<li><p><strong>Πράξεις με παρονομαστές:</strong> <span class="math inline">\(\dfrac{3(x-4)}{5} - \dfrac{2(5+x)}{6} &lt; \dfrac{5x-1}{10}\)</span>.</p></li>
+<li><p><strong>Μη αυστηρή ανίσωση:</strong> <span class="math inline">\(\dfrac{7x}{3} - \dfrac{3x+4}{4} \ge x + \dfrac{5}{2}\)</span>.</p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[\frac{x+3}{2} - \frac{x-1}{3} &lt; \frac{x+1}{6}\]</span></p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[\frac{x+5}{3} - \frac{x-2}{3} &gt; 4\]</span></p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[\frac{3x+5}{6} - \frac{x-1}{2} &lt; \frac{x}{2}\]</span></p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[x - \frac{x+1}{2} &gt; \frac{x-4}{2}\]</span></p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[\frac{x+2}{3} + \frac{x-1}{4} &gt; \frac{7x+1}{12}\]</span></p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math display">\[\frac{x+2}{6} - \frac{x-1}{4} &lt; \frac{3-x}{12}\]</span></p></li>
+</ol>
+<p><strong>Προβλήματα με Ανισώσεις Α΄ Βαθμού</strong></p>
+<ol type="1">
+<li><p><strong>Γεωμετρική Συνθήκη Τριγώνου:</strong> Προσδιορίστε τις τιμές του <span class="math inline">\(x\)</span> ώστε οι παραστάσεις <span class="math inline">\(\alpha = x^2-x+1\)</span>, <span class="math inline">\(\beta = x+2\)</span> και <span class="math inline">\(\gamma = x^2-4x+3\)</span> να αποτελούν πλευρές τριγώνου, εφαρμόζοντας την ανισωτική σχέση <span class="math inline">\(\gamma &lt; \alpha + \beta\)</span>.</p></li>
+<li><p><strong>Συναλήθευση Ακέραιων Λύσεων:</strong> Βρείτε το σύνολο των <strong>σχετικών ακεραίων</strong> <span class="math inline">\(x\)</span> που επαληθεύουν ταυτόχρονα τις ανισώσεις <span class="math inline">\(-7 &lt; x \le 4\)</span> και <span class="math inline">\(-1 &lt; x &lt; 4\)</span>.</p></li>
+<li><p><strong>Διερεύνηση Παραμέτρου:</strong> Προσδιορίστε την τιμή μιας παραμέτρου <span class="math inline">\(\lambda\)</span> ώστε μια ανίσωση (π.χ. η <span class="math inline">\((\lambda-1)x &gt; 4-\lambda\)</span>) να είναι <strong>αδύνατη</strong>.</p></li>
+<li><p><strong>Αγορά σχολικών ειδών</strong> Έχεις 50€. Αγοράζεις τετράδια αξίας 2€ το καθένα και ένα σακίδιο 10€. Πόσα τετράδια μπορείς να αγοράσεις αν θέλεις να σου μείνουν τουλάχιστον 8€;</p></li>
+<li><p><strong>Χρήση κινητού τηλεφώνου</strong> Ένα πρόγραμμα χρεώνει πάγιο 15€ και 0,20€ ανά λεπτό. Θέλεις ο λογαριασμός σου να μην ξεπεράσει τα 35€. Πόσα λεπτά το πολύ πρέπει να μιλήσεις</p></li>
+<li><p><strong>Αποταμίευση</strong> Έχεις ήδη 40€ στον κουμπαρά και βάζεις κάθε εβδομάδα 5€. Αν ξοδεύεις παράλληλα 2€ την εβδομάδα, σε πόσες εβδομάδες θα έχεις τουλάχιστον 100€;</p></li>
+<li><p><strong>Ταξί</strong> Ένα ταξί έχει αρχική χρέωση (σημαία) 4€ και 0,80€ ανά χιλιόμετρο. Διαθέτεις 20€. Πόσα το πολύ χιλιόμετρα μπορείς να κάνεις;</p></li>
+<li><p><strong>Ενοικίαση ποδηλάτου</strong> Για ένα ποδήλατο πληρώνεις 3€ πάγιο και 2€ ανά ώρα. Ο προϋπολογισμός σου είναι 15€. Πόσες ωρες μπορείς να το χρησιμοποιήσεις;</p></li>
+<li><p><strong>Βαθμολογία μαθητή</strong> Ένας μαθητής έχει γράψει διαγωνίσματα με μέσο όρο 14. Θέλει μετά το επόμενο διαγώνισμα να έχει μέσο όρο τουλάχιστον 15. Πόσο τουλάχιστον πρέπει να γράψει στο διαγώνισμα</p></li>
+<li><p><strong>Κατανάλωση καυσίμου</strong> Ένα αυτοκίνητο έχει 50 λίτρα καύσιμο και καταναλώνει 0,07 λίτρα ανά χιλιόμετρο. Θέλεις να μείνουν τουλάχιστον 10 λίτρα.Πόσα χιλιόμετρα το πολύ πρέπει να κάνεις;</p></li>
+<li><p><strong>Γυμναστήριο</strong> Έχεις στόχο να κάψεις τουλάχιστον 600 θερμίδες. Καίς 80 θερμίδες στο ζέσταμα και 40 θερμίδες ανά λεπτό έντονης άσκησης. Πόσα λεπτά το ελάχιστο πρέπει να γυμναστείς;</p></li>
+<li><p><strong>Παραγγελία πίτσας</strong> Έχεις 30€. Μια πίτσα κοστίζει 8€ και ένα αναψυκτικό 2€. Πόσα αναψυκτικά το πολύ μπορείς να αγοράσεις;</p></li>
+</ol>
+<p><strong>Η συναλήθευση δύο ή περισσότερων ανισώσεων ορίζεται ως η εύρεση των κοινών τους λύσεων, δηλαδή της τομής των συνόλων λύσεών τους.</strong></p>
+<ol type="1">
+<li><p>Να βρεθούν οι πραγματικές τιμές του <span class="math inline">\(x\)</span> για τις οποίες συναληθεύουν οι ανισώσεις: <span class="math display">\[  \begin{matrix}
+3x - 5 &lt; 0\\
+4x + 3 &gt; 0
+  \end{matrix}\]</span></p></li>
+<li><p>Να προσδιορίσετε το διάστημα των λύσεων όπου συναληθεύουν οι παρακάτω ανισώσεις:</p></li>
+</ol>
+<p><span class="math display">\[  \begin{matrix}
+  -\dfrac{1}{3}x + \dfrac{1}{2} &lt; \dfrac{5}{7}\\
+  \dfrac{x-3}{4} - \dfrac{x-2}{3} &gt; x - \dfrac{x-1}{2}
+\end{matrix}\]</span></p>
+<ol start="3" type="1">
+<li>Να βρεθούν οι κοινές <strong>ακέραιες</strong> λύσεις των παρακάτω ανισώσεων:</li>
+</ol>
+<p><span class="math display">\[  \begin{matrix}
+  \frac{x-5}{2} &lt; \frac{2x-7}{4} - \frac{x+1}{9}\\
+  \frac{3x-14}{12} + \frac{3x-2}{4} &gt; \frac{2(x-1)}{3}
+  \end{matrix}\]</span></p>
+<ol start="4" type="1">
+<li>Να εξετάσετε αν υπάρχουν τιμές του <span class="math inline">\(\psi\)</span> για τις οποίες συναληθεύουν οι ανισώσεις:</li>
+</ol>
+<p><span class="math display">\[\begin{matrix}
+\frac{(\psi+3)(\psi-2)}{10} - \frac{(\psi+2)(\psi-1)}{14} &lt; \frac{(\psi-3)(\psi+2)+4}{35}\\
+\frac{\psi-1}{5} + \frac{2\psi+3}{10} &gt; \frac{3}{4} \left( \psi - \frac{\psi+4}{2} \right) + \frac{3\psi-4}{8}
+\end{matrix}\]</span></p>
+<ol start="5" type="1">
+<li>Να βρεθεί το σύνολο των πραγματικών αριθμών <span class="math inline">\(x\)</span> που επαληθεύουν ταυτόχρονα τις σχέσεις:</li>
+</ol>
+<p><span class="math display">\[\begin{matrix}
+\frac{7x}{3} - \frac{3x+4}{4} \ge x + \frac{5}{2}\\
+x - 3 &lt; \frac{x+5}{3}
+\end{matrix}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Για κάθε ανίσωση χωριστά, βρείτε το Ελάχιστο Κοινό Πολλαπλάσιο (Ε.Κ.Π.) των παρονομαστών και πολλαπλασιάστε όλα τα μέλη για να τους απαλείψετε.</p>
+<p>Προσέξτε να αλλάξετε τη φορά της ανίσωσης αν χρειαστεί να διαιρέσετε ή να πολλαπλασιάσετε με αρνητικό αριθμό.</p>
+<p>Τοποθετήστε τις λύσεις κάθε ανίσωσης πάνω στον ίδιο αριθμητικό άξονα για να εντοπίσετε το κοινό τους τμήμα.</p>
+</div>
+</div>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
