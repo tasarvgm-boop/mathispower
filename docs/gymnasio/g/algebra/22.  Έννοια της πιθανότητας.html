@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>22. Έννοια της πιθανότητας – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,28 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +114,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-galgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +125,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +177,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html">22. Έννοια της πιθανότητας</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html">22. Έννοια της πιθανότητας</a></li></ol></nav>
+      <h1 class="title">22. Έννοια της πιθανότητας</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">15 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">16 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +242,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +251,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +260,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +373,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +476,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +485,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +556,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +675,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +718,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -687,9 +731,9 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -822,7 +866,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
   </div>
 </li>
@@ -837,33 +881,231 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#έννοια-της-πιθανότητας" id="toc-έννοια-της-πιθανότητας" class="nav-link active" data-scroll-target="#έννοια-της-πιθανότητας"><span class="header-section-number">1</span> Έννοια της πιθανότητας</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία" id="toc-θεωρία" class="nav-link" data-scroll-target="#θεωρία"><span class="header-section-number">1.1</span> Θεωρία</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="έννοια-της-πιθανότητας" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="έννοια-της-πιθανότητας"><span class="header-section-number">1</span> Έννοια της πιθανότητας</h2>
+<section id="θεωρία" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία"><span class="header-section-number">1.1</span> Θεωρία</h3>
+<p>Η <strong>θεωρία των πιθανοτήτων</strong> είναι ο κλάδος των μαθηματικών που ασχολείται με τη μέτρηση της αβεβαιότητας που χαρακτηρίζει πολλά φαινόμενα της καθημερινής ζωής, όπου δεν μπορούμε να προβλέψουμε με ακρίβεια το τελικό αποτέλεσμα (π.χ. η ακριβής θερμοκρασία της επόμενης ημέρας ή το αποτέλεσμα ενός διαγωνίσματος).</p>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ορισμός και Υπολογισμός Πιθανότητας</strong></p>
+<p>Σε δειγματικούς χώρους με <strong>ισοπίθανα στοιχεία</strong> (όπου κάθε αποτέλεσμα έχει την ίδια πιθανότητα να συμβεί), η μαθηματική πιθανότητα ενός ενδεχομένου <span class="math inline">\(A\)</span> ορίζεται ως ο λόγος:</p>
+<p><span class="math display">\[P(A) = \frac{\text{πλήθος ευνοϊκών περιπτώσεων}}{\text{πλήθος δυνατών περιπτώσεων}}\]</span></p>
+<p><strong>Βασικές Ιδιότητες:</strong></p>
+<ul>
+<li><p>Για κάθε ενδεχόμενο <span class="math inline">\(A\)</span>, ισχύει: <span class="math inline">\(0 \le P(A) \le 1\)</span>.</p></li>
+<li><p>Η πιθανότητα του βέβαιου γεγονότος είναι <strong>1</strong> και του αδύνατου <strong>0</strong>.</p></li>
+<li><p>Για το αντίθετο ενδεχόμενο <span class="math inline">\(A'\)</span>, ισχύει: <span class="math inline">\(P(A') = 1 - P(A)\)</span>.</p></li>
+</ul>
+<p><strong>Πράξεις με Πιθανότητες</strong></p>
+<ul>
+<li><p><strong>Κανόνας Πρόσθεσης (Ασυμβίβαστα ενδεχόμενα):</strong> Αν δύο ενδεχόμενα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> είναι ασυμβίβαστα (ξένα μεταξύ τους, δηλαδή δεν μπορούν να συμβούν ταυτόχρονα), η πιθανότητα να συμβεί το ένα ή το άλλο είναι το άθροισμα των πιθανοτήτων τους: <span class="math inline">\(P(A\cup B) = P(A) + P(B)\)</span></p></li>
+<li><p><strong>Κανόνας Πολλαπλασιασμού (Ανεξάρτητα ενδεχόμενα):</strong> Δύο ενδεχόμενα είναι ανεξάρτητα όταν η πραγματοποίηση του ενός δεν επηρεάζει την πιθανότητα του άλλου. Τότε, η πιθανότητα να συμβούν και τα δύο ταυτόχρονα είναι το γινόμενο των πιθανοτήτων τους: <span class="math inline">\(P(A \cdot B) = P(A) \cdot P(B)\)</span></p></li>
+<li><p><strong>Για οποιαδήποτε ενδεχόμενα Α, Β ισχύει</strong> Ρ(Α U Β) + Ρ(Α ∩ Β) = Ρ(Α) + Ρ(Β)</p></li>
+</ul>
 </div>
+<p><strong>Παραδείγματα Εφαρμογής</strong></p>
+<ol type="1">
+<li><strong>Ρίψη Ζαριού:</strong> Ποια είναι η πιθανότητα να φέρουμε περιττό αριθμό;
+<ul>
+<li>Δυνατές περιπτώσεις: 6 (<span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span>).</li>
+<li>Ευνοϊκές περιπτώσεις: 3 (<span class="math inline">\(\{1, 3, 5\}\)</span>).</li>
+<li>Πιθανότητα: <span class="math inline">\(P = \dfrac{3}{6} = \dfrac{1}{2}\)</span> (ή 50%).</li>
+</ul></li>
+<li><strong>Τράπουλα:</strong> Ποια είναι η πιθανότητα να τραβήξουμε έναν άσσο από μια τράπουλα 52 φύλλων;
+<ul>
+<li>Δυνατές περιπτώσεις: 52.</li>
+<li>Ευνοϊκές περιπτώσεις: 4 (οι τέσσερις άσσοι).</li>
+<li>Πιθανότητα: <span class="math inline">\(P = \dfrac{4}{52} = \dfrac{1}{13}\)</span>.</li>
+</ul></li>
+<li><strong>Ρίψη Δύο Ζαριών:</strong> Ποια είναι η πιθανότητα το άθροισμα των ενδείξεων να είναι 7;
+<ul>
+<li>Δυνατές περιπτώσεις: <span class="math inline">\(6 \times 6 = 36\)</span>.</li>
+<li>Ευνοϊκές περιπτώσεις: 6 (<span class="math inline">\(\{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\}\)</span>).</li>
+<li>Πιθανότητα: <span class="math inline">\(P = \dfrac{6}{36} = \dfrac{1}{6}\)</span>.</li>
+</ul></li>
+<li><strong>Ανεξάρτητα Γεγονότα:</strong> Ρίχνουμε ένα ζάρι και ένα νόμισμα. Ποια είναι η πιθανότητα να έρθει “6” στο ζάρι και “Κορώνα” στο νόμισμα;
+<ul>
+<li><span class="math inline">\(P(\text{6}) = \dfrac{1}{6}\)</span> και <span class="math inline">\(P(\text{Κ}) = \dfrac{1}{2}\)</span>.</li>
+<li>Επειδή τα πειράματα είναι ανεξάρτητα: <span class="math inline">\(P = \dfrac{1}{6} \cdot \dfrac{1}{2} =\dfrac{1}{{12}\)</span>.</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Σε ποιο από τα παρακάτω πειράματα τα δυνατά αποτελέσματα είναι ισοπίθανα;</li>
+</ol>
+<ul>
+<li>α) Από ένα κουτί που περιέχει 15 μπάλες, από τις οποίες 5 είναι μπλε, 5 κόκκινες και 5 κίτρινες, επιλέγουμε μία και σημειώνουμε το χρώμα της.</li>
+<li>β) Από ένα κουτί που περιέχει 10 μπάλες, από τις οποίες 6 είναι μπλε, 3 κόκκινες και 1 κίτρινη, επιλέγουμε μία και σημειώνουμε το χρώμα της.</li>
+<li>γ) Από τη λέξη «πίνακας» επιλέγουμε ένα γράμμα και σημειώνουμε ποιο είναι.</li>
+<li>δ) Από τη λέξη «μήλο» επιλέγουμε ένα γράμμα και σημειώνουμε ποιο είναι.</li>
+</ul>
+<ol start="2" type="1">
+<li>Αν επιλέξουμε τυχαία ένα γράμμα από τη λέξη «ΜΑΘΗΜΑΤΙΚΑ», τότε η πιθανότητα να επιλέξουμε το γράμμα «Α» είναι:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\dfrac{1}{10}\)</span></li>
+<li>β) <span class="math inline">\(\dfrac{3}{10}\)</span></li>
+<li>γ) <span class="math inline">\(\dfrac{2}{5}\)</span></li>
+<li>δ) <span class="math inline">\(\dfrac{1}{5}\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>Να χαρακτηρίσετε τις παρακάτω προτάσεις με (Σ), αν είναι σωστές ή με (Λ), αν είναι λανθασμένες.</li>
+</ol>
+<ul>
+<li>α) Η πιθανότητα ενός ενδεχομένου Α μπορεί να είναι <span class="math inline">\(P(A) = 0,05\)</span>.</li>
+<li>β) Αν η πιθανότητα ενός ενδεχομένου Α είναι <span class="math inline">\(45\%\)</span>, τότε γράφουμε <span class="math inline">\(P(A) = 0,45\)</span>.</li>
+<li>γ) Το βέβαιο ενδεχόμενο έχει πιθανότητα <span class="math inline">\(0\)</span> και το αδύνατο ενδεχόμενο έχει πιθανότητα <span class="math inline">\(1\)</span>.</li>
+<li>δ) Αν η πιθανότητα να κερδίσω σε ένα παιχνίδι είναι <span class="math inline">\(15\%\)</span>, τότε η πιθανότητα να χάσω είναι <span class="math inline">\(75\%\)</span>.</li>
+</ul>
+<ol start="4" type="1">
+<li>Αν η πιθανότητα να πραγματοποιηθεί ένα ενδεχόμενο Α είναι <span class="math inline">\(P(A) = \dfrac{1}{6}\)</span>, τότε η πιθανότητα να μην πραγματοποιηθεί το Α (αντίθετο ενδεχόμενο) είναι:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\dfrac{1}{6}\)</span></li>
+<li>β) <span class="math inline">\(\dfrac{5}{6}\)</span></li>
+<li>γ) <span class="math inline">\(\dfrac{1}{5}\)</span></li>
+<li>δ) <span class="math inline">\(\dfrac{6}{5}\)</span></li>
+</ul>
+<ol start="5" type="1">
+<li><p>Για δύο ενδεχόμενα Α, Β ισχύουν <span class="math inline">\(P(A) = \dfrac{3}{10}\)</span>, <span class="math inline">\(P(B) = \dfrac{4}{10}\)</span> και <span class="math inline">\(P(A \cap B) = \dfrac{1}{10}\)</span>. Ένας μαθητής υπολόγισε ότι <span class="math inline">\(P(A \cup B) = \dfrac{8}{10}\)</span>. Είναι σωστή η απάντησή του; Να αιτιολογήσετε τον ισχυρισμό σας.</p></li>
+<li><p>Επιλέγουμε στην τύχη έναν ακέραιο αριθμό από το 1 έως και το 20. Ποια είναι η πιθανότητα να είναι: α) περιττός, β) πολλαπλάσιο του 5;</p></li>
+<li><p>Σε μια κλήρωση υπάρχουν 800 λαχνοί από τους οποίους κερδίζει ο ένας. Πόση % πιθανότητα έχει να κερδίσει κάποιος που αγόρασε 4 λαχνούς;</p></li>
+<li><p>Σε μια τράπουλα 52 φύλλων υπάρχουν 4 άσοι. Αν επιλέξουμε στην τύχη ένα φύλλο, ποια είναι η πιθανότητα να μην είναι άσος;</p></li>
+<li><p>Σε ένα κουτί υπάρχουν 10 μπάλες, από τις οποίες οι 3 είναι κόκκινες, 4 είναι πράσινες και 3 είναι μπλε. Βγάζουμε στην τύχη μια μπάλα. Να βρείτε τις πιθανότητες:</p></li>
+</ol>
+<ul>
+<li>Α: Η μπάλα να είναι πράσινη.</li>
+<li>Β: Η μπάλα να μην είναι κόκκινη.</li>
+<li>Γ: Η μπάλα να είναι πράσινη ή μπλε.</li>
+</ul>
+<p><strong>Λύση</strong></p>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(P(A) = \dfrac{4}{10} = \dfrac{2}{5}\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(P(B) = 1 - P(\text{κόκκινη}) = 1 - \dfrac{3}{10} = \dfrac{7}{10}\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><span class="math inline">\(P(\Gamma) = P(\text{πράσινη}) + P(\text{μπλε}) = \dfrac{4}{10} + \dfrac{3}{10} = \dfrac{7}{10}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="10" type="1">
+<li>Έστω ότι επιλέγουμε έναν μαθητή από μια τάξη 20 ατόμων οπου τα δεδομένα της βαθμολογίας τους στο τεστ είναι: 10 άτομα έγραψαν 10, 6 άτομα έγραψαν 15 και 4 άτομα έγραψαν 18. Ποια η πιθανότητα ο μαθητής να έχει βαθμό μεγαλύτερο ή ίσο του 15;</li>
+</ol>
+<p><strong>Λύση</strong></p>
+<ul>
+<li><ol type="1">
+<li>Μαθητές με βαθμό <span class="math inline">\(\ge 15\)</span> είναι <span class="math inline">\(6 + 4 = 10\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Πιθανότητα: <span class="math inline">\(\dfrac{10}{20} = \dfrac{1}{2}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="11" type="1">
+<li>Ρίχνουμε ένα νόμισμα δύο φορές. Ποια είναι η πιθανότητα να φέρουμε και τις δύο φορές το ίδιο αποτέλεσμα;</li>
+</ol>
+<p><em>Ευνοϊκά</em> <span class="math inline">\(\{ΚΚ, ΓΓ\}\)</span>, άρα 2 αποτελέσματα. Πιθανότητα: ………..</p>
+<ol start="12" type="1">
+<li>Ρίχνουμε ένα ζάρι μία φορά. Να βρείτε την πιθανότητα να φέρουμε αριθμό μεγαλύτερο του 4.</li>
+</ol>
+<p><em>Ευνοϊκά:</em> <span class="math inline">\(\{5, 6\}\)</span>, άρα 2 αποτελέσματα. Πιθανότητα: ………….</p>
+<ol start="13" type="1">
+<li>Σε μια ομάδα 20 ατόμων, 5 έχουν διαβάσει ένα βιβλίο. Αν επιλέξουμε δύο άτομα διαδοχικά χωρίς επανατοποθέτηση, ποια είναι η πιθανότητα το δεύτερο άτομο να έχει διαβάσει το βιβλίο, αν το πρώτο είχε διαβάσει;</li>
+</ol>
+<p><em>Αφού το πρώτο άτομο έχει διαβάσει, έμειναν 19 άτομα συνολικά και 4 που έχουν διαβάσει.</em> Πιθανότητα: ……………</p>
+<ol start="14" type="1">
+<li>Η πιθανότητα να βρέξει είναι διπλάσια από την πιθανότητα να μην βρέξει. Ποια είναι η πιθανότητα να βρέξει;</li>
+</ol>
+<p><em>Έστω <span class="math inline">\(x\)</span> η πιθανότητα να μην βρέξει. Τότε <span class="math inline">\(2x\)</span> είναι η πιθανότητα να βρέξει.</em> <em><span class="math inline">\(x + 2x = 1\)</span></em> . Πιθανότητα να βρέξει: ………………</p>
+<ol start="15" type="1">
+<li><p>Για δύο ενδεχόμενα Α, Β ισχύουν <span class="math inline">\(P(A) = \dfrac{4}{10}, P(B) = \dfrac{3}{10}\)</span> και <span class="math inline">\(P(A \cap B) = \dfrac{1}{10}\)</span>. Να βρείτε την <span class="math inline">\(P(A \cup B)\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(P(A) = \dfrac{5}{10}, P(B) = \dfrac{4}{10}\)</span> και <span class="math inline">\(P(A \cup B) = \dfrac{7}{10}\)</span>, να βρείτε την <span class="math inline">\(P(A \cap B)\)</span>.</p></li>
+<li><p>Η πιθανότητα να ξέρει κάποιος Ισπανικά είναι <span class="math inline">\(30\%\)</span>, Γερμανικά <span class="math inline">\(20\%\)</span> και και τις δύο γλώσσες <span class="math inline">\(10\%\)</span>. Ποια η πιθανότητα να ξέρει μία τουλάχιστον από τις δύο;</p></li>
+<li><p>Σε ένα τμήμα 30 μαθητών, 20 έχουν κινητό, 15 έχουν τάμπλετ και 10 έχουν και τα δύο. Αν επιλέξουμε έναν μαθητή, ποια η πιθανότητα να έχει μόνο κινητό ή μόνο τάμπλετ;</p></li>
+</ol>
+<p><em>Μόνο κινητό:</em> <span class="math inline">\(20 - 10 = 10\)</span>. <em>Μόνο τάμπλετ:</em> <span class="math inline">\(15 - 10 = 5\)</span>. <em>Σύνολο ευνοϊκών:</em> ……………. <em>Πιθανότητα:</em> ……………</p>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -891,12 +1133,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
