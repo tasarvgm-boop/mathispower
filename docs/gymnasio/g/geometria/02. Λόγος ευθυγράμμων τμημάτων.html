@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>02. Λόγος ευθυγράμμων τμημάτων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-ggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html">02. Λόγος ευθυγράμμων τμημάτων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html">02. Λόγος ευθυγράμμων τμημάτων</a></li></ol></nav>
+      <h1 class="title">02. Λόγος ευθυγράμμων τμημάτων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">15 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">23 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -824,9 +864,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -839,7 +879,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
   </div>
 </li>
@@ -854,33 +894,381 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#λόγος-ευθυγράμμων-τμημάτων" id="toc-λόγος-ευθυγράμμων-τμημάτων" class="nav-link active" data-scroll-target="#λόγος-ευθυγράμμων-τμημάτων"><span class="header-section-number">1</span> Λόγος ευθυγράμμων τμημάτων</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-ορισμός-και-ιδιότητες" id="toc-θεωρία-ορισμός-και-ιδιότητες" class="nav-link" data-scroll-target="#θεωρία-ορισμός-και-ιδιότητες"><span class="header-section-number">1.1</span> <strong>Θεωρία: Ορισμός και Ιδιότητες</strong></a></li>
+  <li><a href="#θεωρία-βασικές-ιδιότητες-των-αναλογιών" id="toc-θεωρία-βασικές-ιδιότητες-των-αναλογιών" class="nav-link" data-scroll-target="#θεωρία-βασικές-ιδιότητες-των-αναλογιών"><span class="header-section-number">1.2</span> <strong>Θεωρία: Βασικές Ιδιότητες των Αναλογιών</strong></a></li>
+  <li><a href="#παραδείγματα-1" id="toc-παραδείγματα-1" class="nav-link" data-scroll-target="#παραδείγματα-1"><span class="header-section-number">1.3</span> <strong>Παραδείγματα</strong></a></li>
+  <li><a href="#ίσα-τμήματα-μεταξύ-παραλλήλων-ευθειών" id="toc-ίσα-τμήματα-μεταξύ-παραλλήλων-ευθειών" class="nav-link" data-scroll-target="#ίσα-τμήματα-μεταξύ-παραλλήλων-ευθειών"><span class="header-section-number">1.4</span> Ίσα τμήματα μεταξύ παραλλήλων ευθειών</a></li>
+  <li><a href="#παραδείγματα-2" id="toc-παραδείγματα-2" class="nav-link" data-scroll-target="#παραδείγματα-2"><span class="header-section-number">1.5</span> <strong>Παραδείγματα</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</a></li>
+  <li><a href="#μερικές-ακόμη" id="toc-μερικές-ακόμη" class="nav-link" data-scroll-target="#μερικές-ακόμη"><span class="header-section-number">1.7</span> Μερικές ακόμη</a></li>
+  <li><a href="#και-μερικές-ακόμη" id="toc-και-μερικές-ακόμη" class="nav-link" data-scroll-target="#και-μερικές-ακόμη"><span class="header-section-number">1.8</span> …. και μερικές ακόμη</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="λόγος-ευθυγράμμων-τμημάτων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="λόγος-ευθυγράμμων-τμημάτων"><span class="header-section-number">1</span> Λόγος ευθυγράμμων τμημάτων</h2>
+<p>Ο <strong>λόγος δύο ευθυγράμμων τμημάτων</strong> είναι μια θεμελιώδης έννοια της Γεωμετρίας που συνδέει τα γεωμετρικά μεγέθη με τους πραγματικούς αριθμούς.</p>
+<section id="θεωρία-ορισμός-και-ιδιότητες" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-ορισμός-και-ιδιότητες"><span class="header-section-number">1.1</span> <strong>Θεωρία: Ορισμός και Ιδιότητες</strong></h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><strong>Ορισμός:</strong> Αν έχουμε δύο ευθύγραμμα τμήματα <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma\Delta\)</span>, όπου το <span class="math inline">\(\Gamma\Delta\)</span> είναι μη μηδενικό, ο λόγος του <span class="math inline">\(AB\)</span> προς το <span class="math inline">\(\Gamma\Delta\)</span> ορίζεται ως ένας <strong>απόλυτος πραγματικός αριθμός</strong>. Ο αριθμός αυτός εκφράζει το <strong>μήκος</strong> του τμήματος <span class="math inline">\(AB\)</span> όταν ως μονάδα μέτρησης χρησιμοποιηθεί το τμήμα <span class="math inline">\(\Gamma\Delta\)</span>.</li>
+<li><strong>Αριθμητική τιμή:</strong> Ο λόγος δύο τμημάτων ισούται με τον λόγο των <strong>μέτρων</strong> τους (των μηκών τους), υπό την προϋπόθεση ότι και τα δύο έχουν μετρηθεί με την <strong>ίδια μονάδα μέτρησης</strong>.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/ntnwsze5?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Επιλέξτε τα σημεία Β ή Δ και κρατώντας πατημένο το <button class="btn btn-primary btn-sm">Shift</button> + <a class="btn btn-primary btn-sm"> βέλος &lt; ή βέλος &gt; </a> αλάξτε το μήκος των τμημάτων ΑΒ και ΓΔ.</p>
+</div>
+</div>
+<ul>
+<li><strong>Ανεξαρτησία από τη μονάδα:</strong> Ο λόγος δύο ομοειδών μεγεθών (όπως τα ευθύγραμμα τμήματα) παραμένει <strong>σταθερός και ανεξάρτητος</strong> από τη μονάδα μέτρησης που χρησιμοποιείται (π.χ. είτε μετρήσουμε σε εκατοστά είτε σε χιλιοστά, ο λόγος των δύο τμημάτων θα είναι ο ίδιος).</li>
+<li><strong>Σύμμετρα και Ασύμμετρα τμήματα:</strong>
+<ul>
+<li><strong>Σύμμετρα</strong> ονομάζονται τα τμήματα που έχουν μια <strong>κοινή μονάδα μέτρησης</strong> (κοινό υποπολλαπλάσιο), οπότε ο λόγος τους είναι ρητός αριθμός.</li>
+<li><strong>Ασύμμετρα</strong> ονομάζονται τα τμήματα για τα οποία είναι αδύνατο να βρεθεί κοινό μέτρο, όσο μικρή μονάδα μέτρησης και αν επιλέξουμε. Σε αυτή την περίπτωση, ο λόγος τους είναι <strong>άρρητος αριθμός</strong> (π.χ. ο λόγος της διαγωνίου προς την πλευρά ενός τετραγώνου).</li>
+</ul></li>
+<li><strong>Λόγος προσανατολισμένων τμημάτων (Διανυσμάτων):</strong> Στην περίπτωση συγγραμμικών διανυσμάτων, ο λόγος μπορεί να είναι και <strong>αρνητικός</strong>. Είναι θετικός αν τα διανύσματα έχουν την ίδια φορά και αρνητικός αν έχουν αντίθετη φορά.</li>
+</ul>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> <strong>Παραδείγματα</strong></h4>
+<ol type="1">
+<li><strong>Απλή μέτρηση:</strong> Αν ένα τμήμα <span class="math inline">\(AB\)</span> έχει μήκος 6 μονάδες <span class="math inline">\(\mu\)</span> και ένα τμήμα <span class="math inline">\(\Gamma\Delta\)</span> έχει μήκος 5 μονάδες <span class="math inline">\(\mu\)</span>, τότε ο λόγος του <span class="math inline">\(AB\)</span> προς το <span class="math inline">\(\Gamma\Delta\)</span> είναι <span class="math inline">\(\dfrac{6}{5}\)</span> ή <span class="math inline">\(1,2\)</span>.</li>
+<li><strong>Σύγκριση βαρών:</strong> Αν ένας μαθητής Α ζυγίζει <span class="math inline">\(40\,kg\)</span> και ένας μαθητής Β ζυγίζει <span class="math inline">\(45\,kg\)</span>, ο λόγος των βαρών τους είναι <span class="math inline">\(\dfrac{40}{45} = \dfrac{8}{9}\)</span>.</li>
+<li><strong>Αλλαγή μονάδας:</strong> Αν δύο τμήματα έχουν μήκη <span class="math inline">\(8\,cm\)</span> και <span class="math inline">\(9\,cm\)</span>, ο λόγος τους είναι <span class="math inline">\(\dfrac{8}{9}\)</span>. Αν τα μετρήσουμε σε χιλιοστά, τα μήκη θα είναι <span class="math inline">\(80\,mm\)</span> και <span class="math inline">\(90\,mm\)</span>, αλλά ο λόγος παραμένει <span class="math inline">\(\dfrac{80}{90} = \dfrac{8}{9}\)</span>.</li>
+<li><strong>Γεωμετρική κατασκευή:</strong> Μπορούμε να κατασκευάσουμε ένα τμήμα <span class="math inline">\(\Gamma\Delta\)</span> που να έχει προς ένα δοσμένο τμήμα <span class="math inline">\(AB\)</span> λόγο ίσο με έναν ρητό αριθμό <span class="math inline">\(\lambda\)</span>. Για παράδειγμα, αν <span class="math inline">\(\lambda = \dfrac{3}{4}\)</span>, τότε <span class="math inline">\(\Gamma\Delta = \dfrac{3}{4} AB\)</span>.</li>
+</ol>
+</section>
+</div>
+<hr>
+<p>Οι αναλογίες στα ευθύγραμμα τμήματα αποτελούν τη βάση για τη μελέτη της ομοιότητας και των γεωμετρικών μετασχηματισμών. Η <strong>αναλογία</strong> ορίζεται ως η ισότητα δύο λόγων (<span class="math inline">\(\dfrac{α}{α_1} = \dfrac{β}{β_1}\)</span>), όπου οι όροι <span class="math inline">\(α\)</span> και <span class="math inline">\(β_1\)</span> ονομάζονται <strong>άκροι</strong>, ενώ οι <span class="math inline">\(α_1\)</span> και <span class="math inline">\(β\)</span> ονομάζονται <strong>μέσοι</strong>.</p>
+</section>
+<section id="θεωρία-βασικές-ιδιότητες-των-αναλογιών" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="θεωρία-βασικές-ιδιότητες-των-αναλογιών"><span class="header-section-number">1.2</span> <strong>Θεωρία: Βασικές Ιδιότητες των Αναλογιών</strong></h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Οι σημαντικότερες ιδιότητες που διέπουν τις αναλογίες είναι οι εξής:</p>
+<ol type="1">
+<li><strong>Ιδιότητα των Γινομένων:</strong> Σε κάθε αναλογία, το γινόμενο των άκρων όρων ισούται με το γινόμενο των μέσων όρων <span class="math display">\[\dfrac{α}{α_1}=\dfrac{β}{β_1} \Rightarrow α \cdot β_1 = α_1 \cdot β\]</span>.</li>
+<li><strong>Εναλλαγή Όρων:</strong> Μπορούμε να εναλλάξουμε τους δύο μέσους ή τους δύο άκρους όρους μεταξύ τους και να προκύψει πάλι μια έγκυρη αναλογία. <span class="math display">\[\dfrac{α}{α_1}=\dfrac{β}{β_1} \Rightarrow \dfrac{α}{β}=\dfrac{α_1}{β_1}\]</span></li>
+<li><strong>Αντιστροφή Λόγων:</strong> Αν δύο λόγοι είναι ίσοι, τότε και οι αντίστροφοί τους είναι ίσοι. <span class="math display">\[\dfrac{α}{α_1}=\dfrac{β}{β_1} \Rightarrow \dfrac{α_1}{α}=\dfrac{β_1}{β}\]</span></li>
+<li><strong>Πρόσθεση/Αφαίρεση Όρων:</strong> Αν στους ηγούμενους (αριθμητές) μιας αναλογίας προσθέσουμε ή αφαιρέσουμε τους επομένους (παρονομαστές), προκύπτουν νέες αναλογίες π.χ., <span class="math display">\[\dfrac{α \pm α_1}{α_1} = \dfrac{β \pm β_1}{β_1}\]</span>.</li>
+<li><strong>Πολλαπλή Αναλογία:</strong> Σε μια σειρά ίσων λόγων <span class="math display">\[\dfrac{α}{α_1} = \dfrac{β}{β_1} = \dfrac{γ}{γ_1}=\dfrac{α+β+γ}{α_1+β_1+γ_1}\]</span>, ο λόγος του αθροίσματος των αριθμητών προς το άθροισμα των παρονομαστών ισούται με τον κοινό λόγο.</li>
+</ol>
+</div>
+</section>
+<section id="παραδείγματα-1" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.3</span> <strong>Παραδείγματα</strong></h3>
+<ol type="1">
+<li><strong>Υπολογισμός Τμημάτων:</strong> Αν σε ένα τρίγωνο <span class="math inline">\(AB\Gamma\)</span> πάρουμε σημείο <span class="math inline">\(\Delta\)</span> στην <span class="math inline">\(AB\)</span> και <span class="math inline">\(E\)</span> στην <span class="math inline">\(A\Gamma\)</span> έτσι ώστε <span class="math inline">\(\Delta E \parallel B\Gamma\)</span>, και γνωρίζουμε ότι <span class="math inline">\(AB=6\,cm\)</span>, <span class="math inline">\(A\Gamma=9\,cm\)</span> και <span class="math inline">\(A\Delta=4\,cm\)</span>, τότε από την αναλογία <span class="math inline">\(\dfrac{A\Delta}{AB} = \dfrac{AE}{A\Gamma}\)</span> βρίσκουμε ότι <span class="math inline">\(AE = \dfrac{4 \cdot 9}{6} = 6\,cm\)</span>.</li>
+<li><strong>Μερισμός σε Ανάλογα Μέρη:</strong> Αν θέλουμε να μοιράσουμε έναν αριθμό (π.χ. <span class="math inline">\(80\)</span>) σε μέρη <span class="math inline">\(x, y, \omega\)</span> ανάλογα προς τους αριθμούς <span class="math inline">\(3, 7, 10\)</span>, χρησιμοποιούμε την ιδιότητα του αθροίσματος: <span class="math inline">\(\dfrac{x}{3} = \dfrac{y}{7} = \dfrac{\omega}{10} = \dfrac{x+y+\omega}{3+7+10} = \dfrac{80}{20} = 4\)</span>. Επομένως <span class="math inline">\(x=12, y=28, \omega=40\)</span>.</li>
+<li><strong>Κλίση Δρόμου:</strong> Η κλίση ενός δρόμου ορίζεται ως η εφαπτομένη (<span class="math inline">\(\epsilon\phi\)</span>) της γωνίας που σχηματίζει με το οριζόντιο επίπεδο, η οποία είναι ο λόγος της κατακόρυφης υψομετρικής διαφοράς προς την οριζόντια απόσταση.</li>
+<li><strong>Κέντρο Βάρους:</strong> Σε κάθε τρίγωνο, το κέντρο βάρους (σημείο τομής των διαμέσων) <span class="math inline">\(K\)</span> χωρίζει τις διαμέσους σε λόγο <span class="math inline">\(2:1\)</span> ξεκινώντας από την κορυφή, δηλαδή το τμήμα από την κορυφή είναι διπλάσιο από το τμήμα προς τη βάση (<span class="math inline">\(AK = 2KM\)</span>).</li>
+</ol>
+<hr>
+</section>
+<section id="ίσα-τμήματα-μεταξύ-παραλλήλων-ευθειών" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ίσα-τμήματα-μεταξύ-παραλλήλων-ευθειών"><span class="header-section-number">1.4</span> Ίσα τμήματα μεταξύ παραλλήλων ευθειών</h3>
+<p>Η θεωρία των ίσων τμημάτων μεταξύ παραλλήλων ευθειών και επιπέδων αποτελεί θεμελιώδη βάση της Γεωμετρίας, η οποία επεκτείνεται από τις απλές παράλληλες γραμμές έως τις ιδιότητες των τριγώνων και των τραπεζίων.</p>
+<p><strong>Θεωρία: Βασικές Προτάσεις και Ιδιότητες</strong></p>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><strong>Τμήματα μεταξύ παραλλήλων ευθειών:</strong> Αν τρεις ή περισσότερες παράλληλες ευθείες τέμνουν δύο άλλες τυχαίες ευθείες και τα τμήματα που ορίζονται πάνω στη μία ευθεία είναι ίσα μεταξύ τους, τότε και τα αντίστοιχα τμήματα που ορίζονται πάνω στη δεύτερη ευθεία θα είναι επίσης ίσα.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/z8wshzgu?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αλλάξτε την θέση του σημείου Κ για να αλλάξετε την θέση των παραλλήλων.</p>
+<p>Αλλάξτε την θέση των σημείων Α και Γ ή των <span class="math inline">\(Α_1\)</span> και <span class="math inline">\(Γ_1\)</span> για να αλλάξετε την θέση των τεμνουσών.</p>
+</div>
+</div>
+<ul>
+<li><strong>Παράλληλες ταινίες:</strong> Δύο παράλληλες ταινίες (το μέρος του επιπέδου που περιορίζεται από δύο παράλληλες ευθείες) με <strong>ίσα πλάτη</strong> αποκόπτουν ίσα τμήματα από κάθε ευθεία που τις τέμνει.</li>
+<li><strong>Παράλληλα τμήματα μεταξύ παραλλήλων επιπέδων:</strong> Τα παράλληλα ευθύγραμμα τμήματα που περιέχονται μεταξύ δύο παραλλήλων επιπέδων είναι πάντα <strong>ίσα</strong>. Επιπλέον, δύο παράλληλα επίπεδα αποκόπτουν ίσα τμήματα από ευθείες που είναι κάθετες σε αυτά, και το κοινό αυτό μήκος ονομάζεται <strong>απόσταση</strong> των παραλλήλων επιπέδων.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/veve8nvg?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αλλάξτε την θέση του σημείου Κ για να αλλάξετε την θέση των επιπέδων.</p>
+<p>Αλλάξτε την θέση των σημείων Α ή Γ για να αλλάξετε την θέση των παραλλήλων.</p>
+</div>
+</div>
+<p><strong>Εφαρμογές και Γεωμετρικά Συμπεράσματα</strong></p>
+<ol type="1">
+<li><strong>Στο Τρίγωνο:</strong>
+<ul>
+<li>Το ευθύγραμμο τμήμα που συνδέει τα <strong>μέσα δύο πλευρών</strong> ενός τριγώνου είναι <strong>παράλληλο</strong> προς την τρίτη πλευρά και ίσο με το <strong>μισό</strong> της.</li>
+</ul></li>
+</ol>
+<iframe src="https://www.geogebra.org/calculator/rcvs9djb?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αλλάξτε την θέση των κορυφών του τριγώνου ΑΒΓ.</p>
+</div>
+</div>
+<pre><code>- Αν από το μέσο μιας πλευράς τριγώνου φέρουμε ευθεία παράλληλη προς μια άλλη πλευρά, τότε αυτή θα περάσει από το **μέσο της τρίτης πλευράς**.</code></pre>
+<iframe src="https://www.geogebra.org/calculator/esdpzpez?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αλλάξτε την θέση των κορυφών του τριγώνου ΑΒΓ.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Στο Τραπέζιο:</strong>
+<ul>
+<li><strong>Διάμεσος Τραπεζίου:</strong> Το τμήμα που ενώνει τα μέσα των μη παραλλήλων πλευρών (διάμεσος) είναι παράλληλο προς τις βάσεις και ίσο με το <strong>ημιάθροισμά</strong> τους.</li>
+</ul></li>
+</ol>
+<iframe src="https://www.geogebra.org/calculator/u6w3egc5?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<ul>
+<li><strong>Τμήμα μέσων διαγωνίων:</strong> Το τμήμα που ενώνει τα μέσα των διαγωνίων ενός τραπεζίου είναι παράλληλο προς τις βάσεις και ίσο με την <strong>ημιδιαφορά</strong> τους.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/cq3zzxb2?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+</div>
+</section>
+<section id="παραδείγματα-2" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="παραδείγματα-2"><span class="header-section-number">1.5</span> <strong>Παραδείγματα</strong></h3>
+<ul>
+<li><p><strong>Ισομερισμός Τμήματος:</strong> Για να χωρίσουμε ένα τμήμα <span class="math inline">\(AB\)</span> σε 3 ίσα μέρη, χαράσσουμε μια τυχαία ημιευθεία από το <span class="math inline">\(A\)</span> και παίρνουμε πάνω της τρία διαδοχικά ίσα τμήματα με το άνοιγμα του διαβήτη (αυθαίρετα) <span class="math inline">\(A\Gamma=\Gamma\Delta=\Delta E\)</span>. Ενώνουμε το <span class="math inline">\(E\)</span> με το <span class="math inline">\(B\)</span> και φέρνουμε παραλλήλους από τα <span class="math inline">\(\Delta\)</span> και <span class="math inline">\(\Gamma\)</span> προς το <span class="math inline">\(EB\)</span>, οι οποίες χωρίζουν το <span class="math inline">\(AB\)</span> σε τρία ίσα μέρη.<br>
+<img src="images/clipboard-4215944520.png" class="img-fluid" width="429"></p></li>
+<li><p><strong>Απόσταση Μέσου από Ευθεία:</strong> Η απόσταση του μέσου ενός ευθυγράμμου τμήματος από μια ευθεία (που δεν το τέμνει) ισούται με το <strong>ημιάθροισμα</strong> των αποστάσεων των άκρων του τμήματος από την ίδια ευθεία.</p></li>
+<li><p><strong>Συμμετρία:</strong> Το συμμετρικό ενός ευθυγράμμου τμήματος <span class="math inline">\(AB\)</span> ως προς ένα κέντρο <span class="math inline">\(K\)</span> είναι ένα άλλο ευθύγραμμο τμήμα <span class="math inline">\(A'B'\)</span> που είναι <strong>ίσο και παράλληλο</strong> με το <span class="math inline">\(AB\)</span>.</p></li>
+<li><p><strong>Παραλληλόγραμμο:</strong> Στα παραλληλόγραμμα, οι απέναντι πλευρές είναι ίσες επειδή είναι παράλληλα τμήματα που περιέχονται μεταξύ παραλλήλων ευθειών.</p></li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</h3>
+<p><strong>1. Λόγος ευθυγράμμων τμημάτων</strong></p>
+<ol type="1">
+<li><strong>Υπολογισμός τμήματος και λόγων:</strong> Πάνω σε μια ευθεία παίρνουμε διαδοχικά τα σημεία Α, Β, Γ και Δ έτσι ώστε <span class="math inline">\(Α\Gamma = 7\,cm\)</span> και <span class="math inline">\(Β\Delta = 11\,cm\)</span>.</li>
+</ol>
+<ul>
+<li>Να βρεθεί το μήκος του τμήματος <span class="math inline">\(Β\Gamma\)</span>, αν είναι γνωστό ότι <span class="math inline">\(Α\Delta = 15\,cm\)</span>.</li>
+<li>Να υπολογιστούν οι λόγοι <span class="math inline">\(\dfrac{ΑΒ}{ΑΔ}\)</span>, <span class="math inline">\(\dfrac{ΒΓ}{ΑΔ}\)</span>, <span class="math inline">\(\dfrac{ΑΓ}{ΓΔ}\)</span>, <span class="math inline">\(\dfrac{ΑΔ}{ΑΓ}\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Αποδεικτική (Μέσο τμήματος):</strong> Πάνω σε μια ευθεία παίρνουμε τα διαδοχικά σημεία Α, Β και Γ. Αν <span class="math inline">\(Μ\)</span> είναι το μέσο του τμήματος <span class="math inline">\(Β\Gamma\)</span>, να αποδείξετε ότι <span class="math inline">\(Μ\Gamma = \dfrac{A\Gamma - AB}{2}\)</span>.</li>
+<li><strong>Σύνθετος Λόγος:</strong> Πάνω σε μια ευθεία παίρνουμε διαδοχικά τα σημεία Ο, Α, Γ και Β έτσι ώστε το τμήμα <span class="math inline">\(\GammaΒ\)</span> να είναι διπλάσιο του <span class="math inline">\(Α\Gamma\)</span> (<span class="math inline">\(\Gamma Β = 2Α\Gamma\)</span>). Να αποδείξετε ότι <span class="math inline">\(Ο\Gamma = \dfrac{2ΟΑ + ΟΒ}{3}\)</span>.</li>
+<li><strong>Απόσταση Μέσων:</strong> Δίνονται δύο ευθύγραμμα τμήματα <span class="math inline">\(ΑΒ\)</span> και <span class="math inline">\(\Gamma\Delta\)</span> πάνω στην ίδια ευθεία. Αν <span class="math inline">\(Ο_1\)</span> και <span class="math inline">\(Ο_2\)</span> είναι τα μέσα των <span class="math inline">\(ΑΒ\)</span> και <span class="math inline">\(\Gamma\Delta\)</span> αντίστοιχα, να υπολογίσετε την απόσταση <span class="math inline">\(Ο_1Ο_2\)</span> συναρτήσει των μηκών των <span class="math inline">\(ΑΔ\)</span>, και <span class="math inline">\(ΒΓ\)</span>.</li>
+<li><strong>Χρυσή Τομή (Μέση Ανάλογος):</strong> Επί ευθυγράμμου τμήματος <span class="math inline">\(ΑΒ = 10\,cm\)</span> να βρεθεί σημείο <span class="math inline">\(\Gamma\)</span> τέτοιο ώστε το τμήμα <span class="math inline">\(Α\Gamma = x\)</span> να είναι ο μέσος ανάλογος των <span class="math inline">\(ΑΒ\)</span> και <span class="math inline">\(Β\Gamma\)</span> (δηλαδή <span class="math inline">\(\dfrac{AB}{A\Gamma} = \dfrac{A\Gamma}{B\Gamma}\)</span>).</li>
+</ol>
+<p><em>Πρέπει</em> <span class="math inline">\(x^2=10(10-x)\)</span></p>
+<p><strong>2. Αναλογίες τμημάτων</strong></p>
+<ol type="1">
+<li><strong>Εφαρμογή σε Τρίγωνο:</strong> Σε τρίγωνο <span class="math inline">\(ΑΒ\Gamma\)</span> είναι <span class="math inline">\(ΑΒ = 5\,cm\)</span> και <span class="math inline">\(Α\Gamma = 7\,cm\)</span>. Παίρνουμε πάνω στην <span class="math inline">\(ΑΒ\)</span> τμήμα <span class="math inline">\(Α\Delta = 2,5\,cm\)</span> και κατασκευάζουμε τη <span class="math inline">\(\DeltaΕ \parallel Β\Gamma\)</span> (με το <span class="math inline">\(Ε\)</span> πάνω στην <span class="math inline">\(Α\Gamma\)</span>). Να υπολογίσετε το μήκος του τμήματος <span class="math inline">\(Ε\Gamma\)</span>.</li>
+<li><strong>Πολλαπλή Αναλογία:</strong> Τρεις παράλληλες ευθείες <span class="math inline">\(\epsilon_1, \epsilon_2, \epsilon_3\)</span> τέμνουν δύο άλλες ευθείες στα σημεία <span class="math inline">\(Α, Β, Γ\)</span> και <span class="math inline">\(Α', Β', Γ'\)</span> αντίστοιχα. Αν <span class="math inline">\(\dfrac{AB}{B\Gamma} = 1\)</span> και <span class="math inline">\(Α' Γ' = 15\,cm\)</span>, να υπολογίσετε τα τμήματα <span class="math inline">\(Α'Β'\)</span> και <span class="math inline">\(Β'Γ'\)</span>.</li>
+<li><strong>Αντίστροφο:</strong> Σε τρίγωνο <span class="math inline">\(ΑΒ\Gamma\)</span> είναι <span class="math inline">\(ΑΒ = 6\,cm\)</span> και <span class="math inline">\(Α\Gamma = 9\,cm\)</span>. Αν πάρουμε σημείο <span class="math inline">\(\Delta\)</span> στην <span class="math inline">\(ΑΒ\)</span> με <span class="math inline">\(Α\Delta = 3\,cm\)</span> και σημείο <span class="math inline">\(Ε\)</span> στην <span class="math inline">\(Α\Gamma\)</span> με <span class="math inline">\(ΑΕ = 6\,cm\)</span>, να εξετάσετε αν η <span class="math inline">\(\DeltaΕ\)</span> είναι παράλληλη προς τη <span class="math inline">\(Β\Gamma\)</span>.</li>
+</ol>
+<p><strong>3. Ίσα τμήματα μεταξύ παραλλήλων ευθειών</strong></p>
+<ol type="1">
+<li><p><strong>Απόσταση Μέσου:</strong> Να αποδείξετε ότι η απόσταση του μέσου <span class="math inline">\(Μ\)</span> ενός ευθυγράμμου τμήματος <span class="math inline">\(ΑΒ\)</span> από μια ευθεία που δεν το τέμνει, ισούται με το ημιάθροισμα των αποστάσεων των άκρων <span class="math inline">\(Α\)</span> και <span class="math inline">\(Β\)</span> από την ίδια ευθεία.</p></li>
+<li><p><strong>Τετράεδρο:</strong> Σε ένα τετράεδρο <span class="math inline">\(ΑΒ\Gamma\Delta\)</span>, να αποδείξετε ότι τα μέσα των ακμών <span class="math inline">\(ΑΒ, Α\Gamma, \DeltaΒ, \Delta\Gamma\)</span> είναι κορυφές παραλληλογράμμου.<br>
+<img src="images/clipboard-615762100.png" class="img-fluid"></p></li>
+<li><p><strong>Μεσοπαράλληλος:</strong> Δίνονται δύο παράλληλες ευθείες <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span>. Να αποδείξετε ότι η ευθεία που δημιουργείται από όλα τα σημεία των μέσων όλων των τμημάτων που έχουν τα άκρα τους στις <span class="math inline">\(\epsilon_1, \epsilon_2\)</span> είναι η μεσοπαράλληλός τους.</p></li>
+</ol>
+<p><strong>4. Διαίρεση τμημάτων</strong></p>
+<ol type="1">
+<li><p><strong>Γεωμετρικός Ισομερισμός:</strong> Να περιγράψετε τη μέθοδο και να εκτελέσετε τη γεωμετρική κατασκευή για τη διαίρεση ενός τμήματος <span class="math inline">\(ΑΒ\)</span> σε 5 ίσα μέρη χρησιμοποιώντας μια βοηθητική ημιευθεία.</p></li>
+<li><p><strong>Διαίρεση Ταινίας:</strong> Μια ταινία έχει πλάτος <span class="math inline">\(11\,cm\)</span>. Να περιγράψετε πώς θα τη χωρίσετε σε 9 ισοπλατείς ταινίες χρησιμοποιώντας μόνο κανόνα και διαβήτη.</p></li>
+<li><p><strong>Κοινό Μέσο:</strong> Αν τα σημεία <span class="math inline">\(Α, Β, \Gamma, \Delta\)</span> μιας ευθείας είναι τοποθετημένα έτσι ώστε τα τμήματα <span class="math inline">\(ΑΒ\)</span> και <span class="math inline">\(\Gamma\Delta\)</span> να έχουν κοινό μέσο, να αποδείξετε ότι <span class="math inline">\(Α\Gamma = Β\Delta\)</span>.</p></li>
+</ol>
+</section>
+<section id="μερικές-ακόμη" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="μερικές-ακόμη"><span class="header-section-number">1.7</span> Μερικές ακόμη</h3>
+<ol type="1">
+<li><p>Στο παρακάτω σχήμα είναι <span class="math inline">\(\epsilon_1 // \epsilon_2 // \epsilon_3\)</span>. Αν τα τμήματα στις δύο τέμνουσες είναι <span class="math inline">\(6\)</span> και <span class="math inline">\(6\)</span> στην πρώτη, και <span class="math inline">\(8\)</span> και <span class="math inline">\(x\)</span> στη δεύτερη, να υπολογίσετε το <span class="math inline">\(x\)</span>.<br>
+<img src="images/clipboard-2506161665.png" class="img-fluid"></p></li>
+<li><p>Στο παρακάτω σχήμα είναι <span class="math inline">\(ε_1//ε_2//ε_3\)</span>. Να υπολογίσετε το μήκος του ευθυγράμμου τμήματος <span class="math inline">\(AΚ\)</span>.<br>
+<img src="images/clipboard-335888595.png" class="img-fluid" width="412"></p></li>
+<li><p>Στο τραπέζιο <span class="math inline">\(AB\Gamma\Delta\)</span> είναι <span class="math inline">\(AΔ=6\)</span>, <span class="math inline">\(E\Delta=3\)</span>, <span class="math inline">\(BΓ=8\)</span>. Για ένα σημείο <span class="math inline">\(Z\)</span> πάνω στην ΒΓ, πόσο πρέπει να είναι το ΒΖ ώστε η <span class="math inline">\(EZ\)</span> να είναι παράλληλη προς τις βάσεις; Να αιτιολογήσετε την απάντησή σας.<br>
+<img src="images/clipboard-3235660720.png" class="img-fluid" width="454"></p></li>
+<li><p>Δίνεται ευθύγραμμο τμήμα <span class="math inline">\(A\Gamma\)</span> πάνω στο οποίο βρίσκεται το σημείο <span class="math inline">\(B\)</span>, τέτοιο ώστε <span class="math inline">\(AB = 5\text{ cm}\)</span> και <span class="math inline">\(B\Gamma = 15\text{ cm}\)</span>. Να συμπληρώσετε τις ισότητες:</p></li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\dfrac{AB}{B\Gamma} = -\)</span></li>
+<li>β) <span class="math inline">\(\dfrac{B\Gamma}{AB} = -\)</span></li>
+<li>γ) <span class="math inline">\(\dfrac{AB}{A\Gamma} = -\)</span></li>
+<li>δ) <span class="math inline">\(\dfrac{B\Gamma}{A\Gamma} = -\)</span></li>
+</ul>
+<ol start="5" type="1">
+<li>Αν <span class="math inline">\(AB = B\Gamma = \Gamma\Delta = \Delta E = ZE = 2\text{ cm}\)</span>, να συμπληρώσετε τις ισότητες:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\dfrac{AB}{A\Delta} = -\)</span></li>
+<li>β) <span class="math inline">\(\dfrac{B\Delta}{BE} = -\)</span></li>
+<li>γ) <span class="math inline">\(\dfrac{A\Gamma}{AE} = -\)</span></li>
+<li>δ) <span class="math inline">\(\dfrac{AE}{B\Gamma} = -\)</span></li>
+<li>ε) <span class="math inline">\(\dfrac{A\Gamma}{\Gamma E} = -\)</span></li>
+</ul>
+<ol start="6" type="1">
+<li>Να χαρακτηρίσετε τις παρακάτω προτάσεις με (<span class="math inline">\(\Sigma\)</span>), αν είναι σωστές ή με (<span class="math inline">\(\Lambda\)</span>), αν είναι λανθασμένες:</li>
+</ol>
+<ul>
+<li>α) Αν <span class="math inline">\(AB = 5\text{ cm}\)</span> και <span class="math inline">\(\Gamma\Delta = 10\text{ cm}\)</span>, τότε <span class="math inline">\(\dfrac{AB}{\Gamma\Delta} = \dfrac{1}{2}\)</span>.</li>
+<li>β) Αν <span class="math inline">\(\dfrac{AB}{\Gamma\Delta} = \dfrac{3}{4}\)</span>, τότε <span class="math inline">\(AB = 3\)</span> και <span class="math inline">\(\Gamma\Delta = 4\)</span>.</li>
+<li>γ) Ο λόγος της πλευράς ενός τετραγώνου προς την περίμετρό του είναι ίσος με <span class="math inline">\(\dfrac{1}{4}\)</span>.</li>
+<li>δ) Αν <span class="math inline">\(\dfrac{AB}{\Gamma\Delta} = \dfrac{4}{7}\)</span>, τότε το ευθύγραμμο τμήμα <span class="math inline">\(AB\)</span> είναι μεγαλύτερο από το <span class="math inline">\(\Gamma\Delta\)</span>.</li>
+<li>ε) Ο λόγος της διαμέτρου ενός κύκλου προς την ακτίνα του είναι 2.</li>
+<li>στ) Αν <span class="math inline">\(M\)</span> είναι το μέσο του <span class="math inline">\(AB\)</span>, τότε <span class="math inline">\(\dfrac{AM}{AB} = 0,5\)</span>.</li>
+<li>ζ) Ο λόγος της πλευράς ενός ισόπλευρου τριγώνου προς την περίμετρό του είναι <span class="math inline">\(\dfrac{1}{2}\)</span>.</li>
+</ul>
+<ol start="7" type="1">
+<li>Βλέποντας την αναλογία <span class="math inline">\(\dfrac{AB}{\Gamma\Delta} = \dfrac{2}{5}\)</span>, ο Γιώργος ισχυρίστηκε ότι <span class="math inline">\(AB=2\)</span> και <span class="math inline">\(\Gamma\Delta=5\)</span>, ενώ η Άννα ισχυρίστηκε ότι το <span class="math inline">\(\Gamma\Delta\)</span> είναι <span class="math inline">\(2,5\)</span> φορές μεγαλύτερο από το <span class="math inline">\(AB\)</span>. Ποια από τους δύο έχει δίκιο;</li>
+</ol>
+</section>
+<section id="και-μερικές-ακόμη" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="και-μερικές-ακόμη"><span class="header-section-number">1.8</span> …. και μερικές ακόμη</h3>
+<ol type="1">
+<li><p>Στο παρακάτω σχήμα είναι <span class="math inline">\(AB // \Delta E // H\Theta\)</span> και <span class="math inline">\(B\Gamma // EZ // \Theta I\)</span>. Αν <span class="math inline">\(A\Delta = 4\)</span> και <span class="math inline">\(\Delta H = 4\)</span>, ενώ το <span class="math inline">\(EΘ = 5\)</span> και το <span class="math inline">\(ΓΖ=6\)</span>, να υπολογίσετε τα <span class="math inline">\(x\)</span> (μήκος <span class="math inline">\(ΒΕ\)</span>) και <span class="math inline">\(y\)</span> (μήκος <span class="math inline">\(ΖΙ\)</span>).<br>
+<img src="images/clipboard-3688617912.png" class="img-fluid" width="480"></p></li>
+<li><p>α) Με κανόνα και διαβήτη να διαιρέσετε ένα ευθύγραμμο τμήμα <span class="math inline">\(AB = 10\text{ cm}\)</span> σε τέσσερα ίσα ευθύγραμμα τμήματα.</p></li>
+</ol>
+<p>Πάνω σε μια ευθεία <span class="math inline">\(\epsilon\)</span> να σχεδιάσετε τα διαδοχικά ευθύγραμμα τμήματα <span class="math inline">\(\Gamma\Delta = \dfrac{1}{4}AB\)</span>, <span class="math inline">\(\Delta Z = \dfrac{2}{4}AB\)</span> και <span class="math inline">\(ZH = \dfrac{3}{4}AB\)</span>.</p>
+<p>β) Να υπολογίσετε τους λόγους:</p>
+<ol type="i">
+<li><p><span class="math inline">\(\dfrac{\Gamma\Delta}{AB}\)</span>,</p></li>
+<li><p><span class="math inline">\(\dfrac{\Delta Z}{\Gamma\Delta}\)</span>,</p></li>
+<li><p><span class="math inline">\(\dfrac{AB}{ZH}\)</span>,</p></li>
+<li><p><span class="math inline">\(\dfrac{ZH}{\Delta Z}\)</span>,</p></li>
+<li><p><span class="math inline">\(\dfrac{\Gamma\Delta}{ZH}\)</span>.</p></li>
+</ol>
+<ol start="3" type="1">
+<li>Στο ορθογώνιο τρίγωνο <span class="math inline">\(AB\Gamma\)</span> (<span class="math inline">\(A=90^\circ\)</span>) με κάθετες πλευρές <span class="math inline">\(A\Gamma = 3\text{ cm}\)</span> και <span class="math inline">\(AB = 4\text{ cm}\)</span>, να βρείτε τους λόγους:</li>
+</ol>
+<p>α) <span class="math inline">\(\dfrac{AB}{A\Gamma}\)</span></p>
+<p>β) <span class="math inline">\(\dfrac{B\Gamma}{AB}\)</span></p>
+<p>γ) <span class="math inline">\(\dfrac{A\Gamma}{B\Gamma}\)</span></p>
+<ol start="4" type="1">
+<li>Σε ορθογώνιο τρίγωνο <span class="math inline">\(AB\Gamma\)</span> (<span class="math inline">\(\hat{A} = 90^\circ\)</span>) είναι <span class="math inline">\(A\Gamma = 8\text{ cm}\)</span> και <span class="math inline">\(B\Gamma = 17\text{ cm}\)</span>. Να υπολογίσετε το μήκος της πλευράς <span class="math inline">\(AB\)</span> και τους λόγους:</li>
+</ol>
+<p>α) <span class="math inline">\(\dfrac{AB}{B\Gamma}\)</span></p>
+<p>β) <span class="math inline">\(\dfrac{A\Gamma}{B\Gamma}\)</span></p>
+<p>γ) <span class="math inline">\(\dfrac{AB}{A\Gamma}\)</span></p>
+<ol start="5" type="1">
+<li><p>Να σχεδιάσετε ένα ισόπλευρο τρίγωνο με πλευρά <span class="math inline">\(6\text{ cm}\)</span>. Να υπολογίσετε το ύψος του και στη συνέχεια τον λόγο του ύψους προς την πλευρά του τριγώνου.</p></li>
+<li><p>Από το μέσο <span class="math inline">\(M\)</span> της πλευράς <span class="math inline">\(AB\)</span> ενός τριγώνου <span class="math inline">\(AB\Gamma\)</span>, φέρνετε παράλληλη ευθεία προς τη βάση <span class="math inline">\(B\Gamma\)</span> η οποία τέμνει την <span class="math inline">\(A\Gamma\)</span> στο σημείο <span class="math inline">\(\Delta\)</span>.</p></li>
+</ol>
+<p>α) Να αποδείξετε ότι το <span class="math inline">\(\Delta\)</span> είναι το μέσο της <span class="math inline">\(A\Gamma\)</span>.</p>
+<p>β) Να αποδείξετε ότι τα τμήματα <span class="math inline">\(A\Delta\)</span> και <span class="math inline">\(AB\)</span> είναι ανάλογα προς τα τμήματα <span class="math inline">\(A\Gamma\)</span> και <span class="math inline">\(AM\)</span>.</p>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -908,12 +1296,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
