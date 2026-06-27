@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>06. Λόγος εμβαδών ομοίων σχημάτων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-ggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html">06. Λόγος εμβαδών ομοίων σχημάτων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html">06. Λόγος εμβαδών ομοίων σχημάτων</a></li></ol></nav>
+      <h1 class="title">06. Λόγος εμβαδών ομοίων σχημάτων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">28 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -824,9 +864,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -863,7 +903,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
   </div>
 </li>
@@ -878,33 +918,311 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#λόγος-εμβαδών-ομοίων-σχημάτων" id="toc-λόγος-εμβαδών-ομοίων-σχημάτων" class="nav-link active" data-scroll-target="#λόγος-εμβαδών-ομοίων-σχημάτων"><span class="header-section-number">1</span> Λόγος εμβαδών ομοίων σχημάτων</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-ο-λόγος-των-εμβαδών" id="toc-θεωρία-ο-λόγος-των-εμβαδών" class="nav-link" data-scroll-target="#θεωρία-ο-λόγος-των-εμβαδών"><span class="header-section-number">1.1</span> <strong>Θεωρία: Ο Λόγος των Εμβαδών</strong></a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.2</span> <strong>Παραδείγματα</strong></a></li>
+  </ul></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">2</span> Ασκήσεις</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="λόγος-εμβαδών-ομοίων-σχημάτων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="λόγος-εμβαδών-ομοίων-σχημάτων"><span class="header-section-number">1</span> Λόγος εμβαδών ομοίων σχημάτων</h2>
+<p>Ο λόγος των εμβαδών δύο ομοίων σχημάτων (ή των επιφανειών ομοίων στερεών) συνδέεται άμεσα με τον λόγο ομοιότητάς τους μέσω μιας θεμελιώδους γεωμετρικής σχέσης.</p>
+<section id="θεωρία-ο-λόγος-των-εμβαδών" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-ο-λόγος-των-εμβαδών"><span class="header-section-number">1.1</span> <strong>Θεωρία: Ο Λόγος των Εμβαδών</strong></h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>1. Ορισμός Ομοιότητας και Λόγου Ομοιότητας:</strong> Γνωρίζουμε ότι δύο σχήματα (επίπεδα ή στερεά) ονομάζονται <strong>όμοια</strong> όταν το ένα είναι ή μπορεί να γίνει, με κατάλληλη μετατόπιση, <strong>ομοιόθετο</strong> του άλλου. Ο λόγος <span class="math inline">\(\lambda\)</span> της ομοιοθεσίας αυτής ονομάζεται <strong>λόγος ομοιότητας</strong> των δύο σχημάτων. Σε δύο όμοια σχήματα, ο λόγος των αποστάσεων δύο οποιωνδήποτε σημείων του ενός προς την απόσταση των αντίστοιχων σημείων του άλλου παραμένει σταθερός και ίσος με τον λόγο ομοιότητας <span class="math inline">\(\lambda\)</span>.</p>
+<p><strong>2. Η Σχέση των Εμβαδών:</strong> Ο βασικός κανόνας που προκύπτει είναι ότι <strong>ο λόγος των εμβαδών δύο ομοίων σχημάτων είναι ίσος με το τετράγωνο του λόγου ομοιότητάς τους</strong>. Συμβολικά, αν <span class="math inline">\(E_1\)</span> και <span class="math inline">\(E_2\)</span> είναι τα εμβαδά δύο ομοίων σχημάτων και <span class="math inline">\(\lambda\)</span> ο λόγος ομοιότητάς τους, τότε: <span class="math display">\[\frac{E_1}{E_2} = \lambda^2\]</span></p>
+<p><strong>3. Εφαρμογή σε Τρίγωνα και Πολύγωνα:</strong></p>
+<ul>
+<li><strong>Τρίγωνα:</strong> Ο λόγος των εμβαδών δύο ομοίων τριγώνων ισούται με το τετράγωνο του λόγου ομοιότητας. Αυτό αποδεικνύεται από το γεγονός ότι οι αντίστοιχες βάσεις και τα αντίστοιχα ύψη τους έχουν λόγο <span class="math inline">\(\lambda\)</span>, οπότε ο τύπος του εμβαδού (<span class="math inline">\(\dfrac{1}{2} \cdot \text{βάση} \cdot \text{ύψος}\)</span>) οδηγεί στον λόγο <span class="math inline">\(\lambda \cdot \lambda = \lambda^2\)</span>.<br>
+<img src="images/clipboard-2192984955.png" class="img-fluid" width="403"></li>
+</ul>
+<p><strong>Απόδειξη</strong></p>
+<ol type="1">
+<li><strong>Ορισμός Μεγεθών:</strong> Θεωρούμε δύο <strong>όμοια τρίγωνα</strong> ΑΒΓ και Α’Β’Γ’ με λόγο ομοιότητας <span class="math inline">\(\lambda\)</span>. Έστω <span class="math inline">\(E_1\)</span> το εμβαδό του πρώτου και <span class="math inline">\(E_2\)</span> το εμβαδό του δεύτερου.</li>
+<li><strong>Χρήση Βάσεων και Υψών:</strong> Επιλέγουμε δύο ομόλογες βάσεις, π.χ. τις ΒΓ και Β’Γ’, και τα αντίστοιχα ύψη τους ΑΔ και Α’Δ’.</li>
+<li><strong>Τύπος Εμβαδού:</strong> Το εμβαδό κάθε τριγώνου δίνεται από το ήμισυ του γινομένου της βάσης επί το αντίστοιχο ύψος:
+<ul>
+<li><span class="math inline">\(E_1 = \dfrac{1}{2} \cdot (ΒΓ) \cdot (ΑΔ)\)</span></li>
+<li><span class="math inline">\(E_2 = \dfrac{1}{2} \cdot (Β'Γ') \cdot (Α'Δ')\)</span></li>
+</ul></li>
+<li><strong>Σχηματισμός Λόγου:</strong> Διαιρώντας κατά μέλη τις δύο ισότητες, ο λόγος των εμβαδών γίνεται: <span class="math display">\[\frac{E_1}{E_2} = \frac{\frac{1}{2} \cdot (ΒΓ) \cdot (ΑΔ)}{\frac{1}{2} \cdot (Β'Γ') \cdot (Α'Δ')} = \frac{ΒΓ}{Β'Γ'} \cdot \frac{ΑΔ}{Α'Δ'}\]</span></li>
+<li><strong>Εφαρμογή Λόγου Ομοιότητας:</strong> Από τον ορισμό της ομοιότητας, ο λόγος των ομολόγων πλευρών είναι ίσος με τον λόγο ομοιότητας <span class="math inline">\(\lambda\)</span>, δηλαδή <span class="math inline">\(\dfrac{ΒΓ}{Β'Γ'} = \lambda\)</span>. Επιπλέον, <strong>ο λόγος ομοιότητας επεκτείνεται και στα αντίστοιχα δευτερεύοντα στοιχεία</strong>, όπως τα ύψη, οι διάμεσοι και οι διχοτόμοι, συνεπώς και <span class="math inline">\(\dfrac{ΑΔ}{Α'Δ'} = \lambda\)</span>.</li>
+<li><strong>Τελικό Συμπέρασμα:</strong> Αντικαθιστώντας τους λόγους με το <span class="math inline">\(\lambda\)</span>, προκύπτει: <span class="math display">\[\frac{E_1}{E_2} = \lambda \cdot \lambda = \lambda^2\]</span></li>
+</ol>
+<p><strong>Εναλλακτική Τριγωνομετρική Απόδειξη</strong></p>
+<p>Η σχέση μπορεί επίσης να αποδειχθεί χρησιμοποιώντας τον τριγωνομετρικό τύπο του εμβαδού: <span class="math inline">\(E = \dfrac{1}{2} \beta \gamma \eta\mu A\)</span>.</p>
+<p>* Εφόσον τα τρίγωνα είναι όμοια, οι ομόλογες γωνίες τους είναι ίσες (<span class="math inline">\(A = A'\)</span>) και οι πλευρές τους ανάλογες (<span class="math inline">\(\beta' = \lambda \beta\)</span> και <span class="math inline">\(\gamma' = \lambda \gamma\)</span>).</p>
+<p>* Ο λόγος των εμβαδών γίνεται: <span class="math inline">\(\require{cancel}\dfrac{E'}{E} = \dfrac{\dfrac{1}{2} (\lambda \beta) (\lambda \gamma) \eta\mu A}{\dfrac{1}{2} \beta \gamma \eta\mu A} =\dfrac{\cancel{\dfrac{1}{2}} (λ\cancel{β}) (λ \cancel{γ}) \cancel{ημ A}}{\cancel{\dfrac{1}{2}}  \cancel{β} \cancel{γ} \cancel{ημΑ}}= \lambda^2\)</span>.</p>
+<ul>
+<li><strong>Πολύγωνα:</strong> Η ιδιότητα αυτή επεκτείνεται σε όλα τα όμοια πολύγωνα, καθώς αυτά μπορούν να αναλυθούν σε αντίστοιχα όμοια τρίγωνα.</li>
+</ul>
+<p><strong>4. Επιφάνειες Στερεών Σωμάτων:</strong> Η ίδια αρχή ισχύει και για το εμβαδό της επιφάνειας (παράπλευρης ή ολικής) ομοίων στερεών, όπως <strong>κύβοι, κύλινδροι, κώνοι και σφαίρες</strong>.</p>
 </div>
+<hr>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.2</span> <strong>Παραδείγματα</strong></h3>
+<ul>
+<li><p><strong>Παράδειγμα με Σπίτια:</strong> Αν έχουμε δύο εντελώς όμοια σπίτια Α και Β, και το ύψος του σπιτιού Α είναι διπλάσιο από το ύψος του σπιτιού Β (<span class="math inline">\(\lambda=2\)</span>), τότε η έκταση (εμβαδό) που καταλαμβάνει το σπίτι Α θα είναι <strong>τετραπλάσια</strong> (<span class="math inline">\(\lambda^2 = 2^2 = 4\)</span>) από την έκταση του σπιτιού Β.</p></li>
+<li><p><strong>Παράδειγμα με Κύβους:</strong> Έστω δύο κύβοι με ακμές <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\alpha'\)</span>. Ο λόγος ομοιότητάς τους είναι <span class="math inline">\(\lambda = \dfrac{\alpha}{\alpha'}\)</span>. Ο λόγος των ολικών επιφανειών τους (<span class="math inline">\(E=6\alpha^2\)</span> και <span class="math inline">\(E'=6\alpha'^2\)</span>) είναι ίσος με το τετράγωνο του λόγου ομοιότητας: <span class="math inline">\(\dfrac{6\alpha^2}{6\alpha'^2} = (\dfrac{\alpha}{\alpha'})^2 = \lambda^2\)</span>.</p></li>
+<li><p><strong>Υπολογισμός Εμβαδού Ομοιοθέτου Σχήματος:</strong> Αν έχουμε ένα τετράγωνο με πλευρά 8 cm και το μετασχηματίσουμε με λόγο ομοιότητας <span class="math inline">\(\lambda=3\)</span>, το νέο τετράγωνο θα έχει εμβαδό <span class="math inline">\(E' = E \cdot \lambda^2\)</span>. Δηλαδή: <span class="math inline">\((8 \cdot 8) \cdot 3^2 = 64 \cdot 9 = 576\)</span> cm<span class="math inline">\(^2\)</span>.</p></li>
+<li><p><strong>Μεταβολή Διαστάσεων Πρίσματος:</strong> Αν η επιφάνεια ενός πρίσματος είναι 22 m<span class="math inline">\(^2\)</span> και κατασκευάσουμε ένα δεύτερο όμοιο πρίσμα του οποίου οι διαστάσεις είναι το <span class="math inline">\(\dfrac{1}{2}\)</span> των διαστάσεων του πρώτου (<span class="math inline">\(\lambda = \dfrac{1}{2}\)</span>), τότε η επιφάνεια του νέου πρίσματος θα είναι <span class="math inline">\(22 \cdot \left(\dfrac{1}{2}\right)^2 = 22 \cdot \dfrac{1}{4} = 5,5\)</span> m<span class="math inline">\(^2\)</span>.</p></li>
+<li><p><strong>Ομόλογες Ακμές Στερεών:</strong> Αν δύο ομόλογες ακμές δύο ομοίων στερεών έχουν μήκη 3 cm και 6 cm, ο λόγος ομοιότητας είναι <span class="math inline">\(\lambda = \dfrac{6}{3} = 2\)</span>. Συνεπώς, ο λόγος των εμβαδών των επιφανειών τους θα είναι <span class="math inline">\(\lambda^2 = 2^2 = 4\)</span>.</p></li>
+<li><p><strong>Παράδειγμα με Κύκλους</strong></p></li>
+</ul>
+<p>Γνωρίζουμε ότι όλοι οι <strong>κύκλοι είναι μεταξύ τους σχήματα όμοια</strong>. Ο λόγος ομοιότητας <span class="math inline">\(\lambda\)</span> δύο κύκλων ισούται με τον <strong>λόγο των ακτίνων τους</strong>. Όπως ισχύει για όλα τα όμοια σχήματα, ο λόγος των εμβαδών τους είναι ίσος με το <strong>τετράγωνο του λόγου ομοιότητάς τους</strong>.</p>
+<p>Έστω ότι έχουμε δύο κύκλους, τον κύκλο <span class="math inline">\(K_1\)</span> με ακτίνα <span class="math inline">\(R_1\)</span> και τον κύκλο <span class="math inline">\(K_2\)</span> με ακτίνα <span class="math inline">\(R_2\)</span>.</p>
+<ol type="1">
+<li><strong>Υπόθεση:</strong> Ας υποθέσουμε ότι η ακτίνα του δεύτερου κύκλου είναι <strong>τριπλάσια</strong> από την ακτίνα του πρώτου (<span class="math inline">\(R_2 = 3 \cdot R_1\)</span>).</li>
+<li><strong>Λόγος Ομοιότητας:</strong> Ο λόγος ομοιότητας των δύο κύκλων θα είναι <span class="math inline">\(\lambda = \dfrac{R_2}{R_1} = 3\)</span>.</li>
+<li><strong>Λόγος Εμβαδών:</strong> Ο λόγος των εμβαδών τους (<span class="math inline">\(E_1, E_2\)</span>) θα είναι ίσος με το τετράγωνο του λόγου ομοιότητας: <span class="math display">\[\frac{E_2}{E_1} = \lambda^2 = 3^2 = 9\]</span></li>
+<li><strong>Συμπέρασμα:</strong> Το εμβαδό του δεύτερου κύκλου θα είναι <strong>9 φορές μεγαλύτερο</strong> από το εμβαδό του πρώτου.</li>
+</ol>
+<p><strong>Επαλήθευση με τον τύπο του εμβαδού:</strong></p>
+<p>Το εμβαδό του κύκλου δίνεται από τον τύπο <span class="math inline">\(E = \pi R^2\)</span>.</p>
+<p>* Για τον πρώτο κύκλο: <span class="math inline">\(E_1 = \pi R_1^2\)</span>.</p>
+<p>* Για τον δεύτερο κύκλο: <span class="math inline">\(E_2 = \pi (3R_1)^2 = \pi \cdot 9R_1^2 = 9 \cdot (\pi R_1^2) = 9E_1\)</span>.</p>
+<p>Αντίστοιχα, αν η ακτίνα ενός κύκλου <strong>διπλασιαστεί</strong> (<span class="math inline">\(\lambda=2\)</span>), το εμβαδό του <strong>τετραπλασιάζεται</strong> (<span class="math inline">\(\lambda^2=4\)</span>), ενώ αν η ακτίνα υποδιπλασιαστεί (<span class="math inline">\(\lambda=1/2\)</span>), το εμβαδό γίνεται το <strong>ένα τέταρτο</strong> του αρχικού (<span class="math inline">\(\lambda^2=1/4\)</span>).</p>
+<ul>
+<li><strong>Παράδειγμα: Υπολογισμός Εμβαδού Ομοίου Τριγώνου</strong></li>
+</ul>
+<p><strong>Δεδομένα:</strong></p>
+<ol type="1">
+<li>Έχουμε ένα τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με εμβαδό <span class="math inline">\(E = 27\)</span> m².</li>
+<li>Κατασκευάζουμε ένα νέο τρίγωνο <span class="math inline">\(Α'Β'Γ'\)</span> το οποίο είναι <strong>όμοιο</strong> με το <span class="math inline">\(ΑΒΓ\)</span>.</li>
+<li>Ο λόγος ομοιότητας του νέου τριγώνου ως προς το αρχικό είναι <span class="math inline">\(\lambda = \dfrac{1}{3}\)</span>. (Αυτό σημαίνει ότι κάθε πλευρά του νέου τριγώνου είναι το <span class="math inline">\(1/3\)</span> της αντίστοιχης πλευράς του αρχικού).</li>
+</ol>
+<p><strong>Ζητούμενο:</strong> Να βρεθεί το εμβαδό <span class="math inline">\(E'\)</span> του τριγώνου <span class="math inline">\(Α'Β'Γ'\)</span>.</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><p><strong>Βήμα 1: Εφαρμογή της θεωρίας.</strong> Γνωρίζουμε από τη γεωμετρία ότι: <span class="math display">\[\frac{E'}{E} = \lambda^2\]</span></p></li>
+<li><p><strong>Βήμα 2: Υπολογισμός του τετραγώνου του λόγου ομοιότητας.</strong> Εφόσον <span class="math inline">\(\lambda = \dfrac{1}{3}\)</span>, τότε: <span class="math display">\[\lambda^2 = \left(\frac{1}{3}\right)^2 = \frac{1}{9}\]</span></p></li>
+<li><p><strong>Βήμα 3: Υπολογισμός του νέου εμβαδού.</strong> Αντικαθιστούμε τις τιμές στον τύπο: <span class="math display">\[E' = E \cdot \lambda^2\]</span> <span class="math display">\[E' = 27 \cdot \frac{1}{9}\]</span> <span class="math inline">\(E' = 3\)</span> m²</p></li>
+</ul>
+<p><strong>Συμπέρασμα</strong> Αν μικρύνουμε τις διαστάσεις ενός πολυγώνου κατά <strong>3 φορές</strong> (λόγος <span class="math inline">\(1/3\)</span>), το εμβαδό του δεν θα μειωθεί κατά 3, αλλά κατά <strong>9 φορές</strong> (<span class="math inline">\(3^2\)</span>), καταλαμβάνοντας έτσι το <span class="math inline">\(1/9\)</span> της αρχικής έκτασης. Το ίδιο ισχύει για όλα τα όμοια πολύγωνα, καθώς κάθε πολύγωνο μπορεί να αναλυθεί σε αντίστοιχα όμοια τρίγωνα.</p>
+<hr>
+<p><strong>Ο λόγος των εμβαδών των επιφανειών δύο σφαιρών είναι ίσος με το τετράγωνο του λόγου ομοιότητάς τους</strong>, ο οποίος ισούται με τον λόγο των ακτίνων τους.</p>
+<p><strong>Θεωρητική Βάση</strong> Επειδή δύο οποιεσδήποτε σφαίρες είναι πάντα σχήματα όμοια, αν έχουν ακτίνες <span class="math inline">\(R\)</span> και <span class="math inline">\(R'\)</span>, ο λόγος των εμβαδών τους (<span class="math inline">\(E\)</span> και <span class="math inline">\(E'\)</span>) προκύπτει από τον τύπο <span class="math inline">\(E = 4\pi R^2\)</span> ως εξής: <span class="math display">\[\frac{E}{E'} = \frac{4\pi R^2}{4\pi R'^2} = \frac{R^2}{R'^2} = \left(\frac{R}{R'}\right)^2 = \lambda^2\]</span></p>
+<ul>
+<li><strong>Παράδειγμα: Εγγεγραμμένη και Περιγεγραμμένη Σφαίρα Κύβου</strong></li>
+</ul>
+<p>Ένα χαρακτηριστικό παράδειγμα υπολογισμού που προκύπτει αφορά τη σύγκριση δύο σφαιρών σε σχέση με έναν κύβο πλευράς <span class="math inline">\(\alpha = 5\)</span> m:</p>
+<p><img src="images/clipboard-3579487556.png" class="img-fluid" width="341"></p>
+<ol type="1">
+<li><p><strong>Εγγεγραμμένη Σφαίρα:</strong></p>
+<ul>
+<li>Η διάμετρος της σφαίρας ισούται με την πλευρά του κύβου (<span class="math inline">\(\alpha = 5\)</span> m), άρα η ακτίνα της είναι <span class="math inline">\(\rho = 2,5\)</span> m.</li>
+<li>Το εμβαδό της επιφάνειάς της είναι: <span class="math inline">\(E_1 = 4\pi \cdot (2,5)^2 = 25\pi\)</span> m².</li>
+</ul></li>
+<li><p><strong>Περιγεγραμμένη Σφαίρα:</strong></p>
+<ul>
+<li><p>Η διάμετρος της σφαίρας ισούται με τη διαγώνιο του κύβου (<span class="math inline">\(\alpha\sqrt{3} = 5\sqrt{3}\)</span> m), άρα η ακτίνα της είναι <span class="math inline">\(R = \dfrac{5\sqrt{3}}{2}\)</span> m.</p></li>
+<li><p>Το εμβαδό της επιφάνειάς της είναι: <span class="math inline">\(E_2 = 4\pi \cdot \left(\dfrac{5\sqrt{3}}{2}\right)^2 = 4\pi \cdot \dfrac{25 \cdot 3}{4} = 75\pi\)</span> m².</p></li>
+</ul></li>
+<li><p><strong>Υπολογισμός Λόγου:</strong></p>
+<ul>
+<li><p>Ο <strong>λόγος ομοιότητας</strong> των δύο σφαιρών είναι <span class="math inline">\(\lambda = \dfrac{R}{\rho} = \dfrac{\dfrac{5\sqrt{3}}{2}}{2,5} = \sqrt{3}\)</span>.</p></li>
+<li><p>Ο <strong>λόγος των εμβαδών</strong> τους είναι: <span class="math display">\[\frac{E_2}{E_1} = \frac{75\pi}{25\pi} = 3\]</span></p></li>
+<li><p><strong>Επαλήθευση:</strong> Παρατηρούμε ότι <span class="math inline">\(\lambda^2 = (\sqrt{3})^2 = 3\)</span>, γεγονός που επιβεβαιώνει τη θεωρία ότι ο λόγος των εμβαδών ισούται με το τετράγωνο του λόγου ομοιότητας.</p></li>
+</ul></li>
+</ol>
+<p><strong>Άλλα Σύντομα Παραδείγματα</strong></p>
+<ul>
+<li><p>Αν <strong>διπλασιάσουμε</strong> την ακτίνα μιας σφαίρας (<span class="math inline">\(\lambda=2\)</span>), το εμβαδό της επιφάνειάς της <strong>τετραπλασιάζεται</strong> (<span class="math inline">\(\lambda^2=4\)</span>).</p></li>
+<li><p>Αν ο λόγος των ακτίνων δύο σφαιρών είναι <span class="math inline">\(1/3\)</span>, τότε η μία σφαίρα έχει επιφάνεια <strong>9 φορές μικρότερη</strong> από την άλλη.</p></li>
+</ul>
+<hr>
+<p><strong>Ο λόγος των εμβαδών δύο ομοίων κώνων είναι ίσος με το τετράγωνο του λόγου ομοιότητάς τους</strong>.</p>
+<p><strong>Θεωρητική Θεμελίωση</strong></p>
+<p>Δύο ορθοί κυκλικοί κώνοι είναι όμοιοι όταν παράγονται από όμοια ορθογώνια τρίγωνα. Αν <span class="math inline">\(R_1, R_2\)</span> είναι οι ακτίνες των βάσεών τους και <span class="math inline">\(\lambda_1, \lambda_2\)</span> οι γενέτειρές τους, τότε ο λόγος ομοιότητας είναι <span class="math inline">\(\mu = \dfrac{R_1}{R_2} = \dfrac{\lambda_1}{\lambda_2}\)</span>.</p>
+<ul>
+<li><p><strong>Λόγος Κυρτών Επιφανειών:</strong> <span class="math inline">\(\dfrac{E_{\pi 1}}{E_{\pi 2}} = \dfrac{\pi R_1 \lambda_1}{\pi R_2 \lambda_2} = \mu \cdot \mu = \mu^2\)</span>.</p></li>
+<li><p><strong>Λόγος Ολικών Επιφανειών:</strong> <span class="math inline">\(\dfrac{E_{o\lambda 1}}{E_{o\lambda 2}} = \mu^2\)</span>.</p></li>
+</ul>
+<p><strong>1. Τομή Κώνου στο Μέσον του Ύψους</strong></p>
+<p>Όταν ένας κώνος κόβεται από επίπεδο παράλληλο προς τη βάση του στο <strong>μέσο του ύψους</strong> του, ο νέος μικρός κώνος που σχηματίζεται στην κορυφή είναι όμοιος με τον αρχικό.</p>
+<ul>
+<li><p>Εφόσον το επίπεδο τέμνει το ύψος στη μέση, ο λόγος ομοιότητας είναι <span class="math inline">\(\lambda = 1/2\)</span>.</p></li>
+<li><p>Συνεπώς, το εμβαδό της ολικής επιφάνειας του μικρού κώνου θα είναι το <span class="math inline">\(1/4\)</span> (<span class="math inline">\(\lambda^2 = (1/2)^2 = 1/4\)</span>) της επιφάνειας του αρχικού κώνου. Αν, για παράδειγμα, ο αρχικός κώνος έχει ολική επιφάνεια <span class="math inline">\(282,60 \text{ cm}^2\)</span>, ο μικρός θα έχει <span class="math inline">\(70,65 \text{ cm}^2\)</span>.</p></li>
+</ul>
+<p><strong>2. Υπολογισμός Διαστάσεων μέσω Λόγου Εμβαδών</strong></p>
+<p>Έστω ένας κώνος με ακτίνα <span class="math inline">\(R=3 \text{ m}\)</span> και ύψος <span class="math inline">\(h=4 \text{ m}\)</span> (άρα γενέτειρα <span class="math inline">\(L=5 \text{ m}\)</span>). Ζητείται η γενέτειρα ενός <strong>όμοιου</strong> κώνου, του οποίου η <strong>παράπλευρη επιφάνεια</strong> (<span class="math inline">\(E_{\pi2}\)</span>) είναι ίση με την <strong>ολική επιφάνεια</strong> του πρώτου (<span class="math inline">\(E_{o\lambda1}\)</span>).</p>
+<ul>
+<li><p>Η ολική επιφάνεια του πρώτου κώνου είναι <span class="math inline">\(E_{o\lambda1} = \pi \cdot 3 \cdot (5+3) = 24\pi\)</span>.</p></li>
+<li><p>Για τον δεύτερο (όμοιο) κώνο, αν <span class="math inline">\(\kappa\)</span> είναι ο λόγος ομοιότητας, η παράπλευρη επιφάνειά του θα είναι <span class="math inline">\(E_{\pi2} = \kappa^2 \cdot (\pi R L) = \kappa^2 \cdot \pi \cdot 3 \cdot 5 = 15\pi \kappa^2\)</span>.</p></li>
+<li><p>Εξισώνοντας τις επιφάνειες: <span class="math inline">\(15\pi \kappa^2 = 24\pi \Rightarrow \kappa^2 = 24/15 = 1,6\)</span>.</p></li>
+<li><p>Ο λόγος των εμβαδών είναι <span class="math inline">\(1,6\)</span>, άρα ο λόγος ομοιότητας είναι <span class="math inline">\(\kappa = \sqrt{1,6}\)</span>.</p></li>
+<li><p>Η νέα γενέτειρα θα είναι <span class="math inline">\(y = 5 \cdot \sqrt{1,6} \approx 6,324 \text{ m}\)</span>.</p></li>
+</ul>
+<p><strong>3. Λόγος Επιφανειών και Ακτίνων</strong></p>
+<p>Αν ο λόγος των ακτίνων δύο ομοίων κώνων είναι <span class="math inline">\(\mu\)</span>, τότε ο λόγος των κυρτών επιφανειών τους είναι <span class="math inline">\(\mu^2\)</span>. Για παράδειγμα, αν διπλασιάσουμε όλες τις διαστάσεις ενός κώνου (<span class="math inline">\(\mu=2\)</span>), η επιφάνειά του θα <strong>τετραπλασιαστεί</strong> (<span class="math inline">\(\mu^2=4\)</span>).</p>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">2</span> Ασκήσεις</h2>
+<ol type="1">
+<li><p>Αν έχουμε δύο όμοια σχήματα και η πλευρά του δεύτερου είναι διπλάσια (<span class="math inline">\(2\)</span> φορές μεγαλύτερη) από την πλευρά του πρώτου, πόσες φορές μεγαλύτερο θα είναι το εμβαδόν του;</p></li>
+<li><p>Αν ο λόγος ομοιότητας δύο σχημάτων είναι <span class="math inline">\(k = 3\)</span>, ποιος είναι ο λόγος των εμβαδών τους;</p></li>
+<li><p>Αν το εμβαδόν ενός μεγάλου τετραγώνου είναι <span class="math inline">\(16\)</span> φορές μεγαλύτερο από το εμβαδόν ενός μικρότερου, πόσες φορές μεγαλύτερη είναι η πλευρά του;</p></li>
+<li><p>Έχουμε δύο όμοια τρίγωνα. Αν το πρώτο έχει πλευρά <span class="math inline">\(2 \text{ cm}\)</span> και το δεύτερο <span class="math inline">\(6 \text{ cm}\)</span>, ποιος είναι ο λόγος των εμβαδών τους;</p></li>
+<li><p>Ισχύει ο ίδιος κανόνας για τους κύκλους; Αν η ακτίνα ενός κύκλου τριπλασιαστεί, τι θα συμβεί στο εμβαδόν του;</p></li>
+<li><p>Αν ο λόγος των εμβαδών δύο ομοίων σχημάτων είναι <span class="math inline">\(\dfrac{4}{25}\)</span>, ποιος είναι ο λόγος των αντίστοιχων πλευρών τους;</p></li>
+<li><p>Αν ένα σχήμα έχει εμβαδόν <span class="math inline">\(10 \text{ cm}^2\)</span> και το μεγεθύνουμε με λόγο <span class="math inline">\(k = 5\)</span>, ποιο θα είναι το νέο εμβαδόν;</p></li>
+<li><p>Δύο όμοια ορθογώνια έχουν λόγο περιμέτρων <span class="math inline">\(\dfrac{1}{2}\)</span>. Ποιος είναι ο λόγος των εμβαδών τους;</p></li>
+<li><p>Αν μειώσουμε όλες τις πλευρές ενός σχήματος στο μισό (<span class="math inline">\(\dfrac{1}{2}\)</span>), πόσο θα γίνει το εμβαδόν του;</p></li>
+<li><p>Γιατί ο λόγος των εμβαδών είναι το τετράγωνο του λόγου των πλευρών;</p></li>
+<li><p><strong>Λόγος ομοιότητας και εμβαδά:</strong> Αν ο λόγος ομοιότητας δύο σχημάτων είναι <span class="math inline">\(\lambda = 0,75\)</span>, ποιος είναι ο λόγος των εμβαδών τους;</p></li>
+<li><p><strong>Αντίστροφος υπολογισμός:</strong> Αν ο λόγος των εμβαδών δύο ομοίων τριγώνων είναι <span class="math inline">\(1/9\)</span>, ποιος είναι ο λόγος ομοιότητας <span class="math inline">\(\lambda\)</span>;</p></li>
+<li><p><strong>Ομόλογες ακμές στερεών:</strong> Δύο όμοια στερεά έχουν ομόλογες ακμές <span class="math inline">\(3\text{ cm}\)</span> και <span class="math inline">\(6\text{ cm}\)</span>. Βρείτε το λόγο των εμβαδών των επιφανειών τους.</p></li>
+<li><p><strong>Κύβος και εμβαδό έδρας:</strong> Ένας κύβος (Κ) είναι όμοιος με κύβο (Κ’) πλευράς <span class="math inline">\(6\text{ cm}\)</span>. Αν το εμβαδό μιας έδρας του (Κ) είναι <span class="math inline">\(9\text{ cm}^2\)</span>, βρείτε το λόγο ομοιότητας <span class="math inline">\(\lambda\)</span>.</p></li>
+<li><p><strong>Τρίγωνο και βαρύκεντρο:</strong> Τρίγωνο έχει εμβαδό <span class="math inline">\(27\text{ m}^2\)</span>. Αν από το βαρύκεντρο φέρουμε παράλληλη στη βάση, υπολογίστε το εμβαδό του μικρού τριγώνου που σχηματίζεται στην κορυφή.</p></li>
+<li><p><strong>Τομή πυραμίδας στο μέσο:</strong> Επίπεδο παράλληλο στη βάση τέμνει το ύψος πυραμίδας στο μέσο του. Ποιος είναι ο λόγος της ολικής επιφάνειας της μικρής πυραμίδας προς την αρχική;</p></li>
+<li><p><strong>Παράδειγμα ομοίων σπιτιών:</strong> Αν το ύψος του σπιτιού Α είναι διπλάσιο από το ύψος του πανομοιότυπου σπιτιού Β, πόσες φορές μεγαλύτερη είναι η έκταση που καταλαμβάνει το σπίτι Α;</p></li>
+<li><p><strong>Επιφάνειες κυλίνδρων:</strong> Δύο όμοιοι κύλινδροι έχουν λόγο ακτινών <span class="math inline">\(\lambda\)</span>. Δείξτε ότι ο λόγος των ολικών τους επιφανειών είναι επίσης <span class="math inline">\(\lambda^2\)</span>.</p></li>
+<li><p><strong>Σφαίρες και ακτίνες:</strong> Αν η ακτίνα μιας σφαίρας τριπλασιαστεί, πόσες φορές αυξάνεται το εμβαδό της επιφάνειάς της;</p></li>
+<li><p><strong>Όμοια πρίσματα:</strong> Δύο όμοια τριγωνικά πρίσματα έχουν λόγο ομολόγων ακμών <span class="math inline">\(4:7\)</span>. Βρείτε το λόγο των επιφανειών τους.</p></li>
+<li><p><strong>Κύβος και λόγος πλευρών:</strong> Αν ο λόγος των πλευρών δύο κύβων είναι <span class="math inline">\(2/3\)</span>, βρείτε το λόγο των εμβαδών των εδρών τους.</p></li>
+<li><p><strong>Τομή κώνου στο μέσο:</strong> Ένας κώνος έχει ολική επιφάνεια <span class="math inline">\(282,60\text{ cm}^2\)</span>. Ποιο είναι το εμβαδό της ολικής επιφάνειας του μικρού κώνου που προκύπτει αν τον κόψουμε παράλληλα στη βάση στο μέσο του ύψους του;</p></li>
+<li><p><strong>Κανονικά πολύγωνα:</strong> Δύο κανονικά πεντάγωνα έχουν λόγο πλευρών <span class="math inline">\(5\)</span>. Ποιος είναι ο λόγος των εμβαδών τους;</p></li>
+<li><p><strong>Υπολογισμός λόγου ομοιότητας:</strong> Αν ο λόγος των εμβαδών δύο ομοίων κώνων είναι <span class="math inline">\(1,6\)</span>, ποιος είναι ο λόγος των γενετειρών τους;</p></li>
+<li><p><strong>Σφαίρα εγγεγραμμένη σε κύβο:</strong> Βρείτε το λόγο της επιφάνειας μιας σφαίρας προς την επιφάνεια του περιγεγραμμένου σε αυτή κύβου (όπου η ακμή του κύβου ισούται με τη διάμετρο της σφαίρας).</p></li>
+<li><p><strong>Τριπλασιασμός ακμής κύβου:</strong> Πώς μεταβάλλεται το εμβαδό της ολικής επιφάνειας ενός κύβου αν τριπλασιάσουμε την πλευρά του;</p></li>
+<li><p><strong>Εύρεση ομόλογης ακμής:</strong> Μια πυραμίδα έχει πλευρά <span class="math inline">\(10\text{ cm}\)</span>. Ποια είναι η ομόλογη ακμή μιας όμοιας πυραμίδας αν η δεύτερη έχει διπλάσια επιφάνεια;</p></li>
+<li><p><strong>Κύλινδροι και ακτίνες:</strong> Αν ο λόγος των ολικών επιφανειών δύο ομοίων κυλίνδρων είναι <span class="math inline">\(16\)</span>, ποιος είναι ο λόγος των ακτινών τους;</p></li>
+<li><p><strong>Προσδιορισμός θέσης τομής κώνου:</strong> Σε ποιο σημείο του ύψους πρέπει να τμηθεί ένας κώνος παράλληλα προς τη βάση του, ώστε η κυρτή επιφάνεια του μικρού κώνου να είναι το <span class="math inline">\(1/4\)</span> της αρχικής;</p></li>
+<li><p><strong>Σχέση όγκου και επιφάνειας:</strong> Αν ο λόγος των όγκων δύο ομοίων στερεών είναι <span class="math inline">\(8\)</span>, ποιος είναι ο λόγος των επιφανειών τους;</p></li>
+<li><p>Στο παρακάτω σχήμα είναι <span class="math inline">\(\Delta \text{E} // \text{B}\Gamma\)</span>. Αν <span class="math inline">\(ΔΕ = 3 \text{ cm}\)</span> και <span class="math inline">\(ΒΓ = 9 \text{ cm}\)</span>, να υπολογίσετε το λόγο των εμβαδών <span class="math inline">\(\frac{(\text{A}\Delta\text{E})}{(\text{AB}\Gamma)}\)</span>.<br>
+<img src="images/clipboard-4058514148.png" class="img-fluid" width="353"></p></li>
+<li><p>Στο παρακάτω σχήμα είναι <span class="math inline">\(\Delta \text{E} // \text{B}\Gamma\)</span>. Αν η πλευρά <span class="math inline">\(ΑΕ = 5 \text{ cm}\)</span> και η <span class="math inline">\(ΕΓ = 4 \text{ cm}\)</span>, και το εμβαδόν του μικρού τριγώνου <span class="math inline">\((\text{A}\Delta\text{E})\)</span> είναι <span class="math inline">\(8,5 \text{ cm}^2\)</span>, να βρείτε το εμβαδόν του τριγώνου <span class="math inline">\((\text{AB}\Gamma)\)</span>.<br>
+<img src="images/clipboard-2115767636.png" class="img-fluid"></p></li>
+<li><p>Σε τραπέζιο <span class="math inline">\(ΑΒΓΔ\)</span> με βάσεις <span class="math inline">\(ΑΒ = 4 \text{ cm}\)</span> και <span class="math inline">\(ΓΔ = 10 \text{ cm}\)</span>, οι διαγώνιες <span class="math inline">\(ΑΓ\)</span> και <span class="math inline">\(ΒΔ\)</span> τέμνονται στο <span class="math inline">\(Ο\)</span>. Πόσες φορές το εμβαδόν του τριγώνου <span class="math inline">\(ΟΓΔ\)</span> είναι μεγαλύτερο από το εμβαδόν του τριγώνου <span class="math inline">\(ΟΑΒ\)</span>;<br>
+<img src="images/clipboard-530054460.png" class="img-fluid"></p></li>
+<li><p>Αν <span class="math inline">\(\text{K}, \Lambda, \text{M}\)</span> είναι τα μέσα των πλευρών <span class="math inline">\(\text{AB}, \text{B}\Gamma, \Gamma\text{A}\)</span> ενός τριγώνου <span class="math inline">\(\text{AB}\Gamma\)</span> αντιστοίχως, να υπολογίσετε τους λόγους:</p></li>
+</ol>
+<p>α) <span class="math inline">\(\dfrac{(\text{AKM})}{(\text{AB}\Gamma)}\)</span></p>
+<p>β) <span class="math inline">\(\dfrac{(\text{K}\Lambda\text{M})}{(\text{AB}\Gamma)}\)</span><br>
+</p>
+<p><img src="images/clipboard-1142236241.png" class="img-fluid" width="329"></p>
+<ol start="35" type="1">
+<li><p>Έστω τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με εμβαδόν <span class="math inline">\(\text{E}\)</span>. Αν πάρουμε σημείο <span class="math inline">\(Δ\)</span> στην <span class="math inline">\({AB}\)</span> τέτοιο ώστε <span class="math inline">\(AΔ = \dfrac{1}{4} {AB}\)</span> και φέρουμε <span class="math inline">\(ΔΖ // ΒΓ\)</span>, να αποδείξετε ότι το εμβαδόν <span class="math inline">\(\text{E}_1\)</span> του τριγώνου <span class="math inline">\(ΑΔΖ\)</span> είναι <span class="math inline">\(\text{E}_1 = \dfrac{1}{16} \text{E}\)</span>.<br>
+<img src="images/clipboard-6564161.png" class="img-fluid"></p></li>
+<li><p>Σε ορθογώνιο τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> (<span class="math inline">\(\hat{\text{A}} = 90^{\circ}\)</span>) με κάθετες πλευρές <span class="math inline">\({AB} = 4 \text{ cm}\)</span> και <span class="math inline">\(ΑΓ = 8 \text{ cm}\)</span>, φέρνουμε το ύψος <span class="math inline">\(ΑΔ\)</span> προς την υποτείνουσα. Να βρείτε τον λόγο των εμβαδών <span class="math inline">\(\dfrac{(\text{AB}\Delta)}{(\text{A}\Gamma\Delta)}\)</span>.<br>
+<img src="images/clipboard-1402696051.png" class="img-fluid"></p></li>
+<li><p>Στο εσωτερικό τριγώνου <span class="math inline">\(ΑΒΓ\)</span> παίρνουμε σημείο <span class="math inline">\({Κ}\)</span>. Αν <span class="math inline">\(Δ,\ Ε, \ Z\)</span> είναι τα σημεία πάνω στα τμήματα <span class="math inline">\({ΚA}, \ {ΚB}, \ {ΚΓ}\)</span> τέτοια ώστε <span class="math inline">\(ΚΔ = \dfrac{1}{3} {ΚA}, \ {ΚE} = \dfrac{1}{3} {ΚB}\)</span> και <span class="math inline">\({ΚZ} = \dfrac{1}{3} {ΚΓ}\)</span>, να βρείτε:</p>
+<p>α) το λόγο των εμβαδών <span class="math inline">\(\dfrac{(ΔΕΖ)}{(ΑΒΓ)}\)</span>.</p>
+<p>β) Αν το εμβαδόν του ΑΒΓ είναι <span class="math inline">\(54 \ cm^2\)</span> , να βρείτε το εμβαδόν του πράσινου χωρίου.<br>
+</p>
+<p><img src="images/clipboard-773864298.png" class="img-fluid" width="384"><br>
+</p></li>
+<li><p>Ένα τετράγωνο έχει εμβαδόν <span class="math inline">\(100 \text{ cm}^2\)</span>. Να βρείτε το νέο εμβαδόν αν γίνει:</p></li>
+</ol>
+<p>α) Μεγέθυνση κατά <span class="math inline">\(150\%\)</span></p>
+<blockquote class="blockquote">
+<p>(δηλαδή ο λόγος ομοιότητας γίνεται <span class="math inline">\(1,5\)</span>).</p>
+</blockquote>
+<p>β) Σμίκρυνση κατά <span class="math inline">\(80\%\)</span></p>
+<blockquote class="blockquote">
+<p>(δηλαδή ο λόγος ομοιότητας γίνεται <span class="math inline">\(0,8\)</span>).</p>
+</blockquote>
+<ol start="39" type="1">
+<li>Αν η πλευρά ενός ισόπλευρου τριγώνου αυξηθεί κατά <span class="math inline">\(20\%\)</span>, να βρείτε πόσο τοις εκατό (<span class="math inline">\(\%\)</span>) θα αυξηθεί το εμβαδόν του.</li>
+</ol>
+<p><strong>Λύση</strong></p>
+<ul>
+<li><strong>Βήμα 1: Βρίσκουμε τον λόγο ομοιότητας (<span class="math inline">\(k\)</span>)</strong></li>
+</ul>
+<p>Όταν λέμε ότι η πλευρά αυξάνεται κατά <span class="math inline">\(20\%\)</span>, σημαίνει ότι αν η παλιά πλευρά ήταν <span class="math inline">\(100\%\)</span>, η νέα πλευρά θα είναι <span class="math inline">\(100\% + 20\% = 120\%\)</span>.</p>
+<p>Σε δεκαδική μορφή, το <span class="math inline">\(120\%\)</span> το γράφουμε ως <span class="math inline">\(1,2\)</span>. Άρα ο λόγος ομοιότητας των πλευρών είναι: <span class="math display">\[k = 1,2\]</span></p>
+<ul>
+<li><strong>Βήμα 2: Βρίσκουμε τον λόγο των εμβαδών (<span class="math inline">\(k^2\)</span>)</strong></li>
+</ul>
+<p>Όπως μάθαμε, ο λόγος των εμβαδών είναι το τετράγωνο του λόγου των πλευρών. Δηλαδή, πρέπει να πολλαπλασιάσουμε το <span class="math inline">\(k\)</span> με τον εαυτό του: <span class="math display">\[k^2 = 1,2 \cdot 1,2\]</span></p>
+<p>Ας κάνουμε την πράξη: <span class="math display">\[k^2 = 1,44\]</span></p>
+<p>Αυτό σημαίνει ότι το νέο εμβαδόν είναι <span class="math inline">\(1,44\)</span> φορές μεγαλύτερο από το παλιό.</p>
+<ul>
+<li><strong>Βήμα 3: Μετατρέπουμε τον λόγο σε ποσοστό (<span class="math inline">\(\%\)</span>)</strong> Το <span class="math inline">\(1,44\)</span> ως ποσοστό είναι το <span class="math inline">\(144\%\)</span>.</li>
+</ul>
+<p>Για να βρούμε πόσο <strong>αυξήθηκε</strong> το εμβαδόν, αφαιρούμε το αρχικό εμβαδόν (<span class="math inline">\(100\%\)</span>): <span class="math display">\[144\% - 100\% = 44\%\]</span></p>
+<ul>
+<li><strong>Τελική Απάντηση:</strong> Το εμβαδόν του τριγώνου θα αυξηθεί κατά <strong><span class="math inline">\(44\%\)</span></strong>.</li>
+</ul>
+<ol start="40" type="1">
+<li>Οι διαστάσεις ενός ορθογωνίου μειώθηκαν κατά <span class="math inline">\(10\%\)</span>. Να υπολογίσετε το ποσοστό <span class="math inline">\((\%)\)</span> μείωσης του εμβαδόν του ορθογωνίου.</li>
+</ol>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -932,12 +1250,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
