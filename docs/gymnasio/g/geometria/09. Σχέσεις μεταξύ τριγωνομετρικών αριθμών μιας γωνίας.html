@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-ggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</a></li></ol></nav>
+      <h1 class="title">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">30 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -824,9 +864,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -881,7 +921,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
   </div>
 </li>
@@ -896,33 +936,305 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#σχέσεις-μεταξύ-τριγωνομετρικών-αριθμών-μιας-γωνίας" id="toc-σχέσεις-μεταξύ-τριγωνομετρικών-αριθμών-μιας-γωνίας" class="nav-link active" data-scroll-target="#σχέσεις-μεταξύ-τριγωνομετρικών-αριθμών-μιας-γωνίας"><span class="header-section-number">1</span> Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</a>
+  <ul class="collapse">
+  <li><a href="#θεμελιώδεις-σχέσεις" id="toc-θεμελιώδεις-σχέσεις" class="nav-link" data-scroll-target="#θεμελιώδεις-σχέσεις"><span class="header-section-number">1.1</span> <strong>Θεμελιώδεις Σχέσεις</strong></a></li>
+  <li><a href="#τριγωνομετρικοί-αριθμοί-χαρακτηριστικών-γωνιών" id="toc-τριγωνομετρικοί-αριθμοί-χαρακτηριστικών-γωνιών" class="nav-link" data-scroll-target="#τριγωνομετρικοί-αριθμοί-χαρακτηριστικών-γωνιών"><span class="header-section-number">1.2</span> <strong>Τριγωνομετρικοί Αριθμοί Χαρακτηριστικών Γωνιών</strong></a></li>
+  <li><a href="#παραδείγματα-και-εφαρμογές" id="toc-παραδείγματα-και-εφαρμογές" class="nav-link" data-scroll-target="#παραδείγματα-και-εφαρμογές"><span class="header-section-number">1.3</span> <strong>Παραδείγματα και Εφαρμογές</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="σχέσεις-μεταξύ-τριγωνομετρικών-αριθμών-μιας-γωνίας" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="σχέσεις-μεταξύ-τριγωνομετρικών-αριθμών-μιας-γωνίας"><span class="header-section-number">1</span> Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</h2>
+<p>Οι τριγωνομετρικοί αριθμοί μιας οξείας γωνίας <span class="math inline">\(\theta\)</span> (ημίτονο, συνημίτονο, εφαπτομένη) συνδέονται μεταξύ τους με θεμελιώδεις σχέσεις που προκύπτουν από τους ορισμούς τους σε ένα ορθογώνιο τρίγωνο.</p>
+<section id="θεμελιώδεις-σχέσεις" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεμελιώδεις-σχέσεις"><span class="header-section-number">1.1</span> <strong>Θεμελιώδεις Σχέσεις</strong></h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Οι κυριότερες σχέσεις μεταξύ των τριγωνομετρικών αριθμών μιας γωνίας <span class="math inline">\(\theta\)</span> (όπου <span class="math inline">\(0^\circ &lt; \theta &lt; 90^\circ\)</span>) είναι οι εξής:</p>
+<ol type="1">
+<li><p><span class="math inline">\(ημ^2θ + συν^2θ = 1\)</span>: Το άθροισμα των τετραγώνων του ημιτόνου και του συνημιτόνου μιας γωνίας ισούται πάντοτε με τη μονάδα. Η σχέση αυτή αποδεικνύεται με τη χρήση του Πυθαγορείου θεωρήματος σε ορθογώνιο τρίγωνο.<br>
+<img src="images/clipboard-2115902329.png" class="img-fluid" width="245"></p>
+<p><span class="math inline">\(ημθ=\dfrac{β}{α}\Rightarrow ημ^2θ=\dfrac{β^2}{α^2}\)</span></p>
+<p><span class="math inline">\(συνθ=\dfrac{γ}{α}\Rightarrow ημ^2θ=\dfrac{γ^2}{α^2}\)</span></p>
+<p>άρα <span class="math inline">\(ημ^2θ+συν^2θ=\dfrac{β^2}{α^2}+\dfrac{γ^2}{α^2}=\dfrac{β^2+γ^2}{α^2}=\dfrac{α^2}{α^2}=1\)</span></p>
+<p>και <span class="math inline">\(\dfrac{ημθ}{συνθ}=\dfrac{\dfrac{β}{α}}{\dfrac{γ}{α}}=\dfrac{β}{γ}=εφθ\)</span></p></li>
+<li><p><span class="math inline">\(εφθ = \dfrac{ημθ}{συνθ}\)</span>: Η εφαπτομένη μιας γωνίας ισούται με το λόγο του ημιτόνου της προς το συνημίτονό της.</p></li>
+<li><p><strong>Σχέση Συμπληρωματικών Γωνιών</strong>: Αν δύο οξείες γωνίες <span class="math inline">\(\hat{B}\)</span> και <span class="math inline">\(\hat{\Gamma}\)</span> είναι συμπληρωματικές (δηλαδή <span class="math inline">\(B + \Gamma = 90^\circ\)</span>), τότε <strong>το ημίτονο της μίας ισούται με το συνημίτονο της άλλης</strong> (<span class="math inline">\(ημ B = συνΓ\)</span> και <span class="math inline">\(συν B = ημΓ\)</span>).</p></li>
+</ol>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
+</section>
+<section id="τριγωνομετρικοί-αριθμοί-χαρακτηριστικών-γωνιών" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="τριγωνομετρικοί-αριθμοί-χαρακτηριστικών-γωνιών"><span class="header-section-number">1.2</span> <strong>Τριγωνομετρικοί Αριθμοί Χαρακτηριστικών Γωνιών</strong></h3>
+<p>Οι τιμές για τις γωνίες <span class="math inline">\(30^\circ\)</span>, <span class="math inline">\(45^\circ\)</span> και <span class="math inline">\(60^\circ\)</span> υπολογίζονται γεωμετρικά και συνοψίζονται στον ακόλουθο πίνακα:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Γωνία <span class="math inline">\(\theta\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\eta\mu\theta\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\sigma\upsilon\nu\theta\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\epsilon\phi\theta\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(30^\circ\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{3}/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{3}/3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(45^\circ\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{2}/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{2}/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(60^\circ\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{3}/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" target="_blank">
+Εδώ θα βρείτε τους τριγωνομετρικούς πίνακες
+</a>
   
-    
-  </div>
-  
+</section>
+<section id="παραδείγματα-και-εφαρμογές" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παραδείγματα-και-εφαρμογές"><span class="header-section-number">1.3</span> <strong>Παραδείγματα και Εφαρμογές</strong></h3>
+<ul>
+<li><p><strong>Υπολογισμός με βάση τη σχέση ημιτόνου-συνημιτόνου</strong>: Αν γνωρίζουμε ότι <span class="math inline">\(ημθ = 0,6\)</span>, μπορούμε να βρούμε το συνημίτονο χρησιμοποιώντας τη σχέση <span class="math inline">\(ημ^2θ + συν^2θ = 1\)</span>. Έτσι, <span class="math inline">\(0,6^2 + συν^2θ = 1 \Rightarrow 0,36 + συν^2θ = 1 \Rightarrow συν^2θ = 0,64 \Rightarrow συνθ = 0,8\)</span>.</p></li>
+<li><p><strong>Η γωνία</strong> <span class="math inline">\(30^\circ\)</span> στο ορθογώνιο τρίγωνο: Σε κάθε ορθογώνιο τρίγωνο με γωνία <span class="math inline">\(30^\circ\)</span>, η <strong>απέναντι κάθετη πλευρά ισούται με το μισό της υποτείνουσας</strong>. Αυτό εξηγεί γιατί <span class="math inline">\(ημ 30^\circ = \dfrac{1}{2}\)</span>.</p></li>
+<li><p><strong>Εύρεση εφαπτομένης</strong>: Αν σε ένα ορθογώνιο τρίγωνο οι κάθετες πλευρές είναι <span class="math inline">\(3\)</span> και <span class="math inline">\(4\)</span>, τότε η εφαπτομένη της γωνίας <span class="math inline">\(θ\)</span> που είναι απέναντι από την πλευρά <span class="math inline">\(3\)</span> είναι <span class="math inline">\(εφθ = \dfrac{3}{4} = 0,75\)</span>.</p></li>
+<li><p><strong>Ταυτότητες</strong>: Μπορεί να αποδειχθεί ότι η παράσταση <span class="math inline">\(συν^2θ(1 + εφ^2θ)\)</span> ισούται με <span class="math inline">\(1\)</span>, αφού <span class="math inline">\(1 + εφ^2θ = 1 + \dfrac{ημ^2θ}{συν^2θ} = \dfrac{συν^2θ + ημ^2θ}{συν^2θ} = \dfrac{1}{συν^2}\)</span>.</p></li>
+</ul>
+<p>Για οξείες γωνίες, οι τιμές του ημιτόνου και του συνημιτόνου βρίσκονται πάντα μεταξύ <span class="math inline">\(0\)</span> και <span class="math inline">\(1\)</span> (<span class="math inline">\(0 &lt; ημθ &lt; 1\)</span> και <span class="math inline">\(0 &lt; συνθ &lt; 1\)</span>), ενώ η εφαπτομένη μπορεί να πάρει οποιαδήποτε θετική τιμή.</p>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Αν για την αμβλεία γωνία ω ισχύει <span class="math inline">\(συνω=-\dfrac{3}{5}\)</span> , τότε να υπολογιστούν οι άλλοι τριγωνομετρικοί αριθμοί της γωνίας ω.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>Από την ταυτότητα</em> <span class="math inline">\(ημ^2θ + συν^2θ = 1 \Rightarrow ........\)</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>Αν για την οξεία γωνία ω ισχύει <span class="math inline">\(εφω = 10\)</span>, τότε να υπολογιστούν οι άλλοι τριγωνομετρικοί αριθμοί της γωνίας ω.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>Από την ταυτότητα</em> <span class="math inline">\(εφθ = \dfrac{ημθ}{συνθ} \Rightarrow ........\)</span> και μετά από την <span class="math inline">\(ημ^2θ + συν^2θ = 1 \Rightarrow ........\)</span></p>
+</blockquote>
+<ol start="3" type="1">
+<li>Να αποδειχθούν οι ταυτότητες:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\((ημx + συνx)^2 - 2ημxσυνx = 1\)</span></li>
+<li>β) <span class="math inline">\((ημ x + συν x)^2 + (ημ x - συν x)^2 + εφ^2x = \dfrac{1}{συν^2x} + 1\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Βοήθεια</p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li><strong>Αριστερό Μέλος:</strong> Ξεκίνα αναπτύσσοντας τις δύο ταυτότητες <span class="math inline">\((α+β)^2\)</span> και <span class="math inline">\((α-β)^2\)</span> στην αρχή.</li>
+<li><strong>Απλοποίηση:</strong> Θα δεις ότι κάποιοι όροι διαγράφονται και εμφανίζεται το <span class="math inline">\(ημ^2x + συν^2x\)</span>, το οποίο ισούται με <span class="math inline">\(1\)</span>.</li>
+<li><strong>Εφαπτομένη:</strong> Θυμήσου ότι <span class="math inline">\(εφ^2x = \dfrac{ημ^2x}{συν^2x}\)</span>.</li>
+<li><strong>Σύγκριση:</strong> Στο τέλος, προσπάθησε να φέρεις την παράσταση στη μορφή που έχει το δεξί μέλος.</li>
+</ol>
+</blockquote>
+<ol start="4" type="1">
+<li><p>Αν για μια οξεία γωνία <span class="math inline">\(x\)</span> γνωρίζουμε ότι <span class="math inline">\(ημ x = 0,4\)</span>, να υπολογίσετε το <span class="math inline">\(συν x\)</span> χρησιμοποιώντας τη σχέση <span class="math inline">\(ημ^2 x + συν^2 x = 1\)</span> καθώς και την <span class="math inline">\(εφx\)</span>.</p></li>
+<li><p>Αν σε μια οξεία γωνία <span class="math inline">\(\theta\)</span> ισχύει <span class="math inline">\(συν θ = \dfrac{5}{13}\)</span> να βρείτε την <span class="math inline">\(εφθ\)</span>.</p></li>
+<li><p>Να δείξετε ότι σε κάθε ορθογώνιο τρίγωνο <span class="math inline">\(ABΓ\)</span> (<span class="math inline">\(\hat{A}=90^\circ\)</span>) ισχύει: <span class="math inline">\(\dfrac{ημ B + συνΓ}{ημΓ + συν B} = εφ B\)</span>.</p></li>
+<li><p>Να απλοποιήσετε την παράσταση <span class="math inline">\(A = ημ^2 α (1 + \dfrac{1}{εφ^2α}) + συν^2 α (1 + εφ^2 α)\)</span> και να δείξετε ότι ισούται με <span class="math inline">\(2\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(ημ 65^\circ = συν x\)</span>, να υπολογίσετε την τιμή της οξείας γωνίας <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Να συμπληρώσετε τις παρακάτω σχέσεις:</p></li>
+</ol>
+<ul>
+<li>(α) <span class="math inline">\(συν 50^\circ = ημ \dots\)</span> και</li>
+<li>(β) <span class="math inline">\(ημ 10^\circ = συν \dots\)</span>.</li>
+</ul>
+<ol start="10" type="1">
+<li><p>Να αποδείξετε ότι αν <span class="math inline">\(α + β = 90^\circ\)</span>, τότε <span class="math inline">\(ημ^2 α + ημ^2 β = 1\)</span>.</p></li>
+<li><p>Να βρείτε την αριθμητική τιμή της παράστασης: <span class="math inline">\(S = ημ 30^\circ \cdot συν 60^\circ + συν 30^\circ \cdot ημ 60^\circ\)</span>.</p></li>
+<li><p>Να δείξετε ότι <span class="math inline">\((ημ 30^\circ)^2 + (ημ 45^\circ)^2 + (ημ 60^\circ)^2 = \dfrac{3}{2}\)</span>.</p></li>
+<li><p>Να υπολογίσετε την τιμή της παράστασης <span class="math inline">\((εφ 30^\circ)^2 + (εφ 45^\circ)^2 + (εφ 60^\circ)^2\)</span>.</p></li>
+<li><p>Να υπολογίσετε την οξεία γωνία <span class="math inline">\(\omega\)</span> αν γνωρίζετε ότι <span class="math inline">\(4εφ ω = 4\)</span>.</p></li>
+<li><p>Να βρείτε την οξεία γωνία <span class="math inline">\(x\)</span> που επαληθεύει την εξίσωση <span class="math inline">\(2συν x - 1 = 0\)</span>.</p></li>
+<li><p>Να αποδείξετε ότι σε κάθε ορθογώνιο τρίγωνο με γωνία <span class="math inline">\(30^\circ\)</span>, η απέναντι κάθετη πλευρά είναι ίση με το μισό της υποτείνουσας.</p></li>
+<li><p>Να χαρακτηρίσετε τις παρακάτω ισότητες με <span class="math inline">\((\Sigma)\)</span>, αν είναι σωστές ή με <span class="math inline">\((\Lambda)\)</span>, αν είναι λανθασμένες:</p></li>
+</ol>
+<ul>
+<li><p><strong>α)</strong> Αν <span class="math inline">\(ημ^2ω = \dfrac{7}{10}\)</span>, τότε <span class="math inline">\(συν^2 ω = \dfrac{3}{10}\)</span> <span class="math inline">\(\quad \ \ \ [\quad \quad  \quad ]\)</span>.</p></li>
+<li><p><strong>β)</strong> Αν <span class="math inline">\(ημω = 0\)</span>, τότε <span class="math inline">\(εφω\)</span> ισούται πάντα με <span class="math inline">\(1\)</span> <span class="math inline">\(\quad \ \ \ [\quad \quad  \quad ]\)</span>.</p></li>
+<li><p><strong>γ)</strong> Για κάθε γωνία <span class="math inline">\(ω\)</span> ισχύει <span class="math inline">\(ημ^2ω + συν^2ω = 1\)</span> <span class="math inline">\(\quad \ \ \ [\quad \quad  \quad ]\)</span>.</p></li>
+<li><p><strong>δ)</strong> Αν <span class="math inline">\(ημω = \dfrac{3}{5}\)</span> και <span class="math inline">\(συνω = \dfrac{4}{5}\)</span>, τότε <span class="math inline">\(εφω = \dfrac{4}{3}\)</span> <span class="math inline">\(\quad \ \ \ [\quad \quad  \quad ]\)</span>.</p></li>
+</ul>
+<ol start="18" type="1">
+<li><p>Η Μαρία ισχυρίζεται ότι μπορεί να βρει μια γωνία <span class="math inline">\(ω\)</span> τέτοια ώστε <span class="math inline">\(ημω = 1\)</span> και <span class="math inline">\(συνω = 1\)</span>. Έχει δίκιο; Να αιτιολογήσετε την απάντησή σας χρησιμοποιώντας τη βασική τριγωνομετρική ταυτότητα <span class="math inline">\(ημ^2ω + συν^2ω = 1\)</span>.</p></li>
+<li><p>Να συμπληρώσετε τα κενά στις παρακάτω προτάσεις:</p></li>
+</ol>
+<ul>
+<li><p><strong>α)</strong> Αν <span class="math inline">\(συνω = 1\)</span>, τότε <span class="math inline">\(ημω =\)</span> ………..</p></li>
+<li><p><strong>β)</strong> Αν <span class="math inline">\(συνω = 0\)</span>, τότε <span class="math inline">\(ημω =\)</span> ……….. ή ………..</p></li>
+</ul>
+<ol start="20" type="1">
+<li>Να επιλέξετε τη σωστή απάντηση. Αν <span class="math inline">\(ημω = \dfrac{12}{13}\)</span>, τότε το <span class="math inline">\(συνω\)</span> είναι ίσο με:</li>
+</ol>
+<ul>
+<li><p><strong>α)</strong> <span class="math inline">\(\dfrac{1}{13}\)</span></p></li>
+<li><p><strong>β)</strong> <span class="math inline">\(\dfrac{5}{13}\)</span></p></li>
+<li><p><strong>γ)</strong> <span class="math inline">\(\dfrac{5}{13}\)</span> ή <span class="math inline">\(-\dfrac{5}{13}\)</span></p></li>
+<li><p><strong>δ)</strong> <span class="math inline">\(\dfrac{12}{5}\)</span> ή <span class="math inline">\(-\dfrac{12}{5}\)</span></p></li>
+</ul>
+<ol start="21" type="1">
+<li><p>Αν για την οξεία γωνία <span class="math inline">\(\omega\)</span> ισχύει <span class="math inline">\(ημω = \dfrac{3}{5}\)</span>, τότε να υπολογίσετε τους άλλους τριγωνομετρικούς αριθμούς της γωνίας <span class="math inline">\(\omega\)</span>.</p></li>
+<li><p>Αν για την αμβλεία γωνία <span class="math inline">\(\omega\)</span> ισχύει <span class="math inline">\(συνω = -\dfrac{4}{5}\)</span>, τότε να υπολογίσετε τους άλλους τριγωνομετρικούς αριθμούς της γωνίας <span class="math inline">\(\omega\)</span>.</p></li>
+<li><p>Αν για την οξεία γωνία <span class="math inline">\(\omega\)</span> ισχύει <span class="math inline">\(εφω= \dfrac{5}{12}\)</span>, τότε να υπολογίσετε τους άλλους τριγωνομετρικούς αριθμούς της γωνίας <span class="math inline">\(\omega\)</span>.</p></li>
+<li><p>Αν για την αμβλεία γωνία <span class="math inline">\(\omega\)</span> ισχύει <span class="math inline">\(ημω = \dfrac{12}{13}\)</span>, τότε να υπολογίσετε την τιμή της παράστασης: <span class="math display">\[B = 2ημω - 5συνω + 12εφω\]</span></p></li>
+<li><p>Να αποδείξετε ότι:</p></li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(συν^3ω + συνω \cdot ημ^2ω = συνω\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\(ημ^2ω - ημ^4ω = ημ^2ω \cdot συν^2ω\)</span></li>
+</ul>
+<ol start="26" type="1">
+<li>Αν είναι <span class="math inline">\(x = 4συνω\)</span> και <span class="math inline">\(y = 4ημω\)</span>, τότε να αποδείξετε ότι:</li>
+</ol>
+<p><span class="math inline">\(x^2 + y^2 = 16\)</span></p>
+<ol start="27" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(1 - 2ημ^2α = συν^2α - ημ^2α\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\((ημα \cdot ημβ)^2 + (ημα \cdot συνβ)^2 + συν^2α = 1\)</span></li>
+</ul>
+<ol start="28" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\((ημω + συνω)^2 - 2ημω \cdot συνω = 1\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\((α \cdot ημω - β \cdot συνω)^2 + (α \cdot συνω + β \cdot ημω)^2 = α^2 + β^2\)</span></li>
+</ul>
+<ol start="29" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(\dfrac{1}{συν^2x} - εφ^2x = 1\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\(\dfrac{ημ x}{1 + συν x} + \dfrac{1 + συν x}{ημ x} = \dfrac{2}{ημ x}\)</span></li>
+</ul>
+<ol start="30" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(\dfrac{συν^2x}{1 - ημ x} = 1 + ημ x\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\(\dfrac{ημ x \cdot συν x}{1 - ημ^2x} = εφ x\)</span></li>
+</ul>
+<ol start="31" type="1">
+<li>Να υπολογίσετε τις παραστάσεις:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(ημ^2 40^\circ + ημ^2 50^\circ\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>(Υπόδειξη: <span class="math inline">\(50^\circ = 90^\circ - 40^\circ\)</span>)</p>
+</blockquote>
+<ul>
+<li><strong>β)</strong> <span class="math inline">\(συν 20^\circ + συν 160^\circ\)</span></li>
+</ul>
+<ol start="32" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><strong>α)</strong> <span class="math inline">\(εφ 30^\circ \cdot συν 30^\circ - ημ 30^\circ = 0\)</span></li>
+<li><strong>β)</strong> <span class="math inline">\(ημ^2 150^\circ + συν^2 30^\circ = 1\)</span></li>
+</ul>
+<ol start="33" type="1">
+<li><p>Αν είναι <span class="math inline">\(α = 45^\circ\)</span> και <span class="math inline">\(β = 45^\circ\)</span>, τότε να αποδείξετε ότι: <span class="math display">\[ημα \cdot συνβ + συνα \cdot ημβ = 1\]</span></p></li>
+<li><p>Μια γωνία <span class="math inline">\(\omega\)</span> είναι αμβλεία. Αν το ημίτονό της είναι <span class="math inline">\(ημω = \dfrac{\kappa}{\kappa+1}\)</span> και το συνημίτονό της είναι <span class="math inline">\(συνω = -1\)</span>, ποια είναι η γωνία <span class="math inline">\(\omega\)</span> και ποια η τιμή του <span class="math inline">\(\kappa\)</span>;</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>(Υπόδειξη: Σκεφτείτε τις γωνίες <span class="math inline">\(90^\circ, 180^\circ\)</span>).</p>
+</blockquote>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -950,12 +1262,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
