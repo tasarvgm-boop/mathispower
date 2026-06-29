@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-ggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</a></li></ol></nav>
+      <h1 class="title">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">29 Ιούνιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -824,9 +864,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -875,7 +915,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
   </div>
 </li>
@@ -890,33 +930,250 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#τριγωνομετρικοί-αριθμοί-παραπληρωματικών-γωνιών" id="toc-τριγωνομετρικοί-αριθμοί-παραπληρωματικών-γωνιών" class="nav-link active" data-scroll-target="#τριγωνομετρικοί-αριθμοί-παραπληρωματικών-γωνιών"><span class="header-section-number">1</span> Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-παραπληρωματικών-γωνιών" id="toc-θεωρία-παραπληρωματικών-γωνιών" class="nav-link" data-scroll-target="#θεωρία-παραπληρωματικών-γωνιών"><span class="header-section-number">1.1</span> <strong>1. Θεωρία Παραπληρωματικών Γωνιών</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="τριγωνομετρικοί-αριθμοί-παραπληρωματικών-γωνιών" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="τριγωνομετρικοί-αριθμοί-παραπληρωματικών-γωνιών"><span class="header-section-number">1</span> Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</h2>
+<p>Οι παραπληρωματικές γωνίες και οι τριγωνομετρικοί τους αριθμοί αποτελούν σημαντικό κεφάλαιο της γεωμετρίας και της τριγωνομετρίας, με ιδιαίτερη εφαρμογή στην επίλυση τριγώνων και στη μελέτη γεωμετρικών σχημάτων.</p>
+<section id="θεωρία-παραπληρωματικών-γωνιών" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-παραπληρωματικών-γωνιών"><span class="header-section-number">1.1</span> <strong>1. Θεωρία Παραπληρωματικών Γωνιών</strong></h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><strong>Ορισμός:</strong> Δύο γωνίες ονομάζονται <strong>παραπληρωματικές</strong> όταν το άθροισμά τους είναι ίσο με <strong>180°</strong> (ή δύο ορθές γωνίες). Αν <span class="math inline">\(\omega\)</span> είναι μια γωνία, τότε η παραπληρωματική της είναι η γωνία <span class="math inline">\(180° - \omega\)</span>.</li>
+<li><strong>Γεωμετρική Ιδιότητα:</strong> Όταν δύο γωνίες είναι εφεξής και παραπληρωματικές, τότε οι μη κοινές πλευρές τους αποτελούν μια ευθεία γραμμή. Επίσης, οι διχοτόμοι δύο εφεξής παραπληρωματικών γωνιών είναι κάθετες μεταξύ τους.</li>
+</ul>
+<p><strong>2. Τριγωνομετρικοί Αριθμοί Παραπληρωματικών Γωνιών</strong></p>
+<ul>
+<li><p><strong>Ημίτονο:</strong> Το ημίτονο μιας αμβλείας γωνίας είναι <strong>ίσο</strong> με το ημίτονο της παραπληρωματικής της.</p>
+<ul>
+<li>Σχέση: <span class="math inline">\(ημ(180° - ω) = ημω\)</span>.</li>
+</ul></li>
+<li><p><strong>Συνημίτονο:</strong> Το συνημίτινο μιας αμβλείας γωνίας είναι <strong>ίσο</strong> με το - συνημίτονο της παραπληρωματικής της.</p>
+<p><span class="math display">\[συν(180^\circ - ω) = -συνω\]</span></p></li>
+<li><p><strong>Σχέση με την Εφαπτομένη:</strong> Λόγω της σχέσης <span class="math inline">\(εφω = \dfrac{ημω}{συνω}\)</span>, η αλλαγή του προσήμου στο συνημίτονο επηρεάζει και την εφαπτομένη των παραπληρωματικών γωνιών, οι οποίες είναι επίσης αντίθετες: <span class="math display">\[εφ(180^\circ - ω) = -εφω\]</span></p></li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/bea3e2eh?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<blockquote class="blockquote">
+<p>Μετακινήστε το σημείο P. Παρατηρήστε τι συμβαίνει με τους τριγωνομετρικούς αριθμούς των παραπληρωματικών γωνιών.</p>
+</blockquote>
+<p><strong>Παράδειγμα:</strong></p>
+<p>Αν έχουμε τη γωνία <span class="math inline">\(ω = 60^\circ\)</span>, η παραπληρωματική της είναι η <span class="math inline">\(120^\circ\)</span>.</p>
+<ul>
+<li><p>Γνωρίζουμε ότι <span class="math inline">\(συν60^\circ = \dfrac{1}{2}\)</span>.</p></li>
+<li><p>Τότε, <span class="math inline">\(συν120^\circ = -συν60^\circ = -\dfrac{1}{2}\)</span>.</p></li>
+</ul>
+<p>Αυτή η ιδιότητα είναι ιδιαίτερα χρήσιμη στη γεωμετρία, για παράδειγμα στον υπολογισμό στοιχείων σε <strong>αμβλυγώνια τρίγωνα</strong> ή στη μελέτη <strong>παραλληλογράμμων</strong>, όπου οι διαδοχικές γωνίες είναι παραπληρωματικές.</p>
+<ul>
+<li><strong>Εμβαδόν Τριγώνου:</strong> Η ιδιότητα αυτή επιτρέπει τον υπολογισμό του εμβαδού τριγώνου ακόμη και όταν η περιεχόμενη γωνία είναι αμβλεία. Το εμβαδό <span class="math inline">\(E\)</span> ενός τριγώνου με πλευρές <span class="math inline">\(\beta, \gamma\)</span> και περιεχόμενη γωνία <span class="math inline">\(A\)</span> δίνεται από τον τύπο <span class="math inline">\(E = \frac{1}{2} \beta\gamma \eta\mu A\)</span>, ο οποίος ισχύει ανεξάρτητα από το αν η γωνία <span class="math inline">\(A\)</span> είναι οξεία, ορθή ή αμβλεία.</li>
+</ul>
 </div>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.2</span> Ασκήσεις</h3>
+<p>Θυμήσου τους βασικούς κανόνες για γωνίες που έχουν άθροισμα <span class="math inline">\(180^{\circ}\)</span> (παραπληρωματικές):</p>
+<ol type="1">
+<li><p><span class="math inline">\(\eta\mu(180^{\circ} - \omega) = \eta\mu\omega\)</span> (Το ημίτονο παραμένει ίδιο)</p></li>
+<li><p><span class="math inline">\(\sigma\upsilon\nu(180^{\circ} - \omega) = -\sigma\upsilon\nu\omega\)</span> (Το συνημίτονο αλλάζει πρόσημο)</p></li>
+<li><p><span class="math inline">\(\epsilon\phi(180^{\circ} - \omega) = -\epsilon\phi\omega\)</span> (Η εφαπτομένη αλλάζει πρόσημο)</p></li>
+</ol>
+<hr>
+<ol type="1">
+<li>Να χαρακτηρίσετε τις παρακάτω ισότητες με <span class="math inline">\((\Sigma)\)</span>, αν είναι σωστές ή με <span class="math inline">\((\Lambda)\)</span>, αν είναι λανθασμένες:</li>
+</ol>
+<p><span class="math inline">\(\alpha) \ \ \ \ \eta\mu 120^{\circ} = \eta\mu 60^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<p><span class="math inline">\(\beta) \ \ \ \ \sigma\upsilon\nu 150^{\circ} = \sigma\upsilon\nu 30^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<p><span class="math inline">\(\gamma) \ \ \ \  \epsilon\phi 110^{\circ} = -\epsilon\phi 70^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<p><span class="math inline">\(\delta) \ \ \ \  \eta\mu 100^{\circ} = -\eta\mu 80^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<p><span class="math inline">\(\epsilon) \ \ \ \  \sigma\upsilon\nu 140^{\circ} = -\sigma\upsilon\nu 40^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<p><span class="math inline">\(\sigma\tau) \ \ \ \ \ \epsilon\phi 135^{\circ} = \epsilon\phi 45^{\circ}\)</span> <span class="math inline">\(\ \ \ [\quad]\)</span></p>
+<ol start="2" type="1">
+<li>Αν για τη γωνία <span class="math inline">\(x\)</span> ισχύει <span class="math inline">\(0^{\circ} \leq x \leq 180^{\circ}\)</span>, να συμπληρώσετε τις παρακάτω προτάσεις:</li>
+</ol>
+<p><span class="math inline">\(\alpha)\)</span> Αν <span class="math inline">\(\eta\mu x = \eta\mu 50^{\circ}\)</span>, τότε <span class="math inline">\(x = 50^{\circ}\)</span> ή <span class="math inline">\(x = \dots\dots\dots\)</span></p>
+<p><span class="math inline">\(\beta)\)</span> Αν <span class="math inline">\(\sigma\upsilon\nu x = -\sigma\upsilon\nu 10^{\circ}\)</span>, τότε <span class="math inline">\(x = \dots\dots\dots\)</span></p>
+<p><span class="math inline">\(\gamma)\)</span> Αν <span class="math inline">\(\epsilon\phi x = -\epsilon\phi 25^{\circ}\)</span>, τότε <span class="math inline">\(x = \dots\dots\dots\)</span></p>
+<ol start="3" type="1">
+<li>Να συμπληρώσετε τον παρακάτω πίνακα αντιστοιχίζοντας σε κάθε τριγωνομετρικό αριθμό της στήλης Α τον ίσο του τριγωνομετρικό αριθμό από τη στήλη Β.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Στήλη Α</th>
+<th style="text-align: left;">Στήλη Β</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha.\)</span> <span class="math inline">\(\eta\mu 160^{\circ}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.\)</span> <span class="math inline">\(\epsilon\phi 20^{\circ}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\beta.\)</span> <span class="math inline">\(\sigma\upsilon\nu 160^{\circ}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2.\)</span> <span class="math inline">\(\eta\mu 20^{\circ}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma.\)</span> <span class="math inline">\(\epsilon\phi 160^{\circ}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(3.\)</span> <span class="math inline">\(\sigma\upsilon\nu 20^{\circ}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(4.\)</span> <span class="math inline">\(-\eta\mu 20^{\circ}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(5.\)</span> <span class="math inline">\(-\sigma\upsilon\nu 20^{\circ}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(6.\)</span> <span class="math inline">\(-\epsilon\phi 20^{\circ}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Πίνακας Απαντήσεων:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\beta\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\gamma\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">________</td>
+<td style="text-align: left;">________</td>
+<td style="text-align: left;">_________</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>Να υπολογίσετε τους τριγωνομετρικούς αριθμούς (<span class="math inline">\(\eta\mu, \sigma\upsilon\nu, \epsilon\phi\)</span>) των γωνιών:</li>
+</ol>
+<p><span class="math inline">\(\alpha) \ \ \ \ 120^{\circ}\)</span></p>
+<p><span class="math inline">\(\beta) \ \ \ \  135^{\circ}\)</span></p>
+<p><span class="math inline">\(\gamma) \ \ \  150^{\circ}\)</span></p>
+<p><em>(Υπόδειξη: Χρησιμοποίησε τις σχέσεις</em> <span class="math inline">\(\eta\mu(180^{\circ}-\omega)=\eta\mu\omega\)</span>, <span class="math inline">\(\sigma\upsilon\nu(180^{\circ}-\omega)=-\sigma\upsilon\nu\omega\)</span> και τις τιμές των <span class="math inline">\(30^{\circ}, 45^{\circ}, 60^{\circ}\)</span>)</p>
+<ol start="5" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<p><span class="math inline">\(\alpha)\ \ \ \  \eta\mu 140^{\circ} + \sigma\upsilon\nu 80^{\circ} - \eta\mu 40^{\circ} + \sigma\upsilon\nu 100^{\circ} = 0\)</span></p>
+<p><span class="math inline">\(\beta) \ \ \ \ \ \epsilon\phi 115^{\circ} + \epsilon\phi 65^{\circ} - \epsilon\phi 150^{\circ} \cdot \epsilon\phi 30^{\circ} = 1\)</span></p>
+<ol start="6" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<p><span class="math inline">\(\alpha) \ \ \ \sigma\upsilon\nu^2 30^{\circ} + \sigma\upsilon\nu^2 150^{\circ} = 1,5\)</span></p>
+<p><span class="math inline">\(\beta)\ \ \ \  \eta\mu^2 45^{\circ} + \eta\mu^2 60^{\circ} + \eta\mu^2 120^{\circ} + \eta\mu^2 135^{\circ} = 2,5\)</span></p>
+<ol start="7" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<p><span class="math inline">\(\eta\mu(110^{\circ} + x) = \eta\mu(70^{\circ} - x)\)</span> και <span class="math inline">\(\sigma\upsilon\nu(130^{\circ} - x) = -\sigma\upsilon\nu(50^{\circ} + x)\)</span>.</p>
+<ol start="8" type="1">
+<li>Να βρείτε τη γωνία <span class="math inline">\(x\)</span> (όπου <span class="math inline">\(0^{\circ} \leq x \leq 180^{\circ}\)</span>), όταν:</li>
+</ol>
+<p><span class="math inline">\(\alpha) \ \ \ \eta\mu x = \dfrac{1}{2}\)</span></p>
+<p><span class="math inline">\(\beta) \ \ \ \ 2\eta\mu x = \sqrt{3}\)</span></p>
+<p><span class="math inline">\(\gamma) \ \ \ \  \sigma\upsilon\nu x = \dfrac{\sqrt{2}}{2}\)</span></p>
+<p><span class="math inline">\(\delta) \ \ \ \ \sigma\upsilon\nu x = -\dfrac{\sqrt{3}}{2}\)</span></p>
+<p><span class="math inline">\(\epsilon) \ \ \ \  \epsilon\phi x = -1\)</span></p>
+<p><span class="math inline">\(\sigma\tau) \ \ \ \ 3\epsilon\phi x = \sqrt{3}\)</span></p>
+<ol start="9" type="1">
+<li><p>Να αποδείξετε ότι οι απέναντι γωνίες ενός ρόμβου έχουν το ίδιο ημίτονο και το ίδιο συνημίτονο, ενώ οι διαδοχικές γωνίες έχουν το ίδιο ημίτονο αλλά αντίθετα συνημίτονα.</p></li>
+<li><p>Δίνεται τετράπλευρο <span class="math inline">\(ΑΒ\Gamma\Delta\)</span> στο οποίο οι γωνίες <span class="math inline">\(\widehat{A}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> είναι παραπληρωματικές (<span class="math inline">\(\widehat{A} + \widehat{\Gamma} = 180^{\circ}\)</span>). Να αποδείξετε ότι:</p></li>
+</ol>
+<p><span class="math inline">\(\alpha) \ \ \ \ \eta\mu A - \eta\mu \Gamma = 0\)</span></p>
+<p><span class="math inline">\(\beta) \ \ \ \  \sigma\upsilon\nu A + \sigma\upsilon\nu \Gamma = 0\)</span></p>
+<ol start="11" type="1">
+<li><p>Στο παρακάτω σχήμα να υπολογίσετε τους τριγωνομετρικούς αριθμούς της γωνίας <span class="math inline">\(\hat α\)</span> και της γωνίας <span class="math inline">\(\hatβ\)</span>.<br>
+<br>
+<img src="images/clipboard-4032882708.png" class="img-fluid"></p></li>
+<li><p>Δίνεται ισόπλευρο τρίγωνο <span class="math inline">\(ΑΒ\Gamma\)</span> πλευράς <span class="math inline">\(8\text{ cm}\)</span>. Στην πλευρά <span class="math inline">\(Β\Gamma\)</span> παίρνουμε σημείο <span class="math inline">\(\Delta\)</span> τέτοιο ώστε <span class="math inline">\(Β\Delta = 3\text{ cm}\)</span>.</p></li>
+</ol>
+<p><span class="math inline">\(\alpha)\)</span> Να βρείτε το ύψος <span class="math inline">\(ΑΗ\)</span> του τριγώνου.</p>
+<p><span class="math inline">\(\beta)\)</span> Να υπολογίσετε το ημίτονο και το συνημίτονο της γωνίας <span class="math inline">\(\omega = \widehat{A\Delta B}\)</span> (εσωτερική) και της παραπληρωματικής της <span class="math inline">\(\phi = \widehat{A\Delta \Gamma}\)</span>.</p>
+<blockquote class="blockquote">
+<p>Κάντε το σχήμα. Αφού υπολογίσετε το ύψος , υπολογίστε τους τριγωνομετρικούς αριθμούς της οξείας γωνίας από το ορθογώνιο τρίγωνο ΑΗΔ.</p>
+</blockquote>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -944,12 +1201,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
