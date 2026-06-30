@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-ggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</a></li></ol></nav>
+      <h1 class="title">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Ιούνιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">2 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -824,9 +864,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -887,7 +927,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
   </div>
 </li>
@@ -902,33 +942,321 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#νόμος-των-ημιτόνων---νόμος-των-συνημιτόνων" id="toc-νόμος-των-ημιτόνων---νόμος-των-συνημιτόνων" class="nav-link active" data-scroll-target="#νόμος-των-ημιτόνων---νόμος-των-συνημιτόνων"><span class="header-section-number">1</span> Νόμος των ημιτόνων - Νόμος των συνημιτόνων</a>
+  <ul class="collapse">
+  <li><a href="#νόμος-των-ημιτόνων" id="toc-νόμος-των-ημιτόνων" class="nav-link" data-scroll-target="#νόμος-των-ημιτόνων"><span class="header-section-number">1.1</span> Νόμος των Ημιτόνων</a></li>
+  <li><a href="#νόμος-των-συνημιτόνων" id="toc-νόμος-των-συνημιτόνων" class="nav-link" data-scroll-target="#νόμος-των-συνημιτόνων"><span class="header-section-number">1.2</span> Νόμος των Συνημιτόνων</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="νόμος-των-ημιτόνων---νόμος-των-συνημιτόνων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="νόμος-των-ημιτόνων---νόμος-των-συνημιτόνων"><span class="header-section-number">1</span> Νόμος των ημιτόνων - Νόμος των συνημιτόνων</h2>
+<section id="νόμος-των-ημιτόνων" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="νόμος-των-ημιτόνων"><span class="header-section-number">1.1</span> Νόμος των Ημιτόνων</h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία:</strong> Σε κάθε τρίγωνο <span class="math inline">\(ABΓ\)</span> με πλευρές <span class="math inline">\(α, β, γ\)</span> και αντίστοιχες γωνίες <span class="math inline">\(A, B, Γ\)</span>, ισχύει η σχέση: <span class="math display">\[\frac{α}{ημ A} = \frac{β}{ημΒ} = \frac{γ}{ημΓ} = 2R\]</span> όπου <span class="math inline">\(R\)</span> είναι η ακτίνα του περιγεγραμμένου κύκλου του τριγώνου.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p><img src="images/clipboard-2433191.png" class="img-fluid" width="344"></p>
+<ol type="1">
+<li>Θεωρούμε τον περιγεγραμμένο κύκλο του τριγώνου <span class="math inline">\(ABΓ\)</span> με κέντρο <span class="math inline">\(O\)</span> και ακτίνα <span class="math inline">\(R\)</span>.</li>
+<li>Φέρουμε τη διάμετρο <span class="math inline">\(BΔ = 2R\)</span>. Τότε το τρίγωνο <span class="math inline">\(BΔΓ\)</span> είναι ορθογώνιο στη γωνία <span class="math inline">\(Γ\)</span> (εγγεγραμμένη σε ημικύκλιο).</li>
+<li>Στο ορθογώνιο τρίγωνο <span class="math inline">\(BΔΓ\)</span>, η γωνία <span class="math inline">\(Δ\)</span> είναι ίση με τη γωνία <span class="math inline">\(A\)</span> (βαίνουν στο ίδιο τόξο <span class="math inline">\(BΓ\)</span>).</li>
+<li>Έχουμε <span class="math inline">\(ημΔ = ημΑ = \dfrac{α}{2R}\)</span>, άρα <span class="math inline">\(\dfrac{α}{ημ A} = 2R\)</span>.</li>
+<li>Με όμοιο τρόπο αποδεικνύονται οι σχέσεις για τις άλλες πλευρές.</li>
+</ol>
+<p><strong>Παράδειγμα:</strong></p>
+<blockquote class="blockquote">
+<p><span style="color:green;">Μπορούμε να χρησιμοποιήσουμε την σχέση αναλογίας των ημιτόνων για υπολογισμούς στοιχείων σε τρίγωνο</span>.</p>
+</blockquote>
+<p>Σε τρίγωνο <span class="math inline">\(ABΓ\)</span> δίνονται <span class="math inline">\(A = 30^\circ, \ \ \ α = 5\)</span> και <span class="math inline">\(B = 45^\circ\)</span>. Να βρεθεί η πλευρά <span class="math inline">\(β\)</span>.</p>
+<p><img src="images/clipboard-4133558626.png" class="img-fluid"></p>
+<p><em>Λύση:</em></p>
+<p><span class="math inline">\(\dfrac{5}{ημ 30^\circ} = \dfrac{β}{ημ 45^\circ} \Rightarrow \dfrac{5}{1/2} = \dfrac{β}{\sqrt{2}/2} \Rightarrow 10 = \dfrac{2\beta}{\sqrt{2}} \Rightarrow \beta = 5\sqrt{2}\)</span>.</p>
 </div>
+<hr>
+</section>
+<section id="νόμος-των-συνημιτόνων" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="νόμος-των-συνημιτόνων"><span class="header-section-number">1.2</span> Νόμος των Συνημιτόνων</h3>
+<div style="background-color: #c98ba2; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία:</strong> Σε κάθε τρίγωνο <span class="math inline">\(AB\Gamma\)</span> ισχύουν οι σχέσεις:</p>
+<ol type="1">
+<li><span class="math inline">\(α^2 = β^2 + γ^2 - 2βγ συν A\)</span></li>
+<li><span class="math inline">\(β^2 = α^2 + γ^2 - 2αγ συν B\)</span></li>
+<li><span class="math inline">\(γ^2 = α^2 + β^2 - 2αβ συνΓ\)</span></li>
+</ol>
+<p><img src="images/clipboard-114456283.png" class="img-fluid" width="425"></p>
+<p><strong>Απόδειξη:</strong></p>
+<ol type="1">
+<li><p>Τοποθετούμε το τρίγωνο σε καρτεσιανό σύστημα συντεταγμένων με την κορυφή <span class="math inline">\(A\)</span> στο <span class="math inline">\((0,0)\)</span> και την πλευρά <span class="math inline">\(γ\)</span> πάνω στον άξονα <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Οι συντεταγμένες των κορυφών είναι: <span class="math inline">\(A(0,0)\)</span>, <span class="math inline">\(B(γ, 0)\)</span>, <span class="math inline">\(Γ(β συν A, β ημ A)\)</span>.</p></li>
+<li><p>Χρησιμοποιούμε τον τύπο της απόστασης για την πλευρά <span class="math inline">\(α\)</span> (απόσταση <span class="math inline">\(BΓ\)</span>):</p></li>
+</ol>
+<p><span class="math inline">\(α^2 = (γ-β συν A )^2 + (β ημ A - 0)^2\)</span></p>
+<ol start="4" type="1">
+<li><span class="math inline">\(α^2 = γ^2+β^2 συν^2 A - 2βγ συν A + β^2 ημ^2 A  \Rightarrow\)</span></li>
+</ol>
+<p><span class="math inline">\(α^2 = γ^2+β^2 (συν^2 A+ημ^2Α) - 2βγ συν A\)</span></p>
+<ol start="5" type="1">
+<li>Επειδή <span class="math inline">\(ημ^2 A + συν^2 A = 1\)</span>, προκύπτει: <span class="math inline">\(α^2 = β^2 + γ^2 - 2βγ συν A\)</span>.</li>
+</ol>
+<p><strong>Παράδειγμα:</strong></p>
+<blockquote class="blockquote">
+<p><span style="color:green;">Μπορούμε να χρησιμοποιήσουμε τον νόμο των συνημιτόνων για υπολογισμούς στοιχείων σε τρίγωνο</span>.</p>
+</blockquote>
+<p>Σε τρίγωνο <span class="math inline">\(ABΓ\)</span> είναι <span class="math inline">\(β = 3, γ = 5\)</span> και <span class="math inline">\(A = 60^\circ\)</span>.</p>
+<p>Να βρεθεί η πλευρά <span class="math inline">\(\alpha\)</span>.</p>
+<p><img src="images/clipboard-2627909464.png" class="img-fluid" width="223"></p>
+<p><em>Λύση:</em></p>
+<p><span class="math inline">\(α^2 = 3^2 + 5^2 - 2(3)(5) συν 60^\circ  \Rightarrow\)</span></p>
+<p><span class="math inline">\(α^2 = 9 + 25 - 30(0.5)   \Rightarrow\)</span></p>
+<p><span class="math inline">\(α^2 = 34 - 15 = 19 \Rightarrow α = \sqrt{19}\)</span>.</p>
+</div>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Στο παρακάτω τρίγωνο, όπου οι γωνίες είναι <span class="math inline">\(64^\circ\)</span> και <span class="math inline">\(70^\circ\)</span> και οι απέναντι πλευρές είναι <span class="math inline">\(α\)</span> και <span class="math inline">\(β\)</span> αντίστοιχα, να γράψετε τον νόμο των ημιτόνων.<br>
+</p>
+<p><img src="images/clipboard-4040047745.png" class="img-fluid" width="322"></p></li>
+<li><p>Σε ένα τρίγωνο <span class="math inline">\(ABΓ\)</span> με σημείο <span class="math inline">\(Δ\)</span> επί της πλευράς <span class="math inline">\(BΓ\)</span>:</p></li>
+</ol>
+<ul>
+<li><p>α) Να γράψετε τον νόμο των ημιτόνων στο τρίγωνο <span class="math inline">\(ABΔ\)</span>, αν η γωνία <span class="math inline">\(\widehat{ΒΑΔ} = 30^\circ\)</span> .</p></li>
+<li><p>β) Να γράψετε τον νόμο των ημιτόνων στο τρίγωνο <span class="math inline">\(AΔΓ\)</span>, αν η γωνία <span class="math inline">\(\widehat{ΓΑΔ} = 45^\circ\)</span> και η γωνία <span class="math inline">\(\widehat{ΓΔΑ} = 88^\circ\)</span>.<br>
+</p>
+<p><img src="images/clipboard-2503890945.png" class="img-fluid" width="385"></p></li>
+</ul>
+<ol start="3" type="1">
+<li>Να χαρακτηρίσετε τις παρακάτω ισότητες με (<span class="math inline">\(\Sigma\)</span>), αν είναι σωστές ή με (<span class="math inline">\(\Lambda\)</span>), αν είναι λανθασμένες:</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε τα σχήματα σύμφωνα με τα δεδομένα</span>.</p>
+</blockquote>
+<ul>
+<li><p>α) Σε κάθε τρίγωνο <span class="math inline">\(ABΓ\)</span> ισχύει <span class="math inline">\(α \cdot ημΓ = γ \cdot ημΑ\)</span>……………………………………………………..<span class="math inline">\([\ \quad \quad \quad ]\)</span>.</p></li>
+<li><p>β) Αν σε τρίγωνο <span class="math inline">\(ABΓ\)</span> είναι <span class="math inline">\(\hat{B} = 40^\circ, \hat{Γ} = 80^\circ\)</span>, τότε <span class="math inline">\(\dfrac{β}{ημ 40^\circ} = \dfrac{α}{ημ 60^\circ}\)</span> ……………………..<span class="math inline">\([\ \quad \quad \quad ]\)</span>.</p></li>
+<li><p>γ) Σε κάθε τρίγωνο <span class="math inline">\(ABΓ\)</span> ισχύει <span class="math inline">\(2βγ συν A = β^2 + γ^2 - α^2\)</span> …………………………………………<span class="math inline">\([\ \quad \quad \quad ]\)</span>.</p></li>
+<li><p>δ) Αν σε τρίγωνο <span class="math inline">\(ABΓ\)</span> είναι <span class="math inline">\(\hat{A} = 50^\circ\)</span>, τότε ισχύει <span class="math inline">\(α^2 = β^2 + γ^2 - 2 \ β \ γ \ συν 50^\circ\)</span> ……..<span class="math inline">\([\ \quad \quad \quad ]\)</span>.</p></li>
+<li><p>ε) Αν σε τρίγωνο <span class="math inline">\(ABΓ\)</span> είναι <span class="math inline">\(\hat{A} = 120^\circ\)</span>, τότε ισχύει <span class="math inline">\(α^2 = β^2 + γ^2 + βγ\)</span> …………………….<span class="math inline">\([\ \quad \quad \quad ]\)</span>.</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Να συμπληρώσετε τις παρακάτω ισότητες σύμφωνα με το νόμο των συνημιτόνων για ένα τρίγωνο με πλευρές <span class="math inline">\(a, β, γ\)</span> και γωνίες <span class="math inline">\(\hat{A} = 50^\circ\)</span> απέναντι από την πλευρά <span class="math inline">\(α\)</span> και <span class="math inline">\(\hat Γ=70^ο\)</span> απέναντι από την πλευρά <span class="math inline">\(γ\)</span>:</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε τα σχήματα σύμφωνα με τα δεδομένα</span>.</p>
+</blockquote>
+<ul>
+<li><p><span class="math inline">\(α^2 = \dots\)</span></p></li>
+<li><p><span class="math inline">\(β^2 = \dots\)</span></p></li>
+<li><p><span class="math inline">\(γ^2 = \dots\)</span></p></li>
+</ul>
+<ol start="5" type="1">
+<li>Να συμπληρώσετε τις παρακάτω προτάσεις:</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε τα σχήματα σύμφωνα με τα δεδομένα</span>.</p>
+</blockquote>
+<ul>
+<li><p>α) Η γωνία <span class="math inline">\(\hat B\)</span> σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με πλευρές <span class="math inline">\(AB=7, BΓ=8 \text{  και  } ΑΓ=9\)</span> υπολογίζεται με τον νόμο των ……………… από την ισότητα …………………………</p></li>
+<li><p>β) Η πλευρά <span class="math inline">\(ΑΓ\)</span> σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με πλευρές <span class="math inline">\(ΑΒ=6, ΒΓ=9\)</span> και περιεχόμενη γωνία <span class="math inline">\(45^\circ\)</span> υπολογίζεται με τον νόμο των …………… από την ισότητα ………………</p></li>
+<li><p>γ) Η γωνία <span class="math inline">\(\hat Γ\)</span> σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> με πλευρές <span class="math inline">\(ΑΒ=5, ΑΓ=5, ΒΓ=8\)</span> υπολογίζεται με τον νόμο των ……………. από την ισότητα …. …………</p></li>
+<li><p>δ) Η πλευρά <span class="math inline">\(AB\)</span> σε τρίγωνο ΑΒΓ με γωνίες <span class="math inline">\(\hat A=50^\circ, \hat Γ=80^\circ\)</span> και πλευρά ΑΓ=10 cm υπολογίζεται με τον νόμο των …………………. από την ισότητα ……………..</p></li>
+</ul>
+<ol start="6" type="1">
+<li>Να υπολογίσετε το <span class="math inline">\(x\)</span> στα παρακάτω τρίγωνα:</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε τα σχήματα σύμφωνα με τα δεδομένα</span>.</p>
+</blockquote>
+<ul>
+<li><p>α) Τρίγωνο με πλευρές <span class="math inline">\(5\)</span> και <span class="math inline">\(x\)</span> και απέναντι γωνίες <span class="math inline">\(60^\circ\)</span> και <span class="math inline">\(45^\circ\)</span> αντίστοιχα.</p></li>
+<li><p>β) Τρίγωνο με πλευρά <span class="math inline">\(20\)</span> απέναντι από γωνία <span class="math inline">\(120^\circ\)</span>, και πλευρά <span class="math inline">\(x\)</span> απέναντι από γωνία <span class="math inline">\(30^\circ\)</span>.</p></li>
+<li><p>γ) Τρίγωνο με πλευρές <span class="math inline">\(10\)</span> και <span class="math inline">\(x\)</span> και απέναντι γωνίες <span class="math inline">\(75^\circ\)</span> και <span class="math inline">\(30^\circ\)</span> αντίστοιχα.</p></li>
+</ul>
+<ol start="7" type="1">
+<li>Να υπολογίσετε το <span class="math inline">\(x\)</span> στα παρακάτω τρίγωνα (εφαρμόζοντας τον νόμο των συνημιτόνων):</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε τα σχήματα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ul>
+<li><p>α) Τρίγωνο με πλευρές <span class="math inline">\(6\)</span> και <span class="math inline">\(9\)</span> και περιεχόμενη γωνία <span class="math inline">\(60^\circ\)</span>.</p></li>
+<li><p>β) Τρίγωνο με πλευρές <span class="math inline">\(4\sqrt{2}\)</span> και <span class="math inline">\(5\)</span> και περιεχόμενη γωνία <span class="math inline">\(135^\circ\)</span>.</p></li>
+<li><p>γ) Τρίγωνο με πλευρές <span class="math inline">\(7\)</span> και <span class="math inline">\(8\)</span> και περιεχόμενη γωνία <span class="math inline">\(45^\circ\)</span>.</p></li>
+</ul>
+<ol start="8" type="1">
+<li>Να υπολογίσετε τις υπόλοιπες γωνίες του τριγώνου <span class="math inline">\(ABΓ\)</span>, όταν:</li>
+</ol>
+<ul>
+<li><p>α) <span class="math inline">\(α = 3\)</span>, <span class="math inline">\(β = 3\sqrt{3}\)</span> και <span class="math inline">\(\hat{A} = 30^\circ\)</span>.</p></li>
+<li><p>β) <span class="math inline">\(β = \sqrt{2}\)</span>, <span class="math inline">\(γ = 2\)</span> και <span class="math inline">\(\hat{Γ} = 45^\circ\)</span>.</p></li>
+</ul>
+<ol start="9" type="1">
+<li><p>Αν σε τρίγωνο <span class="math inline">\(ABΓ\)</span> είναι <span class="math inline">\(\hat{A} = 45^\circ\)</span>, <span class="math inline">\(α = 2\sqrt{2}\)</span> και <span class="math inline">\(β = 2\)</span>, τότε να αποδείξετε ότι το τρίγωνο είναι ορθογώνιο.</p></li>
+<li><p>Να υπολογίσετε το μήκος της διαδρομής <span class="math inline">\(x=ΔΓ\)</span> ενός τελεφερίκ που ξεκινά από την <strong><em>ΑΡΧΗ ΤΕΛΕΦΕΡΙΚ</em></strong> , σε σημείο που απέχει <span class="math inline">\(ΔΕ=400\)</span> m από τη βάση του βουνού, αν η γωνία της κορυφής είναι <span class="math inline">\(ΔΓΕ=10^\circ\)</span> και η γωνία της κλίσης της διαδρομής ως προς το οριζόντιο έδαφος είναι <span class="math inline">\(ΕΔΓ=30^\circ\)</span>.<br>
+</p>
+<p><br>
+<img src="images/clipboard-1732519888.png" class="img-fluid"></p></li>
+<li><p>Ένας μαθητής λέει ότι βρήκε ένα τρίγωνο <span class="math inline">\(ABΓ\)</span> με <span class="math inline">\(α = 5\)</span>, <span class="math inline">\(β = 15\)</span> και <span class="math inline">\(\hat{A} = 120^\circ\)</span>. Γιατί ο καθηγητής του είπε ότι είναι αδύνατο να υπάρχει τέτοιο τρίγωνο;</p></li>
+<li><p>Δύο δυνάμεις <span class="math inline">\(F_1, F_2\)</span> έχουν συνισταμένη <span class="math inline">\(F = 20\)</span> N. Η δύναμη <span class="math inline">\(F_1\)</span> σχηματίζει με τη συνισταμένη <span class="math inline">\(F\)</span> γωνία <span class="math inline">\(30^\circ\)</span>, ενώ η δύναμη <span class="math inline">\(F_2\)</span> σχηματίζει με τη συνισταμένη <span class="math inline">\(F\)</span> γωνία <span class="math inline">\(45^\circ\)</span>.</p></li>
+</ol>
+<p>Να υπολογίσετε τα μέτρα των δυνάμεων <span class="math inline">\(F_1\)</span> και <span class="math inline">\(F_2\)</span>.<br>
+<img src="images/clipboard-1611489847.png" class="img-fluid"></p>
+<ol start="13" type="1">
+<li><p>Ένας τοπογράφος θέλει να μετρήσει το ύψος ενός πύργου. Από το σημείο <span class="math inline">\(A\)</span> μετράει τη γωνία ανύψωσης <span class="math inline">\(40^\circ\)</span>. Μετακινείται κατά <span class="math inline">\(20\)</span> m πλησιέστερα προς τον πύργο (σημείο <span class="math inline">\(B\)</span>) και μετράει γωνία <span class="math inline">\(55^\circ\)</span>. Αν το γωνιόμετρο βρίσκεται σε ύψος <span class="math inline">\(1.5\)</span> m από το έδαφος, ποιο είναι το ύψος του πύργου;<br>
+<img src="images/clipboard-126870957.png" class="img-fluid" width="452"><br>
+</p></li>
+<li><p>Να υπολογίσετε τά <span class="math inline">\(λ\)</span> και <span class="math inline">\(θ\)</span> στις παρακάτω περιπτώσεις :</p></li>
+</ol>
+<ul>
+<li><p>α) Τρίγωνο με πλευρές <span class="math inline">\(2\sqrt{3}, 4\)</span> και γωνία <span class="math inline">\(30^\circ\)</span> μεταξύ τους.<br>
+<img src="images/clipboard-2245178863.png" class="img-fluid" width="386"></p></li>
+<li><p>β) Τρίγωνο με πλευρές <span class="math inline">\(5, 6\)</span> και <span class="math inline">\(8\)</span>.<br>
+<img src="images/clipboard-1609920304.png" class="img-fluid" width="260"></p></li>
+<li><p>γ) Τρίγωνο με πλευρές <span class="math inline">\(4, 7\)</span> και γωνία <span class="math inline">\(120^\circ\)</span> μεταξύ τους.<br>
+<img src="images/clipboard-2921921890.png" class="img-fluid" width="306"></p></li>
+<li><p>δ) Τρίγωνο με πλευρές <span class="math inline">\(10, 11\)</span> και <span class="math inline">\(15\)</span>.<br>
+<img src="images/clipboard-769131171.png" class="img-fluid"></p></li>
+</ul>
+<ol start="15" type="1">
+<li>Να υπολογίσετε τις ίσες πλευρές <span class="math inline">\(\beta, \gamma\)</span> ισοσκελούς τριγώνου <span class="math inline">\(AB\Gamma\)</span>, αν η γωνία <span class="math inline">\(\hat{A} = 90^\circ\)</span> και η βάση <span class="math inline">\(\alpha = 6\sqrt{2}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="16" type="1">
+<li>Σε κύκλο με ακτίνα <span class="math inline">\(R = 8\)</span> cm, η χορδή <span class="math inline">\(AB\)</span> αντιστοιχεί σε επίκεντρη γωνία <span class="math inline">\(60^\circ\)</span>. Να υπολογίσετε το μήκος της χορδής <span class="math inline">\(AB\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="17" type="1">
+<li>Να υπολογίσετε τις διαγωνίους παραλληλογράμμου <span class="math inline">\(ABΓΔ\)</span> με πλευρές <span class="math inline">\(AB = 5\)</span>, <span class="math inline">\(BΓ = 4\)</span> και γωνία <span class="math inline">\(\hat{A} = 60^\circ\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="18" type="1">
+<li><p>Μια εταιρεία θέλει να κατασκευάσει σήραγγα μεταξύ των σημείων <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Ένας μηχανικός μετράει από το σημείο <span class="math inline">\(M\)</span> την απόσταση <span class="math inline">\(MA = 200\)</span> m, <span class="math inline">\(MB = 150\)</span> m και τη γωνία <span class="math inline">\(\widehat{AMB} = 60^\circ\)</span>. Να υπολογίσετε το μήκος της σήραγγας <span class="math inline">\(AB\)</span>.<br>
+<img src="images/clipboard-1274111384.png" class="img-fluid"></p></li>
+<li><p>Ένας τεχνικός στηρίζει μια μεταλλική κατασκευή με δύο βέργες <span class="math inline">\(AB = 0.50\)</span> m και <span class="math inline">\(BΓ = 1.20\)</span> m. Αν η γωνία μεταξύ τους είναι <span class="math inline">\(120^\circ\)</span>, να υπολογίσετε το μήκος της τρίτης πλευράς <span class="math inline">\(AΓ\)</span> που απαιτείται για να κλείσει το τρίγωνο.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="20" type="1">
+<li>Σε ένα τρίγωνο <span class="math inline">\(ΑΒΓ\)</span>, αν μια πλευρά είναι <span class="math inline">\(6\)</span> και η απέναντι γωνία της <span class="math inline">\(50^\circ\)</span>, υπολογίστε την πλευρά <span class="math inline">\(x\)</span> που βρίσκεται απέναντι από γωνία <span class="math inline">\(45^\circ\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="21" type="1">
+<li>Σε τρίγωνο με πλευρές <span class="math inline">\(10\)</span> και <span class="math inline">\(5\)</span>, αν η γωνία απέναντι από την πλευρά <span class="math inline">\(5\)</span> είναι <span class="math inline">\(30^\circ\)</span>, βρείτε τη γωνία <span class="math inline">\(x\)</span> που βρίσκεται απέναντι από την πλευρά <span class="math inline">\(10\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="22" type="1">
+<li>Δίνονται οι πλευρές <span class="math inline">\(α = 5\)</span>, <span class="math inline">\(β= \sqrt{3}\)</span> και η γωνία <span class="math inline">\(\hat{B} = 50^\circ\)</span>. Υπολογίστε τις υπόλοιπες γωνίες του τριγώνου.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="23" type="1">
+<li>Σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> δίνονται <span class="math inline">\(β = 7\)</span> cm, <span class="math inline">\(γ = 5\)</span> cm και η περιεχόμενη γωνία <span class="math inline">\(\hat{A} = 60^\circ\)</span>. Βρείτε την πλευρά <span class="math inline">\(α\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="24" type="1">
+<li>Σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> οι πλευρές είναι <span class="math inline">\(α = \sqrt{13}\)</span>, <span class="math inline">\(β = 4\)</span> και <span class="math inline">\(γ = 3\)</span>. Υπολογίστε τη γωνία <span class="math inline">\(\hat{A}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="25" type="1">
+<li><p>Αν σε ένα τρίγωνο ισχύει η σχέση <span class="math inline">\(α^2 = β^2 + γ^2 - βγ\sqrt{3}\)</span>, βρείτε το μέτρο της γωνίας <span class="math inline">\(\hat{A}\)</span>.</p></li>
+<li><p>Σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> δίνονται <span class="math inline">\(α = 3\)</span>, <span class="math inline">\(β = 5\)</span> και η γωνία <span class="math inline">\(\hat{Γ} = 135^\circ\)</span>. Υπολογίστε την πλευρά <span class="math inline">\(γ\)</span>.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><span style="color:green;">κάντε το σχήμα σύμφωνα με τα δεδομένα</span></p>
+</blockquote>
+<ol start="27" type="1">
+<li><p>Σε τρίγωνο <span class="math inline">\(ΑΒΓ\)</span> είναι <span class="math inline">\(α = 2γ\)</span> και <span class="math inline">\(β = γ\sqrt{7}\)</span>. Υπολογίστε τη γωνία <span class="math inline">\(\hat{B}\)</span>.</p></li>
+<li><p>Βρείτε την πλευρά <span class="math inline">\(x\)</span> ενός τριγώνου όταν οι άλλες δύο πλευρές είναι <span class="math inline">\(3\)</span> και <span class="math inline">\(4\)</span> και η περιεχόμενη γωνία τους είναι <span class="math inline">\(60^\circ\)</span>.</p></li>
+</ol>
+<hr>
+<p><span class="math display">\[\bbox[yellow, 5px]{\color{blue}\Large\text{---}}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #d3deb8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -956,12 +1284,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
