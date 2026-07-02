@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Α’ Λυκείου – Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>02. Σύνολα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,33 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +119,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +130,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +182,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Α’ Λυκείου – Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/02. Σύνολα.html">02. Σύνολα</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/02. Σύνολα.html">02. Σύνολα</a></li></ol></nav>
+      <h1 class="title">02. Σύνολα</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">2 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">4 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +265,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +378,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +490,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +561,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +680,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +732,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +875,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +950,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +969,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -944,7 +993,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">02. Σύνολα</span></a>
   </div>
 </li>
@@ -959,33 +1008,360 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#σύνολα" id="toc-σύνολα" class="nav-link active" data-scroll-target="#σύνολα"><span class="header-section-number">1</span> Σύνολα</a>
+  <ul class="collapse">
+  <li><a href="#η-έννοια-του-συνόλου" id="toc-η-έννοια-του-συνόλου" class="nav-link" data-scroll-target="#η-έννοια-του-συνόλου"><span class="header-section-number">1.1</span> <strong>1. Η έννοια του συνόλου</strong></a></li>
+  <li><a href="#τα-σύμβολα-in-και-notin" id="toc-τα-σύμβολα-in-και-notin" class="nav-link" data-scroll-target="#τα-σύμβολα-in-και-notin"><span class="header-section-number">1.2</span> <strong>2. Τα σύμβολα</strong> <span class="math inline">\(\in\)</span> και <span class="math inline">\(\notin\)</span></a></li>
+  <li><a href="#παράσταση-συνόλου" id="toc-παράσταση-συνόλου" class="nav-link" data-scroll-target="#παράσταση-συνόλου"><span class="header-section-number">1.3</span> <strong>3. Παράσταση συνόλου</strong></a></li>
+  <li><a href="#ίσα-σύνολα-και-υποσύνολα" id="toc-ίσα-σύνολα-και-υποσύνολα" class="nav-link" data-scroll-target="#ίσα-σύνολα-και-υποσύνολα"><span class="header-section-number">1.4</span> <strong>4. Ίσα σύνολα και Υποσύνολα</strong></a></li>
+  <li><a href="#το-κενό-σύνολο-emptyset-ή" id="toc-το-κενό-σύνολο-emptyset-ή" class="nav-link" data-scroll-target="#το-κενό-σύνολο-emptyset-ή"><span class="header-section-number">1.5</span> <strong>5. Το κενό σύνολο (</strong><span class="math inline">\(\emptyset\)</span> ή <span class="math inline">\(\{ \}\)</span>)</a></li>
+  <li><a href="#διαγράμματα-venn" id="toc-διαγράμματα-venn" class="nav-link" data-scroll-target="#διαγράμματα-venn"><span class="header-section-number">1.6</span> <strong>6. Διαγράμματα Venn</strong></a></li>
+  <li><a href="#πράξεις-με-σύνολα" id="toc-πράξεις-με-σύνολα" class="nav-link" data-scroll-target="#πράξεις-με-σύνολα"><span class="header-section-number">1.7</span> <strong>7. Πράξεις με σύνολα</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.8</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Α’ Λυκείου – Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="σύνολα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="σύνολα"><span class="header-section-number">1</span> Σύνολα</h2>
+<p>Η θεωρία των συνόλων αποτελεί θεμελιώδη και πρωταρχική έννοια στα Μαθηματικά, καθώς πάνω σε αυτήν βασίζονται σχεδόν όλοι οι υπόλοιποι κλάδοι. Ακολουθεί η ανάλυση των βασικών εννοιών, ορισμών και πράξεων.</p>
+<section id="η-έννοια-του-συνόλου" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-έννοια-του-συνόλου"><span class="header-section-number">1.1</span> <strong>1. Η έννοια του συνόλου</strong></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Σύμφωνα με τον μαθηματικό Georg Cantor, ο οποίος θεωρείται ο θεμελιωτής της θεωρίας συνόλων, <strong>σύνολο</strong> είναι κάθε συλλογή αντικειμένων που προέρχεται από την εμπειρία ή τη διανόησή μας, είναι καλά ορισμένη και τα αντικείμενά της διακρίνονται το ένα από το άλλο.</p>
+<ul>
+<li><p>Τα αντικείμενα που αποτελούν ένα σύνολο ονομάζονται <strong>στοιχεία</strong> του.</p></li>
+<li><p>Για να είναι ένα σύνολο «καλά ορισμένο», πρέπει να υπάρχει ένα κριτήριο με το οποίο να μπορούμε να αποφασίσουμε με βεβαιότητα αν ένα αντικείμενο ανήκει ή όχι σε αυτό.</p></li>
+<li><p>Συνήθως συμβολίζουμε τα σύνολα με κεφαλαία γράμματα (<span class="math inline">\(A, B, \Omega\)</span>) και τα στοιχεία τους με πεζά (<span class="math inline">\(a, b, x\)</span>).</p></li>
+</ul>
+<p>Παράδειγμα:</p>
+<p><span class="math inline">\(Α=\{α, β, γ, δ\}\)</span>, <span class="math inline">\(Μ=\{5,10,15,20, ....\}\)</span></p>
 </div>
+</section>
+<section id="τα-σύμβολα-in-και-notin" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="τα-σύμβολα-in-και-notin"><span class="header-section-number">1.2</span> <strong>2. Τα σύμβολα</strong> <span class="math inline">\(\in\)</span> και <span class="math inline">\(\notin\)</span></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Τα σύμβολα αυτά δηλώνουν τη σχέση ενός στοιχείου με ένα σύνολο:<br>
+</p>
+<ul>
+<li>Αν ένα αντικείμενο <span class="math inline">\(x\)</span> είναι στοιχείο ενός συνόλου <span class="math inline">\(A\)</span>, γράφουμε <span class="math inline">\(x \in A\)</span> και διαβάζουμε «το <span class="math inline">\(x\)</span> <strong>ανήκει</strong> στο <span class="math inline">\(A\)</span>».<br>
+</li>
+<li>Αν το <span class="math inline">\(x\)</span> δεν είναι στοιχείο του συνόλου <span class="math inline">\(A\)</span>, γράφουμε <span class="math inline">\(x \notin A\)</span> και διαβάζουμε «το <span class="math inline">\(x\)</span> <strong>δεν ανήκει</strong> στο <span class="math inline">\(A\)</span>».</li>
+</ul>
+<p>Παράδειγμα: Αν <span class="math inline">\(Β=\{1,3,5,7,9, .....\}\)</span> και <span class="math inline">\(Τ=\{ \dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4},\dfrac{1}{5}, .....\}\)</span></p>
+<p>Τότε <span class="math inline">\(5\in B\)</span>,<span class="math inline">\(\quad\)</span> <span class="math inline">\(4 \notin T\)</span>,<span class="math inline">\(\quad\)</span> <span class="math inline">\(5 \in \mathbb Q\)</span>,<span class="math inline">\(\quad\)</span> <span class="math inline">\(-3 \notin \mathbb N\)</span>,<span class="math inline">\(\quad\)</span> <span class="math inline">\(\sqrt{3} \notin \mathbb Q\)</span>,<span class="math inline">\(\quad\)</span> <span class="math inline">\(\sqrt{3} \in \mathbb R\)</span></p>
+</div>
+</section>
+<section id="παράσταση-συνόλου" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παράσταση-συνόλου"><span class="header-section-number">1.3</span> <strong>3. Παράσταση συνόλου</strong></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Υπάρχουν τρεις βασικοί τρόποι για να παραστήσουμε ένα σύνολο:</p>
+<ol type="1">
+<li><p><strong>Με αναγραφή των στοιχείων του</strong>: Γράφουμε όλα τα στοιχεία του ανάμεσα σε άγκιστρα, χωρίζοντάς τα με κόμματα. Π.χ. <span class="math inline">\(A = \{1, 2, 3\}\)</span>.</p></li>
+<li><p><strong>Με περιγραφή της ιδιότητας των στοιχείων του</strong>: Γράφουμε ανάμεσα σε άγκιστρα μια ιδιότητα που χαρακτηρίζει αποκλειστικά τα στοιχεία του συνόλου. Π.χ. <span class="math inline">\(B = \{x \in \mathbb{N} \mid x &lt; 5\}\)</span>.</p>
+<p>Το σύνολο <span class="math inline">\(A = \{x \in \mathbb{R} \mid x^2 - 7x + 6 = 0\}\)</span> με αναγραφή είναι το <span class="math inline">\(A = \{1, 6\}\)</span>.</p></li>
+<li><p><strong>Με διάγραμμα Venn</strong>: Χρησιμοποιούμε μια κλειστή καμπύλη γραμμή, στο εσωτερικό της οποίας σημειώνουμε τα στοιχεία του συνόλου.</p></li>
+</ol>
+</div>
+</section>
+<section id="ίσα-σύνολα-και-υποσύνολα" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ίσα-σύνολα-και-υποσύνολα"><span class="header-section-number">1.4</span> <strong>4. Ίσα σύνολα και Υποσύνολα</strong></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<ul>
+<li><p><strong>Ίσα σύνολα</strong>: Δύο σύνολα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> ονομάζονται <strong>ίσα</strong> (<span class="math inline">\(A=B\)</span>) αν έχουν ακριβώς τα ίδια στοιχεία.</p></li>
+<li><p><strong>Υποσύνολο</strong>: Ένα σύνολο <span class="math inline">\(A\)</span> λέγεται <strong>υποσύνολο</strong> ενός συνόλου <span class="math inline">\(B\)</span> (<span class="math inline">\(A \subseteq B\)</span>) αν κάθε στοιχείο του <span class="math inline">\(A\)</span> είναι και στοιχείο του <span class="math inline">\(B\)</span>.</p></li>
+<li><p><strong>Γνήσιο υποσύνολο</strong>: Το <span class="math inline">\(A\)</span> είναι <strong>γνήσιο υποσύνολο</strong> του <span class="math inline">\(B\)</span> (<span class="math inline">\(A \subset B\)</span>) αν <span class="math inline">\(A \subseteq B\)</span> αλλά υπάρχει τουλάχιστον ένα στοιχείο του <span class="math inline">\(B\)</span> που δεν ανήκει στο <span class="math inline">\(A\)</span>.</p></li>
+</ul>
+<p>Παραδείγματα:</p>
+<ol type="1">
+<li><p><strong>Βασικά Σύνολα Αριθμών</strong>: Οι Φυσικοί (<span class="math inline">\(\mathbb{N}\)</span>), οι Ακέραιοι (<span class="math inline">\(\mathbb{Z}\)</span>), οι Ρητοί (<span class="math inline">\(\mathbb{Q}\)</span>) και οι Πραγματικοί (<span class="math inline">\(\mathbb{R}\)</span>) αριθμοί συνδέονται με τη σχέση εγκλεισμού: <span class="math inline">\(\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(Α=\{2, 4, 6, ... , 20\}\)</span> και <span class="math inline">\(Β=\{1, 2, 3, ... , 50\}\)</span> τότε <span class="math inline">\(Α \subset B\)</span></p></li>
+<li><p><strong>Ίσα σύνολα</strong>: <span class="math inline">\(Σ=\{3,5\}\)</span> και <span class="math inline">\(Τ=\{x \in \mathbb R \mid (x-3)(x-5)=0\)</span></p></li>
+</ol>
+<p><strong><em>Από τον ορισμό προκύπτει ότι:</em></strong></p>
+<ul>
+<li><ol type="i">
+<li><span class="math inline">\(Α \subseteq Α\)</span>, για κάθε σύνολο Α.</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>Αν <span class="math inline">\(Α \subseteq Β\)</span> και <span class="math inline">\(Β \subseteq Γ\)</span>, τότε <span class="math inline">\(Α \subseteq Γ\)</span> .</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li>Αν <span class="math inline">\(Α \subseteq Β\)</span> και <span class="math inline">\(Β \subseteq Α\)</span>, τότε <span class="math inline">\(Α = Β\)</span> .</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="το-κενό-σύνολο-emptyset-ή" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="το-κενό-σύνολο-emptyset-ή"><span class="header-section-number">1.5</span> <strong>5. Το κενό σύνολο (</strong><span class="math inline">\(\emptyset\)</span> ή <span class="math inline">\(\{ \}\)</span>)</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Είναι το μοναδικό σύνολο που <strong>δεν περιέχει κανένα στοιχείο</strong>.</p>
+<ul>
+<li>Το κενό σύνολο θεωρείται <strong>υποσύνολο κάθε συνόλου</strong> (<span class="math inline">\(\emptyset\subseteq A\)</span>).</li>
+</ul>
+</div>
+</section>
+<section id="διαγράμματα-venn" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="διαγράμματα-venn"><span class="header-section-number">1.6</span> <strong>6. Διαγράμματα Venn</strong></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Είναι μια εποπτική παρουσίαση των συνόλων.</p>
+<ul>
+<li><p>Το <strong>βασικό σύνολο</strong> <span class="math inline">\(\Omega\)</span> (ή σύνολο αναφοράς <span class="math inline">\(U\)</span>), που περιέχει όλα τα στοιχεία που εξετάζουμε σε μια περίπτωση, παριστάνεται συνήθως με το εσωτερικό ενός ορθογωνίου.</p></li>
+<li><p>Τα υποσύνολα του <span class="math inline">\(\Omega\)</span> παριστάνονται με κύκλους ή άλλες κλειστές καμπύλες στο εσωτερικό του ορθογωνίου.</p></li>
+</ul>
+<p>Παράδειγμα:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3539269376.png" class="img-fluid figure-img"></p>
+<figcaption>Διάγραμμα Venn</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="πράξεις-με-σύνολα" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="πράξεις-με-σύνολα"><span class="header-section-number">1.7</span> <strong>7. Πράξεις με σύνολα</strong></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Έστω <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> δύο υποσύνολα ενός βασικού συνόλου <span class="math inline">\(\Omega\)</span>:</p>
+<ul>
+<li><p><strong>Ένωση (</strong><span class="math inline">\(A \cup B\)</span>): Το σύνολο των στοιχείων που ανήκουν στο <span class="math inline">\(A\)</span> <strong>ή</strong> στο <span class="math inline">\(B\)</span> (τουλάχιστον σε ένα από τα δύο).</p></li>
+<li><p><strong>Τομή (</strong><span class="math inline">\(A \cap B\)</span>): Το σύνολο των στοιχείων που ανήκουν <strong>και</strong> στο <span class="math inline">\(A\)</span> <strong>και</strong> στο <span class="math inline">\(B\)</span> (κοινά στοιχεία). Αν <span class="math inline">\(A \cap B = \emptyset\)</span>, τα σύνολα λέγονται <strong>ξένα</strong> ή ασυμβίβαστα.</p></li>
+<li><p><strong>Συμπλήρωμα (</strong><span class="math inline">\(A'\)</span>): Το σύνολο των στοιχείων του <span class="math inline">\(\Omega\)</span> που <strong>δεν ανήκουν</strong> στο <span class="math inline">\(A\)</span>.</p></li>
+<li><p><strong>Διαφορά (</strong><span class="math inline">\(A - B\)</span>): Το σύνολο των στοιχείων που ανήκουν στο <span class="math inline">\(A\)</span> αλλά <strong>όχι</strong> στο <span class="math inline">\(B\)</span>.</p></li>
+<li><p><strong>Συμμετρική Διαφορά (</strong><span class="math inline">\(A \Delta B\)</span> ή <span class="math inline">\(A \oplus B\)</span>): Το σύνολο των στοιχείων που ανήκουν στην ένωση <span class="math inline">\(A \cup B\)</span> αλλά όχι στην τομή <span class="math inline">\(A \cap B\)</span>.</p></li>
+</ul>
+<p>Παραδείγματα:</p>
+<p>Αν <span class="math inline">\(A = \{1, 2, 4, 6\}\)</span> και <span class="math inline">\(B = \{2, 4, 8, 10\}\)</span> με βασικό σύνολο <span class="math inline">\(\Omega = \{1, 2, \dots, 10\}\)</span>, τότε:</p>
+<ul>
+<li><span class="math inline">\(A \cup B = \{1, 2, 4, 6, 8, 10\}\)</span>.</li>
+<li><span class="math inline">\(A \cap B = \{2, 4\}\)</span>.</li>
+<li><span class="math inline">\(A - B = \{1, 6\}\)</span>.</li>
+<li><span class="math inline">\(A' = \{3, 5, 7, 8, 9, 10\}\)</span>.</li>
+<li><span class="math inline">\(A\oplus B=\{1,6,8,10\}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.8</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Συμπληρώστε τον πίνακα με το σύμβολο “<span class="math inline">\(\checkmark\)</span>” για τους παρακάτω αριθμούς: <span class="math display">\[-7, \quad 0,5, \quad \sqrt{5}, \quad \frac{18}{3}, \quad -\sqrt{49}, \quad 1,2\bar{5}, \quad e (\text{σταθερά}), \quad 12\]</span></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;"><span class="math inline">\(-7\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(0,5\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sqrt{5}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\frac{18}{3}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\sqrt{49}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1,2\bar{5}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(e\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(12\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\in \mathbb{N}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\in \mathbb{Z}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\in \mathbb{Q}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\in \mathbb{R}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Σημείωση:</em> <span class="math inline">\(\dfrac{18}{3}=6\)</span> και <span class="math inline">\(-\sqrt{49}=-7\)</span>.</p>
+<ol start="2" type="1">
+<li>Έστω <span class="math inline">\(A = \{x \in \mathbb{N} \mid x \text{ είναι πολλαπλάσιο του } 3 \text{ και } x \leq 15\}\)</span> και <span class="math inline">\(B = \{x \in \mathbb{N} \mid x \text{ είναι πολλαπλάσιο του } 5 \text{ και } x \leq 15\}\)</span>. Να βρείτε τα:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(A \cup B = \dots\)</span></li>
+<li>β) <span class="math inline">\(A \cap B = \dots\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>Έστω βασικό σύνολο <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\)</span> και τα υποσύνολά του: <span class="math inline">\(A = \{x \in \Omega \mid x \text{ είναι περιττός}\}\)</span> και <span class="math inline">\(B = \{x \in \Omega \mid x \text{ είναι άρτιος}\}\)</span>. Τότε:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(A \cup B = \dots\)</span></li>
+<li>β) <span class="math inline">\(A \cap B = \dots\)</span></li>
+<li>γ) <span class="math inline">\(A' = \dots\)</span></li>
+</ul>
+<ol start="4" type="1">
+<li>Σε καθεμιά από τις παρακάτω ερωτήσεις να κυκλώσετε τη σωστή απάντηση:</li>
+</ol>
+<p><strong>1.</strong> Αν ένα στοιχείο <span class="math inline">\(x\)</span> ανήκει στην τομή των συνόλων <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> (<span class="math inline">\(x \in A \cap B\)</span>), τότε:</p>
+<ul>
+<li>α) <span class="math inline">\(x \in A\)</span> μόνο</li>
+<li>β) <span class="math inline">\(x \in B\)</span> μόνο</li>
+<li>γ) <span class="math inline">\(x \in A\)</span> και <span class="math inline">\(x \in B\)</span></li>
+<li>δ) <span class="math inline">\(x \notin A\)</span></li>
+</ul>
+<p><strong>2.</strong> Για οποιαδήποτε σύνολα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>, ισχύει πάντα:</p>
+<ul>
+<li>α) <span class="math inline">\((A \cup B) \subseteq A\)</span></li>
+<li>β) <span class="math inline">\(B \subseteq (A \cup B)\)</span></li>
+<li>γ) <span class="math inline">\((A \cap B) = (A \cup B)\)</span></li>
+<li>δ) <span class="math inline">\(A \subseteq (A \cap B)\)</span></li>
+</ul>
+<ol start="5" type="1">
+<li>Συμπληρώστε τις παρακάτω ισότητες:</li>
+</ol>
+<p><strong>1.</strong> Έστω <span class="math inline">\(\Omega\)</span> ένα βασικό σύνολο και <span class="math inline">\(A\)</span> ένα υποσύνολό του.</p>
+<ul>
+<li>α) <span class="math inline">\(A \cup A' = \dots\)</span></li>
+<li>β) <span class="math inline">\(A \cap A' = \dots\)</span></li>
+<li>γ) <span class="math inline">\(A \cup \emptyset = \dots\)</span></li>
+</ul>
+<p><strong>2.</strong> Αν γνωρίζουμε ότι <span class="math inline">\(A \subset B\)</span>:</p>
+<ul>
+<li>α) Τι ισούται η διαφορά <span class="math inline">\(A - B\)</span>; (Απάντηση: <span class="math inline">\(\emptyset\)</span>)</li>
+<li>β) Είναι το <span class="math inline">\(B' \subseteq A'\)</span>; (Απάντηση: Ναι)</li>
+</ul>
+<ol start="6" type="1">
+<li>Θεωρούμε βασικό σύνολο <span class="math inline">\(\Omega = \{1, 2, 3, ..., 21\}\)</span>. Να παραστήσετε με αναγραφή των στοιχείων τους τα σύνολα:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(A = \{x \in \Omega \mid x \text{ άρτιος}\}\)</span> και</li>
+<li><span class="math inline">\(B = \{x \in \Omega \mid x \text{ πολλαπλάσιο του 5}\}\)</span>.</li>
+</ul>
+<ol start="7" type="1">
+<li><p>Να γραφεί με αναγραφή των στοιχείων του το σύνολο <span class="math inline">\(A = \{x \in \mathbb{R} \mid x^2 - 7x + 6 = 0\}\)</span>.</p></li>
+<li><p>Να γραφεί με αναγραφή των στοιχείων του το σύνολο <span class="math inline">\(B = \{x \in \mathbb{N} \mid (x^2 - 5x + 6) (x - 1) = 0\}\)</span>.</p></li>
+<li><p>Αν το βασικό σύνολο είναι <span class="math inline">\(\Omega = \{1, 2, ..., 10\}\)</span>, να προσδιορίσετε τα στοιχεία του συνόλου <span class="math inline">\(A = \{x \in \Omega \mid |x - 4| \le 2\}\)</span>.</p></li>
+<li><p>Να περιγράψετε τις διαδοχικές σχέσεις εγκλεισμού των συνόλων <span class="math inline">\(\mathbb{N, Z, Q, R}\)</span> χρησιμοποιώντας τα κατάλληλα σύμβολα υποσυνόλου.</p></li>
+<li><p>Έστω <span class="math inline">\(A = \{1, 6\}\)</span> και <span class="math inline">\(B = \{1/2, 1, 2, 6\}\)</span>. Να εξετάσετε αν το σύνολο <span class="math inline">\(A\)</span> είναι υποσύνολο του <span class="math inline">\(B\)</span>.</p></li>
+<li><p>Δίνεται το σύνολο <span class="math inline">\(A = \{1, 2, 4, 6\}\)</span>. Να γράψετε όλα τα δυνατά υποσύνολα του <span class="math inline">\(A\)</span> (περιλαμβανομένου του κενού συνόλου και του ίδιου του <span class="math inline">\(A\)</span>).</p></li>
+<li><p>Να αποφανθείτε αν οι παρακάτω σχέσεις είναι σωστές ή λάθος και να αιτιολογήσετε:</p></li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(A \subseteq A \cap B\)</span>,</li>
+<li>β) <span class="math inline">\(B \subseteq A \cap B\)</span>.</li>
+</ul>
+<ol start="14" type="1">
+<li><p>Να εξηγήσετε γιατί οι σχέσεις <span class="math inline">\(A \cap B \subseteq A\)</span> και <span class="math inline">\(A \cap B \subseteq B\)</span> είναι πάντα αληθείς.</p></li>
+<li><p>Έστω βασικό σύνολο <span class="math inline">\(\Omega = \{1, 2, ..., 10\}\)</span> και τα υποσύνολά του <span class="math inline">\(A = \{1, 2, 4, 6\}\)</span> και <span class="math inline">\(B = \{2, 4, 8, 10\}\)</span>. Να παραστήσετε τα σύνολα αυτά με ένα διάγραμμα Venn.</p></li>
+<li><p>Θεωρούμε ως βασικό σύνολο <span class="math inline">\(\Omega\)</span> τα γράμματα του ελληνικού αλφαβήτου και τα υποσύνολά του <span class="math inline">\(A = \{x \in \Omega \mid x \text{ φωνήεν}\}\)</span> και <span class="math inline">\(B = \{x \in \Omega \mid x \text{ σύμφωνο}\}\)</span>. Ποιο είναι το αποτέλεσμα της τομής <span class="math inline">\(A \cap B\)</span> και πώς ονομάζονται τα σύνολα αυτά;</p></li>
+<li><p>Έστω <span class="math inline">\(\Omega\)</span> ένα βασικό σύνολο και <span class="math inline">\(\emptyset\)</span> το κενό σύνολο. Να συμπληρώσετε τις ισότητες:</p></li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\emptyset' = \dots\)</span> και</li>
+<li>β) <span class="math inline">\(\Omega' = \dots\)</span>.</li>
+</ul>
+<ol start="18" type="1">
+<li><p>Να χρησιμοποιήσετε τα διαγράμματα Venn για να τοποθετήσετε τους αριθμούς <span class="math inline">\(0, 20/5, \pi, -3,5\)</span> και <span class="math inline">\(100\)</span> στα κατάλληλα πεδία των συνόλων <span class="math inline">\(\mathbb{N, Z, Q, R}\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(A = \{x \in \mathbb{R} \mid x \text{ διαιρέτης του 16}\}\)</span> και <span class="math inline">\(B = \{x \in \mathbb{R} \mid x \text{ διαιρέτης του 24}\}\)</span>, να βρείτε τα σύνολα <span class="math inline">\(A \cup B\)</span> και <span class="math inline">\(A \cap B\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(\Omega = \{1, 2, ..., 21\}\)</span>, <span class="math inline">\(A\)</span> οι άρτιοι και <span class="math inline">\(B\)</span> τα πολλαπλάσια του 5, να υπολογίσετε τα σύνολα <span class="math inline">\(A \cup B, \ \  A \cap B, \ \  A', \ \  B', \ \  (A \cup B)'\)</span> και <span class="math inline">\(A' \cap B\)</span>.</p></li>
+<li><p>Έστω <span class="math inline">\(A = \{1, 2, 4, 6\}\)</span> και <span class="math inline">\(B = \{2, 4, 8, 10\}\)</span>. Να περιγράψετε με αναγραφή των στοιχείων του το σύνολο της διαφοράς <span class="math inline">\(A - B\)</span>.</p></li>
+<li><p>Έστω <span class="math inline">\(A \subseteq \Omega\)</span>. Να εξηγήσετε βάσει του ορισμού του συμπληρωματικού συνόλου γιατί ισχύει η ισότητα <span class="math inline">\((A')' = A\)</span>.</p></li>
+<li><p>Έστω <span class="math inline">\(A \subseteq B\)</span>. Να συμπληρώσετε τις ισότητες <span class="math inline">\(A \cap B = \dots\)</span> και <span class="math inline">\(A \cup B = \dots\)</span> αιτιολογώντας την απάντησή σας.</p></li>
+<li><p>Έστω <span class="math inline">\(\Omega\)</span> το ελληνικό αλφάβητο, <span class="math inline">\(A\)</span> τα φωνήεντα και <span class="math inline">\(B\)</span> τα σύμφωνα. Να δείξετε ότι <span class="math inline">\(A \cup B = \Omega, A' = B\)</span> και <span class="math inline">\(B' = A\)</span>.</p></li>
+</ol>
+<p><strong><em>Σύντομες οδηγίες για την επίλυση:</em></strong> <em>θυμήσου ότι οι ρητοί (<span class="math inline">\(\mathbb{Q}\)</span>) είναι όλοι οι αριθμοί που γράφονται ως κλάσμα (και οι δεκαδικοί με τέλος ή περιοδικότητα).</em></p>
+<p><em>η ένωση (<span class="math inline">\(\cup\)</span>) “ενώνει” όλα τα στοιχεία, ενώ η τομή (<span class="math inline">\(\cap\)</span>) κρατάει μόνο τα κοινά.</em></p>
+<p><em>το <span class="math inline">\(A \cup A'\)</span> μας δίνει πάντα όλο το βασικό σύνολο <span class="math inline">\(\Omega\)</span>, ενώ το <span class="math inline">\(A \cap A'\)</span> είναι πάντα το κενό σύνολο <span class="math inline">\(\emptyset\)</span>, γιατί ένα στοιχείο δεν μπορεί να ανήκει ταυτόχρονα σε ένα σύνολο και στο συμπλήρωμά του.</em></p>
+<hr>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1013,12 +1389,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
