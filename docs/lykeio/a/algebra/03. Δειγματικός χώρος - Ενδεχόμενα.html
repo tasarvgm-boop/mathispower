@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>03. Δειγματικός χώρος - Ενδεχόμενα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,33 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +119,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +130,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +182,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html">03. Δειγματικός χώρος - Ενδεχόμενα</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html">03. Δειγματικός χώρος - Ενδεχόμενα</a></li></ol></nav>
+      <h1 class="title">03. Δειγματικός χώρος - Ενδεχόμενα</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">2 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">5 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +265,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +378,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +490,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +561,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +680,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -672,22 +721,22 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
@@ -826,7 +875,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +950,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +969,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -950,7 +999,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
   </div>
 </li>
@@ -965,33 +1014,379 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#δειγματικός-χώρος---ενδεχόμενα" id="toc-δειγματικός-χώρος---ενδεχόμενα" class="nav-link active" data-scroll-target="#δειγματικός-χώρος---ενδεχόμενα"><span class="header-section-number">1</span> Δειγματικός χώρος - Ενδεχόμενα</a>
+  <ul class="collapse">
+  <li><a href="#πείραμα-τύχης" id="toc-πείραμα-τύχης" class="nav-link" data-scroll-target="#πείραμα-τύχης"><span class="header-section-number">1.1</span> Πείραμα τύχης</a></li>
+  <li><a href="#δειγματικός-χώρος" id="toc-δειγματικός-χώρος" class="nav-link" data-scroll-target="#δειγματικός-χώρος"><span class="header-section-number">1.2</span> Δειγματικός χώρος</a></li>
+  <li><a href="#ενδεχόμενα" id="toc-ενδεχόμενα" class="nav-link" data-scroll-target="#ενδεχόμενα"><span class="header-section-number">1.3</span> Ενδεχόμενα</a></li>
+  <li><a href="#άλγεβρα-των-ενδεχομένων" id="toc-άλγεβρα-των-ενδεχομένων" class="nav-link" data-scroll-target="#άλγεβρα-των-ενδεχομένων"><span class="header-section-number">1.4</span> Άλγεβρα των ενδεχομένων</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Γ’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/g/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="δειγματικός-χώρος---ενδεχόμενα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="δειγματικός-χώρος---ενδεχόμενα"><span class="header-section-number">1</span> Δειγματικός χώρος - Ενδεχόμενα</h2>
+<section id="πείραμα-τύχης" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="πείραμα-τύχης"><span class="header-section-number">1.1</span> Πείραμα τύχης</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Ως <strong>πείραμα τύχης</strong> (ή στοχαστικό πείραμα) ορίζεται κάθε διαδικασία της οποίας το αποτέλεσμα δεν μπορεί να προβλεφθεί με βεβαιότητα, παρά το γεγονός ότι επαναλαμβάνεται (τουλάχιστον φαινομενικά) κάτω από τις ίδιες συνθήκες. Στα πειράματα αυτά, το αποτέλεσμα κάθε επανάληψης είναι ανεξάρτητο από τα προηγούμενα ή τα επόμενα αποτελέσματα.</p>
+<p><strong>Διάκριση από Αιτιοκρατικά Πειράματα</strong></p>
+<p>Το πείραμα τύχης αντιδιαστέλλεται από το <strong>αιτιοκρατικό</strong> (deterministic) πείραμα, στο οποίο οι συνθήκες εκτέλεσης καθορίζουν πλήρως και μονοσήμαντα το αποτέλεσμα. Για παράδειγμα, η πτώση ενός σώματος λόγω της βαρύτητας είναι αιτιοκρατικό φαινόμενο, ενώ η ρίψη ενός νομίσματος είναι πείραμα τύχης.</p>
+<p><strong>Βασικά Χαρακτηριστικά και Προϋποθέσεις</strong></p>
+<p>Για να χαρακτηριστεί μια διαδικασία ως πείραμα τύχης, πρέπει να πληρούνται οι εξής προϋποθέσεις:</p>
+<ul>
+<li><p><strong>Επαναληψιμότητα</strong>: Το πείραμα μπορεί να επαναληφθεί οποσδήποτε φορές κάτω από τις ίδιες συνθήκες.</p></li>
+<li><p><strong>Προκαθορισμένο Σύνολο Αποτελεσμάτων</strong>: Πριν την εκτέλεση, είναι γνωστά όλα τα δυνατά αποτελέσματα που μπορούν να προκύψουν, αλλά όχι ποιο συγκεκριμένα θα πραγματοποιηθεί.</p></li>
+<li><p><strong>Αβεβαιότητα Έκβασης</strong>: Καμία μεμονωμένη εκτέλεση δεν επιτρέπει την ασφαλή πρόβλεψη του αποτελέσματος.</p></li>
+</ul>
+<p><strong>Παραδείγματα Πειραμάτων Τύχης</strong></p>
+<p>Ορισμένα κλασικά παραδείγματα που αναφέρονται στις πηγές περιλαμβάνουν:</p>
+<ul>
+<li><p>Η <strong>ρίψη ενός ζαριού</strong> ή ενός νομίσματος.</p></li>
+<li><p>Η <strong>κλήρωση</strong> λαχνών ή παιχνιδιών όπως το ΤΖΟΚΕΡ και το ΛΟΤΤΟ.</p></li>
+<li><p>Η παρατήρηση του <strong>φύλου</strong> ενός νεογέννητου.</p></li>
+<li><p>Η επιλογή ενός φύλλου από μια <strong>τράπουλα</strong>.</p></li>
+<li><p>Η καταγραφή του αριθμού των <strong>τροχαίων ατυχημάτων</strong> σε μια δεδομένη περίοδο.</p></li>
+<li><p>Η μέτρηση του <strong>χρόνου λειτουργίας</strong> ενός λαμπτήρα.</p></li>
+</ul>
 </div>
+<hr>
+</section>
+<section id="δειγματικός-χώρος" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="δειγματικός-χώρος"><span class="header-section-number">1.2</span> Δειγματικός χώρος</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Ο <strong>δειγματικός χώρος</strong> ενός πειράματος τύχης ορίζεται ως το <strong>σύνολο όλων των δυνατών αποτελεσμάτων</strong> (ή παρατηρήσεων/εξαγόμενων) που μπορούν να προκύψουν κατά την εκτέλεσή του.</p>
+<p><strong>Βασικά Χαρακτηριστικά</strong></p>
+<ul>
+<li><p><strong>Συμβολισμός</strong>: Συμβολίζεται συνήθως με το ελληνικό κεφαλαίο γράμμα <strong>Ω</strong> (ή διεθνώς με το <span class="math inline">\(S\)</span>).</p></li>
+<li><p><strong>Δειγματικά Σημεία</strong>: Κάθε μεμονωμένο δυνατό αποτέλεσμα του πειράματος ονομάζεται <strong>δειγματικό σημείο</strong> ή απλό αποτέλεσμα και συμβολίζεται συνήθως με το γράμμα <strong>ω</strong>.</p></li>
+<li><p><strong>Σχέση με Ενδεχόμενα</strong>: Οποιοδήποτε υποσύνολο του δειγματικού χώρου Ω ονομάζεται <strong>ενδεχόμενο</strong> (event).</p></li>
+<li><p><strong>Βέβαιο Ενδεχόμενο</strong>: Ο ίδιος ο δειγματικός χώρος Ω θεωρείται το <strong>βέβαιο ενδεχόμενο</strong>, καθώς περιέχει όλα τα δυνατά αποτελέσματα και η πραγματοποίησή του είναι εγγυημένη σε κάθε εκτέλεση του πειράματος.</p></li>
+</ul>
+<p><strong>Ταξινόμηση Δειγματικών Χώρων</strong></p>
+<p>Η φύση του συνόλου των δυνατών αποτελεσμάτων καθορίζει την κατηγορία στην οποία ανήκει ο δειγματικός χώρος:</p>
+<ol type="1">
+<li><p><strong>Πεπερασμένος</strong>: Περιέχει συγκεκριμένο, πεπερασμένο πλήθος στοιχείων (π.χ. η ρίψη ενός ζαριού: <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>).</p></li>
+<li><p><strong>Διακριτός (ή Αριθμήσιμος) Άπειρος</strong>: Περιέχει άπειρα στοιχεία τα οποία όμως μπορούν να απαριθμηθούν (π.χ. ο αριθμός των ρίψεων ενός νομίσματος μέχρι να εμφανιστεί η πρώτη κεφαλή).</p></li>
+<li><p><strong>Συνεχής</strong>: Περιέχει άπειρα στοιχεία που αντιστοιχούν σε όλα τα σημεία ενός διαστήματος ή της ευθείας των πραγματικών αριθμών (π.χ. ο χρόνος λειτουργίας ενός λαμπτήρα ή το ύψος της βροχόπτωσης).</p></li>
+</ol>
+<p><strong>Τρόποι Προσδιορισμού και Αναπαράστασης</strong></p>
+<p>Για την εύρεση και την εποπτική παρουσίαση του δειγματικού χώρου χρησιμοποιούνται διάφορες μέθοδοι:</p>
+<ul>
+<li><p><strong>Αναγραφή</strong>: Καταγραφή των στοιχείων μέσα σε άγκιστρα <span class="math inline">\(\Omega = \{\omega_1, \omega_2, \dots, \omega_n\}\)</span>.</p></li>
+<li><p><strong>Δεντροδιάγραμμα</strong>: Χρήσιμο για πειράματα που εξελίσσονται σε διαδοχικές φάσεις.<br>
+Παράδειγμα: Ρίψη νομίσματος 3 φορές<br>
+<img src="images/clipboard-885765813.png" class="img-fluid"></p></li>
+<li><p><strong>Πίνακας Διπλής Εισόδου</strong>: Χρησιμοποιείται συχνά για την ταυτόχρονη ρίψη δύο ζαριών ή νομισμάτων.<br>
+<img src="images/clipboard-49954727.png" class="img-fluid" width="543"></p></li>
+<li><p><strong>Διάγραμμα Venn</strong>: Το βασικό σύνολο Ω παριστάνεται συνήθως με το εσωτερικό ενός ορθογωνίου.<br>
+<img src="images/clipboard-503423683.png" class="img-fluid" width="408"></p></li>
+</ul>
+<p><strong>Χαρακτηριστικά Παραδείγματα</strong></p>
+<ul>
+<li><p><strong>Ρίψη ενός νομίσματος</strong>: <span class="math inline">\(\Omega = \{\kappa, \gamma\}\)</span>, όπου <span class="math inline">\(\kappa = \text{κεφαλή}\)</span> και <span class="math inline">\(\gamma = \text{γράμματα}\)</span>.</p></li>
+<li><p><strong>Ρίψη ενός ζαριού</strong>: <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>.</p></li>
+<li><p><strong>Φύλο δύο παιδιών</strong>: <span class="math inline">\(\Omega = \{AA, AK, KA, KK\}\)</span>.</p></li>
+<li><p><strong>Ρίψη δύο ζαριών</strong>: Περιλαμβάνει 36 ισοπίθανα δειγματικά σημεία της μορφής <span class="math inline">\((i, j)\)</span> με <span class="math inline">\(i, j \in \{1, \dots, 6\}\)</span>.</p></li>
+<li><p><strong>Χρόνος ζωής εξαρτήματος</strong>: <span class="math inline">\(\Omega = [0, +\infty)\)</span>.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="ενδεχόμενα" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ενδεχόμενα"><span class="header-section-number">1.3</span> Ενδεχόμενα</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Στη μαθηματική γλώσσα των πιθανοτήτων, ένα <strong>ενδεχόμενο</strong> (event) ορίζεται ως οποιοδήποτε <strong>υποσύνολο του δειγματικού χώρου Ω</strong> ενός πειράματος τύχης. Με άλλα λόγια, είναι ένα σύνολο που περιέχει ένα ή περισσότερα από τα δυνατά αποτελέσματα του πειράματος.</p>
+<p><strong>Πραγματοποίηση Ενδεχομένου</strong></p>
+<p>Ένα ενδεχόμενο <span class="math inline">\(A\)</span> λέμε ότι <strong>πραγματοποιείται</strong> (ή συμβαίνει) κατά την εκτέλεση ενός πειράματος τύχης, αν και μόνο αν το αποτέλεσμα της συγκεκριμένης δοκιμής είναι στοιχείο του συνόλου <span class="math inline">\(A\)</span>. Τα στοιχεία ενός ενδεχομένου ονομάζονται και <strong>ευνοϊκές περιπτώσεις</strong> για την πραγματοποίησή του.</p>
+<p><strong>Κατηγοριοποίηση Ενδεχομένων</strong></p>
+<p>Η κατηγοριοποίηση των ενδεχομένων (υποσύνολα του δειγματικού χώρου <span class="math inline">\(\Omega\)</span>) βασίζεται στη δομή τους, στον τρόπο πραγματοποίησής τους και στη σχέση τους με άλλα ενδεχόμενα.</p>
+<ol type="1">
+<li>Απλό ή Στοιχειώδες Ενδεχόμενο</li>
+</ol>
+<p>Περιέχει <strong>ακριβώς ένα</strong> δειγματικό σημείο (ένα μόνο στοιχείο).</p>
+<ul>
+<li><p><strong>Ρίψη νομίσματος:</strong> Το ενδεχόμενο να έρθει “Κεφαλή”, <span class="math inline">\(A = \{\kappa\}\)</span>.</p></li>
+<li><p><strong>Ρίψη ζαριού:</strong> Το ενδεχόμενο η ένδειξη να είναι ο αριθμός 5, <span class="math inline">\(A = \{5\}\)</span>.</p></li>
+<li><p><strong>Επιλογή φύλλου:</strong> Το ενδεχόμενο να επιλεγεί η “Ντάμα Κούπα” από μια τράπουλα 52 φύλλων.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Σύνθετο Ενδεχόμενο</li>
+</ol>
+<p>Περιέχει <strong>δύο ή περισσότερα</strong> δειγματικά σημεία.</p>
+<ul>
+<li><p><strong>Ρίψη ζαριού:</strong> Το ενδεχόμενο «άρτια ένδειξη», <span class="math inline">\(A = \{2, 4, 6\}\)</span>.</p></li>
+<li><p><strong>Ρίψη ζαριού:</strong> Το ενδεχόμενο η ένδειξη να είναι μεγαλύτερη του 3, <span class="math inline">\(B = \{4, 5, 6\}\)</span>.</p></li>
+<li><p><strong>Οικογένεια με 3 παιδιά:</strong> Το ενδεχόμενο να γεννηθούν τουλάχιστον δύο αγόρια, <span class="math inline">\(B = \{(\alpha,\alpha,\kappa), (\alpha,\kappa,\alpha), (\kappa,\alpha,\alpha), (\alpha,\alpha,\alpha)\}\)</span>.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Βέβαιο Ενδεχόμενο</li>
+</ol>
+<p>Είναι ο ίδιος ο δειγματικός χώρος <span class="math inline">\(\Omega\)</span>. Περιέχει όλα τα δυνατά αποτελέσματα και <strong>πραγματοποιείται πάντα</strong>.</p>
+<ul>
+<li><p><strong>Ρίψη ζαριού:</strong> Το ενδεχόμενο η ένδειξη να είναι ένας από τους αριθμούς <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span>.</p></li>
+<li><p><strong>Κουτί με σφαίρες:</strong> Αν ένα κουτί περιέχει μόνο άσπρες σφαίρες, το ενδεχόμενο «η σφαίρα που επιλέγουμε είναι άσπρη» είναι βέβαιο.</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Αδύνατο Ενδεχόμενο</li>
+</ol>
+<p>Είναι το κενό σύνολο <span class="math inline">\(\emptyset\)</span>, δεν περιέχει κανένα στοιχείο και <strong>δεν πραγματοποιείται ποτέ</strong>.</p>
+<ul>
+<li><p><strong>Ρίψη ζαριού:</strong> Το ενδεχόμενο η ένδειξη να είναι ο αριθμός 7.</p></li>
+<li><p><strong>Τράπουλα:</strong> Το ενδεχόμενο το φύλλο που τραβάμε να είναι ταυτόχρονα “σπαθί” και “καρό”.</p></li>
+</ul>
+<ol start="5" type="1">
+<li>Ασυμβίβαστα (ή Ξένα) Ενδεχόμενα</li>
+</ol>
+<p>Δύο ενδεχόμενα ονομάζονται ασυμβίβαστα όταν η πραγματοποίηση του ενός αποκλείει την πραγματοποίηση του άλλου (<span class="math inline">\(A \cap B = \emptyset\)</span>).</p>
+<ul>
+<li><p><strong>Ρίψη ζαριού:</strong> Τα ενδεχόμενα <span class="math inline">\(A = \{1\}\)</span> και <span class="math inline">\(B = \{2\}\)</span> είναι ασυμβίβαστα, αφού δεν μπορούν να συμβούν ταυτόχρονα.</p></li>
+<li><p><strong>Επιλογή φύλλου:</strong> Το ενδεχόμενο <span class="math inline">\(A\)</span> «το φύλλο είναι σπαθί» και το <span class="math inline">\(B\)</span> «το φύλλο είναι καρό».</p></li>
+<li><p><strong>Παιχνίδι Τζόκερ:</strong> Το ενδεχόμενο να κερδίσει κάποιος στο Τζόκερ και το ενδεχόμενο να μην κερδίσει.</p></li>
+</ul>
+<ol start="6" type="1">
+<li>Συμπληρωματικά (ή Αντίθετα) Ενδεχόμενα</li>
+</ol>
+<p>Το συμπλήρωμα <span class="math inline">\(A'\)</span> περιέχει όλα τα στοιχεία του <span class="math inline">\(\Omega\)</span> που <strong>δεν ανήκουν</strong> στο <span class="math inline">\(A\)</span>.</p>
+<ul>
+<li><p><strong>Ρίψη νομίσματος:</strong> Τα ενδεχόμενα “Κεφαλή” και “Γράμματα” είναι αντίθετα μεταξύ τους.</p></li>
+<li><p><strong>Ρίψη ζαριού:</strong> Αν <span class="math inline">\(A\)</span> είναι το ενδεχόμενο «ένδειξη 1, 2 ή 3», τότε το αντίθετό του <span class="math inline">\(A'\)</span> είναι η ένδειξη «4, 5 ή 6».</p></li>
+<li><p><strong>Μαθητές Λυκείου:</strong> Αν <span class="math inline">\(A\)</span> είναι το ενδεχόμενο «ο μαθητής συμμετέχει στη θεατρική ομάδα», τότε το <span class="math inline">\(A'\)</span> είναι το ενδεχόμενο «ο μαθητής δεν συμμετέχει στη θεατρική ομάδα».</p></li>
+</ul>
+<p><strong>Σχέσεις Μεταξύ Ενδεχομένων</strong></p>
+<ul>
+<li><p><strong>Ασυμβίβαστα (ή ξένα/αμοιβαίως αποκλειόμενα)</strong>: Δύο ενδεχόμενα ονομάζονται ασυμβίβαστα όταν η πραγματοποίηση του ενός αποκλείει την πραγματοποίηση του άλλου. Μαθηματικά, αυτό σημαίνει ότι η τομή τους είναι το κενό σύνολο (<span class="math inline">\(A \cap B = \emptyset\)</span>).<br>
+<img src="images/clipboard-1421241869.png" class="img-fluid" width="381"></p></li>
+<li><p><strong>Στοχαστικά Ανεξάρτητα</strong>: Δύο ενδεχόμενα είναι ανεξάρτητα όταν η γνώση πραγματοποίησης του ενός δεν επηρεάζει την πιθανότητα πραγματοποίησης του άλλου (<span class="math inline">\(P(A \cap B) = P(A) \cdot P(B)\)</span>).</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="άλγεβρα-των-ενδεχομένων" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="άλγεβρα-των-ενδεχομένων"><span class="header-section-number">1.4</span> Άλγεβρα των ενδεχομένων</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η <strong>άλγεβρα των ενδεχομένων</strong> αποτελεί τη μαθηματική θεμελίωση της μελέτης της αβεβαιότητας, εφαρμόζοντας τις αρχές της <strong>θεωρίας συνόλων</strong> στα αποτελέσματα ενός πειράματος τύχης. Στο πλαίσιο αυτό, κάθε ενδεχόμενο ορίζεται ως ένα <strong>υποσύνολο του δειγματικού χώρου</strong> <span class="math inline">\(\Omega\)</span>, ο οποίος περιλαμβάνει όλα τα δυνατά αποτελέσματα. Ένα ενδεχόμενο <span class="math inline">\(A\)</span> λέμε ότι <strong>πραγματοποιείται</strong> όταν το αποτέλεσμα της συγκεκριμένης δοκιμής του πειράματος ανήκει στο σύνολο <span class="math inline">\(A\)</span>.</p>
+<p>Η άλγεβρα των ενδεχομένων χρησιμοποιεί συγκεκριμένες πράξεις για τη δημιουργία νέων, σύνθετων ενδεχομένων:</p>
+<ul>
+<li><p><strong>Ένωση (</strong><span class="math inline">\(A \cup B\)</span>): Πραγματοποιείται όταν συμβαίνει <strong>τουλάχιστον ένα</strong> από τα ενδεχόμενα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Αντιστοιχεί στον λογικό σύνδεσμο «ή» της φυσικής γλώσσας.<br>
+<img src="images/clipboard-715357214.png" class="img-fluid" width="293"></p></li>
+<li><p><strong>Τομή (</strong><span class="math inline">\(A \cap B\)</span>): Πραγματοποιείται όταν συμβαίνουν <strong>ταυτόχρονα</strong> και τα δύο ενδεχόμενα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Αντιστοιχεί στον λογικό σύνδεσμο «και».<br>
+<img src="images/clipboard-3957195151.png" class="img-fluid" width="296"></p></li>
+<li><p><strong>Συμπλήρωμα (</strong><span class="math inline">\(A'\)</span>): Πραγματοποιείται όταν <strong>δεν συμβαίνει</strong> το ενδεχόμενο <span class="math inline">\(A\)</span>. Ονομάζεται και αντίθετο ενδεχόμενο.<br>
+<img src="images/clipboard-3414469751.png" class="img-fluid" width="310"></p></li>
+<li><p><strong>Διαφορά (</strong><span class="math inline">\(A - B\)</span>): Πραγματοποιείται όταν συμβαίνει <strong>μόνο το</strong> <span class="math inline">\(A\)</span> (το <span class="math inline">\(A\)</span> και όχι το <span class="math inline">\(B\)</span>). Ισχύει η ισότητα <span class="math inline">\(A - B = A \cap B'\)</span>.<br>
+<img src="images/clipboard-3068367230.png" class="img-fluid" width="312"></p></li>
+</ul>
+<section id="ιδιότητες-των-πράξεων" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ιδιότητες-των-πράξεων"><span class="header-section-number">1.5</span> 4. Ιδιότητες των Πράξεων</h3>
+<p>Οι πράξεις μεταξύ ενδεχομένων διέπονται από θεμελιώδεις αλγεβρικές ιδιότητες που διευκολύνουν τους υπολογισμούς πιθανοτήτων:<br>
+</p>
+<ul>
+<li><p><strong>Αντιμεταθετική</strong>: <span class="math inline">\(A \cup B = B \cup A\)</span> και <span class="math inline">\(A \cap B = B \cap A\)</span>.</p></li>
+<li><p><strong>Προσεταιριστική</strong>: <span class="math inline">\((A \cup B) \cup \Gamma = A \cup (B \cup \Gamma)\)</span>.</p></li>
+<li><p><strong>Επιμεριστική</strong>: <span class="math inline">\(A \cap (B \cup \Gamma) = (A \cap B) \cup (A \cap \Gamma)\)</span>.</p></li>
+<li><p><strong>Ιδιότητες του</strong> <span class="math inline">\(\Omega\)</span> και του <span class="math inline">\(\emptyset\)</span>: <span class="math inline">\(A \cup \emptyset = A\)</span>, <span class="math inline">\(A \cap \Omega = A\)</span>, <span class="math inline">\(A \cup \Omega = \Omega\)</span> και <span class="math inline">\(A \cap \emptyset = \emptyset\)</span>.</p></li>
+<li><p><strong>Συμπληρωματικότητα</strong>: <span class="math inline">\(A \cup A' = \Omega\)</span> και <span class="math inline">\(A \cap A' = \emptyset\)</span>.</p></li>
+</ul>
+</section>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Δίνονται δύο ενδεχόμενα Α και Β ενός πειράματος με δειγματικό χώρο Ω. Να παρασταθούν με διαγράμματα Venn και να εκφραστούν με τη βοήθεια συνόλων τα ενδεχόμενα που ορίζονται με τις εκφράσεις:</li>
+</ol>
+<!-- -->
+<ol type="i">
+<li>Πραγματοποιείται μόνο ένα από τα Α και Β.</li>
+<li>Δεν πραγματοποιείται κανένα από τα Α και Β.</li>
+</ol>
+<blockquote class="blockquote">
+<p>…. λίγη βοήθεια <span class="math inline">\((Α-B) \cup (B-A)\)</span><br>
+<br>
+<img src="images/clipboard-687454456.png" class="img-fluid" width="364"></p>
+<p><span class="math inline">\((A \cup B)'\)</span><br>
+<img src="images/clipboard-3277740584.png" class="img-fluid" width="369"></p>
+</blockquote>
+<ol start="2" type="1">
+<li>Ποιο από τα παρακάτω πειράματα είναι τύχης και ποιο αιτιοκρατικό;</li>
+</ol>
+<ul>
+<li>α) Η μέτρηση της θερμοκρασίας βρασμού του νερού σε κανονικές συνθήκες,</li>
+<li>β) Η καταγραφή του αριθμού των τροχαίων ατυχημάτων μια συγκεκριμένη Κυριακή.</li>
+</ul>
+<ol start="3" type="1">
+<li><p>Ρίχνουμε ένα νόμισμα 4 φορές. Να προσδιορίσετε τον δειγματικό χώρο <span class="math inline">\(\Omega\)</span> χρησιμοποιώντας δεντροδιάγραμμα.</p></li>
+<li><p>Ρίχνουμε δύο ζάρια ταυτόχρονα και καταγράφουμε το αποτέλεσμα ως διατεταγμένο ζεύγος. Πόσα στοιχεία έχει ο δειγματικός χώρος <span class="math inline">\(\Omega\)</span>;.</p></li>
+<li><p>∆ιαθέτουµε τρεις κάρτες αριθµηµένες από το 1 έως το 5. Τοποθετούµε τυχαία µια µια τις κάρτες, µέχρι να εµφανιστούν 2 µονές ή 2 ζυγές ενδείξεις. Να ϐρείτε</p></li>
+</ol>
+<ul>
+<li><ol type="i">
+<li>Το δειγµατικό χώρο του πειράµατος τύχης.</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>Το ενδεχόµενο Α να έχουµε τραβήξει µόνο 2 κάρτες.</li>
+</ol></li>
+<li><ol start="3" type="i">
+<li>Το ενδεχόµενο Β να εµφανιστεί µόνο µια κάρτα µε ζυγή ένδειξη.</li>
+</ol></li>
+</ul>
+<p><strong>Λύση</strong> - i. Ο δειγµατικός χώρος προσδιορίζεται από το παρακάτω δεντροδιάγραµµα και είναι το σύνολο Ω = {ZZ,ZMZ,ZMM,MZZ,MZM,MM}<br>
+<img src="images/clipboard-2727266536.png" class="img-fluid"><br>
+<br>
+…………………………………………….<br>
+……………………………………………..</p>
+<ol start="6" type="1">
+<li><p>Ένα κουτί περιέχει 4 μπάλες αριθμημένες από το 1 έως το 4. Επιλέγουμε μια μπάλα, καταγράφουμε τον αριθμό της, την ξαναβάζουμε και επιλέγουμε δεύτερη. Βρείτε τον <span class="math inline">\(\Omega\)</span> με πίνακα διπλής εισόδου.<br>
+<img src="images/clipboard-3940523738.png" class="img-fluid"></p></li>
+<li><p>Κατά τη ρίψη ενός ζαριού, θεωρούμε τα ενδεχόμενα <span class="math inline">\(A\)</span>: «η ένδειξη είναι 6» και <span class="math inline">\(B\)</span>: «η ένδειξη είναι μικρότερη του 4». Χαρακτηρίστε τα ως απλά ή σύνθετα.</p></li>
+<li><p>Σε μια κάλπη υπάρχουν μόνο κόκκινες σφαίρες. Επιλέγουμε τυχαία μία. Δώστε ένα παράδειγμα βέβαιου και ένα αδύνατου ενδεχομένου.</p></li>
+<li><p>Έστω <span class="math inline">\(\Omega = \{1, 2, 3, \dots, 10\}\)</span>. Να γράψετε με αναγραφή των στοιχείων τους τα ενδεχόμενα <span class="math inline">\(A\)</span>: «αριθμός πολλαπλάσιο του 3» και <span class="math inline">\(B\)</span>: «αριθμός μεγαλύτερος του 7».</p></li>
+<li><p>Δίνεται <span class="math inline">\(\Omega = \{1, 2, \dots, 10\}\)</span>. Προσδιορίστε το ενδεχόμενο <span class="math inline">\(A = \{x \in \Omega \mid |x-4| \leq 2\}\)</span>.</p></li>
+<li><p>Αν σε μια ρίψη ζαριού το αποτέλεσμα είναι 4, ποια από τα ενδεχόμενα <span class="math inline">\(A = \{2, 4, 6\}\)</span> και <span class="math inline">\(B = \{1, 3, 5\}\)</span> πραγματοποιούνται;</p></li>
+<li><p>Έστω <span class="math inline">\(\Omega = \{1, 2, \dots, 10\}\)</span>, <span class="math inline">\(A = \{1, 3, 5, 7, 8\}\)</span> και <span class="math inline">\(B = \{2, 4, 6, 8\}\)</span>. Βρείτε τα <span class="math inline">\(A \cup B\)</span> και <span class="math inline">\(A \cap B\)</span>.</p></li>
+<li><p>Με τα δεδομένα της προηγούμενης άσκησης, βρείτε το <span class="math inline">\(A'\)</span> (αντίθετο του Α) και το <span class="math inline">\(A-B\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(A\)</span>: «ο μαθητής παίζει μπάσκετ» και <span class="math inline">\(B\)</span>: «ο μαθητής παίζει βόλεϊ», γράψτε συμβολικά τα ενδεχόμενα:</p></li>
+</ol>
+<ul>
+<li>α) παίζει τουλάχιστον ένα άθλημα,</li>
+<li>β) παίζει μόνο μπάσκετ,</li>
+<li>γ) δεν παίζει κανένα από τα δύο.</li>
+</ul>
+<ol start="15" type="1">
+<li><p>Σχεδιάστε ένα διάγραμμα Venn που να παριστάνει το ενδεχόμενο «να πραγματοποιηθεί μόνο το ένα από τα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>».</p></li>
+<li><p>Αν <span class="math inline">\(A = \{2, 3, 5\}\)</span>, <span class="math inline">\(B = \{1, 3, 5, 6\}\)</span> και <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>, δείξτε ότι <span class="math inline">\((A \cup B)' = A' \cap B'\)</span>.</p></li>
+<li><p>Πότε δύο ενδεχόμενα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> ονομάζονται ασυμβίβαστα; Ποια είναι η τομή τους σε αυτή την περίπτωση;.</p></li>
+<li><p>Στη ρίψη ενός ζαριού, είναι τα ενδεχόμενα <span class="math inline">\(A = \{1, 2\}\)</span> και <span class="math inline">\(B = \{3, 4\}\)</span> ασυμβίβαστα; Γιατί;.</p></li>
+<li><p>Ένα κουτί έχει τέσσερις μπάλες: μία μπλε, μία κίτρινη, μία πράσινη και μία μωβ. Κάνουμε το εξής πείραμα: παίρνουμε από το κουτί μία μπάλα, καταγράφουμε το χρώμα της και την επανατοποθετούμε στο κουτί. Στη συνέχεια παίρνουμε μια δεύτερη μπάλα και καταγράφουμε επίσης το χρώμα της.</p></li>
+</ol>
+<ol type="i">
+<li>Ποιος είναι ο δειγματικός χώρος του πειράματος;</li>
+<li>Ποιο είναι το ενδεχόμενο «η πρώτη μπάλα να είναι μπλε»;</li>
+<li>Ποιο είναι το ενδεχόμενο «να εξαχθεί και τις δύο φορές μπάλα με το ίδιο χρώμα»;</li>
+</ol>
+<ol start="20" type="1">
+<li><p>Να λυθεί το προηγούμενο πρόβλημα, χωρίς όμως τώρα να γίνει επανατοποθέτηση της πρώτης μπάλας πριν την εξαγωγή της δεύτερης.</p></li>
+<li><p>Μια παρέα φίλων αποφασίζει να πάει διακοπές είτε στο Πήλιο είτε στη Χαλκιδική. Στο Πήλιο μπορεί να πάει με λεωφορείο ή με αυτοκίνητο. Στη Χαλκιδική μπορεί να πάει με αυτοκίνητο, με τρένο ή με πλοίο. Ως αποτέλεσμα του πειράματος θεωρούμε τον τόπο διακοπών και το μεταφορικό μέσο, τότε:</p></li>
+</ol>
+<ol type="i">
+<li>Να γράψετε το δειγματικό χώρο <span class="math inline">\(\Omega\)</span> του πειράματος.</li>
+<li>Να βρείτε το ενδεχόμενο <span class="math inline">\(A\)</span>: «η παρέα θα πάει με αυτοκίνητο στον τόπο των διακοπών της».</li>
+</ol>
+<ol start="22" type="1">
+<li>Ένα εστιατόριο προσφέρει ένα μενού που αποτελείται από δύο πιάτα: ένα κυρίως και ένα γλυκό. Οι διαθέσιμες επιλογές δίνονται στον παρακάτω πίνακα:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Πιάτο</th>
+<th style="text-align: left;">Επιλογές</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Κυρίως πιάτο</td>
+<td style="text-align: left;">Ψάρι ή Κρέας</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Γλυκό</td>
+<td style="text-align: left;">Μήλο ή Αχλάδι ή Σταφύλι</td>
+</tr>
+</tbody>
+</table>
+<p>Ένα άτομο πρόκειται να διαλέξει ένα είδος από κάθε πιάτο.</p>
+<ol type="i">
+<li>Να βρείτε το δειγματικό χώρο του πειράματος.</li>
+<li>Να βρείτε το ενδεχόμενο <span class="math inline">\(A\)</span>: «το άτομο επιλέγει μήλο».</li>
+<li>Να βρείτε το ενδεχόμενο <span class="math inline">\(B\)</span>: «το άτομο επιλέγει ψάρι».</li>
+<li>Να βρείτε το ενδεχόμενο <span class="math inline">\(A \cap B\)</span>.</li>
+<li>Αν <span class="math inline">\(\Gamma\)</span> το ενδεχόμενο: «το άτομο επιλέγει κρέας», να βρείτε το ενδεχόμενο <span class="math inline">\((A \cap B) \cup \Gamma\)</span>.</li>
+</ol>
+<ol start="23" type="1">
+<li>Η διεύθυνση μιας εταιρείας αξιολογεί τους υπαλλήλους της σύμφωνα με το αν έχουν συμπληρωματική ασφάλεια ή όχι και σύμφωνα με την απόδοσή τους, η οποία χαρακτηρίζεται ως: χαμηλή, μέτρια, υψηλή ή άριστη. Η διεύθυνση καταγράφει με <span class="math inline">\(0\)</span> τον υπάλληλο χωρίς συμπληρωματική ασφάλεια και με <span class="math inline">\(1\)</span> τον ασφαλισμένο, και στη συνέχεια δίπλα γράφει ένα από τα γράμματα <span class="math inline">\(\alpha, \beta, \gamma\)</span> ή <span class="math inline">\(\delta\)</span> ανάλογα με την απόδοσή του. Θεωρούμε το πείραμα της αξιολόγησης ενός νέου υπαλλήλου. Να βρείτε:</li>
+</ol>
+<ol type="i">
+<li>Το δειγματικό χώρο <span class="math inline">\(\Omega\)</span> του πειράματος.</li>
+<li>Το ενδεχόμενο <span class="math inline">\(A\)</span>: «η απόδοση του υπαλλήλου είναι υψηλή ή άριστη και είναι ασφαλισμένος».</li>
+<li>Το ενδεχόμενο <span class="math inline">\(B\)</span>: «η απόδοση του υπαλλήλου είναι χαμηλή ή μέτρια».</li>
+<li>Το ενδεχόμενο <span class="math inline">\(\Gamma\)</span>: «ο υπάλληλος δεν έχει συμπληρωματική ασφάλεια».</li>
+</ol>
+<ol start="24" type="1">
+<li>Σε καθεμιά από τις παρακάτω περιπτώσεις να εξετάσετε αν τα ενδεχόμενα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> είναι ασυμβίβαστα:</li>
+</ol>
+<ol type="i">
+<li>Ρίχνουμε ένα ζάρι. <span class="math inline">\(A\)</span> είναι το ενδεχόμενο να φέρουμε 5 και <span class="math inline">\(B\)</span> είναι το ενδεχόμενο να φέρουμε περιττό αριθμό.</li>
+<li>Επιλέγουμε ένα άτομο. <span class="math inline">\(A\)</span> είναι το ενδεχόμενο να έχει γεννηθεί στην Ασία και <span class="math inline">\(B\)</span> το ενδεχόμενο να είναι Ευρωπαίος.</li>
+<li>Επιλέγουμε ένα άτομο. <span class="math inline">\(A\)</span> είναι το ενδεχόμενο να είναι κάτω των 20 ετών και <span class="math inline">\(B\)</span> το ενδεχόμενο να είναι συνταξιούχος.</li>
+<li>Επιλέγουμε έναν οδηγό. <span class="math inline">\(A\)</span> είναι το ενδεχόμενο ο οδηγός να φοράει ζώνη και <span class="math inline">\(B\)</span> το ενδεχόμενο ο οδηγός να μην φοράει ζώνη.</li>
+</ol>
+<ol start="25" type="1">
+<li><p>Μεταξύ των οικογενειών με δύο παιδιά επιλέγουμε τυχαία μια οικογένεια και εξετάζουμε τα παιδιά ως προς το φύλο και ως προς τη σειρά γέννησής τους. Να γράψετε το δειγματικό χώρο του πειράματος.</p></li>
+<li><p>Δύο ομάδες θα παίξουν ποδόσφαιρο και συμφωνούν νικητής να είναι εκείνος που πρώτος θα κερδίσει δύο αγώνες. Αν <span class="math inline">\(\alpha\)</span> είναι το αποτέλεσμα να κερδίσει η πρώτη ομάδα έναν αγώνα και <span class="math inline">\(\beta\)</span> είναι το αποτέλεσμα να κερδίσει η δεύτερη ομάδα έναν αγώνα, να γράψετε το δειγματικό χώρο του πειράματος.</p></li>
+<li><p>Ρίχνουμε ένα ζάρι δύο φορές. Να βρείτε τα ενδεχόμενα:</p></li>
+</ol>
+<p><span class="math inline">\(A\)</span>: «το αποτέλεσμα της 1ης ρίψης είναι μικρότερο από το αποτέλεσμα της 2ης ρίψης».</p>
+<p><span class="math inline">\(B\)</span>: «το άθροισμα των ενδείξεων στις δύο ρίψεις είναι περιττός αριθμός».</p>
+<p><span class="math inline">\(\Gamma\)</span>: «το γινόμενο των ενδείξεων στις δύο ρίψεις είναι μεγαλύτερο του 20».</p>
+<p>Στη συνέχεια να βρείτε τα ενδεχόμενα <span class="math inline">\(A \cap B\)</span>, <span class="math inline">\(A \cap \Gamma\)</span>, <span class="math inline">\(B \cap \Gamma\)</span>, <span class="math inline">\((A \cap B) \cup \Gamma\)</span>.</p>
+<hr>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1019,12 +1414,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
