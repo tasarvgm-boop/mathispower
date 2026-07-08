@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Α’ Λυκείου – Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>07. Η απόλυτη τιμή πραγματικού αριθμού – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Α’ Λυκείου – Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html">07. Η απόλυτη τιμή πραγματικού αριθμού</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Α’ Λυκείου – Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html">07. Η απόλυτη τιμή πραγματικού αριθμού</a></li></ol></nav>
+      <h1 class="title">07. Η απόλυτη τιμή πραγματικού αριθμού</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">9 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">9 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +866,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +941,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +960,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -974,7 +1014,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
   </div>
 </li>
@@ -989,33 +1029,599 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-απόλυτη-τιμή-πραγματικού-αριθμού" id="toc-η-απόλυτη-τιμή-πραγματικού-αριθμού" class="nav-link active" data-scroll-target="#η-απόλυτη-τιμή-πραγματικού-αριθμού"><span class="header-section-number">1</span> Η απόλυτη τιμή πραγματικού αριθμού</a>
+  <ul class="collapse">
+  <li><a href="#ορισμός-της-απόλυτης-τιμής" id="toc-ορισμός-της-απόλυτης-τιμής" class="nav-link" data-scroll-target="#ορισμός-της-απόλυτης-τιμής"><span class="header-section-number">1.1</span> Ορισμός της απόλυτης τιμής</a></li>
+  <li><a href="#ιδιότητες-των-απόλυτων-τιμών" id="toc-ιδιότητες-των-απόλυτων-τιμών" class="nav-link" data-scroll-target="#ιδιότητες-των-απόλυτων-τιμών"><span class="header-section-number">1.2</span> Ιδιότητες των απόλυτων τιμών</a></li>
+  <li><a href="#απόσταση-δυο-αριθμών" id="toc-απόσταση-δυο-αριθμών" class="nav-link" data-scroll-target="#απόσταση-δυο-αριθμών"><span class="header-section-number">1.3</span> Απόσταση δυο αριθμών</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Α’ Λυκείου – Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-απόλυτη-τιμή-πραγματικού-αριθμού" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-απόλυτη-τιμή-πραγματικού-αριθμού"><span class="header-section-number">1</span> Η απόλυτη τιμή πραγματικού αριθμού</h2>
+<section id="ορισμός-της-απόλυτης-τιμής" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="ορισμός-της-απόλυτης-τιμής"><span class="header-section-number">1.1</span> Ορισμός της απόλυτης τιμής</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Γεωμετρική Ερμηνεία</strong></p>
+<p>Η απόλυτη τιμή ενός πραγματικού αριθμού <span class="math inline">\(\alpha\)</span> συνδέεται άμεσα με τη θέση του πάνω στον άξονα των πραγματικών αριθμών. <strong>Γεωμετρικά, η απόλυτη τιμή του</strong> <span class="math inline">\(\alpha\)</span> είναι η απόσταση του σημείου <span class="math inline">\(A(\alpha)\)</span> από την αρχή <span class="math inline">\(O(0)\)</span> των αξόνων, δηλαδή το μήκος του ευθύγραμμου τμήματος <span class="math inline">\(OA\)</span>.<br>
+</p>
+<p><img src="images/clipboard-197361672.png" class="img-fluid"><br>
+<br>
+<img src="images/clipboard-1070886100.png" class="img-fluid"></p>
+<p>Επειδή η απόσταση εκφράζει μήκος, η απόλυτη τιμή είναι πάντα ένας <strong>μη αρνητικός αριθμός</strong> (<span class="math inline">\(|a| \ge 0\)</span>).</p>
+<p><strong>Ορισμός</strong> Η απόλυτη τιμή ενός πραγματικού αριθμού <span class="math inline">\(\alpha\)</span> συμβολίζεται με <span class="math inline">\(|\alpha|\)</span> και ορίζεται από τον τύπο:</p>
+<p><span class="math display">\[|\alpha| = \begin{cases} \alpha, &amp; \text{αν } \alpha \ge 0 \\ -\alpha, &amp; \text{αν } \alpha &lt; 0 \end{cases}\]</span></p>
+<p>Δηλαδή:<br>
+</p>
+<ul>
+<li><p>Η απόλυτη τιμή ενός θετικού αριθμού ή του μηδενός είναι <strong>ο ίδιος ο αριθμός</strong>.</p></li>
+<li><p>Η απόλυτη τιμή ενός αρνητικού αριθμού είναι <strong>ο αντίθετός του</strong>.</p></li>
+</ul>
 </div>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ετσι συμπεραίνουμε τα παρακάτω:</p>
+<ul>
+<li><p><span class="math inline">\(\quad |α|=|-α|\geq0\)</span></p></li>
+<li><p><span class="math inline">\(\quad |α|\geq α \quad\text{και}\quad |α|\geq -α\)</span></p></li>
+<li><p><span class="math inline">\(\quad |α|^2=α^2\)</span></p></li>
+<li><p><span class="math display">\[\text{Άν θ&gt;0, τότε}  \quad  
+\begin{cases}
+|x| = θ ⇔ x = θ \quadή \quad x = -θ \\
+|x| = |α| ⇔ x = α \quad ή \quad x = -α
+\end{cases}\]</span></p></li>
+</ul>
+</div>
+</div>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><p><span class="math inline">\(|5| = 5\)</span>, γιατί ο 5 είναι θετικός (<span class="math inline">\(5 &gt; 0\)</span>).</p></li>
+<li><p><span class="math inline">\(|-7| = 7\)</span>, γιατί ο -7 είναι αρνητικός και ο αντίθετός του είναι το 7.</p></li>
+<li><p><span class="math inline">\(|0| = 0\)</span>, η απόσταση του μηδενός από τον εαυτό του είναι μηδέν.</p></li>
+<li><p><span class="math inline">\(|1 - \sqrt{3}| = \sqrt{3} - 1\)</span>, επειδή το <span class="math inline">\(1 - \sqrt{3}\)</span> είναι αρνητικός αριθμός (<span class="math inline">\(1 &lt; \sqrt{3}\)</span>), η απόλυτη τιμή του είναι ο αντίθετός του, δηλαδή <span class="math inline">\(-(1 - \sqrt{3}) = \sqrt{3} - 1\)</span>.</p></li>
+<li><p><span class="math inline">\(|\pi - 3| = \pi - 3\)</span>, επειδή <span class="math inline">\(\pi \approx 3,14 &gt; 3\)</span>, η ποσότητα είναι θετική.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="ιδιότητες-των-απόλυτων-τιμών" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ιδιότητες-των-απόλυτων-τιμών"><span class="header-section-number">1.2</span> Ιδιότητες των απόλυτων τιμών</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Βασικοί Ορισμοί</strong> Η απόλυτη τιμή ενός πραγματικού αριθμού <span class="math inline">\(\alpha\)</span>, πέρα από τον βασικό της ορισμό ως απόσταση από το μηδέν, διέπεται από μια σειρά αλγεβρικών ιδιοτήτων που διευκολύνουν την επίλυση εξισώσεων, ανισώσεων και την απλοποίηση παραστάσεων.</p>
+<p>Οι κυριότερες ιδιότητες είναι οι εξής:</p>
+<ol type="1">
+<li><p><strong>Μη αρνητικότητα:</strong> Για κάθε <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, ισχύει <span class="math inline">\(|\alpha| \ge 0\)</span>.</p></li>
+<li><p><strong>Ιδιότητα του Μηδενός:</strong> <span class="math inline">\(|\alpha| = 0 \iff \alpha = 0\)</span>.</p></li>
+<li><p><strong>Απόλυτη τιμή αντιθέτων:</strong> Οι αντίθετοι αριθμοί έχουν την ίδια απόλυτη τιμή, δηλαδή <span class="math inline">\(|\alpha| = |-\alpha|\)</span>.</p></li>
+<li><p><strong>Σχέση με τον αριθμό:</strong> Ισχύει <span class="math inline">\(|\alpha| \ge \alpha\)</span> και <span class="math inline">\(|\alpha| \ge -\alpha\)</span>.</p></li>
+<li><p><strong>Σχέση με το τετράγωνο:</strong> <span class="math inline">\(|\alpha|^2 = \alpha^2\)</span> και γενικότερα <span class="math inline">\(|\alpha|^{2\nu} = \alpha^{2\nu}\)</span>.</p></li>
+<li><p><strong>Γινόμενο και Πηλίκο:</strong></p>
+<ul>
+<li><span class="math inline">\(|\alpha \cdot \beta| = |\alpha| \cdot |\beta|\)</span>. Ισχύει και για περισσότερους παράγοντες. Άν όλοι οι παράγοντες είναι ίσοι τότε θα έχουμε <span class="math inline">\(|α^ν|=|α|^ν\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Για την απόδειξη , υψώστε και τα δύο μέλη στο τετράγωνο.</p>
+</blockquote>
+<ul>
+<li><span class="math inline">\(\left|\dfrac{\alpha}{\beta}\right| = \dfrac{|\alpha|}{|\beta|}\)</span>, με <span class="math inline">\(\beta \neq 0\)</span>. Ισχύει και για περισσότερους προσθετέους.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Για την απόδειξη , υψώστε και τα δύο μέλη στο τετράγωνο.</p>
+</blockquote></li>
+<li><p><strong>Τριγωνική Ανισότητα:</strong> <span class="math inline">\(|\alpha + \beta| \le |\alpha| + |\beta|\)</span>.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Για την απόδειξη , υψώστε και τα δύο μέλη στο τετράγωνο.</p>
+</blockquote>
+<ol start="8" type="1">
+<li><strong>Εξισώσεις/Ανισώσεις:</strong> Αν <span class="math inline">\(\theta &gt; 0\)</span>, τότε:
+<ul>
+<li><span class="math inline">\(|x| = \theta \iff x = \theta\)</span> ή <span class="math inline">\(x = -\theta\)</span>.</li>
+<li><span class="math inline">\(|x| &lt; \theta \iff -\theta &lt; x &lt; \theta\)</span>.</li>
+<li><span class="math inline">\(|x| &gt; \theta \iff x &lt; -\theta\)</span> ή <span class="math inline">\(x &gt; \theta\)</span>.</li>
+</ul></li>
+</ol>
+</div>
+<section id="παραδείγματα-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.2.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><p><strong>Χρήση τετραγώνου:</strong> Για την παράσταση <span class="math inline">\(\sqrt{(x-3)^2}\)</span>, χρησιμοποιούμε την ιδιότητα <span class="math inline">\(\sqrt{\alpha^2} = |\alpha|\)</span>, άρα <span class="math inline">\(\sqrt{(x-3)^2} = |x-3|\)</span>.</p></li>
+<li><p><strong>Γινόμενο:</strong> <span class="math inline">\(|-2 \cdot 5| = |-2| \cdot |5| = 2 \cdot 5 = 10\)</span>.</p></li>
+<li><p><strong>Ανισότητα:</strong> Αν <span class="math inline">\(|x| \le 3\)</span>, τότε από τις ιδιότητες γνωρίζουμε ότι <span class="math inline">\(-3 \le x \le 3\)</span>.</p></li>
+<li><p><strong>Αντίθετα:</strong> Η εξίσωση <span class="math inline">\(|x-4| + |4-x| = 2|x-4|\)</span> είναι αληθής γιατί <span class="math inline">\(|x-4| = |-(x-4)| = |4-x|\)</span>.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="απόσταση-δυο-αριθμών" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="απόσταση-δυο-αριθμών"><span class="header-section-number">1.3</span> Απόσταση δυο αριθμών</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Αν οι πραγματικοί αριθμοί <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span> παριστάνονται πάνω στον άξονα με τα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> αντίστοιχα, τότε το <strong>μήκος του ευθύγραμμου τμήματος</strong> <span class="math inline">\(AB\)</span> ονομάζεται απόσταση των αριθμών <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span>.<br>
+<img src="images/clipboard-3961792142.png" class="img-fluid"></p></li>
+<li><p><strong>Συμβολισμός και Τύπος:</strong> Η απόσταση συμβολίζεται με <span class="math inline">\(d(\alpha, \beta)\)</span> και ισούται με την <strong>απόλυτη τιμή της διαφοράς των δύο αριθμών</strong>: <span class="math display">\[d(\alpha, \beta) = |\alpha - \beta|\]</span>.<br>
+</p>
+<p><img src="images/clipboard-651255958.png" class="img-fluid"><br>
+</p></li>
+<li><p><strong>Βασικές Ιδιότητες:</strong></p>
+<ol type="1">
+<li><p><span class="math inline">\(d(\alpha, \beta) = d(\beta, \alpha)\)</span>: Η απόσταση είναι συμμετρική, δηλαδή η απόσταση του <span class="math inline">\(\alpha\)</span> από το <span class="math inline">\(\beta\)</span> είναι ίση με την απόσταση του <span class="math inline">\(\beta\)</span> από το <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p><span class="math inline">\(d(\alpha, \beta) \ge 0\)</span>: Η απόσταση εκφράζει μήκος, επομένως είναι πάντα μη αρνητικός αριθμός.</p></li>
+<li><p><strong>Σχέση με την απόλυτη τιμή:</strong> Η απόλυτη τιμή ενός αριθμού <span class="math inline">\(\alpha\)</span> είναι η απόστασή του από την αρχή <span class="math inline">\(O(0)\)</span> των αξόνων, δηλαδή <span class="math inline">\(|\alpha| = d(\alpha, 0)\)</span>.</p></li>
+</ol></li>
+<li><p><strong>Κέντρο και Ακτίνα Διαστήματος:</strong> Σε ένα διάστημα με άκρα <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span> (<span class="math inline">\(\alpha &lt; \beta\)</span>):<br>
+<img src="images/clipboard-598857850.png" class="img-fluid"></p>
+<ul>
+<li><p>Το <strong>κέντρο</strong> <span class="math inline">\(x_0\)</span> είναι ο αριθμός που αντιστοιχεί στο μέσο του τμήματος <span class="math inline">\(AB\)</span>: <span class="math inline">\(x_0 = \dfrac{\alpha + \beta}{2}\)</span>.</p></li>
+<li><p>Η <strong>ακτίνα</strong> <span class="math inline">\(\rho\)</span> είναι η μισή απόσταση των άκρων του: <span class="math inline">\(\rho = \dfrac{\beta - \alpha}{2}\)</span>.</p></li>
+</ul></li>
+</ul>
+<p>Γενικά:</p>
+<ul>
+<li>Για <span class="math inline">\(x_0 ∊ ℝ\)</span> και <span class="math inline">\(ρ &gt; 0\)</span>, ισχύει:</li>
+</ul>
+<p><span class="math inline">\(|x - x_0| &lt; ρ ⇔ x \in(x_0 -ρ, x_0 + ρ) ⇔ x_0 - ρ &lt; x &lt; x_0 + ρ\)</span></p>
+<ul>
+<li>Για <span class="math inline">\(x_0 \in ℝ\)</span> και <span class="math inline">\(ρ &gt; 0\)</span>, ισχύει:</li>
+</ul>
+<p><span class="math inline">\(|x - x_0| &gt; ρ ⇔ x  \in( -∞, x_0 - ρ) U (x_0 + ρ, +∞)  ⇔ x &lt; x_0 - ρ\)</span> ή <span class="math inline">\(x &gt; x_0 + ρ\)</span></p>
+</div>
+<section id="παραδείγματα-2" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="παραδείγματα-2"><span class="header-section-number">1.3.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><p>Η απόσταση των αριθμών <span class="math inline">\(1\)</span> και <span class="math inline">\(3\)</span> είναι <span class="math inline">\(d(1, 3) = |1 - 3| = |-2| = 2\)</span>.</p></li>
+<li><p>Η απόσταση των αριθμών <span class="math inline">\(-2\)</span> και <span class="math inline">\(2\)</span> είναι <span class="math inline">\(d(-2, 2) = |-2 - 2| = |-4| = 4\)</span>.</p></li>
+<li><p>Η έκφραση <span class="math inline">\(d(x, 5) \le 9\)</span> ερμηνεύεται λεκτικά ως: «η απόσταση του πραγματικού αριθμού <span class="math inline">\(x\)</span> από τον αριθμό <span class="math inline">\(5\)</span> είναι μικρότερη ή ίση του <span class="math inline">\(9\)</span>».</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Αυτό σημαίνει ότι <span class="math display">\[\begin{array}{c}
+|x-5|\leq 9 \Longleftrightarrow \\
+-9 \leq x-5 \leq 9 \Longleftrightarrow \\
+-9+5\leq x\leq 9+5 \Longleftrightarrow \\
+-4 \leq x \leq 14
+\end{array}\]</span></p>
+</blockquote>
+<ol start="4" type="1">
+<li>Η εξίσωση <span class="math inline">\(d(x, 1) = 2\)</span> σημαίνει ότι ο αριθμός <span class="math inline">\(x\)</span> απέχει από το <span class="math inline">\(1\)</span> ακριβώς <span class="math inline">\(2\)</span> μονάδες, άρα<br>
+</li>
+</ol>
+<p><span class="math display">\[\begin{array}{c}
+|x-1| =2 \Longleftrightarrow \\
+x-1 =2 \quad \text{ή} \quad x-1=-2 \Longleftrightarrow \\
+x=3 \quad \text{ ή } \quad x=-1
+\end{array}\]</span></p>
+<p><span class="math inline">\(x = 3\)</span> ή <span class="math inline">\(x = -1\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<ol type="1">
+<li>Να υπολογίσετε τις παρακάτω απόλυτες τιμές χρησιμοποιώντας τον ορισμό:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(|-12|\)</span>,</li>
+<li>β. <span class="math inline">\(|3,5|\)</span>,</li>
+<li>γ. <span class="math inline">\(|2-\sqrt{2}|\)</span>,</li>
+<li>δ. <span class="math inline">\(|1-\pi|\)</span>.</li>
+</ul>
+<ol start="2" type="1">
+<li>Να γράψετε τις παρακάτω παραστάσεις χωρίς το σύμβολο της απόλυτης τιμής:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(|x-2|\)</span>, αν <span class="math inline">\(x \ge 2\)</span></li>
+<li>β. <span class="math inline">\(|x-2|\)</span>, αν <span class="math inline">\(x &lt; 2\)</span>.</li>
+</ul>
+<ol start="3" type="1">
+<li>Να βρείτε για ποιες τιμές του <span class="math inline">\(x\)</span> ισχύουν οι παρακάτω ισότητες:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(|x| = 8\)</span>,</li>
+<li>β. <span class="math inline">\(|x| = -3\)</span>,</li>
+<li>γ. <span class="math inline">\(|x| = 0\)</span>.</li>
+</ul>
+<ol start="4" type="1">
+<li><p>Αν είναι γνωστό ότι <span class="math inline">\(x &lt; 3\)</span>, να απλοποιήσετε την παράσταση <span class="math inline">\(A = |x-3| + 2x - 1\)</span>.</p></li>
+<li><p>Να εξετάσετε αν οι παρακάτω προτάσεις είναι Σωστές ή Λάθος βάσει του ορισμού:</p></li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Για κάθε πραγματικό αριθμό <span class="math inline">\(α\)</span> ισχύει <span class="math inline">\(|α| \ge α\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Ισχύει <span class="math inline">\(|-\alpha| = \alpha\)</span> για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Αν <span class="math inline">\(|\alpha| = |\beta|\)</span>, τότε αναγκαστικά <span class="math inline">\(\alpha = \beta\)</span>.</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Η απόλυτη τιμή ενός αριθμού μπορεί να είναι αρνητική.</li>
+</ol></li>
+</ul>
+<ol start="6" type="1">
+<li>Να αποδείξετε ότι για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha\)</span> ισχύει η ισότητα <span class="math inline">\((\alpha - |\alpha|) \cdot (\alpha + |\alpha|) = 0\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p>(Υπόδειξη: Χρησιμοποιήστε τη διαφορά τετραγώνων και την ιδιότητα <span class="math inline">\(|\alpha|^2 = \alpha^2\)</span>).</p>
+</blockquote>
+<ol start="7" type="1">
+<li><p>Να λύσετε την εξίσωση <span class="math inline">\(|2x - 1| = |x + 5|\)</span> χρησιμοποιώντας την ιδιότητα <span class="math inline">\(|\alpha| = |\beta| \iff \alpha = \beta\)</span> ή <span class="math inline">\(\alpha = -\beta\)</span>.</p></li>
+<li><p>Αν είναι γνωστό ότι <span class="math inline">\(|x| \le 2\)</span> και <span class="math inline">\(|y| \le 5\)</span>, να αποδείξετε χρησιμοποιώντας την τριγωνική ανισότητα ότι <span class="math inline">\(|3x + y| \le 11\)</span>.</p></li>
+<li><p>Να γράψετε σε μορφή διαστήματος το σύνολο των λύσεων της ανίσωσης <span class="math inline">\(|x - 5| &lt; 9\)</span> εφαρμόζοντας την ιδιότητα των ανισώσεων με απόλυτα.</p></li>
+<li><p>Να χαρακτηρίσετε ως Σωστές (Σ) ή Λανθασμένες (Λ) τις παρακάτω προτάσεις βάσει των ιδιοτήτων:</p></li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Ισχύει <span class="math inline">\(|\alpha + \beta| = |\alpha| + |\beta|\)</span> για όλους τους πραγματικούς αριθμούς.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Αν <span class="math inline">\(\alpha \neq 0\)</span>, τότε <span class="math inline">\(\dfrac{\alpha}{|\alpha|} = \dfrac{|\alpha|}{\alpha}\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Η ανίσωση <span class="math inline">\(|x| &lt; -5\)</span> είναι αδύνατη.</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Ισχύει <span class="math inline">\(|x^2 + 1| = x^2 + 1\)</span> για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="11" type="1">
+<li>Να υπολογίσετε τις παρακάτω αποστάσεις χρησιμοποιώντας τον ορισμό:</li>
+</ol>
+<ul>
+<li><p>α. <span class="math inline">\(d(10, 4)\)</span>,</p></li>
+<li><p>β. <span class="math inline">\(d(-3, 6)\)</span>,</p></li>
+<li><p>γ. <span class="math inline">\(d(-8, -2)\)</span>,</p></li>
+<li><p>δ. <span class="math inline">\(d(0, -5)\)</span>.</p></li>
+</ul>
+<ol start="12" type="1">
+<li>Να βρείτε τον πραγματικό αριθμό <span class="math inline">\(x\)</span> στις παρακάτω περιπτώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(d(x, 3) = 5\)</span>,</li>
+<li>β. <span class="math inline">\(d(x, -2) = 1\)</span>.</li>
+</ul>
+<ol start="13" type="1">
+<li>Να συμπληρώσετε τον παρακάτω πίνακα αντιστοιχίζοντας την απόσταση με απόλυτη τιμή και διάστημα:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Απόσταση</th>
+<th style="text-align: left;">Απόλυτη τιμή</th>
+<th style="text-align: left;">Διάστημα</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(d(x, 4) &lt; 1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(|x - 4| &lt; 1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x \in (3, 5)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(d(x, -1) \le 2\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(|x - 2| \ge 3\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="14" type="1">
+<li>Δίνεται το διάστημα <span class="math inline">\([-3, 7]\)</span>.</li>
+</ol>
+<p>Να υπολογίσετε:</p>
+<ul>
+<li><p>α. Το μήκος του διαστήματος.</p></li>
+<li><p>β. Το κέντρο <span class="math inline">\(x_0\)</span> και την ακτίνα <span class="math inline">\(\rho\)</span> του διαστήματος.</p></li>
+<li><p>γ. Να γράψετε τη σχέση που περιγράφει τα σημεία του διαστήματος χρησιμοποιώντας το συμβολισμό της απόστασης <span class="math inline">\(d(x, x_0) \le \rho\)</span>.</p></li>
+</ul>
+<ol start="15" type="1">
+<li><p>Σε έναν άξονα τα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> αντιστοιχούν στους αριθμούς <span class="math inline">\(5\)</span> και <span class="math inline">\(9\)</span>. Αν για ένα σημείο <span class="math inline">\(M(x)\)</span> ισχύει <span class="math inline">\(d(x, 5) = d(x, 9)\)</span>, να προσδιορίσετε γεωμετρικά και αλγεβρικά τη θέση του σημείου <span class="math inline">\(M\)</span> και την τιμή του <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Να γράψετε τις παρακάτω παραστάσεις χωρίς το σύμβολο της απόλυτης τιμής:</p></li>
+</ol>
+<p><strong>α.</strong> <span class="math inline">\(|\sqrt{10} - 3|\)</span></p>
+<p><strong>β.</strong> <span class="math inline">\(|\sqrt{10} - 4|\)</span></p>
+<p><strong>γ.</strong> <span class="math inline">\(|5 - \pi| + |2 - \pi|\)</span></p>
+<p><strong>δ.</strong> <span class="math inline">\(|\sqrt{7} - \sqrt{5}| - |\sqrt{5} - \sqrt{7}|\)</span></p>
+<ol start="17" type="1">
+<li><p>Αν <span class="math inline">\(2 &lt; x &lt; 5\)</span>, να γράψετε χωρίς την απόλυτη τιμή την παράσταση: <span class="math display">\[|x - 2| + |x - 5|\]</span></p></li>
+<li><p>Να γράψετε χωρίς την απόλυτη τιμή την παράσταση <span class="math inline">\(|x - 5| - |1 - x|\)</span>, όταν:</p></li>
+</ol>
+<p><strong>α.</strong> <span class="math inline">\(x &lt; 1\)</span></p>
+<p><strong>β.</strong> <span class="math inline">\(x &gt; 5\)</span></p>
+<ol start="19" type="1">
+<li><p>Αν <span class="math inline">\(x \neq 3\)</span>, να βρείτε την τιμή της παράστασης: <span class="math display">\[\frac{|x - 3|}{|3 - x|}\]</span></p></li>
+<li><p>Αν <span class="math inline">\(a \neq 0\)</span> και <span class="math inline">\(b \neq 0\)</span>, να βρείτε όλες τις δυνατές τιμές που μπορεί να πάρει η παράσταση: <span class="math display">\[B = \dfrac{|a|}{a} - \dfrac{b}{|b|}\]</span></p></li>
+<li><p>Το βάρος ενός δέματος μετρήθηκε και βρέθηκε <span class="math inline">\(5,40 \text{ kg}\)</span>. Το σφάλμα της μέτρησης είναι το πολύ <span class="math inline">\(0,02 \text{ kg}\)</span>. Αν <span class="math inline">\(W\)</span> είναι το πραγματικό βάρος του δέματος, τότε:</p></li>
+</ol>
+<p><strong>α.</strong> Να εκφράσετε την παραπάνω παραδοχή με τη βοήθεια της έννοιας της απόστασης.</p>
+<p><strong>β.</strong> Να βρείτε μεταξύ ποιών ορίων βρίσκεται η τιμή <span class="math inline">\(W\)</span>.</p>
+<ol start="22" type="1">
+<li>Να συμπληρώσετε τον παρακάτω πίνακα (όπως το παράδειγμα της εικόνας):</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Απόλυτη Τιμή</th>
+<th style="text-align: left;">Απόσταση</th>
+<th style="text-align: left;">Διάστημα ή Ένωση Διαστημάτων</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(|x - 2| \leq 3\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(d(x, 2) \leq 3\)</span></td>
+<td style="text-align: left;"><span class="math inline">\([-1, 5]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(|x + 5| &lt; 1\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(|x - 1| &gt; 4\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(|x + 2| \geq 3\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(d(x, 4) &lt; 2\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(d(x, -3) &gt; 1\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\((-3, 3)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\([2, 8]\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\((-\infty, -1] \cup [5, +\infty)\)</span></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Μικρή βοήθεια για τη λύση:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li><strong>Απόλυτη τιμή:</strong></li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Αν το μέσα είναι θετικό, βγαίνει όπως είναι.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Αν είναι αρνητικό, αλλάζουμε όλα τα πρόσημα.</p>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li><strong>Απόσταση:</strong> Η απόσταση <span class="math inline">\(d(a, b)\)</span> είναι ίση με <span class="math inline">\(|a - b|\)</span>.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li><strong>Σφάλμα:</strong> Αν έχουμε μέτρηση <span class="math inline">\(M\)</span> και σφάλμα <span class="math inline">\(s\)</span>, τότε <span class="math inline">\(|x - M| \leq s\)</span>.</li>
+</ul>
+</blockquote>
+<ol start="23" type="1">
+<li>Να αποδείξετε ότι για οποιουσδήποτε πραγματικούς αριθμούς <span class="math inline">\(x, y\)</span> και <span class="math inline">\(z\)</span> ισχύει: <span class="math display">\[|x + y| \leq |x - z| + |y + z|\]</span><br>
+</li>
+</ol>
+<blockquote class="blockquote">
+<p>(Υπόδειξη: Γράψτε το <span class="math inline">\(x+y\)</span> ως <span class="math inline">\((x-z) + (y+z)\)</span> και εφαρμόστε την τριγωνική ανισότητα).</p>
+</blockquote>
+<ol start="24" type="1">
+<li>Αν <span class="math inline">\(x &lt; y\)</span>, να αποδείξετε ότι:</li>
+</ol>
+<p><strong>α.</strong> <span class="math inline">\(y = \dfrac{x + y + |x - y|}{2}\)</span></p>
+<p><strong>β.</strong> <span class="math inline">\(x = \dfrac{x + y - |x - y|}{2}\)</span></p>
+<blockquote class="blockquote">
+<p>(Παρατήρηση: Αυτοί οι τύποι μας δίνουν πάντα τον μεγαλύτερο και τον μικρότερο από δύο αριθμούς).</p>
+</blockquote>
+<ol start="25" type="1">
+<li>Τι συμπεραίνουμε για τους πραγματικούς αριθμούς <span class="math inline">\(a, b\)</span> και <span class="math inline">\(c\)</span> αν ισχύει:</li>
+</ol>
+<p><strong>α.</strong> Η ισότητα <span class="math inline">\(|a - 1| + |b - 2| + |c - 3| = 0\)</span>;</p>
+<p><strong>β.</strong> Η ανισότητα <span class="math inline">\(a^2 + b^2 &gt; 0\)</span>;</p>
+<ol start="26" type="1">
+<li>Έστω δύο θετικοί αριθμοί <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> με <span class="math inline">\(0 &lt; x &lt; y\)</span>.</li>
+</ol>
+<p><strong>α.</strong> Να διατάξετε από τον μικρότερο στο μεγαλύτερο τους αριθμούς: <span class="math display">\[0, \quad \dfrac{\sqrt x}{y}, \quad 1, \quad \dfrac{\sqrt y}{x}\]</span></p>
+<p><strong>β.</strong> Να δείξετε ότι η απόσταση του αριθμού <span class="math inline">\(\dfrac{x}{y}\)</span> από τη μονάδα είναι μικρότερη από την απόσταση του <span class="math inline">\(\dfrac{y}{x}\)</span> από τη μονάδα. Δηλαδή: <span class="math display">\[\left| \frac{x}{y} - 1 \right| &lt; \left| \frac{y}{x} - 1 \right|\]</span></p>
+<p><strong>Λύση</strong></p>
+<ul>
+<li>α. <u>Θέλουμε να αποδείξουμε ότι</u> <span class="math inline">\(\quad 0 &lt; \frac{\sqrt{x}}{y} &lt; 1 &lt; \frac{\sqrt{y}}{x}\)</span></li>
+</ul>
+<p><strong>Τα βήματα</strong></p>
+<p>Για να διατάξουμε τους αριθμούς, εξετάζουμε τις σχέσεις τους σε σχέση με το 0 και το 1:</p>
+<ol type="1">
+<li><strong>Σύγκριση του</strong> <span class="math inline">\(\dfrac{\sqrt{x}}{y}\)</span> με το 0:</li>
+</ol>
+<p>Εφόσον <span class="math inline">\(x, y &gt; 0\)</span>, τότε και οι τετραγωνικές ρίζες τους είναι θετικές. Άρα το κλάσμα <span class="math inline">\(\dfrac{\sqrt{x}}{y}\)</span> είναι θετικό, δηλαδή <span class="math inline">\(0 &lt; \dfrac{\sqrt{x}}{y}\)</span>.</p>
+<ol start="2" type="1">
+<li><strong>Σύγκριση του</strong> <span class="math inline">\(\dfrac{\sqrt{x}}{y}\)</span> με το 1:</li>
+</ol>
+<p>Γνωρίζουμε ότι <span class="math inline">\(0 &lt; x &lt; y\)</span>. Επειδή <span class="math inline">\(x &lt; y\)</span>, τότε <span class="math inline">\(\sqrt{x} &lt; \sqrt{y}\)</span>. Επίσης, η ανισότητα <span class="math inline">\(x &lt; y\)</span> διαιρώντας και τα δύο μέλη με <span class="math inline">\(y\)</span> (αφού <span class="math inline">\(y &gt; 0\)</span>) μας δίνει <span class="math inline">\(\dfrac{x}{y} &lt; 1\)</span>.</p>
+<p>Όμως, δεν ξέρουμε αν <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι μεγαλύτερα ή μικρότερα της μονάδας. Ωστόσο, μπορούμε να εξετάσουμε την τιμή του κλάσματος. Επειδή <span class="math inline">\(x &lt; y\)</span>, τότε <span class="math inline">\(\sqrt{x} &lt; \sqrt{y}\)</span>, οπότε <span class="math inline">\(\dfrac{\sqrt{x}}{\sqrt{y}} &lt; 1\)</span>.</p>
+<p>Επειδή <span class="math inline">\(x &lt; y\)</span>, αν θεωρήσουμε την περίπτωση <span class="math inline">\(x &lt; 1 &lt; y\)</span>, τότε <span class="math inline">\(\dfrac{\sqrt{x}}{y} &lt; 1\)</span> ισχύει πάντα καθώς ο αριθμητής είναι μικρότερος του παρονομαστή υπό την προϋπόθεση ότι οι αριθμοί είναι τέτοιοι ώστε <span class="math inline">\(\sqrt{x} &lt; y\)</span>. Πράγματι, αφού <span class="math inline">\(x &lt; y\)</span> και <span class="math inline">\(x, y &gt; 0\)</span>, η σχέση <span class="math inline">\(\dfrac{\sqrt{x}}{y}\)</span> συγκρινόμενη με το 1 εξαρτάται από τις τιμές.</p>
+<p>Ωστόσο, για την γενική διάταξη:</p>
+<p><span class="math inline">\(\dfrac{\sqrt{x}}{y} &lt; 1 \iff \sqrt{x} &lt; y\)</span>. Εφόσον <span class="math inline">\(x &lt; y\)</span>, τότε <span class="math inline">\(\sqrt{x} &lt; x &lt; y\)</span>, άρα το κλάσμα είναι πράγματι μικρότερο της μονάδας.</p>
+<ol start="3" type="1">
+<li><strong>Σύγκριση του</strong> <span class="math inline">\(\dfrac{\sqrt{y}}{x}\)</span> με το 1:</li>
+</ol>
+<p>Επειδή <span class="math inline">\(x &lt; y\)</span>, τότε <span class="math inline">\(\sqrt{x} &lt; \sqrt{y}\)</span>. Επίσης <span class="math inline">\(x &lt; \sqrt{x}\)</span> (αν <span class="math inline">\(0 &lt; x &lt; 1\)</span>) ή <span class="math inline">\(x &gt; \sqrt{x}\)</span> (αν <span class="math inline">\(x &gt; 1\)</span>).</p>
+<p>Επειδή <span class="math inline">\(y &gt; x\)</span>, τότε <span class="math inline">\(\dfrac{\sqrt{y}}{x} &gt; \dfrac{\sqrt{x}}{x} = \dfrac{1}{\sqrt{x}}\)</span>. Αν <span class="math inline">\(x &lt; 1\)</span>, τότε <span class="math inline">\(\dfrac{1}{\sqrt{x}} &gt; 1\)</span>, άρα <span class="math inline">\(\dfrac{\sqrt{y}}{x} &gt; 1\)</span>.</p>
+<ol start="4" type="1">
+<li><strong>Συμπέρασμα:</strong> Συνδυάζοντας τα παραπάνω, έχουμε: <span class="math inline">\(0 &lt; \dfrac{\sqrt{x}}{y} &lt; 1 &lt; \dfrac{\sqrt{y}}{x}\)</span>.</li>
+</ol>
+<ul>
+<li>β. <u>Θέλουμε να αποδείξουμε ότι:</u></li>
+</ul>
+<p><span class="math display">\[\left| \frac{x}{y} - 1 \right| &lt; \left| \frac{y}{x} - 1 \right|\]</span></p>
+<p><strong>Τα βήματα</strong></p>
+<ol type="1">
+<li><strong>Απλοποιούμε τις απόλυτες τιμές:</strong></li>
+</ol>
+<p>Επειδή <span class="math inline">\(x &lt; y\)</span>, το κλάσμα <span class="math inline">\(\dfrac{x}{y}\)</span> είναι μικρότερο της μονάδας (<span class="math inline">\(\dfrac{x}{y} &lt; 1\)</span>).</p>
+<p>Επομένως, η παράσταση μέσα στην απόλυτη τιμή είναι αρνητική, οπότε: <span class="math display">\[\left| \frac{x}{y} - 1 \right| = 1 - \frac{x}{y} = \frac{y - x}{y}\]</span></p>
+<p>Επειδή <span class="math inline">\(y &gt; x\)</span>, το κλάσμα <span class="math inline">\(\dfrac{y}{x}\)</span> είναι μεγαλύτερο της μονάδας (<span class="math inline">\(\dfrac{y}{x} &gt; 1\)</span>).</p>
+<p>Επομένως, η παράσταση μέσα στην απόλυτη τιμή είναι θετική, οπότε: <span class="math display">\[\left| \frac{y}{x} - 1 \right| = \frac{y}{x} - 1 = \frac{y - x}{x}\]</span></p>
+<ol start="2" type="1">
+<li><strong>Συγκρίνουμε τα αποτελέσματα:</strong></li>
+</ol>
+<p>Τώρα πρέπει να συγκρίνουμε τα κλάσματα <span class="math inline">\(\dfrac{y-x}{y}\)</span> και <span class="math inline">\(\dfrac{y-x}{x}\)</span>.</p>
+<p>Παρατηρούμε ότι:</p>
+<p>Έχουν τον <strong>ίδιο αριθμητή</strong> (<span class="math inline">\(y - x\)</span>), ο οποίος είναι θετικός.</p>
+<p>Ο <strong>παρονομαστής</strong> του πρώτου κλάσματος (<span class="math inline">\(y\)</span>) είναι <strong>μεγαλύτερος</strong> από τον παρονομαστή του δεύτερου κλάσματος (<span class="math inline">\(x\)</span>).</p>
+<p>Στα κλάσματα με τον ίδιο θετικό αριθμητή, <strong>μικρότερο είναι εκείνο που έχει τον μεγαλύτερο παρονομαστή</strong>.</p>
+<p>Επειδή <span class="math inline">\(y &gt; x\)</span>, ισχύει:</p>
+<p><span class="math display">\[\frac{y-x}{y} &lt; \frac{y-x}{x}\]</span></p>
+<ol start="3" type="1">
+<li><strong>Συμπέρασμα:</strong></li>
+</ol>
+<p>Άρα αποδείχθηκε ότι: <span class="math display">\[\left| \frac{x}{y} - 1 \right| &lt; \left| \frac{y}{x} - 1 \right|\]</span></p>
+<ol start="27" type="1">
+<li>Αν γνωρίζουμε ότι <span class="math inline">\(|a - 5| &lt; 0,2\)</span> και <span class="math inline">\(|b - 10| &lt; 0,4\)</span>, να βρείτε μεταξύ ποιών ορίων (εκτίμηση) βρίσκεται η περίμετρος των παρακάτω σχημάτων:</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li><strong>Ισοσκελές τρίγωνο</strong> με βάση <span class="math inline">\(a\)</span> και δύο ίσες πλευρές μήκους <span class="math inline">\(b\)</span>. (Περίμετρος <span class="math inline">\(P = a + 2b\)</span>)</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><strong>Ορθογώνιο παραλληλόγραμμο</strong> με πλευρές <span class="math inline">\(a\)</span> και <span class="math inline">\(b\)</span>. (Περίμετρος <span class="math inline">\(P = 2a + 2b\)</span>)</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><strong>Τετράγωνο</strong> με πλευρά μήκους <span class="math inline">\(a\)</span>. (Περίμετρος <span class="math inline">\(P = 4a\)</span>)</li>
+</ol></li>
+</ul>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Πρώτα “λύστε” τις ανισότητες για να βρείτε ότι</em> <span class="math inline">\(4,8 &lt; a &lt; 5,2\)</span> και <span class="math inline">\(9,6 &lt; b &lt; 10,4\)</span> και μετά κάντε τις πράξεις).</p>
+</blockquote>
+<ol start="28" type="1">
+<li>Τι σημαίνει για τους πραγματικούς αριθμούς <span class="math inline">\(a\)</span> και <span class="math inline">\(b\)</span>:</li>
+</ol>
+<ul>
+<li><ol type="i">
+<li>Η ισότητα <span class="math inline">\(|a - 1| + |b + 3| = 0\)</span>;</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>Η ανισότητα <span class="math inline">\(|a - 1| + |b + 3| &gt; 0\)</span>;</li>
+</ol></li>
+</ul>
+<ol start="29" type="1">
+<li>Έστω <span class="math inline">\(0 &lt; x &lt; y\)</span>.</li>
+</ol>
+<ul>
+<li><ol type="i">
+<li>Να διατάξετε από τον μικρότερο στο μεγαλύτερο τους αριθμούς: <span class="math inline">\(1, \sqrt{\dfrac{x}{y}}\)</span> και <span class="math inline">\(\sqrt{\dfrac{y}{x}}\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="i">
+<li>Να δείξετε ότι στον πραγματικό άξονα ο αριθμός <span class="math inline">\(\sqrt{\dfrac{x}{y}}\)</span> βρίσκεται πλησιέστερα στο 1 από ό,τι ο αριθμός <span class="math inline">\(\sqrt{\dfrac{y}{x}}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="30" type="1">
+<li>Αν <span class="math inline">\(|a - 5| &lt; 0,3\)</span> και <span class="math inline">\(|b - 3| &lt; 0,1\)</span>, να εκτιμήσετε την τιμή της περιμέτρου των παρακάτω σχημάτων:</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Ενός ισοπλεύρου τριγώνου με πλευρά <span class="math inline">\(α\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Ενός ρόμβου με πλευρά <span class="math inline">\(b\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Ενός κύκλου με ακτίνα <span class="math inline">\(b\)</span>.</li>
+</ol></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1043,12 +1649,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
