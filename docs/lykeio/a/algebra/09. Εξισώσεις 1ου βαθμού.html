@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>09. Εξισώσεις 1^{ου} βαθμού – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</a></li></ol></nav>
+      <h1 class="title">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">9 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">11 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +866,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +941,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +960,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -986,14 +1026,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν\)</span></span></a>
   </div>
 </li>
       </ul>
@@ -1007,33 +1047,374 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εξισώσεις-1ου-βαθμού" id="toc-εξισώσεις-1ου-βαθμού" class="nav-link active" data-scroll-target="#εξισώσεις-1ου-βαθμού"><span class="header-section-number">1</span> Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</a>
+  <ul class="collapse">
+  <li><a href="#η-εξίσωση-αx-β-0" id="toc-η-εξίσωση-αx-β-0" class="nav-link" data-scroll-target="#η-εξίσωση-αx-β-0"><span class="header-section-number">1.1</span> Η Εξίσωση αx + β = 0</a></li>
+  <li><a href="#εξισώσεις-που-ανάγονται-σε-εξισώσεις-1ου-βαθμού" id="toc-εξισώσεις-που-ανάγονται-σε-εξισώσεις-1ου-βαθμού" class="nav-link" data-scroll-target="#εξισώσεις-που-ανάγονται-σε-εξισώσεις-1ου-βαθμού"><span class="header-section-number">1.2</span> Εξισώσεις που ανάγονται σε εξισώσεις 1ου βαθμού</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εξισώσεις-1ου-βαθμού" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εξισώσεις-1ου-βαθμού"><span class="header-section-number">1</span> Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</h2>
+<section id="η-εξίσωση-αx-β-0" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-εξίσωση-αx-β-0"><span class="header-section-number">1.1</span> Η Εξίσωση αx + β = 0</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<p><strong>Κάθε εξίσωση της μορφής</strong> <span class="math inline">\(\alpha x + \beta = 0\)</span> ονομάζεται εξίσωση 1ου βαθμού με άγνωστο το <span class="math inline">\(x\)</span>. Στην εξίσωση αυτή:</p>
+<ul>
+<li>Το γράμμα <span class="math inline">\(x\)</span> ονομάζεται <strong>άγνωστος</strong>.</li>
+<li>Ο αριθμός <span class="math inline">\(\alpha\)</span> ονομάζεται <strong>συντελεστής του αγνώστου</strong>.</li>
+<li>Ο αριθμός <span class="math inline">\(\beta\)</span> ονομάζεται <strong>σταθερός όρος</strong>.</li>
+</ul>
+<p><strong>Λύση ή ρίζα</strong> της εξίσωσης ονομάζεται κάθε πραγματικός αριθμός που, όταν αντικαταστήσει τον άγνωστο <span class="math inline">\(x\)</span>, επαληθεύει την ισότητα.</p>
+<p><strong>Επίλυση και Διερεύνηση</strong></p>
+<p>Η επίλυση της εξίσωσης <span class="math inline">\(\alpha x + \beta = 0\)</span> γίνεται μετατρέποντάς την αρχικά στη μορφή <span class="math inline">\(\alpha x = -\beta\)</span>. Ανάλογα με τις τιμές των <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span>, διακρίνουμε τις εξής περιπτώσεις:</p>
+<ol type="1">
+<li><strong>Αν</strong> <span class="math inline">\(\alpha \neq 0\)</span>: Η εξίσωση έχει <strong>μοναδική λύση</strong> την <span class="math inline">\(x = -\dfrac{\beta}{\alpha}\)</span>.</li>
+<li><strong>Αν</strong> <span class="math inline">\(\alpha = 0\)</span>: Η εξίσωση παίρνει τη μορφή <span class="math inline">\(0x = -\beta\)</span> και διακρίνουμε δύο υποπεριπτώσεις:
+<ul>
+<li><strong>Αν</strong> <span class="math inline">\(\beta \neq 0\)</span>: Η εξίσωση είναι <strong>αδύνατη</strong>, δηλαδή δεν έχει καμία λύση, αφού κανένας αριθμός πολλαπλασιαζόμενος με το 0 δεν δίνει αποτέλεσμα διάφορο του μηδενός.</li>
+<li><strong>Αν</strong> <span class="math inline">\(\beta = 0\)</span>: Η εξίσωση παίρνει τη μορφή <span class="math inline">\(0x = 0\)</span> και ονομάζεται <strong>ταυτότητα</strong> ή <strong>αόριστη</strong>. Αυτό σημαίνει ότι αληθεύει για κάθε πραγματικό αριθμό <span class="math inline">\(x\)</span> (έχει άπειρες λύσεις).</li>
+</ul></li>
+</ol>
+<p><strong>Παραμετρική Μορφή</strong></p>
+<p>Όταν οι συντελεστές <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span> μιας εξίσωσης δεν είναι συγκεκριμένοι αριθμοί αλλά εκφράζονται με τη βοήθεια άλλων μεταβλητών (γραμμάτων), τότε η εξίσωση ονομάζεται <strong>παραμετρική</strong>. Τα γράμματα αυτά ονομάζονται <strong>παράμετροι</strong>.</p>
+<p>Για να λύσουμε μια παραμετρική εξίσωση:</p>
+<ol type="1">
+<li>Εκτελούμε τις πράξεις και χωρίζουμε γνωστούς από αγνώστους ώστε να τη φέρουμε στη μορφή <span class="math inline">\(A \cdot x = B\)</span>, όπου <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> είναι παραστάσεις των παραμέτρων.</li>
+<li><strong>Διερευνούμε</strong> τις περιπτώσεις για τις οποίες το <span class="math inline">\(A\)</span> είναι μηδέν ή διάφορο του μηδενός, όπως περιγράφηκε παραπάνω.</li>
+</ol>
 </div>
+<hr>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> Παραδείγματα</h4>
+<ul>
+<li><p><strong>Αριθμητική εξίσωση</strong>: <span class="math inline">\(2x + 8 = 0 \Leftrightarrow 2x = -8 \Leftrightarrow x = -4\)</span> (Μοναδική λύση).</p></li>
+<li><p><strong>Αδύνατη εξίσωση</strong>: <span class="math inline">\(0x = -8\)</span>. Κανένας αριθμός δεν την επαληθεύει, άρα είναι αδύνατη.</p></li>
+<li><p><strong>Παραμετρική εξίσωση</strong>: Για την εξίσωση <span class="math inline">\((\lambda^2 - 4)x = \lambda + 2\)</span>:</p>
+<ul>
+<li><p>Αν <span class="math inline">\(\lambda \neq 2\)</span> και <span class="math inline">\(\lambda \neq -2\)</span>, τότε <span class="math inline">\(x = \dfrac{\lambda + 2}{(\lambda-2)(\lambda+2)} = \dfrac{1}{\lambda - 2}\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(\lambda = -2\)</span>, τότε <span class="math inline">\(0x = 0\)</span> (Ταυτότητα).</p></li>
+<li><p>Αν <span class="math inline">\(\lambda = 2\)</span>, τότε <span class="math inline">\(0x = 2\)</span> (Αδύνατη).</p></li>
+</ul></li>
+<li><p><strong>Το Πρόβλημα</strong> «Ένας πατέρας είναι σήμερα <strong>54 ετών</strong> και ο γιος του είναι <strong>23 ετών</strong>. Μετά από πόσα χρόνια η ηλικία του πατέρα θα είναι <strong>διπλάσια</strong> από την ηλικία του γιου του;»</p></li>
+</ul>
+<p><strong>Βήματα Επίλυσης</strong></p>
+<p><strong>1. Ορισμός του αγνώστου:</strong></p>
+<p>Έστω <span class="math inline">\(x\)</span> ο αριθμός των ετών που πρέπει να περάσουν.</p>
+<p><strong>2. Προσδιορισμός των μελλοντικών ηλικιών:</strong></p>
+<ul>
+<li><p>Σε <span class="math inline">\(x\)</span> χρόνια, ο πατέρας θα είναι <span class="math inline">\(54 + x\)</span> ετών.</p></li>
+<li><p>Σε <span class="math inline">\(x\)</span> χρόνια, ο γιος θα είναι <span class="math inline">\(23 + x\)</span> ετών.</p></li>
+</ul>
+<p><strong>3. Κατάστρωση της εξίσωσης:</strong></p>
+<p>Σύμφωνα με το πρόβλημα, η μελλοντική ηλικία του πατέρα (<span class="math inline">\(54 + x\)</span>) θα πρέπει να είναι ίση με το διπλάσιο της ηλικίας του γιου (<span class="math inline">\(2(23 + x)\)</span>). Επομένως, η εξίσωση είναι:</p>
+<p><span class="math inline">\(54 + x = 2(23 + x)\)</span></p>
+<p><strong>4. Επίλυση της εξίσωσης:</strong></p>
+<ul>
+<li><p>Εκτελούμε την επιμεριστική ιδιότητα στο δεξί μέλος:</p>
+<p><span class="math inline">\(54 + x = 46 + 2x\)</span></p></li>
+<li><p>Χωρίζουμε γνωστούς από αγνώστους (μεταφέροντας το <span class="math inline">\(x\)</span> στο δεξί μέλος και το 46 στο αριστερό):</p>
+<p><span class="math inline">\(54 - 46 = 2x - x\)</span></p></li>
+<li><p>Υπολογίζουμε τη διαφορά: <span class="math inline">\(8 = x\)</span></p></li>
+</ul>
+<p><strong>Συμπέρασμα:</strong> Η ηλικία του πατέρα θα είναι διπλάσια από αυτή του γιου του μετά από <strong>8 χρόνια</strong>.</p>
+<p><strong>Άλλα παραδείγματα προβλημάτων</strong></p>
+<ul>
+<li><p><strong>Πρόβλημα Διαδοχικών Αριθμών:</strong> Βρείτε τρεις διαδοχικούς περιττούς αριθμούς που το άθροισμά τους είναι 33.</p>
+<p><em>(Εξίσωση:</em> <span class="math inline">\(x + (x + 2) + (x + 4) = 33\)</span>).</p></li>
+<li><p><strong>Πρόβλημα Εργασίας:</strong> Δύο εργάτες σκάβουν ένα κτήμα σε 6 ημέρες. Ο πρώτος μόνος του το σκάβει σε 10 ημέρες. Πόσες ημέρες χρειάζεται ο δεύτερος μόνος του;.</p></li>
+<li><p><strong>Πρόβλημα Αναλογιών:</strong> Το άθροισμα των ηλικιών δύο αδελφών είναι 21 έτη. Αν διαιρέσουμε την ηλικία του μεγαλύτερου με του μικρότερου, το πηλίκο είναι 2 και το υπόλοιπο 3.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="εξισώσεις-που-ανάγονται-σε-εξισώσεις-1ου-βαθμού" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="εξισώσεις-που-ανάγονται-σε-εξισώσεις-1ου-βαθμού"><span class="header-section-number">1.2</span> Εξισώσεις που ανάγονται σε εξισώσεις 1ου βαθμού</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Οι εξισώσεις που ανάγονται σε εξισώσεις 1ου βαθμού είναι μορφές που αρχικά φαίνονται πιο σύνθετες (κλασματικές, ανωτέρου βαθμού, με απόλυτα ή ριζικά), αλλά μέσω κατάλληλων αλγεβρικών χειρισμών καταλήγουν στη μορφή <span class="math inline">\(\alpha x + \beta = 0\)</span>.</p>
+<section id="παραδείγματα-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.2.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><strong>Εξίσωση με κλάσματα (Απαλοιφή παρονομαστών):</strong> Να λυθεί η εξίσωση: <span class="math inline">\(\dfrac{x+2}{3} + \dfrac{x+3}{4} = \dfrac{x+4}{5} + \dfrac{x+5}{6}\)</span>.
+<ul>
+<li><strong>Βήμα 1:</strong> Βρίσκουμε το Ε.Κ.Π. των παρονομαστών (<span class="math inline">\(3, 4, 5, 6\)</span>), το οποίο είναι το <span class="math inline">\(60\)</span>.</li>
+<li><strong>Βήμα 2:</strong> Πολλαπλασιάζουμε όλους τους όρους με το <span class="math inline">\(60\)</span>: <span class="math inline">\(20(x+2) + 15(x+3) = 12(x+4) + 10(x+5)\)</span>.</li>
+<li><strong>Βήμα 3:</strong> Εκτελούμε τις πράξεις: <span class="math inline">\(20x + 40 + 15x + 45 = 12x + 48 + 10x + 50\)</span>.</li>
+<li><strong>Βήμα 4:</strong> Χωρίζουμε γνωστούς από αγνώστους: <span class="math inline">\(35x - 22x = 98 - 85 \Rightarrow 13x = 13 \Rightarrow \mathbf{x = 1}\)</span>.</li>
+</ul></li>
+<li><strong>Εξίσωση ανωτέρου βαθμού (Παραγοντοποίηση):</strong> Να λυθεί η εξίσωση: <span class="math inline">\((x-4)x^2 + 2x(x-4) + (x-4) = 0\)</span>.
+<ul>
+<li><strong>Βήμα 1:</strong> Παρατηρούμε τον κοινό παράγοντα <span class="math inline">\((x-4)\)</span> και τον βγάζουμε έξω: <span class="math inline">\((x-4)(x^2 + 2x + 1) = 0\)</span>.</li>
+<li><strong>Βήμα 2:</strong> Αναγνωρίζουμε την ταυτότητα <span class="math inline">\((x+1)^2\)</span>: <span class="math inline">\((x-4)(x+1)^2 = 0\)</span>.</li>
+<li><strong>Βήμα 3:</strong> Χρησιμοποιούμε την ιδιότητα <span class="math inline">\(\alpha \cdot \beta = 0 \Leftrightarrow \alpha = 0\)</span> ή <span class="math inline">\(\beta = 0\)</span>.</li>
+<li><strong>Λύσεις:</strong> <span class="math inline">\(x-4=0 \Rightarrow \mathbf{x=4}\)</span> ή <span class="math inline">\(x+1=0 \Rightarrow \mathbf{x=-1}\)</span>.</li>
+</ul></li>
+<li><strong>Κλασματική εξίσωση (Άγνωστος στον παρονομαστή):</strong> Να λυθεί η εξίσωση: <span class="math inline">\(\dfrac{x+1}{x^2+x} + \dfrac{x}{(x+1)^2} = \dfrac{2}{x}\)</span>.
+<ul>
+<li><strong>Βήμα 1:</strong> Παραγοντοποιούμε τους παρονομαστές: <span class="math inline">\(\dfrac{x+1}{x(x+1)} + \dfrac{x}{(x+1)^2} = \dfrac{2}{x}\)</span>.</li>
+<li><strong>Βήμα 2:</strong> Θέτουμε περιορισμούς: <span class="math inline">\(x \neq 0\)</span> και <span class="math inline">\(x+1 \neq 0 \Rightarrow x \neq -1\)</span>.</li>
+<li><strong>Βήμα 3:</strong> Μετά την απλοποίηση του πρώτου κλάσματος και την απαλοιφή παρονομαστών με το Ε.Κ.Π. <span class="math inline">\(x(x+1)^2\)</span>, η εξίσωση ανάγεται σε πρωτοβάθμια: <span class="math inline">\((x+1)^2 - x^2 = 0 \Rightarrow 2x+1 = 0 \Rightarrow \mathbf{x = -1/2}\)</span>.</li>
+</ul></li>
+</ol>
+</section>
+</div>
+<section id="παραδείγματα-με-απόλυτα" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored"><span class="header-section-number">1.2.2</span> Παραδείγματα με απόλυτα</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μια εξίσωση με απόλυτη τιμή της μορφής <span class="math inline">\(|f(x)| = \theta\)</span>, όπως η άσκηση (<span class="math inline">\(|2x - 3| = 5\)</span>), λύνεται με βάση τις εξής βασικές ιδιότητες:</p>
+<p><strong>1. Η Βασική Ιδιότητα</strong> Αν ένας πραγματικός αριθμός <span class="math inline">\(\theta\)</span> είναι θετικός (<span class="math inline">\(\theta &gt; 0\)</span>), τότε η εξίσωση <span class="math inline">\(|x| = \theta\)</span> έχει δύο λύσεις: <span class="math inline">\(x = \theta\)</span> ή <span class="math inline">\(x = -\theta\)</span>.</p>
+<p>Στην περίπτωση που η παράσταση μέσα στο απόλυτο είναι πιο σύνθετη, η ιδιότητα γενικεύεται ως εξής: <span class="math inline">\(|f(x)| = \theta \Leftrightarrow f(x) = \theta\)</span> ή <span class="math inline">\(f(x) = -\theta\)</span>.</p>
+<p><strong>2. Βήματα Επίλυσης για την Άσκηση</strong> <span class="math inline">\(|2x - 3| = 5\)</span></p>
+<ul>
+<li><strong>Βήμα 1: Απαλλαγή από το απόλυτο.</strong> Χρησιμοποιούμε την ιδιότητα και “σπάμε” την εξίσωση σε δύο απλές πρωτοβάθμιες εξισώσεις:
+<ol type="1">
+<li><span class="math inline">\(2x - 3 = 5\)</span></li>
+<li><span class="math inline">\(2x - 3 = -5\)</span></li>
+</ol></li>
+<li><strong>Βήμα 2: Επίλυση των εξισώσεων.</strong>
+<ul>
+<li>Για την πρώτη: <span class="math inline">\(2x = 5 + 3 \Rightarrow 2x = 8 \Rightarrow \mathbf{x = 4}\)</span>.</li>
+<li>Για τη δεύτερη: <span class="math inline">\(2x = -5 + 3 \Rightarrow 2x = -2 \Rightarrow \mathbf{x = -1}\)</span>.</li>
+</ul></li>
+</ul>
+<p><strong>Συμπέρασμα:</strong> Οι λύσεις της εξίσωσης είναι οι αριθμοί <strong>4</strong> και <strong>-1</strong>.</p>
+<p><strong>Η επίλυση εξισώσεων με δύο απόλυτες τιμές</strong></p>
+<p><strong>1. Εξισώσεις της μορφής</strong> <span class="math inline">\(|f(x)| = |g(x)|\)</span></p>
+<p>Όταν η εξίσωση έχει τη μορφή δύο απολύτων που είναι ίσα μεταξύ τους, χρησιμοποιείται η βασική ιδιότητα: <span class="math inline">\(|f(x)| = |g(x)| \Leftrightarrow f(x) = g(x)\)</span> ή <span class="math inline">\(f(x) = -g(x)\)</span>.</p>
+<p><strong>Παράδειγμα:</strong> Για την εξίσωση <span class="math inline">\(|3x - 12| = |2x - 3|\)</span>, οι λύσεις προκύπτουν από τις εξής δύο περιπτώσεις:</p>
+<ul>
+<li><span class="math inline">\(3x - 12 = 2x - 3 \Rightarrow x = 9\)</span>.</li>
+<li><span class="math inline">\(3x - 12 = -(2x - 3) \Rightarrow 3x - 12 = -2x + 3 \Rightarrow 5x = 15 \Rightarrow x = 3\)</span>.</li>
+</ul>
+<p><strong>2. Εξισώσεις με διαφορετικά απόλυτα (π.χ.</strong> <span class="math inline">\(|f(x)| + |g(x)| = k\)</span>)</p>
+<p>Όταν στην εξίσωση υπάρχουν περισσότερα από ένα διαφορετικά απόλυτα (και ενδεχομένως ο άγνωστος <span class="math inline">\(x\)</span> και εκτός απολύτων), η επίλυση απαιτεί την <strong>απαλλαγή από τα απόλυτα</strong> μέσω της μελέτης του προσήμου των παραστάσεων που βρίσκονται μέσα σε αυτά.</p>
+<p><strong>Η μεθοδολογία περιλαμβάνει τα εξής βήματα:</strong>:</p>
+<ol type="1">
+<li><strong>Εύρεση των ριζών:</strong> Βρίσκουμε τις τιμές του <span class="math inline">\(x\)</span> που μηδενίζουν κάθε παράσταση μέσα σε απόλυτο (π.χ. λύνουμε <span class="math inline">\(f(x)=0\)</span> και <span class="math inline">\(g(x)=0\)</span>).</li>
+<li><strong>Δημιουργία διαστημάτων:</strong> Τοποθετούμε αυτές τις τιμές στον άξονα των πραγματικών αριθμών, χωρίζοντάς τον σε επιμέρους διαστήματα.</li>
+<li><strong>Προσδιορισμός προσήμων:</strong> Σε κάθε διάστημα, προσδιορίζουμε αν οι παραστάσεις μέσα στα απόλυτα είναι θετικές ή αρνητικές (συχνά με τη βοήθεια ενός <strong>πίνακα προσήμων</strong>).</li>
+<li><strong>Επίλυση ανά διάστημα:</strong> Για κάθε διάστημα χωριστά, αντικαθιστούμε τα απόλυτα με την αντίστοιχη παράσταση (τον εαυτό της αν είναι θετική, την αντίθετή της αν είναι αρνητική) και λύνουμε την απλή εξίσωση που προκύπτει.</li>
+<li><strong>Έλεγχος λύσεων:</strong> Ελέγχουμε αν η λύση που βρήκαμε ανήκει στο συγκεκριμένο διάστημα που εξετάζουμε. Αν δεν ανήκει, η λύση απορρίπτεται.</li>
+<li><strong>Τελική λύση:</strong> Η συνολική λύση της εξίσωσης είναι η ένωση των δεκτών λύσεων από όλα τα διαστήματα.</li>
+</ol>
+<p><strong>Παράδειγμα:</strong> Στην εξίσωση <span class="math inline">\(3|x - 1| + 2|x - 2| - |x - 3| = 0\)</span>, οι τιμές που μηδενίζουν τα απόλυτα είναι οι <span class="math inline">\(1, 2\)</span> και <span class="math inline">\(3\)</span>. Εξετάζουμε την εξίσωση στα διαστήματα <span class="math inline">\((-\infty, 1)\)</span>, <span class="math inline">\([1, 2)\)</span>, <span class="math inline">\([2, 3)\)</span> και <span class="math inline">\([3, +\infty)\)</span>, ελέγχοντας σε κάθε περίπτωση ποια λύση είναι δεκτή.</p>
+<section id="ειδικές-περιπτώσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ειδικές-περιπτώσεις"><span class="header-section-number">1.3</span> <strong>Ειδικές Περιπτώσεις</strong></h3>
+<ul>
+<li><strong>Άθροισμα απολύτων ίσο με μηδέν:</strong> Αν η εξίσωση είναι της μορφής <span class="math inline">\(|f(x)| + |g(x)| = 0\)</span>, τότε επειδή κάθε απόλυτο είναι <span class="math inline">\(\ge 0\)</span>, η ισότητα ισχύει μόνο αν <strong>ταυτόχρονα</strong> <span class="math inline">\(f(x)=0\)</span> <strong>και</strong> <span class="math inline">\(g(x)=0\)</span>.</li>
+<li><strong>Χρήση βοηθητικού αγνώστου:</strong> Αν οι παραστάσεις μέσα στα απόλυτα είναι ίδιες (π.χ. <span class="math inline">\(x^2 - 3|x| + 2 = 0\)</span>), μπορούμε να ϑέσουμε <span class="math inline">\(|x| = \omega\)</span> (με <span class="math inline">\(\omega \ge 0\)</span>) και να λύσουμε την εξίσωση ως προς <span class="math inline">\(\omega\)</span>.</li>
+</ul>
+</section>
+</div>
+</div>
+<hr>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(3x - 8 = 13\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(\dfrac{x-1}{2} + 10 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(|2x - 3| = 5\)</span>.</p></li>
+<li><p>Για ποιες τιμές των <span class="math inline">\(\lambda, \mu \in \mathbb{R}\)</span> η εξίσωση <span class="math inline">\((\lambda - 2)x = \mu - 1\)</span> είναι ταυτότητα και για ποιες είναι αδύνατη;.</p></li>
+<li><p>Να λυθεί και να διερευνηθεί η εξίσωση <span class="math inline">\(\lambda^2(x - 1) = x - \lambda\)</span> για τις διάφορες τιμές του <span class="math inline">\(\lambda \in \mathbb{R}\)</span>.</p></li>
+<li><p><strong>Πράξεις και αναγωγή:</strong> Να λυθεί η εξίσωση <span class="math inline">\((x-3)^2 + 2x - 4 = x(x-2) + 6\)</span>.</p></li>
+<li><p><strong>Αριθμητική με κλάσματα:</strong> Να λυθεί η εξίσωση <span class="math inline">\(\dfrac{x-2}{3} + \dfrac{11}{2} = \dfrac{1-2x}{4}\)</span>.</p></li>
+<li><p><strong>Παραγοντοποίηση:</strong> Να λυθεί η εξίσωση <span class="math inline">\((x^2-5)(x-1) + x - 1 = 0\)</span>.</p></li>
+<li><p><strong>Κλασματική:</strong> Να λυθεί η εξίσωση <span class="math inline">\(\dfrac{4}{x+2} - \dfrac{7}{x+3} = \dfrac{37}{x^2+5x+6}\)</span>.</p></li>
+<li><p><strong>Με απόλυτες τιμές:</strong> Να λυθεί η εξίσωση <span class="math inline">\(|2x - 3| = |x + 1|\)</span>.</p></li>
+<li><p><strong>Παραμετρική:</strong> Να λυθεί και να διερευνηθεί η εξίσωση <span class="math inline">\(\lambda^2(x-1) = 3\lambda x - 2(x+\lambda)\)</span> για τις διάφορες τιμές του <span class="math inline">\(\lambda \in \mathbb{R}\)</span>.</p></li>
+<li><p><strong>Σύνθετη κλασματική:</strong> Να λυθεί η εξίσωση <span class="math inline">\(\dfrac{x+1}{x-1} + \dfrac{x-6}{x+2} = 2\)</span>.</p></li>
+<li><p>Να λύσετε τις εξισώσεις:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(5x - 2(3x - 4) = 2x - 10\)</span></li>
+<li>β. <span class="math inline">\(\frac{2-x}{3} - \frac{x+2}{2} = \frac{x-6}{6} + \frac{1}{2}\)</span></li>
+<li>γ. <span class="math inline">\(\frac{x}{3} - \frac{x}{4} = \frac{x}{6} - \frac{x}{12} + \frac{1}{4}\)</span></li>
+<li>δ. <span class="math inline">\(2,4(x-2) + 3,5 - 0,5x = 9,1\)</span></li>
+</ul>
+<ol start="14" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(3(2x-5) - 4(2x-5) = 7\)</span></li>
+<li>β. <span class="math inline">\(3x - \dfrac{4-x}{2} = \dfrac{5x}{2} - 2\)</span></li>
+</ul>
+<ol start="15" type="1">
+<li>Να λύσετε τις εξισώσεις για τις διάφορες τιμές της παραμέτρου <span class="math inline">\(\lambda \in \mathbb{R}\)</span>:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\((\lambda + 3)x = \lambda + 3\)</span></li>
+<li>β. <span class="math inline">\((\lambda - 1)x = \lambda\)</span></li>
+<li>γ. <span class="math inline">\(\lambda(\lambda + 2)x = \lambda + 2\)</span></li>
+</ul>
+<ol start="16" type="1">
+<li>Σε ένα ορθογώνιο τραπέζιο με ύψος <span class="math inline">\(AD = 6\)</span>, μικρή βάση <span class="math inline">\(DC = 4\)</span> και μεγάλη βάση <span class="math inline">\(AB = 8\)</span>, θεωρούμε σημείο <span class="math inline">\(M\)</span> πάνω στην <span class="math inline">\(AD\)</span> έτσι ώστε <span class="math inline">\(AM = x\)</span>.</li>
+</ol>
+<ul>
+<li>α. Να βρείτε το <span class="math inline">\(x\)</span> ώστε το εμβαδόν <span class="math inline">\(E_1\)</span> (του τριγώνου <span class="math inline">\(MDC\)</span>) να είναι ίσο με το εμβαδόν <span class="math inline">\(E_2\)</span> (του τριγώνου <span class="math inline">\(MAB\)</span>).</li>
+<li>β. Να βρείτε το <span class="math inline">\(x\)</span> ώστε <span class="math inline">\(E_1 + E_2 = 12\)</span>.</li>
+</ul>
+<ol start="17" type="1">
+<li><p>Από κεφάλαιο <span class="math inline">\(6.000\)</span> € ένα μέρος κατατέθηκε με επιτόκιο <span class="math inline">\(4\%\)</span> και το υπόλοιπο με επιτόκιο <span class="math inline">\(6\%\)</span>. Στο τέλος του χρόνου οι συνολικοί τόκοι ήταν <span class="math inline">\(320\)</span> €. Ποιο ποσό τοκίστηκε με κάθε επιτόκιο;</p></li>
+<li><p>Να επιλυθούν οι τύποι ως προς τη μεταβλητή που ζητείται:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(E = \dfrac{1}{2}\alpha \cdot \upsilon\)</span> (ως προς <span class="math inline">\(\upsilon\)</span>)</li>
+<li>β. <span class="math inline">\(P = 2\alpha + 2\beta\)</span> (ως προς <span class="math inline">\(\alpha\)</span>)</li>
+<li>γ. <span class="math inline">\(V=πρ^2υ\)</span> (ως προς υ)</li>
+</ul>
+<ol start="19" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^2(x-3) + 4x(x-3) + 4(x-3) = 0\)</span></li>
+<li>β. <span class="math inline">\((x-5)^2 - (5-x)(2+x) = 0\)</span></li>
+</ul>
+<ol start="20" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x(x^2 - 4) - x^3 + 2x^2 = 0\)</span></li>
+<li>β. <span class="math inline">\((x+2)^2 + x^2 - 4 = 0\)</span></li>
+</ul>
+<ol start="21" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x(x-3)^2 = x^2 - 6x + 9\)</span></li>
+<li>β. <span class="math inline">\((x^2-1)(x-2) = (x^2-4)(x-1)\)</span></li>
+</ul>
+<ol start="22" type="1">
+<li><p>Να λύσετε την εξίσωση: <span class="math display">\[(x+1)^3 - x^2 - x = 0\]</span></p></li>
+<li><p>Να λύσετε τις εξισώσεις:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^3 - 3x^2 - 4x + 12 = 0\)</span></li>
+<li>β. <span class="math inline">\(x^3 - x^2 - (3x-2)(x-1) = 0\)</span></li>
+</ul>
+<ol start="24" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\dfrac{x}{x-2} = \dfrac{2}{x^2-2x}\)</span></li>
+<li>β. <span class="math inline">\(\dfrac{x+2}{x^2-4} + \dfrac{1}{x^2-4x+4} = 0\)</span></li>
+</ul>
+<ol start="25" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\dfrac{1}{x-3} + \dfrac{1}{x+3} = \dfrac{4}{x^2-9}\)</span></li>
+<li>β. <span class="math inline">\(\dfrac{2}{x+1} - \dfrac{1}{x} = \dfrac{x-1}{x^2+x}\)</span></li>
+</ul>
+<ol start="26" type="1">
+<li><p>Να βρείτε τρεις διαδοχικούς περιττούς ακέραιους τέτοιους ώστε το άθροισμα των τετραγώνων τους να ισούται με <span class="math inline">\(83\)</span>.</p></li>
+<li><p>Να λύσετε τις εξισώσεις:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(|3x - 2| = 7\)</span></li>
+<li>β. <span class="math inline">\(|x - 5| = |2x - 1|\)</span></li>
+<li>γ. <span class="math inline">\(|x - 1| = 3x - 2\)</span></li>
+</ul>
+<ol start="28" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\dfrac{|x|+2}{2} - \dfrac{|x|+2}{4} = \dfrac{1}{2}\)</span></li>
+<li>β. <span class="math inline">\(\dfrac{3|x|-1}{4} - \dfrac{|x|+1}{3} = 1\)</span></li>
+</ul>
+<ol start="29" type="1">
+<li>Να λύσετε τις εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\left| \dfrac{2-x}{2+x} \right| = 3\)</span></li>
+<li>β. <span class="math inline">\(|x-3| \cdot |x-4| = |x-3|\)</span></li>
+</ul>
+<ol start="30" type="1">
+<li>Να αποδείξετε ότι η εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\((x+\beta)^2 - (x-\alpha)^2 = 2\beta(\alpha+\beta)\)</span></li>
+<li>β. <span class="math inline">\(\dfrac{x+α}{β}=\dfrac{x+β}{α}\)</span></li>
+</ul>
+<p>έχουν πάντα λύση ως προς <span class="math inline">\(x\)</span>, για όλους τους πραγματικούς αριθμούς <span class="math inline">\(\alpha, \beta\)</span> με <span class="math inline">\(α\ne β\)</span>.</p>
+<ol start="31" type="1">
+<li><p>Ποιοι περιορισμοί πρέπει να ισχύουν για τα <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span>, ώστε να έχει λύση η εξίσωση <span class="math inline">\(\dfrac{x}{\alpha} + \dfrac{x}{\beta} = 2\)</span>;</p></li>
+<li><p>Πόσο καθαρό νερό πρέπει να προσθέσουμε σε <span class="math inline">\(500\text{ml}\)</span> διαλύματος αλατιού περιεκτικότητας <span class="math inline">\(20\%\)</span>, ώστε να πάρουμε διάλυμα περιεκτικότητας <span class="math inline">\(10\%\)</span>;</p></li>
+<li><p>Ένας ποδηλάτης Α ξεκινά με ταχύτητα <span class="math inline">\(15\text{km/h}\)</span>. Μετά από <span class="math inline">\(1\)</span> ώρα, ένας δεύτερος ποδηλάτης Β ξεκινά από το ίδιο σημείο με ταχύτητα <span class="math inline">\(20\text{km/h}\)</span>. Σε πόση ώρα ο Β θα φτάσει τον Α;</p></li>
+<li><p>Να λύσετε την εξίσωση <span class="math inline">\(\dfrac{x-\alpha}{x+\alpha} = \dfrac{x^2}{x^2-\alpha^2}\)</span> για όλες τις τιμές του <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση <span class="math inline">\(\dfrac{x^3-1}{x-1} = x^2+x+1\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση <span class="math inline">\(|3|x|-2| = 4\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση <span class="math inline">\(\sqrt{x^2-4x+4} = |2x-1|\)</span>.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη:</em> <span class="math inline">\(\sqrt{x^2-4x+4} = \sqrt{(x-2)^2} = |x-2|\)</span>)</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1061,12 +1442,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
