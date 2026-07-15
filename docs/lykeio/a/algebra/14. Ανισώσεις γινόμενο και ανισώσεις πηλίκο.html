@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</a></li></ol></nav>
+      <h1 class="title">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">9 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">16 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +866,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +941,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +960,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -1016,7 +1056,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
   </div>
 </li>
@@ -1031,33 +1071,429 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ανισώσεις-γινόμενο-και-ανισώσεις-πηλίκο" id="toc-ανισώσεις-γινόμενο-και-ανισώσεις-πηλίκο" class="nav-link active" data-scroll-target="#ανισώσεις-γινόμενο-και-ανισώσεις-πηλίκο"><span class="header-section-number">1</span> Ανισώσεις γινόμενο και ανισώσεις πηλίκο</a>
+  <ul class="collapse">
+  <li><a href="#πρόσημο-γινομένου" id="toc-πρόσημο-γινομένου" class="nav-link" data-scroll-target="#πρόσημο-γινομένου"><span class="header-section-number">1.1</span> Πρόσημο γινομένου</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.3</span> Παραδείγματα</a></li>
+  <li><a href="#όταν-ένα-γινόμενο-px-περιέχει-παράγοντα-υψωμένο-σε-δύναμη" id="toc-όταν-ένα-γινόμενο-px-περιέχει-παράγοντα-υψωμένο-σε-δύναμη" class="nav-link" data-scroll-target="#όταν-ένα-γινόμενο-px-περιέχει-παράγοντα-υψωμένο-σε-δύναμη"><span class="header-section-number">1.4</span> Όταν ένα γινόμενο <span class="math inline">\(P(x)\)</span> περιέχει παράγοντα υψωμένο σε δύναμη,</a></li>
+  <li><a href="#ανισώσεις-της-μορφής-αx-βx-φx-0-0" id="toc-ανισώσεις-της-μορφής-αx-βx-φx-0-0" class="nav-link" data-scroll-target="#ανισώσεις-της-μορφής-αx-βx-φx-0-0"><span class="header-section-number">1.5</span> Ανισώσεις της μορφής Α(x) · Β(x) · … · Φ(x) &gt; 0 (&lt; 0)</a></li>
+  <li><a href="#ανισώσεις-της-μορφής-dfracaxbx0-quad-η-quad-0-ge-0-le-0" id="toc-ανισώσεις-της-μορφής-dfracaxbx0-quad-η-quad-0-ge-0-le-0" class="nav-link" data-scroll-target="#ανισώσεις-της-μορφής-dfracaxbx0-quad-η-quad-0-ge-0-le-0"><span class="header-section-number">1.6</span> Ανισώσεις της μορφής <span class="math inline">\(\dfrac{A(x)}{B(x)}&gt;0 \quad η \quad (&lt;0), (\ge 0), (\le 0)\)</span></a></li>
+  <li><a href="#η-επίλυση-ανισώσεων-που-περιέχουν-απόλυτα-και-τριώνυμα-μαζί" id="toc-η-επίλυση-ανισώσεων-που-περιέχουν-απόλυτα-και-τριώνυμα-μαζί" class="nav-link" data-scroll-target="#η-επίλυση-ανισώσεων-που-περιέχουν-απόλυτα-και-τριώνυμα-μαζί"><span class="header-section-number">1.7</span> Η επίλυση ανισώσεων που περιέχουν <strong>απόλυτα και τριώνυμα μαζί</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.8</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ανισώσεις-γινόμενο-και-ανισώσεις-πηλίκο" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ανισώσεις-γινόμενο-και-ανισώσεις-πηλίκο"><span class="header-section-number">1</span> Ανισώσεις γινόμενο και ανισώσεις πηλίκο</h2>
+<section id="πρόσημο-γινομένου" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="πρόσημο-γινομένου"><span class="header-section-number">1.1</span> Πρόσημο γινομένου</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η μελέτη του προσήμου ενός γινομένου <span class="math inline">\(P(x) = A(x) \cdot B(x) \cdot \dots \cdot \Phi(x)\)</span> βασίζεται στον προσδιορισμό του προσήμου κάθε παράγοντα ξεχωριστά και τη συνδυαστική τους μελέτη μέσω ενός πίνακα προσήμων.</p>
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<p><strong>Έχουμε μάθει ….</strong></p>
+<p>Α. <strong>Πρόσημο Πρωτοβάθμιου Παράγοντα (</strong><span class="math inline">\(ax + \beta\)</span>, <span class="math inline">\(a \neq 0\)</span>):</p>
+<ul>
+<li><p>Μηδενίζεται για <span class="math inline">\(x = -\dfrac{\beta}{a}\)</span>.</p></li>
+<li><p>Είναι <strong>ομόσημο του</strong> <span class="math inline">\(a\)</span> για τιμές του <span class="math inline">\(x\)</span> μεγαλύτερες από τη ρίζα (<span class="math inline">\(x &gt; -\dfrac{\beta}{a}\)</span>).</p></li>
+<li><p>Είναι <strong>ετερόσημο του</strong> <span class="math inline">\(a\)</span> για τιμές του <span class="math inline">\(x\)</span> μικρότερες από τη ρίζα (<span class="math inline">\(x &lt; -\dfrac{\beta}{a}\)</span>).</p></li>
+</ul>
+<p>Β. <strong>Πρόσημο Τριωνύμου (</strong><span class="math inline">\(ax^2 + \beta x + \gamma\)</span>, <span class="math inline">\(a \neq 0\)</span>):</p>
+<p>Το πρόσημο του τριωνύμου εξαρτάται από τη διακρίνουσα <span class="math inline">\(\Delta = \beta^2 - 4a\gamma\)</span>:</p>
+<ul>
+<li><ol type="1">
+<li><strong>Αν</strong> <span class="math inline">\(\Delta &gt; 0\)</span>: Το τριώνυμο έχει δύο άνισες πραγματικές ρίζες <span class="math inline">\(x_1, x_2\)</span>. Είναι <strong>ετερόσημο του</strong> <span class="math inline">\(a\)</span> για <span class="math inline">\(x \in (x_1, x_2)\)</span> (εντός των ριζών) και <strong>ομόσημο του</strong> <span class="math inline">\(a\)</span> εκτός των ριζών.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><strong>Αν</strong> <span class="math inline">\(\Delta = 0\)</span>: Το τριώνυμο έχει μια διπλή πραγματική ρίζα <span class="math inline">\(x_0 = -\frac{\beta}{2a}\)</span>. Είναι <strong>ομόσημο του</strong> <span class="math inline">\(a\)</span> για κάθε <span class="math inline">\(x \neq x_0\)</span> και μηδενίζεται για <span class="math inline">\(x = x_0\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><strong>Αν</strong> <span class="math inline">\(\Delta &lt; 0\)</span>: Το τριώνυμο δεν έχει πραγματικές ρίζες και είναι <strong>ομόσημο του</strong> <span class="math inline">\(a\)</span> για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>.</li>
+</ol></li>
+</ul>
+<section id="μεθοδολογία-μελέτης-γινομένου" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μεθοδολογία-μελέτης-γινομένου"><span class="header-section-number">1.2</span> Μεθοδολογία Μελέτης Γινομένου</h3>
+<p>Για να βρούμε το πρόσημο του γινομένου <span class="math inline">\(P(x)\)</span> ακολουθούμε τα εξής βήματα:</p>
+<ol type="1">
+<li><p><strong>Βρίσκουμε τις ρίζες</strong> κάθε παράγοντα <span class="math inline">\(A(x), B(x), \dots\)</span> λύνοντας τις αντίστοιχες εξισώσεις.</p></li>
+<li><p><strong>Κατασκευάζουμε έναν συγκεντρωτικό πίνακα προσήμων</strong> όπου:</p>
+<ul>
+<li>Στην πρώτη γραμμή τοποθετούμε όλες τις ρίζες κατά αύξουσα σειρά.</li>
+<li>Σε κάθε επόμενη γραμμή τοποθετούμε το πρόσημο κάθε παράγοντα ξεχωριστά.</li>
+<li>Στην τελευταία γραμμή υπολογίζουμε το πρόσημο του γινομένου <span class="math inline">\(P(x)\)</span> εφαρμόζοντας τον κανόνα των προσήμων (το γινόμενο είναι θετικό αν το πλήθος των αρνητικών παραγόντων είναι άρτιο, και αρνητικό αν είναι περιττό).</li>
+</ul></li>
+</ol>
+</section>
 </div>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.3</span> Παραδείγματα</h3>
+<p><strong>Περίπτωση Α: Πρωτοβάθμιοι παράγοντες</strong></p>
+<p>Έστω <span class="math inline">\(P(x) = (2x - 1)(4 - 3x)\)</span>.</p>
+<ul>
+<li><p>Ρίζες: <span class="math inline">\(2x-1=0 \Rightarrow x=1/2\)</span> και <span class="math inline">\(4-3x=0 \Rightarrow x=4/3\)</span>.</p></li>
+<li><p>Πίνακας: Για <span class="math inline">\(x \in (1/2, 4/3)\)</span>, ο πρώτος παράγοντας είναι θετικός και ο δεύτερος θετικός, άρα <span class="math inline">\(P(x) &gt; 0\)</span>. Για <span class="math inline">\(x &lt; 1/2\)</span> ή <span class="math inline">\(x &gt; 4/3\)</span>, οι παράγοντες είναι ετερόσημοι, άρα <span class="math inline">\(P(x) &lt; 0\)</span>.<br>
+<img src="images/clipboard-2738150904.png" class="img-fluid" width="390"></p></li>
+</ul>
+<p><strong>Περίπτωση Β: Τριώνυμα με</strong> <span class="math inline">\(\Delta &gt; 0\)</span> και <span class="math inline">\(\Delta = 0\)</span></p>
+<p>Έστω <span class="math inline">\(P(x) = (x^2 - 5x + 6)(x^2 + 2x + 1)\)</span>.</p>
+<ul>
+<li><p>Το <span class="math inline">\(x^2 - 5x + 6\)</span> έχει ρίζες 2 και 3.</p></li>
+<li><p>Το <span class="math inline">\(x^2 + 2x + 1\)</span> έχει διπλή ρίζα το -1.</p></li>
+<li><p>Το γινόμενο <span class="math inline">\(P(x)\)</span> είναι θετικό για <span class="math inline">\(x &lt; 2\)</span> (εκτός του -1) και για <span class="math inline">\(x &gt; 3\)</span>, ενώ είναι αρνητικό για <span class="math inline">\(x \in (2, 3)\)</span>.<br>
+<img src="images/clipboard-2465335215.png" class="img-fluid" width="529"></p></li>
+</ul>
+<p><strong>Περίπτωση Γ: Συνδυασμός παραγόντων και τριωνύμου με</strong> <span class="math inline">\(\Delta &lt; 0\)</span></p>
+<p>Έστω <span class="math inline">\(P(x) = (x - 1)(x^2 - 2x + 5)(-x^2 + 5x - 6)\)</span>.</p>
+<ul>
+<li><p>Ρίζα <span class="math inline">\(x-1\)</span>: <span class="math inline">\(x=1\)</span>. θετικό για <span class="math inline">\(x&gt;1\)</span></p></li>
+<li><p>Τριώνυμο <span class="math inline">\(x^2 - 2x + 5\)</span>: <span class="math inline">\(\Delta = -16 &lt; 0\)</span> και <span class="math inline">\(a=1&gt;0\)</span>, άρα είναι πάντα θετικό.</p></li>
+<li><p>Τριώνυμο <span class="math inline">\(-x^2 + 5x - 6\)</span>: <span class="math inline">\(\Delta = 1\)</span> και ρίζες 2, 3. Επειδή <span class="math inline">\(a=-1&lt;0\)</span>, είναι θετικό στο <span class="math inline">\((2, 3)\)</span> και αρνητικό αλλού.</p></li>
+<li><p>Ο πίνακας δείχνει ότι <span class="math inline">\(P(x) \leq 0\)</span> για <span class="math inline">\(x \in[1,2] \cup [3, +\infty)\)</span>.<br>
+<img src="images/clipboard-1724264737.png" class="img-fluid"></p></li>
+</ul>
+<hr>
+</section>
+<section id="όταν-ένα-γινόμενο-px-περιέχει-παράγοντα-υψωμένο-σε-δύναμη" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="όταν-ένα-γινόμενο-px-περιέχει-παράγοντα-υψωμένο-σε-δύναμη"><span class="header-section-number">1.4</span> Όταν ένα γινόμενο <span class="math inline">\(P(x)\)</span> περιέχει παράγοντα υψωμένο σε δύναμη,</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Με παράγοντες σε δύναμη
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>η μελέτη του προσήμου του διαφοροποιείται ανάλογα με το αν ο <strong>εκθέτης της δύναμης είναι άρτιος ή περιττός</strong>.</p>
+<p>Συγκεκριμένα, ισχύουν οι εξής κανόνες:</p>
+<section id="παράγοντας-με-άρτιο-εκθέτη-2nu" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="παράγοντας-με-άρτιο-εκθέτη-2nu"><span class="header-section-number">1.4.1</span> Παράγοντας με Άρτιο Εκθέτη (<span class="math inline">\(2\nu\)</span>)</h4>
+<ul>
+<li><p><strong>Πρόσημο:</strong> Κάθε πραγματικός αριθμός υψωμένος σε άρτια δύναμη είναι πάντα <strong>μη αρνητικός</strong> (<span class="math inline">\(a^{2\nu} \geq 0\)</span>),. Αυτό σημαίνει ότι ο παράγοντας αυτός είναι θετικός για κάθε τιμή του <span class="math inline">\(x\)</span>, εκτός από τις τιμές που μηδενίζουν τη βάση του,.</p></li>
+<li><p><strong>Επίδραση στο Γινόμενο:</strong> Επειδή ο παράγοντας είναι μόνιμα θετικός (εκτός από τις ρίζες του), <strong>δεν επηρεάζει το πρόσημο του γινομένου</strong> στα διαστήματα μεταξύ των ριζών,.</p></li>
+<li><p><strong>Στον Πίνακα Προσήμων:</strong> Στη γραμμή που αντιστοιχεί σε αυτόν τον παράγοντα, τοποθετούμε το πρόσημο <strong>(+)</strong> σε όλα τα διαστήματα, σημειώνοντας όμως με «0» τη θέση όπου μηδενίζεται η βάση του,.</p></li>
+</ul>
+</section>
+<section id="παράγοντας-με-περιττό-εκθέτη-2nu1" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="παράγοντας-με-περιττό-εκθέτη-2nu1"><span class="header-section-number">1.4.2</span> Παράγοντας με Περιττό Εκθέτη (<span class="math inline">\(2\nu+1\)</span>)</h4>
+<ul>
+<li><p><strong>Πρόσημο:</strong> Μια δύναμη με περιττό εκθέτη διατηρεί το <strong>ίδιο πρόσημο με τη βάση της</strong>,. Αν η βάση είναι θετική, η δύναμη είναι θετική· αν η βάση είναι αρνητική, η δύναμη είναι αρνητική,.</p></li>
+<li><p><strong>Επίδραση στο Γινόμενο:</strong> Ο παράγοντας αυτός συμπεριφέρεται ακριβώς όπως ο αντίστοιχος πρωτοβάθμιος ή δευτεροβάθμιος παράγοντας χωρίς τη δύναμη.</p></li>
+<li><p><strong>Στον Πίνακα Προσήμων:</strong> Η μελέτη γίνεται κανονικά, όπως θα γινόταν αν ο εκθέτης ήταν η μονάδα (1).</p></li>
+</ul>
+</section>
+<section id="μεθοδολογία-και-παρατηρήσεις" class="level4" data-number="1.4.3">
+<h4 data-number="1.4.3" class="anchored" data-anchor-id="μεθοδολογία-και-παρατηρήσεις"><span class="header-section-number">1.4.3</span> Μεθοδολογία και Παρατηρήσεις</h4>
+<p>Για τη διευκόλυνση της μελέτης ενός γινομένου με δυνάμεις, μπορείτε να ακολουθήσετε τα εξής:</p>
+<ul>
+<li><p><strong>Απλοποίηση:</strong> Μπορείτε να θεωρήσετε ότι το γινόμενο <span class="math inline">\(P(x)\)</span> είναι <strong>ομόσημο</strong> με ένα άλλο γινόμενο <span class="math inline">\(P_1(x)\)</span>, το οποίο προκύπτει αν παραλείψετε τους παράγοντες με άρτιο εκθέτη και αντικαταστήσετε τους παράγοντες με περιττό εκθέτη από τις βάσεις τους (υψωμένες στην πρώτη δύναμη).</p></li>
+<li><p><strong>Προσοχή στις Ρίζες:</strong> Παρόλο που οι άρτιες δυνάμεις δεν αλλάζουν το πρόσημο, οι τιμές που μηδενίζουν τη βάση τους αποτελούν <strong>ρίζες του συνολικού γινομένου</strong> και πρέπει να συμπεριλαμβάνονται στον τελικό πίνακα,.</p></li>
+<li><p><strong>Παράδειγμα:</strong> Αν έχουμε την παράσταση <span class="math inline">\(P(x) = (x-1)^2(x+2)^3\)</span>, ο παράγοντας <span class="math inline">\((x-1)^2\)</span> είναι πάντα <span class="math inline">\(\geq 0\)</span> και δεν αλλάζει το πρόσημο, ενώ ο <span class="math inline">\((x+2)^3\)</span> έχει το ίδιο πρόσημο με το <span class="math inline">\(x+2\)</span>,. Έτσι, το <span class="math inline">\(P(x)\)</span> θα είναι θετικό όταν <span class="math inline">\(x+2 &gt; 0\)</span> (δηλαδή <span class="math inline">\(x &gt; -2\)</span>) και αρνητικό όταν <span class="math inline">\(x &lt; -2\)</span>, με εξαίρεση την τιμή <span class="math inline">\(x=1\)</span> όπου μηδενίζεται.<br>
+<img src="images/clipboard-2797147202.png" class="img-fluid"></p></li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+<section id="ανισώσεις-της-μορφής-αx-βx-φx-0-0" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ανισώσεις-της-μορφής-αx-βx-φx-0-0"><span class="header-section-number">1.5</span> Ανισώσεις της μορφής Α(x) · Β(x) · … · Φ(x) &gt; 0 (&lt; 0)</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ανισώσεις με γινόμενα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>κάνουμε εφαρμογή των όσων είπαμε παραπάνω</p>
+</div>
+</div>
+</section>
+<section id="ανισώσεις-της-μορφής-dfracaxbx0-quad-η-quad-0-ge-0-le-0" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ανισώσεις-της-μορφής-dfracaxbx0-quad-η-quad-0-ge-0-le-0"><span class="header-section-number">1.6</span> Ανισώσεις της μορφής <span class="math inline">\(\dfrac{A(x)}{B(x)}&gt;0 \quad η \quad (&lt;0), (\ge 0), (\le 0)\)</span></h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ανισώσεις με κλάσματα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η επίλυση των ανισώσεων με κλάσματα (ρητές ανισώσεις) βασίζεται στην αρχή ότι <strong>το πηλίκο δύο αριθμών έχει το ίδιο πρόσημο με το γινόμενό τους</strong>. Η μεθοδολογία ακολουθεί τα εξής βασικά βήματα:</p>
+<p><strong>Περιορισμοί (Πεδίο Ορισμού)</strong></p>
+<p>Πριν από οποιαδήποτε πράξη, πρέπει να εξασφαλίσουμε ότι η ανίσωση ορίζεται. Απαιτούμε <strong>ο παρονομαστής να είναι διάφορος του μηδέν</strong> (<span class="math inline">\(B(x) \neq 0\)</span>). Οι τιμές που μηδενίζουν τον παρονομαστή εξαιρούνται πάντα από τις λύσεις.</p>
+<p><strong>Μετατροπή σε Μορφή Πηλίκου με το Μηδέν</strong></p>
+<p>Αν η ανίσωση δεν είναι ήδη στη μορφή <span class="math inline">\(\dfrac{A(x)}{B(x)} &gt; 0\)</span> (ή <span class="math inline">\(&lt;, \geq, \leq\)</span>), τότε:</p>
+<ul>
+<li><p><strong>Μεταφέρουμε όλους τους όρους στο πρώτο μέλος</strong>, ώστε το δεύτερο μέλος να γίνει μηδέν.</p></li>
+<li><p><strong>Κάνουμε τα κλάσματα ομώνυμα</strong> και εκτελούμε τις πράξεις στον αριθμητή, ώστε να καταλήξουμε σε ένα ενιαίο κλάσμα.</p></li>
+<li><p><strong>ΠΡΟΣΟΧΗ:</strong> Δεν κάνουμε <strong>ποτέ απαλοιφή παρονομαστών</strong> (χιαστί πολλαπλασιασμό), διότι το πρόσημο του παρονομαστή μπορεί να αλλάζει ανάλογα με το <span class="math inline">\(x\)</span>, γεγονός που θα επηρέαζε τη φορά της ανίσωσης.</p></li>
+</ul>
+<p><strong>Μετατροπή σε Ανίσωση Γινομένου</strong></p>
+<p>Επειδή το πηλίκο <span class="math inline">\(\dfrac{A(x)}{B(x)}\)</span> είναι ομόσημο του γινομένου <span class="math inline">\(A(x) \cdot B(x)\)</span>, η ανίσωση μετατρέπεται ως εξής:</p>
+<ul>
+<li><p><span class="math inline">\(\dfrac{A(x)}{B(x)} &gt; 0 \iff A(x) \cdot B(x) &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\(\dfrac{A(x)}{B(x)} \geq 0 \iff A(x) \cdot B(x) \geq 0\)</span> <strong>με τον περιορισμό</strong> <span class="math inline">\(B(x) \neq 0\)</span>.</p></li>
+</ul>
+<p><strong>Πίνακας Προσήμων</strong></p>
+<p>Λύνουμε την ανίσωση γινομένου που προέκυψε χρησιμοποιώντας <strong>πίνακα προσήμων</strong>:</p>
+<ul>
+<li><p>Βρίσκουμε τις ρίζες του αριθμητή <span class="math inline">\(A(x)\)</span> και του παρονομαστή <span class="math inline">\(B(x)\)</span>.</p></li>
+<li><p>Τοποθετούμε τις ρίζες σε αύξουσα σειρά στον πίνακα.</p></li>
+<li><p>Προσδιορίζουμε το πρόσημο κάθε παράγοντα χωριστά.</p></li>
+<li><p>Στην τελευταία γραμμή, βρίσκουμε το πρόσημο του κλάσματος. Στις τιμές που μηδενίζεται ο παρονομαστής, βάζουμε <strong>διπλή γραμμή</strong> (||), που σημαίνει ότι η παράσταση δεν ορίζεται εκεί.</p></li>
+</ul>
+<p><strong>Τελική Λύση</strong></p>
+<p>Επιλέγουμε τα διαστήματα που ικανοποιούν την ανίσωση (θετικά ή αρνητικά), προσέχοντας να <strong>εξαιρέσουμε τις ρίζες του παρονομαστή</strong> ακόμα και αν η ανίσωση περιλαμβάνει το σύμβολο της ισότητας (<span class="math inline">\(\geq\)</span> ή <span class="math inline">\(\leq\)</span>).</p>
+<p><strong>Παράδειγμα:</strong> Στην ανίσωση <span class="math inline">\(\dfrac{2x-1}{5x+10} &gt; 0\)</span>, ο παρονομαστής μηδενίζεται στο <span class="math inline">\(x=-2\)</span>, οπότε αυτό το σημείο εξαιρείται με διπλή γραμμή στον πίνακα, και η ανίσωση λύνεται ως <span class="math inline">\((2x-1)(5x+10) &gt; 0\)</span>.<br>
+</p>
+<p><br>
+<img src="images/clipboard-3642751783.png" class="img-fluid"></p>
+<p>Άρα <span class="math inline">\(\dfrac{2x-1}{5x+10} &gt; 0\)</span> για <span class="math inline">\(x \in (- \infty,\dfrac{1}{2})\cup(-2,+\infty)\)</span></p>
+</div>
+</div>
+</section>
+<section id="η-επίλυση-ανισώσεων-που-περιέχουν-απόλυτα-και-τριώνυμα-μαζί" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="η-επίλυση-ανισώσεων-που-περιέχουν-απόλυτα-και-τριώνυμα-μαζί"><span class="header-section-number">1.7</span> Η επίλυση ανισώσεων που περιέχουν <strong>απόλυτα και τριώνυμα μαζί</strong></h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ανισώσεις με απόλυτα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>απαιτεί τον συνδυασμό των ιδιοτήτων των απόλυτων τιμών με τη θεωρία προσήμου του τριωνύμου. Η μεθοδολογία εξαρτάται από τη μορφή της ανίσωσης και ακολουθεί τρεις βασικούς δρόμους:</p>
+<p><strong>Χρήση Βασικών Ιδιοτήτων (Για μορφές</strong> <span class="math inline">\(|f(x)| &lt; \theta\)</span> ή <span class="math inline">\(|f(x)| &gt; \theta\)</span>)</p>
+<p>Αν η ανίσωση έχει το απόλυτο απομονωμένο στο ένα μέλος και έναν αριθμό ή παράσταση στο άλλο, χρησιμοποιούμε τις εξής ισοδυναμίες (για <span class="math inline">\(\theta &gt; 0\)</span>):<br>
+</p>
+<ul>
+<li><span class="math inline">\(|f(x)| &lt; \theta \iff -\theta &lt; f(x) &lt; \theta\)</span>: Δημιουργείται ένα σύστημα δύο ανισώσεων που πρέπει να <strong>συναληθεύουν</strong>.<br>
+</li>
+<li><span class="math inline">\(|f(x)| &gt; \theta \iff f(x) &lt; -\theta\)</span> ή <span class="math inline">\(f(x) &gt; \theta\)</span>: Η τελική λύση είναι η <strong>ένωση</strong> των λύσεων των δύο ανισώσεων.<br>
+</li>
+<li><strong>Παράδειγμα:</strong> Στην ανίσωση <span class="math inline">\(|x^2 - 5x + 5| &lt; 1\)</span>, θα λύναμε το σύστημα <span class="math inline">\(-1 &lt; x^2 - 5x + 5 &lt; 1\)</span>.</li>
+</ul>
+<p><strong>Μέθοδος Τετραγωνισμού (Για μορφές</strong> <span class="math inline">\(|f(x)| &lt; |g(x)|\)</span>)</p>
+<p>Όταν υπάρχουν απόλυτα και στα δύο μέλη, και επειδή οι απόλυτες τιμές είναι μη αρνητικές, μπορούμε να <strong>υψώσουμε στο τετράγωνο</strong> για να απαλλαγούμε από τα απόλυτα (αφού <span class="math inline">\(|a| &lt; |b| \iff a^2 &lt; b^2\)</span>).<br>
+* Η ανίσωση μετατρέπεται σε <span class="math inline">\(f^2(x) &lt; g^2(x) \iff (f(x) - g(x))(f(x) + g(x)) &lt; 0\)</span>.<br>
+* Αυτή η μορφή οδηγεί συχνά σε τριώνυμα ή γινόμενα παραγόντων που μελετώνται με <strong>πίνακα προσήμων</strong>.</p>
+<p><strong>Διαχωρισμός Περιπτώσεων (Η Γενική Μέθοδος)</strong></p>
+<p>Αν ο άγνωστος <span class="math inline">\(x\)</span> υπάρχει και έξω από το απόλυτο ή αν υπάρχουν περισσότερα από ένα απόλυτα, ακολουθούμε τη διαδικασία <strong>εξαγωγής των απολύτων</strong>:</p>
+<ol type="1">
+<li><p><strong>Βρίσκουμε τις ρίζες</strong> των παραστάσεων που βρίσκονται μέσα στα απόλυτα (π.χ. αν έχουμε <span class="math inline">\(|x^2-x|\)</span>, οι ρίζες του τριωνύμου είναι 0 και 1).</p></li>
+<li><p><strong>Χωρίζουμε το</strong> <span class="math inline">\(\mathbb{R}\)</span> σε διαστήματα με βάση αυτές τις ρίζες.</p></li>
+<li><p><strong>Σε κάθε διάστημα ξεχωριστά</strong>, αντικαθιστούμε το απόλυτο με την παράσταση ή την αντίθετή της, ανάλογα με το αν είναι θετική ή αρνητική σε αυτό το διάστημα.</p></li>
+<li><p><strong>Λύνουμε την ανίσωση</strong> που προκύπτει (η οποία είναι πλέον ένα απλό τριώνυμο) και <strong>συναληθεύουμε</strong> το αποτέλεσμα με τον περιορισμό του διαστήματος στο οποίο εργαζόμαστε.</p></li>
+<li><p>Η <strong>τελική λύση</strong> είναι η ένωση των δεκτών λύσεων από όλες τις περιπτώσεις.</p></li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.8</span> Ασκήσεις</h3>
+<p>Α. Να βρεθεί το πρόσημο των παρακάτω παραστάσεων για τις διάφορες τιμές του <span class="math inline">\(x \in \mathbb{R}\)</span>:</p>
+<ol type="1">
+<li><p><span class="math inline">\(P(x) = (x + 1)^2(x + 3)^2(2x + 4)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (2x - 3)(x + 2)(x + 1)^3(x - 5)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x^2 + 3x + 2)(x + 1)(x^2 - 5x + 6)(x - 3)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x^2 - 4x + 3)(x^2 + 6x + 9)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x - 2)(x^2 + x + 1)(x^2 - 7x + 12)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x - 1)^3(x^2 - 6x + 9)(x^2 - 3x)(x^2 + 3x + 5)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x^2 - 16)(x^2 - 6x + 8)(2 - x)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (2x^2 - 7x - 4)(3x^2 - 16x + 5)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (x - 2)(x + 2x - 8)(x + x + 1)\)</span></p></li>
+<li><p><span class="math inline">\(P(x) = (2x - 1)(-x^2 + 2x - 1)(x + 1)\)</span></p></li>
+</ol>
+<p>Β. Να βρείτε το πρόσημο των παρακάτω παραστάσεων <span class="math inline">\(P(x)\)</span> για τις διάφορες τιμές του <span class="math inline">\(x \in \mathbb{R}\)</span>:</p>
+<ol type="1">
+<li><span class="math inline">\(P(x) = (x + 1)^2(x + 3)^2(2x + 4)\)</span></li>
+<li><span class="math inline">\(P(x) = (2x - 3)(x + 2)(x + 1)^3(x - 5)\)</span></li>
+<li><span class="math inline">\(P(x) = (x + 1)^2(2x^2 + 1)(x^2 + 3x + 5)(x - 2)\)</span></li>
+<li><span class="math inline">\(P(x) = (x^2 + 3x + 2)(x + 1)(x^2 - 5x + 6)(x - 3)\)</span></li>
+<li><span class="math inline">\(P(x) = (2x - 5)(x^2 - 6x + 8)(x^2 - 5x + 4)\)</span></li>
+<li><span class="math inline">\(P(x) = (2x^2 - 7x - 4)(3x^2 - 16x + 5)\)</span></li>
+<li><span class="math inline">\(P(x) = (3 - x)(x^2 - 4x + 3)\)</span></li>
+<li><span class="math inline">\(P(x) = (x - 1)(x^2 - x + 2)(2 - x)\)</span></li>
+<li><span class="math inline">\(P(x) = (x + 2)(2x - 1)(x^2 - 6x)\)</span></li>
+<li><span class="math inline">\(P(x) = (x - 1)^2(x - 4)(x^2 - 3x + 2)\)</span></li>
+</ol>
+<p>Γ. Να λύσετε στο <span class="math inline">\(\mathbb{R}\)</span> τις παρακάτω ανισώσεις:</p>
+<ol type="1">
+<li><p><span class="math inline">\((x - 1)(x + 1)(x + 2)(3x - 1) \leq 0\)</span> <em>(Γινόμενο τεσσάρων πρωτοβάθμιων παραγόντων)</em></p></li>
+<li><p><span class="math inline">\((x^2 - 3x + 2)(x^2 + 5x + 6) &gt; 0\)</span> <em>(Γινόμενο δύο τριωνύμων με διακρίνουσα</em> <span class="math inline">\(\Delta &gt; 0\)</span>)</p></li>
+<li><p><span class="math inline">\((x - 2)(x^2 + x + 1)(x^2 - 7x + 12) &lt; 0\)</span> <em>(Περιέχει τριώνυμο με</em> <span class="math inline">\(\Delta &lt; 0\)</span>, το οποίο διατηρεί σταθερό πρόσημο)</p></li>
+<li><p><span class="math inline">\((x - 1)^2(x + 1) &gt; 0\)</span> <em>(Περιέχει παράγοντα με άρτια δύναμη που επηρεάζει μόνο τις ρίζες)</em></p></li>
+<li><p><span class="math inline">\((x - 1)^3(x - 2)(x + 3)(x - 3) &gt; 0\)</span> <em>(Περιέχει παράγοντα με περιττή δύναμη, ο οποίος συμπεριφέρεται ως πρωτοβάθμιος)</em></p></li>
+<li><p><span class="math inline">\((2x^2 + 3)(x + 1)(x - 2)(3x^2 - 10x + 3)(x^2 + 1) &lt; 0\)</span> <em>(Σύνθετη μορφή με παράγοντες που δεν μηδενίζονται ποτέ)</em></p></li>
+<li><p><span class="math inline">\((x - 1)(x + 1)^3 x^2 (2x + 1)(x^2 + x + 3) &gt; 0\)</span> <em>(Συνδυασμός δυνάμεων και τριωνύμων χωρίς πραγματικές ρίζες)</em></p></li>
+<li><p><span class="math inline">\((x - 1)(x^2 - 2x + 5)(-x^2 + 5x - 6) \leq 0\)</span> <em>(Μελέτη προσήμου με τριώνυμο που έχει αρνητικό συντελεστή</em> <span class="math inline">\(a\)</span>)</p></li>
+<li><p><span class="math inline">\((2x - 1)(-x^2 + 2x - 1)(x + 1) &gt; 0\)</span> <em>(Περιέχει τριώνυμο που είναι τέλειο τετράγωνο με αρνητικό συντελεστή)</em></p></li>
+<li><p><span class="math inline">\((x - 2)(x^2 - 7x + 6)(-x^2 - 2x + 8)(x - 1) &gt; 0\)</span> <em>(Γινόμενο πολλών παραγόντων που απαιτούν παραγοντοποίηση)</em></p></li>
+</ol>
+<p>Δ. Να λύσετε στο <span class="math inline">\(\mathbb{R}\)</span> τις παρακάτω ανισώσεις:</p>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{x + 1}{7 - x} &gt; 2\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Απαιτείται μεταφορά του 2 στο πρώτο μέλος και μετατροπή σε ομώνυμα κλάσματα)</em>.</p>
+</blockquote>
+<ol start="2" type="1">
+<li><span class="math inline">\(\dfrac{x^2 - 10x + 16}{x - 2} &lt; 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Προσοχή στην εξαίρεση της τιμής που μηδενίζει τον παρονομαστή)</em>.</p>
+</blockquote>
+<ol start="3" type="1">
+<li><span class="math inline">\(\dfrac{3x + 5}{3x - 7} &lt; 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Βασική μορφή πηλίκου δύο πρωτοβάθμιων παραγόντων)</em>.</p>
+</blockquote>
+<ol start="4" type="1">
+<li><span class="math inline">\(\dfrac{x^2 - x + 1}{x^2 + x + 2} \leq 2\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Περιλαμβάνει τριώνυμα· ελέγξτε αν κάποιο έχει διακρίνουσα</em> <span class="math inline">\(\Delta &lt; 0\)</span>).</p>
+</blockquote>
+<ol start="5" type="1">
+<li><span class="math inline">\(\dfrac{4x - 1}{23x - x^2} \geq 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Παραγοντοποιήστε τον παρονομαστή για να βρείτε τις ρίζες του)</em>.</p>
+</blockquote>
+<ol start="6" type="1">
+<li><span class="math inline">\(\dfrac{x^2 + 10x + 21}{2x^2 + 12x + 18} &gt; 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Συνδυασμός δύο τριωνύμων· εξετάστε αν υπάρχουν διπλές ρίζες ή κοινοί παράγοντες)</em>.</p>
+</blockquote>
+<ol start="7" type="1">
+<li><span class="math inline">\(\dfrac{-15x^2 + x + 2}{2x^2 - x + 5} &gt; 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Περιέχει τριώνυμο με αρνητικό συντελεστή</em> <span class="math inline">\(\alpha\)</span>).</p>
+</blockquote>
+<ol start="8" type="1">
+<li><span class="math inline">\(\dfrac{x^2 - 5x + 6}{x - 3} &gt; 5\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Μην κάνετε απαλοιφή παρονομαστή· μεταφέρετε το 5 στο πρώτο μέλος)</em>.</p>
+</blockquote>
+<ol start="9" type="1">
+<li><span class="math inline">\(\dfrac{4x - 3}{9x^2 - 4} - \dfrac{1}{3x + 2} - \dfrac{3}{2 - 3x} &lt; 0\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Απαιτείται ανάλυση των παρονομαστών σε γινόμενο και εύρεση Ε.Κ.Π.)</em>.</p>
+</blockquote>
+<ol start="10" type="1">
+<li><span class="math inline">\(\dfrac{x + 8}{x^2 + 1} &lt; \dfrac{2x + 6}{2x^2 - 5x + 3}\)</span></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Πιο σύνθετη μορφή που απαιτεί προσεκτικές πράξεις για τη δημιουργία ενός ενιαίου κλάσματος)</em>.</p>
+</blockquote>
+<p>Ε. Λύστε τις παρακάτω ασκήσεις</p>
+<ol type="1">
+<li><strong>Εξίσωση με απόλυτα και κλάσματα:</strong> Να λύσετε την εξίσωση: <span class="math inline">\(\dfrac{|x+1|}{|x-2|} = \dfrac{1}{2}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Θέστε τους περιορισμούς για τον παρονομαστή και χρησιμοποιήστε την ιδιότητα</em> <span class="math inline">\(|a|=|b| \iff a=b\)</span> ή <span class="math inline">\(a=-b\)</span>).</p>
+</blockquote>
+<ol start="2" type="1">
+<li><strong>Υπολογισμός τιμής παράστασης:</strong> Για κάθε πραγματικό αριθμό <span class="math inline">\(x\)</span> με την ιδιότητα <span class="math inline">\(5 &lt; x &lt; 10\)</span>, να υπολογίσετε την τιμή της παράστασης: <span class="math inline">\(A = \dfrac{x-5}{|x-5|} + \dfrac{x-10}{|x-10|}\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Εξετάστε το πρόσημο των παραστάσεων μέσα στα απόλυτα βάσει του περιορισμού του</em> <span class="math inline">\(x\)</span>).</p>
+</blockquote>
+<ol start="3" type="1">
+<li><strong>Αποδεικτική άσκηση (Ανισότητα):</strong> Αν <span class="math inline">\(a, \beta \in \mathbb{R} - \{0\}\)</span>, να αποδείξετε ότι: <span class="math inline">\(\dfrac{|a|}{|\beta|} + \dfrac{|\beta|}{|a|} \geq 2\)</span>.</li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Μπορείτε να χρησιμοποιήσετε την ιδιότητα ότι για κάθε θετικό αριθμό</em> <span class="math inline">\(t\)</span> ισχύει <span class="math inline">\(t + \dfrac{1}{t} \geq 2\)</span>).</p>
+</blockquote>
+<ol start="4" type="1">
+<li><strong><span class="math inline">\(\displaystyle \frac{|x+1|}{|x+2|} \leq 1\)</span></strong></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Θέστε τον περιορισμό <span class="math inline">\(x \neq -2\)</span>. Μπορείτε να μεταφέρετε το 1 στο πρώτο μέλος και να κάνετε τα κλάσματα ομώνυμα ή, επειδή οι όροι είναι μη αρνητικοί, να χρησιμοποιήσετε την ιδιότητα <span class="math inline">\(|a| \leq |b| \iff a^2 \leq b^2\)</span>)</em>.</p>
+</blockquote>
+<ol start="5" type="1">
+<li><strong><span class="math inline">\(\displaystyle \left| \frac{3x-4}{2x-5} \right| &lt; 2\)</span></strong></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Πρέπει <span class="math inline">\(x \neq 5/2\)</span>. Η ανίσωση είναι ισοδύναμη με <span class="math inline">\(\frac{|3x-4|}{|2x-5|} &lt; 2\)</span>, η οποία οδηγεί στην <span class="math inline">\(|3x-4| &lt; 2|2x-5|\)</span>. Λύνεται είτε με ύψωση στο τετράγωνο είτε με πίνακα προσήμων για τις απόλυτες τιμές)</em>.</p>
+</blockquote>
+<ol start="6" type="1">
+<li><strong><span class="math inline">\(\displaystyle \frac{1 - |x|}{|2x - 1| - 3} &gt; 1\)</span></strong></li>
+</ol>
+<blockquote class="blockquote">
+<p><em>(Υπόδειξη: Βρείτε τις τιμές που μηδενίζουν τις παραστάσεις μέσα στα απόλυτα (<span class="math inline">\(x=0\)</span> και <span class="math inline">\(x=1/2\)</span>) καθώς και τις τιμές που μηδενίζουν τον παρονομαστή. Χρησιμοποιήστε τη μέθοδο των διαστημάτων (πίνακας προσήμων) για να απαλλαγείτε από τα απόλυτα σε κάθε διάστημα χωριστά)</em>.</p>
+</blockquote>
+<ol start="7" type="1">
+<li><strong><span class="math inline">\(\displaystyle \frac{|x - 4|}{3} + \frac{|4 - x|}{2} &lt; \frac{|2x - 8|}{4} + 1\)</span></strong> <em>(Υπόδειξη: Παρατηρήστε ότι <span class="math inline">\(|4-x| = |x-4|\)</span> και <span class="math inline">\(|2x-8| = 2|x-4|\)</span>. Η ανίσωση μπορεί να απλοποιηθεί σημαντικά αν θέσετε <span class="math inline">\(|x-4| = \omega\)</span> και λύσετε πρώτα ως προς <span class="math inline">\(\omega\)</span>)</em>.</li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1085,12 +1521,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
