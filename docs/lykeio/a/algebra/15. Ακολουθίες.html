@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>15. Ακολουθίες – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/15. Ακολουθίες.html">15. Ακολουθίες</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/15. Ακολουθίες.html">15. Ακολουθίες</a></li></ol></nav>
+      <h1 class="title">15. Ακολουθίες</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +866,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +941,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +960,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -1022,14 +1062,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">15. Ακολουθίες</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+ <span class="menu-text">15. Ακολουθίες</span></a>
   </div>
 </li>
       </ul>
@@ -1043,33 +1083,227 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ακολουθίες" id="toc-ακολουθίες" class="nav-link active" data-scroll-target="#ακολουθίες"><span class="header-section-number">1</span> Ακολουθίες</a>
+  <ul class="collapse">
+  <li><a href="#η-έννοια-της-ακολουθίας" id="toc-η-έννοια-της-ακολουθίας" class="nav-link" data-scroll-target="#η-έννοια-της-ακολουθίας"><span class="header-section-number">1.1</span> Η έννοια της ακολουθίας</a></li>
+  <li><a href="#παραδείγματα-διαφόρων-περιπτώσεων" id="toc-παραδείγματα-διαφόρων-περιπτώσεων" class="nav-link" data-scroll-target="#παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.2</span> Παραδείγματα διαφόρων περιπτώσεων</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ακολουθίες" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ακολουθίες"><span class="header-section-number">1</span> Ακολουθίες</h2>
+<section id="η-έννοια-της-ακολουθίας" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-έννοια-της-ακολουθίας"><span class="header-section-number">1.1</span> Η έννοια της ακολουθίας</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<section id="θεωρία-και-ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="θεωρία-και-ορισμοί"><span class="header-section-number">1.1.1</span> Θεωρία και Ορισμοί</h4>
+<p><strong>Ακολουθία πραγματικών αριθμών</strong> ονομάζεται κάθε συνάρτηση με πεδίο ορισμού το σύνολο των θετικών ακεραίων (φυσικών αριθμών) <span class="math inline">\(N^* = \{1, 2, 3, ..., \nu, ...\}\)</span>. Η διαδικασία αυτή αντιστοιχίζει κάθε φυσικό αριθμό <span class="math inline">\(\nu\)</span> σε έναν πραγματικό αριθμό <span class="math inline">\(a(\nu)\)</span>.</p>
+<ul>
+<li><strong>Όροι της ακολουθίας:</strong> Οι τιμές της συνάρτησης, δηλαδή οι πραγματικοί αριθμοί <span class="math inline">\(a(1), a(2), a(3), ...\)</span>, ονομάζονται όροι της ακολουθίας.</li>
+<li><strong>Συμβολισμός:</strong> Χρησιμοποιούμε δείκτες για να δηλώσουμε τη θέση κάθε όρου. Ο πραγματικός αριθμός στον οποίο αντιστοιχεί ο 1 συμβολίζεται ως <span class="math inline">\(a_1\)</span> και λέγεται <strong>πρώτος όρος</strong>, ο αριθμός στον οποίο αντιστοιχεί ο 2 λέγεται <span class="math inline">\(a_2\)</span> κ.ο.κ..</li>
+<li><strong>Γενικός ή ν-οστός όρος:</strong> Ο πραγματικός αριθμός στον οποίο αντιστοιχεί ένας τυχαίος φυσικός αριθμός <span class="math inline">\(\nu\)</span> συμβολίζεται με <span class="math inline">\(a_\nu\)</span> και ονομάζεται γενικός όρος της ακολουθίας. Η ακολουθία συμβολίζεται συνολικά ως <span class="math inline">\((a_\nu)\)</span>.</li>
+<li><strong>Σύνολο Τιμών:</strong> Παρόλο που το πεδίο ορισμού είναι οι φυσικοί αριθμοί, οι τιμές που παίρνει η ακολουθία μπορεί να είναι οποιοιδήποτε πραγματικοί αριθμοί, επομένως το σύνολο τιμών είναι υποσύνολο του <span class="math inline">\(\mathbb{R}\)</span>.</li>
+</ul>
+</section>
+<section id="τρόποι-ορισμού-ακολουθίας" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="τρόποι-ορισμού-ακολουθίας"><span class="header-section-number">1.1.2</span> Τρόποι Ορισμού Ακολουθίας</h4>
+<p>Μια ακολουθία μπορεί να οριστεί με δύο βασικούς τρόπους:</p>
+<ol type="1">
+<li><p><strong>Με τον γενικό της όρο:</strong> Δίνεται ένας μαθηματικός τύπος που επιτρέπει τον απευθείας υπολογισμό οποιουδήποτε όρου <span class="math inline">\(a_\nu\)</span> αν γνωρίζουμε τη θέση του <span class="math inline">\(\nu\)</span>.</p></li>
+<li><p><strong>Αναδρομικά:</strong> Δίνεται ένας <strong>αναδρομικός τύπος</strong>, δηλαδή μια σχέση που συνδέει τον ν-οστό όρο με έναν ή περισσότερους από τους προηγούμενους όρους του. Για να οριστεί πλήρως μια ακολουθία αναδρομικά, πρέπει να γνωρίζουμε τον αναδρομικό τύπο και τόσους αρχικούς όρους όσους χρειάζονται για να ξεκινήσει ο υπολογισμός των επόμενων.</p></li>
+</ol>
+</section>
 </div>
+</section>
+<section id="παραδείγματα-διαφόρων-περιπτώσεων" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.2</span> Παραδείγματα διαφόρων περιπτώσεων</h3>
+<ul>
+<li><p><strong>Περίπτωση Γενικού Όρου:</strong> Η ακολουθία <span class="math inline">\(a_\nu = \nu^2\)</span> αντιστοιχίζει κάθε αριθμό στο τετράγωνό του, δίνοντας τους όρους: <span class="math inline">\(1, 4, 9, 16, 25, ...\)</span>.</p></li>
+<li><p><strong>Πρακτική Εφαρμογή:</strong> Αν υποθέσουμε ότι διανύουμε μια απόσταση 10 μέτρων και κάθε μέρα καλύπτουμε το μισό της απόστασης που απομένει, η απόσταση που διανύουμε τη ν-οστή μέρα δίνεται από τον τύπο <span class="math inline">\(a_\nu = 10 \cdot (1/2)^\nu\)</span>.</p></li>
+<li><p><strong>Αναδρομική Ακολουθία Fibonacci:</strong> Είναι η ακολουθία όπου κάθε όρος (μετά τους δύο πρώτους) προκύπτει από το άθροισμα των δύο προηγούμενων: <span class="math inline">\(a_1=1, a_2=1\)</span> και <span class="math inline">\(a_{\nu+2} = a_{\nu+1} + a_\nu\)</span>, δίνοντας τους όρους <span class="math inline">\(1, 1, 2, 3, 5, 8, 13, ...\)</span>.</p></li>
+<li><p><strong>Ακολουθία με εναλλασσόμενο πρόσημο:</strong> Μια ακολουθία όπως η <span class="math inline">\(a_\nu = 2\nu + 3(-1)^\nu\)</span> παράγει όρους με διαφορετική συμπεριφορά ανάλογα με το αν το <span class="math inline">\(\nu\)</span> είναι άρτιος ή περιττός.</p></li>
+</ul>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Υπάρχουν ακολουθίες των οποίων ο γενικός όρος δεν βρίσκεται; (εύκολα;)</p>
+<ul>
+<li><p><strong>Δυσκολία εύρεσης γενικού όρου:</strong> Υπάρχουν ακολουθίες για τις οποίες ο <strong>γενικός τους όρος είναι δύσκολο να βρεθεί</strong> με κάποιον μαθηματικό τύπο. Ως παράδειγμα αναφέρεται η <strong>ακολουθία Fibonacci</strong> (<span class="math inline">\(1, 1, 2, 3, 5, 8, ...\)</span>), για την οποία σημειώνεται ότι (στο επίπεδο των σχολικών βοηθημάτων) δεν γνωρίζουμε τον γενικό της όρο, αλλά γνωρίζουμε τον <strong>αναδρομικό της τύπο</strong> (<span class="math inline">\(\alpha_{\nu+2} = \alpha_{\nu+1} + \alpha_{\nu}\)</span>).</p></li>
+<li><p><strong>Άλυτα προβλήματα και εικασίες:</strong> Υπάρχουν ακολουθίες που ορίζονται από συγκεκριμένους κανόνες, αλλά η συμπεριφορά τους παραμένει ένα <strong>άλυτο πρόβλημα</strong> των Μαθηματικών. Χαρακτηριστικό παράδειγμα είναι η <strong>εικασία του Collatz</strong>.</p></li>
+</ul>
+<p>Η <strong>εικασία του Collatz</strong> (γνωστή και με άλλα ονόματα) είναι ένα από τα πιο διάσημα <strong>άλυτα προβλήματα</strong> των Μαθηματικών. Ορίζεται ως μια διαδικασία που εφαρμόζεται σε οποιονδήποτε θετικό ακέραιο αριθμό και ακολουθεί τους εξής κανόνες:</p>
+<ul>
+<li><strong>Αν ο αριθμός είναι άρτιος</strong>, τον διαιρούμε με το 2.</li>
+<li><strong>Αν ο αριθμός είναι περιττός</strong>, τον πολλαπλασιάζουμε επί 3 και προσθέτουμε τη μονάδα (δηλαδή <span class="math inline">\(3\nu + 1\)</span>).</li>
+<li><strong>Συνεχίζουμε την ίδια διαδικασία</strong> με το αποτέλεσμα που προκύπτει κάθε φορά.</li>
+</ul>
+<p>Σύμφωνα με την εικασία, ανεξάρτητα από τον αρχικό θετικό ακέραιο που θα επιλέξουμε, η ακολουθία των αριθμών που παράγεται θα <strong>καταλήξει αργά ή γρήγορα στον αριθμό 1</strong>. Για παράδειγμα, ξεκινώντας από τον αριθμό 18, η ακολουθία εξελίσσεται ως εξής: 18, 9, 28, 14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.</p>
+<p>Παρά το γεγονός ότι η εικασία έχει επιβεβαιωθεί πειραματικά για τεράστιο πλήθος αριθμών, <strong>δεν έχει δοθεί ακόμα μια αυστηρή μαθηματική απόδειξη</strong> που να καλύπτει όλους τους δυνατούς αριθμούς. Ο διάσημος μαθηματικός Paul Erdős είχε δηλώσει χαρακτηριστικά ότι «τα Μαθηματικά δεν είναι ακόμη ώριμα για τέτοιου είδους προβλήματα», υπονοώντας ότι δεν διαθέτουμε ακόμα τα κατάλληλα εργαλεία για την πλήρη αντιμετώπισή τους.</p>
+<ul>
+<li><p><strong>Ακολουθίες χωρίς προφανή κανονικότητα:</strong> Η ακολουθία ορίζεται γενικά ως <strong>οποιαδήποτε συνάρτηση</strong> με πεδίο ορισμού τους φυσικούς αριθμούς (<span class="math inline">\(\mathbb{N}^*\)</span>), πράγμα που σημαίνει ότι θεωρητικά μπορεί να υπάρξει οποιαδήποτε αντιστοίχιση χωρίς απαραίτητα να ακολουθεί κάποιο γνωστό πρότυπο (pattern). Επισημαίνεται μάλιστα ότι η αριθμητική και η γεωμετρική πρόοδος αποτελούν <strong>ειδικές περιπτώσεις κανονικότητας</strong> στις ακολουθίες.</p></li>
+<li><p><strong>Άρρητοι αριθμοί:</strong> Για παράδειγμα, οι άρρητοι αριθμοί (όπως το <span class="math inline">\(\pi\)</span> ή το <span class="math inline">\(\sqrt{2}\)</span>) έχουν στην δεκαδική τους μορφή <strong>άπειρα ψηφία που δεν παρουσιάζουν καμία περιοδικότητα</strong>. Τα ψηφία αυτά αποτελούν μια ακολουθία για την οποία δεν αναφέρεται κάποιος ενιαίος αλγεβρικός ή αναδρομικός τύπος που να παράγει το <span class="math inline">\(n\)</span>-οστό ψηφίο.</p></li>
+</ul>
+</div>
+</div>
+<hr>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Να βρείτε τους 4 πρώτους όρους της ακολουθίας με γενικό όρο <span class="math inline">\(a_\nu = \dfrac{3\nu + 1}{\nu}\)</span>.</p></li>
+<li><p>Υπολογίστε τους 5 πρώτους όρους της ακολουθίας <span class="math inline">\(a_\nu = \nu^2 - 1\)</span>.</p></li>
+<li><p>Προσδιορίστε τους 5 πρώτους όρους της ακολουθίας <span class="math inline">\(a_\nu = \sqrt{\nu + 4}\)</span>.</p></li>
+<li><p>Δίνεται η ακολουθία με <span class="math inline">\(a_1 = 1\)</span> και αναδρομικό τύπο <span class="math inline">\(a_{\nu+1} = a_\nu^2 + 1\)</span>. Βρείτε τους 4 πρώτους όρους της.</p></li>
+<li><p>Να βρείτε τους 5 πρώτους όρους της ακολουθίας με γενικό όρο <span class="math inline">\(a_\nu = 2^\nu + 3\)</span>.</p></li>
+<li><p>Δίνεται η ακολουθία με <span class="math inline">\(a_1 = 2\)</span> και <span class="math inline">\(a_{\nu+1} = 2a_\nu + 3\)</span>. Να υπολογίσετε τους όρους <span class="math inline">\(a_2, a_3, a_4\)</span> και <span class="math inline">\(a_5\)</span>.</p></li>
+<li><p>Να ορίσετε αναδρομικά την ακολουθία που έχει γενικό όρο <span class="math inline">\(a_\nu = 6\nu - 10\)</span>.</p></li>
+<li><p>Βρείτε τον ν-οστό (γενικό) όρο της ακολουθίας που ορίζεται αναδρομικά από τις σχέσεις <span class="math inline">\(a_1 = 1\)</span> και <span class="math inline">\(a_{\nu+1} = a_\nu + 3\)</span>.</p></li>
+<li><p>Προσδιορίστε τους 5 πρώτους όρους της ακολουθίας με γενικό όρο <span class="math inline">\(a_\nu = \dfrac{|\nu^2 - 3\nu|}{\nu + 1}\)</span>.</p></li>
+<li><p>Υπολογίστε τους 5 πρώτους όρους της ακολουθίας <span class="math inline">\(a_\nu = \nu^2 + 2\nu\)</span>.</p></li>
+<li><p>Να βρείτε τους πέντε πρώτους όρους των ακολουθιών:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\alpha_\nu = 3\nu - 2\)</span></li>
+<li>β. <span class="math inline">\(\alpha_\nu = 3^\nu\)</span></li>
+<li>γ. <span class="math inline">\(\alpha_\nu = \nu^2 - \nu\)</span></li>
+<li>δ. <span class="math inline">\(\alpha_\nu = \dfrac{\nu+1}{\nu}\)</span></li>
+<li>ε. <span class="math inline">\(\alpha_\nu = \left(-\dfrac{1}{5}\right)^{\nu-1}\)</span></li>
+<li>στ. <span class="math inline">\(\alpha_\nu = 2 - \left(\frac{1}{3}\right)^\nu\)</span></li>
+<li>ζ. <span class="math inline">\(\alpha_\nu = |3 - \nu|\)</span></li>
+<li>η. <span class="math inline">\(\alpha_\nu = συν\dfrac{\nu\pi}{2}\)</span></li>
+<li>θ. <span class="math inline">\(\alpha_\nu = \dfrac{3^\nu}{\nu}\)</span></li>
+<li>ι. <span class="math inline">\(\alpha_\nu = (-1)^\nu \cdot (\nu+1)\)</span></li>
+<li>κ. <span class="math inline">\(\alpha_\nu = (-1)^\nu \cdot 2\)</span></li>
+</ul>
+<ol start="12" type="1">
+<li>Να βρείτε τους πέντε πρώτους όρους των ακολουθιών:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\alpha_1 = 3, \alpha_{\nu+1} = \dfrac{2}{\alpha_\nu}\)</span></li>
+<li>β. <span class="math inline">\(\alpha_1 = 1, \alpha_{\nu+1} = \alpha_\nu^2 - 2\)</span></li>
+<li>γ. <span class="math inline">\(\alpha_1 = 4, \alpha_{\nu+1} = 3(\alpha_\nu - 2)\)</span></li>
+</ul>
+<ol start="13" type="1">
+<li>Να βρείτε αναδρομικούς τύπους για τις ακολουθίες:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\alpha_\nu = \nu + 3\)</span></li>
+<li>β. <span class="math inline">\(\alpha_\nu = 3^\nu\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p><span class="math inline">\(α_1=3\)</span> και <span class="math inline">\(α_{ν+1}=3^{ν+1}=3α^ν\)</span></p>
+</blockquote>
+<ul>
+<li>γ. <span class="math inline">\(\alpha_\nu = 2^\nu + 1\)</span></li>
+<li>δ. <span class="math inline">\(\alpha_\nu = 4\nu - 1\)</span></li>
+</ul>
+<ol start="14" type="1">
+<li>Να βρείτε τον <span class="math inline">\(\nu\)</span>-οστό όρο των ακολουθιών:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\alpha_1 = 2, \alpha_{\nu+1} = \alpha_\nu + 3\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>έχουμε</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{align}
+α_1&amp;=2 \\
+α_2&amp;=α_1+3\\
+α_3&amp;=α_2+3 \\
+α_4&amp;=α_3+3\\
+....&amp;=......\\
+....&amp;=......\\
+α_{ν}&amp;=α_{ν-1}+3
+\end{align}
+\]</span></p>
+<blockquote class="blockquote">
+<p>Προσθέτοθμε κατά μέλη και θα έχουμε <span class="math inline">\(α_{ν}=2+(ν-1)3 \Rightarrow α_ν=3ν-1\)</span></p>
+</blockquote>
+<ul>
+<li>β. <span class="math inline">\(\alpha_1 = 2, \alpha_{\nu+1} = 4\alpha_\nu\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>έχουμε</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{align}
+α_1&amp;=2 \\
+α_2&amp;=4α_1\\
+α_3&amp;=4α_2 \\
+α_4&amp;=4α_3\\
+....&amp;=......\\
+....&amp;=......\\
+α_{ν}&amp;=4α_{ν-1}
+\end{align}
+\]</span></p>
+<blockquote class="blockquote">
+<p>Πολλαπλασιάζουμε κατά μέλη και θα έχουμε <span class="math inline">\(α_{ν}=2\cdot 4^{ν-1}\)</span></p>
+</blockquote>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1097,12 +1331,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
