@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +110,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +121,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +173,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Άλγεβρα</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/index.html">Λύκειο</a></li><li class="breadcrumb-item">Α’ Λυκείου – Μαθηματικά</li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</a></li></ol></nav>
+      <h1 class="title">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">23 Ιούλιος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +238,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -329,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -432,7 +472,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,7 +481,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -512,7 +552,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -631,7 +671,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +714,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -683,7 +723,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -826,7 +866,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -901,7 +941,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -920,22 +960,22 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
@@ -1070,7 +1110,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
   </div>
 </li>
@@ -1085,33 +1125,233 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μονοτονία-ακρότατα-συμμετρίες-συνάρτησης" id="toc-μονοτονία-ακρότατα-συμμετρίες-συνάρτησης" class="nav-link active" data-scroll-target="#μονοτονία-ακρότατα-συμμετρίες-συνάρτησης"><span class="header-section-number">1</span> Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</a>
+  <ul class="collapse">
+  <li><a href="#μονοτονία-συνάρτησης" id="toc-μονοτονία-συνάρτησης" class="nav-link" data-scroll-target="#μονοτονία-συνάρτησης"><span class="header-section-number">1.1</span> Μονοτονία συνάρτησης</a></li>
+  <li><a href="#ακρότατα-συνάρτησης" id="toc-ακρότατα-συνάρτησης" class="nav-link" data-scroll-target="#ακρότατα-συνάρτησης"><span class="header-section-number">1.2</span> Ακρότατα Συνάρτησης</a></li>
+  <li><a href="#συμμετρίες-συνάρτησης" id="toc-συμμετρίες-συνάρτησης" class="nav-link" data-scroll-target="#συμμετρίες-συνάρτησης"><span class="header-section-number">1.3</span> <strong>3. Συμμετρίες Συνάρτησης</strong></a></li>
+  <li><a href="#και-μερικές-ακόμη-για-εξάσκηση" id="toc-και-μερικές-ακόμη-για-εξάσκηση" class="nav-link" data-scroll-target="#και-μερικές-ακόμη-για-εξάσκηση"><span class="header-section-number">1.4</span> … και μερικές ακόμη για εξάσκηση</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μονοτονία-ακρότατα-συμμετρίες-συνάρτησης" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μονοτονία-ακρότατα-συμμετρίες-συνάρτησης"><span class="header-section-number">1</span> Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</h2>
+<section id="μονοτονία-συνάρτησης" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="μονοτονία-συνάρτησης"><span class="header-section-number">1.1</span> Μονοτονία συνάρτησης</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><strong>Γνησίως Αύξουσα:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> λέγεται γνησίως αύξουσα σε ένα διάστημα <span class="math inline">\(\Delta\)</span> του πεδίου ορισμού της, όταν για οποιαδήποτε <span class="math inline">\(x_1, x_2 \in \Delta\)</span> με <span class="math inline">\(x_1 &lt; x_2\)</span> ισχύει <span class="math inline">\(f(x_1) &lt; f(x_2)\)</span>.</li>
+</ul>
+<p>Γράφουμε <span class="math display">\[ f^{\style{display: inline-block; transform: rotate(-90deg);}{\rightarrowtail}}Δ \]</span></p>
+<ul>
+<li><strong>Γνησίως Φθίνουσα:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> λέγεται γνησίως φθίνουσα σε ένα διάστημα <span class="math inline">\(\Delta\)</span>, όταν για οποιαδήποτε <span class="math inline">\(x_1, x_2 \in \Delta\)</span> με <span class="math inline">\(x_1 &lt; x_2\)</span> ισχύει <span class="math inline">\(f(x_1) &gt; f(x_2)\)</span>.</li>
+</ul>
+<p>Γράφουμε <span class="math display">\[ f^{\style{display: inline-block; transform: rotate(90deg);}{\rightarrowtail}}Δ \]</span></p>
+<ul>
+<li><strong>Λόγος Μεταβολής:</strong> Η μονοτονία μπορεί να εξεταστεί και με τον λόγο μεταβολής <span class="math inline">\(\lambda = \frac{f(x_1) - f(x_2)}{x_1 - x_2}\)</span>. Αν <span class="math inline">\(\lambda &gt; 0\)</span>, η συνάρτηση είναι γνησίως αύξουσα, ενώ αν <span class="math inline">\(\lambda &lt; 0\)</span>, είναι γνησίως φθίνουσα.</li>
+</ul>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Επισήμανση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μια συνάρτηση που είναι είτε γνησίως αύξουσα είτε γνησίως φθίνουσα σε ένα διάστημα Δ λέγεται <strong><em>γνησίως μονότονη</em></strong> στο Δ.</p>
+</div>
+</div>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> <strong>Παραδείγματα</strong></h4>
+<ol type="1">
+<li><p><strong>Γραμμική συνάρτηση:</strong> Η <span class="math inline">\(f(x) = ax + \beta\)</span> είναι γνησίως αύξουσα στο <span class="math inline">\(\mathbb{R}\)</span> αν <span class="math inline">\(a &gt; 0\)</span> και γνησίως φθίνουσα αν <span class="math inline">\(a &lt; 0\)</span>.</p></li>
+<li><p><strong>Τετραγωνική συνάρτηση:</strong> Η <span class="math inline">\(f(x) = x^2\)</span> είναι γνησίως φθίνουσα στο διάστημα <span class="math inline">\((-\infty, 0]\)</span> και γνησίως αύξουσα στο <span class="math inline">\([0, +\infty)\)</span>.</p></li>
+<li><p><strong>Συνάρτηση ρίζα:</strong> Η <span class="math inline">\(f(x) = \sqrt{x}\)</span> είναι γνησίως αύξουσα στο πεδίο ορισμού της <span class="math inline">\([0, +\infty)\)</span>.</p></li>
+</ol>
+</section>
+<section id="ασκήσεις" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.1.2</span> <strong>Ασκήσεις</strong></h4>
+<ol type="1">
+<li>Να μελετηθεί ως προς τη μονοτονία η <span class="math inline">\(f(x) = 2x + 1\)</span>.</li>
+<li>Να εξεταστεί η μονοτονία της <span class="math inline">\(g(x) = -x^3 - 2x + 1\)</span>.</li>
+<li>Να βρεθεί η μονοτονία της <span class="math inline">\(h(x) = x^2 - 4x + 3\)</span> για <span class="math inline">\(x \le 2\)</span>.</li>
+<li>Να μελετηθεί η μονοτονία της <span class="math inline">\(f(x) = \sqrt{5-x} + 1\)</span>.</li>
+<li>Να εξεταστεί ως προς τη μονοτονία η συνάρτηση <span class="math inline">\(f(x) = \dfrac{2}{x}\)</span> στα διαστήματα <span class="math inline">\((-\infty, 0)\)</span> και <span class="math inline">\((0, +\infty)\)</span>.</li>
+<li>Να μελετηθεί η μονοτονία της <span class="math inline">\(f(x) = |x-3| + 5\)</span>.</li>
+<li>Να εξεταστεί η μονοτονία της συνάρτησης <span class="math inline">\(f(x) = \dfrac{x+1}{x+2}\)</span>.</li>
+<li>Να μελετηθεί η μονοτονία της <span class="math inline">\(f(x) = 1 - \sqrt{1-2x}\)</span>.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="ακρότατα-συνάρτησης" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ακρότατα-συνάρτησης"><span class="header-section-number">1.2</span> Ακρότατα Συνάρτησης</h3>
+<section id="θεωρία-και-ορισμοί" class="level4" style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="θεωρία-και-ορισμοί"><span class="header-section-number">1.2.1</span> <strong>Θεωρία και Ορισμοί</strong></h4>
+<ul>
+<li><p><strong>Ολικό Μέγιστο:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> με πεδίο ορισμού <span class="math inline">\(A\)</span> παρουσιάζει μέγιστο στο <span class="math inline">\(x_0 \in A\)</span>, όταν για κάθε <span class="math inline">\(x \in A\)</span> ισχύει <span class="math inline">\(f(x) \le f(x_0)\)</span>. Η τιμή <span class="math inline">\(f(x_0)\)</span> είναι η τεταγμένη του υψηλότερου σημείου της γραφικής παράστασης.</p></li>
+<li><p><strong>Ολικό Ελάχιστο:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> παρουσιάζει ελάχιστο στο <span class="math inline">\(x_0 \in A\)</span>, όταν για κάθε <span class="math inline">\(x \in A\)</span> ισχύει <span class="math inline">\(f(x) \ge f(x_0)\)</span>. Η τιμή <span class="math inline">\(f(x_0)\)</span> είναι η τεταγμένη του χαμηλότερου σημείου της γραφικής παράστασης.</p></li>
+<li><p><strong>Σημείωση:</strong> Μια συνάρτηση μπορεί να μην έχει ακρότατα, ειδικά αν είναι γνησίως μονότονη σε ανοικτό διάστημα.</p></li>
+<li><p>Το (ολικό) μέγιστο και το (ολικό) ελάχιστο μιας συνάρτησης λέγονται <strong><em>ολικά ακρότατα</em></strong> αυτής.</p></li>
+<li><p>Εκτός από τα ολικά ακρότατα υπάρχουν και τα τοπικά ακρότα (επόμενες τάξεις).</p></li>
+</ul>
+</section>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Σημειώστε ότι:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μια συνάρτηση μπορεί να έχει</p>
+<ul>
+<li><p>μόνο μέγιστο ή</p></li>
+<li><p>μόνο ελάχιστο ή</p></li>
+<li><p>και μέγιστο και ελάχιστο ή</p></li>
+<li><p>ούτε μέγιστο ούτε ελάχιστο.</p></li>
+</ul>
+</div>
+</div>
+<section id="παραδείγματα-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.2.2</span> <strong>Παραδείγματα</strong></h4>
+<ol type="1">
+<li><p><strong>Απόλυτη τιμή:</strong> Η <span class="math inline">\(f(x) = |2x| - 3\)</span> έχει ελάχιστο στο <span class="math inline">\(x=0\)</span> την τιμή <span class="math inline">\(f(0) = -3\)</span>.<br>
+<img src="images/clipboard-2531715846.png" class="img-fluid" width="290"></p></li>
+<li><p><strong>Δευτεροβάθμια:</strong> Η <span class="math inline">\(f(x) = x^2 - 4x + 3\)</span> έχει ελάχιστο στο <span class="math inline">\(x=2\)</span> την τιμή <span class="math inline">\(f(2) = -1\)</span>.<br>
+<img src="images/clipboard-945593586.png" class="img-fluid" width="289"></p></li>
+<li><p><strong>Με περιορισμένο Π.Ο.:</strong> Η <span class="math inline">\(f(x) = \dfrac{1}{x}\)</span> στο <span class="math inline">\(A=[1,5]\)</span> έχει μέγιστο το <span class="math inline">\(f(1)=1\)</span> και ελάχιστο το <span class="math inline">\(f(5)=\dfrac{1}{5}\)</span>.<br>
+<img src="images/clipboard-2335890388.png" class="img-fluid" width="294"></p></li>
+<li><p>Η συνάρτηση <span class="math inline">\(f(x)=\dfrac{2}{x}\)</span> με <span class="math inline">\(x\ne0\)</span> δεν έχει ακρότατα. Είναι φθίνουσα στο <span class="math inline">\((-\infty,0)\)</span> και στο <span class="math inline">\((0,+\infty)\)</span><br>
+<img src="images/clipboard-1868160545.png" class="img-fluid" width="365"></p></li>
+<li><p><strong>Η κυβική συνάρτηση</strong> <span class="math inline">\(f(x) = x^3\)</span>: Η συνάρτηση αυτή είναι <strong>γνησίως αύξουσα σε όλο το</strong> <span class="math inline">\(\mathbb{R}\)</span>. Καθώς το πεδίο ορισμού της είναι ανοικτό διάστημα (<span class="math inline">\(-\infty, +\infty\)</span>) και η συνάρτηση είναι γνησίως μονότονη, δεν παρουσιάζει ακρότατα.<br>
+<img src="images/clipboard-678847894.png" class="img-fluid" width="362"></p></li>
+</ol>
+</section>
+<section id="ασκήσεις-1" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="ασκήσεις-1"><span class="header-section-number">1.2.3</span> Ασκήσεις</h4>
+<ol type="1">
+<li>Να βρεθούν τα ακρότατα της <span class="math inline">\(f(x) = x^2 - 4x + 5\)</span>.</li>
+<li>Να βρεθούν τα ακρότατα της <span class="math inline">\(f(x) = 2|x-1| - 1\)</span>.</li>
+<li>Να εξεταστεί αν έχει ακρότατα η <span class="math inline">\(f(x) = 2 - \sqrt{x-1}\)</span>.</li>
+<li>Να βρεθεί το ακρότατο της <span class="math inline">\(f(x) = 2x^4 + x^2 + 1\)</span>.</li>
+<li>Να προσδιοριστούν τα ακρότατα της <span class="math inline">\(f(x) = -2(x-1)^2 - 1\)</span>.</li>
+<li>Να βρεθεί το ελάχιστο της <span class="math inline">\(f(x) = \sqrt{x-2} + 3\)</span>.</li>
+<li>Να βρεθούν τα ακρότατα της <span class="math inline">\(f(x) = (1-2x^2)(5+2x^2)\)</span>.</li>
+<li>Να αποδειχθεί ότι η <span class="math inline">\(f(x) = x^2 + \dfrac{1}{x^2}\)</span> έχει ελάχιστο.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="συμμετρίες-συνάρτησης" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="συμμετρίες-συνάρτησης"><span class="header-section-number">1.3</span> <strong>3. Συμμετρίες Συνάρτησης</strong></h3>
+<section id="θεωρία-και-ορισμοί-1" class="level4" style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="θεωρία-και-ορισμοί-1"><span class="header-section-number">1.3.1</span> <strong>Θεωρία και Ορισμοί</strong></h4>
+<ul>
+<li><p><strong>Άρτια Συνάρτηση:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> με πεδίο ορισμού <span class="math inline">\(A\)</span> λέγεται άρτια αν για κάθε <span class="math inline">\(x \in A\)</span> ισχύει <span class="math inline">\(-x \in A\)</span> και <span class="math inline">\(f(-x) = f(x)\)</span>. Η γραφική της παράσταση έχει <strong>άξονα συμμετρίας τον άξονα</strong> <span class="math inline">\(y'y\)</span>.</p></li>
+<li><p><strong>Περιττή Συνάρτηση:</strong> Μια συνάρτηση <span class="math inline">\(f\)</span> λέγεται περιττή αν για κάθε <span class="math inline">\(x \in A\)</span> ισχύει <span class="math inline">\(-x \in A\)</span> και <span class="math inline">\(f(-x) = -f(x)\)</span>. Η γραφική της παράσταση έχει <strong>κέντρο συμμετρίας την αρχή των αξόνων</strong> <span class="math inline">\(O(0,0)\)</span>.</p></li>
+</ul>
+</section>
+<section id="παραδείγματα-2" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="παραδείγματα-2"><span class="header-section-number">1.3.2</span> <strong>Παραδείγματα</strong></h4>
+<ol type="1">
+<li><p><strong>Άρτια:</strong> Η <span class="math inline">\(f(x) = x^2\)</span> είναι άρτια διότι <span class="math inline">\(f(-x) = (-x)^2 = x^2 = f(x)\)</span>.</p></li>
+<li><p><strong>Περιττή:</strong> Η <span class="math inline">\(f(x) = x^3\)</span> είναι περιττή διότι <span class="math inline">\(f(-x) = (-x)^3 = -x^3 = -f(x)\)</span>.</p></li>
+<li><p><strong>Σύνθετη περιττή:</strong> Η <span class="math inline">\(f(x) = \frac{x}{x^2+1}\)</span> είναι περιττή διότι <span class="math inline">\(f(-x) = \dfrac{-x}{(-x)^2+1} = -f(x)\)</span>.</p></li>
+</ol>
+</section>
+<section id="ασκήσεις-2" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="ασκήσεις-2"><span class="header-section-number">1.3.3</span> <strong>Ασκήσεις</strong></h4>
+<ol type="1">
+<li>Να εξετάσετε αν είναι άρτια ή περιττή η <span class="math inline">\(f(x) = ax^3 + \beta x\)</span>.</li>
+<li>Να εξεταστεί η συμμετρία της <span class="math inline">\(f(x) = ax^4 + \beta x^2 + \gamma\)</span>.</li>
+<li>Να βρεθεί αν είναι άρτια η <span class="math inline">\(f(x) = \dfrac{x^2+2}{x^2-4}\)</span>.</li>
+<li>Να εξετάσετε τη συνάρτηση <span class="math inline">\(f(x) = x^2 + |x|\)</span> ως προς τη συμμετρία.</li>
+<li>Να εξεταστεί η <span class="math inline">\(f(x) = x^3 \cdot |x|\)</span> αν είναι περιττή.</li>
+<li>Να βρεθεί η συμμετρία της <span class="math inline">\(f(x) = \dfrac{1}{|x|-1}\)</span>.</li>
+<li>Να εξετάσετε αν η <span class="math inline">\(f(x) = \sqrt{1-4x^2}\)</span> είναι άρτια.</li>
+<li>Να αποδείξετε ότι η <span class="math inline">\(h(x) = \dfrac{2x-1}{2x+1}\)</span> δεν είναι ούτε άρτια ούτε περιττή στο <span class="math inline">\(\mathbb{R}\)</span>.</li>
+</ol>
+</section>
+</section>
+<section id="και-μερικές-ακόμη-για-εξάσκηση" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="και-μερικές-ακόμη-για-εξάσκηση"><span class="header-section-number">1.4</span> … και μερικές ακόμη για εξάσκηση</h3>
+<ol type="1">
+<li>Σε ποια διαστήματα οι κάθε μια από τις παρακάτω συναρτήσεις είναι:</li>
+</ol>
+<p>α) γνησίως αύξουσα και β) γνησίως φθίνουσα.<br>
+<img src="images/clipboard-1762381979.png" class="img-fluid" width="200" alt="Σχήμα 1"> <img src="images/clipboard-2024902233.png" class="img-fluid" width="200" alt="Σχήμα 2"> <img src="images/clipboard-101867077.png" class="img-fluid" width="200" alt="Σχήμα 3"></p>
+<ol start="2" type="1">
+<li><p>Τι είδους ολικά ακρότατα έχουν οι παρακάτω συναρτήσεις και ποιά είναι αυτά.<br>
+<img src="images/clipboard-1608216648.png" class="img-fluid" width="200" alt="Σχήμα 1"> <img src="images/clipboard-3839501920.png" class="img-fluid" width="200" alt="Σχήμα 2"> <img src="images/clipboard-1890341704.png" class="img-fluid" width="200" alt="Σχήμα 3"></p></li>
+<li><p>Για τις παρακάτω συναρτήσεις να βρείτε ποιες είναι άρτιες και ποιες περττές.<br>
+<img src="images/clipboard-1723677712.png" class="img-fluid" width="200" alt="Σχήμα 1"> <img src="images/clipboard-4187511801.png" class="img-fluid" width="200" alt="Σχήμα 2"> <img src="images/clipboard-1886983485.png" class="img-fluid" width="200" alt="Σχήμα 3"> <img src="images/clipboard-550468373.png" class="img-fluid" width="200" alt="Σχήμα 4"> <img src="images/clipboard-1821089655.png" class="img-fluid" width="200" alt="Σχήμα 5"> <img src="images/clipboard-2222728312.png" class="img-fluid" width="200" alt="Σχήμα 6"></p></li>
+<li><p>Να συμπληρώσετε τα παρακάτω γραφήματα ώστε οι συναρτήσεις που θα παριστάνουν να είναι</p>
+<p>α. Άρτιες</p>
+<p>β. Περιττές<br>
+<br>
+<img src="images/clipboard-238997924.png" class="img-fluid" width="250"> <img src="images/clipboard-2516889443.png" class="img-fluid" width="250"> <img src="images/clipboard-443090070.png" class="img-fluid" width="250"></p></li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1139,12 +1379,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
