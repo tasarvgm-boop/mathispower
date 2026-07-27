@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,22 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +108,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-agalgebra quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +119,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +171,45 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</a></li></ol></nav>
+      <h1 class="title">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">28 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +230,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,16 +239,16 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -259,7 +291,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
   </div>
 </li>
@@ -341,7 +373,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -444,7 +476,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -453,7 +485,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -524,7 +556,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -643,7 +675,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -686,7 +718,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -695,7 +727,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -838,7 +870,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -913,7 +945,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -934,7 +966,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -943,7 +975,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1103,33 +1135,385 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#χαρακτήρες-διαιρετότητας---μκδ---εκπ---ανάλυση-αριθμού-σε-γινόμενο-πρώτων-παραγόντων" id="toc-χαρακτήρες-διαιρετότητας---μκδ---εκπ---ανάλυση-αριθμού-σε-γινόμενο-πρώτων-παραγόντων" class="nav-link active" data-scroll-target="#χαρακτήρες-διαιρετότητας---μκδ---εκπ---ανάλυση-αριθμού-σε-γινόμενο-πρώτων-παραγόντων"><span class="header-section-number">1</span> Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</a>
+  <ul class="collapse">
+  <li><a href="#πρώτοι-και-σύνθετοι-αριθμοί" id="toc-πρώτοι-και-σύνθετοι-αριθμοί" class="nav-link" data-scroll-target="#πρώτοι-και-σύνθετοι-αριθμοί"><span class="header-section-number">1.1</span> <strong>Πρώτοι και Σύνθετοι Αριθμοί</strong></a></li>
+  <li><a href="#κριτήρια-διαιρετότητας-2-4-5-10-3-9" id="toc-κριτήρια-διαιρετότητας-2-4-5-10-3-9" class="nav-link" data-scroll-target="#κριτήρια-διαιρετότητας-2-4-5-10-3-9"><span class="header-section-number">1.2</span> <strong>Κριτήρια Διαιρετότητας (2, 4, 5, 10, 3, 9)</strong></a></li>
+  <li><a href="#μ.κ.δ.---ε.κ.π.---ανάλυση-σε-πρώτους-παράγοντες" id="toc-μ.κ.δ.---ε.κ.π.---ανάλυση-σε-πρώτους-παράγοντες" class="nav-link" data-scroll-target="#μ.κ.δ.---ε.κ.π.---ανάλυση-σε-πρώτους-παράγοντες"><span class="header-section-number">1.3</span> <strong>Μ.Κ.Δ. - Ε.Κ.Π. - Ανάλυση σε Πρώτους Παράγοντες</strong></a></li>
+  <li><a href="#ασκήσεων-συνέχεια" id="toc-ασκήσεων-συνέχεια" class="nav-link" data-scroll-target="#ασκήσεων-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων ……συνέχεια</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<hr>
+<section id="χαρακτήρες-διαιρετότητας---μκδ---εκπ---ανάλυση-αριθμού-σε-γινόμενο-πρώτων-παραγόντων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="χαρακτήρες-διαιρετότητας---μκδ---εκπ---ανάλυση-αριθμού-σε-γινόμενο-πρώτων-παραγόντων"><span class="header-section-number">1</span> Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</h2>
+<section id="πρώτοι-και-σύνθετοι-αριθμοί" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="πρώτοι-και-σύνθετοι-αριθμοί"><span class="header-section-number">1.1</span> <strong>Πρώτοι και Σύνθετοι Αριθμοί</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Πρώτος αριθμός:</strong> Κάθε φυσικός αριθμός <span class="math inline">\(\alpha\)</span> (εκτός από το 1), ο οποίος έχει διαιρέτες <strong>μόνο τον εαυτό του και τη μονάδα</strong>. <span class="math display">\[\text{Πρώτοι}= 2, 3, 5, 7, 11, 13, 17, 19, 23, \cdots\]</span></p></li>
+<li><p><strong>Σύνθετος αριθμός:</strong> Κάθε φυσικός αριθμός που έχει και <strong>άλλους φυσικούς διαιρέτες</strong> εκτός από το 1 και τον εαυτό του.</p></li>
+<li><p><strong>Ο αριθμός 1:</strong> Δεν θεωρείται <strong>ούτε πρώτος ούτε σύνθετος</strong>.</p></li>
+<li><p><strong>Άρτιοι και Πρώτοι:</strong> Ο αριθμός <strong>2</strong> είναι ο μοναδικός άρτιος πρώτος αριθμός· όλοι οι άλλοι πρώτοι είναι περιττοί.</p></li>
+<li><p><strong>Κόσκινο του Ερατοσθένη:</strong> Είναι μια μέθοδος για την εύρεση όλων των πρώτων αριθμών μέχρι ένα συγκεκριμένο όριο, διαγράφοντας διαδοχικά τα πολλαπλάσια των πρώτων.</p></li>
+</ul>
+<p><span class="math display">\[\require{cancel}
+\begin{matrix}
+\color{blue}{2} ,\color{blue}{3} , \cancel{4} , \color{blue}{5} , \cancel{6} , \color{blue}{7} , \cancel{8} , \cancel{9} , \cancel{10} , \color{blue}{11} , \cancel{12} , \color{blue}{13} , \cancel{14} , \cancel{15} ,  \cancel{16} , \color{blue}{17} , \cancel{18} , \color{blue}{19} , \cancel{20} \\
+\cancel{21} , \cancel{22} , \color{blue}{23} , \cancel{24} , \cancel{25} , \cancel{26} , \cancel{27} , \cancel{28} , \color{blue}{29} , \cancel{30} , \color{blue}{31} , \cancel{32} ,  \cancel{33} , \cancel{34} , \cancel{35} , \cancel{36} , \color{blue}{37} , \cancel{38} , \cancel{39} , \cancel{40} \\
+\color{blue}{41} , \cancel{42} , \cdots
+\end{matrix}\]</span></p>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ο αριθμός <strong>7</strong> είναι πρώτος γιατί διαιρείται μόνο από το 1 και το 7.</li>
+<li>Ο αριθμός <strong>12</strong> είναι σύνθετος γιατί έχει διαιρέτες τους 1, 2, 3, 4, 6 και 12.</li>
+<li>Ο αριθμός <strong>19</strong> είναι πρώτος.</li>
+<li>Το <strong>διπλάσιο</strong> οποιουδήποτε πρώτου αριθμού είναι πάντα <strong>σύνθετος</strong> αριθμός (π.χ. <span class="math inline">\(2 \times 3 = 6\)</span>).</li>
+<li>Οι πρώτοι αριθμοί μέχρι το 20 είναι: 2, 3, 5, 7, 11, 13, 17, 19.</li>
+</ol>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Εξετάστε αν ο αριθμός 43 είναι πρώτος ή σύνθετος.</li>
+<li>Βρείτε όλους τους διαιρέτες του αριθμού 28 και χαρακτηρίστε τον.</li>
+<li>Γιατί ο αριθμός 1 δεν ανήκει σε καμία από τις δύο κατηγορίες;.</li>
+<li>Είναι ο αριθμός 21 πρώτος; Δικαιολογήστε την απάντηση.</li>
+<li>Βρείτε τους πρώτους αριθμούς ανάμεσα στο 20 και το 30.</li>
+<li>Χαρακτηρίστε ως πρώτο ή σύνθετο τον πενταπλάσιο ενός πρώτου αριθμού.</li>
+<li>Ποιος είναι ο μεγαλύτερος πρώτος αριθμός του οποίου το τετράγωνο χωράει στο 100;.</li>
+<li>Γράψτε το σύνολο των διαιρετών του 15.</li>
+<li>Αν ένας αριθμός <span class="math inline">\(\alpha\)</span> είναι πρώτος, τι είδους αριθμός είναι ο <span class="math inline">\(2\alpha + 2\)</span>;.</li>
+<li>Χρησιμοποιήστε τη μέθοδο του Ερατοσθένη για να βρείτε τους πρώτους αριθμούς από 30 έως 50.</li>
+</ol>
+<hr>
+</section>
+<section id="κριτήρια-διαιρετότητας-2-4-5-10-3-9" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="κριτήρια-διαιρετότητας-2-4-5-10-3-9"><span class="header-section-number">1.2</span> <strong>Κριτήρια Διαιρετότητας (2, 4, 5, 10, 3, 9)</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Κριτήρια Διαιρετότητας:</strong> Είναι κανόνες που επιτρέπουν να γνωρίζουμε αν ένας αριθμός διαιρείται από κάποιον άλλον χωρίς να κάνουμε τη διαίρεση.</p></li>
+<li><p><strong>Διαίρεση με το 2:</strong> Ο αριθμός πρέπει να είναι <strong>άρτιος</strong>, δηλαδή να λήγει σε 0, 2, 4, 6, 8.</p></li>
+<li><p><strong>Διαίρεση με το 5:</strong> Πρέπει να λήγει σε <strong>0 ή 5</strong>.</p></li>
+<li><p><strong>Διαίρεση με το 10:</strong> Πρέπει να λήγει σε <strong>τουλάχιστον ένα μηδενικό</strong>.</p></li>
+<li><p><strong>Διαίρεση με το 4:</strong> Τα <strong>δύο τελευταία ψηφία</strong> του αριθμού πρέπει να σχηματίζουν αριθμό που διαιρείται με το 4 ή να είναι 00.</p></li>
+<li><p><strong>Διαίρεση με το 3 ή το 9:</strong> Το <strong>άθροισμα των ψηφίων</strong> του αριθμού πρέπει να διαιρείται με το 3 ή το 9 αντίστοιχα.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ο αριθμός <strong>12.510</strong> διαιρείται με το 2, 3, 5, 9 και 10.</li>
+<li>Ο αριθμός <strong>772</strong> διαιρείται με το 2 και το 4, αλλά όχι με το 5 ή το 9.</li>
+<li>Ο αριθμός <strong>225</strong> διαιρείται με το 3, 5, 9 και 25.</li>
+<li>Ο αριθμός <strong>13.600</strong> διαιρείται με το 2, 4, 5, 10, 25 και 100.</li>
+<li>Στον αριθμό <strong>2_6</strong>, αν βάλουμε το ψηφίο 1 (216), διαιρείται με το 9.</li>
+</ol>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Ελέγξτε αν ο αριθμός 450 διαιρείται με το 3 και το 9.</li>
+<li>Ποια ψηφία μπορούν να μπουν στο κενό του 36_ ώστε ο αριθμός να διαιρείται με το 2, 4 και 5;.</li>
+<li>Βρείτε αν ο αριθμός 1.362 διαιρείται με το 9.</li>
+<li>Συμπληρώστε το κενό στον αριθμό 601_ ώστε να διαιρείται με το 9.</li>
+<li>Εξετάστε αν ο αριθμός 77.816 διαιρείται με το 4.</li>
+<li>Ποιο είναι το υπόλοιπο της διαίρεσης του 4.589 με το 5 χωρίς να κάνετε την πράξη;.</li>
+<li>Βρείτε το ψηφίο που λείπει από τον αριθμό 92_5 ώστε να διαιρείται με το 11.</li>
+<li>Είναι ο αριθμός 38 πολλαπλάσιο του 3;.</li>
+<li>Σχηματίστε έναν τριψήφιο αριθμό με τα ψηφία 4, 5, 6 που να διαιρείται με το 12.</li>
+<li>Ποιο ψηφίο πρέπει να προστεθεί στο τέλος του 359 για να γίνει διαιρετό με το 25;.</li>
+</ol>
+<hr>
+</section>
+<section id="μ.κ.δ.---ε.κ.π.---ανάλυση-σε-πρώτους-παράγοντες" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μ.κ.δ.---ε.κ.π.---ανάλυση-σε-πρώτους-παράγοντες"><span class="header-section-number">1.3</span> <strong>Μ.Κ.Δ. - Ε.Κ.Π. - Ανάλυση σε Πρώτους Παράγοντες</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<ul>
+<li><strong>Ανάλυση σε πρώτους παράγοντες:</strong> Κάθε σύνθετος αριθμός μπορεί να γραφεί ως γινόμενο πρώτων αριθμών μέσω διαδοχικών διαιρέσεων.</li>
+</ul>
+<p><strong>Παράδειγμα</strong> για τον αριθμό 546</p>
+<span class="math display">\[\begin{array}{r | l}
+546 &amp;\text{διαιρώ με 2} \\
+
+273&amp;\text{διαιρώ με 3}  \\
+91&amp;\text{διαιρώ με 91}\\
+1
+\end{array}\]</span>
+<p>Άρα <span class="math inline">\(546=2\cdot3 \cdot91\)</span></p>
+<p><br>
+<br>
+</p>
+<p><strong>Παράδειγμα</strong> για τον αριθμό 1800</p>
+<span class="math display">\[\begin{array}{r | l}
+1800 &amp;\text{διαιρώ με 2} \\
+
+900&amp;\text{διαιρώ με 2}  \\
+450&amp;\text{διαιρώ με 2}\\
+225&amp;\text{διαιρώ με 3}\\
+75&amp;\text{διαιρώ με 3}\\
+25&amp;\text{διαιρώ με 5}\\
+5&amp;\text{διαιρώ με 5}\\
+1&amp;
+\end{array}\]</span>
+<p>Αρα <span class="math inline">\(1800=2^2\cdot3^2\cdot5^2\)</span></p>
+<ul>
+<li><strong>Μέγιστος Κοινός Διαιρέτης (ΜΚΔ):</strong> Το γινόμενο των <strong>κοινών πρώτων παραγόντων</strong> με τον <strong>μικρότερο εκθέτη</strong>.</li>
+</ul>
+<p><strong>Παράδειγμα</strong></p>
+<p>Για να βρούμε τον <strong>Μέγιστο Κοινό Διαιρέτη (ΜΚΔ)</strong> των αριθμών 200 και 450, μπορούμε να ακολουθήσουμε μία από τις μεθόδους : την ανάλυση σε γινόμενο πρώτων παραγόντων ή τον Ευκλείδειο αλγόριθμο.</p>
+<p><span style="color: #608240;"><strong>Μέθοδος 1: Ανάλυση σε πρώτους παράγοντες</strong></span></p>
+<p>Σύμφωνα με τη θεωρία, ο ΜΚΔ αριθμών που έχουν αναλυθεί σε πρώτους παράγοντες είναι το <strong>γινόμενο των κοινών πρώτων παραγόντων τους με τον μικρότερο εκθέτη</strong>.</p>
+<ol type="1">
+<li><strong>Αναλύουμε τον αριθμό 200:</strong>
+<ul>
+<li><span class="math inline">\(200 = 2 \cdot 100 = 2 \cdot 2 \cdot 50 = 2 \cdot 2 \cdot 2 \cdot 25 = 2 \cdot 2 \cdot 2 \cdot 5 \cdot 5 = \mathbf{2^3 \cdot 5^2}\)</span>.</li>
+</ul></li>
+<li><strong>Αναλύουμε τον αριθμό 450:</strong>
+<ul>
+<li><span class="math inline">\(450 = 2 \cdot 225 = 2 \cdot 3 \cdot 75 = 2 \cdot 3 \cdot 3 \cdot 25 = 2 \cdot 3 \cdot 3 \cdot 5 \cdot 5 = \mathbf{2 \cdot 3^2 \cdot 5^2}\)</span>.</li>
+</ul></li>
+<li><strong>Επιλέγουμε τους κοινούς παράγοντες με τον μικρότερο εκθέτη:</strong>
+<ul>
+<li>Οι κοινοί πρώτοι παράγοντες είναι το <strong>2</strong> και το <strong>5</strong>.</li>
+<li>Για το 2, ο μικρότερος εκθέτης είναι το 1 (από το <span class="math inline">\(2^1\)</span>).</li>
+<li>Για το 5, ο μικρότερος εκθέτης είναι το 2 (από το <span class="math inline">\(5^2\)</span>).</li>
+</ul></li>
+<li><strong>Υπολογίζουμε το γινόμενο:</strong>
+<ul>
+<li><span class="math inline">\(ΜΚΔ(200, 450) = 2^1 \cdot 5^2 = 2 \cdot 25 = \mathbf{50}\)</span>.</li>
+</ul></li>
+</ol>
+<p><br>
+</p>
+<p><span style="color: #608240;"><strong>Μέθοδος 2: Ευκλείδειος Αλγόριθμος</strong></span></p>
+<p>Αυτή η μέθοδος βασίζεται σε διαδοχικές διαιρέσεις μέχρι το υπόλοιπο να γίνει μηδέν. Ο τελευταίος διαιρέτης είναι ο ΜΚΔ.</p>
+<ol type="1">
+<li>Διαιρούμε τον μεγαλύτερο αριθμό με τον μικρότερο:
+<ul>
+<li><span class="math inline">\(450 = 2 \cdot 200 + \mathbf{50}\)</span> (υπόλοιπο 50).</li>
+</ul></li>
+<li>Συνεχίζουμε τη διαίρεση χρησιμοποιώντας τον προηγούμενο διαιρέτη (200) και το νέο υπόλοιπο (50):
+<ul>
+<li><span class="math inline">\(200 = 4 \cdot \mathbf{50} + \mathbf{0}\)</span> (το υπόλοιπο είναι 0).</li>
+</ul></li>
+</ol>
+<p>Επειδή η διαίρεση έγινε τέλεια, ο τελευταίος διαιρέτης <strong>50</strong> είναι ο Μέγιστος Κοινός Διαιρέτης.</p>
+<p><strong>Αρα:</strong> <strong>ΜΚΔ(200, 450) = 50</strong><br>
+<br>
+- <strong>Ελάχιστο Κοινό Πολλαπλάσιο (ΕΚΠ):</strong> Το γινόμενο <strong>κοινών και μη κοινών πρώτων παραγόντων</strong> με τον <strong>μεγαλύτερο εκθέτη</strong>.</p>
+<p><strong>Παράδειγμα</strong></p>
+<p>Για να βρούμε το <strong>Ελάχιστο Κοινό Πολλαπλάσιο (ΕΚΠ)</strong> των αριθμών 300 και 520, ακολουθούμε τη μέθοδο της <strong>ανάλυσης σε γινόμενο πρώτων παραγόντων</strong></p>
+<p><span style="color: #608240;"><strong>Βήμα 1: Ανάλυση των αριθμών σε πρώτους παράγοντες</strong></span></p>
+<ul>
+<li><p><strong>Για τον αριθμό 300:</strong> Ο αριθμός 300 αναλύεται ως <span class="math inline">\(3 \cdot 100\)</span>, δηλαδή <span class="math inline">\(3 \cdot 10^2\)</span>. Γνωρίζοντας ότι <span class="math inline">\(10 = 2 \cdot 5\)</span>, έχουμε: <span class="math inline">\(300 = 3 \cdot (2 \cdot 5)^2 = 3 \cdot 2^2 \cdot 5^2\)</span>. Άρα: <span class="math inline">\(300 = 2^2 \cdot 3 \cdot 5^2\)</span>.</p></li>
+<li><p><strong>Για τον αριθμό 520:</strong> Ο αριθμός 520 αναλύεται ως <span class="math inline">\(52 \cdot 10\)</span>. Αναλύοντας περαιτέρω: <span class="math inline">\(52 = 4 \cdot 13 = 2^2 \cdot 13\)</span> και <span class="math inline">\(10 = 2 \cdot 5\)</span>. Συνδυάζοντας τους παράγοντες: <span class="math inline">\(520 = (2^2 \cdot 13) \cdot (2 \cdot 5) = 2^3 \cdot 5 \cdot 13\)</span>. Άρα: <span class="math inline">\(520 = 2^3 \cdot 5 \cdot 13\)</span>.</p></li>
+</ul>
+<p><span style="color: #608240;"><strong>Βήμα 2: Επιλογή παραγόντων για το ΕΚΠ</strong></span></p>
+<p>Επιλέγουμε όλους τους πρώτους παράγοντες (κοινούς και μη κοινούς) που εμφανίζονται στις δύο αναλύσεις, χρησιμοποιώντας τη μεγαλύτερη δύναμη για τον καθένα:</p>
+<ul>
+<li><p>Από τον παράγοντα <strong>2</strong>, παίρνουμε το <span class="math inline">\(2^3\)</span> (από το 520).</p></li>
+<li><p>Από τον παράγοντα <strong>3</strong>, παίρνουμε το <span class="math inline">\(3^1\)</span> (από το 300).</p></li>
+<li><p>Από τον παράγοντα <strong>5</strong>, παίρνουμε το <span class="math inline">\(5^2\)</span> (από το 300).</p></li>
+<li><p>Από τον παράγοντα <strong>13</strong>, παίρνουμε το <span class="math inline">\(13^1\)</span> (από το 520).</p></li>
+</ul>
+<p><span style="color: #608240;"><strong>Βήμα 3: Υπολογισμός του γινομένου</strong></span></p>
+<p><span class="math inline">\(ΕΚΠ(300, 520) = 2^3 \cdot 3 \cdot 5^2 \cdot 13\)</span></p>
+<p><span class="math inline">\(ΕΚΠ(300, 520) = 8 \cdot 3 \cdot 25 \cdot 13\)</span></p>
+<p><span class="math inline">\(ΕΚΠ(300, 520) = 24 \cdot 325\)</span></p>
+<p><span class="math inline">\(ΕΚΠ(300, 520) = 7.800\)</span></p>
+<p><strong>Άρα:</strong> Το Ελάχιστο Κοινό Πολλαπλάσιο των αριθμών 300 και 520 είναι το <strong>7.800</strong>.</p>
+<ul>
+<li><p><strong>Πρώτοι μεταξύ τους:</strong> Δύο αριθμοί των οποίων ο ΜΚΔ είναι 1.</p></li>
+<li><p><strong>Βασική Σχέση:</strong> Το γινόμενο δύο αριθμών ισούται με το γινόμενο του ΜΚΔ και του ΕΚΠ τους (<span class="math inline">\(\alpha \cdot \beta = \text{ΜΚΔ} \cdot \text{ΕΚΠ}\)</span>).</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ανάλυση του 120: <span class="math inline">\(120 = 2^3 \cdot 3 \cdot 5\)</span>.</li>
+<li>ΜΚΔ(160, 200, 256) = <span class="math inline">\(2^3 = 8\)</span>.</li>
+<li>ΕΚΠ(160, 200, 256) = <span class="math inline">\(2^8 \cdot 5^2 = 6.400\)</span>.</li>
+<li>Ανάλυση του 1512: <span class="math inline">\(1512 = 2^3 \cdot 3^3 \cdot 7\)</span>.</li>
+<li>ΜΚΔ(2520, 2940, 3780) = 420.</li>
+</ol>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Αναλύστε τους αριθμούς 25, 45 και 65 σε γινόμενο πρώτων παραγόντων.</li>
+<li>Βρείτε τον ΜΚΔ και το ΕΚΠ των αριθμών 40, 50 και 60.</li>
+<li>Αν ΜΚΔ(α, β) = 24, εξηγήστε γιατί οι αριθμοί αυτοί έχουν και άλλους κοινούς διαιρέτες.</li>
+<li>Βρείτε τον ΜΚΔ των αριθμών 1584, 2700 και 1512.</li>
+<li>Αναλύστε τον αριθμό 300 σε πρώτους παράγοντες.</li>
+<li>Βρείτε το ΕΚΠ(8, 12, 15).</li>
+<li>Είναι οι αριθμοί 5 και 8 πρώτοι μεταξύ τους; Δικαιολογήστε την απάντηση.</li>
+<li>Αν το γινόμενο δύο αριθμών είναι 1.000 και ο ΜΚΔ τους είναι 10, ποιο είναι το ΕΚΠ;.</li>
+<li>Αναλύστε τον αριθμό 1210 σε γινόμενο πρώτων παραγόντων.</li>
+<li>Βρείτε τον ΜΚΔ(22, 32, 50).</li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεων-συνέχεια" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεων-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων ……συνέχεια</h3>
+<ol type="1">
+<li><strong>Συμπλήρωση Κενών (Θεωρία)</strong></li>
+</ol>
+<p>Συμπλήρωσε τα παρακάτω κενά:</p>
+<ul>
+<li>α. Ένα κοινό πολλαπλάσιο των αριθμών <span class="math inline">\(4\)</span> και <span class="math inline">\(6\)</span> είναι ο αριθμός ………… και το <span class="math inline">\(EK\Pi(4, 6) = \dots \dots\)</span></li>
+<li>β. Αν το <span class="math inline">\(EKΠ(x, y) = x\)</span>, τότε ο <span class="math inline">\(x\)</span> είναι ……………………………………. του <span class="math inline">\(y\)</span>.</li>
+<li>γ. <strong>Πρώτοι</strong> λέγονται οι αριθμοί που …………………………………………………………… και <strong>σύνθετοι</strong> λέγονται οι αριθμοί που ……………………………………………………………………………………….</li>
+<li>δ. Δύο αριθμοί ονομάζονται <strong>πρώτοι μεταξύ τους</strong> όταν ………………………………………………….</li>
+<li>ε. ΕΚΠ δύο αριθμών α και λέμε ………………………………………………</li>
+<li>στ. ΜΚΔ δύο αριθμών α και β λέμε ………………………………………</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Κριτήρια Διαιρετότητας</strong></li>
+</ol>
+<p>Συμπλήρωσε το κενό με το κατάλληλο ψηφίο ώστε:</p>
+<ul>
+<li>α. ο αριθμός που θα σχηματιστεί να διαιρείται με το <strong>3</strong>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(4 \Box 2\)</span></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(71 \Box\)</span></li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><span class="math inline">\(5 \Box 10\)</span></li>
+</ol></li>
+</ul></li>
+<li>β. ο αριθμός που θα σχηματιστεί να διαιρείται με το <strong>5</strong>
+<ul>
+<li><ol type="1">
+<li>$777 $</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(22 \Box 20\)</span></li>
+</ol></li>
+</ul></li>
+<li>γ. ο αριθμός που θα σχηματιστεί να διαιρείται με το <strong>5 και το 3 ταυτόχρονα</strong>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(88 \Box 88 \Box\)</span></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(123 \Box 456 \Box\)</span></li>
+</ol></li>
+</ul></li>
+<li>δ. ο αριθμός που θα σχηματιστεί να διαιρείται με το <strong>4 και το 10 ταυτόχρονα</strong>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(444 \Box \Box\)</span></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(999 \Box 96 \Box\)</span></li>
+</ol></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Προσοχή σε κάποιες από τις παραπάνω ασκήσεις υπάρχουν πολλές επιλογές</p>
+</blockquote>
+</blockquote>
+<ol start="3" type="1">
+<li><strong>Εύρεση ΕΚΠ (Επιλογή)</strong></li>
+</ol>
+<p>Τοποθέτησε ένα “X” στην αντίστοιχη θέση του σωστού αποτελέσματος:</p>
+<ul>
+<li>(α) <span class="math inline">\(EK\Pi(4, 6) =\)</span> (6 / 12 / 18 / 24)</li>
+<li>(β) <span class="math inline">\(EK\Pi(5, 7) =\)</span> (5 / 7 / 12 / 35)</li>
+<li>(γ) <span class="math inline">\(EK\Pi(8, 16) =\)</span> (8 / 16 / 24 / 32)</li>
+<li>(δ) <span class="math inline">\(EK\Pi(2, 3, 4) =\)</span> (6 / 8 / 12 / 24)</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Πρόβλημα Περιοδικότητας (Λάμπες)</strong></li>
+</ol>
+<p>Τρεις φάροι αναβοσβήνουν σε διαφορετικά διαστήματα. Ο πρώτος κάθε <span class="math inline">\(4\)</span> δευτερόλεπτα, ο δεύτερος κάθε <span class="math inline">\(6\)</span> δευτερόλεπτα και ο τρίτος κάθε <span class="math inline">\(10\)</span> δευτερόλεπτα. Αν άναψαν μαζί στις 20:00 το βράδυ, μετά από πόσα δευτερόλεπτα θα ξαναανάψουν μαζί;</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σκεφτείτε ότι ο πρώτος φάρος για παράειγμα ανάβει κάθε 4, 8, 12, … δευτερόλεπτα τα οποία είναι πολλαπλάσια του ………………. άρα ο δεύερος φάρος θα ανάβει κάθε 6, …….. ο τρίτος θα ανάβει κάθε 10, ……..</p>
+</blockquote>
+</blockquote>
+<ol start="5" type="1">
+<li><strong>Πρόβλημα με Ομάδες (Μαθητές)</strong></li>
+</ol>
+<p>Μια δασκάλα χορού παρατήρησε ότι αν χωρίσει τους μαθητές της σε ομάδες των <span class="math inline">\(4\)</span>, των <span class="math inline">\(6\)</span> ή των <span class="math inline">\(9\)</span>, δεν περισσεύει κανένας μαθητής. Πόσοι είναι οι μαθητές, αν γνωρίζουμε ότι το πλήθος τους είναι μεταξύ <span class="math inline">\(60\)</span> και <span class="math inline">\(80\)</span>;</p>
+<ol start="6" type="1">
+<li><strong>Πρόβλημα Συνάντησης</strong></li>
+</ol>
+<p>Η Ελένη πηγαίνει στο κολυμβητήριο κάθε <span class="math inline">\(4\)</span> ημέρες και η Μαρία κάθε <span class="math inline">\(6\)</span> ημέρες. Αν συναντήθηκαν την 1η Ιουνίου, μετά από πόσες ημέρες θα ξανασυναντηθούν; Πόσες φορές θα έχει πάει η καθεμία στο κολυμβητήριο στο διάστημα αυτό;</p>
+<ol start="7" type="1">
+<li>*Εύρεση ΜΚΔ (Επιλογή)**</li>
+</ol>
+<p>Τοποθέτησε ένα “X” στην αντίστοιχη θέση του σωστού αποτελέσματος:</p>
+<ul>
+<li>(α) <span class="math inline">\(MK\Delta(6, 9) =\)</span> (1 / 3 / 6 / 9)</li>
+<li>(β) <span class="math inline">\(MK\Delta(12, 18) =\)</span> (2 / 3 / 6 / 12)</li>
+<li>(γ) <span class="math inline">\(MK\Delta(15, 25) =\)</span> (1 / 5 / 15 / 25)</li>
+<li>(δ) <span class="math inline">\(MK\Delta(20, 40, 60) =\)</span> (5 / 10 / 20 / 60)</li>
+</ul>
+<ol start="8" type="1">
+<li><strong>Κοινοί Διαιρέτες</strong></li>
+</ol>
+<p>Δύο αριθμοί έχουν <span class="math inline">\(MK\Delta\)</span> το <span class="math inline">\(18\)</span>. Να δικαιολογήσεις γιατί έχουν και άλλους κοινούς διαιρέτες εκτός από τη μονάδα και να τους γράψεις.</p>
+<ol start="9" type="1">
+<li><strong>Πρώτοι και Σύνθετοι Αριθμοί</strong></li>
+</ol>
+<p>Βρες όλους τους διαιρέτες των αριθμών: <span class="math inline">\(20, 21, 22, 23, 24, 25\)</span>. Ποιοι από αυτούς είναι πρώτοι και ποιοι σύνθετοι;</p>
+<ol start="10" type="1">
+<li>*Διερεύνηση (Πολλαπλάσια Πρώτων)**</li>
+</ol>
+<p>Αν πολλαπλασιάσουμε έναν πρώτο αριθμό με το <span class="math inline">\(3\)</span>, ο αριθμός που θα προκύψει θα είναι πρώτος ή σύνθετος; Να αιτιολογήσεις την απάντησή σου.</p>
+<ol start="11" type="1">
+<li><strong>Διαιρέτες Αριθμών</strong></li>
+</ol>
+<p>Να βρεις όλους τους διαιρέτες των παρακάτω αριθμών χρησιμοποιώντας τα κριτήρια διαιρετότητας:</p>
+<ul>
+<li>α. <span class="math inline">\(36\)</span>,</li>
+<li>β. <span class="math inline">\(45\)</span>,</li>
+<li>γ. <span class="math inline">\(120\)</span>,</li>
+<li>δ. <span class="math inline">\(210\)</span>.</li>
+</ul>
+<ol start="12" type="1">
+<li><strong>Ανάλυση σε Γινόμενο Πρώτων Παραγόντων</strong></li>
+</ol>
+<p>Να αναλύσεις τους ακόλουθους αριθμούς σε γινόμενο πρώτων παραγόντων (με τη μέθοδο των διαδοχικών διαιρέσεων ή το δεντροδιάγραμμα):</p>
+<ul>
+<li>α. <span class="math inline">\(60\)</span>,</li>
+<li>β. <span class="math inline">\(126\)</span>,</li>
+<li>γ. <span class="math inline">\(450\)</span>,</li>
+<li>δ. <span class="math inline">\(1.000\)</span>.</li>
+</ul>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !!</p>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1157,12 +1541,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
