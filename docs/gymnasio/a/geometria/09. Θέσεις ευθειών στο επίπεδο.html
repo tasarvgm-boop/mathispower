@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>09. Θέσεις ευθειών στο επίπεδο – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,22 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +108,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-aggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +119,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +171,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html">09. Θέσεις ευθειών στο επίπεδο</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html">09. Θέσεις ευθειών στο επίπεδο</a></li></ol></nav>
+      <h1 class="title">09. Θέσεις ευθειών στο επίπεδο</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">23 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">6 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +236,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +245,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,9 +479,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -504,7 +542,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
   </div>
 </li>
@@ -558,7 +596,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -567,7 +605,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -638,7 +676,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -757,7 +795,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -800,7 +838,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -809,7 +847,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -952,7 +990,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1027,7 +1065,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1048,7 +1086,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1057,7 +1095,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1217,33 +1255,238 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#θέσεις-ευθειών-στο-επίπεδο" id="toc-θέσεις-ευθειών-στο-επίπεδο" class="nav-link active" data-scroll-target="#θέσεις-ευθειών-στο-επίπεδο"><span class="header-section-number">1</span> Θέσεις ευθειών στο επίπεδο</a>
+  <ul class="collapse">
+  <li><a href="#σχετικές-θέσεις-ευθειών-τομή-και-παραλληλία" id="toc-σχετικές-θέσεις-ευθειών-τομή-και-παραλληλία" class="nav-link" data-scroll-target="#σχετικές-θέσεις-ευθειών-τομή-και-παραλληλία"><span class="header-section-number">1.1</span> <strong>Σχετικές Θέσεις Ευθειών: Τομή και Παραλληλία</strong></a></li>
+  <li><a href="#παραλληλία-και-καθετότητα" id="toc-παραλληλία-και-καθετότητα" class="nav-link" data-scroll-target="#παραλληλία-και-καθετότητα"><span class="header-section-number">1.2</span> <strong>2. Παραλληλία και Καθετότητα</strong></a></li>
+  <li><a href="#μοναδικότητα-παράλληλης-αίτημα-ευκλείδη-και-χάραξη" id="toc-μοναδικότητα-παράλληλης-αίτημα-ευκλείδη-και-χάραξη" class="nav-link" data-scroll-target="#μοναδικότητα-παράλληλης-αίτημα-ευκλείδη-και-χάραξη"><span class="header-section-number">1.3</span> <strong>Μοναδικότητα Παράλληλης (Αίτημα Ευκλείδη) και Χάραξη</strong></a></li>
+  <li><a href="#για-τη-σχεδίαση-ευθείας-epsilon_1-παράλληλης-προς-τη-δοθείσα-ευθεία-epsilon-που-να-διέρχεται-από-το-σημείο-a-έχουμε-τις-εξής-μεθόδους" id="toc-για-τη-σχεδίαση-ευθείας-epsilon_1-παράλληλης-προς-τη-δοθείσα-ευθεία-epsilon-που-να-διέρχεται-από-το-σημείο-a-έχουμε-τις-εξής-μεθόδους" class="nav-link" data-scroll-target="#για-τη-σχεδίαση-ευθείας-epsilon_1-παράλληλης-προς-τη-δοθείσα-ευθεία-epsilon-που-να-διέρχεται-από-το-σημείο-a-έχουμε-τις-εξής-μεθόδους"><span class="header-section-number">1.4</span> Για τη σχεδίαση ευθείας <span class="math inline">\(\epsilon_1\)</span> παράλληλης προς τη δοθείσα ευθεία <span class="math inline">\(\epsilon\)</span> που να διέρχεται από το σημείο <span class="math inline">\(A\)</span>, έχουμε τις εξής μεθόδους:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="θέσεις-ευθειών-στο-επίπεδο" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="θέσεις-ευθειών-στο-επίπεδο"><span class="header-section-number">1</span> Θέσεις ευθειών στο επίπεδο</h2>
+<section id="σχετικές-θέσεις-ευθειών-τομή-και-παραλληλία" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="σχετικές-θέσεις-ευθειών-τομή-και-παραλληλία"><span class="header-section-number">1.1</span> <strong>Σχετικές Θέσεις Ευθειών: Τομή και Παραλληλία</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Τομή δύο ευθειών:</strong> Όταν δύο διαφορετικές ευθείες ενός επιπέδου έχουν ένα μόνο κοινό σημείο, λέμε ότι οι ευθείες αυτές <strong>τέμνονται</strong>. Το κοινό αυτό σημείο ονομάζεται <strong>σημείο τομής</strong>.<br>
+<img src="images/clipboard-1141183817.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Παράλληλες ευθείες (στενή σημασία):</strong> Δύο ευθείες του ίδιου επιπέδου που δεν έχουν κανένα κοινό σημείο, όσο κι αν προεκταθούν, ονομάζονται <strong>παράλληλες</strong>.<br>
+<img src="images/clipboard-1241389335.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Ταυτιζόμενες ευθείες:</strong> Αν δύο ευθείες έχουν δύο κοινά σημεία, τότε συμπίπτουν και αποτελούν την ίδια ευθεία.</p></li>
+<li><p><strong>Παράλληλες ευθείες (ευρεία σημασία):</strong> Στα σύγχρονα μαθηματικά, δύο ευθείες θεωρούνται παράλληλες είτε όταν δεν έχουν κανένα κοινό σημείο είτε όταν συμπίπτουν.</p></li>
+<li><p><strong>Συγκλίνουσες ευθείες:</strong> Περισσότερες από δύο ευθείες που διέρχονται από το ίδιο σημείο ονομάζονται συγκλίνουσες.<br>
+<img src="images/clipboard-2770750295.png" class="img-fluid" width="400"></p></li>
+</ul>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Δύο ευθείες που βρίσκονται στο ίδιο επίπεδο ή θα είναι παράλληλες ή θα τέμνονται.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Δύο ευθύγραμμα τμήματα που βρίσκονται πάνω σε δύο παράλληλες ευθείες, θα λέγονται παράλληλα ευθύγραμμα τμήματα και γράφουμε ΑΒ//ΓΔ.</p>
+</blockquote>
+</blockquote>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Οι δύο γραμμές ενός σταυρού ή του συμβόλου «+» είναι τεμνόμενες ευθείες.</li>
+<li>Οι <strong>σιδηροδρομικές γραμμές</strong> σε ένα ευθύγραμμο τμήμα αποτελούν εικόνα παράλληλων ευθειών.</li>
+<li>Οι <strong>απέναντι πλευρές</strong> ενός τετραδίου ή ενός θρανίου είναι παράλληλες.</li>
+<li>Οι ακτίνες μιας ρόδας ποδηλάτου είναι συγκλίνουσες ευθείες που τέμνονται στο κέντρο.</li>
+<li>Οι <strong>οριζόντιες γραμμές</strong> (χαράκια) ενός σχολικού τετραδίου είναι παράλληλες μεταξύ τους.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li><p>Σχεδιάστε δύο ευθείες <span class="math inline">\((\epsilon)\)</span> και <span class="math inline">\((\delta)\)</span> που να τέμνονται στο σημείο <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Πόσα κοινά σημεία έχουν δύο παράλληλες ευθείες (σε στενή σημασία);.</p></li>
+<li><p>Σχεδιάστε τρεις ευθείες που να συγκλίνουν στο σημείο <span class="math inline">\(O\)</span>.</p></li>
+<li><p>Σε μια ευθεία <span class="math inline">\(xy\)</span>, σημειώστε δύο σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Πόσες ευθείες διέρχονται και από τα δύο;.</p></li>
+<li><p>Αναφέρετε τρία παραδείγματα παράλληλων ευθειών από το περιβάλλον της τάξης σας.</p></li>
+<li><p>Σχεδιάστε τρεις ευθείες <span class="math inline">\((\epsilon_1, \epsilon_2, \epsilon_3)\)</span> που να τέμνονται ανά δύο σε διαφορετικά σημεία <span class="math inline">\(A, B, \Gamma\)</span>.</p></li>
+<li><p>Χρησιμοποιήστε το σύμβολο <span class="math inline">\(\cap\)</span> για να δηλώσετε την τομή δύο παραλλήλων ευθειών <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>.</p></li>
+<li><p>Σχεδιάστε 4 ευθείες που να τέμνονται ανά δύο. Ποιος είναι ο μέγιστος αριθμός σημείων τομής;.</p></li>
+<li><p>Αν οι ευθείες <span class="math inline">\((\epsilon)\)</span> και <span class="math inline">\((\zeta)\)</span> έχουν δύο κοινά σημεία, τι σχέση έχουν μεταξύ τους;</p></li>
+<li><p>Στο παρακάτω σχήμα να ξεχωρίσετε ζεύγη ή ομάδες ευθειών που:</p>
+<p>α. είναι παράλληλες β. είναι συντρέχουσες γ. τέμνονται<br>
+<br>
+<img src="images/clipboard-1264191252.png" class="img-fluid" width="500"></p></li>
+</ol>
+<hr>
+</section>
+<section id="παραλληλία-και-καθετότητα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="παραλληλία-και-καθετότητα"><span class="header-section-number">1.2</span> <strong>2. Παραλληλία και Καθετότητα</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Συμβολισμός:</strong> Η παραλληλία δηλώνεται με το σύμβολο <span class="math inline">\(\parallel\)</span> (π.χ., <span class="math inline">\(\epsilon_1 \parallel \epsilon_2\)</span>).</p></li>
+<li><p><strong>Ιδιότητα Παραλλήλων:</strong></p>
+<ul>
+<li><p>Αν μια ευθεία είναι κάθετη σε μία από δύο παράλληλες ευθείες, τότε είναι υποχρεωτικά <strong>κάθετη και στην άλλη</strong>.<br>
+</p>
+<p><img src="images/clipboard-535416855.png" class="img-fluid" width="400"></p></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p><span class="math inline">\(ε_1\parallel ε_2 \ \ \ και \ \ \ ε \perp ε_1 \Rightarrow ε \perp ε_1\)</span></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>Δύο ευθείες του ίδιου επιπέδου που είναι <strong>κάθετες στην ίδια τρίτη ευθεία</strong>, είναι μεταξύ τους <strong>παράλληλες</strong>.</li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p><span class="math inline">\(ε_1\perp ε \ \ \ και \ \ \ ε_2 \perp ε \Rightarrow ε_1\parallel ε_2\)</span></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p><strong>Αιτιολόγηση:</strong> Αν οι δύο αυτές ευθείες τέμνονταν, τότε από το σημείο τομής τους θα περνούσαν δύο διαφορετικές κάθετοι προς την ίδια ευθεία, πράγμα που είναι γεωμετρικά αδύνατο.</p></li>
+<li><p><strong>Ορισμός Καθετότητας:</strong> Δύο ευθείες είναι κάθετες όταν τέμνονται σχηματίζοντας μία ορθή γωνία (<span class="math inline">\(90^\circ\)</span> ή <span class="math inline">\(100\text{ gr}\)</span>).</p></li>
+<li><p><strong>Συμβολισμός:</strong> Η καθετότητα δηλώνεται με το σύμβολο <span class="math inline">\(\perp\)</span> (π.χ., <span class="math inline">\(\epsilon_1 \perp \epsilon_2\)</span>).</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Οι <strong>σιδηροδρομικές γραμμές</strong> (σε ευθύγραμμο τμήμα) αποτελούν υλική εικόνα παράλληλων ευθειών.</li>
+<li>Οι <strong>γραμμές (χαράκια)</strong> ενός σχολικού τετραδίου είναι παράλληλες μεταξύ τους .</li>
+<li>Οι <strong>απέναντι πλευρές</strong> ενός ορθογωνίου ή ενός παραλληλογράμμου είναι παράλληλες.</li>
+<li>Σε μια ταινία (λωρίδα), οι δύο ευθείες που την ορίζουν (ακμές) είναι παράλληλες.</li>
+<li>Οι δύο <strong>κάθετες πλευρές ενός ορθογωνίου</strong> είναι κάθετες στην ίδια πλευρά, άρα είναι παράλληλες μεταξύ τους.</li>
+<li>Τα <strong>σκαλοπάτια μιας σκάλας</strong> είναι κάθετα στους δύο πλάγιους δοκούς, άρα είναι παράλληλα μεταξύ τους.</li>
+<li>Δύο <strong>κατακόρυφοι στύλοι</strong> της ΔΕΗ, θεωρούμενοι κάθετοι στο επίπεδο του εδάφους, είναι παράλληλοι.</li>
+<li>Σε μια <strong>ταινία (λωρίδα)</strong>, κάθε ευθεία που τέμνει κάθετα τη μία πλευρά, τέμνει κάθετα και την άλλη.</li>
+<li>Οι <strong>άξονες των συντεταγμένων</strong> (<span class="math inline">\(x'x\)</span> και <span class="math inline">\(y'y\)</span>) είναι κάθετοι, και κάθε ευθεία παράλληλη στον <span class="math inline">\(x'x\)</span> είναι κάθετη στον <span class="math inline">\(y'y\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε μια ευθεία <span class="math inline">\((\epsilon)\)</span> και δύο άλλες ευθείες <span class="math inline">\((\alpha)\)</span> και <span class="math inline">\((\beta)\)</span> κάθετες στην <span class="math inline">\((\epsilon)\)</span>. Τι σχέση έχουν οι <span class="math inline">\((\alpha)\)</span> και <span class="math inline">\((\beta)\)</span>;</li>
+<li>Αν <span class="math inline">\(\alpha \parallel \beta\)</span> και <span class="math inline">\(\gamma \perp \alpha\)</span>, αποδείξτε με μέτρηση γωνιών ότι <span class="math inline">\(\gamma \perp \beta\)</span> .</li>
+<li>Βρείτε μέσα στην τάξη σας τρία ζεύγη ευθειών που να είναι παράλληλες.</li>
+<li>Σχεδιάστε ένα παραλληλόγραμμο ΑΒΓΔ και ονομάστε τα ζεύγη των παράλληλων πλευρών του.</li>
+<li>Εξετάστε αν δύο ευθείες που τέμνονται από μια τρίτη και σχηματίζουν τις εντός εναλλάξ γωνίες ίσες είναι παράλληλες.</li>
+<li>Σχεδιάστε μια ταινία πλάτους <span class="math inline">\(3\text{ cm}\)</span> και ονομάστε τις πλευρές της.</li>
+<li>Αν τρεις ευθείες <span class="math inline">\(\epsilon_1, \epsilon_2, \epsilon_3\)</span> είναι τέτοιες ώστε <span class="math inline">\(\epsilon_1 \perp \epsilon_2\)</span> και <span class="math inline">\(\epsilon_2 \perp \epsilon_3\)</span>, τι σχέση έχουν οι <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_3\)</span>;</li>
+<li>Μπορούν δύο ευθείες που τέμνονται να είναι και οι δύο παράλληλες προς μια τρίτη; Αιτιολογήστε με βάση το αίτημα του Ευκλείδη.</li>
+<li>Σχεδιάστε ένα ορθογώνιο και ονομάστε τα ζεύγη των παράλληλων πλευρών του βάσει της καθετότητας.</li>
+<li>Δείξτε με σχήμα ότι αν <span class="math inline">\(\epsilon_1 \perp \epsilon_2\)</span> και <span class="math inline">\(\epsilon_2 \perp \epsilon_3\)</span>, τότε <span class="math inline">\(\epsilon_1 \parallel \epsilon_3\)</span>.</li>
+<li>Επαληθεύστε με τον γνώμονα ότι οι γραμμές ενός τετραδίου είναι κάθετες στην περιθωριακή γραμμή.</li>
+<li>Μπορούν δύο ευθείες που τέμνονται πλάγια να είναι κάθετες στην ίδια τρίτη ευθεία;.</li>
+</ol>
+<hr>
+</section>
+<section id="μοναδικότητα-παράλληλης-αίτημα-ευκλείδη-και-χάραξη" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μοναδικότητα-παράλληλης-αίτημα-ευκλείδη-και-χάραξη"><span class="header-section-number">1.3</span> <strong>Μοναδικότητα Παράλληλης (Αίτημα Ευκλείδη) και Χάραξη</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Αίτημα του Ευκλείδη:</strong> Από σημείο <strong>εκτός ευθείας</strong> διέρχεται <strong>μία και μόνο μία</strong> ευθεία παράλληλη προς αυτήν .</p></li>
+<li><p><strong>Μεταβατική Ιδιότητα:</strong> Δύο ευθείες παράλληλες προς μια τρίτη είναι και <strong>μεταξύ τους παράλληλες</strong>.</p></li>
+<li><p><strong>Χάραξη με Γνώμονα και Χάρακα:</strong> Τοποθετούμε τη μία κάθετη πλευρά του γνώμονα πάνω στην ευθεία και τον χάρακα στην άλλη κάθετη πλευρά. Ολισθαίνουμε τον γνώμονα κατά μήκος του σταθερού χάρακα μέχρι η πλευρά του να περάσει από το σημείο.</p></li>
+<li><p><strong>Μεταβατική Ιδιότητα:</strong> Δύο ευθείες παράλληλες προς μια τρίτη είναι και <strong>μεταξύ τους παράλληλες</strong>.</p></li>
+<li><p><strong>Χάραξη με Διαβήτη/Μοιρογνωμόνιο:</strong> Βασίζεται στη δημιουργία <strong>ίσων γωνιών</strong> (π.χ. εντός εναλλάξ) με τη βοήθεια μιας βοηθητικής τέμνουσας που διέρχεται από το σημείο.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="για-τη-σχεδίαση-ευθείας-epsilon_1-παράλληλης-προς-τη-δοθείσα-ευθεία-epsilon-που-να-διέρχεται-από-το-σημείο-a-έχουμε-τις-εξής-μεθόδους" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="για-τη-σχεδίαση-ευθείας-epsilon_1-παράλληλης-προς-τη-δοθείσα-ευθεία-epsilon-που-να-διέρχεται-από-το-σημείο-a-έχουμε-τις-εξής-μεθόδους"><span class="header-section-number">1.4</span> Για τη σχεδίαση ευθείας <span class="math inline">\(\epsilon_1\)</span> παράλληλης προς τη δοθείσα ευθεία <span class="math inline">\(\epsilon\)</span> που να διέρχεται από το σημείο <span class="math inline">\(A\)</span>, έχουμε τις εξής μεθόδους:</h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<section id="με-τον-κανόνα-χάρακα-και-τον-γνώμονα-μέθοδος-ολίσθησης" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="με-τον-κανόνα-χάρακα-και-τον-γνώμονα-μέθοδος-ολίσθησης"><span class="header-section-number">1.4.1</span> <strong>Με τον κανόνα (χάρακα) και τον γνώμονα (Μέθοδος ολίσθησης)</strong></h4>
+<p>Αυτή η μέθοδος βασίζεται στην παράλληλη μετατόπιση του γνώμονα κατά μήκος ενός σταθερού χάρακα:</p>
+<ul>
+<li><p><strong>Τοποθέτηση:</strong> Τοποθετούμε τη μία κάθετη πλευρά του <strong>γνώμονα</strong> έτσι ώστε να εφαρμόζει ακριβώς πάνω στην ευθεία <span class="math inline">\(\epsilon\)</span>.<br>
+<img src="images/clipboard-880469161.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Στήριξη:</strong> Τοποθετούμε τον <strong>κανόνα (χάρακα)</strong> σταθερά σε επαφή με την υποτείνουσα του γνώμονα.</p></li>
+<li><p><strong>Ολίσθηση:</strong> <strong>Γλιστράμε (ολισθαίνουμε)</strong> τον γνώμονα μαζί με τον χάρακα κατά μήκος της ευθείας, μέχρι η πλευρά του χάρακα να φτάσει στο σημείο <span class="math inline">\(A\)</span>.<br>
+<img src="images/clipboard-3139191851.png" class="img-fluid" width="500"></p></li>
+<li><p><strong>Χάραξη:</strong> Ακινητοποιούμε τον χάρακα στη νέα του θέση και αφού γυρίσουμε τον γνώμονα να έρθει σε επαφή η υποτείνουσα του από την άλλη μεριά του χάρακα, (όπως φαίνεται στο σχήμα), χαράσσουμε τη γραμμή <span class="math inline">\(\epsilon_1\)</span> (<span style="color:red;">Κόκκινη</span>) κατά μήκος της κάθετης πλευράς του γνώμονα που περνά από το <span class="math inline">\(A\)</span>.<br>
+<img src="images/clipboard-3922716127.png" class="img-fluid" width="500"></p></li>
+</ul>
+</section>
+<section id="με-τον-γνώμονα-μέθοδος-της-διπλής-καθέτου" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="με-τον-γνώμονα-μέθοδος-της-διπλής-καθέτου"><span class="header-section-number">1.4.2</span> <strong>Με τον γνώμονα (Μέθοδος της διπλής καθέτου)</strong></h4>
+<p>Αυτή η μέθοδος στηρίζεται στην ιδιότητα ότι <strong>δύο ευθείες κάθετες στην ίδια τρίτη ευθεία είναι μεταξύ τους παράλληλες</strong>.</p>
+<ul>
+<li><p><strong>Πρώτη κάθετος:</strong> Τοποθετούμε τον γνώμονα έτσι ώστε η μία κάθετη πλευρά του να εφαρμόσει πάνω στην ευθεία <span class="math inline">\(\epsilon\)</span> και η άλλη κάθετη πλευρά του να περάσει από το σημείο Α.<br>
+</p>
+<p><img src="images/clipboard-2911218343.png" class="img-fluid" width="500"><br>
+Από το Α χαράσουμε την βηθητική κάθετο (<span style="color:orange;">πορτοκαλί</span>) προς την ε.<br>
+<img src="images/clipboard-1213452324.png" class="img-fluid" width="500"></p></li>
+<li><p><strong>Δεύτερη κάθετος:</strong> Τοποθετούμε τον γνώμονα έτσι ώστε η κορυφή της ορθής γωνία να περνάει από το σημείο <span class="math inline">\(A\)</span> και η μία κάθετη πλευρά να εφαρμόζει στην βοηθητική κάθετο (<span style="color:orange;">ποροκαλί</span>). Ύστερα χαράσσουμε μια νέα ευθεία <span class="math inline">\(\epsilon_1\)</span> που να είναι <strong>κάθετη στην πρώτη βοηθητική κάθετο</strong> με την άλλη κάθετη πλευρά του γνώμονα (<span style="color:red;">Κόκκινη</span>) στο σημείο <span class="math inline">\(A\)</span> η οποία είναι και η ζητούμενη παράλληλος.<br>
+<img src="images/clipboard-2399293679.png" class="img-fluid" width="500"></p></li>
+<li><p><strong>Συμπέρασμα:</strong> Η ευθεία <span class="math inline">\(\epsilon_1\)</span> είναι η ζητούμενη παράλληλος, καθώς τόσο η <span class="math inline">\(\epsilon\)</span> όσο και η <span class="math inline">\(\epsilon_1\)</span> είναι κάθετες στην <span style="color:orange;">πορτοκαλί</span> βοηθητική ευθεία.</p></li>
+</ul>
+<p><strong>Σημείωση:</strong> Η χρήση του γνώμονα από μόνη της για τη χάραξη καθέτων προϋποθέτει την εφαρμογή της μίας πλευράς του πάνω στην ευθεία-οδηγό. Από ένα σημείο εκτός ευθείας μπορεί να αχθεί <strong>μία μόνο κάθετος</strong> και, αντίστοιχα, από ένα σημείο εκτός ευθείας διέρχεται <strong>μία μόνο παράλληλος</strong> (Αίτημα του Ευκλείδη).</p>
+</section>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Χάραξη παράλληλης γραμμής σε ένα σχέδιο μηχανικού με τη χρήση του οργάνου <strong>«ταυ»</strong>.</li>
+<li>Σχεδίαση της <strong>μεσοπαραλλήλου</strong> μιας ταινίας (της ευθείας που ισαπέχει από τις δύο πλευρές).</li>
+<li>Χάραξη ευθείας που διέρχεται από την κορυφή τριγώνου και είναι παράλληλη προς την απέναντι πλευρά.</li>
+<li>Κατασκευή παραλληλογράμμου ξεκινώντας από δύο τεμνόμενες ευθείες και φέροντας παράλληλες από τα άκρα τους .</li>
+<li>Προσδιορισμός της θέσης ενός σημείου που κινείται παράλληλα προς έναν άξονα.</li>
+<li>Η δημιουργία ενός <strong>πλέγματος (καννάβου)</strong> με παράλληλες ευθείες που ισαπέχουν.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε μια ευθεία <span class="math inline">\((\epsilon)\)</span> και ένα σημείο <span class="math inline">\(M\)</span> εκτός αυτής. Χαράξτε την παράλληλη από το <span class="math inline">\(M\)</span> με τη μέθοδο της ολίσθησης του γνώμονα .</li>
+<li>Πάρτε μια ευθεία <span class="math inline">\((\epsilon)\)</span> και δύο σημεία <span class="math inline">\(A, B\)</span> στο ίδιο ημιεπίπεδο που απέχουν <span class="math inline">\(3,5\text{ cm}\)</span> από αυτήν. Είναι η ευθεία <span class="math inline">\(AB \parallel \epsilon\)</span>;.</li>
+<li>Κατασκευάστε μια ταινία πλάτους <span class="math inline">\(4\text{ cm}\)</span> χρησιμοποιώντας χάρακα και γνώμονα.</li>
+<li>Σχεδιάστε τρεις παράλληλες ευθείες που να ισαπέχουν <span class="math inline">\(2\text{ cm}\)</span> η μία από την άλλη.</li>
+<li>Σε ένα τρίγωνο ΑΒΓ, βρείτε τα μέσα Δ και Ε των πλευρών ΑΒ και ΑΓ. Αποδείξτε με μέτρηση ότι ΔΕ <span class="math inline">\(\parallel\)</span> ΒΓ.</li>
+<li>Χαράξτε μια γωνία <span class="math inline">\(60^\circ\)</span> και από ένα σημείο της διχοτόμου της φέρτε παράλληλες προς τις πλευρές της.</li>
+<li>Πάρτε ένα σημείο Ο και τρεις ευθείες που διέρχονται από αυτό. Τέμνοντάς τες με δύο παράλληλες ευθείες, εξετάστε αν τα τμήματα που ορίζονται είναι ανάλογα.</li>
+<li>Χωρίστε ένα ευθύγραμμο τμήμα <span class="math inline">\(8\text{ cm}\)</span> σε 5 ίσα μέρη χρησιμοποιώντας τη μέθοδο των παραλλήλων ευθειών .</li>
+<li>Αν <span class="math inline">\(\alpha \parallel \beta\)</span> και <span class="math inline">\(\beta \parallel \gamma\)</span>, δείξτε ότι <span class="math inline">\(\alpha \parallel \gamma\)</span> χρησιμοποιώντας το αίτημα του Ευκλείδη.</li>
+</ol>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1271,12 +1514,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
