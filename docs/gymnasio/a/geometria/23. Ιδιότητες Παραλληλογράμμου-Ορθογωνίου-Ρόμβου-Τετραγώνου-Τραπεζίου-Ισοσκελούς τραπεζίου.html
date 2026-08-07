@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,31 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +117,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-aggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +128,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +180,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</a></li></ol></nav>
+      <h1 class="title">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">8 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +245,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +263,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,9 +488,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -582,7 +629,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
   </div>
 </li>
@@ -594,7 +641,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -603,7 +650,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -674,7 +721,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -793,7 +840,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -836,7 +883,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -845,7 +892,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -988,7 +1035,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1063,7 +1110,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1084,7 +1131,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1093,7 +1140,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1253,33 +1300,297 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ιδιότητες-παραλληλογράμμου-ορθογωνίου-ρόμβου-τετραγώνου-τραπεζίου-ισοσκελούς-τραπεζίου" id="toc-ιδιότητες-παραλληλογράμμου-ορθογωνίου-ρόμβου-τετραγώνου-τραπεζίου-ισοσκελούς-τραπεζίου" class="nav-link active" data-scroll-target="#ιδιότητες-παραλληλογράμμου-ορθογωνίου-ρόμβου-τετραγώνου-τραπεζίου-ισοσκελούς-τραπεζίου"><span class="header-section-number">1</span> Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</a>
+  <ul class="collapse">
+  <li><a href="#παραλληλόγραμμο" id="toc-παραλληλόγραμμο" class="nav-link" data-scroll-target="#παραλληλόγραμμο"><span class="header-section-number">1.1</span> <strong>Παραλληλόγραμμο</strong></a></li>
+  <li><a href="#ορθογώνιο" id="toc-ορθογώνιο" class="nav-link" data-scroll-target="#ορθογώνιο"><span class="header-section-number">1.2</span> <strong>Ορθογώνιο</strong></a></li>
+  <li><a href="#ρόμβος" id="toc-ρόμβος" class="nav-link" data-scroll-target="#ρόμβος"><span class="header-section-number">1.3</span> <strong>Ρόμβος</strong></a></li>
+  <li><a href="#τετράγωνο" id="toc-τετράγωνο" class="nav-link" data-scroll-target="#τετράγωνο"><span class="header-section-number">1.4</span> <strong>Τετράγωνο</strong></a></li>
+  <li><a href="#τραπέζιο" id="toc-τραπέζιο" class="nav-link" data-scroll-target="#τραπέζιο"><span class="header-section-number">1.5</span> <strong>Τραπέζιο</strong></a></li>
+  <li><a href="#ισοσκελές-τραπέζιο" id="toc-ισοσκελές-τραπέζιο" class="nav-link" data-scroll-target="#ισοσκελές-τραπέζιο"><span class="header-section-number">1.6</span> <strong>Ισοσκελές Τραπέζιο</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="ιδιότητες-παραλληλογράμμου-ορθογωνίου-ρόμβου-τετραγώνου-τραπεζίου-ισοσκελούς-τραπεζίου" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ιδιότητες-παραλληλογράμμου-ορθογωνίου-ρόμβου-τετραγώνου-τραπεζίου-ισοσκελούς-τραπεζίου"><span class="header-section-number">1</span> Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</h2>
+<section id="παραλληλόγραμμο" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="παραλληλόγραμμο"><span class="header-section-number">1.1</span> <strong>Παραλληλόγραμμο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Τετράπλευρο που έχει τις <strong>απέναντι πλευρές παράλληλες</strong> ανά δύο.</p></li>
+<li><p><strong>Πλευρές:</strong> Οι απέναντι πλευρές είναι <strong>ίσες</strong>.</p></li>
+<li><p><strong>Γωνίες:</strong> Οι απέναντι γωνίες είναι <strong>ίσες</strong> και οι διαδοχικές γωνίες είναι <strong>παραπληρωματικές</strong> (άθροισμα 180°). Το άθροισμα όλων των γωνιών είναι 360°.</p></li>
+<li><p><strong>Διαγώνιοι:</strong> Οι διαγώνιοι <strong>διχοτομούνται</strong> (τέμνονται στο μέσο τους).</p></li>
+<li><p><strong>Συμμετρία:</strong> Το σημείο τομής των διαγωνίων είναι το <strong>κέντρο συμμετρίας</strong> του σχήματος.<br>
+<img src="images/clipboard-3531065218.png" class="img-fluid" width="400"></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Στο παραλληλόγραμμο ΑΒΓΔ, αν η γωνία Α = 60°, τότε η Γ = 60° και η Β = 120°.</li>
+<li>Αν οι πλευρές είναι 6cm και 4cm, η περίμετρος είναι 20cm.</li>
+<li>Παραλληλόγραμμο με διαγώνιες 6cm και 8cm που τέμνονται στο μέσο τους.</li>
+<li>Σε παραλληλόγραμμο με γωνία 50°, οι υπόλοιπες γωνίες υπολογίζονται μέσω της παραπληρωματικότητας.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε παραλληλόγραμμο με πλευρές 3cm, 5cm και γωνία 45°.</li>
+<li>Βρείτε τις γωνίες παραλληλογράμμου αν η μία είναι τριπλάσια της άλλης.</li>
+<li>Αν η περίμετρος είναι 18cm και η μία πλευρά διπλάσια της άλλης, βρείτε τις πλευρές.</li>
+<li>Αν το άθροισμα τριών γωνιών ενός παραλληλογράμμου είναι 260, υπολογίστε τις γωνίες.</li>
+<li>Σε παραλληλόγραμμο η πλευρά ΑΒ είναι 107m και η ΓΔ είναι κατά 49m μικρότερη από το διπλάσιο της ΑΒ. Βρείτε τις πλευρές.</li>
+<li>Δείξτε ότι οι διχοτόμοι των γωνιών παραλληλογράμμου σχηματίζουν ορθογώνιο.</li>
+</ol>
+<hr>
+</section>
+<section id="ορθογώνιο" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ορθογώνιο"><span class="header-section-number">1.2</span> <strong>Ορθογώνιο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Το παραλληλόγραμμο που έχει τις <strong>γωνίες του ορθές</strong> (90°).</p></li>
+<li><p><strong>Γωνίες:</strong> Και οι τέσσερις γωνίες είναι 90°.</p></li>
+<li><p><strong>Διαγώνιοι:</strong> Οι διαγώνιοι είναι <strong>ίσες</strong> και διχοτομούνται.</p></li>
+<li><p><strong>Συμμετρία:</strong> Έχει <strong>δύο άξονες συμμετρίας</strong> (τις μεσοκάθετες των πλευρών του) και ένα κέντρο συμμετρίας.<br>
+<img src="images/clipboard-2096974309.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Κύκλος:</strong> Το σημείο τομής των διαγωνίων είναι το κέντρο του <strong>περιγεγραμμένου κύκλου</strong>.<br>
+<img src="images/clipboard-1946636806.png" class="img-fluid" width="400"></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ορθογώνιο με διαστάσεις 5cm και 3cm.</li>
+<li>Ορθογώνιο με διαγώνιες 8cm που σχηματίζουν γωνία 45°.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε ορθογώνιο με πλευρά 4cm και διαγώνιο 5cm.</li>
+<li>Υπολογίστε τη γωνία των διαγωνίων αν η μία διαγώνιος σχηματίζει 38° με τη μεγάλη πλευρά.</li>
+<li>Κατασκευάστε ορθογώνιο με περίμετρο 20cm και μία πλευρά 6cm.</li>
+<li>Βρείτε τις διαστάσεις ορθογωνίου αν η περίμετρος είναι 579,04m και το πλάτος είναι τα 3/8 του μήκους.</li>
+</ol>
+<hr>
+</section>
+<section id="ρόμβος" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ρόμβος"><span class="header-section-number">1.3</span> <strong>Ρόμβος</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Το παραλληλόγραμμο που έχει <strong>όλες τις πλευρές του ίσες</strong>.</p></li>
+<li><p><strong>Πλευρές:</strong> Και οι τέσσερις πλευρές είναι ίσες.</p></li>
+<li><p><strong>Διαγώνιοι:</strong> Τέμνονται <strong>κάθετα</strong> και <strong>διχοτομούν τις γωνίες</strong> του.</p></li>
+<li><p><strong>Συμμετρία:</strong> Οι φορείς των διαγωνίων είναι <strong>άξονες συμμετρίας</strong>.</p></li>
+<li><p><strong>Ύψος:</strong> Η απόσταση μεταξύ δύο απέναντι πλευρών είναι σταθερή.<br>
+<img src="images/clipboard-3159500910.png" class="img-fluid" width="300"></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ρόμβος με πλευρά 5cm και γωνία 40°.</li>
+<li>Ρόμβος με διαγώνιες 6cm και 4cm.</li>
+<li>Κατασκευή ρόμβου από δύο κάθετες ευθείες και τμήματα 4cm και 2,5cm από το κέντρο.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε ρόμβο με διαγώνιες 72mm και 40mm.</li>
+<li>Αν η μία γωνία είναι 66°, βρείτε όλες τις άλλες γωνίες.</li>
+<li>Υπολογίστε την πλευρά αν η περίμετρος είναι ίση με την περίμετρο ορθογωνίου 18m x 12m.</li>
+<li>Κατασκευάστε ρόμβο με πλευρά 4cm και γωνία 60°.</li>
+<li>Σε ρόμβο ΑΒΓΔ, αν η γωνία Α = 70°, υπολογίστε τις υπόλοιπες γωνίες.</li>
+</ol>
+<hr>
+</section>
+<section id="τετράγωνο" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="τετράγωνο"><span class="header-section-number">1.4</span> <strong>Τετράγωνο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Το παραλληλόγραμμο που είναι ταυτόχρονα <strong>ορθογώνιο και ρόμβος</strong> (όλες οι γωνίες 90° και όλες οι πλευρές ίσες).</p></li>
+<li><p><strong>Διαγώνιοι:</strong> Είναι <strong>ίσες, κάθετες</strong> και διχοτομούν τις γωνίες του (45°).<br>
+<img src="images/clipboard-2380060228.png" class="img-fluid"></p></li>
+<li><p><strong>Συμμετρία:</strong> Έχει <strong>τέσσερις άξονες συμμετρίας</strong> και ένα κέντρο συμμετρίας.<br>
+<img src="images/clipboard-1661084146.png" class="img-fluid" width="400"></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Τετράγωνο με πλευρά 4cm.</li>
+<li>Τετράγωνο με διαγώνιο 6cm.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε τετράγωνο από τη διαγώνιό του 5cm χρησιμοποιώντας διαβήτη.</li>
+<li>Σχεδιάστε τετράγωνο εγγεγραμμένο σε κύκλο ακτίνας 2,5cm.</li>
+<li>Ποιο είναι το είδος του τετραπλεύρου που σχηματίζεται αν ενώσουμε τα μέσα των πλευρών τετραγώνου;.</li>
+</ol>
+<hr>
+</section>
+<section id="τραπέζιο" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="τραπέζιο"><span class="header-section-number">1.5</span> <strong>Τραπέζιο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Τετράπλευρο που έχει <strong>μόνο δύο πλευρές παράλληλες</strong> (βάσεις).</p></li>
+<li><p><strong>Γωνίες:</strong> Οι γωνίες που πρόσκεινται σε κάθε μη παράλληλη πλευρά είναι <strong>παραπληρωματικές</strong>.</p></li>
+<li><p><strong>Διάμεσος:</strong> Το τμήμα που ενώνει τα μέσα των μη παραλλήλων πλευρών είναι παράλληλο προς τις βάσεις και ίσο με το <strong>ημιάθροισμά</strong> τους.<br>
+<img src="images/clipboard-3928416188.png" class="img-fluid"></p></li>
+<li><p><strong>Ύψος:</strong> Η απόσταση μεταξύ των δύο βάσεων.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Τραπέζιο με βάσεις 213m και 612m και ύψος 50m.</li>
+<li>Ορθογώνιο τραπέζιο με βάσεις 10,5cm και 27,5cm και ύψος 12cm.</li>
+<li>Χωράφι σε σχήμα τραπεζίου με βάσεις 136m και 48m και ύψος 106m.</li>
+<li>Σε ορθογώνιο τραπέζιο αν η μία γωνία είναι 45°, η άλλη είναι 135°.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε τραπέζιο με βάση 6cm, γωνίες 50°, 70° και ύψος 3cm.</li>
+<li>Βρείτε την περίμετρο αν οι πλευρές είναι 17m, 10m, 11m και 15m.</li>
+</ol>
+<hr>
+</section>
+<section id="ισοσκελές-τραπέζιο" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ισοσκελές-τραπέζιο"><span class="header-section-number">1.6</span> <strong>Ισοσκελές Τραπέζιο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Το τραπέζιο που έχει τις <strong>μη παράλληλες πλευρές ίσες</strong>.</p></li>
+<li><p><strong>Γωνίες:</strong> Οι γωνίες που πρόσκεινται σε κάθε βάση είναι <strong>ίσες</strong>.</p></li>
+<li><p><strong>Διαγώνιοι:</strong> Οι διαγώνιοι του ισοσκελούς τραπεζίου είναι <strong>ίσες</strong>.</p></li>
+<li><p><strong>Συμμετρία:</strong> Η ευθεία που ενώνει τα μέσα των βάσεων είναι <strong>άξονας συμμετρίας</strong>.<br>
+<img src="images/clipboard-3427244396.png" class="img-fluid" width="450"></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ισοσκελές τραπέζιο με γωνία βάσης 74°.</li>
+<li>Ισοσκελές τραπέζιο με βάσεις 36cm και 20cm και ίσες πλευρές 17cm.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Αν η γωνία Α είναι 68°, υπολογίστε τις υπόλοιπες τρεις γωνίες.</li>
+<li>Αν οι αμβλείες γωνίες είναι διπλάσιες των οξειών, υπολογίστε τις γωνίες.</li>
+<li>Κατασκευάστε ισοσκελές τραπέζιο από τις βάσεις του 3cm και 6cm και τη διαγώνιο 5cm.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σε όλα τα σχήματα που έχουμε παράλληλες που τέμνονται από άλλες ευθείες ισχύουν αυτά που γνωρίζουμε από την αντίστοιχη θεωρία και άρα μπορούν να χρησιμοποιηθούν για υπολογισμους γωνιών , για παράδειγμα <strong>“οι εντός εναλλάξ γωνίες είναι ίσες”</strong> κτλπ</p>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Μελέτησε αυτόν τον πίνακα για βοήθεια:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Σχήμα</th>
+<th style="text-align: left;">Πλευρές</th>
+<th style="text-align: left;">Γωνίες</th>
+<th style="text-align: left;">Διαγώνιοι</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Παραλληλόγραμμο</strong></td>
+<td style="text-align: left;">Απέναντι ίσες &amp; παράλληλες</td>
+<td style="text-align: left;">Απέναντι ίσες</td>
+<td style="text-align: left;">Διχοτομούνται</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Ορθογώνιο</strong></td>
+<td style="text-align: left;">Απέναντι ίσες &amp; παράλληλες</td>
+<td style="text-align: left;">Όλες <span class="math inline">\(90^{\circ}\)</span></td>
+<td style="text-align: left;">Ίσες &amp; Διχοτομούνται</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Ρόμβος</strong></td>
+<td style="text-align: left;">Όλες ίσες</td>
+<td style="text-align: left;">Απέναντι ίσες</td>
+<td style="text-align: left;">Κάθετες &amp; Διχοτόμοι των γωνιών</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Τετράγωνο</strong></td>
+<td style="text-align: left;">Όλες ίσες</td>
+<td style="text-align: left;">Όλες <span class="math inline">\(90^{\circ}\)</span></td>
+<td style="text-align: left;">Ίσες, Κάθετες &amp; Διχοτόμοι</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Ισοσκελές Τραπέζιο</strong></td>
+<td style="text-align: left;">Μη παράλληλες πλευρές ίσες</td>
+<td style="text-align: left;">Γωνίες βάσης ίσες</td>
+<td style="text-align: left;">Ίσες</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1307,12 +1618,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
