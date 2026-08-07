@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,31 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +117,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-aggeometria quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +128,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +180,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</a></li></ol></nav>
+      <h1 class="title">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">7 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +245,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +263,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -441,9 +488,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -570,7 +617,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
   </div>
 </li>
@@ -588,7 +635,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -597,7 +644,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -668,7 +715,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -787,7 +834,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -830,7 +877,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -839,7 +886,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -982,7 +1029,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1057,7 +1104,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1078,7 +1125,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1087,7 +1134,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1247,33 +1294,157 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#άθροισμα-γωνιών-τριγώνου---ιδιότητες-ισοσκελούς-τριγώνου" id="toc-άθροισμα-γωνιών-τριγώνου---ιδιότητες-ισοσκελούς-τριγώνου" class="nav-link active" data-scroll-target="#άθροισμα-γωνιών-τριγώνου---ιδιότητες-ισοσκελούς-τριγώνου"><span class="header-section-number">1</span> Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</a>
+  <ul class="collapse">
+  <li><a href="#άθροισμα-γωνιών-τριγώνου" id="toc-άθροισμα-γωνιών-τριγώνου" class="nav-link" data-scroll-target="#άθροισμα-γωνιών-τριγώνου"><span class="header-section-number">1.1</span> <strong>Άθροισμα Γωνιών Τριγώνου</strong></a></li>
+  <li><a href="#ιδιότητες-ισοσκελούς-και-ισοπλεύρου-τριγώνου" id="toc-ιδιότητες-ισοσκελούς-και-ισοπλεύρου-τριγώνου" class="nav-link" data-scroll-target="#ιδιότητες-ισοσκελούς-και-ισοπλεύρου-τριγώνου"><span class="header-section-number">1.2</span> <strong>Ιδιότητες Ισοσκελούς και Ισοπλεύρου Τριγώνου</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/algebra/index.html">Α’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/a/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="άθροισμα-γωνιών-τριγώνου---ιδιότητες-ισοσκελούς-τριγώνου" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="άθροισμα-γωνιών-τριγώνου---ιδιότητες-ισοσκελούς-τριγώνου"><span class="header-section-number">1</span> Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</h2>
+<section id="άθροισμα-γωνιών-τριγώνου" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="άθροισμα-γωνιών-τριγώνου"><span class="header-section-number">1.1</span> <strong>Άθροισμα Γωνιών Τριγώνου</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<p>Το άθροισμα των τριών εσωτερικών γωνιών οποιουδήποτε τριγώνου είναι πάντοτε σταθερό και ισούται με <strong>180°</strong> (ή 2 ορθές γωνίες). Η ιδιότητα αυτή αποτελεί θεμελιώδες θεώρημα της Γεωμετρίας και ισχύει για κάθε είδος τριγώνου (οξυγώνιο, ορθογώνιο ή αμβλυγώνιο).</p>
+<hr>
+<p><img src="images/clipboard-2704353813.png" class="img-fluid" width="400"></p>
+<ul>
+<li><strong>Λύση:</strong></li>
+</ul>
+<p>Επειδή <span class="math inline">\(ε_1 // ΒΓ\)</span>, η γωνία <span class="math inline">\(φ\)</span> είναι ίση με τη γωνία <span class="math inline">\(\hat{B}\)</span> ώς εντός εναλλάξ και η γωνία <span class="math inline">\(ω\)</span> ίση με τη γωνία <span class="math inline">\(\hat{\Gamma}\)</span> ως <strong>εντός εναλλάξ</strong>. Επειδή οι <span class="math inline">\(\hat ω, \hat{A}, \hat φ\)</span> σχηματίζουν ευθεία γωνία (<span class="math inline">\(180^\circ\)</span>), τότε και <span class="math inline">\(\hat{A} + \hat{B} + \hat{\Gamma} = 180^\circ\)</span>.</p>
+<hr>
+<p><strong>Ιδιότητες και Πορίσματα</strong></p>
+<ol type="1">
+<li><strong>Ορθογώνιο Τρίγωνο:</strong> Οι δύο οξείες γωνίες ενός ορθογωνίου τριγώνου είναι πάντοτε <strong>συμπληρωματικές</strong>, δηλαδή το άθροισμά τους είναι 90°.<br>
+<img src="images/clipboard-1268912049.png" class="img-fluid" width="350"></li>
+</ol>
+<p><span class="math display">\[\hat B + \hat Γ= 90^ο\]</span></p>
+<ol start="2" type="1">
+<li><p><strong>Ισόπλευρο Τρίγωνο:</strong> Κάθε γωνία ενός ισοπλεύρου τριγώνου ισούται με <strong>60°</strong> (<span class="math inline">\(180° : 3 = 60°\)</span>).</p></li>
+<li><p><strong>Εξωτερική Γωνία:</strong> Κάθε εξωτερική γωνία ενός τριγώνου ισούται με το άθροισμα των δύο απέναντι εσωτερικών γωνιών του.<br>
+</p>
+<p><br>
+<img src="images/clipboard-2588842051.png" class="img-fluid" width="450"></p></li>
+</ol>
+<p><span class="math display">\[\hat φ = \hat Α + \hat Β\]</span></p>
+<ol start="4" type="1">
+<li><strong>Σύγκριση Τριγώνων:</strong> Αν δύο τρίγωνα έχουν δύο γωνίες τους ίσες μία προς μία, τότε αναγκαστικά θα έχουν και την τρίτη γωνία τους ίση.</li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Στο τρίγωνο ΑΒΓ, αν <strong>Α=72°</strong> και <strong>Β=47°</strong>, τότε η γωνία <strong>Γ = 180° - (72° + 47°) = 61°</strong>.</li>
+<li>Αν σε ένα τρίγωνο είναι <strong>Β=23° 50’</strong> και <strong>Γ=107° 40’</strong>, τότε η γωνία <strong>Α = 180° - 131° 30’ = 48° 30’</strong>.</li>
+<li>Σε ορθογώνιο τρίγωνο, αν η μία οξεία γωνία είναι <strong>58° 20’</strong>, η άλλη είναι <strong>90° - 58° 20’ = 31° 40’</strong>.</li>
+<li>Αν η εξωτερική γωνία στην κορυφή Γ είναι <strong>130°</strong> και το τρίγωνο είναι ορθογώνιο στην κορυφή Α (90°), τότε η εσωτερική γωνία <strong>Β = 130° - 90° = 40°</strong>.</li>
+<li>Σε ένα τρίγωνο με γωνίες <strong>38°</strong> και <strong>115° 30’</strong>, η τρίτη γωνία υπολογίζεται αφαιρώντας το άθροισμά τους από τις 180°.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Υπολογίστε την τρίτη γωνία τριγώνου ΑΒΓ αν είναι <strong>Α = 32°</strong> και <strong>Γ = 46°</strong> .</li>
+<li>Η μία γωνία ενός τριγώνου είναι <strong>70°</strong> και η άλλη είναι τα <strong>2/7</strong> αυτής. Βρείτε όλες τις γωνίες του τριγώνου.</li>
+<li>Στο τρίγωνο ΑΒΓ είναι <strong>Α = 23°</strong> και η γωνία <strong>Β = 4Γ</strong>. Υπολογίστε τις γωνίες του.</li>
+<li>Αποδείξτε ότι αν σε ένα τρίγωνο ισχύει η σχέση <strong>Α = Β + Γ</strong>, τότε το τρίγωνο είναι ορθογώνιο.</li>
+<li>Αν σε ένα τρίγωνο έχουμε <span class="math inline">\(Β + Γ=78^ο\)</span>, εξετάστε τι τρίγωνο είναι.</li>
+<li>Αποδείξτε ότι το άθροισμα των εξωτερικών γωνιών κάθε τριγώνου είναι <strong>360°</strong> (4 ορθές).</li>
+<li>Βρείτε τις γωνίες ενός τριγώνου αν αυτές είναι ανάλογες προς τους αριθμούς <strong>1, 1</strong> και <strong>4</strong> (εκφρασμένες ως α°, α°, 4α°).</li>
+<li>Σε ορθογώνιο τρίγωνο η μία οξεία γωνία είναι <strong>58°</strong>. Πόση είναι η άλλη οξεία γωνία;.</li>
+<li>Σε τρίγωνο ΑΒΓ ισχύει <strong>Β - Γ = 90°</strong>. Δείξτε ότι η διχοτόμος της γωνίας Α σχηματίζει γωνία <strong>45°</strong> με την πλευρά ΒΓ.</li>
+</ol>
+<hr>
+</section>
+<section id="ιδιότητες-ισοσκελούς-και-ισοπλεύρου-τριγώνου" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ιδιότητες-ισοσκελούς-και-ισοπλεύρου-τριγώνου"><span class="header-section-number">1.2</span> <strong>Ιδιότητες Ισοσκελούς και Ισοπλεύρου Τριγώνου</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ισοσκελές Τρίγωνο:</strong> Είναι το τρίγωνο που έχει δύο πλευρές ίσες (ΑΒ = ΑΓ). Η τρίτη πλευρά ονομάζεται <strong>βάση</strong> και η απέναντι κορυφή ονομάζεται <strong>κορυφή</strong> του τριγώνου.</p></li>
+<li><p><strong>Ισόπλευρο Τρίγωνο:</strong> Είναι το τρίγωνο που έχει και τις τρεις πλευρές του ίσες (ΑΒ = ΒΓ = ΓΑ). Το ισόπλευρο τρίγωνο είναι υποσύνολο των ισοσκελών.</p></li>
+</ul>
+<p><strong>Ιδιότητες Ισοσκελούς Τριγώνου</strong></p>
+<ol type="1">
+<li><p><strong>Ισότητα Γωνιών:</strong> Οι γωνίες της βάσης ενός ισοσκελούς τριγώνου είναι πάντοτε <strong>ίσες</strong>.</p></li>
+<li><p><strong>Άξονας Συμμετρίας:</strong> Η διχοτόμος της γωνίας της κορυφής είναι ο άξονας συμμετρίας του τριγώνου.</p></li>
+<li><p><strong>Σύμπτωση Γραμμών:</strong> Στην κορυφή ισοσκελούς τριγώνου, η διχοτόμος, η διάμεσος και το ύψος προς τη βάση <strong>συμπίπτουν</strong> στο ίδιο ευθύγραμμο τμήμα.</p></li>
+<li><p><strong>Δευτερεύοντα Στοιχεία:</strong> Τα ύψη, οι διάμεσοι και οι διχοτόμοι που αντιστοιχούν στις ίσες πλευρές είναι επίσης <strong>ίσα</strong> μεταξύ τους.</p></li>
+</ol>
+<p><strong>Ιδιότητες Ισοπλεύρου Τριγώνου</strong></p>
+<ol type="1">
+<li><p><strong>Ισογωνιότητα:</strong> Κάθε ισόπλευρο τρίγωνο είναι και <strong>ισογώνιο</strong> με κάθε γωνία του ίση με 60°.</p></li>
+<li><p><strong>Άξονες Συμμετρίας:</strong> Έχει <strong>τρεις άξονες συμμετρίας</strong>, που είναι τα ύψη, οι διάμεσοι και οι διχοτόμοι των τριών γωνιών του.</p></li>
+<li><p><strong>Ομοιότητα:</strong> Όλα τα ισόπλευρα τρίγωνα είναι <strong>όμοια</strong> μεταξύ τους.</p></li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Σε ισοσκελές τρίγωνο ΑΒΓ με κορυφή Α, αν η γωνία <strong>Α = 53°</strong>, οι γωνίες της βάσης είναι <strong>(180° - 53°) / 2 = 63,5°</strong>.</li>
+<li>Αν η γωνία της βάσης ενός ισοσκελούς είναι <strong>73° 20’</strong>, τότε η γωνία της κορυφής είναι <strong>180° - (2 * 73° 20’) = 33° 20’</strong>.</li>
+<li>Αν η γωνία της κορυφής ισοσκελούς τριγώνου είναι <strong>68°’</strong>, τότε κάθε γωνία της βάσης είναι <strong>56</strong>.</li>
+<li>Κατασκευή ισοπλεύρου τριγώνου πλευράς <strong>5cm</strong> χρησιμοποιώντας διαβήτη και κανόνα.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σε ισοσκελές τρίγωνο, η γωνία της κορυφής Α είναι κατά <strong>12°</strong> μεγαλύτερη από κάθε γωνία της βάσης. Υπολογίστε τη γωνία που σχηματίζουν οι διχοτόμοι των γωνιών της βάσης.</li>
+<li>Αιτιολογήστε γιατί οι γωνίες της βάσης ενός ισοσκελούς τριγώνου είναι πάντοτε <strong>οξείες</strong>.</li>
+<li>Αποδείξτε ότι οι <strong>διχοτόμοι</strong> των γωνιών της βάσης ισοσκελούς τριγώνου είναι ίσες.</li>
+</ol>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>αποδείξτε οτι οι γωνίες της βάσης του τριγώνου που σχηματίζεται είναι ίσες.</p>
+</blockquote>
+</blockquote>
+<ol start="4" type="1">
+<li>Σε ισόπλευρο τρίγωνο ΑΒΓ παίρνουμε στις πλευρές του τμήματα <strong>ΑΑ’ = ΒΒ’ = ΓΓ’</strong>. Δείξτε ότι το τρίγωνο Α’Β’Γ’ είναι ισόπλευρο.</li>
+<li>Αποδείξτε ότι σε κάθε ορθογώνιο τρίγωνο η διάμεσος της υποτείνουσας ισούται με το <strong>μισό</strong> της υποτείνουσας.</li>
+</ol>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχρδιάστε ένα ορθογώνιο τρίγωνο και μετρήστε.</p>
+</blockquote>
+</blockquote>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1301,12 +1472,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
