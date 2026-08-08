@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>04. Επίλυση προβλημάτων με τη χρήση εξισώσεων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,31 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +117,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +128,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +180,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</a></li></ol></nav>
+      <h1 class="title">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">9 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +245,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +263,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -443,7 +490,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -594,16 +641,16 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -628,14 +675,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  <a href="../../../gymnasio/b/algebra/04. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ανισώσεις α βαθμού</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -680,7 +727,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -799,7 +846,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -842,7 +889,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -851,7 +898,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -994,7 +1041,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1069,7 +1116,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1090,7 +1137,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1099,7 +1146,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1259,33 +1306,310 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#επίλυση-προβλημάτων-με-τη-χρήση-εξισώσεων" id="toc-επίλυση-προβλημάτων-με-τη-χρήση-εξισώσεων" class="nav-link active" data-scroll-target="#επίλυση-προβλημάτων-με-τη-χρήση-εξισώσεων"><span class="header-section-number">1</span> Επίλυση προβλημάτων με τη χρήση εξισώσεων</a>
+  <ul class="collapse">
+  <li><a href="#τύποι-εξισώσεων-σε-προβλήματα" id="toc-τύποι-εξισώσεων-σε-προβλήματα" class="nav-link" data-scroll-target="#τύποι-εξισώσεων-σε-προβλήματα"><span class="header-section-number">1.1</span> Τύποι Εξισώσεων σε Προβλήματα</a></li>
+  <li><a href="#τομείς-εφαρμογής" id="toc-τομείς-εφαρμογής" class="nav-link" data-scroll-target="#τομείς-εφαρμογής"><span class="header-section-number">1.2</span> Τομείς Εφαρμογής</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="επίλυση-προβλημάτων-με-τη-χρήση-εξισώσεων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="επίλυση-προβλημάτων-με-τη-χρήση-εξισώσεων"><span class="header-section-number">1</span> Επίλυση προβλημάτων με τη χρήση εξισώσεων</h2>
+<p>Η επίλυση προβλημάτων με τη χρήση εξισώσεων είναι η διαδικασία μετατροπής μιας λεκτικής διατύπωσης σε μαθηματική έκφραση, με σκοπό την εύρεση άγνωστων ποσοτήτων μέσω των δεδομένων που παρέχονται.</p>
+<div style="background-color: #e0d6b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<p>Σε κάθε πρόβλημα διακρίνουμε τα <strong>δεδομένα</strong> (γνωστά ποσά) και τα <strong>ζητούμενα</strong> (άγνωστα ποσά). Η διαδικασία επίλυσης δεν αποτελεί μια άκαμπτη «συνταγή», αλλά ακολουθεί ορισμένες γενικές κατευθύνσεις που χωρίζονται σε τέσσερις φάσεις:</p>
+<ol type="1">
+<li><strong>Εκλογή του αγνώστου</strong>: Συμβολίζουμε με ένα γράμμα (συνήθως το <span class="math inline">\(x\)</span>) την άγνωστη ποσότητα που ζητά το πρόβλημα.</li>
+<li><strong>Σχηματισμός της εξίσωσης</strong>: Μεταφράζουμε τη λεκτική διατύπωση του προβλήματος σε μαθηματική γλώσσα, συνδέοντας τον άγνωστο με τα δεδομένα μέσω μιας ισότητας.</li>
+<li><strong>Επίλυση της εξίσωσης</strong>: Χρησιμοποιούμε τις γνωστές αλγεβρικές μεθόδους για να βρούμε την τιμή (ρίζα) του <span class="math inline">\(x\)</span>.</li>
+<li><strong>Επαλήθευση και Περιορισμοί</strong>: Ελέγχουμε αν η λύση που βρήκαμε είναι λογικά αποδεκτή βάσει των συνθηκών του προβλήματος. Για παράδειγμα, αν το <span class="math inline">\(x\)</span> παριστάνει αριθμό ανθρώπων, δεν μπορεί να είναι κλάσμα ή αρνητικός αριθμός.</li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><strong>Απλό αριθμητικό πρόβλημα</strong>: Να βρεθεί ένας αριθμός που αν αυξηθεί κατά 12, γίνεται ίσος με το τριπλάσιό του.
+<ul>
+<li><em>Εξίσωση</em>: <span class="math inline">\(x + 12 = 3x \Rightarrow 12 = 2x \Rightarrow x = 6\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα ηλικίας</strong>: Ένας πατέρας είναι 39 ετών και ο γιος του 15. Μετά από πόσα χρόνια η ηλικία του πατέρα θα είναι διπλάσια του γιου;.
+<ul>
+<li><em>Εξίσωση</em>: <span class="math inline">\(39 + x = 2(15 + x) \Rightarrow 39 + x = 30 + 2x \Rightarrow x = 9\)</span>.</li>
+</ul></li>
+<li><strong>Πρόβλημα καταμερισμού</strong>: Ένα Γυμνάσιο έχει 350 μαθητές. Η Α’ τάξη έχει 20 περισσότερους από τη Β’ και η Γ’ τάξη 12 λιγότερους από τη Β’. Πόσους μαθητές έχει κάθε τάξη;.
+<ul>
+<li><em>Εξίσωση</em>: <span class="math inline">\((x+20) + x + (x-12) = 350 \Rightarrow 3x + 8 = 350 \Rightarrow 3x = 342 \Rightarrow x = 114\)</span> (Β’ τάξη).</li>
+</ul></li>
+<li><strong>Γεωμετρικό πρόβλημα</strong>: Το εμβαδόν τραπεζίου είναι <span class="math inline">\(154 cm^2\)</span>, το ύψος του <span class="math inline">\(11 cm\)</span> και οι βάσεις του διαφέρουν κατά <span class="math inline">\(4 cm\)</span>. Βρείτε τις βάσεις.
+<ul>
+<li><em>Εξίσωση</em>: <span class="math inline">\(154 = \dfrac{1}{2}(x + x + 4) \cdot 11 \Rightarrow 154 = \dfrac{11(2x+4)}{2} \Rightarrow 308 = 22x + 44 \Rightarrow 22x = 264 \Rightarrow x = 12 cm\)</span> (μικρή βάση).</li>
+</ul></li>
+<li><strong>Πρόβλημα μείγματος</strong>: Σε 109 κιλά αλμυρού νερού περιέχονται 2,28 κιλά αλάτι. Πόσο καθαρό νερό πρέπει να προσθέσουμε ώστε η περιεκτικότητα σε αλάτι να γίνει 1,9%;.
+<ul>
+<li><em>Εξίσωση</em>: <span class="math inline">\(\dfrac{2,28}{109 + x} = \dfrac{1,9}{100} \Rightarrow 228 = 1,9(109 + x) \Rightarrow 228 = 207,1 + 1,9x \Rightarrow 1,9x = 20,9 \Rightarrow x = 11\)</span> κιλά.</li>
+</ul></li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Το εξαπλάσιο ενός αριθμού αν ελαττωθεί κατά 2 γίνεται 370. Ποιος είναι ο αριθμός;.</li>
+<li>Ένας έμπορος πούλησε το <span class="math inline">\(1/3\)</span> και το <span class="math inline">\(1/4\)</span> ενός υφάσματος και του έμειναν 16 μέτρα. Πόσα μέτρα είχε αρχικά;.</li>
+<li>Ένας μαθητής είπε: «Αν ελαττώσετε τον βαθμό μου κατά 4 ή αν τον διαιρέσετε με το 3, βρίσκετε τον ίδιο αριθμό». Ποιος είναι ο βαθμός του;.</li>
+<li>Τρεις μαθητές μοιράστηκαν 1000 €. Ο δεύτερος πήρε διπλάσια από τον πρώτο και ο τρίτος 100 €. περισσότερα από τον δεύτερο. Πόσα πήρε ο καθένας;.</li>
+<li>Πατέρας και γιος τελειώνουν ένα έργο σε <span class="math inline">\(x\)</span> ημέρες. Αν ο πατέρας μόνος του χρειάζεται 15 μέρες και ο γιος 30, σε πόσες μέρες το τελειώνουν μαζί;.</li>
+<li>Ποιον αριθμό πρέπει να αφαιρέσουμε και από τους δύο όρους του κλάσματος <span class="math inline">\(29/42\)</span> για να γίνει το κλάσμα ίσο με 0,5;.</li>
+<li>Ένα κεφάλαιο τοκίζεται προς 4%. Σε 4 χρόνια το κεφάλαιο μαζί με τους τόκους γίνεται 23200 €. Ποιο είναι το κεφάλαιο;.</li>
+<li>Αν από τα <span class="math inline">\(2/3\)</span> ενός αριθμού αφαιρέσουμε το 9, βρίσκουμε το <span class="math inline">\(1/2\)</span> αυτού του αριθμού. Ποιος είναι ο αριθμός;.</li>
+<li>Δύο πόλεις Α και Β απέχουν 120 χλμ. Ένα αυτοκίνητο ξεκινά από την Α με ταχύτητα 15 χλμ/ώρα και ένα άλλο από τη Β προς την Α με 20 χλμ/ώρα. Μετά από πόση ώρα θα συναντηθούν;.</li>
+</ol>
+<section id="τύποι-εξισώσεων-σε-προβλήματα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="τύποι-εξισώσεων-σε-προβλήματα"><span class="header-section-number">1.1</span> Τύποι Εξισώσεων σε Προβλήματα</h3>
+<p>Ανάλογα με τη πολυπλοκότητα του προβλήματος, χρησιμοποιούνται διαφορετικές μορφές εξισώσεων:</p>
+<ul>
+<li><p><strong>Εξισώσεις 1ου Βαθμού (</strong><span class="math inline">\(ax + \beta = 0\)</span>): Χρησιμοποιούνται για απλές σχέσεις, όπως ο υπολογισμός ηλικιών ή αποστάσεων.</p></li>
+<li><p><strong>Εξισώσεις 2ου Βαθμού (</strong><span class="math inline">\(ax^2 + \beta x + \gamma = 0\)</span>): Εμφανίζονται όταν το πρόβλημα περιλαμβάνει τετράγωνα μεγεθών ή γινόμενα, όπως σε προβλήματα εμβαδών ή κίνησης σωμάτων. Επιλύονται συνήθως με τη χρήση της <strong>διακρίνουσας (</strong><span class="math inline">\(\Delta\)</span>).</p></li>
+<li><p><strong>Γραμμικά Συστήματα:</strong> Χρησιμοποιούνται όταν υπάρχουν <strong>δύο άγνωστοι</strong> που συνδέονται με δύο διαφορετικές σχέσεις. Επιλύονται είτε γραφικά (εύρεση σημείου τομής ευθειών) είτε αλγεβρικά με τις μεθόδους της <strong>αντικατάστασης</strong> ή των <strong>αντιθέτων συντελεστών</strong>.</p></li>
+<li><p><strong>Κλασματικές Εξισώσεις:</strong> Προκύπτουν όταν ο άγνωστος βρίσκεται στον παρονομαστή ενός κλάσματος, όπως σε προβλήματα που αφορούν ρυθμούς εργασίας ή ηλεκτρική αντίσταση.</p></li>
+</ul>
+</section>
+<section id="τομείς-εφαρμογής" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="τομείς-εφαρμογής"><span class="header-section-number">1.2</span> Τομείς Εφαρμογής</h3>
+<p>Η επίλυση μέσω εξισώσεων είναι απαραίτητη σε πολλά πεδία:</p>
+<ul>
+<li><p><strong>Φυσική:</strong> Για τον υπολογισμό ταχύτητας, χρόνου, δύναμης (Νόμοι Νεύτωνα) ή πυκνότητας.</p></li>
+<li><p><strong>Γεωμετρία:</strong> Για την εύρεση διαστάσεων σχημάτων (π.χ. πλευρές τριγώνου, ακτίνα κύκλου) όταν είναι γνωστά το εμβαδόν ή η περίμετρος.</p></li>
+<li><p><strong>Οικονομία &amp; Καθημερινότητα:</strong> Υπολογισμός κερδών, κόστους παραγωγής, κατανομής αντικειμένων ή ατόμων.</p></li>
+</ul>
+<p><u><em>Τρία χαρακτηριστικά παραδείγματα επίλυσης προβλημάτων με τη χρήση εξισώσεων, λυμένα βήμα προς βήμα:</em></u></p>
+<ul>
+<li><strong>Παράδειγμα 1: Πρόβλημα Αριθμητικής Πυραμίδας</strong></li>
+</ul>
+<p><strong>Πρόβλημα:</strong> Σε μια πυραμίδα αριθμών, κάθε αριθμός είναι το άθροισμα των δύο αριθμών που βρίσκονται ακριβώς κάτω από αυτόν. Αν η βάση αποτελείται από τους αριθμούς <span class="math inline">\(-5\)</span>, <span class="math inline">\(x\)</span> και <span class="math inline">\(7\)</span>, και η κορυφή είναι ο αριθμός <span class="math inline">\(18\)</span>, να βρεθεί ο <span class="math inline">\(x\)</span>.</p>
+<ul>
+<li><strong>Βήμα 1: Κατανόηση της δομής.</strong> Οι αριθμοί της μεσαίας σειράς προκύπτουν από το άθροισμα των κάτω: <span class="math inline">\((x - 5)\)</span> και <span class="math inline">\((x + 7)\)</span>.</li>
+<li><strong>Βήμα 2: Σχηματισμός της εξίσωσης.</strong> Ο αριθμός της κορυφής (<span class="math inline">\(18\)</span>) ισούται με το άθροισμα των δύο μεσαίων: <span class="math inline">\(18 = (x - 5) + (x + 7)\)</span>.</li>
+<li><strong>Βήμα 3: Επίλυση.</strong>
+<ul>
+<li>Απλοποιούμε το δεξί μέλος: <span class="math inline">\(18 = 2x + 2\)</span>.</li>
+<li>Χωρίζουμε γνωστούς από αγνώστους: <span class="math inline">\(18 - 2 = 2x\)</span> άρα <span class="math inline">\(16 = 2x\)</span>.</li>
+<li>Διαιρούμε με τον συντελεστή του <span class="math inline">\(x\)</span>: <span class="math inline">\(x = 8\)</span>.</li>
+</ul></li>
+<li><strong>Βήμα 4: Επαλήθευση.</strong> Αν <span class="math inline">\(x=8\)</span>, τότε η μεσαία σειρά είναι <span class="math inline">\(3\)</span> και <span class="math inline">\(15\)</span>. Το άθροισμά τους είναι <span class="math inline">\(18\)</span>, άρα η λύση είναι σωστή.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Παράδειγμα 2: Πρόβλημα Γεωμετρίας (Παραπληρωματικές Γωνίες)</strong></li>
+</ul>
+<p><strong>Πρόβλημα:</strong> Να βρεθούν δύο παραπληρωματικές γωνίες, αν η μία από αυτές είναι μεγαλύτερη από το τριπλάσιο της άλλης κατά <span class="math inline">\(12^\circ\)</span>.</p>
+<ul>
+<li><strong>Βήμα 1: Επιλογή μεταβλητών.</strong> Έστω <span class="math inline">\(\phi\)</span> η μικρότερη γωνία. Η μεγαλύτερη γωνία <span class="math inline">\(\omega\)</span> θα είναι <span class="math inline">\(\omega = 3\phi + 12\)</span>.</li>
+<li><strong>Βήμα 2: Σχηματισμός εξίσωσης.</strong> Επειδή είναι παραπληρωματικές, το άθροισμά τους είναι <span class="math inline">\(180^\circ\)</span>: <span class="math inline">\((3\phi + 12) + \phi = 180\)</span>.</li>
+<li><strong>Βήμα 3: Επίλυση.</strong>
+<ul>
+<li>Αναγωγή ομοίων όρων: <span class="math inline">\(4\phi + 12 = 180\)</span>.</li>
+<li>Χωρισμός όρων: <span class="math inline">\(4\phi = 180 - 12 \Rightarrow 4\phi = 168\)</span>.</li>
+<li>Υπολογισμός: <span class="math inline">\(\phi = 42^\circ\)</span>.</li>
+</ul></li>
+<li><strong>Βήμα 4: Εύρεση της δεύτερης γωνίας.</strong> Αντικαθιστούμε στον τύπο: <span class="math inline">\(\omega = 3(42) + 12 = 126 + 12 = \mathbf{138^\circ}\)</span>.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Παράδειγμα 3: Πρόβλημα Κατανομής (Λεωφορεία &amp; Επιβάτες)</strong></li>
+</ul>
+<p><strong>Πρόβλημα:</strong> 12 λεωφορεία μεταφέρουν συνολικά 126 επιβάτες. Ορισμένα λεωφορεία είναι 8-θέσια και τα υπόλοιπα είναι 14-θέσια. Πόσα λεωφορεία υπάρχουν από κάθε είδος;</p>
+<ul>
+<li><strong>Βήμα 1: Επιλογή μεταβλητής.</strong> Έστω <span class="math inline">\(x\)</span> ο αριθμός των 14-θέσιων λεωφορείων. Τότε τα 8-θέσια είναι <span class="math inline">\(12 - x\)</span>.</li>
+<li><strong>Βήμα 2: Σχηματισμός εξίσωσης.</strong> Το σύνολο των θέσεων πρέπει να είναι 126: <span class="math inline">\(14x + 8(12 - x) = 126\)</span>.</li>
+<li><strong>Βήμα 3: Επίλυση.</strong>
+<ul>
+<li>Επιμεριστική ιδιότητα: <span class="math inline">\(14x + 96 - 8x = 126\)</span>.</li>
+<li>Απλοποίηση: <span class="math inline">\(6x + 96 = 126 \Rightarrow 6x = 126 - 96 \Rightarrow 6x = 30\)</span>.</li>
+<li>Αποτέλεσμα: <span class="math inline">\(x = 5\)</span>.</li>
+</ul></li>
+<li><strong>Βήμα 4: Τελική απάντηση.</strong> Υπάρχουν <strong>5 λεωφορεία των 14 θέσεων</strong> και <span class="math inline">\(12 - 5 = \mathbf{7}\)</span> <strong>λεωφορεία των 8 θέσεων</strong>.</li>
+<li><strong>Βήμα 5: Επαλήθευση.</strong> <span class="math inline">\(14 \cdot 5 + 8 \cdot 7 = 70 + 56 = 126\)</span>. Η εξίσωση επαληθεύεται πλήρως.</li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<p><strong>Προβλήματα</strong> που επιλύονται με τη χρήση <strong>εξισώσεων πρώτου βαθμού</strong> μετατρέποντας τις λεκτικές εκφωνήσεις σε μαθηματικά μοντέλα:</p>
+<ol type="1">
+<li><p><strong>Πρόβλημα Αριθμού:</strong> Το <strong>τριπλάσιο ενός αριθμού</strong> ελαττούμενο κατά 5 είναι ίσο με το <strong>μισό του αριθμού</strong> αυξημένο κατά 10. Ποιος είναι ο αριθμός;.</p></li>
+<li><p><strong>Πρόβλημα Πορτοφολιού:</strong> «Αν είχα όσα έχω και τα μισά ακόμα και δέκα παραπάνω, θα είχα εκατό». Βρείτε το αρχικό ποσό.</p></li>
+<li><p><strong>Διαδρομή Ταχυδρόμου:</strong> Ένας ταχυδρόμος κάνει μια τριγωνική διαδρομή ΑΒΓΑ. Η ΒΓ είναι 1km μεγαλύτερη από την ΑΒ και η ΓΑ 1km μεγαλύτερη από τη ΒΓ. Αν η συνολική απόσταση είναι 15km, να βρείτε την απόσταση ΑΒ.</p></li>
+<li><p><strong>Σταθμός Διοδίων:</strong> Από τα διόδια πέρασαν <strong>945 οχήματα</strong> (αυτοκίνητα των 2€ και μοτοσικλέτες των 1,2€) και εισπράχθηκαν συνολικά 1810€. Πόσα ήταν τα αυτοκίνητα και πόσες οι μοτοσικλέτες;</p></li>
+</ol>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σκέφτομαι: αν x είναι τα αυτοκίνητα τότε οι μοτοσυκλέτες είναι 945-x</p>
+</blockquote>
+</blockquote>
+<ol start="5" type="1">
+<li><p><strong>Πρόβλημα Ηλικιών:</strong> Οι ηλικίες δύο αδελφών διαφέρουν κατά 5 χρόνια, ενώ σε 11 χρόνια ο <strong>λόγος των ηλικιών</strong> τους θα είναι 4:3. Βρείτε τις ηλικίες των δυο αδελφών.</p></li>
+<li><p><strong>Εισιτήρια Πλοίου:</strong> Σε ένα ταξίδι κόπηκαν <strong>350 εισιτήρια</strong> συνολικής αξίας 4500€, με την Α’ θέση να κοστίζει 18€ και τη Β’ θέση 6€ λιγότερα. Πόσα εισιτήρια Α’ θέσης κόπηκαν και πόσα Β’ θέσης;</p></li>
+</ol>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σκέφτομαι : αν x είναι τα εισιτήρια της Α θέσης , τότε τα εισιτήρια της Β θέσης θα είναι 350-x</p>
+</blockquote>
+</blockquote>
+<ol start="7" type="1">
+<li><p><strong>Βαθμολογία Αγώνων:</strong> Μια ομάδα έδωσε 9 αγώνες. Ποια αλγεβρική παράσταση εκφράζει τους βαθμούς της αν παίρνει 2 βαθμούς για νίκη και 1 για ήττα;.</p></li>
+<li><p><strong>Γεωμετρία (ορθογώνιο – περίμετρος):</strong> Ένα ορθογώνιο έχει περίμετρο 50 cm. Το μήκος του είναι 5 cm μεγαλύτερο από το πλάτος. Να βρεθούν μήκος και πλάτος.<br>
+Θέσε <code>x</code> = πλάτος, τότε μήκος <code>x+5</code>.<br>
+Εξίσωση: <code>2x + 2(x+5) = 50</code>.</p></li>
+<li><p><strong>Καθημερινή ζωή (ψώνια – έκπτωση):</strong> Ένα μπουφάν κοστίζει <code>x</code> ευρώ. Με έκπτωση 20% πληρώνεις 64 ευρώ. Πόσο κόστιζε αρχικά;<br>
+Εξίσωση: <code>0.8x = 64</code>.</p></li>
+<li><p><strong>Καθημερινή ζωή (ηλικίες):</strong> Η Μαρία είναι 8 χρόνια μεγαλύτερη από τον Νίκο. Μαζί είναι 34 χρονών. Να βρεθούν οι ηλικίες τους.<br>
+Θέσε <code>x</code> = ηλικία Νίκου, τότε Μαρία <code>x+8</code>.<br>
+Εξίσωση: <code>x + (x+8) = 34</code>.</p></li>
+<li><p><strong>Εργασία (ομάδες – παραγωγή):</strong> Μια ομάδα φτιάχνει 12 αντικείμενα την ώρα. Θέλουμε να φτιάξουμε 180 αντικείμενα. Πόσες ώρες χρειάζονται;<br>
+Θέσε <code>x</code> = ώρες.<br>
+Εξίσωση: <code>12x = 180</code>.</p></li>
+<li><p><strong>Βρύσες (γέμισμα δεξαμενής):</strong> Μια δεξαμενή γεμίζει από μία βρύση σε 6 ώρες. Μια άλλη βρύση γεμίζει την ίδια δεξαμενή σε 12 ώρες. Αν ανοίξουν μαζί, σε πόσες ώρες γεμίζει;<br>
+Θέσε <code>x</code> = ώρες μαζί. Ρυθμοί: <span class="math inline">\(\dfrac{1}{6}\)</span>` και <span class="math inline">\(\dfrac{1}{12}\)</span> δεξαμενής/ώρα.<br>
+Εξίσωση: <span class="math inline">\(x(\dfrac{1}{6} + \dfrac{1}{12}) = 1\)</span>.</p></li>
+<li><p><strong>Βρύσες (γέμισμα με διαρροή):</strong> Μια βρύση γεμίζει μια δεξαμενή σε 5 ώρες, αλλά υπάρχει διαρροή που αδειάζει τη δεξαμενή σε 10 ώρες. Αν λειτουργούν ταυτόχρονα, σε πόσες ώρες γεμίζει;<br>
+Θέσε <code>x</code> = ώρες.<br>
+Εξίσωση: <span class="math inline">\(x(\dfrac{1}{5} - \dfrac{1}{10}) = 1\)</span>.</p></li>
+<li><p><strong>Μείγματα (διάλυμα αλατιού):</strong> Θέλουμε 10 λίτρα διαλύματος αλατιού 15%. Έχουμε διάλυμα 10% και διάλυμα 25%. Πόσα λίτρα από το 25% χρειάζονται;<br>
+Θέσε <code>x</code> = λίτρα από το 25%, τότε από το 10% είναι <code>10 - x</code>.<br>
+Εξίσωση: <code>0.25x + 0.10(10-x) = 0.15·10</code>.</p></li>
+<li><p><strong>Μείγματα (χυμοί/αναψυκτικά):</strong> Έχεις χυμό με 40% φυσικό χυμό και θέλεις να φτιάξεις 12 ποτήρια με 25% φυσικό χυμό, προσθέτοντας νερό. Πόσα ποτήρια από τον αρχικό χυμό θα χρησιμοποιήσεις;<br>
+Θέσε <code>x</code> = ποτήρια από τον 40%, τότε νερό <code>12 - x</code> (0% φυσικός χυμός).<br>
+Εξίσωση: <code>0.40x + 0(12-x) = 0.25·12</code>.</p></li>
+<li><p><strong>Γεωμετρία – τρίγωνο (περίμετρος):</strong> Σε ένα τρίγωνο οι πλευρές είναι <code>x</code>, <code>x+3</code> και <code>x+7</code> cm. Η περίμετρος είναι 34 cm. Να βρεθεί το <code>x</code> και οι πλευρές.</p></li>
+<li><p><strong>Γεωμετρία – παραλληλόγραμμο (περίμετρος):</strong> Ένα παραλληλόγραμμο έχει περίμετρο 62 cm. Η μία πλευρά είναι διπλάσια από την άλλη. Να βρεθούν οι πλευρές.</p></li>
+<li><p><strong>Γεωμετρία – ορθογώνιο πλαίσιο (περίμετρος “δακτυλίου”):</strong> Ένα ορθογώνιο έχει μήκος <code>x</code> και πλάτος <code>x-4</code> (cm). Αν η περίμετρός του είναι 56 cm, να βρεθούν οι διαστάσεις του.</p></li>
+<li><p><strong>Καθημερινή ζωή – κινητό (χρέωση):</strong> Ένα πρόγραμμα κινητής έχει πάγιο 8€ και χρεώνει 0,12€ το λεπτό. Ένας λογαριασμός βγήκε 20€. Πόσα λεπτά μίλησε;</p></li>
+<li><p><strong>Καθημερινή ζωή – εισιτήρια:</strong> Μια τάξη πήγε εκδρομή. Το εισιτήριο για κάθε μαθητή κοστίζει 6€ και για κάθε συνοδό 9€. Αν πήγαν 24 άτομα συνολικά και πλήρωσαν 156€, πόσοι ήταν οι συνοδοί;</p></li>
+<li><p><strong>Χρόνος/εργασία – συνεργείο :</strong> Ένας εργάτης μπορεί να βάψει έναν τοίχο σε <code>x</code> ώρες. Αν δουλέψουν 2 ίδιοι εργάτες μαζί, τελειώνουν σε 3 ώρες. Πόσες ώρες θα έκανε ο ένας μόνος του;</p></li>
+<li><p><strong>Βρύσες – δύο βρύσες (γεμίζουν μαζί):</strong> Η βρύση Α γεμίζει μια δεξαμενή σε 4 ώρες. Η βρύση Β σε 6 ώρες. Αν ανοίξουν μαζί, σε πόση ώρα θα γεμίσει η δεξαμενή;</p></li>
+<li><p><strong>Βρύσες – άδειασμα και γέμισμα μαζί:</strong> Μια βρύση γεμίζει δεξαμενή σε 3 ώρες, αλλά μια τρύπα την αδειάζει σε 12 ώρες. Αν λειτουργούν ταυτόχρονα, σε πόσες ώρες γεμίζει;</p></li>
+<li><p><strong>Μείγματα – νερό και χυμός :</strong> Έχεις χυμό πορτοκάλι 60% (συμπυκνωμένο/χυμός) και θέλεις να φτιάξεις 8 λίτρα 30%. Πόσα λίτρα από τον 60% χρειάζεσαι και πόσο νερό θα προσθέσεις;</p></li>
+<li><p><strong>Μείγματα – αλκοόλη (διάλυμα):</strong> Θέλεις 20 λίτρα διαλύματος αλκοόλης 40%. Έχεις διάλυμα 70% και νερό (0%). Πόσα λίτρα από το 70% χρειάζεσαι;</p></li>
+<li><p><strong>Καθημερινή Ζωή (Αγορές)</strong> <strong>Πρόβλημα:</strong> Ο Κώστας αγόρασε ένα παντελόνι και ένα πουκάμισο και πλήρωσε συνολικά 120€. Αν το παντελόνι κοστίζει 20€ περισσότερο από το πουκάμισο, πόσο κοστίζει το κάθε είδος;</p></li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> η τιμή του πουκάμισου. Τότε το παντελόνι είναι <span class="math inline">\(x + 20\)</span>.</p>
+<p>* <strong>Βήμα 2:</strong> …………………………………………</p>
+<p>* <strong>Τελική Απάντηση:</strong> Πουκάμισο 50€, Παντελόνι 70€.</p>
+<ol start="27" type="1">
+<li><strong>Γεωμετρία (Περίμετρος)</strong> <strong>Πρόβλημα:</strong> Σε ένα ορθογώνιο παραλληλόγραμμο, το μήκος είναι διπλάσιο από το πλάτος. Αν η περίμετρος είναι 60 cm, βρείτε τις διαστάσεις του.</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> το πλάτος. Τότε το μήκος είναι………..</p>
+<p>* <strong>Βήμα 2:</strong> Η περίμετρος είναι <span class="math inline">\(P = 2 \cdot (\text{μήκος} + \text{πλάτος})\)</span>. Άρα: …………………………………………..</p>
+<p>* <strong>Τελική Απάντηση:</strong> Πλάτος 10 cm, Μήκος 20 cm.</p>
+<ol start="28" type="1">
+<li><strong>Ημερομίσθια / Εργασία</strong> <strong>Πρόβλημα:</strong> Ένας τεχνικός χρεώνει 30€ για την επίσκεψη και 25€ για κάθε ώρα εργασίας. Αν στο τέλος εισέπραξε 155€, πόσες ώρες εργάστηκε;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> οι ώρες εργασίας.</p>
+<p>* <strong>Βήμα 2:</strong> Η εξίσωση είναι: <span class="math inline">\(30...............=....... \Rightarrow 25x = 125 \Rightarrow x = 5\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Εργάστηκε 5 ώρες.</p>
+<ol start="29" type="1">
+<li><strong>Προβλήματα με Βρύσες</strong> <strong>Πρόβλημα:</strong> Μια βρύση Α γεμίζει μια δεξαμενή σε 4 ώρες. Μια άλλη βρύση Β τη γεμίζει σε 6 ώρες. Αν ανοίξουν και οι δύο μαζί, σε πόση ώρα θα γεμίσει η δεξαμενή;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Σε 1 ώρα, η Α γεμίζει το <span class="math inline">\(\dfrac{1}{4}\)</span> και η Β το <span class="math inline">\(\dfrac{1}{6}\)</span> της δεξαμενής. Μαζί γεμίζουν το <span class="math inline">\(\frac{1}{x}\)</span>.</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(......+...... = \dfrac{1}{x} \Rightarrow ......+...... = \dfrac{1}{x} \Rightarrow \dfrac{5}{12} = \dfrac{1}{x} \Rightarrow 5x = 12 \Rightarrow x = 2,4\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Σε 2,4 ώρες (ή 2 ώρες και 24 λεπτά).</p>
+<ol start="30" type="1">
+<li><strong>Μείγματα</strong> <strong>Πρόβλημα:</strong> Πόσα λίτρα καθαρού οινοπνεύματος πρέπει να προσθέσουμε σε 10 λίτρα διαλύματος περιεκτικότητας 20% ώστε να πάρουμε διάλυμα 50%;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> τα λίτρα καθαρού οινοπνεύματος (100%).</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(0,20 \cdot 10 + 1,00 \cdot x = 0,50 \cdot (10 + x) \Rightarrow 2 + x = 5 + 0,5x \Rightarrow 0,5x = 3 \Rightarrow x = 6\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Πρέπει να προσθέσουμε 6 λίτρα.</p>
+<ol start="31" type="1">
+<li><strong>Ηλικίες</strong> <strong>Πρόβλημα:</strong> Ένας πατέρας είναι 40 ετών και ο γιος του 10. Μετά από πόσα χρόνια η ηλικία του πατέρα θα είναι τριπλάσια από του γιου;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> τα χρόνια που θα περάσουν. Τότε ο πατέρας θα είναι <span class="math inline">\(40+x\)</span> και ο γιος <span class="math inline">\(10+x\)</span>.</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(..........= 3(10 + x) \Rightarrow 40 + x = ........ \Rightarrow 10 = 2x \Rightarrow x = 5\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Μετά από 5 χρόνια.</p>
+<ol start="32" type="1">
+<li><strong>Κίνηση (Ταχύτητα)</strong> <strong>Πρόβλημα:</strong> Δύο αυτοκίνητα ξεκινούν ταυτόχρονα από δύο πόλεις που απέχουν 300 km και κινούνται το ένα προς το άλλο με ταχύτητες 70 km/h και 80 km/h. Μετά από πόση ώρα θα συναντηθούν;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(t\)</span> η ώρα συνάντησης. Η απόσταση που διανύει το καθένα είναι <span class="math inline">\(d = v \cdot t\)</span>.</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(70t + 80t = 300 \Rightarrow 150t = 300 \Rightarrow t = 2\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Θα συναντηθούν σε 2 ώρες.</p>
+<ol start="33" type="1">
+<li><strong>Αντικείμενα / Πλήθος</strong> <strong>Πρόβλημα:</strong> Σε ένα πάρκινγκ υπάρχουν δίκυκλα και αυτοκίνητα. Συνολικά υπάρχουν 20 οχήματα και 64 ρόδες. Πόσα είναι τα αυτοκίνητα;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> τα αυτοκίνητα (4 ρόδες) και <span class="math inline">\(20-x\)</span> τα δίκυκλα (2 ρόδες).</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(........+.......... = 64 \Rightarrow ............... = 64 \Rightarrow 2x = 24 \Rightarrow x = 12\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> 12 αυτοκίνητα και 8 δίκυκλα.</p>
+<ol start="34" type="1">
+<li><strong>Οικονομικά (Επένδυση)</strong> <strong>Πρόβλημα:</strong> Ένας επενδυτής μοίρασε 10.000€ σε δύο λογαριασμούς. Ο ένας έχει επιτόκιο 3% και ο άλλος 5%. Αν το συνολικό ετήσιο κέρδος είναι 440€, πόσα χρήματα έβαλε σε κάθε λογαριασμό;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> το ποσό στο 5%. Τότε <span class="math inline">\(10.000-x\)</span> είναι το ποσό στο 3%.</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(........ + .............. = 440 \Rightarrow 0,05x + .......... = 440 \Rightarrow 0,02x = 140 \Rightarrow x = 7.000\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> 7.000€ στο 5% και 3.000€ στο 3%.</p>
+<ol start="35" type="1">
+<li><strong>Κλάσματα Αριθμών</strong> <strong>Πρόβλημα:</strong> Αν προσθέσουμε στο μισό ενός αριθμού το ένα τρίτο του και μετά το 10, βρίσκουμε τον ίδιο τον αριθμό. Ποιος είναι ο αριθμός;</li>
+</ol>
+<p><strong>Λύση:</strong></p>
+<p>* <strong>Βήμα 1:</strong> Έστω <span class="math inline">\(x\)</span> ο αριθμός.</p>
+<p>* <strong>Βήμα 2:</strong> <span class="math inline">\(\dfrac{x}{2} + \dfrac{x}{3} + 10 = x\)</span>. Πολλαπλασιάζουμε με το Ε.Κ.Π (6): <span class="math inline">\(...................... \Rightarrow ............ = 6x \Rightarrow x = 60\)</span>.</p>
+<p>* <strong>Τελική Απάντηση:</strong> Ο αριθμός είναι το 60.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η διαδικασία επίλυσης για όλα τα παραπάνω απαιτεί την <strong>απομόνωση του αγνώστου</strong> και την εφαρμογή αλγεβρικών κανόνων, όπως η απαλοιφή παρονομαστών και ο χωρισμός γνωστών από αγνώστους.</p>
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1313,12 +1637,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
