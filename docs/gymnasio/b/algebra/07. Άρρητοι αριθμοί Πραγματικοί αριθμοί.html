@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>07. Άρρητοι αριθμοί Πραγματικοί αριθμοί – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,31 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +117,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +128,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +180,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</a></li></ol></nav>
+      <h1 class="title">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">9 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +245,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +263,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -443,7 +490,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -594,16 +641,16 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -652,7 +699,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
   </div>
 </li>
@@ -680,7 +727,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -799,7 +846,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -842,7 +889,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -851,7 +898,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -994,7 +1041,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1069,7 +1116,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1090,7 +1137,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1099,7 +1146,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1259,35 +1306,444 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#άρρητοι-αριθμοί-πραγματικοί-αριθμοί" id="toc-άρρητοι-αριθμοί-πραγματικοί-αριθμοί" class="nav-link active" data-scroll-target="#άρρητοι-αριθμοί-πραγματικοί-αριθμοί"><span class="header-section-number">1</span> Άρρητοι αριθμοί Πραγματικοί αριθμοί</a>
+  <ul class="collapse">
+  <li><a href="#άρρητοι-αριθμοί-ή-ασύμμετροι" id="toc-άρρητοι-αριθμοί-ή-ασύμμετροι" class="nav-link" data-scroll-target="#άρρητοι-αριθμοί-ή-ασύμμετροι"><span class="header-section-number">1.1</span> <strong>Άρρητοι αριθμοί (ή Ασύμμετροι)</strong></a></li>
+  <li><a href="#πραγματικοί-αριθμοί" id="toc-πραγματικοί-αριθμοί" class="nav-link" data-scroll-target="#πραγματικοί-αριθμοί"><span class="header-section-number">1.2</span> <strong>Πραγματικοί αριθμοί</strong></a></li>
+  </ul></li>
+  <li><a href="#η-ανακάλυψη-των-άρρητων-αριθμών" id="toc-η-ανακάλυψη-των-άρρητων-αριθμών" class="nav-link" data-scroll-target="#η-ανακάλυψη-των-άρρητων-αριθμών"><span class="header-section-number">2</span> Η ανακάλυψη των άρρητων αριθμών</a>
+  <ul class="collapse">
+  <li><a href="#η-ιστορική-ανακάλυψη" id="toc-η-ιστορική-ανακάλυψη" class="nav-link" data-scroll-target="#η-ιστορική-ανακάλυψη"><span class="header-section-number">2.1</span> Η Ιστορική Ανακάλυψη</a></li>
+  <li><a href="#πώς-προκύπτει-η-sqrt2" id="toc-πώς-προκύπτει-η-sqrt2" class="nav-link" data-scroll-target="#πώς-προκύπτει-η-sqrt2"><span class="header-section-number">2.2</span> Πώς προκύπτει η <span class="math inline">\(\sqrt{2}\)</span>;</a></li>
+  <li><a href="#ο-αρχιμήδης" id="toc-ο-αρχιμήδης" class="nav-link" data-scroll-target="#ο-αρχιμήδης"><span class="header-section-number">2.3</span> <strong>Ο Αρχιμήδης</strong></a></li>
+  <li><a href="#πριν-τους-έλληνες" id="toc-πριν-τους-έλληνες" class="nav-link" data-scroll-target="#πριν-τους-έλληνες"><span class="header-section-number">2.4</span> Πριν τους Έλληνες</a></li>
+  <li><a href="#ασκήσεις-για-εμπέδωση" id="toc-ασκήσεις-για-εμπέδωση" class="nav-link" data-scroll-target="#ασκήσεις-για-εμπέδωση"><span class="header-section-number">2.5</span> Ασκήσεις για Εμπέδωση</a></li>
+  <li><a href="#για-τον-υπολογισμό-της-προσέγγισης-μιας-τετραγωνικής-ρίζας" id="toc-για-τον-υπολογισμό-της-προσέγγισης-μιας-τετραγωνικής-ρίζας" class="nav-link" data-scroll-target="#για-τον-υπολογισμό-της-προσέγγισης-μιας-τετραγωνικής-ρίζας"><span class="header-section-number">2.6</span> Για τον υπολογισμό της προσέγγισης μιας τετραγωνικής ρίζας</a></li>
+  <li><a href="#η-τοποθέτηση-των-αριθμών-πάνω-στον-άξονα-των-πραγματικών-αριθμών" id="toc-η-τοποθέτηση-των-αριθμών-πάνω-στον-άξονα-των-πραγματικών-αριθμών" class="nav-link" data-scroll-target="#η-τοποθέτηση-των-αριθμών-πάνω-στον-άξονα-των-πραγματικών-αριθμών"><span class="header-section-number">2.7</span> Η τοποθέτηση των αριθμών πάνω στον άξονα των πραγματικών αριθμών</a></li>
+  <li><a href="#η-ευθεία-των-πραγματικών-αριθμών" id="toc-η-ευθεία-των-πραγματικών-αριθμών" class="nav-link" data-scroll-target="#η-ευθεία-των-πραγματικών-αριθμών"><span class="header-section-number">2.8</span> Η Ευθεία των Πραγματικών Αριθμών</a></li>
+  <li><a href="#ασκήσεις-και-προβλήματα" id="toc-ασκήσεις-και-προβλήματα" class="nav-link" data-scroll-target="#ασκήσεις-και-προβλήματα"><span class="header-section-number">2.9</span> Ασκήσεις και προβλήματα:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="άρρητοι-αριθμοί-πραγματικοί-αριθμοί" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="άρρητοι-αριθμοί-πραγματικοί-αριθμοί"><span class="header-section-number">1</span> Άρρητοι αριθμοί Πραγματικοί αριθμοί</h2>
+<section id="άρρητοι-αριθμοί-ή-ασύμμετροι" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="άρρητοι-αριθμοί-ή-ασύμμετροι"><span class="header-section-number">1.1</span> <strong>Άρρητοι αριθμοί (ή Ασύμμετροι)</strong></h3>
+<div style="background-color: #e0d6b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ορισμός</strong>: Άρρητος ή ασύμμετρος ονομάζεται κάθε αριθμός που δεν μπορεί να γραφεί υπό μορφή πηλίκου δύο ακεραίων (δηλαδή δεν είναι ρητός).</p></li>
+<li><p><strong>Δεκαδική μορφή</strong>: Οι άρρητοι αριθμοί, όταν εμφανίζονται ως δεκαδικοί, έχουν άπειρα δεκαδικά ψηφία τα οποία <strong>δεν είναι περιοδικά</strong>. Αντίθετα, κάθε ρητός αριθμός μετατρέπεται σε περιοδικό δεκαδικό.</p></li>
+<li><p><strong>Τετραγωνικές ρίζες</strong>: Αν ένας φυσικός αριθμός <span class="math inline">\(k\)</span> δεν είναι τέλειο τετράγωνο (δηλ. η τετραγωνική του ρίζα δεν είναι ακέραιος), τότε η <span class="math inline">\(\sqrt{k}\)</span> είναι άρρητος αριθμός.</p></li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<ol type="1">
+<li>Ένας άρρητος αριθμός δεν είναι ίσος με κανένα κλάσμα.</li>
+<li>Το γινόμενο ενός ρητού (διάφορου του μηδενός) επί έναν άρρητο είναι πάντα άρρητος αριθμός.</li>
+<li>Το άθροισμα, η διαφορά, το γινόμενο ή το πηλίκο δύο αρρήτων μπορεί να είναι άλλοτε ρητός και άλλοτε άρρητος αριθμός.</li>
+<li>Οι άρρητοι αριθμοί προσεγγίζονται από ρητούς με όση ακρίβεια επιθυμούμε (ρητές προσεγγίσεις).</li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Η <strong><span class="math inline">\(\sqrt{2}\)</span></strong> (<span class="math inline">\(\approx 1,4142...\)</span>), που εκφράζει τον λόγο της διαγωνίου τετραγώνου προς την πλευρά του.</li>
+<li>Η <strong><span class="math inline">\(\sqrt{5}\)</span></strong> (<span class="math inline">\(\approx 2,236...\)</span>).</li>
+<li>Ο αριθμός <strong><span class="math inline">\(\pi\)</span></strong> (<span class="math inline">\(\approx 3,14159...\)</span>), που είναι ο σταθερός λόγος της περιφέρειας κύκλου προς τη διάμετρό του.</li>
+<li>Ο αριθμός <strong><span class="math inline">\(3,202202220...\)</span></strong> (άπειρος μη περιοδικός δεκαδικός).</li>
+<li>Η <strong><span class="math inline">\(-\sqrt{3}\)</span></strong> (σχετικός αρνητικός άρρητος).</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Εξηγήστε γιατί ο αριθμός <span class="math inline">\(\sqrt{12}\)</span> είναι άρρητος.</li>
+<li>Δείξτε ότι ο άπειρος δεκαδικός <span class="math inline">\(0,1010010001...\)</span> είναι ασύμμετρος.</li>
+<li>Βρείτε την προσέγγιση εκατοστού με έλλειψη για τον άρρητο <span class="math inline">\(\sqrt{35}\)</span>.</li>
+<li>Αναφέρετε τρεις άρρητους αριθμούς που βρίσκονται μεταξύ των ακεραίων 2 και 3.</li>
+<li>Εξετάστε αν το άθροισμα <span class="math inline">\(\sqrt{2} + \sqrt{8}\)</span> είναι ρητός ή άρρητος αριθμός.</li>
+<li>Εισάγετε τον παράγοντα 3 μέσα στο ριζικό στην έκφραση <span class="math inline">\(3\sqrt{2}\)</span> και εξετάστε αν το αποτέλεσμα είναι άρρητος.</li>
+<li>Αποδείξτε γεωμετρικά ότι η υποτείνουσα ορθογωνίου τριγώνου με κάθετες πλευρές 1 και 2 είναι άρρητος αριθμός.</li>
+<li>Προσδιορίστε αν ο αριθμός <span class="math inline">\(\sqrt{14876449}\)</span> είναι ρητός ή άρρητος (ελέγξτε αν είναι τέλειο τετράγωνο).</li>
+<li>Ποιοι από τους παρακάτω αριθμούς είναι άρρητοι: <span class="math inline">\(\sqrt{49}, \sqrt{50}, \sqrt{62}, \sqrt{64}\)</span>;.</li>
+<li>Δείξτε ότι η διαφορά <span class="math inline">\(\sqrt{3} - \sqrt{5}\)</span> είναι άρρητος αριθμός.</li>
+</ol>
+<hr>
+</section>
+<section id="πραγματικοί-αριθμοί" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="πραγματικοί-αριθμοί"><span class="header-section-number">1.2</span> <strong>Πραγματικοί αριθμοί</strong></h3>
+<div style="background-color: #e0d6b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ορισμός</strong>: Το σύνολο των πραγματικών αριθμών (συμβολίζεται με <strong><span class="math inline">\(R\)</span></strong>) αποτελείται από την ένωση του συνόλου των ρητών αριθμών και του συνόλου των αρρήτων αριθμών.</p></li>
+<li><p><strong>Περιγραφή</strong>: Κάθε πραγματικός αριθμός είναι είτε ρητός (περιοδικός δεκαδικός) είτε άρρητος (μη περιοδικός δεκαδικός).</p></li>
+<li><p><strong>Σχέση συνόλων</strong>: Ισχύει ο εγκλεισμός <span class="math inline">\(N \subset Z \subset Q \subset R\)</span>.</p></li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<ol type="1">
+<li><p><strong>Άξονας πραγματικών</strong>: Υπάρχει μια αμφιμονοσήμαντη αντιστοιχία μεταξύ των πραγματικών αριθμών και των σημείων μιας ευθείας (άξονας).</p></li>
+<li><p><strong>Πράξεις</strong>: Στο σύνολο <span class="math inline">\(R\)</span> ισχύουν οι βασικές ιδιότητες των πράξεων: αντιμεταθετική, προσεταιριστική και επιμεριστική.</p></li>
+<li><p><strong>Διάταξη</strong>: Για οποιουσδήποτε δύο πραγματικούς <span class="math inline">\(a, \beta\)</span> ισχύει <span class="math inline">\(a &gt; \beta\)</span> αν η διαφορά <span class="math inline">\(a - \beta\)</span> είναι θετική.</p></li>
+<li><p><strong>Απόλυτη τιμή</strong>: Η απόλυτη τιμή ενός πραγματικού αριθμού <span class="math inline">\(a\)</span> είναι ο ίδιος ο αριθμός αν είναι θετικός, και ο αντίθετός του αν είναι αρνητικός.</p></li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ο αριθμός <strong><span class="math inline">\(5\)</span></strong> (φυσικός, ρητός και πραγματικός).</li>
+<li>Το κλάσμα <strong><span class="math inline">\(-\dfrac{3}{5}\)</span></strong> (ρητός και πραγματικός).</li>
+<li>Η <strong><span class="math inline">\(\sqrt{2}\)</span></strong> (άρρητος και πραγματικός).</li>
+<li>Ο αριθμός <strong><span class="math inline">\(0\)</span></strong> (το ουδέτερο στοιχείο της πρόσθεσης, πραγματικός).</li>
+<li>Ο αριθμός <strong><span class="math inline">\(\pi\)</span></strong> (πραγματικός).</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Τοποθετήστε πάνω στον άξονα των πραγματικών αριθμών τους: <span class="math inline">\(-2, \sqrt{2}, 3,5, -\sqrt{3}\)</span>.</li>
+<li>Εξετάστε αν η πρόταση «Κάθε πραγματικός αριθμός είναι ακέραιος» είναι αληθής ή ψευδής.</li>
+<li>Βρείτε την απόλυτη τιμή των πραγματικών αριθμών: <span class="math inline">\(|-5,4|\)</span> και <span class="math inline">\(|1 - \sqrt{2}|\)</span>.</li>
+<li>Λύστε την εξίσωση <span class="math inline">\(|x| = 7,5\)</span> στο σύνολο <span class="math inline">\(R\)</span>.</li>
+<li>Επαληθεύστε την ιδιότητα <span class="math inline">\(a &lt; \beta \Rightarrow a + \gamma &lt; \beta + \gamma\)</span> για <span class="math inline">\(a = -3, \beta = 2\)</span> και <span class="math inline">\(\gamma = -5\)</span>.</li>
+<li>Προσδιορίστε το σύνολο που προκύπτει από την τομή <span class="math inline">\(Q \cap R\)</span>.</li>
+<li>Απλοποιήστε το άθροισμα <span class="math inline">\(\sqrt{12} + \sqrt{27} + \sqrt{147}\)</span> στο σύνολο των πραγματικών.</li>
+<li>Συγκρίνετε τους πραγματικούς αριθμούς <span class="math inline">\(a = 3,0010001...\)</span> και <span class="math inline">\(\beta = 2,9393...\)</span> βάσει των ψηφίων τους.</li>
+<li>Υπολογίστε την τιμή της παράστασης <span class="math inline">\(\sqrt{(-3)^2}\)</span> χρησιμοποιώντας τον ορισμό της απόλυτης τιμής.</li>
+<li>Βρείτε δύο πραγματικούς αριθμούς <span class="math inline">\(x\)</span> που επαληθεύουν την εξίσωση <span class="math inline">\(x^2 = 2\)</span>.</li>
+</ol>
+<hr>
+<hr>
+</section>
+</section>
+<section id="η-ανακάλυψη-των-άρρητων-αριθμών" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="η-ανακάλυψη-των-άρρητων-αριθμών"><span class="header-section-number">2</span> Η ανακάλυψη των άρρητων αριθμών</h2>
+<p>προήλθε από ένα γεωμετρικό πρόβλημα που κλόνισε την κοσμοθεωρία των Πυθαγόρειων.</p>
+<section id="η-ιστορική-ανακάλυψη" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="η-ιστορική-ανακάλυψη"><span class="header-section-number">2.1</span> Η Ιστορική Ανακάλυψη</h3>
+<p>Οι Πυθαγόρειοι πίστευαν ότι τα πάντα στον κόσμο μπορούν να εκφραστούν ως λόγος (κλάσμα) φυσικών αριθμών. Η «κρίση» ξέσπασε όταν ο <strong>Ίππασος ο Μεταπόντιος</strong> (περίπου το 450 π.Χ.) απέδειξε ότι η διαγώνιος ενός τετραγώνου με πλευρά 1 δεν μπορεί να γραφτεί ως κλάσμα.</p>
+</section>
+<section id="πώς-προκύπτει-η-sqrt2" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="πώς-προκύπτει-η-sqrt2"><span class="header-section-number">2.2</span> Πώς προκύπτει η <span class="math inline">\(\sqrt{2}\)</span>;</h3>
+<p>Αν θεωρήσουμε ένα τετράγωνο με πλευρά 1 cm, η διαγώνιος <span class="math inline">\(x\)</span> υπολογίζεται από το <strong>Πυθαγόρειο Θεώρημα</strong> ως εξής: <img src="images/clipboard-2388985682.png" class="img-fluid"></p>
+<p>* <span class="math inline">\(x^2 = 1^2 + 1^2\)</span></p>
+<p>* <span class="math inline">\(x^2 = 2\)</span></p>
+<p>* Άρα, <span class="math inline">\(x = \sqrt{2}\)</span>.</p>
+<p>Οι Πυθαγόρειοι απέδειξαν ότι αυτός ο αριθμός δεν είναι ρητός, δηλαδή δεν υπάρχει κλάσμα <span class="math inline">\(\frac{\mu}{\nu}\)</span> που να ισούται ακριβώς με τη <span class="math inline">\(\sqrt{2}\)</span>. Αργότερα, ο Εύδοξος ο Κνίδιος<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> θεμελίωσε τη μελέτη αυτών των «άλογων» μεγεθών, λύνοντας το αδιέξοδο<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> .<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<ol type="1">
+<li><p><strong>Αποδέσμευση από τους αριθμούς</strong>: Μετέφερε το πρόβλημα από την αριθμητική στη <strong>γεωμετρία</strong>. Αντί για «αριθμούς», μίλησε για «μεγέθη» (γραμμές, επιφάνειες).</p></li>
+<li><p><strong>Νέος Ορισμός Ισότητας</strong>: Διατύπωσε έναν ιδιοφυή ορισμό για το πότε δύο λόγοι μεγεθών είναι ίσοι, χωρίς να χρειάζεται να ξέρουμε αν οι λόγοι αυτοί είναι ρητοί ή άρρητοι.</p></li>
+<li><p><strong>Αυστηρότητα</strong>: Ο ορισμός του ήταν τόσο τέλειος που άντεξε πάνω από 2.000 χρόνια, μέχρι που οι μαθηματικοί του 19ου αιώνα (όπως ο Dedekind) τον χρησιμοποίησαν για να δώσουν τον σύγχρονο ορισμό των πραγματικών αριθμών.</p></li>
+</ol>
+<p>Με απλά λόγια, ο Εύδοξος έδωσε στους μαθηματικούς τα εργαλεία να δουλεύουν με <strong>άπειρες διαδικασίες</strong> και άρρητες ποσότητες με απόλυτη λογική ακρίβεια.</p>
+<p><strong>Πώς συνδέονται;</strong></p>
+<p>Όταν ο Εύδοξος ήθελε να υπολογίσει, για παράδειγμα, το <strong>εμβαδόν ενός κύκλου</strong>, χρησιμοποιούσε κανονικά πολύγωνα εγγεγραμμένα μέσα σε αυτόν. Αυξάνοντας τον αριθμό των πλευρών των πολυγώνων, αυτά «εξαντλούσαν» σταδιακά την επιφάνεια του κύκλου.</p>
+<p>Η σύνδεση με τους άρρητους βρίσκεται στο εξής:</p>
+<ul>
+<li><p><strong>Το πρόβλημα</strong>: Ο λόγος του εμβαδού ενός κύκλου προς το τετράγωνο της ακτίνας του είναι ένας άρρητος αριθμός (το γνωστό μας <span class="math inline">\(\pi\)</span>).</p></li>
+<li><p><strong>Η λύση</strong>: Με τη <strong>Θεωρία των Αναλογιών</strong>, ο Εύδοξος μπορούσε να συγκρίνει τέτοιους «δύσκολους» λόγους χρησιμοποιώντας μόνο ρητές προσεγγίσεις. Απέδειξε αυστηρά ότι:</p></li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>“Οι λόγοι των εμβαδών δύο κύκλων είναι ίσοι με τους λόγους των τετραγώνων των διαμέτρων τους”.</p>
+</blockquote>
+</blockquote>
+<p>Αυτό το πέτυχε χωρίς να χρειαστεί ποτέ να ορίσει την ακριβή “τιμή” του <span class="math inline">\(\pi\)</span>, παρακάμπτοντας έτσι το αδιέξοδο των άρρητων αριθμών.</p>
+<p><strong>Γιατί θεωρείται «πρόδρομος του Ολοκληρωτικού Λογισμού»;</strong></p>
+<p>Η μέθοδος αυτή χρησιμοποιεί τη λογική των <strong>ορίων</strong> 2.000 χρόνια πριν τον Newton και τον Leibniz:</p>
+<ol type="1">
+<li><p><strong>Προσέγγιση</strong>: Φτιάχνουμε μια ακολουθία σχημάτων που πλησιάζουν όλο και περισσότερο το τελικό σχήμα.</p></li>
+<li><p><strong>Απόδειξη με άτοπο</strong>: Αντί να πει “στο άπειρο οι πλευρές γίνονται κύκλος”, ο Εύδοξος αποδείκνυε ότι η διαφορά μεταξύ του πολυγώνου και του κύκλου μπορεί να γίνει <strong>μικρότερη από οποιοδήποτε μέγεθος</strong> επιλέξουμε.</p></li>
+</ol>
+<p><strong>Τι απέδειξε με αυτή τη μέθοδο;</strong></p>
+<p>Χρησιμοποιώντας τον συνδυασμό των δύο θεωριών του, απέδειξε πρώτος ότι:</p>
+<ul>
+<li><p>Ο όγκος της <strong>πυραμίδας</strong> είναι το <span class="math inline">\(\frac{1}{3}\)</span> του πρίσματος με την ίδια βάση και ύψος.</p></li>
+<li><p>Ο όγκος του <strong>κώνου</strong> είναι το <span class="math inline">\(\frac{1}{3}\)</span> του αντίστοιχου κυλίνδρου.</p></li>
+</ul>
+<p><img src="images/clipboard-247728351.png" class="img-fluid"></p>
+</section>
+<section id="ο-αρχιμήδης" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="ο-αρχιμήδης"><span class="header-section-number">2.3</span> <strong>Ο Αρχιμήδης</strong></h3>
+<p><img src="images/clipboard-4061398816.png" class="img-fluid" width="333"></p>
+<p>Ο Αρχιμήδης πήρε τη «σκυτάλη» από τον Εύδοξο και μετέτρεψε τη θεωρητική μέθοδο της εξάντλησης σε ένα πανίσχυρο εργαλείο υπολογισμού.</p>
+<section id="η-στρατηγική-του-αρχιμήδη-για-το-pi" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="η-στρατηγική-του-αρχιμήδη-για-το-pi"><span class="header-section-number">2.3.1</span> Η στρατηγική του Αρχιμήδη για το <span class="math inline">\(\pi\)</span></h4>
+<p>Ενώ ο Εύδοξος απέδειξε τη σχέση των εμβαδών, ο Αρχιμήδης θέλησε να βρει την ακριβή τιμή του λόγου της περιφέρειας προς τη διάμετρο.</p>
+<p>Για να το καταφέρει:</p>
+<ol type="1">
+<li>Διπλή Πολυγωνική Προσέγγιση: Δεν χρησιμοποίησε μόνο εγγεγραμμένα πολύγωνα (μέσα στον κύκλο), αλλά και περιγεγραμμένα (έξω από τον κύκλο).</li>
+<li>Ο εγκλωβισμός: Κατάλαβε ότι η περιφέρεια του κύκλου βρίσκεται πάντα ανάμεσα στην περίμετρο του εσωτερικού και του εξωτερικού πολυγώνου.</li>
+<li>Εξάντληση μέχρι 96 πλευρές: Ξεκίνησε από το εξάγωνο και διπλασίαζε τις πλευρές (12, 24, 48…) μέχρι να φτάσει σε πολύγωνα με 96 πλευρές.</li>
+</ol>
+</section>
+<section id="το-αποτέλεσμα" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="το-αποτέλεσμα"><span class="header-section-number">2.3.2</span> Το αποτέλεσμα</h4>
+<p>Μέσα από επίπονους υπολογισμούς (χωρίς δεκαδικούς αριθμούς!), ο Αρχιμήδης απέδειξε ότι η τιμή του <span class="math inline">\(\pi\)</span> βρίσκεται μεταξύ: <span class="math display">\[3 \frac{10}{71} &lt; \pi &lt; 3 \frac{1}{7}\]</span> (δηλαδή περίπου <span class="math inline">\(3,1408 &lt; 3,1415 &lt; 3,1428\)</span>).</p>
+</section>
+<section id="η-καινοτομία" class="level4" data-number="2.3.3">
+<h4 data-number="2.3.3" class="anchored" data-anchor-id="η-καινοτομία"><span class="header-section-number">2.3.3</span> Η καινοτομία</h4>
+<p>Η διαφορά με τον Εύδοξο είναι ότι ο Αρχιμήδης εισήγαγε την έννοια των ορίων στην πράξη.</p>
+<p>Είπε ουσιαστικά: «δεν ξέρω ακριβώς τι είναι ο άρρητος <span class="math inline">\(\pi\)</span>, αλλά μπορώ να τον “φυλακίσω” σε ένα διάστημα τόσο μικρό, που για κάθε πρακτικό σκοπό είναι σαν να τον ξέρω». Αυτή η προσέγγιση θεωρείται η κορυφαία στιγμή των αρχαίων μαθηματικών πριν την έλευση του σύγχρονου Απειροστικού Λογισμού.</p>
+</section>
+</section>
+<section id="πριν-τους-έλληνες" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="πριν-τους-έλληνες"><span class="header-section-number">2.4</span> Πριν τους Έλληνες</h3>
+<p>Αξίζει να σημειωθεί ότι οι Βαβυλώνιοι (περίπου το 1800-1600 π.Χ.) γνώριζαν τη <span class="math inline">\(\sqrt{2}\)</span> και είχαν βρει εξαιρετικά ακριβείς <strong>ρητές προσεγγίσεις</strong> της, όπως φαίνεται στην περίφημη πήλινη πλακέτα YBC 7289.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-180365094.png" class="img-fluid figure-img" width="298"></p>
+<figcaption>Πήλινη πλάκα YBC 7289</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-για-εμπέδωση" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="ασκήσεις-για-εμπέδωση"><span class="header-section-number">2.5</span> Ασκήσεις για Εμπέδωση</h3>
+<p><strong>Άσκηση 1: Ταξινόμηση Αριθμών</strong> Να χαρακτηρίσετε τους παρακάτω αριθμούς ως ρητούς ή άρρητους:</p>
+<p>α) <span class="math inline">\(\sqrt{2}\)</span></p>
+<p>β) <span class="math inline">\((\sqrt{2})^2\)</span></p>
+<p>γ) <span class="math inline">\(-\frac{4}{9}\)</span></p>
+<p>δ) <span class="math inline">\(\sqrt{18}\)</span></p>
+<p>ε) <span class="math inline">\(\sqrt{18^2}\)</span></p>
+<p>στ) <span class="math inline">\(\pi\)</span></p>
+<p>ζ) <span class="math inline">\(3,3231089...\)</span> (χωρίς περιοδικότητα)</p>
+<p><strong>Άσκηση 2: Σύγκριση και Διάταξη</strong> Τοποθετήστε τους παρακάτω αριθμούς σε αύξουσα σειρά (από τον μικρότερο στον μεγαλύτερο): <span class="math inline">\(\sqrt{5}, \quad\sqrt{7}, \quad\sqrt{3},\quad 1,\quad \sqrt{2}\)</span></p>
+<p><strong>Άσκηση 3: Προσέγγιση με Ακεραίους</strong> Χωρίς τη χρήση υπολογιστή, βρείτε μεταξύ ποιων διαδοχικών ακεραίων βρίσκονται οι παρακάτω άρρητοι: α) <span class="math inline">\(\sqrt{18}\)</span> β) <span class="math inline">\(\sqrt{29}\)</span> γ) <span class="math inline">\(\sqrt{5}\)</span></p>
+<p><strong>Άσκηση 4: Επίλυση Εξισώσεων</strong> Να βρείτε τις λύσεις των παρακάτω εξισώσεων στο σύνολο των πραγματικών αριθμών:</p>
+<p>α) <span class="math inline">\(x^2 = 5\)</span></p>
+<p>β) <span class="math inline">\(x^2 = 17\)</span></p>
+<p>γ) <span class="math inline">\(x^2 = -3\)</span></p>
+<hr>
+<section id="απαντήσεις-ασκήσεων" class="level4" data-number="2.5.1">
+<h4 data-number="2.5.1" class="anchored" data-anchor-id="απαντήσεις-ασκήσεων"><span class="header-section-number">2.5.1</span> Απαντήσεις Ασκήσεων</h4>
+<p><strong>Απάντηση στην Άσκηση 1:</strong></p>
+<ul>
+<li><strong>Άρρητοι:</strong> <span class="math inline">\(\sqrt{2}\)</span>, <span class="math inline">\(\sqrt{18}\)</span>, <span class="math inline">\(\pi\)</span>, <span class="math inline">\(3,3231089...\)</span>.<br>
+</li>
+<li><strong>Ρητοί:</strong> <span class="math inline">\((\sqrt{2})^2\)</span> (είναι ίσο με 2), <span class="math inline">\(-\frac{4}{9}\)</span>, <span class="math inline">\(\sqrt{18^2}\)</span> (είναι ίσο με 18).</li>
+</ul>
+<p><strong>Απάντηση στην Άσκηση 2:</strong> Η σειρά είναι: <span class="math inline">\(1 &lt; \sqrt{2} &lt; \sqrt{3} &lt; \sqrt{5} &lt; \sqrt{7}\)</span>.</p>
+<p><strong>Απάντηση στην Άσκηση 3:</strong></p>
+<ul>
+<li><p>α) <span class="math inline">\(4 &lt; \sqrt{18} &lt; 5\)</span> (γιατί <span class="math inline">\(16 &lt; 18 &lt; 25\)</span>).</p></li>
+<li><p>β) <span class="math inline">\(5 &lt; \sqrt{29} &lt; 6\)</span> (γιατί <span class="math inline">\(25 &lt; 29 &lt; 36\)</span>).</p></li>
+<li><p>γ) <span class="math inline">\(2 &lt; \sqrt{5} &lt; 3\)</span> (γιατί <span class="math inline">\(4 &lt; 5 &lt; 9\)</span>).</p></li>
+</ul>
+<p><strong>Απάντηση στην Άσκηση 4:</strong></p>
+<ul>
+<li><p>α) <span class="math inline">\(x = \sqrt{5}\)</span> ή <span class="math inline">\(x = -\sqrt{5}\)</span>.</p></li>
+<li><p>β) <span class="math inline">\(x = \sqrt{17}\)</span> ή <span class="math inline">\(x = -\sqrt{17}\)</span>.</p></li>
+<li><p>γ) <strong>Αδύνατη</strong> (δεν υπάρχει πραγματικός αριθμός που το τετράγωνό του να είναι αρνητικός).</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="για-τον-υπολογισμό-της-προσέγγισης-μιας-τετραγωνικής-ρίζας" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="για-τον-υπολογισμό-της-προσέγγισης-μιας-τετραγωνικής-ρίζας"><span class="header-section-number">2.6</span> Για τον υπολογισμό της προσέγγισης μιας τετραγωνικής ρίζας</h3>
+<p>χωρίς τη χρήση υπολογιστή, μπορείτε να ακολουθήσετε δύο βασικές μεθόδους:</p>
+<section id="μέθοδος-διαδοχικών-δοκιμών" class="level4" data-number="2.6.1">
+<h4 data-number="2.6.1" class="anchored" data-anchor-id="μέθοδος-διαδοχικών-δοκιμών"><span class="header-section-number">2.6.1</span> Μέθοδος Διαδοχικών Δοκιμών</h4>
+<p>Αυτή η μέθοδος βασίζεται στον εντοπισμό της ρίζας ανάμεσα σε γνωστά τετράγωνα αριθμών και στη σταδιακή στένωση των ορίων.</p>
+<ul>
+<li><p><strong>Βήμα 1:</strong> Βρείτε τους δύο διαδοχικούς ακεραίους των οποίων τα τετράγωνα «κλείνουν» μέσα τους τον αριθμό. Για παράδειγμα, για την <span class="math inline">\(\sqrt{13}\)</span>, επειδή <span class="math inline">\(3^2 = 9\)</span> και <span class="math inline">\(4^2 = 16\)</span>, η ρίζα βρίσκεται μεταξύ του 3 και του 4.</p></li>
+<li><p><strong>Βήμα 2:</strong> Δοκιμάστε δεκαδικούς αριθμούς στο διάστημα αυτό (π.χ. <span class="math inline">\(3,6^2 = 12,96\)</span> και <span class="math inline">\(3,7^2 = 13,69\)</span>), άρα η ρίζα είναι περίπου <span class="math inline">\(3,6\)</span>.</p></li>
+<li><p><strong>Βήμα 3:</strong> Συνεχίστε με περισσότερα δεκαδικά ψηφία για μεγαλύτερη ακρίβεια (π.χ. προσέγγιση χιλιοστού).</p></li>
+</ul>
+</section>
+<section id="βαβυλώνια-μέθοδος-ή-μέθοδος-του-ήρωνα" class="level4" data-number="2.6.2">
+<h4 data-number="2.6.2" class="anchored" data-anchor-id="βαβυλώνια-μέθοδος-ή-μέθοδος-του-ήρωνα"><span class="header-section-number">2.6.2</span> Βαβυλώνια Μέθοδος (ή Μέθοδος του Ήρωνα)</h4>
+<p>Είναι ένας πιο γρήγορος αλγεβρικός τρόπος υπολογισμού.</p>
+<ul>
+<li><p>Αν έχουμε έναν αριθμό <span class="math inline">\(N\)</span> και μια αρχική προσέγγιση <span class="math inline">\(a\)</span> (ώστε <span class="math inline">\(N = a^2 \pm B\)</span>), τότε μια καλύτερη προσέγγιση δίνεται από τον τύπο: <span class="math inline">\(a \pm \dfrac{B}{2a}\)</span>.</p></li>
+<li><p>Για παράδειγμα, στην <span class="math inline">\(\sqrt{17}\)</span>, αν πάρουμε <span class="math inline">\(a=4\)</span> (αφού <span class="math inline">\(4^2=16\)</span>), τότε <span class="math inline">\(N=16+1\)</span>. Η νέα προσέγγιση θα είναι <span class="math inline">\(4 + \dfrac{1}{2 \cdot 4} = 4,125\)</span>.</p></li>
+</ul>
+</section>
+<section id="χρήση-τεχνολογίας" class="level4" data-number="2.6.3">
+<h4 data-number="2.6.3" class="anchored" data-anchor-id="χρήση-τεχνολογίας"><span class="header-section-number">2.6.3</span> Χρήση Τεχνολογίας</h4>
+<p>Σήμερα, η προσέγγιση γίνεται άμεσα με <strong>επιστημονικές αριθμομηχανές</strong>. Πατώντας τον αριθμό και το σύμβολο της ρίζας (<span class="math inline">\(\sqrt{x}\)</span>), εμφανίζεται η τιμή με ακρίβεια πολλών δεκαδικών ψηφίων (π.χ. για τη <span class="math inline">\(\sqrt{2} \approx 1,414213\)</span>).</p>
+<p>Ας υπολογίσουμε και την προσέγγιση της <span class="math inline">\(\sqrt{5}\)</span> βήμα-βήμα, χρησιμοποιώντας τη μέθοδο των διαδοχικών δοκιμών:</p>
+<ol type="1">
+<li><p><strong>Βρίσκουμε τους ακέραιους:</strong> Γνωρίζουμε ότι <span class="math inline">\(2^2 = 4\)</span> και <span class="math inline">\(3^2 = 9\)</span>. Επειδή το 5 βρίσκεται ανάμεσα στο 4 και το 9, η <span class="math inline">\(\sqrt{5}\)</span> βρίσκεται μεταξύ των ακεραίων <strong>2 και 3</strong>.</p></li>
+<li><p><strong>Δοκιμάζουμε ένα δεκαδικό ψηφίο:</strong></p>
+<ul>
+<li><span class="math inline">\(2,2^2 = 4,84\)</span> (πολύ κοντά στο 5).</li>
+<li><span class="math inline">\(2,3^2 = 5,29\)</span> (ξεπερνάει το 5).</li>
+<li>Άρα, η προσέγγιση με ένα δεκαδικό είναι <strong>2,2</strong>.</li>
+</ul></li>
+<li><p><strong>Προχωράμε σε δεύτερο δεκαδικό ψηφίο:</strong></p>
+<ul>
+<li><span class="math inline">\(2,23^2 = 4,9729\)</span>.</li>
+<li><span class="math inline">\(2,24^2 = 5,0176\)</span>.</li>
+<li>Επειδή το <span class="math inline">\(4,9729\)</span> είναι πιο κοντά στο 5, η προσέγγιση με δύο δεκαδικά είναι <strong>2,23</strong>.</li>
+</ul></li>
+</ol>
+<p>Για ακόμα μεγαλύτερη ακρίβεια, μια αριθμομηχανή δίνει <span class="math inline">\(\sqrt{5} \approx 2,236067\)</span>.</p>
+<p>Η <strong>Μέθοδος του Ήρωνα</strong> (ή Βαβυλώνια μέθοδος) είναι ένας ταχύτατος αλγεβρικός τρόπος για να βρίσκουμε πολύ καλές προσεγγίσεις.</p>
+<p>Ας υπολογίσουμε τη <span class="math inline">\(\sqrt{5}\)</span> με αυτή τη μέθοδο:</p>
+<ol type="1">
+<li><p><strong>Επιλέγουμε μια αρχική προσέγγιση</strong> <span class="math inline">\(a\)</span>: Το πλησιέστερο τέλειο τετράγωνο στο 5 είναι το 4, που έχει ρίζα το <strong>2</strong>. Άρα <span class="math inline">\(a = 2\)</span>.</p></li>
+<li><p><strong>Βρίσκουμε το υπόλοιπο</strong> <span class="math inline">\(b\)</span>: Ο αριθμός μας (5) γράφεται ως <span class="math inline">\(2^2 + 1\)</span>, οπότε το υπόλοιπο είναι <span class="math inline">\(b = 1\)</span>.</p></li>
+<li><p><strong>Εφαρμόζουμε τον τύπο</strong> <span class="math inline">\(a + \dfrac{b}{2a}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\sqrt{5} \approx 2 + \dfrac{1}{2 \cdot 2}\)</span>.</li>
+<li><span class="math inline">\(\sqrt{5} \approx 2 + \dfrac{1}{4} = 2 + 0,25\)</span>.</li>
+<li><span class="math inline">\(\sqrt{5} \approx 2,25\)</span>.</li>
+</ul></li>
+</ol>
+<p>Παρατηρήστε ότι με ένα μόνο βήμα φτάσαμε στο 2,25, που είναι πολύ κοντά στην πραγματική τιμή (2,236…). Αν θέλαμε ακόμα μεγαλύτερη ακρίβεια, θα παίρναμε το 2,25 ως νέο <span class="math inline">\(a\)</span> και θα επαναλαμβάναμε τη διαδικασία.</p>
+<hr>
+</section>
+</section>
+<section id="η-τοποθέτηση-των-αριθμών-πάνω-στον-άξονα-των-πραγματικών-αριθμών" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="η-τοποθέτηση-των-αριθμών-πάνω-στον-άξονα-των-πραγματικών-αριθμών"><span class="header-section-number">2.7</span> Η τοποθέτηση των αριθμών πάνω στον άξονα των πραγματικών αριθμών</h3>
+<p>βασίζεται στην αρχή ότι κάθε πραγματικός αριθμός αντιστοιχεί σε ένα μοναδικό σημείο της ευθείας και αντίστροφα.</p>
+<section id="τοποθέτηση-ρητών-αριθμών" class="level4" data-number="2.7.1">
+<h4 data-number="2.7.1" class="anchored" data-anchor-id="τοποθέτηση-ρητών-αριθμών"><span class="header-section-number">2.7.1</span> Τοποθέτηση Ρητών Αριθμών</h4>
+<p>Οι ρητοί αριθμοί, όπως οι φυσικοί, οι ακέραιοι και τα κλάσματα, γεμίζουν την ευθεία αλλά όχι πλήρως.</p>
+<ul>
+<li><p><strong>Ακέραιοι:</strong> Τοποθετούνται σε ίσες αποστάσεις από την αρχή Ο (μηδέν), με τους θετικούς στα δεξιά και τους αρνητικούς στα αριστερά.</p></li>
+<li><p><strong>Κλάσματα και Δεκαδικοί:</strong> Χρησιμοποιούμε τη δεκαδική τους μορφή για να προσδιορίσουμε τη θέση τους ανάμεσα στους ακεραίους. Για παράδειγμα, ο αριθμός <span class="math inline">\(\dfrac{4}{9} \approx 0,44\)</span> τοποθετείται ανάμεσα στο 0 και το 1.</p></li>
+</ul>
+</section>
+<section id="τοποθέτηση-αρρήτων-αριθμών" class="level4" data-number="2.7.2">
+<h4 data-number="2.7.2" class="anchored" data-anchor-id="τοποθέτηση-αρρήτων-αριθμών"><span class="header-section-number">2.7.2</span> Τοποθέτηση Αρρήτων Αριθμών</h4>
+<p>Επειδή οι άρρητοι έχουν άπειρα μη περιοδικά δεκαδικά ψηφία, η τοποθέτησή τους γίνεται με δύο τρόπους:</p>
+<p><strong>1. Γεωμετρική Κατασκευή (με κανόνα και διαβήτη)</strong> Αυτή η μέθοδος επιτρέπει τον ακριβή εντοπισμό ριζών όπως η <span class="math inline">\(\sqrt{2}\)</span> χρησιμοποιώντας το Πυθαγόρειο Θεώρημα:</p>
+<ul>
+<li>Στον άξονα των πραγματικών αριθμών, βρίσκουμε το σημείο <strong>1</strong> και υψώνουμε ένα κάθετο τμήμα <strong>ΑΒ</strong> με μήκος επίσης <strong>1</strong>.</li>
+</ul>
+<p><img src="images/clipboard-2637217231.png" class="img-fluid" width="456"></p>
+<ul>
+<li>Σχηματίζεται το ορθογώνιο τρίγωνο <strong>ΟΑΒ</strong>. Η υποτείνουσα <strong>ΟΒ</strong> έχει μήκος <span class="math inline">\(\sqrt{2}\)</span>, αφού <span class="math inline">\(OB^2 = 1^2 + 1^2 = 2\)</span>.</li>
+<li>Με το διαβήτη παίρνουμε την ακτίνα <strong>ΟΒ</strong> και σχεδιάζουμε έναν κύκλο με κέντρο το <strong>Ο</strong>.<br>
+</li>
+</ul>
+<p><img src="images/clipboard-2374871787.png" class="img-fluid" style="color: green" alt="Λεπτομέρεια της τομής"><br>
+</p>
+<ul>
+<li>Το σημείο όπου ο κύκλος τέμνει τον άξονα στα δεξιά είναι ο αριθμός <span class="math inline">\(\sqrt{2}\)</span>, ενώ το σημείο τομής στα αριστερά είναι ο <span class="math inline">\(-\sqrt{2}\)</span>.</li>
+</ul>
+<p><strong>2. Μέθοδος των Ρητών Προσεγγίσεων</strong> Αν δεν μπορούμε να κάνουμε γεωμετρική κατασκευή, χρησιμοποιούμε δεκαδικές προσεγγίσεις για να περιορίσουμε τη θέση του αριθμού:</p>
+<ul>
+<li><p>Για τη <span class="math inline">\(\sqrt{13}\)</span>, γνωρίζουμε ότι <span class="math inline">\(3 &lt; \sqrt{13} &lt; 4\)</span>.</p></li>
+<li><p>Μεγαλύτερη ακρίβεια μας δίνει το <span class="math inline">\(3,6 &lt; \sqrt{13} &lt; 3,7\)</span> και στη συνέχεια το <span class="math inline">\(3,605 &lt; \sqrt{13} &lt; 3,606\)</span>.</p></li>
+<li><p>Έτσι, τοποθετούμε το σημείο “κλεισμένο” ανάμεσα σε όλο και στενότερα διαστήματα ρητών αριθμών.</p></li>
+</ul>
+</section>
+</section>
+<section id="η-ευθεία-των-πραγματικών-αριθμών" class="level3" data-number="2.8">
+<h3 data-number="2.8" class="anchored" data-anchor-id="η-ευθεία-των-πραγματικών-αριθμών"><span class="header-section-number">2.8</span> Η Ευθεία των Πραγματικών Αριθμών</h3>
+<p>Όταν τοποθετήσουμε όλους τους ρητούς και όλους τους άρρητους, η ευθεία καλύπτεται <strong>πλήρως</strong>. Αν ένας αριθμός <span class="math inline">\(α\)</span> είναι μικρότερος από τον <span class="math inline">\(β\)</span>, τότε ο <span class="math inline">\(α\)</span> βρίσκεται πάντα «πιο αριστερά» στον άξονα.</p>
+<p>Το σύνολο των πραγματικών αριθμών συμβολίζεται με το <span class="math inline">\(\mathbb{R}\)</span></p>
+<p>Προέρχεται από την αγγλική λέξη Real (πραγματικός) και συνήθως γράφεται με διπλή κατακόρυφη γραμμή (blackboard bold) για να ξεχωρίζει από τις μεταβλητές. Μερικές παραλλαγές του συμβόλου που μπορεί να συναντήσετε:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{R}^*\)</span>: Το σύνολο των πραγματικών αριθμών χωρίς το μηδέν (<span class="math inline">\(\mathbb{R} \setminus \{0\}\)</span>).</li>
+<li><span class="math inline">\(\mathbb{R}^+\)</span>: Το σύνολο των θετικών πραγματικών αριθμών.</li>
+<li><span class="math inline">\(\mathbb{R}^-\)</span>: Το σύνολο των αρνητικών πραγματικών αριθμών.</li>
+</ul>
+<hr>
+</section>
+<section id="ασκήσεις-και-προβλήματα" class="level3" data-number="2.9">
+<h3 data-number="2.9" class="anchored" data-anchor-id="ασκήσεις-και-προβλήματα"><span class="header-section-number">2.9</span> Ασκήσεις και προβλήματα:</h3>
+<section id="ασκήσεις-κατανόησης" class="level4" data-number="2.9.1">
+<h4 data-number="2.9.1" class="anchored" data-anchor-id="ασκήσεις-κατανόησης"><span class="header-section-number">2.9.1</span> Ασκήσεις Κατανόησης</h4>
+<ol type="1">
+<li><strong>Ταξινόμηση:</strong> Να χαρακτηρίσετε τους παρακάτω αριθμούς ως ρητούς ή άρρητους: <span class="math inline">\(\sqrt{8}\)</span>, <span class="math inline">\((\sqrt{2})^2\)</span>, <span class="math inline">\(-\dfrac{4}{9}\)</span>, <span class="math inline">\(\pi\)</span>, <span class="math inline">\(\sqrt{18}\)</span>, <span class="math inline">\(\sqrt{18^2}\)</span>,.</li>
+<li><strong>Σωστό/Λάθος:</strong> «Κάθε σημείο της ευθείας των αριθμών αντιστοιχεί σε έναν πραγματικό αριθμό και κάθε πραγματικός αριθμός αντιστοιχεί σε μοναδικό σημείο της ευθείας». Εξηγήστε αν η πρόταση είναι αληθής,.</li>
+<li><strong>Εκτίμηση:</strong> Χωρίς υπολογιστή, προσδιορίστε μεταξύ ποιων διαδοχικών ακεραίων βρίσκονται οι αριθμοί: <span class="math inline">\(\sqrt{5}\)</span>, <span class="math inline">\(\sqrt{10}\)</span> και <span class="math inline">\(\sqrt{20}\)</span>,.</li>
+</ol>
+</section>
+<section id="ασκήσεις-εξάσκησης" class="level4" data-number="2.9.2">
+<h4 data-number="2.9.2" class="anchored" data-anchor-id="ασκήσεις-εξάσκησης"><span class="header-section-number">2.9.2</span> Ασκήσεις Εξάσκησης</h4>
+<ol type="1">
+<li><strong>Υπολογισμός Ριζών:</strong> Να βρείτε τις τετραγωνικές ρίζες των αριθμών: <span class="math inline">\(81\)</span>, <span class="math inline">\(0,81\)</span>, <span class="math inline">\(8100\)</span> , <span class="math inline">\(1,21\)</span> και <span class="math inline">\(0,0121\)</span>.</li>
+<li><strong>Προσέγγιση:</strong> Να υπολογίσετε με προσέγγιση δύο δεκαδικών ψηφίων τις ρίζες: <span class="math inline">\(\sqrt{6}\)</span>, <span class="math inline">\(\sqrt{5}\)</span>, <span class="math inline">\(\sqrt{7}\)</span> , <span class="math inline">\(\sqrt{32}\)</span>, <span class="math inline">\(\sqrt{52}\)</span> και <span class="math inline">\(\sqrt{84}\)</span>,.</li>
+<li><strong>Επίλυση Εξισώσεων:</strong> Να λύσετε τις εξισώσεις:</li>
+</ol>
+<p>α) <span class="math inline">\(x^2 = 25\)</span>,</p>
+<p>β) <span class="math inline">\(x^2 = 5\)</span>,</p>
+<p>γ) <span class="math inline">\(x^2 = -3\)</span> στο σύνολο των πραγματικών αριθμών.</p>
+<ol start="4" type="1">
+<li><strong>Σύγκριση:</strong> Να τοποθετήσετε σε αύξουσα σειρά τους αριθμούς: <span class="math inline">\(\sqrt{5}, \quad\sqrt{7}, \quad-\sqrt{3},\quad1, \quad\sqrt{2},\quad -\sqrt{8}, \quad\sqrt{30}, \quad-\frac{8}{5},\quad-4,\overline{56},\quad 0.053\)</span>.</li>
+<li><strong>Ιδιότητες:</strong> Να υπολογίσετε το αποτέλεσμα των παραστάσεων: <span class="math inline">\((\sqrt{28})^2\)</span> και <span class="math inline">\(\sqrt{28 \cdot 28}\)</span>.</li>
+</ol>
+</section>
+<section id="προβλήματα" class="level4" data-number="2.9.3">
+<h4 data-number="2.9.3" class="anchored" data-anchor-id="προβλήματα"><span class="header-section-number">2.9.3</span> Προβλήματα</h4>
+<ol type="1">
+<li><p><strong>Εμβαδόν Τετραγώνου:</strong> Ένα τετράγωνο έχει εμβαδόν <span class="math inline">\(12 \text{ cm}^2\)</span>. Να βρείτε με προσέγγιση εκατοστού το μήκος της πλευράς του,.</p></li>
+<li><p><strong>Απόσταση Πόλεων:</strong> Μια πόλη Α απέχει από μια πόλη Γ <span class="math inline">\(15\text{ km}\)</span> και η πόλη Γ από την πόλη Β <span class="math inline">\(17\text{ km}\)</span>. Αν η γωνία στο Γ είναι ορθή, πόσο απέχει η πόλη Α από την Β;.</p></li>
+<li><p><strong>Διαγώνιος Γηπέδου:</strong> Να υπολογίσετε τη διαγώνιο ενός ορθογωνίου γηπέδου που έχει διαστάσεις <span class="math inline">\(60\text{ m}\)</span> και <span class="math inline">\(80\text{ m}\)</span>.</p></li>
+<li><p><strong>Γεωμετρική Κατασκευή:</strong> Χρησιμοποιώντας ένα πλέγμα με κουκκίδες που απέχουν <span class="math inline">\(1\text{ cm}\)</span>, ενώστε δύο κουκκίδες ώστε το τμήμα να έχει μήκος <span class="math inline">\(\sqrt{2}\text{ cm}\)</span>, <span class="math inline">\(\sqrt{5}\text{ cm}\)</span> και <span class="math inline">\(\sqrt{13}\text{ cm}\)</span>.</p></li>
+<li><p><strong>Μετακίνηση:</strong> Κατά τη μετακίνηση από την πόλη Α στην πόλη Β (<span class="math inline">\(20\text{ km}\)</span>), μετά στο χωριό Γ (<span class="math inline">\(13\text{ km}\)</span>) και μετά στο Δ (<span class="math inline">\(5\text{ km}\)</span>), υπολογίστε την απόσταση ΑΔ χρησιμοποιώντας το Πυθαγόρειο Θεώρημα, με προσέγγιση εκατοστού.<br>
+</p>
+<p><br>
+<img src="images/clipboard-933839300.png" class="img-fluid"></p></li>
+<li><p><strong>Διαγώνιος Τετράγωνης Αυλής:</strong> Μια αυλή έχει σχήμα τετραγώνου με πλευρά 10 μέτρα. Υπολογίστε το μήκος της διαγωνίου της χρησιμοποιώντας την προσέγγιση <span class="math inline">\(\sqrt{2} \approx 1,414\)</span>,.</p></li>
+<li><p><strong>Κατασκευή Ράμπας:</strong> Για την κατασκευή μιας ράμπας skate, το μήκος της υπολογίζεται μέσω του Πυθαγορείου Θεωρήματος. Αν οι πλευρές είναι 2μ και 3μ, βρείτε το μήκος της υποτείνουσας χρησιμοποιώντας την προσέγγιση <span class="math inline">\(\sqrt{13} \approx 3,61\)</span>,.</p></li>
+<li><p><strong>Απόσταση Σημείων στο Χάρτη:</strong> Σε ένα ορθοκανονικό σύστημα συντεταγμένων, δύο πόλεις βρίσκονται στα σημεία <span class="math inline">\(A(1,1)\)</span> και <span class="math inline">\(B(-1,2)\)</span>. Υπολογίστε την απόσταση <span class="math inline">\(AB\)</span> με προσέγγιση δύο δεκαδικών ψηφίων.</p></li>
+<li><p>Στο παρακάτω ισόπλευρο τρίγωνο ΑΒΓ, βρείτε το ύψος ΑΔ.<br>
+</p>
+<p><br>
+<img src="images/clipboard-663908207.png" class="img-fluid" width="331"></p></li>
+<li><p>Στο παρακάτω ισοσκελές τρίγωνο ΑΒΓ (ΑΒ=ΑΓ=6,4 και ΒΓ=5) να βρείτε το ύψος ΑΔ.<br>
+</p>
+<p><br>
+<img src="images/clipboard-86924661.png" class="img-fluid"></p></li>
+<li><p>Στο παρακάτω σχήμα (Αετό), να υπολογίσετε τις διαγωνίους του.(ΑΓ=3)<br>
+<br>
+<img src="images/clipboard-2834380949.png" class="img-fluid"></p></li>
+<li><p>Στο παρακάτω σχήμα να υπολογίσετε το τμήμα ΗΘ, την διαγώνιο ΑΔ και την διαγώνιο ΒΔ.<br>
+Το ΑΒΓΔΕΖ είναι κανονικό εξάγωνο (έχει όλες τις πλευρές και τις γωνίες του ίσες)<br>
+<br>
+<img src="images/clipboard-692941489.png" class="img-fluid"></p></li>
+</ol>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+</section>
+</section>
+</section>
 
 
-</header>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Υποσημειώσεις</h2>
 
-
-
-
-
-</main> <!-- /main -->
+<ol>
+<li id="fn1"><p>Ο <strong>Εύδοξος ο Κνίδιος</strong> (περ. 408–355 π.Χ.) ήταν ένας από τους σημαντικότερους αρχαίους Έλληνες επιστήμονες, με πολυδιάστατη συνεισφορά στα μαθηματικά και την αστρονομία. Θεωρείται εφάμιλλος του Αρχιμήδη για τη μαθηματική του ιδιοφυΐα.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><strong>Η λύση του Ευδόξου</strong></p>
+<p>Αντί να προσπαθήσει να βρει μια αριθμητική τιμή για τους άρρητους, ο Εύδοξος εισήγαγε τη <strong>Θεωρία των Αναλογιών</strong>:<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Η <strong>Μέθοδος της Εξάντλησης</strong> και η <strong>Θεωρία των Αναλογιών</strong> του Ευδόξου είναι οι δύο όψεις του ίδιου νομίσματος. Χωρίς τη θεωρία του για τους άρρητους, η μέθοδος της εξάντλησης δεν θα είχε τη μαθηματική αυστηρότητα που τη χαρακτηρίζει.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1313,12 +1769,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
