@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Άλγεβρα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,36 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +122,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +133,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +185,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html">13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html">13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</a></li></ol></nav>
+      <h1 class="title">13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">16 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">10 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +250,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +259,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +268,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -443,7 +495,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -594,16 +646,16 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -676,7 +728,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή</span></a>
   </div>
 </li>
@@ -686,7 +738,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -805,7 +857,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -848,7 +900,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -857,7 +909,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1000,7 +1052,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1075,7 +1127,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1096,7 +1148,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1105,7 +1157,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1265,33 +1317,356 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-συνάρτηση-της-μορφής-y-fracalphax." id="toc-η-συνάρτηση-της-μορφής-y-fracalphax." class="nav-link active" data-scroll-target="#η-συνάρτηση-της-μορφής-y-fracalphax."><span class="header-section-number">1</span> Η συνάρτηση της μορφής <span class="math inline">\(y = \frac{\alpha}{x}\)</span>.</a>
+  <ul class="collapse">
+  <li><a href="#θεωρία-αντιστρόφως-ανάλογα-ποσά" id="toc-θεωρία-αντιστρόφως-ανάλογα-ποσά" class="nav-link" data-scroll-target="#θεωρία-αντιστρόφως-ανάλογα-ποσά"><span class="header-section-number">1.1</span> Θεωρία: Αντιστρόφως Ανάλογα Ποσά</a></li>
+  <li><a href="#η-γραφική-παράσταση-η-υπερβολή" id="toc-η-γραφική-παράσταση-η-υπερβολή" class="nav-link" data-scroll-target="#η-γραφική-παράσταση-η-υπερβολή"><span class="header-section-number">1.2</span> Η Γραφική Παράσταση: Η Υπερβολή</a></li>
+  <li><a href="#παραδείγματα-ασκήσεις-για-εξάσκηση" id="toc-παραδείγματα-ασκήσεις-για-εξάσκηση" class="nav-link" data-scroll-target="#παραδείγματα-ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.3</span> Παραδείγματα &amp; Ασκήσεις για Εξάσκηση</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Άλγεβρα</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Άλγεβρα</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-συνάρτηση-της-μορφής-y-fracalphax." class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-συνάρτηση-της-μορφής-y-fracalphax."><span class="header-section-number">1</span> Η συνάρτηση της μορφής <span class="math inline">\(y = \frac{\alpha}{x}\)</span>.</h2>
+<section id="θεωρία-αντιστρόφως-ανάλογα-ποσά" class="level3" style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="θεωρία-αντιστρόφως-ανάλογα-ποσά"><span class="header-section-number">1.1</span> Θεωρία: Αντιστρόφως Ανάλογα Ποσά</h3>
+<p>Δύο ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> ονομάζονται αντιστρόφως ανάλογα όταν το γινόμενο των αντίστοιχων τιμών τους είναι πάντα σταθερό: <span class="math inline">\(x \cdot y = \alpha\)</span> (όπου <span class="math inline">\(\alpha \neq 0\)</span>). Αυτό σημαίνει πως αν διπλασιάσουμε, τριπλασιάσουμε κτλ την τιμή του ενός ποσού, τότε η αντίστοιχη τιμή του άλλου θα υποδιπλασιαστεί, υποτριπλασιαστει κτλ.. Ο σταθερός αριθμός <span class="math inline">\(\alpha\)</span> ονομάζεται συντελεστής της αντιστροφής. Η μαθηματική συνάρτηση που εκφράζει αυτή τη σχέση είναι η <span class="math inline">\(y = \frac{\alpha}{x}\)</span>.</p>
+<p><strong>Βασικές Ιδιότητες:</strong></p>
+<p>* Όταν η τιμή του ενός ποσού πολλαπλασιάζεται με έναν αριθμό, η τιμή του άλλου διαιρείται με τον ίδιο αριθμό.</p>
+<p>* Ο λόγος δύο τιμών του ενός ποσού είναι ίσος με τον αντίστροφο λόγο των αντίστοιχων τιμών του άλλου ποσού: <span class="math inline">\(\frac{x_1}{x_2} = \frac{y_2}{y_1}\)</span>. ή <span class="math inline">\(x_1\cdot y_1=x_2\cdot y_2\)</span></p>
+<p>* Ένα κλασικό παράδειγμα από τη Φυσική είναι η σχέση ταχύτητας (<span class="math inline">\(v\)</span>) και χρόνου (<span class="math inline">\(t\)</span>) για μια σταθερή απόσταση (<span class="math inline">\(s\)</span>): <span class="math inline">\(v \cdot t = s\)</span>.</p>
+</section>
+<hr>
+<section id="η-γραφική-παράσταση-η-υπερβολή" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="η-γραφική-παράσταση-η-υπερβολή"><span class="header-section-number">1.2</span> Η Γραφική Παράσταση: Η Υπερβολή</h3>
+<p>Η γραφική παράσταση της συνάρτησης <span class="math inline">\(y = \frac{\alpha}{x}\)</span> ονομάζεται υπερβολή. Αποτελείται από δύο καμπύλες γραμμές που ονομάζονται κλάδοι της υπερβολής.</p>
+<hr>
+<iframe src="https://www.geogebra.org/calculator/snus4xhj?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αλλάξτε την τιμή του δρομέα α (κλίκ και σύρτε)</p>
+<ul>
+<li>Τι συμβαίνει όταν το α είναι θετικό;</li>
+<li>Τι συμβαίνει όταν το α είναι αρνητικό;</li>
+</ul>
+<p>Εξετάστε αν ισχύουν όσα συζητάμε παρακάτω για τα χαρακτηριστικά της υπερβολής.</p>
+</div>
+</div>
+<hr>
+<p><strong>Χαρακτηριστικά της Υπερβολής:</strong></p>
+<p>* <strong>Θέση:</strong> Αν ο συντελεστής <span class="math inline">\(\alpha\)</span> είναι θετικός (<span class="math inline">\(\alpha &gt; 0\)</span>), οι κλάδοι βρίσκονται στο 1ο και 3ο τεταρτημόριο. Αν ο <span class="math inline">\(\alpha\)</span> είναι αρνητικός (<span class="math inline">\(\alpha &lt; 0\)</span>), βρίσκονται στο 2ο και 4ο.</p>
+<p>* <strong>Συμμετρία:</strong> Έχει κέντρο συμμετρίας την αρχή των αξόνων <span class="math inline">\(O(0,0)\)</span>.</p>
+<p>* <strong>Άξονες Συμμετρίας:</strong> Είναι οι διχοτόμοι των γωνιών των αξόνων, δηλαδή οι ευθείες <span class="math inline">\(y = x\)</span> και <span class="math inline">\(y = -x\)</span>.</p>
+<p>* <strong>Περιορισμοί:</strong> Οι κλάδοι της υπερβολής πλησιάζουν τους άξονες <span class="math inline">\(x'x\)</span> και <span class="math inline">\(y'y\)</span> αλλά δεν τους τέμνουν ποτέ.</p>
+<hr>
+</section>
+<section id="παραδείγματα-ασκήσεις-για-εξάσκηση" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="παραδείγματα-ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.3</span> Παραδείγματα &amp; Ασκήσεις για Εξάσκηση</h3>
+<p><strong>1. Συμπλήρωση Πίνακα Τιμών</strong> Αν γνωρίζεις ότι τα ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι αντιστρόφως ανάλογα και για <span class="math inline">\(x = 3\)</span> η τιμή είναι <span class="math inline">\(y = 4\)</span>, να συμπληρώσεις τις υπόλοιπες τιμές:</p>
+<p>* Όταν <span class="math inline">\(x = 1\)</span>, τότε <span class="math inline">\(y = ?\)</span> (Απάντηση: 12)</p>
+<p>* Όταν <span class="math inline">\(x = 2\)</span>, τότε <span class="math inline">\(y = ?\)</span> (Απάντηση: 6)</p>
+<p>* Όταν <span class="math inline">\(x = 6\)</span>, τότε <span class="math inline">\(y = ?\)</span> (Απάντηση: 2)</p>
+<p><strong>2. Πρόβλημα Παραγωγής (Εργοστάσιο)</strong> Σε ένα εργοστάσιο, 12 μηχανές λειτουργούν για 15 ώρες για να βγάλουν την ημερήσια παραγωγή. Αν 2 μηχανές τεθούν εκτός λειτουργίας, πόσες ώρες πρέπει να δουλέψουν οι υπόλοιπες 10 μηχανές;</p>
+<p>* <em>Σκέψη:</em> Ο αριθμός των μηχανών και ο χρόνος είναι ποσά αντιστρόφως ανάλογα.</p>
+<p>* <em>Λύση:</em> <span class="math inline">\(12 \cdot 15 = 10 \cdot x \Rightarrow 180 = 10x \Rightarrow x = 18\)</span> ώρες.</p>
+<p><strong>3. Γεωμετρικό Παράδειγμα</strong> Ένα παραλληλόγραμμο έχει σταθερό εμβαδόν <span class="math inline">\(6 \, \text{m}^2\)</span>. Πώς μεταβάλλεται το ύψος (<span class="math inline">\(y\)</span>) σε σχέση με τη βάση (<span class="math inline">\(x\)</span>);</p>
+<p>* <em>Σχέση:</em> <span class="math inline">\(x\cdot y = 6\)</span>. Αν η βάση διπλασιαστεί, το ύψος θα πρέπει να υποδιπλασιαστεί για να μείνει το εμβαδόν ίδιο.</p>
+<p><strong>4. Φυσική (Κίνηση):</strong> Η απόσταση δύο πόλεων είναι <span class="math inline">\(80\)</span> km. Αν ένας ποδηλάτης καλύπτει την απόσταση σε χρόνο <span class="math inline">\(t\)</span> με ταχύτητα <span class="math inline">\(υ\)</span>, να συμπληρώσετε τις τιμές της ταχύτητας για <span class="math inline">\(t = 1, 2, 4\)</span> και <span class="math inline">\(10\)</span> ώρες.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 5
+    a["t"] b["1 ώρα"] c["2 ώρες"] d["4 ώρες"] e["10 ώρες"] 
+    k["υ"] l["   "] m["  "] n["  "] p["  "] 
+    f["S"] g["80 km"] h["80 km"] s[" 80 km "] t[" 80 km"]
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>5. Συμπλήρωση Πίνακα:</strong> Αν γνωρίζετε ότι τα ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι αντιστρόφως ανάλογα με σταθερό γινόμενο <span class="math inline">\(24\)</span>, να βρείτε τις τιμές του <span class="math inline">\(y\)</span> για <span class="math inline">\(x = -2, \quad0,5\quad , 2, 8\)</span> και <span class="math inline">\(12\)</span>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 6
+    a["  x  "] b["-2"] c["0,5"] d["2"] p["8"] e["12"] 
+    k["  y  "] l["   "] m["  "] n["  "] o["  "] q["  "] 
+    f["xy"] g["24"] h["   24  "] s[" 24 "] t["  24 "] r["  24 "]
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>6. Αγροτική Οικονομία (Πότισμα):</strong> Ένα σύστημα ποτίσματος καταναλώνει το νερό μιας δεξαμενής σε <span class="math inline">\(30\)</span> ημέρες, αν λειτουργεί <span class="math inline">\(3\)</span> ώρες την ημέρα. Αν λειτουργεί <span class="math inline">\(5\)</span> ώρες την ημέρα, για πόσες ημέρες θα επαρκέσει το νερό;.</p>
+<p><strong>7. Ταχύτητα &amp; Χρόνος:</strong> Ένα αυτοκίνητο διανύει μια απόσταση σε <span class="math inline">\(30\)</span> λεπτά με ταχύτητα <span class="math inline">\(90\)</span> km/h. Πόσο πρέπει να αυξήσει την ταχύτητά του για να καλύψει την ίδια απόσταση σε <span class="math inline">\(25\)</span> λεπτά;</p>
+<p><strong>8. Συσκευασία Προϊόντων:</strong> Ένας μελισσοκόμος γεμίζει <span class="math inline">\(200\)</span> βάζα των <span class="math inline">\(450\)</span> g. Αν χρησιμοποιήσει βάζα των <span class="math inline">\(750\)</span> g, πόσα βάζα θα χρειαστεί για την ίδια ποσότητα μελιού;</p>
+<p><strong>9. Θεωρία Υπερβολής:</strong> Για τη συνάρτηση <span class="math inline">\(y = \frac{3}{x}\)</span>, σε ποια τεταρτημόρια βρίσκονται οι κλάδοι της και ποιο είναι το κέντρο συμμετρίας της;</p>
+<p><strong>10. Πρόβλημα Τύπου:</strong> Αν τα ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι αντιστρόφως ανάλογα και για <span class="math inline">\(x = 3\)</span> είναι <span class="math inline">\(y = 4\)</span>, να βρείτε την τιμή του <span class="math inline">\(y\)</span> όταν το <span class="math inline">\(x = 12\)</span>.</p>
+<p><strong>11. Έλεγχος Σχέσης:</strong> Ο Απόστολος παρατήρησε ότι τη Δευτέρα είδε τηλεόραση <span class="math inline">\(1,5\)</span> ώρα και διάβασε <span class="math inline">\(1,5\)</span> ώρα, ενώ την Τρίτη είδε <span class="math inline">\(2\)</span> ώρες και διάβασε <span class="math inline">\(1\)</span> ώρα. Είναι τα ποσά «χρόνος τηλεόρασης» και «χρόνος διαβάσματος» αντιστρόφως ανάλογα; Αιτιολογήστε με βάση το γινόμενό τους.</p>
+<ol start="12" type="1">
+<li>Στο ίδιο σύστημα αξόνων να κάνετε τις γραφικές παραστάσεις των συναρτήσεων</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y=-\frac{4}{x}\)</span></li>
+<li><span class="math inline">\(y=\frac{4}{x}\)</span></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">x</th>
+<th style="text-align: center;"><span class="math inline">\(y=-\frac{4}{x}\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">x</th>
+<th style="text-align: center;"><span class="math inline">\(y=\frac{4}{x}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">–1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol start="13" type="1">
+<li>Να εξετάσετε ποιοι από τους παρακάτω πίνακες είναι πίνακες αντιστρόφως ανάλογων ποσών</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 6
+    a["  x  "] b["-4"] c["0,5"] d["3"] p["5"] e["8"] 
+    k["  y  "] l["  3 "] m["-24  "] n[" -4 "] o[" -2,4 "] q[" -2,25 "] 
+    
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 6
+    a["  x  "] b["-8"] c["-2"] d["2"] p["8"] e["10"] 
+    k["  y  "] l["  -2 "] m["-8  "] n["10  "] o["-2  "] q["5  "] 
+    
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">block-beta
+  
+  block:group
+  columns 6
+    a["  x  "] b["-6"] c["-4"] d["2"] p["3"] e["12"] 
+    k["  y  "] l["  -7 "] m["10,5  "] n["21  "] o[" 14  "] q[" 3,5 "] 
+    
+  end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol start="14" type="1">
+<li>Συμπλήρωση πίνακα τιμών Δίνεται η συνάρτηση <span class="math inline">\(y=\dfrac{2}{x}\)</span>.<br>
+Να συμπληρώσεις τον πίνακα:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>-4</th>
+<th>-2</th>
+<th>-1</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>y</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="15" type="1">
+<li><p>Εύρεση του <span class="math inline">\(α\)</span> από ένα ζευγάρι τιμών Για τη συνάρτηση <span class="math inline">\(y=\dfrac{a}{x}\)</span> ισχύει ότι όταν <span class="math inline">\(x=5\)</span>, τότε <span class="math inline">\(y=4\)</span>.<br>
+Να βρεις το <span class="math inline">\(α\)</span>.</p></li>
+<li><p>Εύρεση του <span class="math inline">\(y\)</span> για δοσμένο <span class="math inline">\(x\)</span> Δίνεται <span class="math inline">\(y=\dfrac{a}{x}\)</span> με <span class="math inline">\(α=30\)</span>.<br>
+Να βρεις το <span class="math inline">\(y\)</span> όταν <span class="math inline">\(x=2\)</span>, <span class="math inline">\(x=3\)</span>, <span class="math inline">\(x=10\)</span>.</p></li>
+<li><p>Εύρεση του <span class="math inline">\(x\)</span> για δοσμένο <span class="math inline">\(y\)</span> Δίνεται η συνάρτηση <span class="math inline">\(y=\dfrac{20}{x}\)</span>.<br>
+Να βρεις το <span class="math inline">\(x\)</span> όταν <span class="math inline">\(y=8\)</span> και όταν <span class="math inline">\(y=4\)</span>.</p></li>
+<li><p>Έλεγχος αν ένα σημείο ανήκει στη γραφική παράσταση Δίνεται <span class="math inline">\(y=\dfrac{18}{x}\)</span>.<br>
+Να εξετάσεις αν τα σημεία <span class="math inline">\(A(3,6)\)</span>, <span class="math inline">\(B(2,8)\)</span>, <span class="math inline">\(Γ(9,2)\)</span> ανήκουν στη γραφική παράσταση.</p></li>
+<li><p>Σύγκριση τιμών (αντιστροφή συμπεριφοράς) Δίνεται <span class="math inline">\(y=\dfrac{40}{x}\)</span> με <span class="math inline">\(x&gt;0\)</span>.<br>
+Να συγκρίνεις τα <span class="math inline">\(y_1\)</span> και <span class="math inline">\(y_2\)</span> όταν:</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\(x_1=4\)</span> και <span class="math inline">\(x_2=8\)</span></li>
+<li><span class="math inline">\(x_1=5\)</span> και <span class="math inline">\(x_2=10\)</span><br>
+και να γράψεις συμπέρασμα για το πώς αλλάζει το <span class="math inline">\(y\)</span> όταν διπλασιάζεται το <span class="math inline">\(x\)</span>.</li>
+</ul>
+<ol start="20" type="1">
+<li><p>Αντιστρόφως ανάλογα ποσά (εργάτες – χρόνος) Για να τελειώσει μια εργασία, ο αριθμός εργατών <span class="math inline">\(n\)</span> και ο χρόνος <span class="math inline">\(t\)</span> (σε ώρες) είναι αντιστρόφως ανάλογα.<br>
+Αν 6 εργάτες τελειώνουν σε 10 ώρες, σε πόσες ώρες θα τελειώσουν 15 εργάτες;</p></li>
+<li><p>Αντιστρόφως ανάλογα ποσά (ταχύτητα – χρόνος) Για μια διαδρομή σταθερού μήκους, η ταχύτητα <span class="math inline">\(υ\)</span> και ο χρόνος <span class="math inline">\(t\)</span> είναι αντιστρόφως ανάλογα.<br>
+Αν με ταχύτητα 60 km/h χρειάζεται 3 ώρες, πόσες ώρες θα χρειαστεί με 75 km/h;</p></li>
+<li><p>Εύρεση τύπου από αντιστρόφως ανάλογη σχέση Δύο ποσά <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> είναι αντιστρόφως ανάλογα και όταν <span class="math inline">\(x=8\)</span> τότε <span class="math inline">\(y=15\)</span>.<br>
+Να βρεις:</p></li>
+</ol>
+<ul>
+<li>τον τύπο της συνάρτησης <span class="math inline">\(y=\dfrac{a}{x}\)</span></li>
+<li>την τιμή του <span class="math inline">\(y\)</span> όταν <span class="math inline">\(x=20\)</span></li>
+</ul>
+<ol start="23" type="1">
+<li>Πρόβλημα με “σταθερό γινόμενο” (κλασικό αντιστρόφως ανάλογο) Δύο ποσά είναι αντιστρόφως ανάλογα. Όταν το πρώτο είναι 12, το δεύτερο είναι 7.<br>
+Να βρεις το δεύτερο όταν το πρώτο γίνει 21.</li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1319,12 +1694,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
