@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -57,19 +58,33 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -104,10 +119,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -115,8 +130,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,17 +182,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</a></li></ol></nav>
+      <h1 class="title">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">12 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -198,7 +247,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +256,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,7 +265,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -443,7 +492,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -594,7 +643,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -603,7 +652,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -690,9 +739,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -735,7 +784,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
   </div>
 </li>
@@ -823,7 +872,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -866,7 +915,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -875,7 +924,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1018,7 +1067,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1093,7 +1142,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1114,7 +1163,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1123,7 +1172,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1283,33 +1332,191 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης" id="toc-μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης" class="nav-link active" data-scroll-target="#μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης"><span class="header-section-number">1</span> Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</a>
+  <ul class="collapse">
+  <li><a href="#η-χρήση-του-υπολογιστή-τσέπης-για-τον-υπολογισμό-του-ημιτόνου-του-συνημιτόνου-και-της-εφαπτομένης-μιας-γωνίας-ω" id="toc-η-χρήση-του-υπολογιστή-τσέπης-για-τον-υπολογισμό-του-ημιτόνου-του-συνημιτόνου-και-της-εφαπτομένης-μιας-γωνίας-ω" class="nav-link" data-scroll-target="#η-χρήση-του-υπολογιστή-τσέπης-για-τον-υπολογισμό-του-ημιτόνου-του-συνημιτόνου-και-της-εφαπτομένης-μιας-γωνίας-ω"><span class="header-section-number">1.1</span> Η χρήση του υπολογιστή τσέπης για τον υπολογισμό του ημιτόνου, του συνημιτόνου και της εφαπτομένης μιας γωνίας ω</a></li>
+  <li><a href="#μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης-οξείας-γωνίας-ω" id="toc-μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης-οξείας-γωνίας-ω" class="nav-link" data-scroll-target="#μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης-οξείας-γωνίας-ω"><span class="header-section-number">1.2</span> Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης οξείας γωνίας ω</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης"><span class="header-section-number">1</span> Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</h2>
+<section id="η-χρήση-του-υπολογιστή-τσέπης-για-τον-υπολογισμό-του-ημιτόνου-του-συνημιτόνου-και-της-εφαπτομένης-μιας-γωνίας-ω" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-χρήση-του-υπολογιστή-τσέπης-για-τον-υπολογισμό-του-ημιτόνου-του-συνημιτόνου-και-της-εφαπτομένης-μιας-γωνίας-ω"><span class="header-section-number">1.1</span> Η χρήση του υπολογιστή τσέπης για τον υπολογισμό του ημιτόνου, του συνημιτόνου και της εφαπτομένης μιας γωνίας ω</h3>
+<div style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;">
+<p>Επειδή ο υπολογισμός του ημιτόνου, του συνημιτόνου και της εφαπτομένης μιας γωνίας δεν είναι απλή διαδικασία, χρησιμοποιούμε συχνά έναν <strong>επιστημονικό υπολογιστή τσέπης</strong>. Οι υπολογιστές αυτοί περιλαμβάνουν ειδικά πλήκτρα για κάθε τριγωνομετρικό αριθμό: το πρώτο υπολογίζει το ημίτονο, το δεύτερο το συνημίτονο και το τρίτο την εφαπτομένη.</p>
+<p>Η διαδικασία υπολογισμού ακολουθεί συνήθως τα εξής βήματα:</p>
+<ol type="1">
+<li><strong>Ρύθμιση μονάδων:</strong> Πατάμε το πλήκτρο που ορίζει τη μονάδα μέτρησης των γωνιών σε <strong>μοίρες</strong>. Αν και το πλήκτρο διαφέρει ανάλογα με το μοντέλο, η ένδειξη που επιβεβαιώνει τη σωστή ρύθμιση είναι συνήθως η ένδειξη <strong>DEG</strong> στην οθόνη.</li>
+<li><strong>Εισαγωγή δεδομένων:</strong> Για να υπολογίσουμε, για παράδειγμα, το ημίτονο των 63°, πατάμε διαδοχικά τα κατάλληλα πλήκτρα (στοιχεία γωνίας και λειτουργία ημιτόνου).</li>
+<li><strong>Αποτέλεσμα:</strong> Στην οθόνη παρουσιάζεται η τιμή του τριγωνομετρικού αριθμού (π.χ. για το ημ63° εμφανίζεται ο αριθμός <strong>0,891</strong>).</li>
+</ol>
+<p>Αντίστοιχη διαδικασία ακολουθείται και για το συνημίτονο ή την εφαπτομένη πατώντας τα ανάλογα πλήκτρα.</p>
+<p><strong>Εναλλακτική μέθοδος:</strong> Εκτός από τον υπολογιστή τσέπης, για τις σχολικές ασκήσεις μπορεί να χρησιμοποιηθεί και ο <strong>πίνακας τριγωνομετρικών αριθμών</strong> που βρίσκεται στο τέλος του βιβλίου σας ή στον σύνδεσμο</p>
+<a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" target="_blank">
+Ανατρέξτε στους τριγωνομετρικούς πίνακες
+</a>
+  
+<p>, ο οποίος περιλαμβάνει τις τιμές για γωνίες από 1° έως 89°.</p>
+</div>
+<p><strong><em>Δείτε σε εικόνες</em></strong></p>
+<p><img src="images/clipboard-3239638252.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3565963256.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-847183702.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2144482860.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3307174429.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-506914482.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2100918160.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2924987605.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-247314091.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3744863728.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2021600237.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-259152715.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-1982324274.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3168605459.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-1512571852.png" class="img-fluid" width="500"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Υπάρχει ένα πλήθος από online κομπιουτεράκια για χρήση.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μερικά λινκ<br>
+<a href="https://okcalc.com/en/scientific/">OKCALC</a></p>
+<p><a href="https://web-calc.com">WEB3 CALCULATOR</a></p>
+<p><a href="https://www.online-calculator.com/el/">On line Αριθμομηχανή</a></p>
+<p><a href="https://web2.0calc.com">Web 2.0 Calculator</a></p>
+<p>Ακόμη και στην γραμμή αναζήτησης της google μπορείτε όχι μόνο να υπολογίσετε τριγωνομετρικούς αριθμούς αλλά και να κένετε ότι πράξεις θέλετε.</p>
+<p>Επίσης μπορείτε να χρησημοποιήσετε την αριθμομηχανή των Windows ή του τηλεφώνου σας.</p>
+</div>
+</div>
+</section>
+<section id="μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης-οξείας-γωνίας-ω" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μεταβολές-ημιτόνου-συνημιτόνου-και-εφαπτομένης-οξείας-γωνίας-ω"><span class="header-section-number">1.2</span> Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης οξείας γωνίας ω</h3>
+<div style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;">
+<p>Όταν μια οξεία γωνία <span class="math inline">\(\omega\)</span> μεταβάλλεται από τις <span class="math inline">\(0^{\circ}\)</span> προς τις <span class="math inline">\(90^{\circ}\)</span>, οι τριγωνομετρικοί της αριθμοί παρουσιάζουν την εξής συμπεριφορά:</p>
+<ul>
+<li><p><strong>Ημίτονο (</strong><span class="math inline">\(\mathbf{ημω}\)</span>): Όταν η γωνία αυξάνεται, το ημίτονό της αυξάνεται.</p>
+<p>Για παράδειγμα, ισχύει ότι <span class="math inline">\(ημ13^ο &lt; ημ15^ο\)</span>.</p></li>
+<li><p><strong>Συνημίτονο (</strong><span class="math inline">\(\mathbf{συνω}\)</span>): Όταν η γωνία αυξάνεται, το συνημίτονό της ελαττώνεται.</p>
+<p>Για παράδειγμα, το <span class="math inline">\(συν27^o\)</span> είναι μεγαλύτερο από το <span class="math inline">\(συν59^ο\)</span>.</p></li>
+<li><p><strong>Εφαπτομένη (</strong><span class="math inline">\(\mathbf{εφω}\)</span>): Όταν η γωνία αυξάνεται, η εφαπτομένη της αυξάνεται.</p></li>
+</ul>
+<section id="γεωμετρική-ερμηνεία" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="γεωμετρική-ερμηνεία"><span class="header-section-number">1.2.1</span> Γεωμετρική Ερμηνεία</h4>
+<p>Η μεταβολή αυτή μπορεί να εξηγηθεί γεωμετρικά μέσω ορθογωνίων τριγώνων:</p>
+<ul>
+<li><strong>Για το ημίτονο και το συνημίτονο:</strong> Αν θεωρήσουμε ορθογώνια τρίγωνα με <strong>σταθερή υποτείνουσα</strong>, (την ακτίνα ενός κύκλου για παράδειγμα όπως στην παρακάτω εικόνα), παρατηρούμε ότι καθώς η οξεία γωνία μεγαλώνει, η απέναντι κάθετη πλευρά αυξάνεται (άρα αυξάνεται το ημίτονο), ενώ η προσκείμενη κάθετη πλευρά μικραίνει (άρα μειώνεται το συνημίτονο).</li>
+</ul>
+<p><img src="images/clipboard-3345401846.png" class="img-fluid"></p>
+<ul>
+<li><strong>Για την εφαπτομένη:</strong> Αν θεωρήσουμε ορθογώνια τρίγωνα με <strong>σταθερή τη μία κάθετη πλευρά</strong> (την προσκείμενη), (για παράδειγμα την ακτίνα ενός κύκλου όπως φαίνεται στην παρακάτω εικόνα), παρατηρούμε ότι καθώς η οξεία γωνία μεγαλώνει, η απέναντι κάθετη πλευρά μεγαλώνει επίσης, επομένως ο λόγος τους (η εφαπτομένη) αυξάνεται.<br>
+<img src="images/clipboard-1140340139.png" class="img-fluid"></li>
+</ul>
+</section>
+<section id="σημαντικά-συμπεράσματα" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="σημαντικά-συμπεράσματα"><span class="header-section-number">1.2.2</span> Σημαντικά Συμπεράσματα</h4>
+<p>Λόγω αυτής της μονοτονίας, οι τριγωνομετρικοί αριθμοί αποτελούν κατά κάποιο τρόπο την <strong>«ταυτότητα» της οξείας γωνίας</strong>. Αυτό σημαίνει ότι:</p>
+<ol type="1">
+<li>Αν δύο οξείες γωνίες έχουν <strong>ίσα ημίτονα</strong>, τότε οι γωνίες είναι <strong>ίσες</strong>.</li>
+<li>Αν δύο οξείες γωνίες έχουν <strong>ίσα συνημίτονα</strong>, τότε οι γωνίες είναι <strong>ίσες</strong>.</li>
+<li>Αν δύο οξείες γωνίες έχουν <strong>ίσες εφαπτόμενες</strong>, τότε οι γωνίες είναι <strong>ίσες</strong>.</li>
+</ol>
+<p>Επιπλέον, για κάθε οξεία γωνία <span class="math inline">\(ω\)</span>, οι τιμές του ημιτόνου και του συνημιτόνου κυμαίνονται πάντα μεταξύ του 0 και του 1 (<span class="math inline">\(0 &lt; ημω &lt; 1\)</span> και <span class="math inline">\(0 &lt;συνω &lt; 1\)</span>), <em>καθώς σε ένα ορθογώνιο τρίγωνο η υποτείνουσα είναι πάντα μεγαλύτερη από τις κάθετες πλευρές</em>.</p>
+<p>Αντίθετα, η εφαπτομένη μιας οξείας γωνίας μπορεί να πάρει οποιαδήποτε θετική τιμή.</p>
+</section>
+</div>
+<p><strong><em>Δείτε τις παρακάτω εικόνες</em></strong></p>
+<p><img src="images/clipboard-3725646299.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-605533892.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3984567763.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-803712191.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3521193603.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-1111378792.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-1633145540.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-479822519.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-1864892564.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2142152878.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-3675103428.png" class="img-fluid" width="500"></p>
+<p><img src="images/clipboard-2805703658.png" class="img-fluid" width="500"></p>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Υπολογίστε το χ στα παρακάτω σχήματα<br>
+<img src="images/clipboard-2665640931.png" class="img-fluid" width="500"></p></li>
+<li><p>Υπολογίστε τις άλλες δύο πλευρές σε καθένα από τα παρακάτω σχήματα<br>
+<img src="images/clipboard-4115392711.png" class="img-fluid" width="500"></p></li>
+<li><p><strong>Το Κατάρτι και τα Σχοινιά</strong> Σε ένα ιστιοπλοϊκό σκάφος, το ύψος του καταρτιού έως το σημείο <span class="math inline">\(A\)</span> είναι <span class="math inline">\(10\text{ m}\)</span>. Να βρείτε το μήκος που έχουν τα δύο συρματόσχοινα που στηρίζουν τα πανιά, αν αυτά σχηματίζουν γωνίες <span class="math inline">\(40^{\circ}\)</span> και <span class="math inline">\(65^{\circ}\)</span> αντίστοιχα με το επίπεδο της θάλασσας.<br>
+<img src="images/clipboard-3275274830.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Η Ράμπα του Γκαράζ</strong> Ένας μηχανικός θέλει να κατασκευάσει μια ράμπα για ένα υπόγειο πάρκινγκ. Το βάθος του γκαράζ είναι <span class="math inline">\(B\Gamma = 1,80\text{ m}\)</span> και η κλίση της ράμπας πρέπει να είναι <span class="math inline">\(\theta = 15^{\circ}\)</span>. Να υπολογίσετε:</p>
+<p>α) Το μήκος <span class="math inline">\(A\Gamma\)</span> της επιφάνειας της ράμπας.</p>
+<p>β) Την οριζόντια απόσταση <span class="math inline">\(AB\)</span> από την αρχή της ράμπας έως το κτίριο.<br>
+</p>
+<p><img src="images/clipboard-3890264225.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Διάταξη Τριγωνομετρικών Αριθμών</strong> Να διατάξετε από τον μικρότερο στον μεγαλύτερο τους παρακάτω τριγωνομετρικούς αριθμούς (χωρίς να τους υπολογίσετε):</p>
+<p>α) <span class="math inline">\(\eta\mu 12^{\circ}, \eta\mu 85^{\circ}, \eta\mu 42^{\circ}, \eta\mu 5^{\circ}\)</span></p>
+<p>β) <span class="math inline">\(\sigma\upsilon\nu 10^{\circ}, \sigma\upsilon\nu 70^{\circ}, \sigma\upsilon\nu 45^{\circ}, \sigma\upsilon\nu 88^{\circ}\)</span></p>
+<p>γ) <span class="math inline">\(\varepsilon\varphi 15^{\circ}, \varepsilon\varphi 60^{\circ}, \varepsilon\varphi 35^{\circ}, \varepsilon\varphi 82^{\circ}\)</span></p></li>
+<li><p><strong>Η Σκάλα στον Τοίχο</strong> Μια σκάλα μήκους <span class="math inline">\(5\text{ m}\)</span> είναι ακουμπισμένη σε έναν τοίχο ύψους <span class="math inline">\(6\text{ m}\)</span>. Για να είναι σταθερή, η γωνία που σχηματίζει η σκάλα με το έδαφος είναι <span class="math inline">\(70^{\circ}\)</span>. Να βρείτε:</p>
+<p>α) Την απόσταση της βάσης της σκάλας από τον τοίχο.</p>
+<p>β) Πόσο απέχει η κορυφή της σκάλας από το πάνω μέρος του τοίχου.<br>
+</p>
+<p><br>
+<img src="images/clipboard-824816468.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Απόσταση μέσω Ποταμού</strong> Ένας τοπογράφος θέλει να βρει την απόσταση ενός πύργου <span class="math inline">\(M\)</span> που βρίσκεται στην απέναντι όχθη ενός ποταμού από το σημείο <span class="math inline">\(A\)</span> όπου στέκεται. Επιλέγει ένα σημείο <span class="math inline">\(B\)</span> σε απόσταση <span class="math inline">\(AB = 30\text{ m}\)</span> από το <span class="math inline">\(A\)</span> και μετράει τις γωνίες <span class="math inline">\(\widehat{ABM} = 84^{\circ}\)</span> και <span class="math inline">\(\widehat{BAM} = 38^{\circ}\)</span>. Να υπολογίσετε την απόσταση <span class="math inline">\(AM\)</span> (χρησιμοποιώντας το ύψος <span class="math inline">\(MH\)</span> προς την <span class="math inline">\(AB\)</span>).<br>
+&gt;&gt;&gt; Υπολογίστε πρώτα το ύψος από το τρίγωνο ΑΒΗ.Η γωνία ΒΑΗ είναι συμπληρωματική της ΑΒΜ, άρα η γωνία ΜΑΗ θα είναι …….. Από το τρίγωνο τώρα ΑΗΜ …………..<br>
+<img src="images/clipboard-197299047.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Απόσταση Γης - Τεχνητού Δορυφόρου</strong> Ένας δορυφόρος <span class="math inline">\(Δ\)</span> βρίσκεται σε τροχιά γύρω από τη Γη. Η ακτίνα της Γης είναι <span class="math inline">\(R = \Gamma A = 6.371\text{ km}\)</span>. Από ένα σημείο <span class="math inline">\(Γ\)</span> της επιφάνειας, ο δορυφόρος φαίνεται υπό γωνία <span class="math inline">\(\widehat{AΓΔ} = 70^{\circ}\)</span> ως προς το κέντρο της Γης <span class="math inline">\(Α\)</span>, όπου η <span class="math inline">\(\Gamma A\)</span> είναι κάθετη στην <span class="math inline">\(AΔ\)</span>. Να υπολογίσετε την απόσταση του δορυφόρου από το κέντρο της Γης (<span class="math inline">\(ΑΔ\)</span>).<br>
+</p>
+<p><br>
+<img src="images/clipboard-1872949210.png" class="img-fluid"></p></li>
+</ol>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1337,12 +1544,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
