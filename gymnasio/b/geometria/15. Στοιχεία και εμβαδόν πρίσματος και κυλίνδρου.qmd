@@ -1,0 +1,368 @@
+---
+title: "15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου"
+author: "ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ"
+format:
+  html:
+    title-block-banner: true
+    include-in-header:
+      text: |
+        <script>
+        window.MathJax = {
+          tex: {
+            macros: {
+              arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+            }
+          }
+        };
+        </script>
+page-layout: full
+body-classes: page-magentalight
+
+lang: el
+# date: today
+date: "05/14/2026"
+date-modified: today
+date-format: "D MMMM YYYY"
+
+
+header-includes:
+  
+ - |
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+      });
+    </script>
+include-in-header:
+      text: |
+        \usepackage{eurosym}
+
+
+execute:
+  echo: false
+  warning: false     
+        
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{=html}
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+```
+
+## Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου
+
+### Ορθό Πρίσμα
+
+![](images/clipboard-3161682013.png){width="341"}
+
+![](images/clipboard-2096646805.png){width="488"}
+
+::: {style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;"}
+**Τι είναι:** Είναι ένα στερεό σώμα με δύο βάσεις που είναι ίσα πολύγωνα και παράλληλα μεταξύ τους.
+Οι παράπλευρες (πλαϊνές) έδρες του είναι πάντα ορθογώνια παραλληλόγραμμα.
+
+**Βασικοί Τύποι:**
+
+\* **Παράπλευρο Εμβαδόν (**$E_π$): Το γινόμενο της περιμέτρου της βάσης επί το ύψος.
+
+\* *Τύπος:* $E_π = \text{Περίμετρος βάσης} \cdot \upsilon$.
+
+\* **Ολικό Εμβαδόν (**$E_{ολ}$): Το άθροισμα του παράπλευρου εμβαδού και των εμβαδών των δύο βάσεων.
+
+\* *Τύπος:* $E_{ολ} = E_π + 2E_β$.
+:::
+
+**Ειδικά για τον κύβο ακμής α:**
+
+![](images/clipboard-2081175181.png){width="294"}
+
+**Επιφάνεια**: Ο κύβος αποτελείται από 6 τετράγωνα πλευράς α, άρα το $Ε_{κύβου}=6α^2$
+
+**Παράδειγμα για πρίσμα:** Έστω ένα τριγωνικό πρίσμα με ύψος $\upsilon = 8\text{ cm}$ και βάση ορθογώνιο τρίγωνο με κάθετες πλευρές $3\text{ cm}$ και $4\text{ cm}$.\
+
+\
+![](images/clipboard-2549547240.png){width="197"}
+
+1\.
+**Βάση:** Η υποτείνουσα της βάσης είναι $5\text{ cm}$.
+Η περίμετρος είναι $3+4+5 = 12\text{ cm}$ και το εμβαδό βάσης $E_β = \dfrac{3 \cdot 4}{2} = 6\text{ cm}^2$.
+
+2\.
+**Εμβαδόν:** $E_π = 12 \cdot 8 = 96\text{ cm}^2$.
+Το $E_{ολ} = 96 + 2 \cdot 6 = 108\text{ cm}^2$.
+
+------------------------------------------------------------------------
+
+### Κύλινδρος
+
+|  |  |
+|-----------------------------------------|-------------------------------|
+| ![](images/clipboard-2633580902.png){width="158"} | ![](images/clipboard-2287783410.png){width="156"} |
+| ![](images/clipboard-2935834355.png){width="147"} | ![](images/clipboard-2935834355.png){width="147"} |
+| ![](images/clipboard-1848887991.png){width="162"} | ![](images/clipboard-1012106708.png){width="361"} |
+
+::: {style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;"}
+**Τι είναι:** Αποτελείται από δύο ίσους και παράλληλους κυκλικούς δίσκους (βάσεις) και μια παράπλευρη επιφάνεια που, αν την «ξετυλίξουμε», έχει σχήμα ορθογωνίου.
+
+**Βασικοί Τύποι:**
+
+\* **Παράπλευρο Εμβαδόν (**$E_π$): Η περίμετρος της βάσης ($2\pi\rho$) επί το ύψος ($\upsilon$).
+
+\* *Τύπος:* $E_π = 2\pi\rho \cdot \upsilon$.
+
+\* **Ολικό Εμβαδόν (**$E_{ολ}$): Το παράπλευρο εμβαδόν συν τα εμβαδά των δύο κυκλικών βάσεων.
+
+\* *Τύπος:* $E_{ολ} = 2\pi\rho\upsilon + 2\pi\rho^2$.
+:::
+
+**Παράδειγμα:** Ένας κύλινδρος έχει ακτίνα βάσης $\rho = 4\text{ cm}$ και ύψος $\upsilon = 12\text{ cm}$.
+
+**Εμβαδόν:** $E_π = 2\pi \cdot 4 \cdot 12 = 96\pi \text{ cm}^2$.
+Το εμβαδό των δύο βάσεων είναι $2 \cdot (\pi \cdot 4^2) = 32\pi \text{ cm}^2$.
+Άρα $E_{ολ} = 96\pi + 32\pi = 128\pi \text{ cm}^2$.
+
+### Ασκήσεις
+
+1.  Να συμπληρώσετε τον παρακάτω πίνακα
+
+```{=html}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#aabcfe;border-spacing:0;}
+.tg td{background-color:#e8edff;border-color:#aabcfe;border-style:solid;border-width:1px;color:#669;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#b9c9fe;border-color:#aabcfe;border-style:solid;border-width:1px;color:#039;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-x6vl{border-color:inherit;color:#663234;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-g5dp{background-color:#fe996b;border-color:inherit;color:#3531ff;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-ssv0{border-color:inherit;color:#009901;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-ssmn{background-color:#D2E4FC;border-color:inherit;color:#663234;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-svo0{background-color:#D2E4FC;border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-g5dp">Σχήμα</th>
+    <th class="tg-ssv0">Εμβαδόν βάσεων</th>
+    <th class="tg-ssv0">Εμβαδόν παράπλευρης<br>Επιφάνειας</th>
+    <th class="tg-ssv0">Εμβαδόν ολικής<br>επιφάνειας</th>
+    <th class="tg-ssv0">Όγκος</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-ssmn">Πρίσμα με βάση τετράγωνο πλευράς 4 cm και ύψος 5 cm</td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-x6vl">Πρίσμα με βάση ισόπλευρο τρίγωνο πλευράς 6 cm και ύψος 8 cm</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-ssmn">Πρίσμα με βάση κανονικό εξάγωνο πλευράς 5 cm και ύψος 10 cm</td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-x6vl">Κύλινδρος με ακτίνα βάσης 4 m και ύψος 10 m</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-ssmn">Κύλινδρος με διάμετρο βάσης 6 cm και ύψος 8 cm</td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+  <tr>
+    <td class="tg-x6vl">Κύλινδρος με περίμετρο βάσης 31,415 dm και ύψος 84 cm&nbsp;&nbsp;&nbsp;</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-ssmn">Κύβος με ακμή 3,8 dm</td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+    <td class="tg-svo0"></td>
+  </tr>
+</tbody></table>
+```
+
+2.  **Τριγωνικό Πρίσμα:** Βρες το εμβαδόν παράπλευρης επιφάνειας πρίσματος με ύψος $10\text{ cm}$ και βάση ορθογώνιο τρίγωνο με κάθετες πλευρές $5\text{ cm}$ και $5\text{ cm}$ .
+
+3.  **Παράπλευρο Εμβαδόν:** Ένα πρίσμα έχει βάση τετράπλευρο με πλευρές $3, 4, 6$ και $5\text{ cm}$.
+    Αν το ύψος του είναι $7\text{ cm}$, βρες το $E_π$ .
+
+4.  **Ολικό Εμβαδόν:** Πρίσμα με ολικό του εμβαδόν $109,856\text{ cm}^2$ έχει βάσεις ισόπλευρα τρίγωνα πλευράς $4\text{ cm}$.
+    Υπολόγισε το ύψος του .
+
+5.  **Ακμή Κύβου από Εμβαδόν:** Το εμβαδόν της παράπλευρης επιφάνειας ενός κύβου είναι $144\text{ cm}^2$.
+    Βρες τον όγκο του.
+
+6.  **Τετραγωνικό Πρίσμα:** Κανονικό τετραγωνικό πρίσμα έχει πλευρά βάσης $6\text{ cm}$ και ύψος $10\text{ cm}$.
+    Βρες το $E_{ολ}$ .
+
+7.  **Σύνθετη Βάση:** Ένα πρίσμα ύψους $5\text{ cm}$ έχει βάση πεντάγωνο.
+    Αν το εμβαδόν της βάσης είναι $176\text{ cm}^2$ και η περίμετρος $56\text{ cm}$, βρες το ολικό εμβαδόν.\
+    ![](images/clipboard-820549665.png){width="221"}
+
+8.  **Εμβαδόν Επιφάνειας:** Κύλινδρος έχει ακτίνα βάσης $\rho = 3\text{ cm}$ και ύψος $\upsilon = 5\text{ cm}$.
+    Βρες το $E_π$ και το $E_{ολ}$ .
+
+9.  **Υπολογισμός με Διάμετρο:** Ένας κύλινδρος έχει διάμετρο βάσης $10\text{ cm}$ και ύψος $8\text{ cm}$.
+    Βρες το εμβαδόν της παράπλευρης επιφάνειάς του .
+
+10. **Δεξαμενή Καυσίμων:** Κλειστή κυλινδρική δεξαμενή έχει ύψος $20\text{ m}$ και ακτίνα $30\text{ m}$.
+    Πόσα τετραγωνικά μέτρα λαμαρίνας χρειάστηκαν για την κατασκευή της;
+
+11. **Κυρτή Επιφάνεια:** Το εμβαδόν της κυρτής επιφάνειας κυλίνδρου είναι $251,2\text{ cm}^2$ και η ακτίνα του $5\text{ cm}$.
+    Βρες το ύψος του.
+
+12. **Περίμετρος Βάσης:** Κύλινδρος έχει περίμετρο βάσης $12\pi\text{ cm}$ και ύψος $10\text{ cm}$.
+    Βρες το ολικό του εμβαδόν .
+
+13. **Μετασχηματισμός Στερεού:** Ένα στερεό αποτελείται από έναν κύλινδρο (ακτίνας 5 cm και ύψους 7 cm) που **έχει στο εσωτερικό του ένα κενό** σε σχήμα τετραγωνικού πρίσματος το οποίο εφάπτεται στο εσωτερικό του κυλίνδρου.
+    Να υπολογίσετε την συνολική του επιφάνεια.\
+
+::: {.callout-caution style="color: brown;"}
+*Προσοχή! Οι βάσεις του αποτελούνται από κυκλικούς δίσκους από τους οποίους έχουμε αφαιρέσει ένα τετράγωνο*
+:::
+
+\
+![](images/clipboard-1618308473.png){width="219"}
+
+14. **Κύλινδρος πάνω σε Ορθογώνιο Πρίσμα** Ένα στερεό αποτελείται από:
+
+- ορθογώνιο παραλληλεπίπεδο διαστάσεων $12 \text{ cm} \times 8 \text{ cm} \times 6 \text{ cm}$,
+
+- και κύλινδρο τοποθετημένο πάνω του με:
+
+  - ακτίνα (3) cm,
+  - ύψος (8) cm.
+
+Να υπολογίσετε:
+
+- το συνολικό εξωτερικό εμβαδόν του στερεού
+
+::: {.callout-caution style="color: brown;"}
+Στην κοινή επιφάνεια επαφής
+:::
+
+\
+\
+![](images/clipboard-1620204864.png){width="270"}
+
+15. **Κυλινδρική Σήραγγα μέσα σε Πρίσμα** Ένα ορθογώνιο πρίσμα έχει:
+
+- μήκος (20) cm,
+- πλάτος (10) cm,
+- ύψος (10) cm.
+
+Μέσα του ανοίγεται κυλινδρική σήραγγα ακτίνας (3) cm που διαπερνά όλο το μήκος του πρίσματος.
+
+Να υπολογίσετε:
+
+  - την επιφάνεια του στερεού\
+  ![](images/clipboard-3606920003.png)
+
+16. **Πύργος με Πρίσμα και Κύλινδρο** Ένα κτίριο αποτελείται από:
+
+  - τετραγωνικό πρίσμα βάσης πλευράς (10) m και ύψους (15) m,
+
+  - και κυλινδρικό πύργο στην οροφή με:
+
+    - ακτίνα (4) m,
+    - ύψος (6) m.
+
+Να βρείτε:
+
+- το συνολικό εξωτερικό εμβαδόν
+
+- πόσα χρήματα θα δώσουμε για να το βάψουμε αν κάθε $m^2$ κοστίζει 0,8 €\
+  \
+  ![](images/clipboard-1889566009.png){width="248"}\
+
+::: {.callout-caution style="color: brown;"}
+Στην κοινή επιφάνεια επαφής.
+:::
+
+17. **Δοχείο Σύνθετου Σχήματος** Ένα δοχείο αποτελείται από:
+
+  - κύλινδρο ακτίνας (5) cm και ύψους (12) cm,
+
+  - πάνω στον οποίο υπάρχει εξαγωνικό πρίσμα ύψους (8) cm.
+
+Το εμβαδόν της εξαγωνικής βάσης είναι: $54\text{ cm}^2$
+
+Να υπολογίσετε:
+
+  - το συνολικό εμβαδόν των εξωτερικών επιφανειών\
+  \
+
+::: {.callout-caution style="color: brown;"}
+Προσοχή στην κοινή επιφάνεια.
+
+Ποιο μέρος συμμετέχει στον υπολογισμό της συνολικής επιφάνειας;
+:::
+
+![](images/clipboard-2944280054.png)
+
+18. **Συνδυασμός με Κοινή Βάση** Ένα στερεό αποτελείται από:
+
+  - κύλινδρο ύψους (10) cm και ακτίνας (4) cm,
+  - και ορθό πρίσμα ίδιου ύψους που έχει τετραγωνική βάση με διαγώνιο (8) cm.
+
+Τα δύο στερεά ενώνονται από τη βάση τους.\
+
+\
+
+::: {.callout-note style="color: brown;"}
+Το σχήμα είναι παρόμοιο με αυτό της προηγούμενης άσκησης
+
+Η διαγώνιος του τετραγώνου της βάσης είναι 8 cm
+:::
+
+Να βρείτε
+
+  - το συνολικό εξωτερικό εμβαδόν
+
+::: {.callout-tip style="color: brown;"}
+ΚΑΛΗ ΜΕΛΕΤΗ!
+:::
+
+\
+\
