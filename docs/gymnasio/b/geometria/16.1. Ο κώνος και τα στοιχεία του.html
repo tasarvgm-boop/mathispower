@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Γεωμετρία – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>16.1. Ο κώνος και τα στοιχεία του – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -60,19 +61,33 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -107,10 +122,10 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -118,8 +133,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -170,17 +185,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html">16.1. Ο κώνος και τα στοιχεία του</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html">16.1. Ο κώνος και τα στοιχεία του</a></li></ol></nav>
+      <h1 class="title">16.1. Ο κώνος και τα στοιχεία του</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">14 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">16 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -201,7 +250,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -210,7 +259,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -219,7 +268,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -446,7 +495,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -597,7 +646,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Β’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -606,7 +655,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -693,9 +742,9 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../gymnasio/b/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -828,7 +877,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
   </div>
 </li>
@@ -850,7 +899,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/statistiki/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Στατιστική</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -893,7 +942,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Γ’ Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -902,7 +951,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1045,7 +1094,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/geometria/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1120,7 +1169,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1141,7 +1190,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Α’ Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1150,7 +1199,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1310,33 +1359,190 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ο-κώνος-και-τα-στοιχεία-του" id="toc-ο-κώνος-και-τα-στοιχεία-του" class="nav-link active" data-scroll-target="#ο-κώνος-και-τα-στοιχεία-του"><span class="header-section-number">1</span> Ο κώνος και τα στοιχεία του</a>
+  <ul class="collapse">
+  <li><a href="#μετρικές-σχέσεις-και-τύποι" id="toc-μετρικές-σχέσεις-και-τύποι" class="nav-link" data-scroll-target="#μετρικές-σχέσεις-και-τύποι"><span class="header-section-number">1.2</span> Μετρικές σχέσεις και Τύποι</a></li>
+  <li><a href="#ανάπτυγμα-κώνου" id="toc-ανάπτυγμα-κώνου" class="nav-link" data-scroll-target="#ανάπτυγμα-κώνου"><span class="header-section-number">1.3</span> Ανάπτυγμα κώνου</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.4</span> Παραδείγματα</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.5</span> Ασκήσεις</a></li>
+  <li><a href="#ασκήσεις-με-συμπλέγματα-σχημάτων" id="toc-ασκήσεις-με-συμπλέγματα-σχημάτων" class="nav-link" data-scroll-target="#ασκήσεις-με-συμπλέγματα-σχημάτων"><span class="header-section-number">1.6</span> Ασκήσεις με Συμπλέγματα Σχημάτων</a></li>
+  <li><a href="#βασικοί-τύποι-για-τις-λύσεις" id="toc-βασικοί-τύποι-για-τις-λύσεις" class="nav-link" data-scroll-target="#βασικοί-τύποι-για-τις-λύσεις"><span class="header-section-number">1.7</span> Βασικοί Τύποι για τις Λύσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/algebra/index.html">Β’ Γυμνασίου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../gymnasio/b/geometria/index.html">Γεωμετρία</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Γεωμετρία</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ο-κώνος-και-τα-στοιχεία-του" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ο-κώνος-και-τα-στοιχεία-του"><span class="header-section-number">1</span> Ο κώνος και τα στοιχεία του</h2>
+<div style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;">
+<p>Ο <strong>κώνος</strong> είναι ένα στερεό σχήμα που προκύπτει από την πλήρη περιστροφή ενός <strong>ορθογωνίου τριγώνου</strong> γύρω από μία από τις κάθετες πλευρές του. Ανάλογα με τη θέση της κορυφής ως προς το κέντρο της βάσης, διακρίνεται σε <strong>ορθό</strong> (όταν το ύψος πέφτει στο κέντρο της βάσης) ή <strong>πλάγιο</strong>.</p>
+<p><img src="images/clipboard-226985181.png" class="img-fluid"> <img src="images/clipboard-4077534060.png" class="img-fluid"> <img src="images/clipboard-2700537033.png" class="img-fluid"></p>
+<section id="τα-βασικά-στοιχεία-του-κώνου" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="τα-βασικά-στοιχεία-του-κώνου"><span class="header-section-number">1.1</span> Τα βασικά στοιχεία του κώνου</h3>
+<p>Τα μέρη που συνθέτουν έναν κώνο είναι τα εξής: * <strong>Βάση</strong>: Ο κυκλικός δίσκος που ορίζει το κάτω μέρος του κώνου.</p>
+<ul>
+<li><p><strong>Κορυφή</strong>: Το σταθερό σημείο στο οποίο καταλήγουν όλες οι πλευρές του κώνου.</p></li>
+<li><p><strong>Ακτίνα (</strong><span class="math inline">\(\rho\)</span>$\rho$ ή <span class="math inline">\(r\)</span>): Η ακτίνα του κυκλικού δίσκου της βάσης.</p></li>
+<li><p><strong>Ύψος (</strong><span class="math inline">\(\upsilon\)</span> ή <span class="math inline">\(h\)</span>): Το ευθύγραμμο τμήμα που συνδέει την κορυφή με το κέντρο της βάσης και είναι κάθετο σε αυτήν.</p></li>
+<li><p><strong>Γενέτειρα ή Πλευρά (</strong><span class="math inline">\(\lambda\)</span> ή <span class="math inline">\(l\)</span>): Η υποτείνουσα του ορθογωνίου τριγώνου που περιστρέφεται, δηλαδή κάθε ευθύγραμμο τμήμα που συνδέει την κορυφή με ένα σημείο της περιφέρειας της βάσης.</p></li>
+<li><p><strong>Παράπλευρη (ή Κυρτή) Επιφάνεια</strong>: Η επιφάνεια που παράγεται από την περιστροφή της γενέτειρας.</p></li>
+<li><p><strong>Άξονας</strong>: Το ευθύγραμμο τμήμα που ορίζεται από την κορυφή και το κέντρο της βάσης.</p></li>
+</ul>
+</section>
 </div>
+<p><img src="images/clipboard-896833835.png" class="img-fluid"></p>
+<section id="μετρικές-σχέσεις-και-τύποι" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μετρικές-σχέσεις-και-τύποι"><span class="header-section-number">1.2</span> Μετρικές σχέσεις και Τύποι</h3>
+<p>Στον ορθό κώνο, η γενέτειρα <span class="math inline">\(\lambda\)</span>, το ύψος <span class="math inline">\(\upsilon\)</span> και η ακτίνα <span class="math inline">\(\rho\)</span> σχηματίζουν ορθογώνιο τρίγωνο, επομένως ισχύει το <strong>Πυθαγόρειο Θεώρημα</strong>: <span class="math display">\[\mathbf{\lambda^2 = \upsilon^2 + \rho^2}\]</span></p>
+<p>Οι βασικοί υπολογισμοί για τον κώνο γίνονται με τους εξής τύπους:</p>
+<ol type="1">
+<li><p><strong>Εμβαδόν Παράπλευρης Επιφάνειας</strong>: <span class="math inline">\(E_{\pi} = \pi \cdot \rho \cdot \lambda\)</span>.</p></li>
+<li><p><strong>Εμβαδόν Ολικής Επιφάνειας</strong>: <span class="math inline">\(E_{ολ} = \pi \cdot \rho \cdot \lambda + \pi \cdot \rho^2\)</span> (δηλαδή το άθροισμα της παράπλευρης επιφάνειας και της βάσης).</p></li>
+<li><p><strong>Όγκος</strong>: <span class="math inline">\(V = \dfrac{1}{3} \pi \cdot \rho^2 \cdot \upsilon\)</span>. Ο όγκος του κώνου ισούται με το <strong>ένα τρίτο</strong> του όγκου ενός κυλίνδρου που έχει την ίδια βάση και το ίδιο ύψος.</p></li>
+</ol>
+</section>
+<section id="ανάπτυγμα-κώνου" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ανάπτυγμα-κώνου"><span class="header-section-number">1.3</span> Ανάπτυγμα κώνου</h3>
+<p>Αν «ξετυλίξουμε» την παράπλευρη επιφάνεια ενός κώνου σε ένα επίπεδο, το σχήμα που προκύπτει είναι ένας <strong>κυκλικός τομέας</strong>. Η ακτίνα αυτού του τομέα είναι ίση με τη γενέτειρα <span class="math inline">\(\lambda\)</span> του κώνου και το μήκος του τόξου του είναι ίσο με την περιφέρεια της βάσης του κώνου (<span class="math inline">\(2\pi\rho\)</span>). Η γωνία <span class="math inline">\(\phi\)</span> του τομέα δίνεται από τη σχέση: <span class="math inline">\(\phi = \dfrac{\rho}{\lambda} \cdot 360^\circ\)</span>.</p>
+<p><img src="images/clipboard-3473684135.png" class="img-fluid"> <img src="images/clipboard-2357498787.png" class="img-fluid"> <img src="images/clipboard-2103665587.png" class="img-fluid"></p>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.4</span> Παραδείγματα</h3>
+<ol type="1">
+<li><strong>Υπολογισμός Ολικής Επιφάνειας Κώνου</strong> Σε έναν κώνο, το εμβαδόν της παράπλευρης επιφάνειας είναι <span class="math inline">\(226,08 \text{ cm}^2\)</span> και η γενέτειρα <span class="math inline">\(\lambda\)</span> είναι <span class="math inline">\(9 \text{ cm}\)</span>.</li>
+</ol>
+<ul>
+<li><strong>Βήμα 1 (Εύρεση ακτίνας):</strong> Από τον τύπο της παράπλευρης επιφάνειας <span class="math inline">\(E_{\pi} = \pi \cdot \rho \cdot \lambda\)</span>, έχουμε <span class="math inline">\(226,08 = 3,14 \cdot \rho \cdot 9\)</span>, άρα <span class="math inline">\(\rho = 8 \text{ cm}\)</span>.</li>
+<li><strong>Βήμα 2 (Εμβαδόν βάσης):</strong> <span class="math inline">\(E_{\beta} = \pi \cdot \rho^2 = 3,14 \cdot 8^2 = 200,96 \text{ cm}^2\)</span>.</li>
+<li><strong>Βήμα 3 (Ολική επιφάνεια):</strong> <span class="math inline">\(E_{\text{ολ}} = E_{\pi} + E_{\beta} = 226,08 + 200,96 = 427,04 \text{ cm}^2\)</span>.</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Σιλό (Κύλινδρος και Κώνος):</strong> Ένα σιλό αποθήκευσης αποτελείται από ένα κυλινδρικό τμήμα ακτίνας 4 m και ένα κωνικό τμήμα στη βάση του με γενέτειρα 5 m. Αν το συνολικό ύψος του σιλό είναι 10 m και είναι ανοικτό από πάνω, υπολογίστε το συνολικό εμβαδόν της εξωτερικής του επιφάνειας και τον συνολικό του όγκο.</li>
+</ol>
+<ul>
+<li><p><strong>Δεδομένα:</strong> Ακτίνα <span class="math inline">\(\rho = 4 \text{ m}\)</span>, συνολικό ύψος <span class="math inline">\(10 \text{ m}\)</span> και γενέτειρα κώνου <span class="math inline">\(\lambda = 5 \text{ m}\)</span>.</p></li>
+<li><p><strong>Υπολογισμός ύψους:</strong> Το ύψος του κώνου είναι <span class="math inline">\(\upsilon_{\kappa} = \sqrt{\lambda^2 - \rho^2} = \sqrt{5^2 - 4^2} = 3 \text{ m}\)</span>. Το ύψος του κυλίνδρου είναι <span class="math inline">\(10 - 3 = 7 \text{ m}\)</span>.</p></li>
+<li><p><strong>Εμβαδόν επιφάνειας:</strong> Είναι το άθροισμα των παράπλευρων επιφανειών:</p>
+<ol type="1">
+<li><strong>Παράπλευρη Κυλίνδρου:</strong> <span class="math inline">\(2\pi\rho\upsilon = 2 \cdot 3,14 \cdot 4 \cdot 7 = 175,84 \text{ m}^2\)</span>.</li>
+<li><strong>Παράπλευρη Κώνου:</strong> <span class="math inline">\(\pi\rho\lambda = 3,14 \cdot 4 \cdot 5 = 62,8 \text{ m}^2\)</span>.</li>
+</ol></li>
+<li><p><strong>Σύνολο:</strong> <span class="math inline">\(175,84 + 62,8 = 238,64 \text{ m}^2\)</span>.</p></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Σημαδούρα (Κύλινδρος και Κώνος):</strong> Μια κούφια σημαδούρα αποτελείται από έναν κύλινδρο ύψους 1,20 m και ακτίνας 0,80 m, πάνω στον οποίο εδράζεται ένας κώνος ύψους 1 m και ακτίνας βάσης 0,30 m. Υπολογίστε τη συνολική εξωτερική επιφάνεια της σημαδούρας και τον όγκο του αέρα που περιέχει.</li>
+</ol>
+<ul>
+<li><p><strong>Υπολογισμός Επιφάνειας:</strong> Η συνολική επιφάνεια υπολογίζεται ως: (Κάτω βάση κυλίνδρου) + (παράπλευρη κυλίνδρου) + (πάνω βάση κυλίνδρου) – (βάση κώνου) + (παράπλευρη κώνου).</p></li>
+<li><p><strong>Δεδομένα:</strong> Κύλινδρος (<span class="math inline">\(\upsilon = 1,20 \text{ m}, \rho = 0,80 \text{ m}\)</span>), Κώνος (<span class="math inline">\(\upsilon = 1 \text{ m}, \rho = 0,30 \text{ m}\)</span>).</p></li>
+<li><p><strong>Αποτέλεσμα:</strong> Μετά την εύρεση της γενέτειρας του κώνου (<span class="math inline">\(\lambda \approx 1,04 \text{ m}\)</span>), η συνολική επιφάνεια προκύπτει περίπου <span class="math inline">\(10,75 \text{ m}^2\)</span>.</p></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Σύνθετο Σχήμα: Διπλός Κώνος (Περιστροφή Τετραγώνου)</strong> Ένα τετράγωνο πλευράς <span class="math inline">\(5 \text{ cm}\)</span> περιστρέφεται γύρω από τη διαγώνιό του.</li>
+</ol>
+<ul>
+<li><p><strong>Περιγραφή:</strong> Το στερεό που προκύπτει αποτελείται από δύο ίσους κώνους με κοινή βάση.</p></li>
+<li><p><strong>Στοιχεία:</strong> Η ακτίνα <span class="math inline">\(\rho\)</span> και το ύψος <span class="math inline">\(\upsilon\)</span> κάθε κώνου ισούνται με το μισό της διαγωνίου του τετραγώνου (<span class="math inline">\(\approx 3,535 \text{ cm}\)</span>), ενώ η γενέτειρα <span class="math inline">\(\lambda\)</span> είναι η πλευρά του τετραγώνου (<span class="math inline">\(5 \text{ cm}\)</span>).</p></li>
+<li><p><strong>Επιφάνεια:</strong> Η συνολική επιφάνεια είναι το διπλάσιο της παράπλευρης επιφάνειας ενός κώνου: <span class="math inline">\(E = 2 \cdot (\pi\rho\lambda) = 2 \cdot 3,14 \cdot 3,535 \cdot 5 = 110,999 \text{ cm}^2\)</span>.</p></li>
+</ul>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.5</span> Ασκήσεις</h3>
+<ol type="1">
+<li><strong>Στέγη Τσίρκου (Κώνος)</strong>: Η στέγη της κεντρικής σκηνής ενός τσίρκου έχει σχήμα κώνου με διάμετρο βάσης 40 m και ύψος 15 m. Υπολογίστε πόσα τετραγωνικά μέτρα υφάσματος χρειάστηκαν για την κατασκευή της (παράπλευρη επιφάνεια).</li>
+<li><strong>Υπολογισμός Επιφάνειας Κώνου</strong>: Ένας κώνος έχει ακτίνα βάσης 3 και ύψος 4. Να υπολογίσετε την κυρτή και την ολική του επιφάνεια (αφού πρώτα βρείτε τη γενέτειρα <span class="math inline">\(\lambda\)</span>).</li>
+<li><strong>Σύνθετο Σχήμα από Περιστροφή Τριγώνου (Δύο Κώνοι)</strong>: Ένα ισοσκελές τρίγωνο ΑΒΓ με πλευρές <span class="math inline">\(AB = AC = 13\)</span> cm και βάση <span class="math inline">\(B\Gamma = 24\)</span> cm περιστρέφεται γύρω από τη βάση του <span class="math inline">\(B\Gamma\)</span>. Να υπολογίσετε την ολική επιφάνεια του στερεού που σχηματίζεται (αποτελείται από τις παράπλευρες επιφάνειες δύο κώνων).</li>
+<li><strong>Σχέση Κώνου και Κύκλου</strong>: Το εμβαδόν της ολικής επιφάνειας ενός κώνου είναι ίσο με το εμβαδόν κύκλου ακτίνας <span class="math inline">\(\alpha\)</span>. Να βρείτε τον τύπο για την κυρτή επιφάνεια του κώνου αν η ακτίνα της βάσης του είναι <span class="math inline">\(\rho\)</span>.</li>
+</ol>
+</section>
+<section id="ασκήσεις-με-συμπλέγματα-σχημάτων" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις-με-συμπλέγματα-σχημάτων"><span class="header-section-number">1.6</span> Ασκήσεις με Συμπλέγματα Σχημάτων</h3>
+<ol type="1">
+<li><strong>Σύνθετο Στερεό δύο Κώνων:</strong> Δύο στερεοί κώνοι έχουν κοινή βάση με ακτίνα 4 cm και τα ύψη τους είναι 6 cm και 12 cm αντίστοιχα (τοποθετημένοι βάση με βάση). Βρείτε τον συνολικό όγκο του στερεού που σχηματίζεται.</li>
+</ol>
+<p><img src="images/clipboard-447831645.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><strong>Περιστροφή Ισοσκελούς Τριγώνου:</strong> Ένα ισοσκελές τρίγωνο ΑΒΓ με πλευρές AB = AC = 13 cm και βάση BΓ = 24 cm περιστρέφεται γύρω από τη βάση του ΒΓ. Υπολογίστε την ολική επιφάνεια και τον όγκο του στερεού (αποτελείται από δύο ίσους κώνους).</li>
+<li><strong>Κώνος και Εγγεγραμμένη Πυραμίδα:</strong> Σε έναν κώνο ακτίνας <span class="math inline">\(\rho=5 \ \ cm\)</span> και ύψους <span class="math inline">\(\upsilon=10 \ \ cm\)</span> εγγράφεται μια κανονική τετραγωνική πυραμίδα (η βάση της πυραμίδας είναι εγγεγραμμένη στον κύκλο της βάσης του κώνου και έχει ίδιο ύψος με τον κώνο). Να βρείτε τον όγκο που περιέχεται ανάμεσα στα δυο στερεά.</li>
+<li><strong>Κώνος και Περιγεγραμμένη Πυραμίδα:</strong> Μια κανονική πυραμίδα είναι περιγεγραμμένη σε έναν κώνο με γενέτειρα <span class="math inline">\(λ=8 \ \ cm\)</span> υψους <span class="math inline">\(υ=10 \ \ cm\)</span>, έτσι ώστε οι έδρες της να εφάπτονται στην κυρτή επιφάνεια του κώνου. Υπολογίστε τον όγκο που περιέχεται μεταξύ των δύο στερεών.</li>
+<li><strong>Κώνος και Κύλινδρος:</strong> Ένας κώνος και ένας κύλινδρος έχουν ίσες βάσεις και ίσα ύψη. Αν αφαιρέσουμε τον κώνο από τον κύλινδρο, να υπολογίστε την επιφάνεια του στερού που απομένει. Το ύψος τους είναι ίσο με δύο φορές την ακτίνα της βάσης τους <span class="math inline">\(υ=2ρ=10 \ \ cm\)</span>.</li>
+</ol>
+<p><img src="images/clipboard-920772780.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li><strong>Κώνος και Κύλινδρος:</strong> Υπολογίστε τον όγκο και την ολική επιφάνεια του παρακάτω στερεού</li>
+</ol>
+<p><img src="images/clipboard-3582825979.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li><strong>Δύο κώνοι με ίδια βάση</strong> Ορογώνιο ισοσκελές τρίγωνο περιστρέφεται γύρω από την υποτείνουσα <span class="math inline">\(ΑΒ=10 \ \ cm\)</span>. Να υπολογίσευε την ολική επιφάνεια του στερεού που παράγεται και τον όγκο του.</li>
+</ol>
+<p><img src="images/clipboard-3566371966.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li><strong>Κώνοι και κύλινδρος</strong> Στο παρακάτω σχήμα είναι <span class="math inline">\(ΑΔ=ΒΓ=\dfrac{1}{2}ΔΖ=\dfrac{1}{2}ΕΓ=\dfrac{1}{3}ΓΔ=3 \ \ cm\)</span>. Να υπολογίσετε την ολική επιφάνεια και τον όγκο του στερεού.</li>
+</ol>
+<p><img src="images/clipboard-3061430036.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li><strong>Κλεψύδρα</strong> Η παρακάτω κλεψύδρα αδειάζει ένα παχύρευστο υγρό για να μετρήσει τον χρόνο. Αν αδειάζει 5 ml/min, πόσο χρόνο θα χρειαστεί για να αδειάσει τελείως; Δίνονται ρ=5 cm και συνολικό ύψος 20 cm. <img src="images/clipboard-2917196453.png" class="img-fluid"></li>
+</ol>
+</section>
+<section id="βασικοί-τύποι-για-τις-λύσεις" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="βασικοί-τύποι-για-τις-λύσεις"><span class="header-section-number">1.7</span> Βασικοί Τύποι για τις Λύσεις</h3>
+<ul>
+<li><strong>Εμβαδόν Παράπλευρης Επιφάνειας Κώνου:</strong> <span class="math inline">\(E_{\pi} = \pi \cdot \rho \cdot \lambda\)</span>.</li>
+<li><strong>Όγκος Κώνου:</strong> <span class="math inline">\(V = \frac{1}{3} \pi \cdot \rho^2 \cdot \upsilon\)</span>.</li>
+<li><strong>Σχέση Γενέτειρας (<span class="math inline">\(\lambda\)</span>), Ύψους (<span class="math inline">\(\upsilon\)</span>) και Ακτίνας (<span class="math inline">\(\rho\)</span>):</strong> <span class="math inline">\(\lambda^2 = \upsilon^2 + \rho^2\)</span>.</li>
+<li><strong>Όγκος Κυλίνδρου:</strong> <span class="math inline">\(V = \pi \cdot \rho^2 \cdot \upsilon\)</span>.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1364,12 +1570,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
