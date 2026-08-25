@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>03. Δυνάμεις φυσικών αριθμών – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-agalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">03. Δυνάμεις φυσικών αριθμών</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">03. Δυνάμεις φυσικών αριθμών</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#δυνάμεις-φυσικών-αριθμών" id="toc-δυνάμεις-φυσικών-αριθμών" class="nav-link active" data-scroll-target="#δυνάμεις-φυσικών-αριθμών"><span class="header-section-number">1</span> Δυνάμεις φυσικών αριθμών</a>
+  <ul>
+  <li><a href="#έννοια-της-δύναμης-και-ανάγνωση" id="toc-έννοια-της-δύναμης-και-ανάγνωση" class="nav-link" data-scroll-target="#έννοια-της-δύναμης-και-ανάγνωση"><span class="header-section-number">1.1</span> <strong>Έννοια της Δύναμης και Ανάγνωση</strong></a></li>
+  <li><a href="#δυνάμεις-του-10-και-ανάπτυγμα-αριθμού" id="toc-δυνάμεις-του-10-και-ανάπτυγμα-αριθμού" class="nav-link" data-scroll-target="#δυνάμεις-του-10-και-ανάπτυγμα-αριθμού"><span class="header-section-number">1.2</span> <strong>Δυνάμεις του 10 και Ανάπτυγμα Αριθμού</strong></a>
+  <ul>
+  <li><a href="#άλυτες-ασκήσεις" id="toc-άλυτες-ασκήσεις" class="nav-link" data-scroll-target="#άλυτες-ασκήσεις"><span class="header-section-number">1.2.1</span> <strong>Άλυτες Ασκήσεις</strong></a></li>
+  </ul></li>
+  <li><a href="#προτεραιότητα-πράξεων" id="toc-προτεραιότητα-πράξεων" class="nav-link" data-scroll-target="#προτεραιότητα-πράξεων"><span class="header-section-number">1.3</span> <strong>Προτεραιότητα Πράξεων</strong></a></li>
+  <li><a href="#ασκήσεων-..-συνέχεια" id="toc-ασκήσεων-..-συνέχεια" class="nav-link" data-scroll-target="#ασκήσεων-..-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων ….. συνέχεια</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<hr>
+<section id="δυνάμεις-φυσικών-αριθμών" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="δυνάμεις-φυσικών-αριθμών"><span class="header-section-number">1</span> Δυνάμεις φυσικών αριθμών</h2>
+<section id="έννοια-της-δύναμης-και-ανάγνωση" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="έννοια-της-δύναμης-και-ανάγνωση"><span class="header-section-number">1.1</span> <strong>Έννοια της Δύναμης και Ανάγνωση</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> <strong>Δύναμη</strong> ενός αριθμού <span class="math inline">\(\alpha\)</span> λέγεται το γινόμενο πολλών παραγόντων που είναι ίσιοι με τον αριθμό αυτό. Συμβολίζεται με <span class="math inline">\(\alpha^{\nu}\)</span>, όπου <span class="math inline">\(\alpha\)</span> είναι η <strong>βάση</strong> και <span class="math inline">\(\nu\)</span> ο <strong>εκθέτης</strong>. <span class="math display">\[α^ν=\underset{\text{ν φορές}}{\underbrace{\alpha\cdot a\cdot a \cdots a}}\]</span></p></li>
+<li><p><strong>Ανάγνωση:</strong></p>
+<ul>
+<li>Η δύναμη <span class="math inline">\(\alpha^2\)</span> διαβάζεται <strong>«</strong><span class="math inline">\(\alpha\)</span> στο τετράγωνο».</li>
+<li>Η δύναμη <span class="math inline">\(\alpha^3\)</span> διαβάζεται <strong>«</strong><span class="math inline">\(\alpha\)</span> στον κύβο».</li>
+<li>Η δύναμη <span class="math inline">\(\alpha^{\nu}\)</span> διαβάζεται <strong>«</strong><span class="math inline">\(\alpha\)</span> στη νιοστή» ή «νιοστή δύναμη του <span class="math inline">\(\alpha\)</span>».</li>
+</ul></li>
+<li><p><strong>Ειδικές Περιπτώσεις:</strong></p>
+<ul>
+<li><span class="math inline">\(\alpha^1 = \alpha\)</span> (κάθε αριθμός στην πρώτη δύναμη ισούται με τον εαυτό του).</li>
+<li><span class="math inline">\(\alpha^0 = 1\)</span> (για <span class="math inline">\(\alpha \neq 0\)</span>, η μηδενική δύναμη κάθε φυσικού είναι 1).</li>
+<li><span class="math inline">\(1^{\nu} = 1\)</span> (κάθε δύναμη της μονάδας είναι 1).</li>
+<li><span class="math inline">\(0^{\nu} = 0\)</span> (για <span class="math inline">\(\nu \neq 0\)</span>, κάθε δύναμη του μηδενός είναι 0).</li>
+</ul></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Το γινόμενο <span class="math inline">\(3 \cdot 3 \cdot 3 \cdot 3\)</span> γράφεται ως δύναμη <span class="math inline">\(3^4\)</span>.</li>
+<li>Η δύναμη <span class="math inline">\(5^2\)</span> διαβάζεται «5 στο τετράγωνο» και ισούται με <span class="math inline">\(5 \cdot 5 = 25\)</span>.</li>
+<li>Η δύναμη <span class="math inline">\(2^3\)</span> διαβάζεται «2 στον κύβο» και ισούται με <span class="math inline">\(2 \cdot 2 \cdot 2 = 8\)</span>.</li>
+<li>Ο αριθμός <span class="math inline">\(7\)</span> μπορεί να γραφεί ως <span class="math inline">\(7^1\)</span>.</li>
+<li>Η δύναμη <span class="math inline">\(125^0\)</span> ισούται με <span class="math inline">\(1\)</span>.</li>
+</ol>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Γράψτε με τη μορφή δύναμης το γινόμενο: <span class="math inline">\(7 \cdot 7 \cdot 7 \cdot 7 \cdot 7\)</span>.</li>
+<li>Πώς διαβάζεται η δύναμη <span class="math inline">\(8^2\)</span>;.</li>
+<li>Πώς διαβάζεται η δύναμη <span class="math inline">\(4^3\)</span>;.</li>
+<li>Υπολογίστε την τιμή της δύναμης <span class="math inline">\(2^5\)</span>.</li>
+<li>Βρείτε την τιμή της παράστασης <span class="math inline">\(1^9\)</span>.</li>
+<li>Ποια είναι η βάση και ποιος ο εκθέτης στη δύναμη <span class="math inline">\(6^4\)</span>;</li>
+<li>Γράψτε ως δύναμη το γινόμενο <span class="math inline">\(\alpha \cdot \alpha \cdot \alpha \cdot \alpha \cdot \alpha \cdot \alpha\)</span>.</li>
+<li>Υπολογίστε τη δύναμη <span class="math inline">\(5^3\)</span>.</li>
+<li>Ποιο είναι το αποτέλεσμα της δύναμης <span class="math inline">\(10^0\)</span>;</li>
+<li>Ποιο είναι το αποτέλεσμα της δύναμης <span class="math inline">\(0^6\)</span>;</li>
+</ol>
+<hr>
+</section>
+<section id="δυνάμεις-του-10-και-ανάπτυγμα-αριθμού" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="δυνάμεις-του-10-και-ανάπτυγμα-αριθμού"><span class="header-section-number">1.2</span> <strong>Δυνάμεις του 10 και Ανάπτυγμα Αριθμού</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Υπολογισμός:</strong> Κάθε δύναμη του 10 ισούται με τον αριθμό που έχει πρώτο ψηφίο το 1 και ακολουθείται από <strong>τόσα μηδενικά όσα δείχνει ο εκθέτης</strong>.</p></li>
+<li><p><strong>Ανάπτυγμα:</strong> Κάθε φυσικός αριθμός μπορεί να γραφεί ως άθροισμα γινομένων των ψηφίων του επί τις αντίστοιχες δυνάμεις του 10 (μονάδες <span class="math inline">\(10^0\)</span>, δεκάδες <span class="math inline">\(10^1\)</span>, εκατοντάδες <span class="math inline">\(10^2\)</span> κ.λπ.).</p></li>
+</ul>
+<p><span class="math display">\[807.569=8\cdot10^5+0\cdot10^4+7\cdot10^3+5\cdot10^2+6\cdot10^1+9\cdot10^0\]</span></p>
+<ul>
+<li><strong>Πολλαπλασιασμός:</strong> Για να πολλαπλασιάσουμε έναν αριθμό με το <span class="math inline">\(10, 100, 1.000\)</span> κ.λπ., γράφουμε στο τέλος του τόσα μηδενικά όσα έχει ο παράγοντας αυτός.</li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(10^2 = 100\)</span> (δύο μηδενικά).</li>
+<li><span class="math inline">\(10^6 = 1.000.000\)</span> (έξι μηδενικά).</li>
+<li><span class="math inline">\(2 \cdot 10^3 = 2 \cdot 1.000 = 2.000\)</span>.</li>
+<li>Ανάπτυγμα του <span class="math inline">\(7.604 = 7 \cdot 10^3 + 6 \cdot 10^2 + 0 \cdot 10^1 + 4 \cdot 10^0\)</span>.</li>
+<li><span class="math inline">\(35 \cdot 10 = 350\)</span>.</li>
+</ol>
+<section id="άλυτες-ασκήσεις" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="άλυτες-ασκήσεις"><span class="header-section-number">1.2.1</span> <strong>Άλυτες Ασκήσεις</strong></h4>
+<ol type="1">
+<li>Υπολογίστε τη δύναμη <span class="math inline">\(10^4\)</span>.</li>
+<li>Γράψτε τον αριθμό <span class="math inline">\(10.000.000\)</span> ως δύναμη του 10.</li>
+<li>Υπολογίστε το γινόμενο <span class="math inline">\(5 \cdot 10^2\)</span>.</li>
+<li>Γράψτε το ανάπτυγμα του αριθμού <span class="math inline">\(34.720\)</span> σε δυνάμεις του 10.</li>
+<li>Πόσα μηδενικά έχει ο αριθμός που προκύπτει από το <span class="math inline">\(10^9\)</span>;.</li>
+<li>Γράψτε το ανάπτυγμα του αριθμού <span class="math inline">\(123.654\)</span> σε δυνάμεις του 10.</li>
+<li>Υπολογίστε το γινόμενο <span class="math inline">\(27 \cdot 10.000\)</span>.</li>
+<li>Γράψτε τον αριθμό <span class="math inline">\(8 \cdot 10^5\)</span> σε κανονική μορφή.</li>
+<li>Γράψτε το ανάπτυγμα του αριθμού <span class="math inline">\(2.007\)</span> σε δυνάμεις του 10.</li>
+<li>Ποιος αριθμός έχει ανάπτυγμα <span class="math inline">\(3 \cdot 10^2 + 5 \cdot 10^1 + 2 \cdot 10^0\)</span>;.</li>
+</ol>
+</section>
+</section>
+<section id="προτεραιότητα-πράξεων" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="προτεραιότητα-πράξεων"><span class="header-section-number">1.3</span> <strong>Προτεραιότητα Πράξεων</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία - Ορισμοί - Ιδιότητες</strong></p>
+<p>Σε μια αριθμητική παράσταση που περιέχει διαφορετικές πράξεις, η σειρά εκτέλεσης είναι η εξής:</p>
+<ol type="1">
+<li><strong>Υπολογισμός δυνάμεων.</strong></li>
+<li><strong>Εκτέλεση πολλαπλασιασμών και διαιρέσεων</strong> (με τη σειρά που εμφανίζονται).</li>
+<li><strong>Εκτέλεση προσθέσεων και αφαιρέσεων</strong> (με τη σειρά που εμφανίζονται).</li>
+</ol>
+<ul>
+<li><strong>Παρενθέσεις:</strong> Αν υπάρχουν παρενθέσεις, εκτελούμε πρώτα τις πράξεις μέσα σε αυτές, ακολουθώντας την ίδια παραπάνω σειρά προτεραιότητας.</li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(3 \cdot 5^2 = 3 \cdot 25 = 75\)</span>.</li>
+<li><span class="math inline">\(3 \cdot 5^2 + 2 = 3 \cdot 25 + 2 = 75 + 2 = 77\)</span>.</li>
+<li><span class="math inline">\((2 + 3)^3 - 8 \cdot 3^2 = 5^3 - 8 \cdot 9 = 125 - 72 = 53\)</span>.</li>
+<li><span class="math inline">\(3 \cdot (5 + 2)^2 = 3 \cdot 7^2 = 3 \cdot 49 = 147\)</span>.</li>
+<li><span class="math inline">\(2^4 \cdot 5 - 2 = 16 \cdot 5 - 2 = 80 - 2 = 78\)</span>.</li>
+<li>Υπολογίστε την τιμή: <span class="math inline">\(8 \cdot (2 \cdot 3^2 + 4 \cdot 6)\)</span>.</li>
+</ol>
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(8 \cdot (2 \cdot 9 + 24) = 8 \cdot (18 + 24) = 8 \cdot 42 = 336\)</span>.</li>
+</ul>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Υπολογίστε την τιμή: <span class="math inline">\(3^2 + 3^3 + 2^3 + 2^4\)</span>.</li>
+<li>Εκτελέστε τις πράξεις: <span class="math inline">\((13 - 2)^2 + 5 \cdot 3^2\)</span>.</li>
+<li>Υπολογίστε το αποτέλεσμα: <span class="math inline">\(4 \cdot (7 + 7 \cdot 9) + 2^2\)</span> (Προσοχή στις παρενθέσεις).</li>
+<li>Βρείτε την τιμή της παράστασης: <span class="math inline">\(3 \cdot 5^2 + 2^2\)</span>.</li>
+<li>Εκτελέστε τις πράξεις: <span class="math inline">\((2 \cdot 5)^4 + 4 \cdot (3 + 2)^2\)</span>.</li>
+<li>Υπολογίστε: <span class="math inline">\(3^2 \cdot 5 - (10 - 8)^3\)</span>.</li>
+<li>Συγκρίνετε τις τιμές: <span class="math inline">\((6 + 5)^2\)</span> και <span class="math inline">\(6^2 + 5^2\)</span>. Είναι ίσες;.</li>
+<li>Υπολογίστε την παράσταση: <span class="math inline">\(2^4 \cdot 5 - 2 + 3 \cdot 5\)</span>.</li>
+<li>Βρείτε την τιμή: <span class="math inline">\(3 \cdot 11 - 2 + 5^2 : 5\)</span>.</li>
+<li>Εκτελέστε τις πράξεις: <span class="math inline">\([(2^3 + 2^2) : 5] \cdot 10^2\)</span>.</li>
+<li>Υπολογίστε την παράσταση <span class="math inline">\(3^2 - 2^3 + 4^2 - 3 \cdot (10 - 3 \cdot 3) + 5^2\)</span>.</li>
+<li>Γράψτε με τη μορφή δύναμης το γινόμενο: <span class="math inline">\(8 \cdot 8 \cdot 8 \cdot 8 \cdot 8 \cdot 8 \cdot 6 \cdot 6 \cdot 6\)</span>.</li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Αριθμητική παράσταση και πράξεις
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Αριθμητική παράσταση</strong> ονομάζεται κάθε σειρά αριθμών που συνδέονται μεταξύ τους με τα σύμβολα των πράξεων. Η σειρά με την οποία πρέπει να εκτελούνται οι πράξεις σε μια σύνθετη παράσταση (προτεραιότητα των πράξεων) ακολουθεί συγκεκριμένους κανόνες για την ορθή εύρεση του αποτελέσματος.</p>
+</div>
+</div>
+<p>Όπως είπαμε παραπάνω η ιεραρχία των πράξεων καθορίζεται ως εξής:</p>
+<ol type="1">
+<li><p><strong>Πράξεις μέσα σε παρενθέσεις</strong>: Εκτελούμε πρώτα τις πράξεις μέσα στις παρενθέσεις, ξεκινώντας από την πιο εσωτερική.</p></li>
+<li><p><strong>Υπολογισμός δυνάμεων</strong>: Αφού ολοκληρωθούν οι πράξεις στις παρενθέσεις (ή αν δεν υπάρχουν), προηγείται ο υπολογισμός των δυνάμεων.</p></li>
+<li><p><strong>Πολλαπλασιασμοί και διαιρέσεις</strong>: Στη συνέχεια εκτελούνται οι πολλαπλασιασμοί και οι διαιρέσεις με τη σειρά που εμφανίζονται στην παράσταση από τα αριστερά προς τα δεξιά.</p></li>
+<li><p><strong>Προσθέσεις και αφαιρέσεις</strong>: Τελευταίες εκτελούνται οι προσθέσεις και οι αφαιρέσεις, επίσης με τη σειρά που εμφανίζονται από τα αριστερά προς τα δεξιά.</p></li>
+</ol>
+<p>Επισημαίνεται ότι αν υπάρχουν παρενθέσεις, οι πράξεις στο εσωτερικό τους εκτελούνται με την ίδια παραπάνω σειρά (δυνάμεις, πολλαπλασιασμοί/διαιρέσεις, προσθέσεις/αφαιρέσεις).</p>
+<ul>
+<li><strong>Απλοποίηση της παράστασης:</strong> Μόλις ολοκληρωθούν όλες οι πράξεις στο εσωτερικό μιας παρένθεσης και προκύψει ένας μόνο αριθμός, η παρένθεση αυτή παραλείπεται και συνεχίζουμε με τις πράξεις που απομένουν στην παράσταση.</li>
+<li><strong>Ανεξάρτητες παρενθέσεις:</strong> Αν στην ίδια παράσταση υπάρχουν παρενθέσεις που δεν περιέχονται η μία μέσα στην άλλη, οι πράξεις στο εσωτερικό τους μπορούν να εκτελούνται <strong>ανεξάρτητα</strong> ή ταυτόχρονα.</li>
+</ul>
+<p>Για παράδειγμα, στην παράσταση <span class="math inline">\(2 \cdot (24 - 3 \cdot 7)^3 - 1^{2024}\)</span>, εκτελείται πρώτα ο πολλαπλασιασμός μέσα στην παρένθεση (<span class="math inline">\(3 \cdot 7 = 21\)</span>), μετά η αφαίρεση (<span class="math inline">\(24 - 21 = 3\)</span>), και στη συνέχεια η δύναμη που βρίσκεται έξω από την παρένθεση.</p>
+<p><span style="color:blue;"><strong><em>Παράδειγμα Σύνθετης Παράστασης</em></strong></span></p>
+<p>Έστω η παράσταση : <span class="math inline">\(B = 6 \cdot 7 - 5 \cdot (2 + 6) + 180 : 2 \cdot (18 - 2 \cdot 7)\)</span></p>
+<p><strong>Βήμα 1: Πράξεις μέσα στις παρενθέσεις</strong> Σύμφωνα με τη θεωρία, προηγούνται οι παρενθέσεις.</p>
+<p>Αν υπάρχουν περισσότερες από μία (όπως εδώ), τις λύνουμε ανεξάρτητα, ακολουθώντας την εσωτερική προτεραιότητα (πολλαπλασιασμός πριν την αφαίρεση).</p>
+<ul>
+<li><p>Στην πρώτη παρένθεση: <span class="math inline">\((2 + 6) = \mathbf{8}\)</span>.</p></li>
+<li><p>Στη δεύτερη παρένθεση: <span class="math inline">\((18 - 2 \cdot 7) = (18 - 14) = \mathbf{4}\)</span>.</p></li>
+</ul>
+<p>Η παράσταση τώρα γίνεται: <span class="math inline">\(6 \cdot 7 - 5 \cdot 8 + 180 : 2 \cdot 4\)</span></p>
+<p><strong>Βήμα 2: Πολλαπλασιασμοί και Διαιρέσεις</strong></p>
+<p>Εκτελούμε τις πράξεις από τα αριστερά προς τα δεξιά.</p>
+<ul>
+<li><p><span class="math inline">\(6 \cdot 7 = 42\)</span><br>
+</p></li>
+<li><p><span class="math inline">\(5 \cdot 8 = 40\)</span><br>
+</p></li>
+<li><p><span class="math inline">\(180 : 2 = 90\)</span> και μετά <span class="math inline">\(90 \cdot 4 = 360\)</span></p></li>
+</ul>
+<p>Η παράσταση γίνεται: <span class="math inline">\(42 - 40 + 360\)</span></p>
+<p><strong>Βήμα 3: Προσθέσεις και Αφαιρέσεις</strong> Τελευταίες εκτελούνται οι προσθέσεις και οι αφαιρέσεις με τη σειρά που εμφανίζονται.</p>
+<ul>
+<li><p><span class="math inline">\(42 - 40 = 2\)</span><br>
+</p></li>
+<li><p><span class="math inline">\(2 + 360 = \mathbf{362}\)</span></p></li>
+</ul>
+<hr>
+<p><span style="color:blue;"><strong><em>Παράδειγμα με προτεραιότητα Δυνάμεων εντός παρένθεσης</em></strong></span></p>
+<p><span class="math display">\[A = 4^3 - 5 \cdot (3^3 - 2^3 \cdot 3) + 24 : 8\]</span></p>
+<ol type="1">
+<li><p><strong>Υπολογισμός μέσα στην παρένθεση:</strong> <span class="math inline">\((27 - 8 \cdot 3) = (27 - 24) = \mathbf{3}\)</span>.</p></li>
+<li><p><strong>Υπολογισμός δυνάμεων έξω από την παρένθεση:</strong> <span class="math inline">\(4^3 = \mathbf{64}\)</span>.</p></li>
+<li><p><strong>Εκτέλεση πολλαπλασιασμών/διαιρέσεων:</strong> <span class="math inline">\(5 \cdot 3 = 15\)</span> και <span class="math inline">\(24 : 8 = 3\)</span>.</p></li>
+<li><p><strong>Τελικές πράξεις:</strong> <span class="math inline">\(64 - 15 + 3 = 49 + 3 = \mathbf{52}\)</span> .</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Σημαντική υπενθύμιση:</strong></p>
+<p>Αν μια παρένθεση βρίσκεται μέσα σε άλλη (nested), λύνουμε πρώτα το περιεχόμενο της μικρότερης “εγκλωβισμένης” παρένθεσης και μετά προχωράμε στην αμέσως επόμενη εξωτερική,.</p>
+<p>Όταν σε μια αριθμητική παράσταση υπάρχουν πολλές διαδοχικές διαιρέσεις (ή συνδυασμός πολλαπλασιασμών και διαιρέσεων), οι πράξεις εκτελούνται υποχρεωτικά με τη σειρά που εμφανίζονται, δηλαδή <strong>από τα αριστερά προς τα δεξιά</strong>.</p>
+<p>Ο κανόνας αυτός είναι αυστηρός για τους εξής λόγους:</p>
+<ul>
+<li><strong>Έλλειψη Προσεταιριστικής Ιδιότητας:</strong> Η διαίρεση <strong>δεν διαθέτει την προσεταιριστική ιδιότητα</strong>, γεγονός που σημαίνει ότι δεν μπορούμε να ομαδοποιήσουμε τις πράξεις όπως θέλουμε, καθώς η αλλαγή στη σειρά θα οδηγούσε σε διαφορετικό και λανθασμένο αποτέλεσμα.</li>
+<li><strong>Ιεραρχία Πράξεων:</strong> Εφόσον ο πολλαπλασιασμός και η διαίρεση βρίσκονται στο ίδιο επίπεδο προτεραιότητας, η μόνη ασφαλής μέθοδος επίλυσης είναι η <strong>σειρά εμφάνισης</strong> των πράξεων μέσα στην παράσταση.</li>
+</ul>
+</div>
+</div>
+<p><span style="color:blue;"><strong>Παράδειγμα:</strong></span> Έστω η παράσταση <span class="math inline">\(24 : 6 : 2\)</span>.</p>
+<ol type="1">
+<li><p><strong>Σωστή εκτέλεση (από αριστερά προς τα δεξιά):</strong> Πρώτα κάνουμε <span class="math inline">\(24 : 6 = 4\)</span> και μετά <span class="math inline">\(4 : 2 = \mathbf{2}\)</span>.</p></li>
+<li><p><strong>Λανθασμένη εκτέλεση (αλλαγή σειράς):</strong> Αν κάναμε πρώτα τη δεύτερη διαίρεση, θα είχαμε <span class="math inline">\(24 : (6 : 2) = 24 : 3 = 8\)</span>, που είναι λάθος.</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημαντικό
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Αν ο δημιουργός της παράστασης επιθυμεί να εκτελεστεί μια διαίρεση που βρίσκεται δεξιά πριν από μια άλλη, οφείλει να χρησιμοποιήσει <strong>παρενθέσεις</strong>, οι οποίες έχουν την απόλυτη προτεραιότητα στην εκτέλεση των πράξεων,,.</p>
+<p>Σύμφωνα με τη μαθηματική θεωρία, ο κανόνας της εκτέλεσης των πράξεων από τα αριστερά προς τα δεξιά <strong>δεν είναι απόλυτος</strong>, καθώς υπάρχουν σαφείς <strong>προτεραιότητες</strong> που λειτουργούν ως «εξαιρέσεις» ή ανώτερα επίπεδα ιεραρχίας.</p>
+<p>Συγκεκριμένα, η σειρά αλλάζει στις εξής περιπτώσεις:</p>
+<ul>
+<li><strong>Παρενθέσεις:</strong> Οι πράξεις που βρίσκονται μέσα σε παρενθέσεις εκτελούνται πάντα <strong>πρώτες</strong>, ανεξάρτητα από τη θέση τους στην παράσταση . Αν υπάρχουν πολλές παρενθέσεις, ξεκινάμε από την πιο εσωτερική.</li>
+<li><strong>Δυνάμεις:</strong> Ο υπολογισμός των δυνάμεων προηγείται των πολλαπλασιασμών, των διαιρέσεων, των προσθέσεων και των αφαιρέσεων. Έτσι, αν μια δύναμη βρίσκεται στο δεξί μέρος μιας παράστασης (εκτός παρενθέσεων), θα υπολογιστεί πριν από έναν πολλαπλασιασμό που βρίσκεται αριστερά της .</li>
+<li><strong>Ιεραρχία Κατηγοριών:</strong> Ο κανόνας «από τα αριστερά προς τα δεξιά» εφαρμόζεται <strong>μόνο μεταξύ πράξεων που ανήκουν στην ίδια κατηγορία</strong> προτεραιότητας:
+<ol type="1">
+<li>Πολλαπλασιασμοί και διαιρέσεις.</li>
+<li>Προσθέσεις και αφαιρέσεις. Αυτό σημαίνει ότι αν έχουμε την παράσταση <span class="math inline">\(2 + 3 \cdot 4\)</span>, ο πολλαπλασιασμός στα δεξιά θα γίνει πριν από την πρόσθεση στα αριστερά, επειδή έχει υψηλότερη προτεραιότητα.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<p><span style="color: green;"><strong><em>Σημαντική παρατήρηση για τις ιδιότητες</em></strong></span></p>
+<p>Για τις πράξεις της <strong>πρόσθεσης</strong> και του <strong>πολλαπλασιασμού</strong>, η σειρά δεν επηρεάζει το τελικό αποτέλεσμα λόγω της <strong>αντιμεταθετικής</strong> (<span class="math inline">\(a+b=b+a\)</span>) και της <strong>προσεταιριστικής</strong> ιδιότητας.</p>
+<p><u>Ωστόσο, ο κανόνας από τα αριστερά προς τα δεξιά είναι <strong>υποχρεωτικός και αυστηρός</strong> για την <strong>αφαίρεση</strong> και τη <strong>διαίρεση</strong>, καθώς αυτές οι πράξεις δεν διαθέτουν τις παραπάνω ιδιότητες και η αλλαγή της σειράς θα οδηγούσε σε λανθασμένο αποτέλεσμα.</u></p>
+<p>Τα συνηθισμένα λάθη στις σύνθετες αριθμητικές παραστάσεις προκύπτουν κυρίως από τη <strong>μη τήρηση της ιεραρχίας των πράξεων</strong> και την εσφαλμένη εφαρμογή των ιδιοτήτων των αριθμών.</p>
+<p>τα κυριότερα σφάλματα είναι τα εξής:</p>
+<ol type="1">
+<li><span style="color:#239ABA;"><strong><em>Παραβίαση της Προτεραιότητας των Πράξεων</em></strong></span></li>
+</ol>
+<p>Το πιο συχνό λάθος είναι η εκτέλεση των πράξεων με τη σειρά που εμφανίζονται (από αριστερά προς τα δεξιά) χωρίς να λαμβάνεται υπόψη η ιεραρχία τους.</p>
+<ul>
+<li><p><strong>Λανθασμένη πρόσθεση πριν τον πολλαπλασιασμό:</strong> Πολλοί μαθητές εκτελούν πρώτα την πρόσθεση σε εκφράσεις όπως <span class="math inline">\(3+2 \cdot 4\)</span>, θεωρώντας λανθασμένα ότι το αποτέλεσμα είναι <span class="math inline">\(20\)</span> (δηλαδή <span class="math inline">\(5 \cdot 4\)</span>), ενώ το σωστό είναι <span class="math inline">\(11\)</span> (<span class="math inline">\(3+8\)</span>).</p></li>
+<li><p><strong>Παράλειψη προτεραιότητας δυνάμεων:</strong> Συχνά οι δυνάμεις υπολογίζονται μετά τους πολλαπλασιασμούς, ενώ πρέπει πάντα να προηγούνται.</p></li>
+</ul>
+<ol start="2" type="1">
+<li><span style="color:#239ABA;"><strong><em>Λανθασμένη Διαχείριση των Παρενθέσεων</em></strong></span></li>
+</ol>
+<p>Οι παρενθέσεις ορίζουν την απόλυτη προτεραιότητα, ωστόσο σημειώνονται τα εξής λάθη:</p>
+<ul>
+<li><p><strong>Αγνόηση εσωτερικών παρενθέσεων:</strong> Σε παραστάσεις με πολλές παρενθέσεις, το λάθος είναι να μην ξεκινά ο υπολογισμός από την <strong>πιο εσωτερική παρένθεση</strong>.</p></li>
+<li><p><strong>Πρόωρη απαλοιφή:</strong> Η παρένθεση πρέπει να διατηρείται μέχρι να ολοκληρωθούν όλες οι πράξεις στο εσωτερικό της και να προκύψει ένας μόνο αριθμός.</p></li>
+</ul>
+<ol start="3" type="1">
+<li><span style="color:#239ABA;"><strong><em>Σφάλματα στις Ιδιότητες (Αφαίρεση και Διαίρεση)</em></strong></span></li>
+</ol>
+<p>Ένα κλασικό λάθος είναι η εφαρμογή της <strong>αντιμεταθετικής</strong> ή της <strong>προσεταιριστικής ιδιότητας</strong> σε πράξεις που δεν τις διαθέτουν:</p>
+<ul>
+<li><p><strong>Στην Αφαίρεση:</strong> Θεωρείται λανθασμένα ότι <span class="math inline">\(\alpha - \beta = \beta - \alpha\)</span>. Επίσης, στην αφαίρεση δεν ισχύει η προσεταιριστική ιδιότητα, δηλαδή <span class="math inline">\((\alpha - \beta) - \gamma \neq \alpha - (\beta - \gamma)\)</span>.</p></li>
+<li><p><strong>Στη Διαίρεση:</strong> Η διαίρεση δεν είναι αντιμεταθετική (<span class="math inline">\(\alpha : \beta \neq \beta : \alpha\)</span>). Όταν υπάρχουν διαδοχικές διαιρέσεις, η εκτέλεση πρέπει να γίνεται αυστηρά από τα αριστερά προς τα δεξιά.</p></li>
+</ul>
+<ol start="4" type="1">
+<li><span style="color:#239ABA;"><strong><em>Λάθη στον Υπολογισμό των Δυνάμεων</em></strong></span></li>
+</ol>
+<p>Οι δυνάμεις συχνά συγχέονται με τον πολλαπλασιασμό της βάσης επί τον εκθέτη:</p>
+<ul>
+<li><p><strong>Σύγχυση</strong> <span class="math inline">\(a^\nu\)</span> με <span class="math inline">\(a \cdot \nu\)</span>: Για παράδειγμα, το <span class="math inline">\(2^5\)</span> υπολογίζεται λανθασμένα ως <span class="math inline">\(10\)</span> (<span class="math inline">\(2 \cdot 5\)</span>), ενώ η σωστή τιμή είναι <span class="math inline">\(32\)</span>.</p></li>
+<li><p><strong>Λάθη με βάση το 0 ή το 1:</strong> Υπάρχει σύγχυση στους κανόνες <span class="math inline">\(a^0 = 1\)</span> και <span class="math inline">\(a^1 = a\)</span>, καθώς και στο ότι το <span class="math inline">\(1\)</span> υψωμένο σε οποιαδήποτε δύναμη παραμένει <span class="math inline">\(1\)</span>.</p></li>
+</ul>
+<ol start="5" type="1">
+<li><span style="color:#239ABA;"><strong><em>Μηδέν και Μονάδα στις Πράξεις</em></strong></span></li>
+</ol>
+<ul>
+<li><p><strong>Ουδέτερο vs Απορροφητικό στοιχείο:</strong> Συχνά το <span class="math inline">\(0\)</span> θεωρείται ουδέτερο στον πολλαπλασιασμό (<span class="math inline">\(\alpha \cdot 0 = \alpha\)</span>), ενώ στην πραγματικότητα είναι <strong>απορροφητικό</strong> (<span class="math inline">\(\alpha \cdot 0 = 0\)</span>).</p></li>
+<li><p><strong>Διαίρεση με το μηδέν:</strong> Πολλοί θεωρούν ότι η διαίρεση <span class="math inline">\(\alpha : 0\)</span> δίνει αποτέλεσμα <span class="math inline">\(\alpha\)</span> ή <span class="math inline">\(0\)</span>, ενώ η διαίρεση με το μηδέν <strong>δεν ορίζεται</strong> στα μαθηματικά.</p></li>
+</ul>
+<p><span style="color:blue;"><strong><em>Παράδειγμα Ανάλυσης</em></strong></span></p>
+<p>Έστω η παράσταση: <span class="math inline">\(10 \cdot ( 25 - ( 3^2 + 1 ) : 2 )\)</span></p>
+<ol type="1">
+<li><strong>Εντοπισμός και λύση της πιο εσωτερικής παρένθεσης:</strong> Στην παρένθεση <span class="math inline">\(( 3^2 + 1 )\)</span>, προηγείται ο υπολογισμός της δύναμης: <span class="math inline">\(3^2 = 9\)</span> .</li>
+</ol>
+<p>Στη συνέχεια κάνουμε την πρόσθεση: <span class="math inline">\(9 + 1 = \mathbf{10}\)</span>.</p>
+<ol start="2" type="1">
+<li><strong>Υπολογισμός της εξωτερικής παρένθεσης:</strong></li>
+</ol>
+<p>Μετά την απλοποίηση της εσωτερικής παρένθεσης, η παράσταση γίνεται: <span class="math inline">\(10 \cdot ( 25 - 10 : 2 )\)</span>.</p>
+<p>Μέσα στην παρένθεση αυτή, η διαίρεση έχει προτεραιότητα έναντι της αφαίρεσης: <span class="math inline">\(10 : 2 = 5\)</span> .</p>
+<p>Ακολουθεί η αφαίρεση: <span class="math inline">\(25 - 5 = \mathbf{20}\)</span>.</p>
+<ol start="3" type="1">
+<li><strong>Τελικός υπολογισμός:</strong> Τέλος, εκτελούμε τον πολλαπλασιασμό εκτός παρενθέσεων: <span class="math inline">\(10 \cdot 20 = \mathbf{200}\)</span> .</li>
+</ol>
+<p><strong><em>…. και άλλα Παραδείγματα</em></strong></p>
+<ul>
+<li><p>Στην παράσταση <span class="math inline">\(E = (4^3 : 2^3 + 2) \cdot (17 - 3 \cdot 5) + 2^3 \cdot 2 - 2^3\)</span>, αν και οι παρενθέσεις είναι ανεξάρτητες (δεν περιέχονται η μία στην άλλη), ακολουθούμε την ίδια εσωτερική ιεραρχία: Στην πρώτη παρένθεση υπολογίζουμε πρώτα τις δυνάμεις, μετά τη διαίρεση και τέλος την πρόσθεση.</p></li>
+<li><p>Στην περίπτωση που θέλουμε να αλλάξουμε τη σειρά των πράξεων για να πάρουμε ένα συγκεκριμένο αποτέλεσμα, οι παρενθέσεις είναι απαραίτητες: Για παράδειγμα, στην έκφραση <span class="math inline">\(6 - (6 + 6) : 6 = 4\)</span>, η παρένθεση μας αναγκάζει να κάνουμε πρώτα την πρόσθεση και μετά τη διαίρεση, ενώ χωρίς αυτήν θα προηγούνταν η διαίρεση.</p></li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p><span style="color:#FF821B;">Τα συνηθέστερα λάθη που παρατηρούνται στον υπολογισμό και τη χρήση των δυνάμεων (εκθετών) στους φυσικούς αριθμούς αφορούν κυρίως τη σύγχυση με τον πολλαπλασιασμό και τη μη τήρηση της προτεραιότητας των πράξεων.</span></p>
+</blockquote>
+</blockquote>
+<p>τα πιο συχνά σφάλματα είναι τα εξής:</p>
+<ul>
+<li><p><span style="color:#BA4323;"><strong>Σύγχυση της Δύναμης με τον Πολλαπλασιασμό:</strong></span> Το πιο κλασικό λάθος είναι ο υπολογισμός της δύναμης <span class="math inline">\(a^{\nu}\)</span> ως γινόμενο της βάσης επί τον εκθέτη (<span class="math inline">\(a \cdot \nu\)</span>). Για παράδειγμα, πολλοί μαθητές υπολογίζουν λανθασμένα το <span class="math inline">\(2^5\)</span> ως <span class="math inline">\(10\)</span> (δηλαδή <span class="math inline">\(2 \cdot 5\)</span>), ενώ η σωστή τιμή είναι <span class="math inline">\(32\)</span> (<span class="math inline">\(2 \cdot 2 \cdot 2 \cdot 2 \cdot 2\)</span>).</p></li>
+<li><p><span style="color:#BA4323;"><strong>Λανθασμένη Αντιμετώπιση του Αθροίσματος ως Δύναμης (και αντίστροφα):</strong></span> Συχνά συγχέεται η συντομογραφία του αθροίσματος με εκείνη του γινομένου. Έτσι, το άθροισμα <span class="math inline">\(a+a+a\)</span> γράφεται λανθασμένα ως <span class="math inline">\(a^3\)</span> (αντί για το σωστό <span class="math inline">\(3a\)</span>), ενώ το γινόμενο <span class="math inline">\(a \cdot a \cdot a\)</span> γράφεται ως <span class="math inline">\(3a\)</span> (αντί για το σωστό <span class="math inline">\(a^3\)</span>).</p></li>
+<li><p><span style="color:#BA4323;"><strong>Λάθη στους Ειδικούς Εκθέτες (0 και 1):</strong></span></p>
+<ul>
+<li><span style="color:#BA8E23;"><strong>Εκθέτης 0:</strong></span> Υπάρχει σύγχυση στον κανόνα <span class="math inline">\(a^0 = 1\)</span> (για <span class="math inline">\(a \ne 0\)</span>). Συχνά οι μαθητές θεωρούν ότι <span class="math inline">\(a^0 = 0\)</span> ή <span class="math inline">\(a^0 = a\)</span>.</li>
+<li><span style="color:#BA8E23;"><strong>Εκθέτης 1:</strong></span> Ο κανόνας <span class="math inline">\(a^1 = a\)</span> συχνά παραβλέπεται, με αποτέλεσμα να μην αναγνωρίζεται ότι ένας αριθμός χωρίς εκθέτη έχει στην πραγματικότητα εκθέτη τη μονάδα.</li>
+<li><span style="color:#BA8E23;"><strong>Βάση 1:</strong></span> Πολλοί θεωρούν λανθασμένα ότι το <span class="math inline">\(1^{\nu}\)</span> αλλάζει ανάλογα με τον εκθέτη, ενώ στην πραγματικότητα <strong>το</strong> <span class="math inline">\(1\)</span> υψωμένο σε οποιαδήποτε δύναμη ισούται πάντα με <span class="math inline">\(1\)</span>.</li>
+</ul></li>
+<li><p><span style="color:#BA4323;"><strong>Παραβίαση της Προτεραιότητας των Πράξεων:</strong></span> Σε σύνθετες παραστάσεις, ένα συνηθισμένο λάθος είναι η εκτέλεση του πολλαπλασιασμού πριν από τη δύναμη. Για παράδειγμα, στην παράσταση <span class="math inline">\(3 \cdot 5^2\)</span>, το λάθος είναι να γίνει πρώτα ο πολλαπλασιασμός (<span class="math inline">\(15^2 = 225\)</span>), ενώ το σωστό είναι να υπολογιστεί πρώτα η δύναμη (<span class="math inline">\(3 \cdot 25 = 75\)</span>).</p></li>
+<li><p><span style="color:#BA4323;"><strong>Δύναμη Αθροίσματος:</strong></span> Συχνά θεωρείται λανθασμένα ότι η δύναμη ενός αθροίσματος ισούται με το άθροισμα των δυνάμεων, δηλαδή <span class="math inline">\((a+\beta)^2 = a^2 + \beta^2\)</span>. Οι πηγές επισημαίνουν ότι για φυσικούς αριθμούς ισχύει <span class="math inline">\((a+\beta)^2 &gt; a^2 + \beta^2\)</span>. Για παράδειγμα, <span class="math inline">\((6+5)^2 = 11^2 = 121\)</span>, ενώ <span class="math inline">\(6^2+5^2 = 36+25 = 61\)</span>.</p></li>
+<li><p><span style="color:#BA4323;"><strong>Λάθη στις Δυνάμεις του 10:</strong></span> Στον υπολογισμό δυνάμεων όπως το <span class="math inline">\(10^{\nu}\)</span>, συχνά οι μαθητές μπερδεύουν το πλήθος των μηδενικών. Ο σωστός κανόνας είναι ότι το αποτέλεσμα αποτελείται από τη <strong>μονάδα ακολουθούμενη από τόσα μηδενικά όσα δηλώνει ο εκθέτης</strong> <span class="math inline">\(\nu\)</span>.</p></li>
+</ul>
+</section>
+<section id="ασκήσεων-..-συνέχεια" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεων-..-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων ….. συνέχεια</h3>
+<ol type="1">
+<li><p><span class="math inline">\(2^4 = 16\)</span>: Η βάση <span class="math inline">\(2\)</span> πολλαπλασιάζεται με τον εαυτό της <span class="math inline">\(4\)</span> φορές.</p></li>
+<li><p><span class="math inline">\(10^5 = 100.000\)</span>: Η δύναμη του <span class="math inline">\(10\)</span> ισούται με τη μονάδα ακολουθούμενη από <span class="math inline">\(5\)</span> μηδενικά.</p></li>
+<li><p><span class="math inline">\(7^1 = 7\)</span>: Οποιοσδήποτε αριθμός υψωμένος στην πρώτη δύναμη ισούται με τον εαυτό του.</p></li>
+<li><p>Υπολογίστε την παράσταση: <span class="math inline">\(3^2 + 3^3 + 2^3 + 2^4\)</span>.</p></li>
+</ol>
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(9 + 27 + 8 + 16 = 60\)</span>.</li>
+</ul>
+<ol start="5" type="1">
+<li>Υπολογίστε την τιμή: <span class="math inline">\((13 - 2)^2 + 5 \cdot 3^2\)</span>.</li>
+</ol>
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(11^2 + 5 \cdot 9 = 121 + 45 = 166\)</span>.</li>
+</ul>
+<ol start="6" type="1">
+<li>Υπολογίστε την τιμή: <span class="math inline">\(2 \cdot (24 - 3 \cdot 7)^3 - 1^{2024}\)</span>.</li>
+</ol>
+<ul>
+<li><strong>Λύση:</strong> <span class="math inline">\(2 \cdot (24 - 21)^3 - 1 = 2 \cdot 3^3 - 1 = 2 \cdot 27 - 1 = 54 - 1 = 53\)</span>.</li>
+</ul>
+<ol start="7" type="1">
+<li><p>Υπολογίστε την τιμή της παράστασης: <span class="math inline">\(4^3 - 5 \cdot (3^3 - 2^3 \cdot 3) + 24 : 8\)</span>.</p></li>
+<li><p>Υπολογίστε την παράσταση: <span class="math inline">\(3 \cdot (5^2 - 2^2 \cdot 3) : (5 \cdot 2 + 3) - (10^5 - 10^4)^0\)</span>.</p></li>
+<li><p>Υπολογίστε την τιμή της παράστασης: <span class="math inline">\(3^2 - 2^3 + 4^2 - 3 \cdot (10 - 3 \cdot 3) + 5^2\)</span>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

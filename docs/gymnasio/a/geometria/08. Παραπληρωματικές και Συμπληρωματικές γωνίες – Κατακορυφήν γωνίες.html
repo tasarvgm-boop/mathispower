@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-aggeometria quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">23 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#παραπληρωματικές-και-συμπληρωματικές-γωνίες-κατακορυφήν-γωνίες" id="toc-παραπληρωματικές-και-συμπληρωματικές-γωνίες-κατακορυφήν-γωνίες" class="nav-link active" data-scroll-target="#παραπληρωματικές-και-συμπληρωματικές-γωνίες-κατακορυφήν-γωνίες"><span class="header-section-number">1</span> Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</a>
+  <ul>
+  <li><a href="#συμπληρωματικές-και-παραπληρωματικές-γωνίες-ορισμοί" id="toc-συμπληρωματικές-και-παραπληρωματικές-γωνίες-ορισμοί" class="nav-link" data-scroll-target="#συμπληρωματικές-και-παραπληρωματικές-γωνίες-ορισμοί"><span class="header-section-number">1.1</span> <strong>Συμπληρωματικές και Παραπληρωματικές Γωνίες (Ορισμοί)</strong></a></li>
+  <li><a href="#εφεξής-παραπληρωματικές-και-αντικείμενες-ημιευθείες" id="toc-εφεξής-παραπληρωματικές-και-αντικείμενες-ημιευθείες" class="nav-link" data-scroll-target="#εφεξής-παραπληρωματικές-και-αντικείμενες-ημιευθείες"><span class="header-section-number">1.2</span> <strong>Εφεξής Παραπληρωματικές και Αντικείμενες Ημιευθείες</strong></a></li>
+  <li><a href="#εφεξής-συμπληρωματικές-και-κάθετες-ημιευθείες" id="toc-εφεξής-συμπληρωματικές-και-κάθετες-ημιευθείες" class="nav-link" data-scroll-target="#εφεξής-συμπληρωματικές-και-κάθετες-ημιευθείες"><span class="header-section-number">1.3</span> <strong>Εφεξής Συμπληρωματικές και Κάθετες Ημιευθείες</strong></a></li>
+  <li><a href="#υπολογισμός-και-σχεδίαση-συμπληρώματος-και-παραπληρώματος" id="toc-υπολογισμός-και-σχεδίαση-συμπληρώματος-και-παραπληρώματος" class="nav-link" data-scroll-target="#υπολογισμός-και-σχεδίαση-συμπληρώματος-και-παραπληρώματος"><span class="header-section-number">1.4</span> <strong>Υπολογισμός και Σχεδίαση Συμπληρώματος και Παραπληρώματος</strong></a></li>
+  <li><a href="#κατακορυφήν-γωνίες" id="toc-κατακορυφήν-γωνίες" class="nav-link" data-scroll-target="#κατακορυφήν-γωνίες"><span class="header-section-number">1.5</span> <strong>Κατακορυφήν Γωνίες</strong></a></li>
+  <li><a href="#ασκήσεις-και-εφαρμογές" id="toc-ασκήσεις-και-εφαρμογές" class="nav-link" data-scroll-target="#ασκήσεις-και-εφαρμογές"><span class="header-section-number">1.6</span> <strong>Ασκήσεις και Εφαρμογές</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="παραπληρωματικές-και-συμπληρωματικές-γωνίες-κατακορυφήν-γωνίες" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="παραπληρωματικές-και-συμπληρωματικές-γωνίες-κατακορυφήν-γωνίες"><span class="header-section-number">1</span> Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</h2>
+<section id="συμπληρωματικές-και-παραπληρωματικές-γωνίες-ορισμοί" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="συμπληρωματικές-και-παραπληρωματικές-γωνίες-ορισμοί"><span class="header-section-number">1.1</span> <strong>Συμπληρωματικές και Παραπληρωματικές Γωνίες (Ορισμοί)</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><strong>Συμπληρωματικές γωνίες:</strong> Δύο γωνίες ονομάζονται συμπληρωματικές όταν το άθροισμά τους είναι μία <strong>ορθή γωνία</strong> (90° ή 100 gr). Κάθε μία ονομάζεται συμπλήρωμα της άλλης.</li>
+</ul>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Αλλάξτε την θέση του σημείου Δ</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/ydcv766a?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<ul>
+<li><strong>Παραπληρωματικές γωνίες:</strong> Δύο γωνίες ονομάζονται παραπληρωματικές όταν το άθροισμά τους είναι μία <strong>ευθεία ή πεπλατυσμένη γωνία</strong> (180° ή 200 gr). Κάθε μία ονομάζεται παραπλήρωμα της άλλης.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/q2bkswtv?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<ul>
+<li><p><strong>Διχοτόμοι:</strong> Οι διχοτόμοι δύο εφεξής και παραπληρωματικών γωνιών είναι <strong>κάθετες</strong> μεταξύ τους, σχηματίζοντας γωνία <span class="math inline">\(90^\circ\)</span>.</p></li>
+<li><p>Επίσης, οι διχοτόμοι δύο οποιωνδήποτε εφεξής γωνιών σχηματίζουν γωνία ίση με το <strong>ημιάθροισμα</strong> των γωνιών αυτών. ( κάντε το σαν εργασία)</p></li>
+<li><p><strong>Ιδιότητα:</strong> Τα συμπληρώματα της ίδιας ή ίσων γωνιών είναι γωνίες ίσες. Ομοίως, τα παραπληρώματα της ίδιας ή ίσων γωνιών είναι γωνίες ίσες.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Οι γωνίες 30° και 60° είναι συμπληρωματικές (30° + 60° = 90°).</li>
+<li>Οι γωνίες 60° και 120° είναι παραπληρωματικές (60° + 120° = 180°).</li>
+<li>Σε ένα ορθογώνιο τρίγωνο, οι δύο οξείες γωνίες είναι πάντα συμπληρωματικές.</li>
+<li>Το παραπλήρωμα μιας ορθής γωνίας είναι μια ορθή γωνία.</li>
+<li>Δύο γωνίες 45° είναι συμπληρωματικές και ίσες.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Βρείτε νοερά το συμπλήρωμα των γωνιών: 15°, 45°, 75°.</li>
+<li>Βρείτε νοερά το παραπλήρωμα των γωνιών: 30°, 120°, 150°.</li>
+<li>Αν μια γωνία είναι 36°, υπολογίστε τη συμπληρωματική της.</li>
+<li>Αν μια γωνία είναι 36°, υπολογίστε την παραπληρωματική της.</li>
+<li>Υπάρχει αμβλεία γωνία που να έχει συμπλήρωμα; Γιατί;.</li>
+<li>Δύο γωνίες είναι παραπληρωματικές και ίσες. Τι είδους γωνίες είναι;.</li>
+<li>Βρείτε το συμπλήρωμα της γωνίας 52,84 gr.</li>
+<li>Βρείτε το παραπλήρωμα της γωνίας 114° 35’ 23’’.</li>
+<li>Αν το άθροισμα δύο γωνιών είναι 150°, είναι παραπληρωματικές;.</li>
+<li>Μία γωνία είναι το 1/3 της συμπληρωματικής της. Πόσες μοίρες είναι;.</li>
+</ol>
+<hr>
+</section>
+<section id="εφεξής-παραπληρωματικές-και-αντικείμενες-ημιευθείες" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="εφεξής-παραπληρωματικές-και-αντικείμενες-ημιευθείες"><span class="header-section-number">1.2</span> <strong>Εφεξής Παραπληρωματικές και Αντικείμενες Ημιευθείες</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ιδιότητα:</strong> Αν δύο εφεξής γωνίες έχουν τις μη κοινές πλευρές τους <strong>αντικείμενες (αντίθετες) ημιευθείες</strong>, τότε το άθροισμά τους είναι μια ευθεία γωνία (180°), άρα οι γωνίες είναι <strong>παραπληρωματικές</strong>.</p></li>
+<li><p><strong>Αντίστροφο:</strong> Αν δύο εφεξής γωνίες είναι παραπληρωματικές, τότε οι μη κοινές πλευρές τους είναι αντικείμενες ημιευθείες (βρίσκονται πάνω στον ίδιο φορέα).</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Μια ευθεία <span class="math inline">\(xy\)</span> και μια ημιευθεία <span class="math inline">\(Oz\)</span> ορίζουν δύο εφεξής παραπληρωματικές γωνίες.</li>
+<li>Αν οι δείκτες του ρολογιού δείχνουν 6:00, σχηματίζουν απλωτή γωνία που μπορεί να χωριστεί σε δύο παραπληρωματικές.</li>
+<li>Σχεδίαση δύο εφεξής γωνιών 105° και 75° οι οποίες σχηματίζουν ευθεία.</li>
+<li>Δύο ορθές γωνίες τοποθετημένες εφεξής έχουν τις μη κοινές πλευρές τους στην ίδια ευθεία.</li>
+<li>Η διχοτόμος μιας ευθείας γωνίας δημιουργεί δύο εφεξής παραπληρωματικές γωνίες (ορθές).</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε μια ευθεία <span class="math inline">\(xy\)</span> και από ένα σημείο <span class="math inline">\(O\)</span> φέρτε ημιευθεία <span class="math inline">\(Oz\)</span>. Ονομάστε τις παραπληρωματικές γωνίες.</li>
+<li>Δύο εφεξής γωνίες είναι 125° και 55°. Εξετάστε αν οι μη κοινές πλευρές τους είναι αντικείμενες ημιευθείες.</li>
+<li>Σχεδιάστε τις διχοτόμους δύο εφεξής παραπληρωματικών γωνιών και μετρήστε τη γωνία που σχηματίζουν.</li>
+<li>Αν δύο εφεξής γωνίες έχουν μέτρα 1,35 ορθής και 58° 30’, ποια είναι η θέση των μη κοινών πλευρών τους;.</li>
+<li>Δείξτε με σχήμα ότι οι διχοτόμοι δύο εφεξής παραπληρωματικών γωνιών είναι κάθετοι μεταξύ τους.</li>
+<li>Πάρτε τρεις διαδοχικές γωνίες που οι ακραίες πλευρές τους είναι αντίθετες. Αν οι δύο πρώτες είναι 28° και 72°, βρείτε την τρίτη.</li>
+<li>Σε μια ευθεία <span class="math inline">\(xy\)</span> σχεδιάστε στο ίδιο ημιεπίπεδο 4 διαδοχικές γωνίες. Ποιο είναι το άθροισμά τους;.</li>
+<li>Αν δύο εφεξής γωνίες είναι παραπληρωματικές, μπορεί και οι δύο να είναι οξείες;.</li>
+<li>Σχεδιάστε μια αμβλεία γωνία και το παραπλήρωμά της ως εφεξής.</li>
+<li>Επαληθεύστε με δίπλωση χαρτιού ότι η διχοτόμος μιας ευθείας γωνίας την χωρίζει σε δύο ορθές.</li>
+</ol>
+<hr>
+</section>
+<section id="εφεξής-συμπληρωματικές-και-κάθετες-ημιευθείες" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="εφεξής-συμπληρωματικές-και-κάθετες-ημιευθείες"><span class="header-section-number">1.3</span> <strong>Εφεξής Συμπληρωματικές και Κάθετες Ημιευθείες</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ιδιότητα:</strong> Αν δύο εφεξής γωνίες έχουν τις μη κοινές πλευρές τους <strong>κάθετες ημιευθείες</strong>, τότε το άθροισμά τους είναι μία ορθή γωνία (90°), άρα οι γωνίες είναι <strong>συμπληρωματικές</strong>.</p></li>
+<li><p><strong>Αντίστροφο:</strong> Αν δύο εφεξής γωνίες είναι συμπληρωματικές, τότε οι μη κοινές πλευρές τους είναι κάθετες ημιευθείες.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Μια ορθή γωνία <span class="math inline">\(xOy\)</span> και μια ημιευθεία <span class="math inline">\(Oz\)</span> στο εσωτερικό της ορίζουν δύο συμπληρωματικές γωνίες.</li>
+<li>Οι γωνίες 28° και 62° τοποθετημένες εφεξής σχηματίζουν ορθή γωνία.</li>
+<li>Στις 3:00 οι δείκτες του ρολογιού είναι κάθετοι· αν φέρουμε μια ημιευθεία ανάμεσά τους, έχουμε συμπληρωματικές γωνίες.</li>
+<li>Οι πλευρές ενός τετραγώνου είναι κάθετες και ορίζουν συμπληρωματικές γωνίες αν χωριστούν από τη διαγώνιο.</li>
+<li>Δύο γωνίες 45° εφεξής σχηματίζουν ορθή γωνία.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε δύο κάθετες ημιευθείες <span class="math inline">\(Ox\)</span> και <span class="math inline">\(Oy\)</span> και μια ημιευθεία <span class="math inline">\(Oz\)</span> στο εσωτερικό τους. Πώς λέγονται οι γωνίες <span class="math inline">\(xOz\)</span> και <span class="math inline">\(zOy\)</span>;.</li>
+<li>Χρησιμοποιώντας γνώμονα, σχεδιάστε τη συμπληρωματική γωνία μιας οξείας γωνίας.</li>
+<li>Αν δύο εφεξής γωνίες είναι 25° και 65°, τι σχέση έχουν οι μη κοινές πλευρές τους;.</li>
+<li>Σχεδιάστε μια ορθή γωνία και χωρίστε την σε τρία ίσα μέρη με το διαβήτη. Πόσες μοίρες είναι κάθε μέρος;.</li>
+<li>Δύο εφεξής γωνίες έχουν μέτρα 54° και 40 gr. Είναι οι μη κοινές πλευρές τους κάθετες;.</li>
+<li>Αν μια γωνία είναι 0,375 της ορθής, υπολογίστε το συμπλήρωμά της.</li>
+<li>Σχεδιάστε δύο εφεξής γωνίες που είναι συμπληρωματικές. Τι γωνία σχηματίζουν οι διχοτόμοι τους;.</li>
+<li>Μπορούν δύο αμβλείες γωνίες να είναι συμπληρωματικές;.</li>
+<li>Σχεδιάστε μια οξεία γωνία και το συμπλήρωμά της ως μη εφεξής.</li>
+<li>Αν το άθροισμα δύο εφεξής γωνιών είναι 90°, δείξτε με τον γνώμονα ότι οι εξωτερικές πλευρές είναι κάθετες.</li>
+</ol>
+<hr>
+</section>
+<section id="υπολογισμός-και-σχεδίαση-συμπληρώματος-και-παραπληρώματος" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="υπολογισμός-και-σχεδίαση-συμπληρώματος-και-παραπληρώματος"><span class="header-section-number">1.4</span> <strong>Υπολογισμός και Σχεδίαση Συμπληρώματος και Παραπληρώματος</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Υπολογισμός:</strong> Για να βρούμε το συμπλήρωμα μιας γωνίας <span class="math inline">\(\omega\)</span>, αφαιρούμε το μέτρο της από τις 90° (<span class="math inline">\(90^\circ - \omega\)</span>). Για το παραπλήρωμα, αφαιρούμε από τις 180° (<span class="math inline">\(180^\circ - \omega\)</span>).</p></li>
+<li><p><strong>Σχεδίαση:</strong> Γίνεται με τη χρήση <strong>μοιρογνωμονίου</strong> για τον προσδιορισμό των μοιρών ή με <strong>γνώμονα</strong> και <strong>χάρακα</strong> για τη δημιουργία ορθών και ευθείων γωνιών.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Συμπλήρωμα της 36°: <span class="math inline">\(90^\circ - 36^\circ = 54^\circ\)</span>.</li>
+<li>Παραπλήρωμα της 36°: <span class="math inline">\(180^\circ - 36^\circ = 144^\circ\)</span>.</li>
+<li>Σχεδίαση παραπληρωματικής γωνίας προεκτείνοντας την πλευρά μιας οξείας γωνίας.</li>
+<li>Σχεδίαση συμπληρωματικής γωνίας φέρνοντας κάθετη στην πλευρά μιας οξείας γωνίας.</li>
+<li>Υπολογισμός παραπληρώματος αθροίσματος: Αν <span class="math inline">\(A=23^\circ 45'\)</span> και <span class="math inline">\(B=94^\circ 28'\)</span>, το παραπλήρωμα του <span class="math inline">\(A+B\)</span> είναι <span class="math inline">\(180^\circ - 118^\circ 13' = 61^\circ 47'\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Υπολογίστε το συμπλήρωμα της γωνίας 47° 52’ 43’’.</li>
+<li>Υπολογίστε το παραπλήρωμα της γωνίας 153° 28’ 47’’.</li>
+<li>Μία γωνία είναι 0,6 της ορθής. Υπολογίστε σε μοίρες το συμπλήρωμα και το παραπλήρωμά της.</li>
+<li>Σχεδιάστε μια γωνία 75° και κατασκευάστε το παραπλήρωμά της με χάρακα.</li>
+<li>Σχεδιάστε μια γωνία 40° και κατασκευάστε το συμπλήρωμά της με γνώμονα.</li>
+<li>Βρείτε το παραπλήρωμα του συμπληρώματος μιας γωνίας 30°.</li>
+<li>Ποιο είναι το παραπλήρωμα του διπλάσιου μιας γωνίας 0,3 της ορθής;.</li>
+<li>Μετρήστε μια τυχαία γωνία στο τετράδιό σας και υπολογίστε τα <span class="math inline">\(2/3\)</span> του παραπληρώματός της.</li>
+<li>Σχεδιάστε δύο γωνίες 125° και 85° και βρείτε το παραπλήρωμα της διαφοράς τους.</li>
+<li>Υπολογίστε το συμπλήρωμα της γωνίας 93,213 gr.</li>
+</ol>
+<hr>
+</section>
+<section id="κατακορυφήν-γωνίες" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="κατακορυφήν-γωνίες"><span class="header-section-number">1.5</span> <strong>Κατακορυφήν Γωνίες</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Δύο γωνίες λέγονται κατακορυφήν (ή αντικόρυφες) όταν έχουν την <strong>ίδια κορυφή</strong> και οι πλευρές της μιας είναι <strong>αντίθετες ημιευθείες</strong> των πλευρών της άλλης.</p></li>
+<li><p><strong>Ιδιότητα:</strong> Οι κατακορυφήν γωνίες είναι <strong>ίσες</strong>.</p>
+<ul>
+<li><strong>Αιτιολόγηση:</strong> Οι δύο κατακορυφήν γωνίες είναι ίσες επειδή είναι και οι δύο <strong>παραπληρωματικές της ίδιας γωνίας</strong> (δηλαδή, μαζί με την ίδια μεσολαβούσα γωνία σχηματίζουν άθροισμα 180°).</li>
+</ul></li>
+<li><p><strong>Σχεδίαση:</strong> Δύο τεμνόμενες ευθείες σχηματίζουν τέσσερις γωνίες, οι οποίες ανά δύο απέναντι είναι κατακορυφήν.</p></li>
+</ul>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Αλλάξτε την τιμή των γωνιών στο παρακάτω σχήμα, αλλάζοντας την θέση των σημείων Α και Β</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/ekqcjgte?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<ul>
+<li><strong>Διχοτόμοι:</strong> Η προέκταση της διχοτόμου μιας γωνίας είναι η διχοτόμος της κατακορυφήν της.</li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Δύο διασταυρούμενες ευθείες σχηματίζουν δύο ζεύγη ίσων κατακορυφήν γωνιών.</li>
+<li>Οι διαγώνιοι ενός παραλληλογράμμου σχηματίζουν κατακορυφήν γωνίες στο σημείο τομής τους.</li>
+<li>Η συμμετρική μιας γωνίας ως προς την κορυφή της είναι η κατακορυφήν της γωνία.</li>
+<li>Οι διχοτόμοι δύο κατακορυφήν γωνιών είναι αντίθετες ημιευθείες.</li>
+<li>Οι διχοτόμοι των τεσσάρων γωνιών που σχηματίζουν δύο τεμνόμενες ευθείες αποτελούν δύο κάθετες ευθείες.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Χαράξτε δύο ευθείες που τέμνονται στο <span class="math inline">\(O\)</span> και ονομάστε τα ζεύγη των κατακορυφήν γωνιών.</li>
+<li>Αν μία από τις γωνίες δύο τεμνόμενων ευθειών είναι 52°, βρείτε τα μέτρα των άλλων τριών.</li>
+<li>Σχεδιάστε μια γωνία <span class="math inline">\(xOy\)</span> και κατασκευάστε την κατακορυφήν της χρησιμοποιώντας μόνο χάρακα.</li>
+<li>Αποδείξτε με μέτρηση ότι οι κατακορυφήν γωνίες είναι ίσες.</li>
+<li>Σχεδιάστε δύο κάθετες ευθείες. Τι παρατηρείτε για τις τέσσερις κατακορυφήν γωνίες;.</li>
+<li>Αν δύο κατακορυφήν γωνίες έχουν άθροισμα 140°, πόσες μοίρες είναι καθεμία;.</li>
+<li>Σχεδιάστε τις διχοτόμους δύο κατακορυφήν γωνιών. Τι είδους γωνία σχηματίζουν;.</li>
+<li>Βρείτε τις γωνίες που σχηματίζουν δύο παράλληλες ευθείες που τέμνονται από μια τρίτη και εντοπίστε τις κατακορυφήν.</li>
+<li>Αν μία γωνία είναι 73° 52’ 20’’, βρείτε την κατακορυφήν της.</li>
+<li>Σχεδιάστε μια γωνία <span class="math inline">\(xOy\)</span> και το συμμετρικό της ως προς το <span class="math inline">\(O\)</span>. Είναι η νέα γωνία κατακορυφήν της αρχικής;.</li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεις-και-εφαρμογές" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις-και-εφαρμογές"><span class="header-section-number">1.6</span> <strong>Ασκήσεις και Εφαρμογές</strong></h3>
+<p><strong>Άσκηση 1 (Υπολογισμός σε Τομή Ευθειών):</strong> Δύο ευθείες <span class="math inline">\(x'x\)</span> και <span class="math inline">\(y'y\)</span> τέμνονται στο σημείο Ο. Αν η μία από τις τέσσερις γωνίες που σχηματίζονται είναι <span class="math inline">\(33^\circ\)</span>, να βρείτε τις υπόλοιπες τρεις γωνίες.</p>
+<ul>
+<li><strong>Λύση:</strong></li>
+</ul>
+<ol type="1">
+<li><p>Η γωνία που είναι <strong>κατακορυφήν</strong> με την <span class="math inline">\(33^\circ\)</span> θα είναι επίσης <span class="math inline">\(33^\circ\)</span> (λόγω ισότητας).</p></li>
+<li><p>Η γωνία που είναι <strong>εφεξής και παραπληρωματική</strong> με την <span class="math inline">\(33^\circ\)</span> θα είναι <span class="math inline">\(180^\circ - 33^\circ = \mathbf{147^\circ}\)</span>.</p></li>
+<li><p>Η τέταρτη γωνία, ως κατακορυφήν της παραπάνω, θα είναι επίσης <span class="math inline">\(147^\circ\)</span>.</p></li>
+</ol>
+<p><strong>Άσκηση 2 (Συμπλήρωση Κενών):</strong></p>
+<ol type="1">
+<li><p>Δύο γωνίες λέγονται κατακορυφήν αν έχουν την κορυφή τους <strong>……………</strong> και τις πλευρές τους <strong>……………</strong>.</p></li>
+<li><p>Οι κατακορυφήν γωνίες είναι <strong>……………</strong>.</p></li>
+</ol>
+<ul>
+<li><em>(Λύσεις: 1. κοινή, αντικείμενες ημιευθείες, 2. ίσες)</em>.</li>
+</ul>
+<p><strong>Άσκηση 3 (Σωστό/Λάθος):</strong></p>
+<ol type="1">
+<li><p>Οι κατακορυφήν γωνίες έχουν άθροισμα πάντα <span class="math inline">\(180^\circ\)</span>. (<strong>Λάθος</strong>, είναι ίσες, αλλά το άθροισμά τους εξαρτάται από το μέτρο τους).</p></li>
+<li><p>Οι διχοτόμοι δύο κατακορυφήν γωνιών είναι αντικείμενες ημιευθείες. (<strong>Σωστό</strong>).</p></li>
+<li><p>Δύο εφεξής γωνίες μπορεί να είναι και κατακορυφήν. (<strong>Λάθος</strong>).</p></li>
+<li><p>Η προέκταση της διχοτόμου μιας γωνίας διχοτομεί την κατακορυφήν της. (<strong>Σωστό</strong>).</p></li>
+</ol>
+<p><strong>Άσκηση 4 (Σύνθετη Εφαρμογή):</strong> Έστω δύο ευθείες που τέμνονται και σχηματίζουν μια γωνία <span class="math inline">\(\alpha\)</span> και μια γωνία <span class="math inline">\(\beta\)</span>.</p>
+<p>Αν οι γωνίες <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span> είναι κατακορυφήν και το άθροισμά τους είναι <span class="math inline">\(110^\circ\)</span>, πόσες μοίρες είναι η καθεμία και πόσες μοίρες είναι οι άλλες δύο γωνίες της τομής;</p>
+<ul>
+<li><strong>Λύση:</strong> Εφόσον είναι κατακορυφήν, ισχύει <span class="math inline">\(\alpha = \beta\)</span>. Άρα <span class="math inline">\(2\alpha = 110^\circ \Rightarrow \alpha = \beta = \mathbf{55^\circ}\)</span>. Οι άλλες δύο γωνίες είναι παραπληρωματικές της <span class="math inline">\(\alpha\)</span>, άρα <span class="math inline">\(180^\circ - 55^\circ = \mathbf{125^\circ}\)</span> η καθεμία.</li>
+</ul>
+<p><strong>Άσκηση 5 (Κατασκευή):</strong> Σχεδιάστε μια οξεία γωνία <span class="math inline">\(37^\circ\)</span>. Στη συνέχεια, σχεδιάστε την κατακορυφήν της χρησιμοποιώντας μόνο τον χάρακα (προεκτείνοντας τις πλευρές της) και επιβεβαιώστε με το μοιρογνωμόνιο ότι είναι επίσης <span class="math inline">\(37^\circ\)</span>.</p>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

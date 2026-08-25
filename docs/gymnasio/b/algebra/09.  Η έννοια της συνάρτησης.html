@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>09. Η έννοια της συνάρτησης – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-lemon quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">09. Η έννοια της συνάρτησης</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">09. Η έννοια της συνάρτησης</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">16 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-έννοια-της-συνάρτησης" id="toc-η-έννοια-της-συνάρτησης" class="nav-link active" data-scroll-target="#η-έννοια-της-συνάρτησης"><span class="header-section-number">1</span> Η έννοια της συνάρτησης</a>
+  <ul>
+  <li><a href="#η-έννοια-της-συνάρτησης-1" id="toc-η-έννοια-της-συνάρτησης-1" class="nav-link" data-scroll-target="#η-έννοια-της-συνάρτησης-1"><span class="header-section-number">1.1</span> <strong>Η έννοια της συνάρτησης</strong></a></li>
+  <li><a href="#πίνακας-τιμών-συνάρτησης" id="toc-πίνακας-τιμών-συνάρτησης" class="nav-link" data-scroll-target="#πίνακας-τιμών-συνάρτησης"><span class="header-section-number">1.2</span> <strong>Πίνακας Τιμών συνάρτησης</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-έννοια-της-συνάρτησης" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-έννοια-της-συνάρτησης"><span class="header-section-number">1</span> Η έννοια της συνάρτησης</h2>
+<section id="η-έννοια-της-συνάρτησης-1" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-έννοια-της-συνάρτησης-1"><span class="header-section-number">1.1</span> <strong>Η έννοια της συνάρτησης</strong></h3>
+<div style="background-color: #e0d6b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Μια απεικόνιση <span class="math inline">\(f: A \to B\)</span> ονομάζεται <strong>συνάρτηση</strong>, όταν κάθε στοιχείο <span class="math inline">\(x\)</span> του συνόλου <span class="math inline">\(A\)</span> (αρχέτυπο) αντιστοιχίζεται σε <strong>ένα και μόνο ένα</strong> στοιχείο <span class="math inline">\(y\)</span> του συνόλου <span class="math inline">\(B\)</span> (εικόνα).</p></li>
+<li><p><strong>Πεδίο Ορισμού:</strong> Το σύνολο <span class="math inline">\(A\)</span> ονομάζεται σύνολο αφετηρίας ή πεδίο ορισμού της συνάρτησης.</p></li>
+<li><p><strong>Πεδίο Τιμών:</strong> Το σύνολο των εικόνων όλων των στοιχείων του <span class="math inline">\(A\)</span> ονομάζεται πεδίο τιμών και συμβολίζεται με <span class="math inline">\(f(A)\)</span>.</p></li>
+<li><p><strong>Μεταβλητές:</strong> Το γράμμα <span class="math inline">\(x\)</span>, που παριστάνει ένα οποιοδήποτε στοιχείο του πεδίου ορισμού, λέγεται <strong>ανεξάρτητη μεταβλητή</strong>, ενώ το <span class="math inline">\(y\)</span> (ή <span class="math inline">\(f(x)\)</span>) λέγεται <strong>εξαρτημένη μεταβλητή</strong> ή συνάρτηση του <span class="math inline">\(x\)</span>.</p></li>
+<li><p><strong>Τύπος:</strong> Η μαθηματική έκφραση (π.χ. <span class="math inline">\(f(x) = 3x + 1\)</span>) που δείχνει πώς υπολογίζεται η εικόνα κάθε αρχετύπου ονομάζεται τύπος της συνάρτησης.</p></li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<ol type="1">
+<li><strong>Πλήρης Ορισμός:</strong> Μια συνάρτηση είναι πλήρως ορισμένη όταν γνωρίζουμε το πεδίο ορισμού της, το σύνολο τιμών της και τον τύπο της.</li>
+<li><strong>Μονοσήμαντη Αντιστοιχία:</strong> Σε κάθε <span class="math inline">\(x\)</span> αντιστοιχεί αυστηρά μία τιμή <span class="math inline">\(y\)</span>. Αν ένα <span class="math inline">\(x\)</span> έχει δύο εικόνες, τότε η σχέση δεν είναι συνάρτηση.</li>
+</ol>
+</div>
+<p><strong>Τρόποι Αναπαράστασης</strong> Μια συνάρτηση μπορεί να δοθεί με:</p>
+<ol type="1">
+<li><p><strong>Λεκτική περιγραφή</strong> ή κανόνα. Παράδειγμα: “κάθε στοιχείο του συνόλου Α αντιστοιχίζεται με το τετράγωνό του μειωμένο κατά 2”</p></li>
+<li><p><strong>Βελοειδές διάγραμμα</strong>.</p></li>
+</ol>
+<p><br>
+<img src="images/clipboard-2600485715.png" class="img-fluid" width="541"></p>
+<ol start="3" type="1">
+<li><strong>Πίνακα τιμών</strong>, που δείχνει τα ζεύγη των μεταβλητών <span class="math inline">\(x\)</span> και <span class="math inline">\(y=f(x)\)</span>.</li>
+</ol>
+<p><br>
+<img src="images/clipboard-1052212007.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li><p><strong>Μαθηματικό τύπο</strong> (π.χ. <span class="math inline">\(y = x^2 -2\)</span>).</p></li>
+<li><p><strong>Γραφική παράσταση</strong>. παραπάνω εικόνα στο 3.</p></li>
+</ol>
+<p><br>
+</p>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(f(x) = 3x\)</span>: Η τιμή <span class="math inline">\(y\)</span> είναι τριπλάσια της μεταβλητής <span class="math inline">\(x\)</span>.</li>
+<li><span class="math inline">\(f(x) = x^2\)</span>: Η συνάρτηση που αντιστοιχίζει κάθε αριθμό στο τετράγωνό του.</li>
+<li><span class="math inline">\(y = 5x\)</span>: Η αξία υφάσματος σε σχέση με το μήκος <span class="math inline">\(x\)</span> .</li>
+<li><span class="math inline">\(y = ax + \beta\)</span>: Η γενική μορφή της γραμμικής συνάρτησης.</li>
+<li><span class="math inline">\(s = v \cdot t\)</span>: Το διανυόμενο διάστημα ως συνάρτηση του χρόνου στην ομαλή κίνηση.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li><p>Προσδιορίστε το πεδίο ορισμού και το σύνολο τιμών στη συνάρτηση <span class="math inline">\(f: N \to Q\)</span> με <span class="math inline">\(f(x) = 3x - 4\)</span>.</p></li>
+<li><p>Εξετάστε αν η σχέση «………..είναι μητέρα του……….» σε ένα σύνολο ανθρώπων είναι συνάρτηση.</p></li>
+<li><p>Αν <span class="math inline">\(f(x) = 3x^2 - 1\)</span>, υπολογίστε την τιμή <span class="math inline">\(f(2)\)</span>.</p></li>
+<li><p>Βρείτε την εικόνα του 8 για τη συνάρτηση <span class="math inline">\(y = 2x + 1\)</span>.</p></li>
+<li><p>Στη συνάρτηση <span class="math inline">\(y = 5 - x\)</span>, ποια είναι η ανεξάρτητη μεταβλητή;.</p></li>
+<li><p>Βρείτε το <span class="math inline">\(x\)</span> για το οποίο <span class="math inline">\(f(x) = 18\)</span> στη συνάρτηση <span class="math inline">\(y = 2x\)</span>.</p></li>
+<li><p>Υπολογίστε το <span class="math inline">\(f(1,3)\)</span> για τη συνάρτηση <span class="math inline">\(f(x) = 2x + 3\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(f(x) = x + 5\)</span> και <span class="math inline">\(f(a) = 87\)</span>, βρείτε την τιμή του <span class="math inline">\(a\)</span>.</p></li>
+<li><p>Ελέγξτε αν ένα βελοειδές διάγραμμα (Venn) παριστάνει συνάρτηση βάσει του αριθμού των βελών που ξεκινούν από κάθε στοιχείο.</p></li>
+<li><p>Ένας φούρναρης έχει υπολογίσει ότι από 10 κιλά αλεύρι φτιάχνει 13 κιλά φωμί. Πόσα κιλά ψωμί θα κάνει με 210 κιλά αλεύρι; Να εκφράσετε την ποσότητα του ψωμιού που φτιάχνεται ως συνάρτησης της ποσότητας του αλευριού που χρησημοποιείται.</p></li>
+<li><p><strong>(Αντιστοιχίες)</strong></p></li>
+</ol>
+<p>Ποια από τα παρακάτω βελοειδή διαγράμματα παριστάνουν συνάρτηση;</p>
+<p>α) <img src="images/clipboard-3156905360.png" class="img-fluid" width="298"></p>
+<p>β) <img src="images/clipboard-2542681569.png" class="img-fluid" width="300"></p>
+<ol start="12" type="1">
+<li><p>Να βρείτε την συνάρτηση που εκφράζει τον νέο μισθό ενός υπαλλήλου όταν αυτός α. Πάρει αύξηση 32 € β. Πάρει αύξηση 14%.</p></li>
+<li><p>Αν ένα κατάστημα παιχνιδιών κάνει έκπτωση 15% στα προιόντα του.</p></li>
+</ol>
+<p>Να εκφράσετε τις τιμές y με έκπτωση, ως συνάρτηση των τιμών x χωρίς έκπτωση.</p>
+<ol start="14" type="1">
+<li>Ένας υπάλληλος παίρνει μισθό 830 € το μήνα και ποσοστό 5% επί του ποσού των πωλήσεων που πραγματοποιεί. Να βρείτε την συνάρτηση που εκφράζει το συνολικό ποσό y, που παίρνει το μήνα, ως συνάρτηση του ποσού x των πωλήσεων.</li>
+</ol>
+<hr>
+</section>
+<section id="πίνακας-τιμών-συνάρτησης" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="πίνακας-τιμών-συνάρτησης"><span class="header-section-number">1.2</span> <strong>Πίνακας Τιμών συνάρτησης</strong></h3>
+<div style="background-color: #e0d6b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> <strong>Πίνακας Τιμών</strong> είναι η παραστατική απεικόνιση της αντιστοιχίας μεταξύ των αρχετύπων και των εικόνων μιας συνάρτησης.</p></li>
+<li><p><strong>Δομή:</strong> Συνήθως αποτελείται από δύο σειρές (ή στήλες). Στην πρώτη σειρά αναγράφονται επιλεγμένες τιμές της ανεξάρτητης μεταβλητής <span class="math inline">\(x\)</span> και στη δεύτερη οι αντίστοιχες τιμές της συνάρτησης <span class="math inline">\(f(x)\)</span> ή <span class="math inline">\(y\)</span>.</p></li>
+<li><p><strong>Σκοπός:</strong> Χρησιμοποιείται για την καλύτερη κατανόηση της μεταβολής της συνάρτησης και ως απαραίτητο στάδιο για τη δημιουργία της γραφικής της παράστασης.</p></li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<ol type="1">
+<li><strong>Διατεταγμένα Ζεύγη:</strong> Κάθε στήλη του πίνακα αντιστοιχεί σε ένα διατεταγμένο ζεύγος <span class="math inline">\((x, y)\)</span>, το οποίο αποτελεί σημείο (κόμβο) στο επίπεδο των αξόνων.</li>
+<li><strong>Υπολογιστική Βάση:</strong> Ο πίνακας προκύπτει με τη διαδοχική αντικατάσταση τιμών του <span class="math inline">\(x\)</span> στον τύπο της συνάρτησης και την εκτέλεση των πράξεων.</li>
+<li><strong>Γραφική Σύνδεση:</strong> Αν ενώσουμε τα σημεία που προκύπτουν από τον πίνακα τιμών, σχηματίζεται η γραφική παράσταση (ευθεία ή καμπύλη).</li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><strong>Για την</strong> <span class="math inline">\(y = 3x\)</span>: Ο πίνακας τιμών για <span class="math inline">\(x = 1, 2, 3, 4\)</span> είναι:</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+y &amp; 3 &amp; 6 &amp; 9 &amp; 12 \\
+\hline
+\end{array}\]</span>
+<ol start="2" type="1">
+<li><strong>Για την</strong> <span class="math inline">\(y = 20x + 30\)</span>: Για <span class="math inline">\(x = 0, 1, 2, 3\)</span>, οι τιμές <span class="math inline">\(y\)</span> είναι <span class="math inline">\(30, 50, 70, 90\)</span>.</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+y &amp; 30 &amp; 50 &amp; 70 &amp; 90 \\
+\hline
+\end{array}\]</span>
+<ol start="3" type="1">
+<li><strong>Για την</strong> <span class="math inline">\(y = 2x + 1\)</span>: Για <span class="math inline">\(x = 0, 1, 2, 3\)</span>, οι τιμές <span class="math inline">\(y\)</span> είναι <span class="math inline">\(1, 3, 5, 7\)</span>.</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+\hline
+y &amp; 1 &amp; 3 &amp; 5 &amp; 7 \\
+\hline
+\end{array}\]</span>
+<ol start="4" type="1">
+<li><strong>Για την</strong> <span class="math inline">\(y = 50x\)</span>: Ο Πίνακας τιμών είναι:</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; 1 &amp; 1,2 &amp; 3,5 &amp; 4,8 \\
+\hline
+y &amp; 50 &amp; 60 &amp; 175 &amp; 240 \\
+\hline
+\end{array}\]</span>
+<ol start="5" type="1">
+<li><strong>Για την</strong> <span class="math inline">\(y = 12/x\)</span>: Ο Πίνακας για <span class="math inline">\(x = 1, 2, 3, 4\)</span> έχουμε <span class="math inline">\(y = 12, 6, 4, 3\)</span>.</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+y &amp; 12 &amp; 6 &amp; 4 &amp; 3 \\
+\hline
+\end{array}\]</span>
+<hr>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Συντάξτε πίνακα τιμών για τη συνάρτηση <span class="math inline">\(f(x) = 3x + 4\)</span> με <span class="math inline">\(x \in \{-2, -1, 0, 1\}\)</span>.</li>
+<li>Δημιουργήστε πίνακα τιμών για την <span class="math inline">\(y = 3x - 2\)</span> για τις πρώτες πέντε φυσικές τιμές του <span class="math inline">\(x\)</span>.</li>
+<li>Κατασκευάστε πίνακα τιμών για την <span class="math inline">\(f(x) = x^2 - x + 1\)</span> με <span class="math inline">\(x \in \{-1, 0, 1, 2\}\)</span>.</li>
+<li>Συμπληρώστε τα κενά σε πίνακα τιμών για την <span class="math inline">\(y = 4x\)</span> .</li>
+</ol>
+<span class="math display">\[\begin{array}{| c | c | c | c | c |}
+\hline
+x &amp; -2 &amp; -1 &amp; 1 &amp; 2 \\
+\hline
+y &amp;  &amp;  &amp;  &amp;  \\
+\hline
+\end{array}\]</span>
+<ol start="5" type="1">
+<li>Σχηματίστε πίνακα τιμών για τη σχέση <span class="math inline">\(xy = 240\)</span> .</li>
+<li>Φτιάξτε πίνακα τιμών για την <span class="math inline">\(y = x^2\)</span> για <span class="math inline">\(x\)</span> από 0 έως 5.</li>
+<li>Δημιουργήστε πίνακα για την <span class="math inline">\(y = 5/x\)</span> με <span class="math inline">\(x \in \{-2, -1, 1, 2, 5, 10\}\)</span>.</li>
+<li>Υπολογίστε τις τιμές και φτιάξτε πίνακα για την <span class="math inline">\(y = 2x^2 + 1\)</span> για <span class="math inline">\(x = -2, -1, 0, 1, 2\)</span>.</li>
+<li>Συντάξτε πίνακα για την <span class="math inline">\(y = 3x - 4\)</span> με <span class="math inline">\(x \in \{-3, -2, -1, 0, 1, 2, 3\}\)</span>.</li>
+<li>Από τον πίνακα τιμών της <span class="math inline">\(y = 2x + 1\)</span>, βρείτε ποια τιμή <span class="math inline">\(y\)</span> αντιστοιχεί στο <span class="math inline">\(x = 3\)</span>.</li>
+<li><strong>(Συμπλήρωση πίνακα)</strong></li>
+</ol>
+<p>Δίνεται η συνάρτηση ( f(x) = 2x + 1 ).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>-2</th>
+<th>-1</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(y = f(x))</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Να συμπληρώσεις τον πίνακα.</p>
+<ol start="12" type="1">
+<li><strong>(Αντίστροφη διαδικασία - Εύρεση τύπου)</strong></li>
+</ol>
+<p>Μια ευθεία γραμμή διέρχεται από τα σημεία ( A(0, 2) ) και ( B(2, 8) ).</p>
+<p>α) Να βρεις τον τύπο της συνάρτησης <span class="math inline">\(y = \alpha x + \beta\)</span>.</p>
+<p>β) Να βρεις την τιμή της συνάρτησης στο ( x = 5 ).</p>
+<p>γ) Να βρεις το ( x ) όταν ( y = 20 ).</p>
+<ol start="13" type="1">
+<li><strong>(Ταξί)</strong></li>
+</ol>
+<p>Σε μια εταιρεία ταξί, η χρέωση δίνεται από τον τύπο:</p>
+<p><span class="math inline">\(K=0,80+0,60\cdot x\)</span>, οπου x είναι τα χιλιόμετρα που διανύει.</p>
+<p>α) Να γράψεις τον τύπο ως συνάρτηση ( K(x) ), όπου ( x ) τα χιλιόμετρα.</p>
+<p>β) Πόσο κοστίζει μια διαδρομή 5 χιλιομέτρων;</p>
+<p>γ) Αν κάποιος πλήρωσε 4,40€, πόσα χιλιόμετρα έκανε;</p>
+<ol start="14" type="1">
+<li><strong>(Δεξαμενή νερού)</strong></li>
+</ol>
+<p>Μια δεξαμενή έχει 500 λίτρα νερό. Ανοίγουμε μια βρύση που αδειάζει 20 λίτρα το λεπτό.</p>
+<p>α) Να εκφράσεις τα λίτρα νερού ( V(t) ) που μένουν στη δεξαμενή ως συνάρτηση του χρόνου ( t ) (σε λεπτά).</p>
+<p>γ) Μετά από 15 λεπτά, πόσα λίτρα έχουν μείνει;</p>
+<p>δ) Σε πόσα λεπτά αδειάζει τελείως η δεξαμενή;</p>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

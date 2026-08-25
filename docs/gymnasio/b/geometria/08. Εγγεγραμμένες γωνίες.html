@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>08. Εγγεγραμμένες γωνίες – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">08. Εγγεγραμμένες γωνίες</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">08. Εγγεγραμμένες γωνίες</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εγγεγραμμένη-γωνία" id="toc-εγγεγραμμένη-γωνία" class="nav-link active" data-scroll-target="#εγγεγραμμένη-γωνία"><span class="header-section-number">1</span> Εγγεγραμμένη γωνία</a>
+  <ul>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.1</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εγγεγραμμένη-γωνία" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εγγεγραμμένη-γωνία"><span class="header-section-number">1</span> Εγγεγραμμένη γωνία</h2>
+<div style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;">
+<p>Μια <strong>εγγεγραμμένη γωνία</strong> είναι η γωνία της οποίας η κορυφή βρίσκεται πάνω σε έναν κύκλο και οι πλευρές της τέμνουν τον κύκλο αυτό. Το τμήμα του κύκλου που βρίσκεται ανάμεσα στις πλευρές της ονομάζεται <strong>αντίστοιχο τόξο της</strong>.</p>
+<p>Μια <strong>επίκεντρη γωνία</strong> είναι η γωνία που έχει την κορυφή της στο κέντρο ενός κύκλου και οι πλευρές της είναι ακτίνες του κύκλου αυτού.</p>
+<ul>
+<li><strong>Πλήρης κύκλος:</strong> Ένας ολόκληρος κύκλος αντιστοιχεί σε μια επίκεντρη γωνία <span class="math inline">\(360^\circ\)</span>.</li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/h3rr57tg?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μετακινώντας το σημείο Ρ (ακτίνα του κύκλου), αλλάζετε μέγεθος στον κύκλο. Τι παρατηρείτε ; Τι συμβαίνει με το μέγεθος της γωνίας και του αντίστοιχου τόξου;.</p>
+<p>Μετακινήστε το σημείο Β ή το σημείο Γ για να αλλάξετε την γωνία. Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη της γωνίας και του τόξου;</p>
+</div>
+</div>
+<p><strong>Συμπεράσματα - Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Σχέση με την επίκεντρη:</strong> Κάθε εγγεγραμμένη γωνία ισούται με το μισό της επίκεντρης γωνίας που έχει το ίδιο αντίστοιχο τόξο.</p></li>
+<li><p><strong>Μέτρο τόξου:</strong> Το μέτρο της εγγεγραμμένης γωνίας είναι ίσο με το μισό του μέτρου του αντίστοιχου τόξου της.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Μετακινήστε το σημείο Α για να αλλάξετε την κορυφή της γωνία; πάνω στον κύκλο.</p>
+<p>Κάθε νέα θέση αντιστοιχεί σε μιά νέα εγγεγραμμένη γωνία.</p>
+<p>Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη των γωνιών και του τόξου;</p>
+</div>
+</div>
+<ul>
+<li><strong>Γωνίες στο ίδιο τόξο:</strong> Όλες οι εγγεγραμμένες γωνίες που βαίνουν στο ίδιο τόξο (ή σε ίσα τόξα) είναι ίσες μεταξύ τους.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>ενέργεια
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Κάντε την επίκεντρη γωνία <span class="math inline">\(180^ο\)</span> μετακινώντας το σημείο Β ή Γ. Επιλέξτε το σημείο και πατήστε <kbd>Shift</kbd> + <kbd>Βελάκια</kbd>.</p>
+<p>Τι παρατηρείτε; Τι συμβαίνει με τα μεγέθη των γωνιών και του τόξου;</p>
+</div>
+</div>
+<ul>
+<li><strong>Γωνία σε ημικύκλιο:</strong> Κάθε εγγεγραμμένη γωνία που βαίνει σε ημικύκλιο είναι πάντα ορθή (90°).</li>
+</ul>
+</div>
+<section id="ασκήσεις" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.1</span> Ασκήσεις</h3>
+<p><strong>Βασικές Ασκήσεις (Κατανόηση)</strong></p>
+<ol type="1">
+<li><strong>Υπολογισμός Τόξου:</strong> Σε έναν κύκλο <span class="math inline">\((O, \rho)\)</span>, μια επίκεντρη γωνία <span class="math inline">\(\widehat{AOB}\)</span> είναι <span class="math inline">\(70^\circ\)</span>. Πόσες μοίρες είναι το αντίστοιχο (μικρό) τόξο <span class="math inline">\(\overparen{AB}\)</span>;</li>
+<li><strong>Σχέση Γωνιών</strong>: Μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{AB}\)</span>, το οποίο είναι <span class="math inline">\(120^\circ\)</span>. Να βρείτε το μέτρο της γωνίας <span class="math inline">\(\widehat{A\Gamma B}\)</span>.</li>
+<li><strong>Από Εγγεγραμμένη σε Επίκεντρη</strong>: Αν μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{M}\)</span> είναι <span class="math inline">\(45^\circ\)</span>, πόσο είναι το μέτρο της αντίστοιχης επίκεντρης γωνίας που βαίνει στο ίδιο τόξο;</li>
+<li><strong>Ημικύκλιο</strong>: Δίνεται ένας κύκλος με διάμετρο <span class="math inline">\(AB\)</span>. Αν πάρουμε ένα τυχαίο σημείο <span class="math inline">\(\Gamma\)</span> πάνω στον κύκλο, πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span>;</li>
+<li><strong>Σχέση Εγγεγραμμένης και Επίκεντρης:</strong> Αν μια επίκεντρη γωνία σε έναν κύκλο είναι <span class="math inline">\(80^\circ\)</span>, πόσες μοίρες είναι η εγγεγραμμένη γωνία που βαίνει στο ίδιο τόξο;</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Κάθε εγγεγραμμένη γωνία ισούται με το μισό της επίκεντρης που έχει το ίδιο αντίστοιχο τόξο.</p>
+<ol start="6" type="1">
+<li><strong>Υπολογισμός Γωνιών Τριγώνου:</strong> Σε έναν κύκλο θεωρούμε τρία σημεία <span class="math inline">\(Α, Β, Γ\)</span> έτσι ώστε το τόξο <span class="math inline">\(AB = 120^\circ\)</span> και το τόξο <span class="math inline">\(BΓ = 100^\circ\)</span>. Υπολογίστε τις γωνίες του τριγώνου <span class="math inline">\(ABΓ\)</span>.</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Η εγγεγραμμένη γωνία έχει μέτρο ίσο με το μισό του μέτρου του αντίστοιχου τόξου της (π.χ. <span class="math inline">\(\hat{A} = \dfrac{\overparen{BΓ}}{2}\)</span>).</p>
+<p><strong>Ασκήσεις Εφαρμογής (Συνδυαστικές)</strong></p>
+<ol type="1">
+<li><strong>Τρίγωνο και Κύκλος</strong>: Σε έναν κύκλο, μια χορδή <span class="math inline">\(AB\)</span> είναι ίση με την ακτίνα του κύκλου <span class="math inline">\(\rho\)</span>.</li>
+</ol>
+<ul>
+<li>α) Υπολογίστε την επίκεντρη γωνία <span class="math inline">\(\widehat{AOB}\)</span>.</li>
+<li>β) Υπολογίστε μια εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A\Gamma B}\)</span> που βαίνει στο τόξο <span class="math inline">\(\overparen{AB}\)</span>.</li>
+</ul>
+<ol start="2" type="1">
+<li><p><strong>Άθροισμα Τόξων:</strong> Ένας κύκλος χωρίζεται από τρία σημεία <span class="math inline">\(A, B, \Gamma\)</span> σε τρία τόξα <span class="math inline">\(\overparen{AB}, \overparen{B\Gamma}, \overparen{\Gamma A}\)</span> που έχουν αναλογία <span class="math inline">\(2:3:4\)</span>. Να βρείτε τις μοίρες κάθε τόξου και τις γωνίες του τριγώνου <span class="math inline">\(AB\Gamma\)</span>.</p></li>
+<li><p><strong>Ορθογώνιο Τρίγωνο</strong>: Σε κύκλο <span class="math inline">\((O, \rho)\)</span>, το τόξο <span class="math inline">\(\overparen{AB}\)</span> είναι <span class="math inline">\(80^\circ\)</span>. Αν η χορδή <span class="math inline">\(A\Gamma\)</span> είναι διάμετρος, βρείτε όλες τις γωνίες του τριγώνου <span class="math inline">\(AB\Gamma\)</span>.</p></li>
+<li><p><strong>Παράλληλες Χορδές</strong>: Σε έναν κύκλο φέρνουμε δύο παράλληλες χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span>. Αν το τόξο <span class="math inline">\(\overparen{A\Gamma}\)</span> είναι <span class="math inline">\(50^\circ\)</span>, αποδείξτε ότι το τόξο <span class="math inline">\(\overparen{B\Delta}\)</span> είναι επίσης <span class="math inline">\(50^\circ\)</span> και υπολογίστε την εγγεγραμμένη γωνία που βαίνει στο τόξο <span class="math inline">\(\overparen{B\Delta}\)</span>.<br>
+<strong>tip</strong>: Σχεδιάστε την τέμνουσα ΒΓ. (Εντός εναλλάξ γωνίες ………………)</p></li>
+<li><p><strong>Εύρεση Τόξου από Γωνία:</strong> Αν μια εγγεγραμμένη γωνία <span class="math inline">\(\phi\)</span> είναι <span class="math inline">\(25^\circ\)</span>, πόσο είναι το μέτρο του αντίστοιχου τόξου στο οποίο βαίνει;</p></li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Το τόξο είναι διπλάσιο της αντίστοιχης εγγεγραμμένης γωνίας.</p>
+<ol start="6" type="1">
+<li><strong>Άλγεβρα και Τόξα:</strong> Σε κύκλο με διάμετρο <span class="math inline">\(BΔ\)</span>, τα διαδοχικά τόξα <span class="math inline">\(BΓ\)</span> και <span class="math inline">\(ΓΔ\)</span> εκφράζονται ως <span class="math inline">\(5x + 10^\circ\)</span> και <span class="math inline">\(x + 50^\circ\)</span> αντίστοιχα. Βρείτε την τιμή του <span class="math inline">\(x\)</span>.</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Εφόσον η <span class="math inline">\(BΔ\)</span> είναι διάμετρος, το άθροισμα των τόξων <span class="math inline">\(BΓ + ΓΔ\)</span> ισούται με ένα ημικύκλιο (<span class="math inline">\(180^\circ\)</span>).</p>
+<ol start="7" type="1">
+<li><strong>Γωνίες στο ίδιο Τόξο:</strong> Αν δύο εγγεγραμμένες γωνίες <span class="math inline">\(\hat{\alpha}\)</span> και <span class="math inline">\(\hat{\beta}\)</span> βαίνουν στο ίδιο τόξο <span class="math inline">\(BΓ\)</span>, ποια είναι η σχέση μεταξύ τους;</li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Οι εγγεγραμμένες γωνίες ενός κύκλου που βαίνουν στο ίδιο τόξο είναι μεταξύ τους ίσες.</p>
+<p><strong>Προχωρημένες Ασκήσεις (Σύνθετες)</strong></p>
+<ol type="1">
+<li><p><strong>Τετράπλευρο σε Κύκλο</strong>: Σε έναν κύκλο είναι εγγεγραμμένο τετράπλευρο <span class="math inline">\(AB\Gamma \Delta\)</span>. Αν η γωνία <span class="math inline">\(\widehat{A}\)</span> είναι <span class="math inline">\(85^\circ\)</span>, πόσες μοίρες είναι η απέναντι γωνία <span class="math inline">\(\widehat{\Gamma}\)</span>;<br>
+<br>
+(<strong>Υπόδειξη</strong>: Σκεφτείτε τα τόξα στα οποία βαίνουν, τι άθροισμα έχουν;).</p></li>
+<li><p><strong>Σύνθετο Σχήμα:</strong> Δίνεται κύκλος <span class="math inline">\((O, \rho)\)</span> και μια επίκεντρη γωνία <span class="math inline">\(\widehat{AOB} = 100^\circ\)</span>. Προεκτείνουμε την ακτίνα <span class="math inline">\(AO\)</span> προς το μέρος του <span class="math inline">\(O\)</span> μέχρι να τμήσει τον κύκλο στο σημείο <span class="math inline">\(\Gamma\)</span>. Υπολογίστε τη γωνία <span class="math inline">\(\widehat{B\Gamma A}\)</span> και το τόξο <span class="math inline">\(\overparen{B\Gamma}\)</span>.</p></li>
+<li><p><strong>Δείκτες Ρολογιού:</strong> Πόσες μοίρες τόξο διαγράφει η άκρη του ωροδείκτη ενός ρολογιού σε <span class="math inline">\(3\)</span> ώρες;</p></li>
+</ol>
+<p><strong>Σκεπτικό:</strong> Οι <span class="math inline">\(12\)</span> ώρες αντιστοιχούν σε πλήρη κύκλο <span class="math inline">\(360^\circ\)</span>, οπότε οι <span class="math inline">\(3\)</span> ώρες αντιστοιχούν στο <span class="math inline">\(1/4\)</span> του κύκλου (<span class="math inline">\(90^\circ\)</span>).</p>
+<ol start="4" type="1">
+<li><strong>Τρίγωνο με Αναλογία Τόξων:</strong> Σε ημικύκλιο διαμέτρου <span class="math inline">\(AB = 6\text{ cm}\)</span>, δίνεται σημείο <span class="math inline">\(Γ\)</span> τέτοιο ώστε το τόξο <span class="math inline">\(AΓ\)</span> να είναι διπλάσιο από το τόξο <span class="math inline">\(BΓ\)</span>. Υπολογίστε τις γωνίες του τριγώνου <span class="math inline">\(ABΓ\)</span>. <strong>Σκεπτικό:</strong> Το άθροισμα των τόξων <span class="math inline">\(AΓ + BΓ\)</span> είναι <span class="math inline">\(180^\circ\)</span>. Με την αναλογία <span class="math inline">\(2:1\)</span>, βρίσκουμε τα τόξα και στη συνέχεια τις εγγεγραμμένες γωνίες.</li>
+</ol>
+<p><strong>Πιο σύνθετες ασκήσεις</strong></p>
+<ol type="1">
+<li><p><strong>Παράλληλες Χορδές</strong> Σε έναν κύκλο, οι χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> είναι παράλληλες. Αν το τόξο <span class="math inline">\(A\Gamma\)</span> είναι <span class="math inline">\(40^{\circ}\)</span> και το τόξο <span class="math inline">\(AB\)</span> είναι <span class="math inline">\(100^{\circ}\)</span>, υπολόγισε:</p>
+<ol type="1">
+<li><p>Το μέτρο του τόξου <span class="math inline">\(B\Delta\)</span>.</p></li>
+<li><p>Το μέτρο του τόξου <span class="math inline">\(\Gamma \Delta\)</span> (αν γνωρίζεις ότι τα τόξα <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> δεν τέμνονται).</p></li>
+</ol></li>
+<li><p><strong>Το Εγγεγραμμένο Τετράπλευρο</strong> Ένα τετράπλευρο <span class="math inline">\(ABΓΔ\)</span> είναι εγγεγραμμένο σε κύκλο. Αν η γωνία <span class="math inline">\(\hat{A}\)</span> είναι <span class="math inline">\(2x + 10^{\circ}\)</span> και η απέναντι γωνία <span class="math inline">\(\hat{Γ}\)</span> είναι <span class="math inline">\(x + 20^{\circ}\)</span>:</p>
+<ul>
+<li>Βρες την τιμή του <span class="math inline">\(x\)</span></li>
+<li>Υπολόγισε τις γωνίες <span class="math inline">\(\hat{A}\)</span> και <span class="math inline">\(\hat{Γ}\)</span>.</li>
+</ul></li>
+</ol>
+<p>(Σκέψου: άν η γωνια Α ήταν <span class="math inline">\(50^ο\)</span>, πόσο θα είναι το αντίστοιχο της τόξο ΒΓ; Πόσο θα είναι το μεγάλο συμπληρωματικό τόξο ΒΓ; άρα πόση θα είναι η γωνία <span class="math inline">\(\hatΓ\)</span>; Προσθεσέτε τες. Πόσο κάνει; <span class="math inline">\(180^{\circ}\)</span>).</p>
+<p>Συνέχισε με την άσκηση.</p>
+<ol start="3" type="1">
+<li><strong>Γωνία Χορδής και Εφαπτομένης</strong> Σε ένα σημείο <span class="math inline">\(A\)</span> ενός κύκλου φέρνουμε την εφαπτομένη <span class="math inline">\((\epsilon)\)</span>. Από το <span class="math inline">\(A\)</span> φέρνουμε μια χορδή <span class="math inline">\(AB\)</span> που σχηματίζει με την εφαπτομένη γωνία <span class="math inline">\(65^{\circ}\)</span>.
+<ul>
+<li>Πόσες μοίρες είναι το τόξο <span class="math inline">\(AB\)</span>;</li>
+<li>Αν <span class="math inline">\(M\)</span> είναι ένα σημείο στο μεγάλο τόξο <span class="math inline">\(AB\)</span>, πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(A\hat{M}B\)</span>;<br>
+<br>
+<img src="images/clipboard-905338036.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<p>(Σκέψου: Η εφαπτομένη είναι κάθετη στην ακτίνα. Άρα πόσο θα είναι η γωνία <span class="math inline">\(\widehat{ΟΑΒ}\)</span>. Προέκτεινε την ακτίνα ΟΑ μέχρι να τμήσει τον κύκλο στο σημείο Γ. Τι γωνία είναι η <span class="math inline">\(\widehat{ΑΒΓ}\)</span>; Επομένως πόση είναι η γωνία <span class="math inline">\(\hatΓ\)</span>). Συνέκρινέ την με τν γωνία <span class="math inline">\(A\hat{M}B\)</span></p>
+<ol start="4" type="1">
+<li><p><strong>Διάμετρος και Διχοτόμος</strong> Έστω κύκλος με διάμετρο <span class="math inline">\(AB\)</span>. Παίρνουμε ένα σημείο <span class="math inline">\(\Gamma\)</span> στον κύκλο τέτοιο ώστε το τόξο <span class="math inline">\(B\Gamma\)</span> να είναι <span class="math inline">\(60^{\circ}\)</span>. Φέρνουμε τη διχοτόμο της εγγεγραμμένης γωνίας <span class="math inline">\(B\hat{A}\Gamma\)</span>, η οποία τέμνει τον κύκλο στο σημείο <span class="math inline">\(\Delta\)</span>.</p>
+<ul>
+<li><p>Υπολόγισε τη γωνία <span class="math inline">\(B\hat{A}\Gamma\)</span>.</p></li>
+<li><p>Υπολόγισε το τόξο <span class="math inline">\(\Gamma \Delta\)</span>.<br>
+<img src="images/clipboard-2009115220.png" class="img-fluid"></p></li>
+</ul></li>
+<li><p><strong>Τεμνόμενες Χορδές</strong> (Εσωτερική Γωνία) Δύο χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma \Delta\)</span> τέμνονται σε ένα σημείο <span class="math inline">\(E\)</span> <strong>μέσα</strong> στον κύκλο. Αν το τόξο <span class="math inline">\(A\Gamma = 50^{\circ}\)</span> και το τόξο <span class="math inline">\(B\Delta = 70^{\circ}\)</span>, υπολόγισε τη γωνία <span class="math inline">\(A\hat{E}\Gamma\)</span>.<br>
+<em>Σκέψου ότι: η γωνία</em> <span class="math inline">\(\hat{ΑΒΓ}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΑΓ}\)</span>, άρα ……………….. Η γωνία <span class="math inline">\(\widehat{ΒΑΔ}\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΒΔ}\)</span>, άρα ………………………. Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΑΕΒ}\)</span> μπορείς τώρα να υπολογίσεις την γωνία <span class="math inline">\(A\hat{E}\Gamma\)</span> (εξωτερική γωνία)<br>
+<br>
+<img src="images/clipboard-784730655.png" class="img-fluid"></p></li>
+<li><p><strong>Εξωτερική Γωνία</strong> Από ένα σημείο <span class="math inline">\(P\)</span> <strong>έξω</strong> από τον κύκλο φέρνουμε δύο τέμνουσες που ορίζουν στον κύκλο δύο τόξα: το μεγάλο τόξο <span class="math inline">\(110^{\circ}\)</span> και το μικρό τόξο <span class="math inline">\(30^{\circ}\)</span>. Πόσες μοίρες είναι η γωνία <span class="math inline">\(\hat{P}\)</span> που σχηματίζεται;<br>
+<br>
+<img src="images/clipboard-104752854.png" class="img-fluid"><br>
+<em>Σκέψου: Η</em> <span class="math inline">\(B\hat{A}Δ\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΒΔ}\)</span></p>
+<p>Η γωνία <span class="math inline">\(Α\hat{Δ}Γ\)</span> βαίνει στο τόξο <span class="math inline">\(\overparen{ΑΓ}\)</span></p>
+<p>Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΑΔΡ}\)</span> η γωνία <span class="math inline">\(Δ\hat{Α}Ρ\)</span> ……………….. . Η γωνία <span class="math inline">\(A\hat{Δ}Γ\)</span> ισούτε ……………….</p>
+<p>Συνεχίστε …………………..</p></li>
+<li><p><strong>Ισοσκελές Τρίγωνο και Κέντρο</strong> Σε κύκλο κέντρου <span class="math inline">\(O\)</span>, το τρίγωνο <span class="math inline">\(OAB\)</span> είναι ισόπλευρο.</p>
+<ul>
+<li><p>Πόσες μοίρες είναι η επίκεντρη γωνία <span class="math inline">\(A\hat{O}B\)</span>;</p></li>
+<li><p>Αν <span class="math inline">\(M\)</span> είναι ένα σημείο στην περιφέρεια του κύκλου (εκτός του τόξου <span class="math inline">\(AB\)</span>), πόσες μοίρες είναι η γωνία <span class="math inline">\(A\hat{M}B\)</span>;</p></li>
+</ul></li>
+<li><p><strong>Συνδυασμός Γεωμετρίας</strong> Σε έναν κύκλο με διάμετρο <span class="math inline">\(AB\)</span>, παίρνουμε σημείο <span class="math inline">\(\Gamma\)</span> ώστε η γωνία <span class="math inline">\(A\hat{B}\Gamma = 40^{\circ}\)</span>.</p>
+<ul>
+<li><p>Υπολόγισε τη γωνία <span class="math inline">\(B\hat{A}\Gamma\)</span>.</p></li>
+<li><p>Φέρνουμε την εφαπτομένη στο σημείο <span class="math inline">\(B\)</span>. Αν η προέκταση της χορδής <span class="math inline">\(A\Gamma\)</span> τέμνει την εφαπτομένη στο σημείο <span class="math inline">\(\Delta\)</span>, υπολόγισε τη γωνία <span class="math inline">\(B\hat{\Delta}\Gamma\)</span>.</p></li>
+</ul></li>
+</ol>
+<p>*Σκέψου: Η εφαπτομένη είναι κάθετη στην ακτίνα ΟΒ, άρα η γωνία <span class="math inline">\(Γ\hat{Β}Δ\)</span> είναι ίση …………..<br>
+Η γωνία <span class="math inline">\(Α\hat{Γ}Β\)</span> βαίνει ………………… άρα……………</p>
+<ol start="9" type="1">
+<li><strong>Το “Αστέρι” στον Κύκλο</strong> Έχουμε έναν κύκλο και χωρίζουμε την περιφέρειά του σε 5 ίσα τόξα με τα σημεία <span class="math inline">\(A, B, \Gamma, \Delta, E\)</span>.
+<ul>
+<li>Πόσες μοίρες είναι το κάθε τόξο;</li>
+<li>Πόσες μοίρες είναι η εγγεγραμμένη γωνία <span class="math inline">\(A\hat{\Gamma}B\)</span>;</li>
+<li>Αν ενώσουμε τα σημεία <span class="math inline">\(A \rightarrow \Gamma \rightarrow E \rightarrow B \rightarrow \Delta \rightarrow A\)</span>, πόσες μοίρες είναι η γωνία στην “κορυφή” <span class="math inline">\(A\)</span> του αστεριού που σχηματίστηκε;<br>
+<br>
+<img src="images/clipboard-3821609175.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Να τηρείτε τον παρακάτω κανόνα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Σε αυτά τα προβλήματα, δοκιμάστε πρώτα να κάνετε ένα πρόχειρο σχήμα και ακολουθείστε τους κανόνες.</p>
+</div>
+</div>
+<p><span class="math inline">\(\overparen{AB}\)</span></p>
+<p><span class="math inline">\(\overrightarrow{AB}\)</span></p>
+<div style="background-color: #E7CEF0; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

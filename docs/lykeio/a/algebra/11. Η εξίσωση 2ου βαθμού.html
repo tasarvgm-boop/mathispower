@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>11. Η εξίσωση 2^{ου} βαθμού – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">9 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-εξίσωση-2ου-βαθμού" id="toc-η-εξίσωση-2ου-βαθμού" class="nav-link active" data-scroll-target="#η-εξίσωση-2ου-βαθμού"><span class="header-section-number">1</span> Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</a>
+  <ul>
+  <li><a href="#η-εξίσωση-alpha-x2-beta-x-gamma-0-alpha-neq-0" id="toc-η-εξίσωση-alpha-x2-beta-x-gamma-0-alpha-neq-0" class="nav-link" data-scroll-target="#η-εξίσωση-alpha-x2-beta-x-gamma-0-alpha-neq-0"><span class="header-section-number">1.1</span> <strong>Η Εξίσωση</strong> <span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0, \alpha \neq 0\)</span></a>
+  <ul>
+  <li><a href="#θεωρία-και-ορισμοί" id="toc-θεωρία-και-ορισμοί" class="nav-link" data-scroll-target="#θεωρία-και-ορισμοί"><span class="header-section-number">1.1.1</span> <strong>1. Θεωρία και Ορισμοί</strong></a></li>
+  </ul></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.1.2</span> <strong>Παραδείγματα</strong></a></li>
+  <li><a href="#διτετράγωνη" id="toc-διτετράγωνη" class="nav-link" data-scroll-target="#διτετράγωνη"><span class="header-section-number">1.2</span> Διτετράγωνη</a>
+  <ul>
+  <li><a href="#παράδειγμα" id="toc-παράδειγμα" class="nav-link" data-scroll-target="#παράδειγμα"><span class="header-section-number">1.2.1</span> Παράδειγμα</a></li>
+  </ul></li>
+  <li><a href="#τύποι-του-vieta" id="toc-τύποι-του-vieta" class="nav-link" data-scroll-target="#τύποι-του-vieta"><span class="header-section-number">1.3</span> τύποι του Vieta</a></li>
+  <li><a href="#με-απόλυτες-τιμές" id="toc-με-απόλυτες-τιμές" class="nav-link" data-scroll-target="#με-απόλυτες-τιμές"><span class="header-section-number">1.4</span> Με απόλυτες τιμές</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.5</span> Ασκήσεις</a></li>
+  <li><a href="#ιστορικό-σημείωμα" id="toc-ιστορικό-σημείωμα" class="nav-link" data-scroll-target="#ιστορικό-σημείωμα"><span class="header-section-number">1.6</span> Ιστορικό σημείωμα</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-εξίσωση-2ου-βαθμού" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-εξίσωση-2ου-βαθμού"><span class="header-section-number">1</span> Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</h2>
+<section id="η-εξίσωση-alpha-x2-beta-x-gamma-0-alpha-neq-0" class="level3" style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-εξίσωση-alpha-x2-beta-x-gamma-0-alpha-neq-0"><span class="header-section-number">1.1</span> <strong>Η Εξίσωση</strong> <span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0, \alpha \neq 0\)</span></h3>
+<section id="θεωρία-και-ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="θεωρία-και-ορισμοί"><span class="header-section-number">1.1.1</span> <strong>1. Θεωρία και Ορισμοί</strong></h4>
+<ul>
+<li><p><strong>Ορισμός:</strong> Κάθε εξίσωση που έχει ή μπορεί να πάρει τη μορφή <span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0\)</span>, όπου <span class="math inline">\(\alpha, \beta, \gamma\)</span> είναι πραγματικοί αριθμοί και <span class="math inline">\(\alpha \neq 0\)</span>, ονομάζεται <strong>δευτεροβάθμια εξίσωση</strong> ή εξίσωση 2ου βαθμού.</p></li>
+<li><p><strong>Συντελεστές:</strong> Ο αριθμός <span class="math inline">\(\alpha\)</span> είναι ο συντελεστής του δευτεροβάθμιου όρου, ο <span class="math inline">\(\beta\)</span> είναι ο συντελεστής του πρωτοβάθμιου όρου και ο <span class="math inline">\(\gamma\)</span> είναι ο σταθερός όρος.</p></li>
+<li><p><strong>Διακρίνουσα (</strong><span class="math inline">\(\Delta\)</span>): Η ποσότητα <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span> καθορίζει το πλήθος των ριζών της εξίσωσης.</p></li>
+<li><p><strong>Επίλυση:</strong></p>
+<ul>
+<li>Αν <span class="math inline">\(\Delta &gt; 0\)</span>, η εξίσωση έχει δύο άνισες πραγματικές ρίζες: <span class="math inline">\(x_{1,2} = \dfrac{-\beta \pm \sqrt{\Delta}}{2\alpha}\)</span>.</li>
+<li>Αν <span class="math inline">\(\Delta = 0\)</span>, η εξίσωση έχει μία διπλή πραγματική ρίζα: <span class="math inline">\(x = -\dfrac{\beta}{2\alpha}\)</span>.</li>
+<li>Αν <span class="math inline">\(\Delta &lt; 0\)</span>, η εξίσωση δεν έχει πραγματικές ρίζες (είναι αδύνατη στο <span class="math inline">\(\mathbb{R}\)</span>).</li>
+</ul></li>
+<li><p><strong>Τύποι Vieta:</strong> Το άθροισμα (<span class="math inline">\(S\)</span>) και το γινόμενο (<span class="math inline">\(P\)</span>) των ριζών δίνονται από τους τύπους <span class="math inline">\(S = x_1 + x_2 = -\dfrac{\beta}{\alpha}\)</span> και <span class="math inline">\(P = x_1 \cdot x_2 = \dfrac{\gamma}{\alpha}\)</span>. Η εξίσωση μπορεί να γραφεί και στη μορφή <span class="math inline">\(x^2 - Sx + P = 0\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="παραδείγματα" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.2</span> <strong>Παραδείγματα</strong></h4>
+<ol type="1">
+<li><strong>Ελλιπής μορφή (</strong><span class="math inline">\(\gamma=0\)</span>): <span class="math inline">\(x^2 - 2x = 0 \Leftrightarrow x(x - 2) = 0 \Rightarrow x = 0\)</span> ή <span class="math inline">\(x = 2\)</span>.</li>
+<li><strong>Ελλιπής μορφή (</strong><span class="math inline">\(\beta=0\)</span>): <span class="math inline">\(3x^2 = 12 \Leftrightarrow x^2 = 4 \Rightarrow x = \pm 2\)</span>.</li>
+<li><strong>Πλήρης μορφή (</strong><span class="math inline">\(\Delta &gt; 0\)</span>): <span class="math inline">\(x^2 - 5x + 6 = 0\)</span>. Εδώ <span class="math inline">\(\Delta = (-5)^2 - 4 \cdot 1 \cdot 6 = 1\)</span>. Οι ρίζες είναι <span class="math inline">\(x_1 = 3\)</span> και <span class="math inline">\(x_2 = 2\)</span>.</li>
+<li><strong>Διπλή ρίζα (</strong><span class="math inline">\(\Delta = 0\)</span>): <span class="math inline">\(x^2 - 6x + 9 = 0\)</span>. Εδώ <span class="math inline">\(\Delta = 0\)</span>, άρα <span class="math inline">\(x = -\dfrac{-6}{2} = 3\)</span>.</li>
+</ol>
+<p><br>
+<br>
+</p>
+</section>
+<section id="διτετράγωνη" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="διτετράγωνη"><span class="header-section-number">1.2</span> Διτετράγωνη</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η επίλυση της <strong>διτετράγωνης εξίσωσης</strong> (της μορφής <span class="math inline">\(\alpha x^4 + \beta x^2 + \gamma = 0\)</span>, με <span class="math inline">\(\alpha \neq 0\)</span>) πραγματοποιείται με τη μέθοδο της αντικατάστασης, χρησιμοποιώντας μια βοηθητική μεταβλητή (όπως το <span class="math inline">\(\omega\)</span>), ώστε η εξίσωση να αναχθεί σε δευτεροβάθμια.</p>
+<p>Ακολουθούν τα βήματα της διαδικασίας:</p>
+<ol type="1">
+<li><strong>Θέση βοηθητικής μεταβλητής:</strong> Θέτουμε <span class="math inline">\(\omega = x^2\)</span>. Επειδή το <span class="math inline">\(x^2\)</span> εκπροσωπεί το τετράγωνο ενός πραγματικού αριθμού, πρέπει απαραίτητα να ισχύει ο περιορισμός <span class="math inline">\(\omega \geq 0\)</span>.</li>
+<li><strong>Μετασχηματισμός της εξίσωσης:</strong> Επειδή <span class="math inline">\(x^4 = (x^2)^2 = \omega^2\)</span>, η αρχική εξίσωση παίρνει τη μορφή: <span class="math display">\[\alpha \omega^2 + \beta \omega + \gamma = 0\]</span> Αυτή ονομάζεται <strong>επιλύουσα</strong> της διτετράγωνης εξίσωσης.</li>
+<li><strong>Επίλυση της δευτεροβάθμιας ως προς</strong> <span class="math inline">\(\omega\)</span>: Λύνουμε την εξίσωση <span class="math inline">\(\alpha \omega^2 + \beta \omega + \gamma = 0\)</span> χρησιμοποιώντας τη διακρίνουσα (<span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span>) και τους γνωστούς τύπους για να βρούμε τις ρίζες <span class="math inline">\(\omega_1\)</span> και <span class="math inline">\(\omega_2\)</span>.</li>
+<li><strong>Υπολογισμός του</strong> <span class="math inline">\(x\)</span> (Αντικατάσταση): Για κάθε τιμή του <span class="math inline">\(\omega\)</span> που βρήκαμε, επιστρέφουμε στη σχέση <span class="math inline">\(\omega = x^2\)</span> και λύνουμε ως προς <span class="math inline">\(x\)</span>:
+<ul>
+<li>Αν μια ρίζα <span class="math inline">\(\omega\)</span> είναι θετική (<span class="math inline">\(\omega &gt; 0\)</span>), τότε προκύπτουν δύο αντίθετες πραγματικές ρίζες για το <span class="math inline">\(x\)</span>: <span class="math inline">\(x = \pm \sqrt{\omega}\)</span>.</li>
+<li>Αν μια ρίζα <span class="math inline">\(\omega\)</span> είναι μηδέν (<span class="math inline">\(\omega = 0\)</span>), τότε προκύπτει η ρίζα <span class="math inline">\(x = 0\)</span> (διπλή).</li>
+<li>Αν μια ρίζα <span class="math inline">\(\omega\)</span> είναι αρνητική (<span class="math inline">\(\omega &lt; 0\)</span>), τότε η εξίσωση <span class="math inline">\(x^2 = \omega\)</span> είναι <strong>αδύνατη</strong> στο σύνολο των πραγματικών αριθμών.</li>
+</ul></li>
+</ol>
+<p><strong>Πλήθος Ριζών:</strong></p>
+<p>Το πλήθος των πραγματικών ριζών της διτετράγωνης εξίσωσης εξαρτάται από το είδος των ριζών της επιλύουσας:</p>
+<ul>
+<li><p>Αν η επιλύουσα έχει <strong>δύο θετικές ρίζες</strong>, η διτετράγωνη έχει <strong>τέσσερις</strong> πραγματικές ρίζες.</p></li>
+<li><p>Αν η επιλύουσα έχει <strong>μία θετική και μία αρνητική ρίζα</strong>, η διτετράγωνη έχει <strong>δύο</strong> πραγματικές ρίζες.</p></li>
+<li><p>Αν η επιλύουσα έχει <strong>δύο αρνητικές ρίζες</strong> ή δεν έχει πραγματικές ρίζες (<span class="math inline">\(\Delta &lt; 0\)</span>), η διτετράγωνη <strong>δεν έχει</strong> πραγματικές ρίζες.</p></li>
+</ul>
+</div>
+</div>
+<section id="παράδειγμα" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="παράδειγμα"><span class="header-section-number">1.2.1</span> Παράδειγμα</h4>
+<p>Ένα χαρακτηριστικό παράδειγμα επίλυσης διτετράγωνης εξίσωσης είναι η εξίσωση <span class="math inline">\(x^4 - 5x^2 - 36 = 0\)</span>.</p>
+<p>Ακολουθούν τα αναλυτικά βήματα της επίλυσης:</p>
+<ol type="1">
+<li><p><strong>Θέση βοηθητικής μεταβλητής:</strong> Επειδή η εξίσωση περιέχει το <span class="math inline">\(x^4\)</span> (που είναι ίσο με <span class="math inline">\((x^2)^2\)</span>) και το <span class="math inline">\(x^2\)</span>, την ονομάζουμε διτετράγωνη. Θέτουμε <span class="math inline">\(x^2 = u\)</span>, οπότε η εξίσωση μετασχηματίζεται σε δευτεροβάθμια ως προς <span class="math inline">\(u\)</span> (την ονομαζόμενη επιλύουσα): <span class="math display">\[u^2 - 5u - 36 = 0\]</span></p></li>
+<li><p><strong>Επίλυση της δευτεροβάθμιας ως προς</strong> <span class="math inline">\(u\)</span>:</p>
+<ul>
+<li><strong>Υπολογισμός Διακρίνουσας (</strong><span class="math inline">\(\Delta\)</span>): Χρησιμοποιούμε τον τύπο <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span> με <span class="math inline">\(\alpha=1, \beta=-5\)</span> και <span class="math inline">\(\gamma=-36\)</span>. <span class="math display">\[\Delta = (-5)^2 - 4 \cdot 1 \cdot (-36) = 25 + 144 = 169\]</span></li>
+<li><strong>Εύρεση Ριζών του</strong> <span class="math inline">\(u\)</span>: Επειδή <span class="math inline">\(\Delta &gt; 0\)</span>, η εξίσωση έχει δύο άνισες πραγματικές ρίζες: <span class="math display">\[u_{1,2} = \dfrac{-(-5) \pm \sqrt{169}}{2 \cdot 1} = \dfrac{5 \pm 13}{2}\]</span> Άρα προκύπτουν: <span class="math inline">\(u_1 = 9\)</span> και <span class="math inline">\(u_2 = -4\)</span>.</li>
+</ul></li>
+<li><p><strong>Επιστροφή στη μεταβλητή</strong> <span class="math inline">\(x\)</span> (Αντικατάσταση):</p>
+<ul>
+<li>Για την τιμή <span class="math inline">\(u_1 = 9\)</span>, έχουμε: <span class="math display">\[x^2 = 9 \Rightarrow x = \pm \sqrt{9} \Rightarrow \mathbf{x = 3 \text{ ή } x = -3}\]</span></li>
+<li>Για την τιμή <span class="math inline">\(u_2 = -4\)</span>, έχουμε: <span class="math display">\[x^2 = -4\]</span> Αυτή η περίπτωση είναι <strong>αδύνατη</strong> στο σύνολο των πραγματικών αριθμών, καθώς το τετράγωνο κάθε πραγματικού αριθμού είναι πάντα μη αρνητικό (<span class="math inline">\(x^2 \geq 0\)</span>).</li>
+</ul></li>
+<li><p><strong>Τελικές Λύσεις:</strong> Οι πραγματικές ρίζες της εξίσωσης είναι οι αριθμοί <span class="math inline">\(3\)</span> και <span class="math inline">\(-3\)</span>.</p></li>
+</ol>
+<p>Ένα άλλο παράδειγμα είναι η εξίσωση <span class="math inline">\(x^4 - 6x^2 + 8 = 0\)</span>, όπου θέτοντας <span class="math inline">\(x^2 = y\)</span> προκύπτουν οι λύσεις <span class="math inline">\(y = 2\)</span> ή <span class="math inline">\(y = 4\)</span>.</p>
+<p>Στην περίπτωση αυτή, επειδή και οι δύο τιμές του <span class="math inline">\(y\)</span> είναι θετικές, προκύπτουν τέσσερις πραγματικές ρίζες: <span class="math inline">\(x = \pm \sqrt{2}\)</span> και <span class="math inline">\(x = \pm 2\)</span>.</p>
+</section>
+</section>
+<section id="τύποι-του-vieta" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="τύποι-του-vieta"><span class="header-section-number">1.3</span> τύποι του Vieta</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #50394c;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Οι <strong>τύποι του Vieta</strong> συνδέουν τις ρίζες μιας δευτεροβάθμιας εξίσωσης (<span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0, \alpha \neq 0\)</span>) απευθείας με τους συντελεστές της και είναι εξαιρετικά χρήσιμοι για την εύρεση των ριζών, την κατασκευή εξισώσεων και τον υπολογισμό παραστάσεων.</p>
+<p><strong>1. Οι Βασικοί Τύποι</strong></p>
+<p>Αν <span class="math inline">\(x_1\)</span> και <span class="math inline">\(x_2\)</span> είναι οι ρίζες της εξίσωσης, τότε το <strong>άθροισμα (</strong><span class="math inline">\(S\)</span>) και το <strong>γινόμενο (</strong><span class="math inline">\(P\)</span>) των ριζών δίνονται από τις σχέσεις:</p>
+<ul>
+<li><p><strong>Άθροισμα:</strong> <span class="math inline">\(S = x_1 + x_2 = -\dfrac{\beta}{\alpha}\)</span>.</p></li>
+<li><p><strong>Γινόμενο:</strong> <span class="math inline">\(P = x_1 \cdot x_2 = \dfrac{\gamma}{\alpha}\)</span>.</p></li>
+</ul>
+<p>Με τη βοήθεια αυτών των τύπων, η αρχική εξίσωση μπορεί να μετασχηματιστεί στην ισοδύναμη μορφή: <span class="math display">\[\mathbf{x^2 - Sx + P = 0}\]</span>.</p>
+<p><strong>2. Πώς βρίσκουμε τις ρίζες</strong></p>
+<p>Υπάρχουν δύο βασικοί τρόποι χρήσης των τύπων για την εύρεση των ριζών:</p>
+<ul>
+<li><strong>Όταν γνωρίζουμε το άθροισμα και το γινόμενο:</strong> Αν ξέρουμε ότι δύο αριθμοί έχουν άθροισμα <span class="math inline">\(S\)</span> και γινόμενο <span class="math inline">\(P\)</span>, τότε αυτοί οι αριθμοί είναι οι ρίζες της δευτεροβάθμιας εξίσωσης <span class="math inline">\(x^2 - Sx + P = 0\)</span>.
+<ul>
+<li><em>Παράδειγμα:</em> Για να βρούμε δύο αριθμούς με άθροισμα <span class="math inline">\(S=4\)</span> και γινόμενο <span class="math inline">\(P=2\)</span>, λύνουμε την εξίσωση <span class="math inline">\(x^2 - 4x + 2 = 0\)</span>, η οποία δίνει τις ρίζες <span class="math inline">\(x_{1,2} = 2 \pm \sqrt{2}\)</span>.</li>
+</ul></li>
+<li><strong>Διαισθητική εύρεση (για απλές περιπτώσεις):</strong> Σε πολλές ασκήσεις (κυρίως όταν <span class="math inline">\(\alpha=1\)</span>), μπορούμε να βρούμε τις ρίζες «με το μάτι», αναζητώντας δύο αριθμούς που το άθροισμά τους να είναι ο αντίθετος του <span class="math inline">\(\beta\)</span> και το γινόμενό τους ο σταθερός όρος <span class="math inline">\(\gamma\)</span>.</li>
+</ul>
+<p><strong>3. Άλλες Εφαρμογές</strong></p>
+<p>Οι τύποι Vieta χρησιμοποιούνται επίσης για:</p>
+<ul>
+<li><p><strong>Υπολογισμό συμμετρικών παραστάσεων:</strong> Μπορούμε να βρούμε την τιμή παραστάσεων όπως το <span class="math inline">\(x_1^2 + x_2^2\)</span> ή το <span class="math inline">\(x_1^3 + x_2^3\)</span> χωρίς να λύσουμε την εξίσωση, χρησιμοποιώντας τις σχέσεις:</p>
+<ul>
+<li><span class="math inline">\(x_1^2 + x_2^2 = S^2 - 2P\)</span>.</li>
+<li><span class="math inline">\(x_1^3 + x_2^3 = S(S^2 - 3P)\)</span>.</li>
+</ul></li>
+<li><p><strong>Προσδιορισμό προσήμου των ριζών:</strong> Χωρίς να λύσουμε την εξίσωση, μπορούμε να καταλάβουμε αν οι ρίζες είναι ομόσημες ή ετερόσημες (από το πρόσημο του <span class="math inline">\(P\)</span>) και ποια είναι η απόλυτα μεγαλύτερη (από το πρόσημο του <span class="math inline">\(S\)</span>).</p></li>
+<li><p><strong>Κατασκευή νέας εξίσωσης:</strong> Αν γνωρίζουμε τις ρίζες μιας εξίσωσης, μπορούμε να κατασκευάσουμε μια νέα εξίσωση που οι ρίζες της να είναι, για παράδειγμα, οι αντίστροφες ή οι αντίθετες των αρχικών.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="με-απόλυτες-τιμές" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="με-απόλυτες-τιμές"><span class="header-section-number">1.4</span> Με απόλυτες τιμές</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #8c453d;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η επίλυση εξισώσεων 2ου βαθμού που περιέχουν απόλυτες τιμές γίνεται συνήθως με δύο βασικές μεθόδους, ανάλογα με τη μορφή της εξίσωσης: τη <strong>μέθοδο της αντικατάστασης</strong> (βοηθητική μεταβλητή) και τη <strong>μέθοδο των περιπτώσεων</strong> (διαστήματα προσήμου).</p>
+<p><strong>1. Μέθοδος Αντικατάστασης (Βοηθητική Μεταβλητή)</strong></p>
+<p>Αυτή η μέθοδος χρησιμοποιείται όταν ο άγνωστος εμφανίζεται με τέτοιο τρόπο ώστε η εξίσωση να μπορεί να πάρει τη μορφή <span class="math inline">\(\alpha |f(x)|^2 + \beta |f(x)| + \gamma = 0\)</span>. Για την επίλυση, βασιζόμαστε στην ιδιότητα ότι <span class="math inline">\(x^2 = |x|^2\)</span> για κάθε πραγματικό αριθμό <span class="math inline">\(x\)</span>.</p>
+<p><strong>Βήματα επίλυσης:</strong></p>
+<ol type="1">
+<li><p><strong>Μετασχηματισμός:</strong> Γράφουμε τον όρο του τετραγώνου ως απόλυτη τιμή στο τετράγωνο (π.χ. <span class="math inline">\(x^2 \rightarrow |x|^2\)</span> ή <span class="math inline">\((x-1)^2 \rightarrow |x-1|^2\)</span>).</p></li>
+<li><p><strong>Θέση μεταβλητής:</strong> Θέτουμε μια νέα μεταβλητή, έστω <span class="math inline">\(\omega = |f(x)|\)</span>, με τον απαραίτητο περιορισμό <span class="math inline">\(\omega \geq 0\)</span>, καθώς η απόλυτη τιμή είναι πάντα μη αρνητική.</p></li>
+<li><p><strong>Επίλυση δευτεροβάθμιας:</strong> Λύνουμε τη νέα εξίσωση <span class="math inline">\(\alpha \omega^2 + \beta \omega + \gamma = 0\)</span> ως προς <span class="math inline">\(\omega\)</span>.</p></li>
+<li><p><strong>Αντικατάσταση και τελικές λύσεις:</strong></p>
+<ul>
+<li>Για κάθε λύση <span class="math inline">\(\omega \geq 0\)</span>, λύνουμε την εξίσωση <span class="math inline">\(|f(x)| = \omega\)</span>, η οποία δίνει <span class="math inline">\(f(x) = \omega\)</span> ή <span class="math inline">\(f(x) = -\omega\)</span>.</li>
+<li>Αν προκύψει <span class="math inline">\(\omega &lt; 0\)</span>, η περίπτωση αυτή απορρίπτεται ως <strong>αδύνατη</strong>.</li>
+</ul></li>
+</ol>
+<p><strong>Παράδειγμα:</strong> Στην εξίσωση <span class="math inline">\(x^2 - 3|x| + 2 = 0\)</span>, ϑέτουμε <span class="math inline">\(|x| = \omega\)</span> (<span class="math inline">\(\omega \geq 0\)</span>) και έχουμε <span class="math inline">\(\omega^2 - 3\omega + 2 = 0\)</span>. Οι ρίζες είναι <span class="math inline">\(\omega = 1\)</span> ή <span class="math inline">\(\omega = 2\)</span> (και οι δύο δεκτές). Άρα <span class="math inline">\(|x| = 1 \Rightarrow x = \pm 1\)</span> και <span class="math inline">\(|x| = 2 \Rightarrow x = \pm 2\)</span>.</p>
+<p><strong>2. Μέθοδος των Περιπτώσεων (Εξαγωγή Απολύτων)</strong></p>
+<p>Αυτή η μέθοδος είναι γενικότερη και εφαρμόζεται όταν υπάρχουν διαφορετικά απόλυτα ή όταν ο άγνωστος βρίσκεται και εκτός απολύτου χωρίς να επιτρέπεται εύκολη αντικατάσταση.</p>
+<p><strong>Βήματα επίλυσης:</strong></p>
+<ol type="1">
+<li><p><strong>Εύρεση ριζών:</strong> Βρίσκουμε τις τιμές του <span class="math inline">\(x\)</span> που μηδενίζουν τις παραστάσεις μέσα στα απόλυτα.</p></li>
+<li><p><strong>Δημιουργία διαστημάτων:</strong> Τοποθετούμε αυτές τις τιμές στον άξονα των πραγματικών αριθμών, χωρίζοντάς τον σε διαστήματα.</p></li>
+<li><p><strong>Πίνακας προσήμων:</strong> Προσδιορίζουμε το πρόσημο κάθε παράστασης μέσα στα απόλυτα για κάθε διάστημα.</p></li>
+<li><p><strong>Επίλυση ανά διάστημα:</strong></p>
+<ul>
+<li>Σε κάθε διάστημα, «βγάζουμε» τα απόλυτα εφαρμόζοντας τον ορισμό: αν η παράσταση είναι ϑετική, μένει ως έχει· αν είναι αρνητική, αλλάζει πρόσημο.</li>
+<li>Λύνουμε τη δευτεροβάθμια εξίσωση που προκύπτει.</li>
+<li><strong>Επαλήθευση:</strong> Κρατάμε μόνο τις λύσεις που ανήκουν στο διάστημα το οποίο εξετάζουμε.</li>
+</ul></li>
+<li><p><strong>Τελικό σύνολο λύσεων:</strong> Η συνολική λύση είναι η ένωση των δεκτών λύσεων από όλα τα διαστήματα.</p></li>
+</ol>
+<p><strong>Παράδειγμα:</strong> Στην εξίσωση <span class="math inline">\(x^2 - 3|x - 1| - 1 = 0\)</span>, εξετάζουμε δύο περιπτώσεις:</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(x \geq 1\)</span>: Η εξίσωση γίνεται <span class="math inline">\(x^2 - 3(x - 1) - 1 = 0 \Rightarrow x^2 - 3x + 2 = 0\)</span>. Οι ρίζες είναι <span class="math inline">\(x = 1\)</span> και <span class="math inline">\(x = 2\)</span>, οι οποίες είναι και οι δύο δεκτές.</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(x &lt; 1\)</span>: Η εξίσωση γίνεται <span class="math inline">\(x^2 - 3[-(x - 1)] - 1 = 0 \Rightarrow x^2 + 3x - 4 = 0\)</span>. Οι ρίζες είναι <span class="math inline">\(x = -4\)</span> (δεκτή) και <span class="math inline">\(x = 1\)</span> (απορρίπτεται γιατί εξετάζουμε <span class="math inline">\(x &lt; 1\)</span>).</p></li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.5</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(15x^2 - 11x + 2 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(x^2 + 1993x - 1994 = 0\)</span>.</p></li>
+<li><p>Να βρεθεί η διακρίνουσα και οι ρίζες της: <span class="math inline">\(4x^2 + 7x + 3 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(x^2 - \sqrt{2}x - 8 = 0\)</span>.</p></li>
+<li><p>Να εξετάσετε αν έχει πραγματικές ρίζες η εξίσωση: <span class="math inline">\(x^2 + x + 1 = 0\)</span>.</p></li>
+<li><p><strong>Διτετράγωνη:</strong> <span class="math inline">\(x^4 - 5x^2 + 4 = 0\)</span> (θέτουμε <span class="math inline">\(x^2 = \omega\)</span>).</p></li>
+<li><p><strong>Με απόλυτα:</strong> <span class="math inline">\(x^2 - 3|x| + 2 = 0\)</span> (θέτουμε <span class="math inline">\(|x| = \omega\)</span>).</p></li>
+<li><p><strong>Κλασματική:</strong> <span class="math inline">\(\dfrac{x+1}{x^2+x} + \dfrac{x}{(x+1)^2} = \dfrac{2}{x}\)</span>.</p></li>
+<li><p><strong>Με ριζικά:</strong> <span class="math inline">\(x + \sqrt{x-1} = 7\)</span>.</p></li>
+<li><p><strong>Τριγωνομετρική:</strong> <span class="math inline">\(2\sin^2 x + 2\sqrt{2}\cos x - 3 = 0\)</span> (μετατρέπεται σε δευτεροβάθμια ως προς <span class="math inline">\(\cos x\)</span>).</p></li>
+<li><p><strong>Αριθμητικό:</strong> Δύο αριθμοί διαφέρουν κατά 5. Το γινόμενό τους είναι μεγαλύτερο από το τετράγωνο του μεγαλύτερου κατά 110. Να βρεθούν οι αριθμοί.</p></li>
+<li><p><strong>Κίνηση (Φυσική):</strong> Δύο κινητά κινούνται στην ίδια ευθεία. Οι θέσεις τους δίνονται από τις συναρτήσεις <span class="math inline">\(S_1 = 2 + 6t\)</span> και <span class="math inline">\(S_2 = 3 + 2t + 4t^2\)</span>. Να βρεθεί πότε συναντιούνται.</p></li>
+<li><p><strong>Γεωμετρία (Εμβαδόν):</strong> Ένας αγρότης θέλει να αυξήσει κατά <span class="math inline">\(1/2\)</span> το εμβαδό ενός ορθογώνιου χωραφιού (20m x 15m). Αν διπλασιάσει τη μεγάλη πλευρά, πόσο πρέπει να μεταβάλει τη μικρή;.</p></li>
+<li><p><strong>Συνδυαστικό (Πιθανότητες):</strong> Αν οι πιθανότητες δύο ενδεχομένων <span class="math inline">\(P(A)\)</span> και <span class="math inline">\(P(B)\)</span> είναι η μικρότερη και η μεγαλύτερη ρίζα της εξίσωσης <span class="math inline">\(6x^2 - 7x + 2 = 0\)</span>, να βρεθούν οι τιμές τους.</p></li>
+<li><p>Αν <span class="math inline">\(x_1, x_2\)</span> είναι οι ρίζες της εξίσωσης <span class="math inline">\(x^2 - 6x + 2 = 0\)</span>, να υπολογίσετε (χωρίς να λύσετε την εξίσωση) τις παραστάσεις: α) <span class="math inline">\(x_1 + x_2\)</span>, β) <span class="math inline">\(x_1 \cdot x_2\)</span>, γ) <span class="math inline">\(x_1^2 + x_2^2\)</span>, δ) <span class="math inline">\(\dfrac{1}{x_1} + \dfrac{1}{x_2}\)</span>.</p></li>
+<li><p>Να κατασκευάσετε εξίσωση 2ου βαθμού που να έχει ρίζες τους αριθμούς <span class="math inline">\(2\)</span> και <span class="math inline">\(-6\)</span>.</p></li>
+<li><p>Να βρεθεί η εξίσωση 2ου βαθμού της οποίας οι ρίζες <span class="math inline">\(x_1, x_2\)</span> ικανοποιούν τις σχέσεις: <span class="math inline">\(x_1 + x_2 + x_1 x_2 = 8\)</span> και <span class="math inline">\(3(x_1 + x_2) - x_1 x_2 = -5\)</span>.</p></li>
+<li><p>Δίνεται η εξίσωση <span class="math inline">\(x^2 - 2x - 7 = 0\)</span> με ρίζες <span class="math inline">\(x_1, x_2\)</span>. Να κατασκευάσετε εξίσωση 2ου βαθμού που να έχει ρίζες <span class="math inline">\(r_1 = 2x_1\)</span> και <span class="math inline">\(r_2 = 2x_2\)</span>.</p></li>
+<li><p>Δίνεται η εξίσωση <span class="math inline">\(x^2 - \lambda x + \lambda - 1 = 0\)</span>. Να βρείτε την τιμή του <span class="math inline">\(\lambda\)</span> για την οποία ισχύει <span class="math inline">\(x_1^2 + x_2^2 = 6\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(x^2 - 3|x| + 2 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(x^2 - 7|x| + 12 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\((x - 1)^2 + 4|x - 1| - 5 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\(2x^2 - |x| - 1 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η εξίσωση: <span class="math inline">\((x - 1)^2 = 3|x - 1| + 4\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση: <span class="math inline">\(x^4 - 5x^2 + 4 = 0\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση: <span class="math inline">\(4x^4 - 17x^2 + 4 = 0\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση: <span class="math inline">\(x^4 - 5x^2 - 36 = 0\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση: <span class="math inline">\(\alpha\beta x^4 - (\alpha^2 + \beta^2)x^2 + \alpha\beta = 0\)</span>, όπου <span class="math inline">\(\alpha\beta \neq 0\)</span>.</p></li>
+<li><p>Να λύσετε την εξίσωση: <span class="math inline">\(\dfrac{9}{x^4} + \dfrac{4}{x^2} = 5\)</span> (θέτουμε <span class="math inline">\(\frac{1}{x^2} = \omega\)</span>).</p></li>
+<li><p><span class="math inline">\(\dfrac{5(x - 2)}{x + 2} - \dfrac{2x - 6}{x + 3} = 3\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{2}{x} + \dfrac{2x - 3}{x - 2} + \dfrac{2 - x^2}{x^2 - 2x} = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{x + 1}{x - 1} + \dfrac{x - 6}{x + 2} = 2\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{2x - 1}{x + 1} + \dfrac{3x - 1}{x + 2} = \dfrac{5x - 11}{x - 1}\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{x + 8}{x - 8} - \dfrac{24}{x - 4} = 2\)</span>.</p></li>
+<li><p>Λύστε τις πλήρεις εξισώσεις:</p></li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(3x^2 - 7x + 2 = 0\)</span></li>
+<li>β. <span class="math inline">\(x^2 - 10x + 25 = 0\)</span></li>
+<li>γ. <span class="math inline">\(2x^2 + 3x + 5 = 0\)</span></li>
+</ul>
+<ol start="36" type="1">
+<li>Λύστε τις ελλιπείς εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^2 - 2,25 = 0\)</span></li>
+<li>β. <span class="math inline">\(0,4x^2 - 2x = 0\)</span></li>
+<li>γ. <span class="math inline">\(5x^2 + 20 = 0\)</span></li>
+</ul>
+<ol start="37" type="1">
+<li>Αποδείξτε ότι οι παρακάτω εξισώσεις έχουν πραγματικές ρίζες:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\alpha x^2 + 4x - (\alpha - 4) = 0, \alpha \neq 0\)</span></li>
+<li>β. <span class="math inline">\(\mu x^2 + (\mu + \nu)x + \nu = 0, \mu \neq 0\)</span></li>
+</ul>
+<ol start="38" type="1">
+<li>Βρείτε τις τιμές του <span class="math inline">\(k \in \mathbb{R}\)</span>:</li>
+</ol>
+<p>Για ποιες τιμές του <span class="math inline">\(k\)</span> η εξίσωση <span class="math inline">\(kx^2 + 4x + k = 0, k \neq 0\)</span> έχει διπλή ρίζα;</p>
+<ol start="39" type="1">
+<li>Δείξτε ότι είναι αδύνατη στο <span class="math inline">\(\mathbb{R}\)</span>:</li>
+</ol>
+<p>Αν <span class="math inline">\(x \neq y\)</span>, δείξτε ότι η εξίσωση <span class="math inline">\((x^2 + y^2)z^2 + 2(x + y)z + 3 = 0\)</span> είναι αδύνατη ως προς <span class="math inline">\(z\)</span>.</p>
+<ol start="40" type="1">
+<li>Βρείτε τη δευτεροβάθμια εξίσωση με ρίζες:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(4\)</span> και <span class="math inline">\(5\)</span></li>
+<li>β. <span class="math inline">\(2\)</span> και <span class="math inline">\(\dfrac{1}{3}\)</span></li>
+<li>γ. <span class="math inline">\(3 - \sqrt{2}\)</span> και <span class="math inline">\(3 + \sqrt{2}\)</span></li>
+</ul>
+<ol start="41" type="1">
+<li>Βρείτε δύο αριθμούς με:</li>
+</ol>
+<ul>
+<li>α. Άθροισμα 5 και γινόμενο -14.</li>
+<li>β. Άθροισμα 12 και γινόμενο 35.</li>
+</ul>
+<ol start="42" type="1">
+<li>Λύστε τις εξισώσεις (με ρίζες):</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^2 - (\sqrt{7} + \sqrt{2})x + \sqrt{14} = 0\)</span></li>
+<li>β. <span class="math inline">\(x^2 + (\sqrt{3} - 1)x - \sqrt{3} = 0\)</span></li>
+</ul>
+<ol start="43" type="1">
+<li>Λύστε ως προς <span class="math inline">\(x\)</span> για <span class="math inline">\(a, b \in \mathbb{R}\)</span>:</li>
+</ol>
+<p><span class="math inline">\(x^2 + 4a^2 = b^2 + 4ax\)</span></p>
+<ol start="44" type="1">
+<li>Πρόβλημα Γεωμετρίας:</li>
+</ol>
+<p>Βρείτε τις πλευρές ορθογωνίου με περίμετρο 28cm και διαγώνιο 10cm.</p>
+<ol start="45" type="1">
+<li>Εξισώσεις με απόλυτες τιμές:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^2 - 5|x| + 6 = 0\)</span></li>
+<li>β. <span class="math inline">\(x^2 + 3|x| - 10 = 0\)</span></li>
+<li>γ. <span class="math inline">\(x^2 - 9|x| + 20 = 0\)</span></li>
+</ul>
+<ol start="46" type="1">
+<li>Εξίσωση με απόλυτο και παρένθεση:</li>
+</ol>
+<p><span class="math inline">\((x - 2)^2 + 3|x - 2| - 4 = 0\)</span></p>
+<ol start="47" type="1">
+<li>Εξίσωση με αντικατάσταση (βοηθητική μεταβλητή):</li>
+</ol>
+<p><span class="math inline">\(\left(x - \dfrac{1}{x}\right)^2 - 4\left(x - \dfrac{1}{x}\right) - 5 = 0\)</span></p>
+<ol start="48" type="1">
+<li>Ρητές (κλασματικές) εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(\dfrac{x-1}{x} + \dfrac{x}{x-1} = \dfrac{5}{2}\)</span></li>
+<li>β. <span class="math inline">\(\dfrac{3}{x} + \dfrac{x+1}{x-1} + \dfrac{x+5}{x^2-x} = 0\)</span></li>
+</ul>
+<ol start="49" type="1">
+<li>Διτετράγωνες εξισώσεις:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x^4 - 13x^2 + 36 = 0\)</span></li>
+<li>β. <span class="math inline">\(3x^4 - 2x^2 - 1 = 0\)</span></li>
+<li>γ. <span class="math inline">\(x^4 + 5x^2 + 6 = 0\)</span></li>
+</ul>
+<ol start="50" type="1">
+<li>Μεταβλητοί συντελεστές:</li>
+</ol>
+<p>Δίνεται η εξίσωση <span class="math inline">\(\alpha x^2 - (\alpha^2+1)x + \alpha = 0\)</span>, με <span class="math inline">\(\alpha \neq 0\)</span>.</p>
+<ul>
+<li>α. Να δείξετε ότι η διακρίνουσα είναι <span class="math inline">\(\Delta = (\alpha^2 - 1)^2\)</span>.</li>
+<li>β. Να δείξετε ότι οι ρίζες είναι οι <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\dfrac{1}{\alpha}\)</span>.</li>
+</ul>
+<ol start="51" type="1">
+<li>Εξίσωση με ριζικά:</li>
+</ol>
+<p>Δίνεται η εξίσωση <span class="math inline">\(x^2 - (3 + \sqrt{5})x + 3\sqrt{5} = 0\)</span>.</p>
+<ul>
+<li>α. Να δείξετε ότι η διακρίνουσα είναι <span class="math inline">\(\Delta = (3 - \sqrt{5})^2\)</span>.</li>
+<li>β. Να δείξετε ότι οι ρίζες είναι οι <span class="math inline">\(3\)</span> και <span class="math inline">\(\sqrt{5}\)</span>.</li>
+</ul>
+<ol start="52" type="1">
+<li>Εύρεση παραμέτρου για διπλή ρίζα:</li>
+</ol>
+<p>Να βρείτε τις τιμές του <span class="math inline">\(k \in \mathbb{R}\)</span> για τις οποίες η εξίσωση <span class="math inline">\(x^2 + (k-2)x + (k+1) = 0\)</span> έχει διπλή ρίζα.</p>
+<ol start="53" type="1">
+<li>Απόδειξη ιδιότητας ριζών:</li>
+</ol>
+<p>Αν ο αριθμός <span class="math inline">\(\rho\)</span> είναι η ρίζα της εξίσωσης <span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0\)</span> (<span class="math inline">\(a,\gamma \neq 0\)</span>), να δείξετε ότι ο αριθμός <span class="math inline">\(-\rho\)</span> είναι ρίζα της εξίσωσης <span class="math inline">\(\alpha x^2 - \beta x + \gamma = 0\)</span>.</p>
+<ol start="54" type="1">
+<li>Λύση εξισώσεων με παραμέτρους:</li>
+</ol>
+<ul>
+<li>α. <span class="math inline">\(x + \dfrac{2}{\beta} = \beta + \dfrac{2}{x}\)</span> (<span class="math inline">\(\beta \neq 0\)</span>)</li>
+<li><ol start="2" type="a">
+<li><span class="math inline">\(\dfrac{x}{\mu} + \dfrac{\mu}{x} = \dfrac{\nu}{\mu} + \dfrac{\mu}{\nu}\)</span> (<span class="math inline">\(\mu, \nu \neq 0\)</span>)</li>
+</ol></li>
+</ul>
+<ol start="55" type="1">
+<li>Σχέση μεταξύ ριζών:</li>
+</ol>
+<p>Δίνεται η εξίσωση <span class="math inline">\(x^2 - 6x + k = 0\)</span>.</p>
+<ul>
+<li>α. Για ποιες τιμές του <span class="math inline">\(k\)</span> η εξίσωση έχει πραγματικές ρίζες;</li>
+<li>β. Αν η μία ρίζα είναι διπλάσια της άλλης, να βρεθούν οι ρίζες και η τιμή του <span class="math inline">\(k\)</span>.</li>
+</ul>
+<ol start="56" type="1">
+<li>Πρόβλημα ακεραίων:</li>
+</ol>
+<p>Να εξετάσετε αν υπάρχουν τρεις διαδοχικοί άρτιοι ακέραιοι που να αποτελούν πλευρές ορθογωνίου τριγώνου.</p>
+<ol start="57" type="1">
+<li>Πρόβλημα εμβαδού (Σταυρός):</li>
+</ol>
+<p>Σε ένα παραλληλόγραμμο κήπο διαστάσεων <span class="math inline">\(10m\)</span> και <span class="math inline">\(6m\)</span>, θέλουμε να κατασκευάσουμε δύο κάθετους διαδρόμους σταυρωτά, ίδιου πλάτους <span class="math inline">\(x\)</span>. Αν το εμβαδόν των διαδρόμων πρέπει να είναι ίσο με το εμβαδόν του υπόλοιπου κήπου (γκαζόν), να βρείτε το πλάτος <span class="math inline">\(x\)</span>.</p>
+<ol start="58" type="1">
+<li>Πρόβλημα κοινής εργασίας:</li>
+</ol>
+<p>Μια βρύση Α γεμίζει μια δεξαμενή σε 5 ώρες λιγότερο από μια βρύση Β. Αν ανοίξουμε και τις δύο μαζί, η δεξαμενή γεμίζει σε 6 ώρες. Να βρείτε σε πόσο χρόνο γεμίζει τη δεξαμενή η κάθε βρύση μόνη της.</p>
+<ol start="59" type="1">
+<li>Εύρεση παραμέτρου και επίλυση:</li>
+</ol>
+<p>Είναι γνωστό ότι μια ρίζα της εξίσωσης <span class="math inline">\(x^4 - 5x^2 + \lambda = 0\)</span> είναι ο αριθμός <span class="math inline">\(2\)</span>. Να βρείτε το <span class="math inline">\(\lambda\)</span> και να λύσετε την εξίσωση.</p>
+</section>
+<section id="ιστορικό-σημείωμα" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ιστορικό-σημείωμα"><span class="header-section-number">1.6</span> Ιστορικό σημείωμα</h3>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #2b2bda;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Η επίλυση της εξίσωσης <span class="math inline">\(2\)</span>ου βαθμού, δηλαδή της μορφής <span class="math inline">\(ax^{2} + bx + c = 0\)</span>, είναι ένα από τα παλαιότερα προβλήματα στα μαθηματικά. Ας δούμε πώς έφτασαν οι άνθρωποι στη λύση που μαθαίνουμε σήμερα στο σχολείο.</p>
+<section id="αρχαίοι-βαβυλώνιοι-περίπου-2.000-π.χ." class="level4" data-number="1.6.1">
+<h4 data-number="1.6.1" class="anchored" data-anchor-id="αρχαίοι-βαβυλώνιοι-περίπου-2.000-π.χ."><span class="header-section-number">1.6.1</span> Αρχαίοι Βαβυλώνιοι (περίπου 2.000 π.Χ.)</h4>
+<p>Οι Βαβυλώνιοι ήταν οι πρώτοι που προσπάθησαν να λύσουν τέτοια προβλήματα. Δεν χρησιμοποιούσαν γράμματα όπως εμείς (το <span class="math inline">\(x\)</span> ή το <span class="math inline">\(y\)</span>), αλλά περιέγραφαν το πρόβλημα με λόγια.</p>
+<ul>
+<li><strong>Η μέθοδός τους:</strong> Συνήθως έλυναν προβλήματα που αφορούσαν το εμβαδόν ενός χωραφιού. Αν ήξεραν το άθροισμα και το γινόμενο δύο αριθμών, χρησιμοποιούσαν μια μέθοδο που μοιάζει πολύ με τη σημερινή <strong>συμπλήρωση τετραγώνου</strong>.</li>
+<li><strong>Περιορισμός:</strong> Δεν γνώριζαν τους αρνητικούς αριθμούς, οπότε δέχονταν μόνο τις θετικές λύσεις.</li>
+</ul>
+</section>
+<section id="αρχαίοι-έλληνες-περίπου-300-π.χ." class="level4" data-number="1.6.2">
+<h4 data-number="1.6.2" class="anchored" data-anchor-id="αρχαίοι-έλληνες-περίπου-300-π.χ."><span class="header-section-number">1.6.2</span> Αρχαίοι Έλληνες (περίπου 300 π.Χ.)</h4>
+<p>Οι Αρχαίοι Έλληνες, με πρωτοπόρο τον <strong>Ευκλείδη</strong>, έλυναν τις εξισώσεις <span class="math inline">\(2\)</span>ου βαθμού χρησιμοποιώντας τη <strong>Γεωμετρία</strong>.</p>
+<ul>
+<li><strong>Η μέθοδός τους:</strong> Αντί να κάνουν πράξεις με νούμερα, σχεδίαζαν σχήματα (τετράγωνα και ορθογώνια). Για αυτούς, το <span class="math inline">\(x^{2}\)</span> ήταν ένα πραγματικό τετράγωνο με πλευρά <span class="math inline">\(x\)</span>.</li>
+<li>Η μέθοδος αυτή ονομαζόταν «γεωμετρική άλγεβρα». Ήταν πολύ ακριβής, αλλά δύσκολη γιατί έπρεπε να είσαι πολύ καλός στο σχέδιο!</li>
+</ul>
+</section>
+<section id="ινδία-ο-μπραχμαγκούπτα-7ος-αιώνας-μ.χ." class="level4" data-number="1.6.3">
+<h4 data-number="1.6.3" class="anchored" data-anchor-id="ινδία-ο-μπραχμαγκούπτα-7ος-αιώνας-μ.χ."><span class="header-section-number">1.6.3</span> Ινδία: Ο Μπραχμαγκούπτα (7ος αιώνας μ.Χ.)</h4>
+<p>Ο Ινδός μαθηματικός <strong>Μπραχμαγκούπτα</strong> έκανε ένα τεράστιο βήμα. Έδωσε έναν κανόνα με λόγια που είναι σχεδόν ίδιος με τον σημερινό τύπο που χρησιμοποιούμε.</p>
+<ul>
+<li>Ήταν ο πρώτος που χρησιμοποίησε <strong>αρνητικούς αριθμούς</strong> στις εξισώσεις, κάτι που οι προηγούμενοι θεωρούσαν αδύνατο.</li>
+<li>Επίσης, άρχισε να χρησιμοποιεί σύμβολα (συντομογραφίες λέξεων) για να κάνει τις πράξεις πιο γρήγορα.</li>
+</ul>
+</section>
+<section id="ο-άραβας-αλ-χουαρίζμι-9ος-αιώνας-μ.χ." class="level4" data-number="1.6.4">
+<h4 data-number="1.6.4" class="anchored" data-anchor-id="ο-άραβας-αλ-χουαρίζμι-9ος-αιώνας-μ.χ."><span class="header-section-number">1.6.4</span> Ο Άραβας Αλ Χουαρίζμι (9ος αιώνας μ.Χ.)</h4>
+<p>Ο <strong>Αλ Χουαρίζμι</strong> θεωρείται ο «πατέρας της Άλγεβρας». Η λέξη «Άλγεβρα» προέρχεται από τον τίτλο του βιβλίου του (<em>Al-Jabr</em>).</p>
+<ul>
+<li><strong>Ταξινόμηση:</strong> Χώρισε τις εξισώσεις σε <span class="math inline">\(6\)</span> διαφορετικούς τύπους και έδωσε οδηγίες για το πώς λύνεται η καθεμία.</li>
+<li>Παρόλο που χρησιμοποιούσε ακόμα λόγια και όχι σύμβολα, οι αποδείξεις του βασίζονταν στη γεωμετρία, δείχνοντας πώς «συμπληρώνεται ένα τετράγωνο».</li>
+</ul>
+</section>
+<section id="η-σύγχρονη-εποχή-16ος---17ος-αιώνας" class="level4" data-number="1.6.5">
+<h4 data-number="1.6.5" class="anchored" data-anchor-id="η-σύγχρονη-εποχή-16ος---17ος-αιώνας"><span class="header-section-number">1.6.5</span> Η Σύγχρονη Εποχή (16ος - 17ος αιώνας)</h4>
+<p>Μέχρι το <span class="math inline">\(1.500\)</span> μ.Χ., οι μαθηματικοί άρχισαν να χρησιμοποιούν τα σύμβολα που ξέρουμε σήμερα.</p>
+<ul>
+<li>Ο <strong>Φρανσουά Βιέτ</strong> (François Viète) χρησιμοποίησε για πρώτη φορά γράμματα για να αναπαραστήσει όχι μόνο τον άγνωστο <span class="math inline">\(x\)</span>, αλλά και τους σταθερούς αριθμούς (<span class="math inline">\(a, b, c\)</span>).</li>
+<li>Ο <strong>Ρενέ Ντεκάρτ</strong> (René Descartes) τελειοποίησε τον τρόπο που γράφουμε τις εξισώσεις, καθιερώνοντας τον συμβολισμό του εκθέτη <span class="math inline">\(x^{2}\)</span>.</li>
+</ul>
+</section>
+<section id="η-σημερινή-μέθοδος" class="level4" data-number="1.6.6">
+<h4 data-number="1.6.6" class="anchored" data-anchor-id="η-σημερινή-μέθοδος"><span class="header-section-number">1.6.6</span> Η Σημερινή Μέθοδος</h4>
+<p>Σήμερα, χρησιμοποιούμε τη <strong>Διακρίνουσα</strong> (<span class="math inline">\(\Delta\)</span>) για να βρούμε τις λύσεις αμέσως. Για την εξίσωση: <span class="math display">\[ax^{2} + bx + c = 0\]</span></p>
+<ol type="1">
+<li>Υπολογίζουμε τη Διακρίνουσα: <span class="math display">\[\Delta = b^{2} - 4ac\]</span></li>
+<li>Βρίσκουμε τις λύσεις (ρίζες) με τον τύπο: <span class="math display">\[x = \frac{-b \pm \sqrt{\Delta}}{2a}\]</span></li>
+</ol>
+<p>Αυτός ο τύπος είναι το αποτέλεσμα <span class="math inline">\(4.000\)</span> ετών προσπάθειας από μαθηματικούς σε όλο τον κόσμο!</p>
+</section>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μελέτη-της-συνάρτησης-fxαx2βxγ" id="toc-μελέτη-της-συνάρτησης-fxαx2βxγ" class="nav-link active" data-scroll-target="#μελέτη-της-συνάρτησης-fxαx2βxγ"><span class="header-section-number">1</span> Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></a>
+  <ul>
+  <li><a href="#η-συμπλήρωση-τετραγώνου-είναι-μια-αλγεβρική-μέθοδος" id="toc-η-συμπλήρωση-τετραγώνου-είναι-μια-αλγεβρική-μέθοδος" class="nav-link" data-scroll-target="#η-συμπλήρωση-τετραγώνου-είναι-μια-αλγεβρική-μέθοδος"><span class="header-section-number">1.1</span> Η <strong>συμπλήρωση τετραγώνου</strong> είναι μια αλγεβρική μέθοδος</a>
+  <ul>
+  <li><a href="#η-διαδικασία-της-μεθόδου" id="toc-η-διαδικασία-της-μεθόδου" class="nav-link" data-scroll-target="#η-διαδικασία-της-μεθόδου"><span class="header-section-number">1.1.1</span> Η Διαδικασία της Μεθόδου</a></li>
+  <li><a href="#βασικές-εφαρμογές" id="toc-βασικές-εφαρμογές" class="nav-link" data-scroll-target="#βασικές-εφαρμογές"><span class="header-section-number">1.1.2</span> Βασικές Εφαρμογές</a></li>
+  </ul></li>
+  <li><a href="#η-fxαx2βxγ-ώς-μετατόπιση-της-fxαx2" id="toc-η-fxαx2βxγ-ώς-μετατόπιση-της-fxαx2" class="nav-link" data-scroll-target="#η-fxαx2βxγ-ώς-μετατόπιση-της-fxαx2"><span class="header-section-number">1.2</span> Η <span class="math inline">\(f(x)=αx^2+βx+γ\)</span> ώς μετατόπιση της <span class="math inline">\(f(x)=αx^2\)</span></a></li>
+  <li><a href="#μελέτη-της-συνάρτησης-fxαx2βxγ-με-alpha-neq-0" id="toc-μελέτη-της-συνάρτησης-fxαx2βxγ-με-alpha-neq-0" class="nav-link" data-scroll-target="#μελέτη-της-συνάρτησης-fxαx2βxγ-με-alpha-neq-0"><span class="header-section-number">1.3</span> Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span> με <span class="math inline">\(\alpha \neq 0\)</span></a></li>
+  <li><a href="#πίνακες-αποτελεσμάτων-μελέτης" id="toc-πίνακες-αποτελεσμάτων-μελέτης" class="nav-link" data-scroll-target="#πίνακες-αποτελεσμάτων-μελέτης"><span class="header-section-number">1.4</span> Πίνακες Αποτελεσμάτων Μελέτης</a></li>
+  <li><a href="#αναλυτικά" id="toc-αναλυτικά" class="nav-link" data-scroll-target="#αναλυτικά"><span class="header-section-number">1.5</span> ….. αναλυτικά</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.6</span> Παραδείγματα</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.7</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μελέτη-της-συνάρτησης-fxαx2βxγ" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μελέτη-της-συνάρτησης-fxαx2βxγ"><span class="header-section-number">1</span> Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></h2>
+<section id="η-συμπλήρωση-τετραγώνου-είναι-μια-αλγεβρική-μέθοδος" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-συμπλήρωση-τετραγώνου-είναι-μια-αλγεβρική-μέθοδος"><span class="header-section-number">1.1</span> Η <strong>συμπλήρωση τετραγώνου</strong> είναι μια αλγεβρική μέθοδος</h3>
+<p>που χρησιμοποιείται για να μετασχηματίσει ένα τριώνυμο ή μια δευτεροβάθμια παράσταση σε μορφή που περιέχει το <strong>τέλειο τετράγωνο ενός διωνύμου</strong>. Η τεχνική αυτή είναι θεμελιώδης για την επίλυση δευτεροβάθμιων εξισώσεων, τη μελέτη των μετατοπίσεων μιας παραβολής και την παραγοντοποίηση σύνθετων παραστάσεων.</p>
+<section id="η-διαδικασία-της-μεθόδου" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="η-διαδικασία-της-μεθόδου"><span class="header-section-number">1.1.1</span> Η Διαδικασία της Μεθόδου</h4>
+<p>Για μια δευτεροβάθμια εξίσωση της μορφής <span class="math inline">\(\alpha x^2 + \beta x + \gamma = 0\)</span> (με <span class="math inline">\(\alpha \neq 0\)</span>), η μέθοδος ακολουθεί τα εξής βήματα:</p>
+<p>Η διαδικασία περιλαμβάνει τα εξής αναλυτικά βήματα:</p>
+<ol type="1">
+<li><p><strong>Διαίρεση ή εξαγωγή του συντελεστή</strong> <span class="math inline">\(\alpha\)</span>$\alpha$: Για να διευκολυνθεί η διαδικασία, ο συντελεστής του <span class="math inline">\(x^2\)</span> πρέπει να γίνει 1. Αν εργαζόμαστε με την παράσταση <span class="math inline">\(ax^2 + \beta x + \gamma\)</span>, ϐγάζουμε το <span class="math inline">\(a\)</span> ως κοινό παράγοντα: <span class="math inline">\(a\left(x^2 + \dfrac{\beta}{\alpha}x + \dfrac{\gamma}{\alpha}\right)\)</span>.</p></li>
+<li><p><strong>Εμφάνιση του διπλάσιου γινομένου</strong>: Ο μεσαίος όρος <span class="math inline">\(\dfrac{\beta}{\alpha}x\)</span> γράφεται με τέτοιο τρόπο ώστε να εμφανίζεται το διπλάσιο γινόμενο που απαιτεί η ταυτότητα <span class="math inline">\((A+B)^2 = A^2 + 2AB + B^2\)</span>. Συγκεκριμένα, ο όρος γίνεται: <span class="math inline">\(2 \cdot x \cdot \dfrac{\beta}{2\alpha}\)</span>.</p></li>
+<li><p><strong>Προσθαφαίρεση του κατάλληλου όρου</strong>: Για να «συμπληρωθεί» η ταυτότητα, προσθέτουμε και ταυτόχρονα αφαιρούμε (ώστε να μη μεταβληθεί η αξία της παράστασης) το <strong>τετράγωνο του δεύτερου όρου</strong> του γινομένου, δηλαδή το <span class="math inline">\(\left(\dfrac{\beta}{2\alpha}\right)^2 = \dfrac{\beta^2}{4\alpha^2}\)</span>.</p></li>
+<li><p><strong>Σχηματισμός της ταυτότητας</strong>: Οι τρεις πρώτοι όροι της παράστασης <span class="math inline">\(\left(x^2 + 2x\dfrac{\beta}{2\alpha} + \dfrac{\beta^2}{4\alpha^2}\right)\)</span> αποτελούν πλέον το ανάπτυγμα της ταυτότητας <span class="math inline">\(\left(x + \dfrac{\beta}{2\alpha}\right)^2\)</span>.</p></li>
+<li><p><strong>Τελική απλοποίηση και μορφή</strong>: Η παράσταση παίρνει τη μορφή <span class="math inline">\(a\left[\left(x + \dfrac{\beta}{2\alpha}\right)^2 - \dfrac{\beta^2-4\alpha\gamma}{4\alpha^2}\right]\)</span>. Αν χρησιμοποιήσουμε τη <strong>διακρίνουσα</strong> <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span>, η τελική κανονική μορφή είναι: <span class="math display">\[f(x) = a \left[ \left(x + \dfrac{\beta}{2\alpha}\right)^2 - \dfrac{\Delta}{4\alpha^2} \right]\]</span>.</p></li>
+</ol>
+</section>
+<section id="βασικές-εφαρμογές" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="βασικές-εφαρμογές"><span class="header-section-number">1.1.2</span> Βασικές Εφαρμογές</h4>
+<ul>
+<li><p><strong>Επίλυση Εξισώσεων</strong>: Επιτρέπει την εύρεση των ριζών μιας εξίσωσης 2ου βαθμού χωρίς την άμεση χρήση του έτοιμου τύπου, απομονώνοντας το τετράγωνο στο ένα μέλος.</p></li>
+<li><p><strong>Γεωμετρική Ερμηνεία και Μετατοπίσεις</strong>: Χρησιμοποιείται για να αποδειχθεί ότι η γραφική παράσταση της <span class="math inline">\(f(x) = \alpha x^2 + \beta x + \gamma\)</span> προκύπτει από δύο διαδοχικές μετατοπίσεις (οριζόντια και κατακόρυφη) της βασικής παραβολής <span class="math inline">\(y = \alpha x^2\)</span>.</p></li>
+<li><p><strong>Παραγοντοποίηση</strong>: Βοηθά στη μετατροπή αλγεβρικών αθροισμάτων σε γινόμενα, ειδικά σε περιπτώσεις όπου λείπει ένας όρος για να σχηματιστεί ταυτότητα (π.χ. στην παράσταση <span class="math inline">\(\alpha^4 + \beta^4 + \alpha^2\beta^2\)</span>).</p></li>
+<li><p><strong>Εύρεση Ακροτάτων</strong>: Η μορφή που προκύπτει από τη συμπλήρωση τετραγώνου αποκαλύπτει αμέσως την <strong>κορυφή της παραβολής</strong> <span class="math inline">\(K\left(-\dfrac{\beta}{2\alpha}, -\dfrac{\Delta}{4\alpha}\right)\)</span>, η οποία αντιστοιχεί στο μέγιστο ή ελάχιστο της συνάρτησης.</p></li>
+</ul>
+</section>
+</section>
+<section id="η-fxαx2βxγ-ώς-μετατόπιση-της-fxαx2" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="η-fxαx2βxγ-ώς-μετατόπιση-της-fxαx2"><span class="header-section-number">1.2</span> Η <span class="math inline">\(f(x)=αx^2+βx+γ\)</span> ώς μετατόπιση της <span class="math inline">\(f(x)=αx^2\)</span></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f(x) = \alpha x^2 + \beta x + \gamma\)</span> είναι μια <strong>παραβολή</strong> που προκύπτει από δύο διαδοχικές μετατοπίσεις της βασικής παραβολής <span class="math inline">\(g(x) = \alpha x^2\)</span>.</p>
+<p>Για να γίνουν εμφανείς αυτές οι μετατοπίσεις, ο τύπος της συνάρτησης μετασχηματίζεται μέσω της μεθόδου <strong>συμπλήρωσης τετραγώνου</strong> στην κανονική μορφή <span class="math inline">\(f(x) = \alpha \left(x + \dfrac{\beta}{2\alpha}\right)^2 - \dfrac{\Delta}{4\alpha}\)</span>, όπου <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span> είναι η διακρίνουσα.</p>
+<p>Συγκεκριμένα, η διαδικασία περιλαμβάνει τα εξής βήματα:</p>
+<ul>
+<li><p><strong>Οριζόντια Μετατόπιση:</strong> Η παραβολή <span class="math inline">\(y = \alpha x^2\)</span> μετατοπίζεται οριζόντια κατά τον άξονα <span class="math inline">\(x'x\)</span> κατά <span class="math inline">\(-\dfrac{\beta}{2\alpha}\)</span> μονάδες. Αν η τιμή <span class="math inline">\(-\dfrac{\beta}{2\alpha}\)</span> είναι θετική, η καμπύλη μετατοπίζεται προς τα <strong>δεξιά</strong>, ενώ αν είναι αρνητική, μετατοπίζεται προς τα <strong>αριστερά</strong>.</p></li>
+<li><p><strong>Κατακόρυφη Μετατόπιση:</strong> Στη συνέχεια, η παραβολή μετατοπίζεται κατακόρυφα κατά τον άξονα <span class="math inline">\(y'y\)</span> κατά <span class="math inline">\(-\dfrac{\Delta}{4\alpha}\)</span> (ή ισοδύναμα <span class="math inline">\(\dfrac{4\alpha\gamma - \beta^2}{4\alpha}\)</span>) μονάδες. Η μετατόπιση γίνεται προς τα <strong>πάνω</strong> αν η τιμή είναι θετική και προς τα <strong>κάτω</strong> αν είναι αρνητική.</p></li>
+</ul>
+<p>Ως αποτέλεσμα αυτών των μετατοπίσεων, η <strong>κορυφή</strong> της παραβολής μεταφέρεται από το σημείο <span class="math inline">\(O(0,0)\)</span> στο σημείο <span class="math inline">\(K\left(-\dfrac{\beta}{2\alpha}, -\dfrac{\Delta}{4\alpha}\right)\)</span>. Παράλληλα, ο <strong>άξονας συμμετρίας</strong> της συνάρτησης παύει να είναι ο άξονας <span class="math inline">\(y'y\)</span> και γίνεται η ευθεία <span class="math inline">\(x = -\dfrac{\beta}{2\alpha}\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="μελέτη-της-συνάρτησης-fxαx2βxγ-με-alpha-neq-0" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μελέτη-της-συνάρτησης-fxαx2βxγ-με-alpha-neq-0"><span class="header-section-number">1.3</span> Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span> με <span class="math inline">\(\alpha \neq 0\)</span></h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<p><strong>Ορισμός και Πεδίο Ορισμού</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Η συνάρτηση <span class="math inline">\(f(x) = \alpha x^2 + \beta x + \gamma\)</span>, με <span class="math inline">\(\alpha, \beta, \gamma \in \mathbb{R}\)</span> και <span class="math inline">\(\alpha \neq 0\)</span>, ονομάζεται πολυωνυμική συνάρτηση δευτέρου βαθμού ή τριώνυμο.</p></li>
+<li><p><strong>Πεδίο Ορισμού:</strong> Επειδή είναι πολυωνυμική, ορίζεται για κάθε πραγματικό αριθμό, άρα <span class="math inline">\(A = \mathbb{R}\)</span>.</p></li>
+</ul>
+<p><strong>Κανονική Μορφή και Διακρίνουσα</strong></p>
+<ul>
+<li><p><strong>Κανονική Μορφή:</strong> Κάθε τριώνυμο μπορεί να γραφτεί στη μορφή <span class="math inline">\(f(x) = \alpha \left[ (x + \dfrac{\beta}{2\alpha})^2 - \dfrac{\Delta}{4\alpha^2} \right]\)</span>, όπου <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span> είναι η <strong>διακρίνουσα</strong>.</p></li>
+<li><p><strong>Ρίζες:</strong> Οι ρίζες της εξίσωσης <span class="math inline">\(f(x) = 0\)</span> εξαρτώνται από τη διακρίνουσα:</p>
+<ul>
+<li>Αν <span class="math inline">\(\Delta &gt; 0\)</span>, υπάρχουν δύο άνισες πραγματικές ρίζες: <span class="math inline">\(x_{1,2} = \dfrac{-\beta \pm \sqrt{\Delta}}{2\alpha}\)</span>.</li>
+<li>Αν <span class="math inline">\(\Delta = 0\)</span>, υπάρχει μία διπλή πραγματική ρίζα: <span class="math inline">\(x_0 = -\dfrac{\beta}{2\alpha}\)</span>.</li>
+<li>Αν <span class="math inline">\(\Delta &lt; 0\)</span>, δεν υπάρχουν πραγματικές ρίζες.</li>
+</ul></li>
+</ul>
+<p><strong>Μονοτονία και Ακρότατα</strong></p>
+<p>Η μονοτονία της συνάρτησης αλλάζει στην τιμή <span class="math inline">\(x = -\dfrac{\beta}{2\alpha}\)</span>:</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\alpha &gt; 0\)</span>: Η συνάρτηση είναι <strong>γνησίως φθίνουσα</strong> στο <span class="math inline">\(\left(-\infty, -\dfrac{\beta}{2\alpha}\right]\)</span> και <strong>γνησίως αύξουσα</strong> στο <span class="math inline">\(\left[-\dfrac{\beta}{2\alpha}, +\infty\right)\)</span>. Παρουσιάζει <strong>ολικό ελάχιστο</strong> το <span class="math inline">\(f\left(-\dfrac{\beta}{2\alpha}\right) = -\dfrac{\Delta}{4\alpha}\)</span>.</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(\alpha &lt; 0\)</span>: Η συνάρτηση είναι <strong>γνησίως αύξουσα</strong> στο <span class="math inline">\(\left(-\infty, -\dfrac{\beta}{2\alpha}\right]\)</span> και <strong>γνησίως φθίνουσα</strong> στο <span class="math inline">\(\left[-\dfrac{\beta}{2\alpha}, +\infty\right)\)</span>. Παρουσιάζει <strong>ολικό μέγιστο</strong> το <span class="math inline">\(f\left(-\dfrac{\beta}{2\alpha}\right) = -\dfrac{\Delta}{4\alpha}\)</span>.</p></li>
+</ul>
+<p><strong>Γραφική Παράσταση</strong></p>
+<ul>
+<li><p>Η γραφική παράσταση της <span class="math inline">\(f\)</span> είναι μια καμπύλη που ονομάζεται <strong>παραβολή</strong>.</p></li>
+<li><p>Έχει <strong>κορυφή</strong> το σημείο <span class="math inline">\(K\left(-\dfrac{\beta}{2\alpha}, -\dfrac{\Delta}{4\alpha}\right)\)</span> και <strong>άξονα συμμετρίας</strong> την ευθεία <span class="math inline">\(x = -\dfrac{\beta}{2\alpha}\)</span>.</p></li>
+<li><p>Τέμνει τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\((0, \gamma)\)</span>.</p></li>
+</ul>
+</div>
+<iframe src="https://www.geogebra.org/calculator/ubmfzrpt?embed" width="730" height="700" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><br>
+</p>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: blue;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Συμβουλή</span>Οδηγία
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Στην παραπάνω ενσωματωμένη μικροεφαρμογή geogebra</p>
+<p>Αφου επιλέξετε έναν δρομέα:</p>
+<p>Πατήστε <kbd>Shift</kbd> + <kbd>&gt;</kbd> για να αυξήσετε με βήμα 0,1 την τιμή του α, β ή γ.</p>
+<p>Πατήστε <kbd>Shift</kbd> + <kbd>&lt;</kbd> για να μειώσετε με βήμα 0,1 την τιμή του α, β ή γ.</p>
+<ol type="1">
+<li><p>Μετακινήστε τον δρομέα α για να δείτε τι συμβαίνει όταν αλλάζει το α της συνάρτησης.</p></li>
+<li><p>Μετακινήστε τον δρομέα γ ώστε να είναι μηδέν. Αλλάξτε την τιμή των α και β και παρατηρήστε τι συμβαίνει στην γραφική παράσταση.</p></li>
+<li><p>Κάντε το β μηδέν και μετακινήστε τα α και β. τι παρατηρείτε;</p></li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="πίνακες-αποτελεσμάτων-μελέτης" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="πίνακες-αποτελεσμάτων-μελέτης"><span class="header-section-number">1.4</span> Πίνακες Αποτελεσμάτων Μελέτης</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Πίνακας Μονοτονίας και Ακροτάτων</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\frac{\beta}{2\alpha}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span> (<span class="math inline">\(\alpha &gt; 0\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(\searrow\)</span></td>
+<td style="text-align: center;">Ελάχιστο: <span class="math inline">\(-\dfrac{\Delta}{4\alpha}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\nearrow\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span> (<span class="math inline">\(\alpha &lt; 0\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(\nearrow\)</span></td>
+<td style="text-align: center;">Μέγιστο: <span class="math inline">\(-\dfrac{\Delta}{4\alpha}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\searrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Πίνακας Προσήμου Τριωνύμου</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\Delta\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta &gt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;">Ετερόσημο <span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span> (<span class="math inline">\(x \neq x_0\)</span>)</td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span> (<span class="math inline">\(x=x_0\)</span>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta &lt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">για κάθε <span class="math inline">\(x\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Ομόσημο <span class="math inline">\(\alpha\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</section>
+<section id="αναλυτικά" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="αναλυτικά"><span class="header-section-number">1.5</span> ….. αναλυτικά</h3>
+<p>Το πρόσημο του τριωνύμου <span class="math inline">\(f(x) = \alpha x^2 + \beta x + \gamma, \alpha \neq 0\)</span>, εξαρτάται από τη διακρίνουσα <span class="math inline">\(\Delta = \beta^2 - 4\alpha\gamma\)</span> και τον συντελεστή <span class="math inline">\(\alpha\)</span>.</p>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<section id="όταν-alpha-0" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="όταν-alpha-0"><span class="header-section-number">1.5.1</span> Όταν <span class="math inline">\(\alpha &gt; 0\)</span></h4>
+<p>Στην περίπτωση αυτή, το τριώνυμο είναι θετικό («ομόσημο του <span class="math inline">\(\alpha\)</span>») σε όλο το εύρος του, εκτός από το διάστημα μεταξύ των ριζών (αν υπάρχουν).</p>
+<ul>
+<li><strong>Αν</strong> <span class="math inline">\(\Delta &gt; 0\)</span> (Δύο άνισες πραγματικές ρίζες <span class="math inline">\(x_1, x_2\)</span> με <span class="math inline">\(x_1 &lt; x_2\)</span>):</li>
+</ul>
+<p><img src="images/clipboard-825051231.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><em>Το τριώνυμο είναι ετερόσημο του</em> <span class="math inline">\(\alpha\)</span> (αρνητικό) μόνο μεταξύ των ριζών.</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\Delta = 0\)</span> (Μία διπλή πραγματική ρίζα <span class="math inline">\(x_0 = -\dfrac{\beta}{2\alpha}\)</span>):</p>
+<p><br>
+<img src="images/clipboard-2384251393.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><em>Το τριώνυμο είναι παντού θετικό, εκτός από τη ρίζα όπου μηδενίζεται.</em></p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\Delta &lt; 0\)</span> (Καμία πραγματική ρίζα):<br>
+<img src="images/clipboard-2557953324.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><em>Το τριώνυμο παραμένει ομόσημο του</em> <span class="math inline">\(\alpha\)</span> (θετικό) για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
+<hr>
+</section>
+<section id="όταν-alpha-0-1" class="level4" data-number="1.5.2">
+<h4 data-number="1.5.2" class="anchored" data-anchor-id="όταν-alpha-0-1"><span class="header-section-number">1.5.2</span> Όταν <span class="math inline">\(\alpha &lt; 0\)</span></h4>
+<p>Στην περίπτωση αυτή, το τριώνυμο είναι αρνητικό («ομόσημο του <span class="math inline">\(\alpha\)</span>») σε όλο το εύρος του, εκτός από το διάστημα μεταξύ των ριζών (αν υπάρχουν).</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\Delta &gt; 0\)</span> (Δύο άνισες πραγματικές ρίζες <span class="math inline">\(x_1, x_2\)</span> με <span class="math inline">\(x_1 &lt; x_2\)</span>):<br>
+<img src="images/clipboard-881242664.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><em>Το τριώνυμο είναι ετερόσημο του</em> <span class="math inline">\(\alpha\)</span> (θετικό) μόνο μεταξύ των ριζών.</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\Delta = 0\)</span> (Μία διπλή πραγματική ρίζα <span class="math inline">\(x_0 = -\dfrac{\beta}{2\alpha}\)</span>):<br>
+<img src="images/clipboard-2968616895.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><em>Το τριώνυμο είναι παντού αρνητικό, εκτός από τη ρίζα όπου μηδενίζεται.</em></p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\Delta &lt; 0\)</span> (Καμία πραγματική ρίζα):<br>
+<img src="images/clipboard-826881154.png" class="img-fluid" width="400"></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(-\infty\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><em>Το τριώνυμο παραμένει ομόσημο του</em> <span class="math inline">\(\alpha\)</span> (αρνητικό) για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
+<p><strong>Γενικό Συμπέρασμα:</strong> Το τριώνυμο είναι <strong>ετερόσημο του</strong> <span class="math inline">\(\alpha\)</span> μόνο όταν <span class="math inline">\(\Delta &gt; 0\)</span> και για τιμές του <span class="math inline">\(x\)</span> μεταξύ των ριζών. Σε κάθε άλλη περίπτωση είναι <strong>ομόσημο του</strong> <span class="math inline">\(\alpha\)</span> ή μηδέν.</p>
+</section>
+</div>
+<hr>
+</section>
+<section id="παραδείγματα" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.6</span> Παραδείγματα</h3>
+<ol type="1">
+<li><strong>Πλήρης Μελέτη:</strong> Για την <span class="math inline">\(f(x) = -x^2 + 4x - 3\)</span>, έχουμε <span class="math inline">\(\alpha=-1, \beta=4, \gamma=-3\)</span>. Διακρίνουσα <span class="math inline">\(\Delta = 4\)</span>. Κορυφή <span class="math inline">\(K(2, 1)\)</span>, ρίζες <span class="math inline">\(x=1, 3\)</span>, άξονας συμμετρίας <span class="math inline">\(x=2\)</span> και μέγιστο το <span class="math inline">\(1\)</span>.</li>
+<li><strong>Εύρεση Συντελεστών:</strong> Αν <span class="math inline">\(f(0)=1, f(1)=2, f(2)=-2\)</span>, αντικαθιστούμε στον τύπο και λύνουμε το σύστημα για να βρούμε τα <span class="math inline">\(\alpha, \beta, \gamma\)</span>.</li>
+<li><strong>Μονοτονία:</strong> Η <span class="math inline">\(f(x) = 2x^2 + 4x + 1\)</span> έχει <span class="math inline">\(\alpha=2&gt;0\)</span>. Παρουσιάζει ελάχιστο στο <span class="math inline">\(x = -\dfrac{4}{2(2)} = -1\)</span>, το <span class="math inline">\(f(-1) = -1\)</span>.</li>
+<li><strong>Συνθήκες Γραφικής Παράστασης:</strong> Παραβολή με άξονα συμμετρίας <span class="math inline">\(x=-1\)</span>, ελάχιστο το <span class="math inline">\(-1\)</span> και διέλευση από το <span class="math inline">\((0,0)\)</span>. Προκύπτει ο τύπος <span class="math inline">\(f(x) = x^2 + 2x\)</span>.</li>
+<li><strong>Σημεία Τομής:</strong> Τα κοινά σημεία των <span class="math inline">\(f(x) = x^2 - 5x + 4\)</span> και <span class="math inline">\(g(x) = 2x - 6\)</span> βρίσκονται λύνοντας την <span class="math inline">\(x^2 - 7x + 10 = 0\)</span>, άρα είναι τα <span class="math inline">\((2, -2)\)</span> και <span class="math inline">\((5, 4)\)</span>.</li>
+<li><strong>Μετατόπιση:</strong> Η γραφική παράσταση της <span class="math inline">\(f(x) = 2(x-1)^2 + 3\)</span> προκύπτει από την <span class="math inline">\(g(x) = 2x^2\)</span> με οριζόντια μετατόπιση κατά <span class="math inline">\(1\)</span> δεξιά και κατακόρυφη κατά <span class="math inline">\(3\)</span> πάνω.</li>
+<li><strong>Μελέτη Προσήμου:</strong> Για το <span class="math inline">\(x^2 - 6x + 8\)</span>, οι ρίζες είναι <span class="math inline">\(2\)</span> και <span class="math inline">\(4\)</span>. Το τριώνυμο είναι θετικό στα <span class="math inline">\((-\infty, 2) \cup (4, +\infty)\)</span> και αρνητικό στο <span class="math inline">\((2, 4)\)</span>.</li>
+<li><strong>Παραμετρικό Τριώνυμο:</strong> Εύρεση του <span class="math inline">\(k\)</span> ώστε η <span class="math inline">\(f(x) = x^2 - (k+1)x + k\)</span> να εφάπτεται στον άξονα <span class="math inline">\(x'x\)</span>. Πρέπει <span class="math inline">\(\Delta = (k-1)^2 = 0 \Rightarrow k = 1\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.7</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Να βρεθούν οι ρίζες του τριωνύμου <span class="math inline">\(x^2 - 5x + 4\)</span>.</p></li>
+<li><p>Να παραγοντοποιηθεί η παράσταση <span class="math inline">\(x^2 - x - 6\)</span>.</p></li>
+<li><p>Να προσδιοριστεί το πρόσημο της παράστασης <span class="math inline">\(-2x^2 + 3x + 2\)</span> για τις διάφορες τιμές του <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Να βρεθεί το πεδίο ορισμού της συνάρτησης <span class="math inline">\(f(x) = \sqrt{x^2 - 5x + 6}\)</span>.</p></li>
+<li><p>Να βρεθεί η τιμή του <span class="math inline">\(k\)</span> αν η <span class="math inline">\(f(x) = kx^2 - (k+1)x + k\)</span> έχει ελάχιστο ίσο με <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Να βρεθούν τα σημεία τομής της <span class="math inline">\(f(x) = x^2 - 2x - 8\)</span> με τους άξονες.</p></li>
+<li><p>Να λυθεί η εξίσωση <span class="math inline">\(x^4 - 5x^2 + 4 = 0\)</span>.</p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math inline">\((x-2)^2 - 6|x-2| + 8 \leq 0\)</span>.</p></li>
+<li><p>Να μελετηθεί η μονοτονία της συνάρτησης <span class="math inline">\(f(x) = 2x^2 - 6x + 5\)</span>.</p></li>
+<li><p>Για ποιες τιμές του <span class="math inline">\(\lambda\)</span> η συνάρτηση <span class="math inline">\(f(x) = \lambda x^2 + 2(2-\lambda^2)x - 1\)</span> έχει άξονα συμμετρίας την ευθεία <span class="math inline">\(x=-1\)</span>;.</p></li>
+<li><p>Να βρεθεί το σύνολο τιμών της συνάρτησης <span class="math inline">\(f(x) = -2x^2 + 8x - 6\)</span>.</p></li>
+<li><p>Προσδιορίστε τα <span class="math inline">\(\lambda, \mu\)</span> ώστε η <span class="math inline">\(f(x) = 3x^2 + (2\lambda+4)x + 2\mu - 3\)</span> να διέρχεται από το <span class="math inline">\((-1, -2)\)</span> και να τέμνει τον <span class="math inline">\(y'y\)</span> στο <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Να αποδειχθεί ότι <span class="math inline">\(x^2+x+1 &gt; 0\)</span> για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>.</p></li>
+<li><p>Βρείτε τον τύπο της <span class="math inline">\(f(x) = \alpha x^2 + \beta x + \gamma\)</span> που διέρχεται από τα σημεία <span class="math inline">\((0,1), (1,2)\)</span> και <span class="math inline">\((2,-2)\)</span>.</p></li>
+<li><p>Να λυθεί η ανίσωση <span class="math inline">\(x^2 - 3x + 2 \geq 0\)</span>.</p></li>
+<li><p>Βρείτε το <span class="math inline">\(k\)</span> ώστε η <span class="math inline">\(y = x^2 + kx + 1\)</span> να εφάπτεται στον άξονα <span class="math inline">\(x'x\)</span>.</p></li>
+<li><p>Δείξτε ότι η εξίσωση <span class="math inline">\(x^2 - (2\lambda+1)x + \lambda - 1 = 0\)</span> έχει πάντα δύο πραγματικές και άνισες ρίζες.</p></li>
+<li><p>Βρείτε τα κοινά σημεία των <span class="math inline">\(f(x) = x^2 + 3x - 2\)</span> και <span class="math inline">\(g(x) = 3x + 2\)</span>.</p></li>
+<li><p>Να σχεδιαστεί η γραφική παράσταση της συνάρτησης <span class="math inline">\(f(x) = |x^2 - 4x + 3|\)</span>.</p></li>
+<li><p>Για ποιες τιμές του <span class="math inline">\(\lambda\)</span> η ανίσωση <span class="math inline">\((\lambda-1)x^2 - 2x + \lambda - 1 &lt; 0\)</span> αληθεύει για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>;.</p></li>
+<li><p>Για τις συναρτήσεις που υπάρχουν στις παρακάτω εικόνες να συμπληρώσετε τον πίνακα</p></li>
+</ol>
+<span class="math display">\[\begin{array}{|c|c|c|c|c|}
+\hline
+.&amp;α&amp;β&amp;γ&amp;Δ\\
+\hline
+f&amp; &amp; &amp; &amp;\\
+\hline
+h &amp; +&amp;-3 &amp; 0 &amp;+\\
+\hline
+t&amp; &amp; &amp; &amp;\\
+\hline
+p&amp; &amp; &amp; &amp;\\
+\hline
+q&amp; &amp; &amp; &amp;\\
+\hline
+r&amp; &amp; &amp; &amp;\\
+\hline
+s&amp; &amp; &amp; &amp;\\
+\hline
+g&amp; &amp; &amp; &amp;\\
+\hline
+\end{array}\]</span>
+<pre><code>\</code></pre>
+<p><img src="images/clipboard-3995887469.png" class="img-fluid" width="400"> <img src="images/clipboard-2574867564.png" class="img-fluid" width="400"></p>
+<ol start="22" type="1">
+<li><strong>A) Σωστό – Λάθος</strong></li>
+</ol>
+<p><strong><em>1. Παραβολή</em></strong></p>
+<p>Αν η παραβολή <span class="math inline">\(y=\alpha x^2\)</span>, <span class="math inline">\(\alpha\neq0\)</span>, διέρχεται από το σημείο <span class="math inline">\(A(-2,8)\)</span>, τότε βρίσκεται στο <strong>2ο και 3ο τεταρτημόριο</strong>.</p>
+<p><strong><span class="math inline">\(\framebox{Σ      } \ \ \ \  \framebox{Λ      }\)</span></strong></p>
+<hr>
+<p><strong><em>2. Ρίζες τριωνύμου και άξονας συμμετρίας</em></strong></p>
+<p>Αν το τριώνυμο <span class="math display">\[f(x)=\alpha x^2+\beta x+\gamma,\qquad \alpha\neq0\]</span> έχει ρίζες <span class="math inline">\(x_1=-2\)</span> και <span class="math inline">\(x_2=4\)</span>, τότε ο άξονας συμμετρίας της παραβολής είναι η ευθεία <span class="math display">\[x=1.\]</span></p>
+<p><strong><span class="math inline">\(\framebox{Σ      } \ \ \ \  \framebox{Λ      }\)</span></strong></p>
+<hr>
+<p><strong><em>3. Παραβολή και υπερβολή</em></strong></p>
+<p>Για οποιουσδήποτε <span class="math inline">\(\alpha,\beta\in\mathbb R^*\)</span>, οι καμπύλες <span class="math display">\[y=\alpha x^2
+\quad\text{και}\quad
+y=\frac{\beta}{x}\]</span> έχουν πάντοτε <strong>δύο κοινά σημεία</strong>.</p>
+<p><strong><span class="math inline">\(\framebox{Σ      } \ \ \ \  \framebox{Λ      }\)</span></strong></p>
+<hr>
+<p><strong><em>4. Υπερβολή και ευθεία</em></strong></p>
+<p>Η υπερβολή <span class="math display">\[y=\frac{2}{x}\]</span> και η ευθεία <span class="math display">\[y=-2x\]</span> τέμνονται.</p>
+<p><strong><span class="math inline">\(\framebox{Σ      } \ \ \ \  \framebox{Λ      }\)</span></strong></p>
+<hr>
+<ol start="23" type="1">
+<li><strong>Β) Συμπλήρωση με (=), (&lt;) ή (&gt;)</strong></li>
+</ol>
+<p><strong><em>1.</em></strong></p>
+<p>Αν το τριώνυμο <span class="math display">\[f(x)=3x^2+\beta x+\gamma\]</span> έχει ρίζες τους αριθμούς <span class="math inline">\(x_1=-2\)</span> και <span class="math inline">\(x_2=4\)</span>, τότε θα ισχύει:</p>
+<p><span class="math display">\[f(-4)\ \ldots\ 0,\qquad
+f(1)\ \ldots\ 0,\qquad
+f(5)\ \ldots\ 0,\]</span></p>
+<p><span class="math display">\[\gamma\ \ldots\ 0,\qquad
+\beta\ \ldots\ -6.\]</span></p>
+<hr>
+<p><strong><em>2.</em></strong></p>
+<p>Αν το τριώνυμο <span class="math display">\[f(x)=-2x^2+\beta x+\gamma\]</span> έχει ρίζες τους αριθμούς <span class="math inline">\(x_1=-4\)</span> και <span class="math inline">\(x_2=2\)</span>, τότε θα ισχύει:</p>
+<p><span class="math display">\[f(-5)\ \ldots\ 0,\qquad
+f(-1)\ \ldots\ 0,\qquad
+f(3)\ \ldots\ 0,\]</span></p>
+<p><span class="math display">\[\gamma\ \ldots\ 0,\qquad
+\beta\ \ldots\ 4.\]</span></p>
+<hr>
+<ol start="24" type="1">
+<li><strong>Γ) Πολλαπλής επιλογής</strong></li>
+</ol>
+<p>Δίνεται το τριώνυμο <span class="math display">\[f(x)=\alpha x^2+\beta x+\gamma,\qquad \alpha\neq0.\]</span></p>
+<p><strong><em>1. Κορυφή παραβολής</em></strong></p>
+<p>Αν <span class="math inline">\(\alpha=3\)</span> και το τριώνυμο (f) έχει κορυφή το σημείο <span class="math display">\[K(-2,4),\]</span> τότε:</p>
+<p><strong>α)</strong> <span class="math inline">\(f(x)=3(x+2)^2+4\)</span></p>
+<p><strong>β)</strong> <span class="math inline">\(f(x)=3(x+2)^2-4\)</span></p>
+<p><strong>γ)</strong> <span class="math inline">\(f(x)=3(x-2)^2+4\)</span></p>
+<p><strong>δ)</strong> <span class="math inline">\(f(x)=3(x-2)^2-4\)</span></p>
+<hr>
+<p><strong><em>2. Πρόσημο διακρίνουσας και συντελεστή</em></strong> <span class="math inline">\(\alpha\)</span></p>
+<p>Αν <span class="math display">\[f(-2)&lt;0,\qquad f(2)&gt;0,\qquad f(4)&lt;0,\]</span> τότε:</p>
+<p><strong>α)</strong> <span class="math inline">\(\Delta=0\)</span> και <span class="math inline">\(\alpha&gt;0\)</span></p>
+<p><strong>β)</strong> <span class="math inline">\(\Delta&gt;0\)</span> και <span class="math inline">\(\alpha&gt;0\)</span></p>
+<p><strong>γ)</strong> <span class="math inline">\(\Delta&gt;0\)</span> και <span class="math inline">\(\alpha&lt;0\)</span></p>
+<p><strong>δ)</strong> <span class="math inline">\(\Delta&lt;0\)</span> και <span class="math inline">\(\alpha&lt;0\)</span></p>
+<hr>
+<p><strong><em>3. Κορυφή και διακρίνουσα</em></strong></p>
+<p>Αν το τριώνυμο έχει κορυφή το σημείο <span class="math display">\[K(-1,3)\]</span> και <span class="math inline">\(\alpha&gt;0\)</span>, τότε:</p>
+<p><strong>α)</strong> <span class="math inline">\(\Delta&gt;0\)</span></p>
+<p><strong>β)</strong> <span class="math inline">\(\Delta=0\)</span></p>
+<p><strong>γ)</strong> <span class="math inline">\(\Delta&lt;0\)</span></p>
+<p><strong>δ)</strong> <span class="math inline">\(\gamma&lt;0\)</span></p>
+<hr>
+<p><strong><em>4. Κορυφή πάνω στον άξονα (x’x)</em></strong></p>
+<p>Αν το τριώνυμο έχει κορυφή το σημείο <span class="math display">\[K(2,0),\]</span> τότε:</p>
+<p><strong>α)</strong> <span class="math inline">\(\beta=0\)</span></p>
+<p><strong>β)</strong> <span class="math inline">\(\Delta&lt;0\)</span></p>
+<p><strong>γ)</strong> <span class="math inline">\(\Delta&gt;0\)</span></p>
+<p><strong>δ)</strong> <span class="math inline">\(\Delta=0\)</span></p>
+<hr>
+<ol start="25" type="1">
+<li><strong>Δ) Αντιστοίχιση γραφικών παραστάσεων</strong></li>
+</ol>
+<p>Οι παρακάτω καμπύλες <span class="math inline">\(C_1,C_2,C_3,C_4\)</span></p>
+<p><img src="images/clipboard-989523382.png" class="img-fluid" width="400"></p>
+<p>είναι οι γραφικές παραστάσεις των συναρτήσεων:</p>
+<p><span class="math display">\[f_1(x)=x^2-6x\]</span></p>
+<p><span class="math display">\[f_2(x)=x^2-6x+5\]</span></p>
+<p><span class="math display">\[f_3(x)=-x^2+6x\]</span></p>
+<p><span class="math display">\[f_4(x)=-x^2+6x-5.\]</span></p>
+<p>Να αντιστοιχίσετε καθεμία από τις παραπάνω συναρτήσεις με τη σωστή γραφική παράσταση, με βάση τα χαρακτηριστικά της.</p>
+<p>Συμπληρώστε τον παρακάτω πίνακα:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Συνάρτηση</th>
+<th><span class="math inline">\(f_1\)</span></th>
+<th><span class="math inline">\(f_2\)</span></th>
+<th><span class="math inline">\(f_3\)</span></th>
+<th><span class="math inline">\(f_4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Γραφική παράσταση</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<ol start="26" type="1">
+<li><strong>Ε) Αντιστοίχιση γραφικών παραστάσεων</strong></li>
+</ol>
+<p>Οι παρακάτω καμπύλες <span class="math inline">\(C_1,C_2,C_3,C_4\)</span></p>
+<p><img src="images/clipboard-3150284992.png" class="img-fluid" width="400"></p>
+<p>είναι οι γραφικές παραστάσεις των συναρτήσεων:</p>
+<p><span class="math display">\[g_1(x)=x^2-4x,
+\qquad
+g_2(x)=2(x-2)^2\]</span></p>
+<p><span class="math display">\[g_3(x)=-x^2+4x,
+\qquad
+g_4(x)=-2(x+3)^2\]</span></p>
+<p>Να αντιστοιχίσετε καθεμία από τις παραπάνω συναρτήσεις με τη σωστή γραφική παράσταση, με βάση τα χαρακτηριστικά της.</p>
+<p>Συμπληρώστε τον παρακάτω πίνακα:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Συνάρτηση</th>
+<th><span class="math inline">\(g_1\)</span></th>
+<th><span class="math inline">\(g_2\)</span></th>
+<th><span class="math inline">\(g_3\)</span></th>
+<th><span class="math inline">\(g_4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Γραφική παράσταση</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

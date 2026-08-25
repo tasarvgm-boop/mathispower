@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-aggeometria quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">21 Μάρτιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μέτρηση-σύγκριση-και-ισότητα-γωνιών-διχοτόμος-γωνίας" id="toc-μέτρηση-σύγκριση-και-ισότητα-γωνιών-διχοτόμος-γωνίας" class="nav-link active" data-scroll-target="#μέτρηση-σύγκριση-και-ισότητα-γωνιών-διχοτόμος-γωνίας"><span class="header-section-number">1</span> Μέτρηση, σύγκριση και ισότητα γωνιών – Διχοτόμος γωνίας</a>
+  <ul>
+  <li><a href="#μοναδικότητα-και-εξάρτηση-μέτρου-γωνίας" id="toc-μοναδικότητα-και-εξάρτηση-μέτρου-γωνίας" class="nav-link" data-scroll-target="#μοναδικότητα-και-εξάρτηση-μέτρου-γωνίας"><span class="header-section-number">1.1</span> <strong>Μοναδικότητα και Εξάρτηση Μέτρου Γωνίας</strong></a></li>
+  <li><a href="#μονάδες-μέτρησης-και-χρήση-μοιρογνωμονίου" id="toc-μονάδες-μέτρησης-και-χρήση-μοιρογνωμονίου" class="nav-link" data-scroll-target="#μονάδες-μέτρησης-και-χρήση-μοιρογνωμονίου"><span class="header-section-number">1.2</span> <strong>Μονάδες Μέτρησης και Χρήση Μοιρογνωμονίου</strong></a></li>
+  <li><a href="#σύγκριση-και-ισότητα-γωνιών" id="toc-σύγκριση-και-ισότητα-γωνιών" class="nav-link" data-scroll-target="#σύγκριση-και-ισότητα-γωνιών"><span class="header-section-number">1.3</span> <strong>Σύγκριση και Ισότητα Γωνιών</strong></a></li>
+  <li><a href="#σχεδίαση-γωνιών-με-δοσμένο-μέτρο" id="toc-σχεδίαση-γωνιών-με-δοσμένο-μέτρο" class="nav-link" data-scroll-target="#σχεδίαση-γωνιών-με-δοσμένο-μέτρο"><span class="header-section-number">1.4</span> <strong>Σχεδίαση Γωνιών με Δοσμένο Μέτρο</strong></a></li>
+  <li><a href="#σημαντικές-ιδιότητες-και-θεωρήματα" id="toc-σημαντικές-ιδιότητες-και-θεωρήματα" class="nav-link" data-scroll-target="#σημαντικές-ιδιότητες-και-θεωρήματα"><span class="header-section-number">1.5</span> <strong>Σημαντικές Ιδιότητες και Θεωρήματα</strong></a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="μέτρηση-σύγκριση-και-ισότητα-γωνιών-διχοτόμος-γωνίας" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μέτρηση-σύγκριση-και-ισότητα-γωνιών-διχοτόμος-γωνίας"><span class="header-section-number">1</span> Μέτρηση, σύγκριση και ισότητα γωνιών – Διχοτόμος γωνίας</h2>
+<section id="μοναδικότητα-και-εξάρτηση-μέτρου-γωνίας" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="μοναδικότητα-και-εξάρτηση-μέτρου-γωνίας"><span class="header-section-number">1.1</span> <strong>Μοναδικότητα και Εξάρτηση Μέτρου Γωνίας</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Μέτρηση γωνίας:</strong> Είναι η σύγκριση μιας γωνίας με μια άλλη που λαμβάνεται ως μονάδα μέτρησης.<br>
+<img src="images/clipboard-3600796526.png" class="img-fluid"></p></li>
+<li><p><strong>Μέτρο γωνίας:</strong> Είναι ο αριθμός που εκφράζει από πόσες μονάδες αποτελείται η γωνία.</p></li>
+</ul>
+<p><span class="math display">\[\hat β=4\cdot \hat a\]</span></p>
+<ul>
+<li><p><strong>Μοναδικότητα:</strong> Κάθε γωνία έχει ένα ορισμένο μέτρο που αντιστοιχεί στο μέτρο του αντίστοιχου τόξου περιφέρειας, η οποία γράφεται με κέντρο την κορυφή της γωνίας.<br>
+<img src="images/clipboard-2948072622.png" class="img-fluid"></p></li>
+<li><p><strong>Εξάρτηση από το «άνοιγμα»:</strong> Το μέγεθος μιας γωνίας εξαρτάται αποκλειστικά από το άνοιγμα των πλευρών της και όχι από το μήκος τους, καθώς οι πλευρές είναι ημιευθείες και μπορούν να επεκταθούν απεριόριστα.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Μια γωνία που περιέχει ακριβώς 40 φορές τη μοναδιαία γωνία έχει μέτρο 40.</li>
+<li>Η ορθή γωνία έχει σταθερό μέτρο (90° ή 100 gr) ανεξάρτητα από το πώς σχεδιάζεται.</li>
+<li>Η πλήρης γωνία αντιστοιχεί σε ολόκληρη την περιφέρεια κύκλου (360° ή 400 gr).</li>
+<li>Η μηδενική γωνία έχει μέτρο 0, καθώς οι πλευρές της συμπίπτουν.</li>
+<li>Σε ομόκεντρους κύκλους, η ίδια γωνία ορίζει τόξα με διαφορετικά μήκη αλλά με το ίδιο μέτρο σε μοίρες.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Αν μια γωνία είναι το μισό της ορθής, ποιο είναι το μέτρο της σε μοίρες;</li>
+<li>Εξηγήστε γιατί η γωνία δεν αλλάζει αν προεκτείνουμε τις πλευρές της με χάρακα.</li>
+<li>Βρείτε το μέτρο μιας γωνίας που είναι τα 2/3 της ορθής.</li>
+<li>Υπολογίστε το μέτρο γωνίας που αντιστοιχεί στο 1/6 μιας πλήρους περιστροφής.</li>
+<li>Πόσες ορθές γωνίες περιέχονται σε μια γωνία 270°;</li>
+<li>Αν το άνοιγμα των πλευρών μιας γωνίας διπλασιαστεί, τι συμβαίνει στο μέτρο της;</li>
+<li>Χαρακτηρίστε ως οξεία ή αμβλεία μια γωνία 110°.</li>
+<li>Βρείτε το μέτρο της γωνίας που σχηματίζουν οι δείκτες του ρολογιού στις 6:00.</li>
+</ol>
+<hr>
+</section>
+<section id="μονάδες-μέτρησης-και-χρήση-μοιρογνωμονίου" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μονάδες-μέτρησης-και-χρήση-μοιρογνωμονίου"><span class="header-section-number">1.2</span> <strong>Μονάδες Μέτρησης και Χρήση Μοιρογνωμονίου</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Βασική μονάδα:</strong> Η <strong>μοίρα (°)</strong>, που ορίζεται ως το $ της περιφέρειας κύκλου.</p></li>
+<li><p><strong>Υποδιαιρέσεις μοίρας:</strong> 1 μοίρα = 60 πρώτα λεπτά (60’) και 1 πρώτο λεπτό = 60 δεύτερα λεπτά (60’’).</p></li>
+<li><p><strong>Ο βαθμός :</strong> Μονάδα του δεκαδικού συστήματος, όπου η περιφέρεια διαιρείται σε 400 ίσα μέρη.</p></li>
+<li><p><strong>Μοιρογνωμόνιο (γωνιόμετρο):</strong> Όργανο σε σχήμα ημικυκλίου βαθμολογημένο από 0° έως 180°.<br>
+<img src="images/clipboard-1643885266.png" class="img-fluid" width="500"></p></li>
+<li><p><strong>Διαδικασία μέτρησης:</strong> Τοποθετούμε το κέντρο του οργάνου στην κορυφή της γωνίας και τη διάμετρό του πάνω στη μία πλευρά. Η άλλη πλευρά δείχνει το μέτρο στην κλίμακα.<br>
+<img src="images/clipboard-933344656.png" class="img-fluid" width="500"></p>
+<p><span class="math display">\[\hat a=60^o\]</span></p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Μετατροπή: 1 ορθή γωνία = 90° = 100 gr.</li>
+<li>Συμμιγής αριθμός: Μέτρο γωνίας 42° 15’ 20’’.</li>
+<li>Άθροισμα γωνιών: 30° 40’ + 20° 30’ = 51° 10’.</li>
+<li>Χρήση μοιρογνωμονίου για μέτρηση γωνίας 50°.</li>
+<li>Μετατροπή μοιρών σε βαθμούς χρησιμοποιώντας ειδικούς πίνακες.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Πόσα δεύτερα λεπτά (’’) έχει μια γωνία 2°;</li>
+<li>Μετατρέψτε σε μοίρες τη γωνία των 50 gr.</li>
+<li>Υπολογίστε το άθροισμα: 15° 26’ 34’’ + 36° 42’ 53’’.</li>
+<li>Βρείτε τη διαφορά: 84° 32’ – 47° 54’ 26’’.</li>
+<li>Σχεδιάστε μια τυχαία γωνία και μετρήστε την με το μοιρογνωμόνιο.</li>
+<li>Πόσες μοίρες είναι τα 0,6 της ορθής γωνίας;</li>
+<li>Εκφράστε σε βαθμούς (gr) τη γωνία των 180°.</li>
+<li>Πόσα πρώτα λεπτά (’) περιέχονται σε 3 μοίρες;</li>
+<li>Μετρήστε τις γωνίες ενός τριγώνου και βρείτε το άθροισμά τους.</li>
+<li>Μετατρέψτε τον συμμιγή 32° 16’ 40’’ σε κλασματική μορφή μοιρών.</li>
+</ol>
+<hr>
+</section>
+<section id="σύγκριση-και-ισότητα-γωνιών" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="σύγκριση-και-ισότητα-γωνιών"><span class="header-section-number">1.3</span> <strong>Σύγκριση και Ισότητα Γωνιών</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ισότητα:</strong> Δύο γωνίες είναι ίσες αν, όταν τοποθετηθούν η μια πάνω στην άλλη, συμπίπτουν (εφαρμόζουν).<br>
+<img src="images/clipboard-166821719.png" class="img-fluid" width="250"> <img src="images/clipboard-1159109007.png" class="img-fluid" width="250"> <img src="images/clipboard-3684113132.png" class="img-fluid" width="250"> <img src="images/clipboard-3490169886.png" class="img-fluid" width="250"></p></li>
+<li><p><strong>Μέθοδος διαφανούς χαρτιού:</strong> Αποτυπώνουμε τη μια γωνία σε διαφανές χαρτί και τη μεταφέρουμε στην άλλη για έλεγχο σύμπτωσης.</p></li>
+<li><p><strong>Σχέση με το μέτρο:</strong> Δύο γωνίες είναι ίσες αν και μόνο αν έχουν το ίδιο μέτρο.</p></li>
+<li><p><strong>Ανισότητα:</strong> Μια γωνία είναι μεγαλύτερη από μια άλλη αν η δεύτερη είναι ίση με μέρος της πρώτης.</p></li>
+</ul>
+</div>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Στο παρακάτω εφαρμογίδιο μετακινήστε τα σημεία Α,Β,Γ και Δ για να τους αλλάξετε θέση.</p>
+<p>Τι παρατηρείτε για τις γωνίες; Πότε μια γωνία γίνεται μεγαλύτερη από την άλλη;Ποια είναι η θέση των πλευρών τους σε αυτή τη περίπτωση;</p>
+<p>Πότε γίνονται ίσες; Ποια είναι η θέση των πλευρών τους σε αυτή τη περίπτωση;</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/qrkk8qzt?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Όλες οι ορθές γωνίες είναι ίσες μεταξύ τους.</li>
+<li>Οι γωνίες της βάσης ενός ισοσκελούς τριγώνου είναι ίσες.</li>
+<li>Σε δύο ίσους κύκλους, οι επίκεντρες γωνίες που βαίνουν σε ίσα τόξα είναι ίσες.</li>
+<li>Σύγκριση γωνιών ρολογιού: Η γωνία στις 3:00 είναι ίση με τη γωνία στις 9:00.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε δύο γωνίες και συγκρίνετέ τις χρησιμοποιώντας διαφανές χαρτί.</li>
+<li>Συγκρίνετε τις γωνίες που σχηματίζει μια τέμνουσα σε δύο παράλληλες ευθείες.</li>
+<li>Αν <span class="math inline">\(\hat{A} = 60^\circ\)</span> και <span class="math inline">\(\hat{B} = 60^\circ\)</span>, είναι οι γωνίες ίσες;</li>
+<li>Σχεδιάστε ένα ισόπλευρο τρίγωνο και επαληθεύστε την ισότητα των γωνιών του.</li>
+<li>Χρησιμοποιήστε το σύμβολο <span class="math inline">\(&gt;\)</span> ή <span class="math inline">\(&lt;\)</span> για να συγκρίνετε γωνίες 30° και 70°.</li>
+<li>Συγκρίνετε τις γωνίες ενός ρόμβου.</li>
+</ol>
+<hr>
+</section>
+<section id="σχεδίαση-γωνιών-με-δοσμένο-μέτρο" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="σχεδίαση-γωνιών-με-δοσμένο-μέτρο"><span class="header-section-number">1.4</span> <strong>Σχεδίαση Γωνιών με Δοσμένο Μέτρο</strong></h3>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Χρήση γωνιομέτρου:</strong> Για να σχεδιάσουμε μια γωνία, χαράσσουμε την αρχική πλευρά, τοποθετούμε το κέντρο του γωνιομέτρου στην αρχή της, σημαδεύουμε την ένδειξη των μοιρών και ενώνουμε με την κορυφή.<br>
+</p>
+<p><br>
+<img src="images/clipboard-1827641573.png" class="img-fluid" width="400"><br>
+<img src="images/clipboard-1254613231.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Χρήση γνώμονα:</strong> Για τη σχεδίαση ορθών γωνιών (90°) χρησιμοποιούμε το όργανο «ορθογώνιο» ή γνώμονα.<br>
+<img src="images/clipboard-3125256683.png" class="img-fluid" width="400"></p></li>
+<li><p><strong>Κατασκευή με διαβήτη:</strong> Μπορούμε να κατασκευάσουμε γωνίες 60°, 30°, 90°, 45° χρησιμοποιώντας μόνο διαβήτη και χάρακα μέσω ισοπλεύρων τριγώνων και διχοτομήσεων.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Κατασκευή γωνίας 75° με μοιρογνωμόνιο.</li>
+<li>Σχεδίαση ορθής γωνίας με γνώμονα πάνω σε μια ημιευθεία.</li>
+<li>Κατασκευή γωνίας 300° σχεδιάζοντας την κυρτή των 60° και παίρνοντας τη μη κυρτή.</li>
+<li>Σχεδίαση γωνίας 60° με διαβήτη μέσω ισοπλεύρου τριγώνου.</li>
+<li>Σχεδίαση γωνίας ίσης με μια δοσμένη χωρίς μοιρογνωμόνιο.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Κατασκευάστε γωνίες 30°, 60° και 70° με μοιρογνωμόνιο.</li>
+<li>Σχεδιάστε μια ορθή γωνία χρησιμοποιώντας μόνο τον γνώμονα.</li>
+<li>Κατασκευάστε γωνίες 120° και 150°.</li>
+<li>Σχεδιάστε μια γωνία 240°.</li>
+<li>Κατασκευάστε μια γωνία 45° χωρίς μοιρογνωμόνιο (διχοτόμηση ορθής).</li>
+<li>Σχεδιάστε μια ημιευθεία <span class="math inline">\(Οx\)</span> και κατασκευάστε εκατέρωθεν αυτής δύο γωνίες 75°.</li>
+<li>Κατασκευάστε το άθροισμα δύο γωνιών 30° και 45°.</li>
+<li>Σχεδιάστε μια γωνία 60° χρησιμοποιώντας μόνο διαβήτη και χάρακα.</li>
+<li>Σχεδιάστε μια γωνία 22,5°.</li>
+</ol>
+<hr>
+<p><strong>Διχοτόμος Γωνίας (Ορισμός, Μοναδικότητα, Σχεδίαση)</strong></p>
+<div style="background-color: #c0d4b8; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία – Ορισμοί – Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Ορισμός:</strong> Διχοτόμος μιας γωνίας ονομάζεται η ημιευθεία που έχει αρχή την κορυφή της γωνίας και τη χωρίζει σε δύο ίσες γωνίες.</p></li>
+<li><p><strong>Μοναδικότητα:</strong> Κάθε γωνία έχει μία και μοναδική διχοτόμο.</p></li>
+<li><p><strong>Ιδιότητα:</strong> Κάθε σημείο της διχοτόμου ισαπέχει από τις πλευρές της γωνίας.</p></li>
+<li><p><strong>Άξονας Συμμετρίας:</strong> Η διχοτόμος είναι ο άξονας συμμετρίας της γωνίας.</p></li>
+<li><p><strong>Σχεδίαση:</strong> Μπορεί να βρεθεί με μοιρογνωμόνιο, με δίπλωση χαρτιού, με το μέσο του αντίστοιχου τόξου ή με διαβήτη και χάρακα.<br>
+<img src="images/clipboard-2879236593.png" class="img-fluid" width="500"></p></li>
+</ul>
+</div>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Στο παρακάτω εφαρμογίδιο μετακινήστε τα σημεία Ο,Β και Γ για να τους αλλάξετε θέση.</p>
+<p>Τι παρατηρείτε για την διχοτόμο;</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/y8kgkvfa?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Διχοτόμηση ορθής γωνίας: Προκύπτουν δύο γωνίες των 45° η καθεμία.</li>
+<li>Η διχοτόμος της γωνίας της κορυφής ισοσκελούς τριγώνου είναι και διάμεσος και ύψος.</li>
+<li>Αν διπλώσουμε μια γωνία ώστε οι πλευρές της να συμπέσουν, η τσάκιση είναι η διχοτόμος.</li>
+<li>Οι τρεις διχοτόμοι ενός τριγώνου συγκλίνουν σε ένα σημείο (έγκεντρο).</li>
+<li>Η διχοτόμος μιας επίκεντρης γωνίας περνά από το μέσο του αντίστοιχου τόξου.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Σχεδιάστε μια γωνία 64° και βρείτε τη διχοτόμο της με μοιρογνωμόνιο.</li>
+<li>Κατασκευάστε τη διχοτόμο μιας γωνίας χρησιμοποιώντας μόνο διαβήτη και χάρακα.</li>
+<li>Αποδείξτε σχεδιάζοντας ότι οι διχοτόμοι δύο κατακορυφήν γωνιών είναι αντίθετες ημιευθείες.</li>
+<li>Βρείτε τη γωνία που σχηματίζουν οι διχοτόμοι δύο εφεξής παραπληρωματικών γωνιών (είναι 90°).</li>
+<li>Σχεδιάστε τη διχοτόμο μιας γωνίας μέσω δίπλωσης χαρτιού.</li>
+<li>Χωρίστε μια γωνία σε 4 ίσες γωνίες με διαδοχικές διχοτομήσεις.</li>
+<li>Αν η διχοτόμος μιας γωνίας σχηματίζει με μια πλευρά γωνία 25°, πόσο είναι το μέτρο της αρχικής γωνίας;</li>
+<li>Σχεδιάστε ένα ισοσκελές τρίγωνο και τη διχοτόμο της κορυφής του. Δείξτε ότι είναι κάθετη στη βάση.</li>
+<li>Σχεδιάστε δύο ίσες εφεξής γωνίες και δείξτε ότι η κοινή τους πλευρά είναι η διχοτόμος της γωνίας που σχηματίζουν οι μη κοινές πλευρές.</li>
+<li>Αποδείξτε με διαβήτη ότι ένα σημείο <span class="math inline">\(M\)</span> της διχοτόμου απέχει εξίσου από τις πλευρές της γωνίας.</li>
+</ol>
+<hr>
+</section>
+<section id="σημαντικές-ιδιότητες-και-θεωρήματα" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="σημαντικές-ιδιότητες-και-θεωρήματα"><span class="header-section-number">1.5</span> <strong>Σημαντικές Ιδιότητες και Θεωρήματα</strong></h3>
+<ul>
+<li><strong>Στο Τρίγωνο:</strong> Οι τρεις διχοτόμοι των γωνιών ενός τριγώνου διέρχονται από το ίδιο σημείο, το οποίο ονομάζεται <strong>έγκεντρο</strong> και είναι το κέντρο του εγγεγραμμένου κύκλου.</li>
+</ul>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Σύρετε τις κορυφές του τριγώνου.</p>
+<p>Τι παρατηρείτε;</p>
+<p>Τί συμβαίνει με το σημείο τομής των διχοτόμων;</p>
+<p>Τι παρατηρείτε για τον κύκλο;</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/h5zxhrpf?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<ul>
+<li><strong>Στο Ισοσκελές Τρίγωνο:</strong> Η διχοτόμος της γωνίας της κορυφής είναι ταυτόχρονα <strong>διάμεσος και ύψος</strong>. Επίσης οι <strong>προσκείμενες στην βάση</strong> του γωνίες είναι ίσες.</li>
+</ul>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Αλλάξτε την θέση των κορυφών του τριγώνου.</p>
+<p>Τι παρατηρείτε για την διάμεσο ΑΜ και τις γωνίες του τριγώνου;</p>
+<p>Είναι η ΑΜ διάμεσος; Γιατί;</p>
+<p>Είναι η ΑΜ διχοτόμος; Γιατί;</p>
+</div>
+<iframe src="https://www.geogebra.org/calculator/k6gckxxk?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.6</span> Ασκήσεις</h3>
+<p><strong>1. Ασκήσεις Μέτρησης και Κατασκευής Γωνιών</strong></p>
+<ul>
+<li><p><strong>Χρήση Μοιρογνωμονίου:</strong> Σχεδιάστε μια γωνία <span class="math inline">\(30^\circ\)</span> χρησιμοποιώντας το μοιρογνωμόνιο. Θυμηθείτε ότι το μοιρογνωμόνιο είναι βαθμολογημένο από <span class="math inline">\(0^\circ\)</span> έως <span class="math inline">\(180^\circ\)</span>.</p></li>
+<li><p><strong>Μέτρηση σε Τρίγωνα:</strong> Σχεδιάστε μια ορθή γωνία <span class="math inline">\(xOy = 90^\circ\)</span>. Πάρτε σημείο <span class="math inline">\(A\)</span> στην <span class="math inline">\(Ox\)</span> ώστε <span class="math inline">\(OA = 3,5 \text{ cm}\)</span> και βρείτε σημείο <span class="math inline">\(B\)</span> στην <span class="math inline">\(Oy\)</span> ώστε <span class="math inline">\(AB = 7 \text{ cm}\)</span>. Μετρήστε με το μοιρογνωμόνιο τις γωνίες <span class="math inline">\(\hat{A}\)</span> και <span class="math inline">\(\hat{B}\)</span> του τριγώνου <span class="math inline">\(OAB\)</span>.</p></li>
+<li><p><strong>Πρακτική Εφαρμογή:</strong> Ένα πλοίο διανύει <span class="math inline">\(100 \text{ km}\)</span> προς Βορρά και μετά στρίβει δεξιά κατά <span class="math inline">\(60^\circ\)</span>. Μετά από <span class="math inline">\(60 \text{ km}\)</span> πορείας, στρίβει αριστερά κατά <span class="math inline">\(25^\circ\)</span>. Χαράξτε την πορεία σε κλίμακα και μετρήστε τη γωνία της τελευταίας πορείας με τον άξονα Βορρά-Νότου.</p></li>
+</ul>
+<p><strong>2. Ασκήσεις Σύγκρισης και Ισότητας Γωνιών</strong></p>
+<ul>
+<li><p><strong>Γεωμετρική Σύγκριση:</strong> Συγκρίνετε τις προσκείμενες στη βάση γωνίες ενός <strong>ισοσκελούς τριγώνου</strong> χρησιμοποιώντας διαφανές χαρτί ή μοιρογνωμόνιο. Διαπιστώστε ότι είναι ίσες.</p></li>
+<li><p><strong>Ισόπλευρο Τρίγωνο:</strong> Συγκρίνετε τις τρεις γωνίες ενός ισόπλευρου τριγώνου. Θυμηθείτε ότι κάθε γωνία ισοπλεύρου τριγώνου είναι <span class="math inline">\(60^\circ\)</span>.</p></li>
+<li><p><strong>Σχέσεις Μεγεθών:</strong> Αν έχετε δύο γωνίες <span class="math inline">\(x\hat{O}y\)</span> και <span class="math inline">\(z\hat{O}t\)</span> και η μία πλευρά της δεύτερης πέφτει στο εσωτερικό της πρώτης (με κοινή κορυφή και μία κοινή πλευρά), ποια γωνία είναι μεγαλύτερη;.</p></li>
+</ul>
+<p><strong>3. Ασκήσεις για τη Διχοτόμο Γωνίας</strong></p>
+<ul>
+<li><p><strong>Κατασκευή με δύο Τρόπους:</strong> Κατασκευάστε τη διχοτόμο μιας τυχαίας γωνίας <span class="math inline">\(yOx\)</span> με: (α) <strong>δίπλωση</strong> χαρτιού, (β) <strong>μοιρογνωμόνιο</strong> .</p></li>
+<li><p><strong>Διχοτόμοι Ειδικών Γωνιών:</strong> Σχηματίστε γωνίες <span class="math inline">\(46^\circ, 86^\circ, 100^\circ\)</span> και <span class="math inline">\(90^\circ\)</span> και σχεδιάστε τις διχοτόμους τους με κανόνα και διαβήτη.</p></li>
+<li><p><strong>Υπολογισμός Μέτρου:</strong> Πόσες μοίρες είναι οι γωνίες στις οποίες χωρίζεται από τη διχοτόμο της: (α) μια πλήρης γωνία, (β) μια ευθεία γωνία και (γ) μια ορθή γωνία;.</p></li>
+<li><p><strong>Ιδιότητες στο Τρίγωνο:</strong> Σε ένα τρίγωνο <span class="math inline">\(ABC\)</span> με <span class="math inline">\(\hat{A} = 40^\circ\)</span> και <span class="math inline">\(\hat{B} = 60^\circ\)</span>, βρείτε τη γωνία <span class="math inline">\(\hat{C}\)</span> και σχεδιάστε τις τρεις διχοτόμους του. Θυμηθείτε ότι οι τρεις διχοτόμοι κάθε τριγώνου διέρχονται από το ίδιο σημείο.</p></li>
+</ul>
+<p><strong>4. Συνδυαστικές Ασκήσεις και Υπολογισμοί</strong></p>
+<ul>
+<li><p><strong>Συμπληρωματικές Γωνίες:</strong> Υπολογίστε δύο γωνίες αν γνωρίζετε οτι έχουν άθροισμα 90 και η μία είναι <strong>διπλάσια</strong> ή <strong>τριπλάσια</strong> της άλλης.</p></li>
+<li><p><strong>Παραπληρωματικές Γωνίες:</strong> Βρείτε δύο γωνίες που έχουν άθροσμα 180 και η μία είναι <strong>τετραπλάσια</strong> της άλλης.</p></li>
+<li><p><strong>Άθροισμα Εφεξής Γωνιών:</strong> Δίνονται δύο γωνίες <span class="math inline">\(x\hat{O}y = 30^\circ\)</span> και <span class="math inline">\(y\hat{O}z = 50^\circ\)</span> που έχουν κοινή κορυφή και μία κοινή πλευρά και οι διχοτόμοι τους <span class="math inline">\(O\delta_1\)</span> και <span class="math inline">\(O\delta_2\)</span>. Υπολογίστε τη γωνία <span class="math inline">\(\hat{xO\delta_2}\)</span> και συγκρίνετέ τη με τη <span class="math inline">\(\hat{xOz}\)</span>.</p></li>
+</ul>
+<p><strong>Πρακτική Συμβουλή:</strong> Όταν γράφετε μια γωνία με τρία κεφαλαία γράμματα, το σύμβολο της γωνίας πρέπει να μπαίνει πάντα στο <strong>μεσαίο γράμμα</strong> που δείχνει την κορυφή.</p>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

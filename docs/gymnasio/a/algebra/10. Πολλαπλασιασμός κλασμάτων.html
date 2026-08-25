@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>10. Πολλαπλασιασμός κλασμάτων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-agalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">10. Πολλαπλασιασμός κλασμάτων</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">10. Πολλαπλασιασμός κλασμάτων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#πολλαπλασιασμός-κλασμάτων" id="toc-πολλαπλασιασμός-κλασμάτων" class="nav-link active" data-scroll-target="#πολλαπλασιασμός-κλασμάτων"><span class="header-section-number">1</span> Πολλαπλασιασμός κλασμάτων</a>
+  <ul>
+  <li><a href="#πολλαπλασιασμός-κλασμάτων-1" id="toc-πολλαπλασιασμός-κλασμάτων-1" class="nav-link" data-scroll-target="#πολλαπλασιασμός-κλασμάτων-1"><span class="header-section-number">1.1</span> <strong>Πολλαπλασιασμός Κλασμάτων</strong></a></li>
+  <li><a href="#αντίστροφος-ενός-αριθμού" id="toc-αντίστροφος-ενός-αριθμού" class="nav-link" data-scroll-target="#αντίστροφος-ενός-αριθμού"><span class="header-section-number">1.2</span> <strong>Αντίστροφος ενός Αριθμού</strong></a></li>
+  <li><a href="#ιδιότητες-πράξεων-και-αριθμητικές-παραστάσεις" id="toc-ιδιότητες-πράξεων-και-αριθμητικές-παραστάσεις" class="nav-link" data-scroll-target="#ιδιότητες-πράξεων-και-αριθμητικές-παραστάσεις"><span class="header-section-number">1.3</span> <strong>Ιδιότητες Πράξεων και Αριθμητικές Παραστάσεις</strong></a></li>
+  <li><a href="#ασκήσεων-.-συνέχεια" id="toc-ασκήσεων-.-συνέχεια" class="nav-link" data-scroll-target="#ασκήσεων-.-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων …. συνέχεια</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<hr>
+<section id="πολλαπλασιασμός-κλασμάτων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="πολλαπλασιασμός-κλασμάτων"><span class="header-section-number">1</span> Πολλαπλασιασμός κλασμάτων</h2>
+<section id="πολλαπλασιασμός-κλασμάτων-1" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="πολλαπλασιασμός-κλασμάτων-1"><span class="header-section-number">1.1</span> <strong>Πολλαπλασιασμός Κλασμάτων</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><strong>Γινόμενο δύο κλασμάτων</strong> είναι ένα νέο κλάσμα που έχει ως <strong>αριθμητή το γινόμενο των αριθμητών</strong> και ως <strong>παρονομαστή το γινόμενο των παρονομαστών</strong>.
+<ul>
+<li><em>Σύμβολα:</em> <span class="math inline">\(\dfrac{\alpha}{\beta} \cdot \dfrac{\gamma}{\delta} = \dfrac{\alpha \cdot \gamma}{\beta \cdot \delta}\)</span>.</li>
+</ul></li>
+<li><strong>Γινόμενο φυσικού αριθμού επί κλάσμα</strong> είναι ένα κλάσμα με αριθμητή το γινόμενο του αριθμητή επί τον φυσικό αριθμό και τον ίδιο παρονομαστή.
+<ul>
+<li><em>Σύμβολα:</em> <span class="math inline">\(\lambda \cdot \dfrac{\alpha}{\beta} = \dfrac{\lambda \cdot \alpha}{\beta}\)</span>.</li>
+</ul></li>
+<li>Κάθε φυσικός αριθμός <span class="math inline">\(\alpha\)</span> μπορεί να θεωρηθεί ως κλάσμα με παρονομαστή τη μονάδα: <span class="math inline">\(\alpha = \dfrac{\alpha}{1}\)</span>.</li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<p>Στον πολλαπλασιασμό κλασμάτων ισχύουν όλες οι ιδιότητες των φυσικών αριθμών:</p>
+<ol type="1">
+<li><strong>Αντιμεταθετική:</strong> <span class="math display">\[\frac{a}{β} \cdot \frac{κ}{λ}=\frac{κ}{λ} \cdot \frac{a}{β}\]</span>.</li>
+<li><strong>Προσεταιριστική:</strong> <span class="math display">\[\frac{a}{β} \cdot \left(\frac{κ}{λ} \cdot \frac{μ}{ν}\right)=\left(\frac{a}{β} \cdot \frac{κ}{λ}\right) \cdot \frac{μ}{ν}\]</span>.</li>
+<li><strong>Ουδέτερο Στοιχείο (η μονάδα 1):</strong> <span class="math display">\[\frac{a}{β} \cdot 1=1\cdot \frac{a}{β}=\frac{a}{β}\]</span>.</li>
+<li><strong>Επιμεριστική (ως προς την πρόσθεση και την αφαίρεση):</strong> <span class="math display">\[\frac{a}{β} \cdot \left(\frac{κ}{λ} \pm \frac{μ}{ν}\right) = \frac{a}{β} \cdot \frac{κ}{λ} \pm \frac{a}{β} \cdot \frac{μ}{ν} \]</span>.</li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{3}{7} \cdot \dfrac{5}{4} = \dfrac{3 \cdot 5}{7 \cdot 4} = \dfrac{15}{28}\)</span>.</li>
+<li><span class="math inline">\(7 \cdot \frac{3}{5} = \frac{7 \cdot 3}{5} = \frac{21}{5}\)</span>.</li>
+<li><span class="math inline">\(\dfrac{2}{5} \cdot \dfrac{7}{8} = \dfrac{2 \cdot 7}{5 \cdot 8} = \dfrac{14}{40} = \dfrac{7}{20}\)</span> (μετά από απλοποίηση).</li>
+<li><span class="math inline">\(\dfrac{3}{7} \cdot \dfrac{70}{6} \cdot \dfrac{8}{5} = \dfrac{3 \cdot 70 \cdot 8}{7 \cdot 6 \cdot 5} = \dfrac{1680}{210} = 8\)</span>.</li>
+<li>Τα <span class="math inline">\(\dfrac{5}{9}\)</span> ενός σχολείου με <span class="math inline">\(252\)</span> μαθητές είναι αγόρια: <span class="math inline">\(\dfrac{5}{9} \cdot 252 = \dfrac{5 \cdot 252}{9} = \dfrac{1260}{9} = 140\)</span> αγόρια.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<p>Υπολογίστε τα γινόμενα (απλοποιήστε όπου είναι δυνατόν):</p>
+<ol type="1">
+<li><span class="math inline">\(3 \cdot \dfrac{3}{4}\)</span></li>
+<li><span class="math inline">\(7 \cdot \dfrac{10}{14}\)</span></li>
+<li><span class="math inline">\(\dfrac{4}{2} \cdot 2\)</span></li>
+<li><span class="math inline">\(\dfrac{5}{100} \cdot 10\)</span></li>
+<li><span class="math inline">\(\dfrac{8}{10} \cdot \dfrac{100}{5}\)</span></li>
+<li><span class="math inline">\(\dfrac{4}{9} \cdot \dfrac{5}{9}\)</span></li>
+<li><span class="math inline">\(\dfrac{3}{2} \cdot \dfrac{2}{15}\)</span></li>
+<li><span class="math inline">\(2 \dfrac{1}{3} \cdot \dfrac{3}{21}\)</span></li>
+<li><span class="math inline">\(4 \dfrac{1}{5} \cdot 2 \dfrac{1}{2}\)</span></li>
+<li><span class="math inline">\(3 \dfrac{1}{8} \cdot 10\)</span></li>
+<li><span class="math inline">\(1 \dfrac{2}{3} \cdot \dfrac{3}{2}\)</span></li>
+<li><span class="math inline">\(\dfrac{8}{27} \cdot \dfrac{9}{16}\)</span></li>
+<li><span class="math inline">\(\dfrac{11}{18} \cdot \dfrac{21}{22}\)</span></li>
+<li><span class="math inline">\(\dfrac{25}{44} \cdot \dfrac{66}{50}\)</span></li>
+<li><span class="math inline">\(\dfrac{32}{26} \cdot \dfrac{39}{96}\)</span></li>
+</ol>
+<hr>
+</section>
+<section id="αντίστροφος-ενός-αριθμού" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="αντίστροφος-ενός-αριθμού"><span class="header-section-number">1.2</span> <strong>Αντίστροφος ενός Αριθμού</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p>Δύο αριθμοί ονομάζονται <strong>αντίστροφοι</strong> όταν το <strong>γινόμενό τους είναι ίσο με τη μονάδα (1)</strong>.</p></li>
+<li><p>Ο αντίστροφος ενός κλάσματος <span class="math inline">\(\dfrac{\alpha}{\beta}\)</span> είναι το κλάσμα <span class="math inline">\(\dfrac{\beta}{\alpha}\)</span>, καθώς <span class="math inline">\(\dfrac{\alpha}{\beta} \cdot \dfrac{\beta}{\alpha} = 1\)</span>.</p></li>
+<li><p>Ο αντίστροφος ενός φυσικού αριθμού <span class="math inline">\(\alpha\)</span> είναι το κλάσμα <span class="math inline">\(\dfrac{1}{\alpha}\)</span>.</p></li>
+<li><p>Ο αριθμός <strong>1 είναι ο μόνος που ισούται με τον αντίστροφό του</strong>.</p></li>
+<li><p>Ο αριθμός <strong>0 δεν έχει αντίστροφο</strong>.</p></li>
+</ul>
+<p><strong>Ιδιότητες</strong></p>
+<ul>
+<li><p>Οι αντίστροφοι αριθμοί είναι πάντα ομόσημοι (δηλαδή έχουν το ίδιο πρόσημο).</p></li>
+<li><p>Αν <span class="math inline">\(\alpha \cdot \beta = 1\)</span>, τότε ο <span class="math inline">\(\alpha\)</span> είναι αντίστροφος του <span class="math inline">\(\beta\)</span> και ο <span class="math inline">\(\beta\)</span> είναι αντίστροφος του <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p>Ο αντίστροφος ενός κλάσματος μεγαλύτερου της μονάδας είναι κλάσμα μικρότερο της μονάδας και αντιστρόφως.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ο αντίστροφος του <span class="math inline">\(\dfrac{4}{7}\)</span> είναι το <span class="math inline">\(\dfrac{7}{4}\)</span>.</li>
+<li>Ο αντίστροφος του <span class="math inline">\(72\)</span> είναι το <span class="math inline">\(\dfrac{1}{72}\)</span>.</li>
+<li>Ο αντίστροφος του <span class="math inline">\(\dfrac{1}{3}\)</span> είναι το <span class="math inline">\(3\)</span>.</li>
+<li>Ο αντίστροφος του κλάσματος <span class="math inline">\(\dfrac{739}{8}\)</span> είναι το <span class="math inline">\(\dfrac{8}{739}\)</span>.</li>
+<li>Για να βρούμε τον αντίστροφο του μεικτού <span class="math inline">\(15 \dfrac{1}{3}\)</span>, τον τρέπουμε σε κλάσμα <span class="math inline">\(\dfrac{46}{3}\)</span>, οπότε ο αντίστροφος είναι το <span class="math inline">\(\dfrac{3}{46}\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<p>Βρείτε τους αντίστροφους των παρακάτω αριθμών:</p>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{5}{8}\)</span></li>
+<li><span class="math inline">\(\dfrac{2}{7}\)</span></li>
+<li><span class="math inline">\(1 \dfrac{1}{2}\)</span></li>
+<li><span class="math inline">\(5\)</span></li>
+<li><span class="math inline">\(23\)</span></li>
+<li><span class="math inline">\(0,3\)</span></li>
+<li><span class="math inline">\(4,08\)</span></li>
+<li><span class="math inline">\(\dfrac{21}{12}\)</span></li>
+<li><span class="math inline">\(\dfrac{1}{2007}\)</span></li>
+<li><span class="math inline">\(13 \dfrac{3}{4}\)</span></li>
+<li><span class="math inline">\(2 \dfrac{2}{3}\)</span></li>
+<li><span class="math inline">\(\dfrac{x}{y}\)</span> (με <span class="math inline">\(x, y \neq 0\)</span>)</li>
+<li><span class="math inline">\(\dfrac{\alpha+1}{\beta}\)</span></li>
+<li><span class="math inline">\(3^2\)</span></li>
+<li><span class="math inline">\(1\)</span></li>
+</ol>
+<hr>
+</section>
+<section id="ιδιότητες-πράξεων-και-αριθμητικές-παραστάσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ιδιότητες-πράξεων-και-αριθμητικές-παραστάσεις"><span class="header-section-number">1.3</span> <strong>Ιδιότητες Πράξεων και Αριθμητικές Παραστάσεις</strong></h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<ul>
+<li><p><strong>Αριθμητική παράσταση</strong> ονομάζεται κάθε σειρά αριθμών που συνδέονται μεταξύ τους με τα σύμβολα των πράξεων.</p></li>
+<li><p><strong>Τιμή</strong> της παράστασης είναι το τελικό αποτέλεσμα μετά την εκτέλεση όλων των πράξεων.</p></li>
+</ul>
+<p><strong>Προτεραιότητα Πράξεων</strong>:</p>
+<ol type="1">
+<li><p><strong>Παρενθέσεις</strong> (ξεκινώντας από την εσωτερική).</p></li>
+<li><p><strong>Δυνάμεις</strong>.</p></li>
+<li><p><strong>Πολλαπλασιασμοί και Διαιρέσεις</strong> (με τη σειρά που εμφανίζονται από αριστερά προς τα δεξιά).</p></li>
+<li><p><strong>Προσθέσεις και Αφαιρέσεις</strong> (με τη σειρά που εμφανίζονται).</p></li>
+</ol>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Χρήση επιμεριστικής: <span class="math inline">\(89 \cdot 7 + 89 \cdot 3 = 89 \cdot (7 + 3) = 89 \cdot 10 = 890\)</span>.</li>
+<li><span class="math inline">\(23 \cdot 49 + 77 \cdot 49 = (23 + 77) \cdot 49 = 100 \cdot 49 = 4.900\)</span>.</li>
+<li><span class="math inline">\(\left(\dfrac{6}{5} + \dfrac{3}{5}\right) \cdot \dfrac{1}{4} = \dfrac{9}{5} \cdot \dfrac{1}{4} = \dfrac{9}{20}\)</span>.</li>
+<li><span class="math inline">\(\left(\dfrac{7}{3} - \dfrac{2}{15}\right) \cdot \dfrac{3}{8} = \left(\dfrac{35}{15} - \dfrac{2}{15}\right) \cdot \dfrac{3}{8} = \dfrac{33}{15} \cdot \dfrac{3}{8} = \dfrac{11}{5} \cdot \dfrac{3}{8} = \dfrac{33}{40}\)</span>.</li>
+<li>Σύνθετη παράσταση:</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+\left[\dfrac{2}{3} \cdot (-3) - (-2) \cdot (-9) \right] : \left[0,4 \cdot (-10) - (-0,2) \cdot (-5)\right] + 7 &amp;= \\ (-2 - 18) : (-4 - 1) + 7 &amp;= \\
+(-20) : (-5) + 7 &amp;= \\ 4 + 7 &amp;= \\ 11
+\end{align}
+\]</span></p>
+<p><strong>Ασκήσεις</strong></p>
+<p>Υπολογίστε την τιμή των παραστάσεων:</p>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{6}{5} + \dfrac{3}{5} \cdot \dfrac{1}{4}\)</span></li>
+<li><span class="math inline">\(\left(\dfrac{6}{5} - \dfrac{3}{5}\right) \cdot \dfrac{1}{4}\)</span></li>
+<li><span class="math inline">\(\dfrac{7}{3} - \dfrac{2}{15} \cdot \dfrac{3}{8}\)</span></li>
+<li><span class="math inline">\(12 \cdot 147 + 12 \cdot 3 - 12 \cdot 150\)</span> (με επιμεριστική)</li>
+<li><span class="math inline">\(24 \cdot 16 + 24 \cdot 18 - 24 \cdot 32\)</span> (με επιμεριστική)</li>
+<li><span class="math inline">\(2 \cdot \dfrac{1}{2} \cdot \left(\dfrac{1}{3} + \dfrac{1}{6}\right) + \dfrac{3}{6} \cdot \dfrac{1}{3}\)</span></li>
+<li><span class="math inline">\(2 \cdot \left(\dfrac{3}{4} + \dfrac{1}{4}\right) - \dfrac{1}{8} \cdot 8\)</span></li>
+<li><span class="math inline">\(3 \cdot 5^2 + 2^2\)</span></li>
+<li><span class="math inline">\(3 \cdot (5 + 2)^2\)</span></li>
+<li><span class="math inline">\((13 - 2)^4 + 5 \cdot 3^2\)</span></li>
+<li><span class="math inline">\(\left(\dfrac{2}{5} + \dfrac{2}{3}\right) \cdot \dfrac{1}{8} + \dfrac{3}{4} \cdot \dfrac{2}{15}\)</span></li>
+<li><span class="math inline">\(2 \cdot 8 \cdot 5^4 + 70.000 + (10^2)^2 + 2^4 \cdot 25^2\)</span></li>
+<li><span class="math inline">\(4^3 \cdot 2^2 \cdot 3^0 - 1^{15} \cdot (3 + 2)^2 + 8^3 : (2^2)^4\)</span></li>
+<li><span class="math inline">\(\dfrac{\dfrac{2}{3} + \dfrac{1}{10}}{\dfrac{4}{3} - \dfrac{4}{6}}\)</span> (Σύνθετο κλάσμα)</li>
+<li><span class="math inline">\(\left(\dfrac{1}{2} \cdot \dfrac{1}{3} + \dfrac{3}{2} \cdot \dfrac{2}{3}\right) \cdot 12\)</span></li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεων-.-συνέχεια" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεων-.-συνέχεια"><span class="header-section-number">1.4</span> Ασκήσεων …. συνέχεια</h3>
+<p><strong>Λυμένες Ασκήσεις</strong></p>
+<ol type="1">
+<li>Πολλαπλασιάστε <span class="math inline">\(\dfrac{2}{7} \cdot \dfrac{4}{5}\)</span>.</li>
+</ol>
+<p><strong>Λύση:</strong> <span class="math inline">\(\dfrac{(2 \cdot 4)}{(7 \cdot 5)} = \dfrac{8}{35}\)</span>.</p>
+<ol start="2" type="1">
+<li>Πολλαπλασιάστε <span class="math inline">\(2 \cdot \dfrac{3}{5}\)</span>.</li>
+</ol>
+<p><strong>Λύση:</strong> <span class="math inline">\(\dfrac{(2 \cdot 3)}{5} = \dfrac{6}{5}\)</span>.</p>
+<ol start="3" type="1">
+<li>Βρείτε τα <span class="math inline">\(\dfrac{3}{4}\)</span> του 100.</li>
+</ol>
+<p><strong>Λύση:</strong> <span class="math inline">\(\dfrac{3}{4} \cdot 100 = \dfrac{(3 \cdot 100)}{4} = \dfrac{300}{4} = 75\)</span>.</p>
+<ol start="4" type="1">
+<li>Βρείτε το <span class="math inline">\(\dfrac{1}{5}\)</span> του 4.</li>
+</ol>
+<p><strong>Λύση:</strong> <span class="math inline">\(\dfrac{1}{5} \cdot 4 = \dfrac{4}{5}\)</span>.</p>
+<ol start="5" type="1">
+<li>Βρείτε τα <span class="math inline">\(\dfrac{2}{3}\)</span> του 200.</li>
+</ol>
+<p><strong>Λύση:</strong> <span class="math inline">\(\dfrac{2}{3} \cdot 200 = \dfrac{400}{3}\)</span>.</p>
+<p><br>
+</p>
+<p><strong>Άλυτες Ασκήσεις</strong></p>
+<ol type="1">
+<li><p>Υπολογίστε το γινόμενο: <span class="math inline">\(\left(\dfrac{5}{6} + \dfrac{1}{2} - \dfrac{3}{4}\right) \cdot 4\)</span>.</p></li>
+<li><p>Βρείτε τα <span class="math inline">\(\dfrac{5}{9}\)</span> του 252.</p></li>
+<li><p>Βρείτε τα <span class="math inline">\(\dfrac{3}{4}\)</span> του 372.</p></li>
+<li><p>Ένας βοσκός έχει 385 ζώα.</p></li>
+</ol>
+<p>Τα <span class="math inline">\(\dfrac{2}{5}\)</span> είναι γίδια.</p>
+<p>Πόσα είναι τα γίδια;</p>
+<ol start="5" type="1">
+<li><p>Ένας οινοπώλης πούλησε τα <span class="math inline">\(\dfrac{5}{8}\)</span> από τα 184 κιλά κρασί. Πόσα κιλά πούλησε;</p></li>
+<li><p>Βρείτε τα <span class="math inline">\(\dfrac{4}{5}\)</span> των <span class="math inline">\(\dfrac{2}{3}\)</span> των 60 €.</p></li>
+<li><p>Πολλαπλασιάστε <span class="math inline">\(\dfrac{3}{8} \cdot 12\)</span>.</p></li>
+<li><p>Βρείτε το <span class="math inline">\(\dfrac{1}{4}\)</span> της αξίας ενός υπολογιστή που κοστίζει 1.500 €.</p></li>
+<li><p>Πόσο είναι τα <span class="math inline">\(\dfrac{9}{7}\)</span> του 60;</p></li>
+<li><p>Αν το ένα κιλό πατάτες κοστίζει 2 €, πόσο κοστίζουν τα <span class="math inline">\(4\)</span> κιλά, πόσο τα <span class="math inline">\(\dfrac{5}{8}\)</span> κιλά;</p></li>
+<li><p><span style="color:#a86232;">Να υπολογιστεί η παράσταση (2 Παρενθέσεις)</span> <span class="math display">\[\left(\frac{3}{4} + \frac{1}{2}\right) \times \left(5 - \frac{1}{3}\right)\]</span></p></li>
+</ol>
+<p>……………………………….</p>
+<p>……………………………….</p>
+<p><strong>Τελική Απάντηση</strong> <span class="math inline">\(\dfrac{35}{6}\)</span> ή <span class="math inline">\(5 \dfrac{5}{6}\)</span></p>
+<ol start="12" type="1">
+<li><span style="color:#a86232;">Να υπολογίσετε τη παράσταση (3 Παρενθέσεις)</span> <span class="math display">\[3 \times \left[\left(\frac{1}{2} + 1\right) - \left(\frac{1}{4} \times \frac{2}{3}\right)\right]\]</span></li>
+</ol>
+<p><strong>Βήμα 1: Εσωτερική παρένθεση πρόσθεσης</strong></p>
+<p>………………………………………..</p>
+<p>………………………………………</p>
+<p><strong>Βήμα 2: Εσωτερική παρένθεση πολλαπλασιασμού</strong></p>
+<p>………………………………………..</p>
+<p>……………………………………….</p>
+<p><strong>Βήμα 3: Αφαίρεση εντός της αγκύλης</strong></p>
+<p>………………………………….</p>
+<p>…………………………………</p>
+<p><strong>Βήμα 4: Τελικός πολλαπλασιασμός με τον φυσικό 3</strong> <span class="math inline">\(3 \times \dfrac{4}{3} = \dfrac{12}{3} = 4\)</span>.</p>
+<p><strong>Τελική Απάντηση</strong> <span class="math inline">\(4\)</span></p>
+<ol start="13" type="1">
+<li><span style="color:#a86232;">Υπολογίστε την παράσταση (4 Παρενθέσεις &amp; Εσωτερικές)</span> <span class="math display">\[\left[ \left(2 \times \frac{1}{5}\right) + \left(\frac{3}{10} - \frac{1}{5}\right)\right ] \times \left[ \left(1 + \frac{1}{2}\right) \times 2 \right]\]</span></li>
+</ol>
+<p><strong>Βήμα 1: Πρώτη αγκύλη (εσωτερικές πράξεις)</strong></p>
+<p>……………………………………………</p>
+<p>Άθροισμα: <span class="math inline">\(\dfrac{2}{5} + \dfrac{1}{10} = \dfrac{4}{10} + \dfrac{1}{10} = \dfrac{5}{10} = \dfrac{1}{2}\)</span>.</p>
+<p><strong>Βήμα 2: Δεύτερη αγκύλη (εσωτερικές πράξεις)</strong></p>
+<p>………………………………………..</p>
+<p>Πολλαπλασιασμός: <span class="math inline">\(\dfrac{3}{2} \times 2 = 3\)</span>.</p>
+<p><strong>Βήμα 3: Τελικός πολλαπλασιασμός</strong> <span class="math inline">\(\dfrac{1}{2} \times 3 = \dfrac{3}{2}\)</span>.</p>
+<p><strong>Τελική Απάντηση</strong> <span class="math inline">\(\dfrac{3}{2}\)</span> ή <span class="math inline">\(1 \dfrac{1}{2}\)</span></p>
+<ol start="14" type="1">
+<li><span style="color:#a86232;">Υπολογίστε την παράσταση (Σύνθετη με αλληλουχία πράξεων)</span> <span class="math display">\[\left\{ \left[ \left( 4 - \frac{1}{2} \right) \times \frac{2}{7} \right] + \left( \frac{1}{3} \times 2 \right) \right\} \times \frac{1}{2}\]</span></li>
+</ol>
+<p><strong>Βήμα 1: Εσωτερική παρένθεση αφαίρεσης</strong> <span class="math inline">\((4 - \dfrac{1}{2}) = \dfrac{8}{2} - \dfrac{1}{2} = \dfrac{7}{2}\)</span>.</p>
+<p><strong>Βήμα 2: Πολλαπλασιασμός εντός αγκύλης</strong> <span class="math inline">\(\dfrac{7}{2} \times \dfrac{2}{7} = \dfrac{14}{14} = 1\)</span>.</p>
+<p><strong>Βήμα 3: Δεύτερη παρένθεση και άθροισμα αγκίστρου</strong> <span class="math inline">\(\left(\dfrac{1}{3} \times 2\right) = \dfrac{2}{3}\)</span>. Στο άγκιστρο: <span class="math inline">\(1 + \dfrac{2}{3} = \dfrac{3}{3} + \dfrac{2}{3} = \dfrac{5}{3}\)</span>.</p>
+<p><strong>Βήμα 4: Τελικός πολλαπλασιασμός</strong></p>
+<p>……………………………………</p>
+<p><strong>Τελική Απάντηση</strong> <span class="math inline">\(\dfrac{5}{6}\)</span></p>
+<ol start="15" type="1">
+<li><span style="color:#a86232;">Υπολογίστε την παράσταση (Πολλαπλές εσωτερικές και φυσικοί)</span> <span class="math display">\[2 \times \left\{ \left[ \left( \frac{3}{4} + \frac{1}{4} \right) \times 5 \right] - \left[ 2 \times \left( 1 - \frac{1}{3} \right) \right] \right\}\]</span></li>
+</ol>
+<p><strong>Βήμα 1: Επίλυση αριστερής αγκύλης</strong> <span class="math inline">\(\left(\dfrac{3}{4} + \dfrac{1}{4}\right) = \dfrac{4}{4} = 1\)</span>. <span class="math inline">\(1 \times 5 = 5\)</span>.</p>
+<p><strong>Βήμα 2: Επίλυση δεξιάς αγκύλης</strong> <span class="math inline">\(\left(1 - \dfrac{1}{3}\right) = \dfrac{2}{3}\)</span>. <span class="math inline">\(2 \times \dfrac{2}{3} = \dfrac{4}{3}\)</span>.</p>
+<p><strong>Βήμα 3: Αφαίρεση εντός αγκίστρου</strong> <span class="math inline">\(............................... = \dfrac{11}{3}\)</span>.</p>
+<p><strong>Βήμα 4: Τελικός πολλαπλασιασμός</strong> <span class="math inline">\(2 \times \dfrac{11}{3} = \dfrac{22}{3}\)</span>.</p>
+<p><strong>Τελική Απάντηση</strong> <span class="math inline">\(\dfrac{22}{3}\)</span> ή <span class="math inline">\(7 \dfrac{1}{3}\)</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

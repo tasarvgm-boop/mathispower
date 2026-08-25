@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>02. Εμβαδά επίπεδων σχημάτων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-magentalight quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">02. Εμβαδά επίπεδων σχημάτων</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">02. Εμβαδά επίπεδων σχημάτων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">29 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#εμβαδά-επίπεδων-σχημάτων" id="toc-εμβαδά-επίπεδων-σχημάτων" class="nav-link active" data-scroll-target="#εμβαδά-επίπεδων-σχημάτων"><span class="header-section-number">1</span> Εμβαδά επίπεδων σχημάτων</a>
+  <ul>
+  <li><a href="#χαρακτηριστικά-παραδείγματα" id="toc-χαρακτηριστικά-παραδείγματα" class="nav-link" data-scroll-target="#χαρακτηριστικά-παραδείγματα"><span class="header-section-number">1.2</span> Χαρακτηριστικά Παραδείγματα</a></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="εμβαδά-επίπεδων-σχημάτων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="εμβαδά-επίπεδων-σχημάτων"><span class="header-section-number">1</span> Εμβαδά επίπεδων σχημάτων</h2>
+<div style="background-color: #c682d9; border: 2px solid #2f3e50; color: #171426; padding: 15px; border-radius: 5px;">
+<p>Το <strong>εμβαδόν</strong> μιας επίπεδης επιφάνειας είναι ένας θετικός αριθμός που εκφράζει την έκταση που καταλαμβάνει η επιφάνεια αυτή στο επίπεδο. Ουσιαστικά, ο αριθμός αυτός δηλώνει το πλήθος των μονάδων μέτρησης (π.χ. τετραγωνικά μέτρα) που απαιτούνται για να καλυφθεί πλήρως η επιφάνεια.</p>
+<section id="βασικοί-τύποι-και-ορισμοί" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="βασικοί-τύποι-και-ορισμοί"><span class="header-section-number">1.1</span> Βασικοί Τύποι και Ορισμοί</h3>
+<ul>
+<li><p><strong>Τετράγωνο (πλευράς</strong> <span class="math inline">\(\alpha\)</span>): Το εμβαδόν ισούται με το τετράγωνο της πλευράς του (<span class="math inline">\(E = \alpha^2\)</span>).<br>
+</p>
+<p><br>
+<img src="images/clipboard-226071660.png" class="img-fluid"></p></li>
+<li><p><strong>Ορθογώνιο (διαστάσεων</strong> <span class="math inline">\(\alpha, \beta\)</span>): Ισούται με το γινόμενο των διαστάσεών του, δηλαδή μήκος επί πλάτος (<span class="math inline">\(E = \alpha \cdot \beta\)</span>).<br>
+</p>
+<p><br>
+<img src="images/clipboard-69816940.png" class="img-fluid"></p></li>
+<li><p><strong>Παραλληλόγραμμο (βάση</strong> <span class="math inline">\(\beta\)</span>, ύψος <span class="math inline">\(\upsilon\)</span>): Είναι ίσο με το γινόμενο μιας βάσης του επί το αντίστοιχο ύψος (<span class="math inline">\(E = \beta \cdot \upsilon\)</span>).<br>
+</p>
+<p><br>
+<img src="images/clipboard-363976616.png" class="img-fluid"><br>
+<br>
+Έτσι μπορούμε να πούμε <span class="math inline">\(Ε~παραλληλογράμμου~ =α\cdotυ_1\)</span> ή <span class="math inline">\(Ε~παραλληλογράμμου~ =β.υ_2\)</span></p></li>
+<li><p><strong>Για το ορθογώνιο τρίγωνο έχουμε</strong> <span class="math inline">\(Ε_{\text{Ορθογωνίου Τριγώνου}}=\dfrac{1}{2}β\cdotγ\)</span></p>
+<p><br>
+<img src="images/clipboard-3416560255.png" class="img-fluid" width="290"></p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" style="color: blue;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Οι κάθετες πλευρές στο ορθογώνιο τρίγωνο μπορούν να θεωρηθούν η μια σαν βάση και η άλλη σαν ύψος</p>
+</div>
+</div>
+<p><br>
+ή <span class="math inline">\(Ε_{\text{Ορθογωνίου Τριγώνου}}=\dfrac{1}{2}α\cdotυ_a\)</span><br>
+<br>
+</p>
+<ul>
+<li><strong>Τυχαίο Τρίγωνο (βάση</strong> <span class="math inline">\(\beta\)</span><strong>, ύψος</strong> <span class="math inline">\(\upsilon\)</span><strong>):</strong> Ισούται με το μισό του γινομένου της βάσης του επί το αντίστοιχο ύψος (<span class="math inline">\(E = \dfrac{1}{2} \beta \cdot \upsilon\)</span>).<br>
+Για το τυχαίο τρίγωνο θα έχουμε για κάθε βάση ένα αντίστοιχο ύψος, έτσι μπορούμε να γράψουμε</li>
+</ul>
+<p><img src="images/clipboard-2767937078.png" class="img-fluid" width="409"><br>
+<br>
+</p>
+<p><br>
+<span class="math inline">\(Ε_{\text{Τριγώνου}}=\dfrac{α\timesυ_α}{2}=\dfrac{β\timesυ_β}{2}=\dfrac{γ\timesυ_γ}{2}\)</span></p>
+<ul>
+<li><strong>Τραπέζιο (βάσεις</strong> <span class="math inline">\(B, \beta\)</span> <strong>και ύψος</strong> <span class="math inline">\(\upsilon\)</span><strong>)</strong>: Είναι ίσο με το γινόμενο του ημιαθροίσματος των βάσεών του επί το ύψος του (<span class="math inline">\(E = \dfrac{(B + \beta) \cdot \upsilon}{2}\)</span>).<br>
+<br>
+<img src="images/clipboard-1183668435.png" class="img-fluid"></li>
+</ul>
+</section>
+</div>
+<section id="χαρακτηριστικά-παραδείγματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="χαρακτηριστικά-παραδείγματα"><span class="header-section-number">1.2</span> Χαρακτηριστικά Παραδείγματα</h3>
+<ol type="1">
+<li><strong>Τετράγωνο:</strong> Αν ένα τετράγωνο έχει πλευρά 5 cm, το εμβαδόν του προκύπτει αν το χωρίσουμε σε <span class="math inline">\(5 \cdot 5 = 25\)</span> τετραγωνάκια πλευράς 1 cm, άρα <span class="math inline">\(E = 25 \text{ cm}^2\)</span>.</li>
+<li><strong>Ορθογώνιο:</strong> Ένα οικόπεδο με μήκος 18 m και πλάτος 15 m έχει εμβαδόν <span class="math inline">\(E = 18 \cdot 15 = 270 \text{ m}^2\)</span>.</li>
+<li><strong>Τρίγωνο:</strong> Για να βρούμε το ύψος ενός τριγώνου με εμβαδόν <span class="math inline">\(12 \text{ cm}^2\)</span> και βάση 4 cm, λύνουμε τον τύπο ως προς <span class="math inline">\(\upsilon\)</span>: <span class="math inline">\(\upsilon = \dfrac{2E}{\beta} = \dfrac{24}{4} = 6 \text{ cm}\)</span>.</li>
+<li><strong>Σύνθετο σχήμα:</strong> Το εμβαδόν ενός σχήματος μπορεί να προκύψει από το άθροισμα επιμέρους σχημάτων, όπως ένα οικόπεδο που αποτελείται από ένα ορθογώνιο και ένα τραπέζιο.</li>
+</ol>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Υπολόγισε το εμβαδόν ένος τετραγώνου πλευράς 7 cm.</p></li>
+<li><p>Ένα ορθογώνιο έχει διαστάσεις 8 m και 3 m.<br>
+Βρες το εμβαδόν του ορθογωνίου.</p></li>
+<li><p>Τρίγωνο έχει βάση 10 cm και ύψος 6 cm<br>
+Υπολόγισε το εμβαδόν του τριγώνου.</p></li>
+<li><p>Παραλληλόγραμμο έχει βάση 12 cm, ύψος 5 cm<br>
+Να βρεθεί το εμβαδόν του παραλληλογράμμου.</p></li>
+<li><p>Τραπέζιο έχει βάσεις 6 cm και 10 cm, ύψος 4 cm.<br>
+Ποιο είναι το εμβαδόν του τραπεζίου;</p></li>
+<li><p>Σύνθετο σχήμα (τετράγωνο + τρίγωνο)<br>
+Πάνω σε μία πλευρά ενός τετράγωνου πλευράς 4 cm, είναι χτισμένο ένα ισοσκελές τρίγωνο πλευράς 3 cm εξωτερικά του τετργώνου (κορυφή έξω από το τετράγωνο).<br>
+Υπολόγισε το συνολικό εμβαδόν του σχήματος.<br>
+<img src="images/clipboard-3592963487.png" class="img-fluid" width="200"></p></li>
+<li><p>Ορθογώνιο με τριγωνική τομή<br>
+Σε ένα ορθογώνιο διαστάσεων 10 cm × 6 cm, κόβουμε από την μια γωνία ένα ορθογώνιο τρίγωνο με κάθετες πλευρές μήκους 4 cm και 3 cm (πάνω στις πλευρές του ορθογωνίου).<br>
+Βρες το εμβαδόν του σχήματος που απομένει.<br>
+<img src="images/clipboard-3822389438.png" class="img-fluid"></p></li>
+<li><p>Τραπέζιο και παραλληλόγραμμο<br>
+Σε ένα τραπέζιο με βάσεις 8 cm και 12 cm, ύψος 5 cm, στη μικρότερη βάση του, εξωτερικά, προσαρτάται παραλληλόγραμμο ίδιου ύψους 5 cm, με βάση 6 cm, που εφάπτεται σε όλο το μήκος της βάσης.<br>
+</p></li>
+</ol>
+<p><br>
+<img src="images/clipboard-223657463.png" class="img-fluid"></p>
+<p>Υπολόγισε το συνολικό εμβαδόν.</p>
+<ol start="9" type="1">
+<li>Πρόβλημα – Τρίγωνο εντός τετραγώνου<br>
+Στο εσωτερικό ενός τετραγώνου πλευράς 8 cm, σχεδιάζεται τρίγωνο που έχει ως βάση ολόκληρη την κάτω πλευρά του τετραγώνου και κορυφή στο μέσο της πάνω πλευράς.<br>
+Ποιο είναι το εμβαδόν του τριγώνου;<br>
+<img src="images/clipboard-728676368.png" class="img-fluid" width="300"><br>
+Αν η κορυφή του τριγώνου βρίσκεται σε μια κορυφή της άνω πλευράς του τετραγώνου ποιο θα είναι το εμβαδό του τριγώνου;<br>
+<img src="images/clipboard-1828458876.png" class="img-fluid" width="300"><br>
+Αν η κορυφή του τριγώνου βρίσκεται σε ένα οποιοδήποτε σημείο της άνω πλευράς του τετραγώνου ποιο θα είναι το εμβαδό του τριγώνου;<br>
+<img src="images/clipboard-2355580156.png" class="img-fluid" width="300"><br>
+Συγκρίνετε τα τρία εμβαδά.</li>
+<li>Πρόβλημα – Παραλληλόγραμμο και τραπέζιο<br>
+Δίνεται παραλληλόγραμμο βάσης 14 cm και ύψους 6 cm.<br>
+Από αυτό “κόβεται” ένα τραπέζιο με βάσεις 8 cm και 12 cm (παράλληλες στη βάση του παραλληλογράμμου) και ίδιο ύψος 6 cm, που βρίσκεται εσωτερικά στη μία πλευρά.<br>
+Βρες το εμβαδόν του αρχικού παραλληλογράμμου και του τραπεζίου που αφαιρείται. Πόσο είναι το εμβαδόν του σχήματος που απομένει;<br>
+<img src="images/clipboard-2133797972.png" class="img-fluid" width="400"></li>
+<li>Αν η περίμετρος ενός τετραγώνου είναι 60 cm, υπολόγισε το εμβαδόν του.</li>
+<li>Ένα οικόπεδο σχήματος ορθογωνίου έχει μήκος 18 m και πλάτος 15 m. Ποιο είναι το εμβαδόν του;.</li>
+<li>Οι διαστάσεις ενός ορθογωνίου είναι 8 m και 12 m. Για να διπλασιάσουμε το εμβαδόν του, αυξάνουμε τη μεγαλύτερη διάσταση κατά 4 m. Πόσο πρέπει να αυξήσουμε τη μικρότερη διάσταση;.</li>
+<li>Ένα παραλληλόγραμμο έχει εμβαδόν <span class="math inline">\(120 \text{ cm}^2\)</span> και ύψος 15 cm. Βρες το μήκος της βάσης που αντιστοιχεί σε αυτό το ύψος. Πόση πρέπει να είναι η πλευρά ενός τετραγώνου για να έχει το ίδιο εμβαδόν; Πόση πρέπει να είναι η βάση ενός τριγώνου με το ίδιο ύψος (<span class="math inline">\(15 \ \  cm\)</span>) για να έχει ίδιο εμβαδόν;</li>
+<li>Βρες το ύψος ενός τριγώνου που έχει εμβαδόν <span class="math inline">\(12 \text{ cm}^2\)</span> και βάση 4 cm.</li>
+<li>Ένα τραπέζιο έχει βάσεις 12 cm και 20 cm και ύψος 4 cm. Υπολόγισε το εμβαδόν του.</li>
+<li>Η πρόσοψη μιας πολυκατοικίας που θέλουμε να βάψουμε αποτελείται από ένα ορθογώνιο (6 m x 9 m) και ένα τριγωνικό αέτωμα (βάση 6 m, ύψος 2,5 m). Πόση είναι η συνολική επιφάνεια που πρέπει να βαφτεί; Αν πληρώνουμε 5 € το τετραγωνικό για το χρώμα και 60 € για εργασία πόσο θα στοιχίσει το βάψιμο;</li>
+<li>Πόσα τετράγωνα πλακάκια πλευράς 25 cm χρειάζονται για να καλυφθεί ένα δάπεδο με διαστάσεις 12 m μήκος και 8 m πλάτος;.</li>
+<li>Ένας ορθογώνιος κήπος έχει διαστάσεις 36 m και 28 m. Τον διασχίζουν δύο κάθετα δρομάκια πλάτους 1,2 m και 1 m αντίστοιχα. Ποιο είναι το εμβαδόν της επιφάνειας που απομένει για φύτευση;<br>
+<img src="images/clipboard-1382963159.png" class="img-fluid" width="400"></li>
+<li>Ένα τετράγωνο και ένα τραπέζιο έχουν ίσα εμβαδά. Αν οι βάσεις του τραπεζίου είναι 12 cm και 20 cm και το ύψος του είναι 4 cm, υπολόγισε την πλευρά του τετραγώνου.</li>
+<li>Ένα τριγωνικό πάρκο έχει βάση 12 m και ύψος 8 m. Ο Δήμος θέλει να φυτέψει γκαζόν που κοστίζει 5 €/m². Ποιο είναι το συνολικό κόστος;</li>
+<li>Ένα χωράφι έχει σχήμα παραλληλογράμμου με βάση 15 m και ύψος 9 m. Από κάθε τετραγωνικό μέτρο παίρνουμε 3 kg σιτάρι. Πόσα kg σιτάρι παράγει το χωράφι;</li>
+<li>Ένας κήπος έχει σχήμα τραπεζίου με παράλληλες πλευρές 8 m και 14 m και ύψος 6 m. Πόσα λίτρα νερό χρειάζεται για πότισμα αν αντιστοιχούν 2 λίτρα/m²;</li>
+</ol>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>06. Η διάταξη των πραγματικών αριθμών – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">06. Η διάταξη των πραγματικών αριθμών</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">06. Η διάταξη των πραγματικών αριθμών</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">20 Μάιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#η-διάταξη-των-πραγματικών-αριθμών" id="toc-η-διάταξη-των-πραγματικών-αριθμών" class="nav-link active" data-scroll-target="#η-διάταξη-των-πραγματικών-αριθμών"><span class="header-section-number">1</span> Η διάταξη των πραγματικών αριθμών</a>
+  <ul>
+  <li><a href="#η-έννοια-της-διάταξης-στους-πραγματικούς-αριθμούς" id="toc-η-έννοια-της-διάταξης-στους-πραγματικούς-αριθμούς" class="nav-link" data-scroll-target="#η-έννοια-της-διάταξης-στους-πραγματικούς-αριθμούς"><span class="header-section-number">1.1</span> Η έννοια της διάταξης στους πραγματικούς αριθμούς</a>
+  <ul>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.1.1</span> Παραδείγματα</a></li>
+  </ul></li>
+  <li><a href="#οι-ιδιότητες-των-ανισοτήτων" id="toc-οι-ιδιότητες-των-ανισοτήτων" class="nav-link" data-scroll-target="#οι-ιδιότητες-των-ανισοτήτων"><span class="header-section-number">1.2</span> Οι ιδιότητες των ανισοτήτων</a>
+  <ul>
+  <li><a href="#παραδείγματα-1" id="toc-παραδείγματα-1" class="nav-link" data-scroll-target="#παραδείγματα-1"><span class="header-section-number">1.2.1</span> Παραδείγματα</a></li>
+  </ul></li>
+  <li><a href="#διαστήματα-πραγματικών-αριθμών" id="toc-διαστήματα-πραγματικών-αριθμών" class="nav-link" data-scroll-target="#διαστήματα-πραγματικών-αριθμών"><span class="header-section-number">1.3</span> Διαστήματα πραγματικών αριθμών</a>
+  <ul>
+  <li><a href="#παραδείγματα-2" id="toc-παραδείγματα-2" class="nav-link" data-scroll-target="#παραδείγματα-2"><span class="header-section-number">1.3.1</span> Παραδείγματα</a></li>
+  </ul></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="η-διάταξη-των-πραγματικών-αριθμών" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="η-διάταξη-των-πραγματικών-αριθμών"><span class="header-section-number">1</span> Η διάταξη των πραγματικών αριθμών</h2>
+<section id="η-έννοια-της-διάταξης-στους-πραγματικούς-αριθμούς" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-έννοια-της-διάταξης-στους-πραγματικούς-αριθμούς"><span class="header-section-number">1.1</span> Η έννοια της διάταξης στους πραγματικούς αριθμούς</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η <strong>διάταξη των πραγματικών αριθμών</strong> βασίζεται στη σύγκριση της μεταξύ τους τιμής και συνδέεται άμεσα με τη γεωμετρική τους αναπαράσταση στον άξονα των πραγματικών αριθμών.</p>
+<p><strong>Θεωρία και Ορισμοί</strong></p>
+<p><strong>Ορισμός της ανισότητας:</strong></p>
+<p>Ένας πραγματικός αριθμός <span class="math inline">\(\alpha\)</span> λέμε ότι είναι <strong>μεγαλύτερος</strong> από έναν αριθμό <span class="math inline">\(\beta\)</span> και γράφουμε <span class="math inline">\(\alpha &gt; \beta\)</span>, όταν η διαφορά <span class="math inline">\(\alpha - \beta\)</span> είναι <strong>θετικός</strong> αριθμός.</p>
+<p>Αντίστοιχα, ο <span class="math inline">\(\alpha\)</span> είναι <strong>μικρότερος</strong> από τον <span class="math inline">\(\beta\)</span> (<span class="math inline">\(\alpha &lt; \beta\)</span>) όταν η διαφορά <span class="math inline">\(\alpha - \beta\)</span> είναι <strong>αρνητικός</strong> αριθμός.</p>
+<p>Στην περίπτωση που οι αριθμοί είναι ίσοι, η διαφορά τους είναι μηδέν.</p>
+</div>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Άν <span class="math inline">\(α&gt;0 \quad \text{  και } \quad β&gt;0 \Longrightarrow α+β&gt;0\)</span></p>
+<p>Άν <span class="math inline">\(α&lt;0 \quad \text{  και } \quad β&lt;0 \Longrightarrow α+β&lt;0\)</span></p>
+<p>Άν α, β ομόσημοι θετικοί ή α, β ομόσημοι αρνητικοί <span class="math inline">\(\quad \Longrightarrow α\cdotβ&gt;0\)</span></p>
+<p>Άν α, β ετερόσημοι <span class="math inline">\(\quad \Longrightarrow α\cdotβ&lt;0\)</span></p>
+</div>
+</div>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><p><strong>Σύγκριση:</strong> Αν θέλουμε να δείξουμε ότι <span class="math inline">\(5 &gt; 2\)</span>, ελέγχουμε τη διαφορά <span class="math inline">\(5 - 2 = 3\)</span>, η οποία είναι θετική.</p></li>
+<li><p>Αν α&gt;0 και β&lt;0 <span class="math inline">\(\quad \Longrightarrow\)</span> -β&gt;0 και άρα</p></li>
+</ol>
+<ul>
+<li>α-β=α+(-β)&gt;0 <span class="math inline">\(\quad \Longrightarrow\)</span> α&gt;β</li>
+<li>β-α=β+(-α)&lt;0 <span class="math inline">\(\quad \Longrightarrow\)</span> β&lt;α</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="οι-ιδιότητες-των-ανισοτήτων" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="οι-ιδιότητες-των-ανισοτήτων"><span class="header-section-number">1.2</span> Οι ιδιότητες των ανισοτήτων</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Βασικές Ιδιότητες:</strong></p>
+<ol type="1">
+<li><p><strong>Μεταβατική ιδιότητα:</strong> Αν <span class="math inline">\(\alpha &lt; \beta\)</span> και <span class="math inline">\(\beta &lt; \gamma\)</span>, τότε <span class="math inline">\(\alpha &lt; \gamma\)</span>.</p></li>
+<li><p><strong>Πρόσθεση αριθμού:</strong> Αν προσθέσουμε τον ίδιο αριθμό <span class="math inline">\(\gamma\)</span> και στα δύο μέλη μιας ανισότητας, η φορά της <strong>δεν αλλάζει</strong> (<span class="math inline">\(\alpha &lt; \beta \Leftrightarrow \alpha + \gamma &lt; \beta + \gamma\)</span>).</p></li>
+<li><p><strong>Πρόσθεση ανισοτήτων:</strong> Μπορούμε να προσθέτουμε κατά μέλη ομοιόστροφες ανισότητες (<span class="math inline">\(\alpha &lt; \beta\)</span> και <span class="math inline">\(\gamma &lt; \delta \Rightarrow \alpha + \gamma &lt; \beta + \delta\)</span>).</p></li>
+<li><p><strong>Πολλαπλασιασμός με θετικό αριθμό:</strong> Αν <span class="math inline">\(\gamma &gt; 0\)</span>, τότε <span class="math inline">\(\alpha &lt; \beta \Leftrightarrow \alpha \cdot \gamma &lt; \beta \cdot \gamma\)</span>.</p></li>
+<li><p><strong>Πολλαπλασιασμός με αρνητικό αριθμό:</strong> Αν <span class="math inline">\(\gamma &lt; 0\)</span>, τότε <span class="math inline">\(\alpha &lt; \beta \Leftrightarrow \alpha \cdot \gamma &gt; \beta \cdot \gamma\)</span> (η φορά της ανισότητας <strong>αντιστρέφεται</strong>).</p></li>
+<li><p><strong>Ιδιότητα τετραγώνου:</strong> Για κάθε πραγματικό αριθμό <span class="math inline">\(\alpha\)</span> ισχύει ότι <span class="math inline">\(\alpha^2 \geq 0\)</span>.</p></li>
+<li><p><strong>Αντίστροφοι αριθμοί:</strong> Αν οι <span class="math inline">\(\alpha, \beta\)</span> είναι ομόσημοι και <span class="math inline">\(\alpha &lt; \beta\)</span>, τότε οι αντίστροφοί τους αλλάζουν φορά: <span class="math inline">\(\dfrac{1}{\alpha} &gt; \dfrac{1}{\beta}\)</span>.</p></li>
+</ol>
+</div>
+<section id="παραδείγματα-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.2.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><strong>Πολλαπλασιασμός:</strong> Αν έχουμε την ανισότητα <span class="math inline">\(x &lt; 3\)</span> και πολλαπλασιάσουμε με το <span class="math inline">\(-2\)</span>, προκύπτει <span class="math inline">\(-2x &gt; -6\)</span>.</li>
+<li><strong>Τετράγωνα:</strong> Η σχέση <span class="math inline">\((\alpha - \beta)^2 \geq 0\)</span> είναι πάντα αληθής και οδηγεί στη γνωστή ανισότητα <span class="math inline">\(\alpha^2 + \beta^2 \geq 2\alpha\beta\)</span>.</li>
+<li><strong>Διπλές ανισότητες:</strong> Αν <span class="math inline">\(1 &lt; x &lt; 2\)</span> και <span class="math inline">\(3 &lt; y &lt; 4\)</span>, τότε προσθέτοντας κατά μέλη έχουμε <span class="math inline">\(4 &lt; x + y &lt; 6\)</span>.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="διαστήματα-πραγματικών-αριθμών" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="διαστήματα-πραγματικών-αριθμών"><span class="header-section-number">1.3</span> Διαστήματα πραγματικών αριθμών</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η διάταξη επιτρέπει τον ορισμό συνόλων αριθμών που ονομάζονται διαστήματα:</p>
+<ul>
+<li><p><strong>Κλειστό διάστημα</strong> <span class="math inline">\([\alpha, \beta]\)</span>: Οι αριθμοί <span class="math inline">\(x\)</span> για τους οποίους <span class="math inline">\(\alpha \leq x \leq \beta\)</span>.</p></li>
+<li><p><strong>Ανοικτό διάστημα</strong> <span class="math inline">\((\alpha, \beta)\)</span>: Οι αριθμοί <span class="math inline">\(x\)</span> για τους οποίους <span class="math inline">\(\alpha &lt; x &lt; \beta\)</span>.</p></li>
+<li><p><strong>Άπειρα διαστήματα:</strong> Όπως το <span class="math inline">\([\alpha, +\infty)\)</span> για <span class="math inline">\(x \geq \alpha\)</span> ή το <span class="math inline">\((-\infty, \alpha)\)</span> για <span class="math inline">\(x &lt; \alpha\)</span>.</p></li>
+</ul>
+</div>
+<section id="παραδείγματα-2" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="παραδείγματα-2"><span class="header-section-number">1.3.1</span> Παραδείγματα</h4>
+<ol type="1">
+<li><p>Το <span class="math inline">\(κ \leq x \leq λ\)</span> δηλαδή το διάστημα <span class="math inline">\(\left[ κ , λ\right]\)</span> παριστάνεται με την παρακάτω εικόνα γεωμετρικά<br>
+<img src="images/clipboard-733865847.png" class="img-fluid"></p></li>
+<li><p>Το <span class="math inline">\(κ \leq x \lt λ\)</span> δηλαδή το διάστημα <span class="math inline">\(\left[ κ , λ\right)\)</span> παριστάνεται με την παρακάτω εικόνα γεωμετρικά<br>
+<img src="images/clipboard-2569957665.png" class="img-fluid"><br>
+</p></li>
+<li><p>Το <span class="math inline">\(κ \lt x \lt λ\)</span> δηλαδή το διάστημα <span class="math inline">\(\left(κ , λ\right)\)</span> παριστάνεται με την παρακάτω εικόνα γεωμετρικά<br>
+<img src="images/clipboard-1217913093.png" class="img-fluid"></p></li>
+<li><p>Το <span class="math inline">\(κ \leq x \lt +\infty\)</span> δηλαδή το διάστημα <span class="math inline">\(\left[κ , +\infty\right)\)</span> παριστάνεται με την παρακάτω εικόνα γεωμετρικά<br>
+<img src="images/clipboard-3963960814.png" class="img-fluid"></p></li>
+<li><p>Το <span class="math inline">\(-\infty \lt x \lt λ\)</span> δηλαδή το διάστημα <span class="math inline">\(\left(-\infty , λ\right)\)</span> παριστάνεται με την παρακάτω εικόνα γεωμετρικά<br>
+<img src="images/clipboard-4247299615.png" class="img-fluid"></p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ανάλογα παρουσιάζονται και όλα τα άλλα διαστήματα που μπορεί να συναντήσουμε</p>
+<p><span class="math inline">\((κ, +\infty)\)</span></p>
+<p><span class="math inline">\((-\infty, λ]\)</span> κ.τ.λ</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.4</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Αν για τους πραγματικούς αριθμούς <span class="math inline">\(\alpha, \beta\)</span> ισχύει <span class="math inline">\(1 &lt; \alpha &lt; 2\)</span> και <span class="math inline">\(2 &lt; \beta &lt; 5\)</span>, να αποδείξετε ότι <span class="math inline">\(3 &lt; \alpha + \beta &lt; 7\)</span>.</p></li>
+<li><p>Να αποδείξετε ότι για κάθε <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> ισχύει η ανισότητα <span class="math inline">\(2(\alpha^2 + \beta^2) \geq (\alpha + \beta)^2\)</span>.</p></li>
+<li><p>Αν <span class="math inline">\(x &gt; 4\)</span>, να αποδείξετε ότι η παράσταση <span class="math inline">\(5(x - 1)\)</span> είναι μεγαλύτερη από το <span class="math inline">\(15\)</span>.</p></li>
+<li><p>Να διατάξετε από τον μικρότερο προς τον μεγαλύτερο τους αριθμούς <span class="math inline">\(1, x, x^2\)</span>, όταν είναι γνωστό ότι <span class="math inline">\(0 &lt; x &lt; 1\)</span>.</p></li>
+<li><p>Να βρείτε τις τιμές των <span class="math inline">\(x, y\)</span> για τις οποίες ισχύει η εξίσωση: <span class="math inline">\((x - 1)^2 + (y + 2)^2 = 0\)</span>.</p></li>
+<li><p>Αν είναι <span class="math inline">\(6 &lt; x &lt; 8\)</span> και <span class="math inline">\(2 &lt; y &lt; 3\)</span>, να αποδείξετε ότι:</p></li>
+</ol>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(\quad 8 &lt; x + y &lt; 11\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(\quad 3 &lt; x - y &lt; 6\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><span class="math inline">\(\quad 18 &lt; 2x + 3y &lt; 25\)</span>.</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li><span class="math inline">\(\quad \dfrac{6}{3} &lt; \dfrac{x}{y} &lt; \dfrac{8}{2}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="7" type="1">
+<li>Να αποδείξετε ότι για οποιουσδήποτε πραγματικούς αριθμούς <span class="math inline">\(\alpha, \beta\)</span> ισχύουν οι παρακάτω ανισότητες:</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li><span class="math inline">\(\quad \alpha^2 + \beta^2 \geq 2\alpha\beta\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li><span class="math inline">\(\quad 2(\alpha^2 + \beta^2) \geq (\alpha + \beta)^2\)</span>.</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li><span class="math inline">\(\quad (\alpha + \beta)^2 \geq 4\alpha\beta\)</span>.</li>
+</ol></li>
+<li>Πότε ισχύει η ισότητα σε κάθε περίπτωση;</li>
+</ul>
+<ol start="8" type="1">
+<li>Έστω ένας πραγματικός αριθμός <span class="math inline">\(\alpha\)</span> με <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>.</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Να αποδείξετε ότι <span class="math inline">\(\quad \alpha^3 &lt; \alpha\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Να διατάξετε από τον μικρότερο προς τον μεγαλύτερο τους αριθμούς: <span class="math inline">\(0, \alpha, \alpha^2, \alpha^3, 1, \dfrac{1}{\alpha}\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="9" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li><ol type="1">
+<li>Αν <span class="math inline">\(\alpha, \beta\)</span> είναι <strong>ομόσημοι</strong> πραγματικοί αριθμοί, τότε <span class="math inline">\(\dfrac{\alpha}{\beta} + \dfrac{\beta}{\alpha} \geq 2\)</span>.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Αν <span class="math inline">\(\alpha, \beta\)</span> είναι <strong>ετερόσημοι</strong> πραγματικοί αριθμοί, τότε <span class="math inline">\(\dfrac{\alpha}{\beta} + \dfrac{\beta}{\alpha} \leq -2\)</span>.</li>
+</ol></li>
+</ul>
+<ol start="10" type="1">
+<li>Αν ισχύει η διάταξη <span class="math inline">\(\alpha &lt; 2 &lt; \beta\)</span>, να αποδείξετε ότι: <span class="math display">\[\alpha\beta + 4 &lt; 2\alpha + 2\beta\]</span></li>
+</ol>
+<blockquote class="blockquote">
+<p>(Υπόδειξη: Μεταφέρετε όλους τους όρους στο πρώτο μέλος και χρησιμοποιήστε παραγοντοποίηση).</p>
+</blockquote>
+<ol start="11" type="1">
+<li>Να αποδείξετε ότι:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\quad \beta^2 + 16 \ge 8\beta\)</span></li>
+<li>β) <span class="math inline">\(\quad 2(\alpha^2 + 4\gamma^2) \ge (\alpha + 2\gamma)^2\)</span></li>
+</ul>
+<ol start="12" type="1">
+<li><p>Να αποδείξετε ότι <span class="math inline">\(\alpha^2 + \beta^2 - 4\alpha + 4 \ge 0\)</span>. Πότε ισχύει η ισότητα;</p></li>
+<li><p>Να βρείτε τους πραγματικούς αριθμούς <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> σε καθεμιά από τις παρακάτω περιπτώσεις:</p></li>
+</ol>
+<ul>
+<li>α) Αν <span class="math inline">\((x - 3)^2 + (y - 5)^2 = 0\)</span></li>
+<li>β) Αν <span class="math inline">\(x^2 + y^2 + 4x - 6y + 13 = 0\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Μετασχηματήστε σε <span class="math inline">\((x+a)^2+(y+b)^2\)</span></p>
+</blockquote>
+<ol start="14" type="1">
+<li>Αν <span class="math inline">\(2,1 &lt; x &lt; 2,2\)</span> και <span class="math inline">\(3,2 &lt; y &lt; 3,3\)</span>, να βρείτε τα όρια μεταξύ των οποίων περιέχεται η τιμή καθεμιάς από τις παραστάσεις:</li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\quad x + y\)</span></li>
+<li>β) <span class="math inline">\(\quad x - y\)</span></li>
+<li>γ) <span class="math inline">\(\quad xy\)</span></li>
+<li>δ) <span class="math inline">\(\quad x^2 + y^2\)</span></li>
+</ul>
+<ol start="15" type="1">
+<li>Το πλάτος <span class="math inline">\(x\)</span> και το μήκος <span class="math inline">\(y\)</span> ενός ορθογωνίου ικανοποιούν τις ανισότητες <span class="math inline">\(4 &lt; x &lt; 5\)</span> και <span class="math inline">\(6 &lt; y &lt; 8\)</span>. Αν αυξήσουμε το πλάτος κατά <span class="math inline">\(0,3\)</span> και ελαττώσουμε το μήκος κατά <span class="math inline">\(0,2\)</span>, να βρείτε τις δυνατές τιμές:</li>
+</ol>
+<ul>
+<li>α) της περιμέτρου</li>
+<li>β) του εμβαδού του νέου ορθογωνίου.</li>
+</ul>
+<ol start="16" type="1">
+<li><p>Αν <span class="math inline">\(0 &lt; \alpha &lt; \beta\)</span>, να δείξετε ότι <span class="math inline">\(\dfrac{1}{\alpha} &gt; \dfrac{1}{\beta}\)</span>.</p></li>
+<li><p>Να βρείτε το λάθος στον παρακάτω συλλογισμό:</p>
+<p>Έστω <span class="math inline">\(x &lt; 3\)</span>. Τότε έχουμε διαδοχικά:</p>
+<p><span class="math inline">\(x &lt; 3\)</span></p>
+<p><span class="math inline">\(x^2 &lt; 3x\)</span></p>
+<p><span class="math inline">\(x^2 - 9 &lt; 3x - 9\)</span></p>
+<p><span class="math inline">\((x-3)(x+3) &lt; 3(x-3)\)</span></p>
+<p><span class="math inline">\(x+3 &lt; 3\)</span></p>
+<p><span class="math inline">\(x &lt; 0\)</span></p></li>
+<li><p>Δίνονται ένα κλάσμα <span class="math inline">\(\dfrac{x}{y}\)</span> θετικών όρων και ένας θετικός αριθμός <span class="math inline">\(\delta\)</span>. Να αποδείξετε ότι:</p></li>
+</ol>
+<ul>
+<li>α) Αν <span class="math inline">\(\quad \dfrac{x}{y} &lt; 1\)</span>, τότε <span class="math inline">\(\dfrac{x+\delta}{y+\delta} &gt; \dfrac{x}{y}\)</span></li>
+<li>β) Αν <span class="math inline">\(\quad \dfrac{x}{y} &gt; 1\)</span>, τότε <span class="math inline">\(\dfrac{x+\delta}{y+\delta} &lt; \dfrac{x}{y}\)</span></li>
+</ul>
+<ol start="19" type="1">
+<li><p>Αν <span class="math inline">\(x &gt; 1\)</span> και <span class="math inline">\(y &gt; 1\)</span>, να αποδείξετε ότι <span class="math inline">\(x + y &lt; 1 + xy\)</span></p></li>
+<li><p>Αν <span class="math inline">\(a, b\)</span> θετικοί αριθμοί, να δείξετε ότι <span class="math inline">\((2a + b)(\dfrac{1}{a} + \dfrac{1}{2b}) \ge 4\)</span></p></li>
+<li><p>Να αποδείξετε ότι:</p></li>
+</ol>
+<ul>
+<li>α) <span class="math inline">\(\quad 4x^2 + 2xy + y^2/4 \ge 0\)</span></li>
+<li>β) <span class="math inline">\(\quad x^2 - 3xy + \dfrac{9}{4}y^2 \ge 0\)</span></li>
+</ul>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

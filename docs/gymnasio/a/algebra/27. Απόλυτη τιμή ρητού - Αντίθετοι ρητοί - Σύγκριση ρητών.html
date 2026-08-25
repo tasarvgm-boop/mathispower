@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-agalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#απόλυτη-τιμή-ρητού---αντίθετοι-ρητοί---σύγκριση-ρητών" id="toc-απόλυτη-τιμή-ρητού---αντίθετοι-ρητοί---σύγκριση-ρητών" class="nav-link active" data-scroll-target="#απόλυτη-τιμή-ρητού---αντίθετοι-ρητοί---σύγκριση-ρητών"><span class="header-section-number">1</span> Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</a>
+  <ul>
+  <li><a href="#απόλυτη-τιμή-ρητού-και-αντιστοίχιση-στον-άξονα" id="toc-απόλυτη-τιμή-ρητού-και-αντιστοίχιση-στον-άξονα" class="nav-link" data-scroll-target="#απόλυτη-τιμή-ρητού-και-αντιστοίχιση-στον-άξονα"><span class="header-section-number">1.1</span> Απόλυτη τιμή ρητού και αντιστοίχιση στον άξονα</a></li>
+  <li><a href="#εύρεση-ρητού-που-αντιστοιχεί-σε-σημείο-του-άξονα" id="toc-εύρεση-ρητού-που-αντιστοιχεί-σε-σημείο-του-άξονα" class="nav-link" data-scroll-target="#εύρεση-ρητού-που-αντιστοιχεί-σε-σημείο-του-άξονα"><span class="header-section-number">1.2</span> Εύρεση ρητού που αντιστοιχεί σε σημείο του άξονα</a></li>
+  <li><a href="#αντίθετοι-ρητοί-και-σχετική-θέση-στον-άξονα" id="toc-αντίθετοι-ρητοί-και-σχετική-θέση-στον-άξονα" class="nav-link" data-scroll-target="#αντίθετοι-ρητοί-και-σχετική-θέση-στον-άξονα"><span class="header-section-number">1.3</span> Αντίθετοι ρητοί και σχετική θέση στον άξονα</a></li>
+  <li><a href="#σύγκριση-δύο-ρητών" id="toc-σύγκριση-δύο-ρητών" class="nav-link" data-scroll-target="#σύγκριση-δύο-ρητών"><span class="header-section-number">1.4</span> Σύγκριση δύο ρητών</a></li>
+  <li><a href="#διάταξη-ρητών-αριθμών" id="toc-διάταξη-ρητών-αριθμών" class="nav-link" data-scroll-target="#διάταξη-ρητών-αριθμών"><span class="header-section-number">1.5</span> Διάταξη ρητών αριθμών</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js" <="" script="">
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<hr>
+<section id="απόλυτη-τιμή-ρητού---αντίθετοι-ρητοί---σύγκριση-ρητών" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="απόλυτη-τιμή-ρητού---αντίθετοι-ρητοί---σύγκριση-ρητών"><span class="header-section-number">1</span> Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</h2>
+<section id="απόλυτη-τιμή-ρητού-και-αντιστοίχιση-στον-άξονα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="απόλυτη-τιμή-ρητού-και-αντιστοίχιση-στον-άξονα"><span class="header-section-number">1.1</span> Απόλυτη τιμή ρητού και αντιστοίχιση στον άξονα</h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Απόλυτη τιμή</strong> ενός ρητού αριθμού ονομάζεται η απόσταση του σημείου που παριστάνει τον αριθμό αυτόν πάνω στον άξονα από την αρχή <span class="math inline">\(O\)</span> (το μηδέν).</p></li>
+<li><p>Συμβολίζεται με δύο κατακόρυφες γραμμές <span class="math inline">\(|a|\)</span>.</p></li>
+<li><p><strong>Ιδιότητες:</strong></p>
+<ol type="1">
+<li>Η απόλυτη τιμή κάθε ρητού (εκτός του μηδενός) είναι πάντα <strong>θετικός αριθμός</strong>.</li>
+</ol>
+<p><span class="math display">\[
+|x|=
+\begin{cases}
+x, \ \text{ Αν } \ x&gt;0\\
+-x, \ \text{ Αν } \ x&lt;0\\
+0 , \ \text{ Αν } \ x=0
+\end{cases}
+\]</span></p>
+<ol start="2" type="1">
+<li>Η απόλυτη τιμή δείχνει το «μέγεθος» του αριθμού χωρίς να λαμβάνεται υπόψη η φορά (το πρόσημο).</li>
+<li>Η απόλυτη τιμή δείχνει την «απόσταση» του αριθμού από το <span class="math inline">\(0\)</span>.</li>
+</ol></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(|+5| = 5\)</span> (απόσταση 5 μονάδες δεξιά του <span class="math inline">\(O\)</span>).</li>
+<li><span class="math inline">\(|-3| = 3\)</span> (απόσταση 3 μονάδες αριστερά του <span class="math inline">\(O\)</span>).</li>
+<li><span class="math inline">\(\left|\dfrac{3}{4}\right| = \dfrac{3}{4}\)</span> (απόσταση <span class="math inline">\(\dfrac{3}{4}\)</span> της μονάδας από το μηδέν).</li>
+<li>Ο αριθμός με απόλυτη τιμή <span class="math inline">\(4\)</span> και πρόσημο <span class="math inline">\((-)\)</span> αντιστοιχεί στο σημείο <span class="math inline">\(M\)</span> που απέχει 4 μονάδες αριστερά της αρχής.</li>
+<li>Αν <span class="math inline">\(|x| = 2\)</span>, τότε ο <span class="math inline">\(x\)</span> μπορεί να είναι το <span class="math inline">\(+2\)</span> ή το <span class="math inline">\(-2\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Βρείτε την απόλυτη τιμή των αριθμών: <span class="math inline">\(+7, -12, +0,5, -1/2\)</span>.</li>
+<li>Ποιοι αριθμοί έχουν απόλυτη τιμή <span class="math inline">\(8\)</span>;</li>
+<li>Τοποθετήστε στον άξονα τα σημεία <span class="math inline">\(A, B\)</span> αν <span class="math inline">\(|A|=3\)</span> (θετικός) και <span class="math inline">\(|B|=3\)</span> (αρνητικός).</li>
+<li>Αν η απόσταση <span class="math inline">\(OM\)</span> είναι <span class="math inline">\(4,5\)</span> μονάδες, ποιες είναι οι πιθανές τετμημένες του <span class="math inline">\(M\)</span>;</li>
+<li>Υπολογίστε την παράσταση <span class="math inline">\(|-5| + |+2|\)</span>.</li>
+<li>Συγκρίνετε τις απόλυτες τιμές <span class="math inline">\(|-10|\)</span> και <span class="math inline">\(|+3|\)</span>.</li>
+<li>Βρείτε έναν αριθμό <span class="math inline">\(x\)</span> ώστε <span class="math inline">\(|x| &lt; 1\)</span>.</li>
+<li>Ποιος αριθμός έχει απόλυτη τιμή ίση με το μηδέν;.</li>
+<li>Σημειώστε στον άξονα τον αριθμό που έχει <span class="math inline">\(|x|=2,5\)</span> και βρίσκεται δεξιά του <span class="math inline">\(O\)</span>.</li>
+<li>Αν <span class="math inline">\(|x|=|-7|\)</span>, ποια είναι η τιμή του <span class="math inline">\(x\)</span>;</li>
+<li>Σχεδιάστε ένα τμήμα <span class="math inline">\(OA=1\)</span> και βρείτε το σημείο <span class="math inline">\(B\)</span> ώστε <span class="math inline">\(|B|=2|A|\)</span>.</li>
+<li>Ποια είναι η απόλυτη τιμή του αντίστροφου του <span class="math inline">\(-2\)</span>;.</li>
+<li>Είναι αληθές ότι <span class="math inline">\(|-x| = |x|\)</span>; Δώστε παράδειγμα.</li>
+<li>Αν <span class="math inline">\(|a|=5\)</span> και <span class="math inline">\(|b|=3\)</span>, ποια είναι η μέγιστη τιμή του <span class="math inline">\(|a+b|\)</span>;</li>
+<li>Βρείτε την απόλυτη τιμή του αποτελέσματος της πράξης <span class="math inline">\(15-20\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="εύρεση-ρητού-που-αντιστοιχεί-σε-σημείο-του-άξονα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="εύρεση-ρητού-που-αντιστοιχεί-σε-σημείο-του-άξονα"><span class="header-section-number">1.2</span> Εύρεση ρητού που αντιστοιχεί σε σημείο του άξονα</h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<ul>
+<li><p>Κάθε σημείο <span class="math inline">\(M\)</span> του άξονα <span class="math inline">\(Ox\)</span> αντιστοιχεί σε <strong>έναν μοναδικό ρητό αριθμό</strong> (τετμημένη).</p></li>
+<li><p>Για να βρούμε τον ρητό, εξετάζουμε σε πόσα ίσα μέρη έχει χωριστεί το <strong>μοναδιαίο τμήμα</strong> <span class="math inline">\(OA\)</span> (παρονομαστής) και πόσα τέτοια μέρη απέχει το σημείο από το <span class="math inline">\(O\)</span> (αριθμητής).</p></li>
+<li><p>Αν το σημείο βρίσκεται δεξιά του <span class="math inline">\(O\)</span>, ο ρητός είναι θετικός· αν αριστερά, είναι αρνητικός.</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Σημείο <span class="math inline">\(M\)</span> στο μέσο του <span class="math inline">\(OA\)</span> αντιστοιχεί στο <span class="math inline">\(\dfrac{1}{2}\)</span>.</li>
+<li>Σημείο που προκύπτει από 3 διαδοχικά τμήματα ίσα με το <span class="math inline">\(\dfrac{1}{4}\)</span> της μονάδας δεξιά του <span class="math inline">\(O\)</span> είναι το <span class="math inline">\(\dfrac{3}{4}\)</span>.</li>
+<li>Σημείο <span class="math inline">\(B\)</span> με <span class="math inline">\(OB = 2 OA\)</span> δεξιά του <span class="math inline">\(O\)</span> είναι ο ακέραιος <span class="math inline">\(+2\)</span>.</li>
+<li>Σημείο ανάμεσα στο <span class="math inline">\(1\)</span> και το <span class="math inline">\(2\)</span> που χωρίζει το τμήμα <span class="math inline">\(ΟΑ\)</span> στη μέση είναι το <span class="math inline">\(1,5\)</span> ή <span class="math inline">\(3/2\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-362889226.png" class="img-fluid figure-img"></p>
+<figcaption>Η ευθεία των ρητών</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Σημείο στην αρχή <span class="math inline">\(O\)</span> αντιστοιχεί στον αριθμό <span class="math inline">\(0\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Χωρίστε τη μονάδα σε 3 ίσα μέρη. Ποιος αριθμός αντιστοιχεί στο πρώτο σημείο δεξιά του <span class="math inline">\(O\)</span>;.</li>
+<li>Αν <span class="math inline">\(OA = 4\)</span> cm, ποιος αριθμός αντιστοιχεί σε σημείο που απέχει 1 cm από το <span class="math inline">\(O\)</span>;</li>
+<li>Βρείτε τον ρητό που βρίσκεται στο μέσο των <span class="math inline">\(+1\)</span> και <span class="math inline">\(+2\)</span>.</li>
+<li>Ένα σημείο <span class="math inline">\(P\)</span> ισαπέχει από το <span class="math inline">\(0\)</span> και το <span class="math inline">\(+\dfrac{1}{2}\)</span>. Ποια είναι η τετμημένη του;</li>
+<li>Ποιος ρητός αντιστοιχεί στο σημείο που είναι <span class="math inline">\(5\)</span> μονάδες αριστερά του <span class="math inline">\(O\)</span>;</li>
+<li>Αν η μονάδα χωριστεί σε 10 μέρη, ποιος δεκαδικός αντιστοιχεί στο 7ο σημείο;.</li>
+<li>Ποιος μικτός αριθμός αντιστοιχεί σε σημείο που απέχει <span class="math inline">\(2\)</span> ολόκληρες μονάδες και <span class="math inline">\(\dfrac{1}{3}\)</span> της μονάδας από το <span class="math inline">\(O\)</span>;.</li>
+<li>Προσδιορίστε το σημείο <span class="math inline">\(x\)</span> αν <span class="math inline">\(2x = 1\)</span>.</li>
+<li>Σε άξονα με μονάδα 2 cm, ποιος αριθμός είναι στα 5 cm δεξιά του <span class="math inline">\(O\)</span>;</li>
+<li>Ποιο σημείο αντιστοιχεί στον αριθμό <span class="math inline">\(\dfrac{7]{4}\)</span>; (Πόσες μονάδες και τι υπόλοιπο;).</li>
+<li>Αν ένα σημείο <span class="math inline">\(M\)</span> είναι στην τετμημένη <span class="math inline">\(+3\)</span> και μετατοπιστεί κατά <span class="math inline">\(\dfrac{1}{2}\)</span> μονάδα αριστερά, πού θα βρίσκεται;</li>
+<li>Βρείτε τον ρητό του σημείου που χωρίζει το τμήμα <span class="math inline">\(ΟΑ\)</span> σε λόγο <span class="math inline">\(1:6\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-362889226.png" class="img-fluid figure-img"></p>
+<figcaption>Η ευθεία των ρητών</figcaption>
+</figure>
+</div>
+<ol start="13" type="1">
+<li>Ποιος αριθμός αντιστοιχεί στο συμμετρικό του <span class="math inline">\(+\dfrac{2}{3}\)</span> ως προς το <span class="math inline">\(O\)</span>;.</li>
+<li>Αν <span class="math inline">\(OA=1\)</span>, σημειώστε το <span class="math inline">\(3OA\)</span>. Ποιος αριθμός είναι;.</li>
+<li>Ποιο σημείο παριστάνει το ακριβές πηλίκο της διαίρεσης <span class="math inline">\(3:4\)</span>;.</li>
+</ol>
+<hr>
+</section>
+<section id="αντίθετοι-ρητοί-και-σχετική-θέση-στον-άξονα" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="αντίθετοι-ρητοί-και-σχετική-θέση-στον-άξονα"><span class="header-section-number">1.3</span> Αντίθετοι ρητοί και σχετική θέση στον άξονα</h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Αντίθετοι</strong> ονομάζονται δύο ρητοί αριθμοί που έχουν την <strong>ίδια απόλυτη τιμή</strong> (ίδια απόσταση από το <span class="math inline">\(O\)</span>) αλλά <strong>διαφορετικό πρόσημο</strong> (αντίθετες φορές).</p></li>
+<li><p>Στον άξονα, τα σημεία που παριστάνουν δύο αντίθετους αριθμούς είναι <strong>συμμετρικά ως προς την αρχή <span class="math inline">\(O\)</span></strong>.</p></li>
+<li><p><strong>Ιδιότητα:</strong> Το άθροισμα δύο αντίθετων ρητών είναι πάντα ίσο με <strong>μηδέν</strong> (<span class="math inline">\(a + (-a) = 0\)</span>).</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Ο <span class="math inline">\(+4\)</span> και ο <span class="math inline">\(-4\)</span> είναι αντίθετοι και ισαπέχουν από το <span class="math inline">\(0\)</span>.</li>
+<li>Ο αντίθετος του <span class="math inline">\(-\dfrac{2}{3}\)</span> είναι ο <span class="math inline">\(+\dfrac{2}{3}\)</span>.</li>
+<li>Το μηδέν είναι ο μοναδικός αριθμός που είναι αντίθετος του εαυτού του (<span class="math inline">\(0 = -0\)</span>).</li>
+<li>Αν ένα σημείο <span class="math inline">\(A\)</span> έχει τετμημένη <span class="math inline">\(+1,5\)</span>, το συμμετρικό του <span class="math inline">\(A'\)</span> ως προς το <span class="math inline">\(O\)</span> έχει τετμημένη <span class="math inline">\(-1,5\)</span>.</li>
+<li>Οι αριθμοί <span class="math inline">\(x\)</span> και <span class="math inline">\(-x\)</span> έχουν <span class="math inline">\(|x| = |-x|\)</span>.</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Γράψτε τους αντίθετους των: <span class="math inline">\(+9, -25, +3,4, -5/6\)</span>.</li>
+<li>Αν <span class="math inline">\(a = -10\)</span>, ποιος είναι ο <span class="math inline">\(-a\)</span>;</li>
+<li>Ποια είναι η απόσταση μεταξύ των σημείων που παριστάνουν τους αντίθετους αριθμούς <span class="math inline">\(+5\)</span> και <span class="math inline">\(-5\)</span>;</li>
+<li>Αν δύο σημεία είναι συμμετρικά ως προς το <span class="math inline">\(O\)</span> και απέχουν μεταξύ τους 10 μονάδες, ποιες είναι οι τετμημένες τους;</li>
+<li>Υπολογίστε το άθροισμα <span class="math inline">\((+3) + (-3)\)</span>..</li>
+<li>Βρείτε τον <span class="math inline">\(x\)</span> αν ο αντίθετός του είναι ο <span class="math inline">\(+\dfrac{1}{4}\)</span>.</li>
+<li>Ποιο είναι το μέσο του τμήματος που ενώνει δύο αντίθετους αριθμούς;.</li>
+<li>Αν <span class="math inline">\(|x|=7\)</span>, ποιοι είναι οι δυνατοί αντίθετοι αριθμοί;</li>
+<li>Είναι ο αντίστροφος ενός αριθμού πάντα αντίθετος του; (π.χ. για τον 2)..</li>
+<li>Ποιο είναι το πρόσημο του αντίθετου ενός αρνητικού αριθμού;</li>
+<li>Σχεδιάστε στον άξονα τον <span class="math inline">\(-(-4)\)</span>.</li>
+<li>Αν <span class="math inline">\(a\)</span> και <span class="math inline">\(\beta\)</span> είναι αντίθετοι, τι ισούται η παράσταση <span class="math inline">\(a + \beta + 5\)</span>;</li>
+<li>Ποιος αριθμός απέχει από το <span class="math inline">\(-2\)</span> όσο και ο αντίθετός του;</li>
+</ol>
+<p><strong>Λύση</strong></p>
+<ul>
+<li><strong>Αντίθετοι αριθμοί</strong> (<span class="math inline">\(x\)</span> και <span class="math inline">\(-x\)</span>) είναι εκείνοι που έχουν την ίδια απόλυτη τιμή (απόσταση από το μηδέν) αλλά διαφορετικό πρόσημο.</li>
+<li>Στη <strong>γεωμετρική απεικόνιση</strong> των αριθμών πάνω στον άξονα, οι αντίθετοι αριθμοί βρίσκονται σε <strong>αντίθετες φορές</strong> (κατευθύνσεις) ως προς την αρχή <span class="math inline">\(O\)</span> (το μηδέν), η οποία αποτελεί το <strong>μέσον</strong> του τμήματος που τους συνδέει.</li>
+<li>Για να απέχει ένα σημείο (το <span class="math inline">\(-2\)</span>) το ίδιο από δύο αντίθετους αριθμούς <span class="math inline">\(x\)</span> και <span class="math inline">\(-x\)</span>, θα πρέπει το σημείο αυτό να είναι το <strong>μέσον</strong> της απόστασής τους.</li>
+<li>Επειδή όμως το μοναδικό σημείο που ισαπέχει πάντα από κάθε ζεύγος αντίθετων αριθμών είναι το <strong>μηδέν</strong> (καθώς είναι το κέντρο συμμετρίας τους), και το <span class="math inline">\(-2\)</span> δεν ταυτίζεται με το μηδέν, η μόνη περίπτωση να ισχύει η ισότητα των αποστάσεων είναι οι δύο αριθμοί (<span class="math inline">\(x\)</span> και <span class="math inline">\(-x\)</span>) να <strong>συμπίπτουν</strong>.</li>
+<li>Ο μοναδικός αριθμός που είναι <strong>αντίθετος του εαυτού του</strong> (<span class="math inline">\(x = -x\)</span>) είναι το <strong>μηδέν (0)</strong>.</li>
+</ul>
+<p><strong>Επαλήθευση:</strong> 1. Ο αριθμός είναι το <strong>0</strong>. 2. Ο αντίθετός του είναι επίσης το <strong>0</strong>. 3. Η απόσταση του 0 από το <span class="math inline">\(-2\)</span> είναι <strong>2 μονάδες</strong>. 4. Η απόσταση του αντίθετου του (του 0) από το <span class="math inline">\(-2\)</span> είναι επίσης <strong>2 μονάδες</strong>. Συνεπώς, οι αποστάσεις είναι ίσες.</p>
+<ol start="14" type="1">
+<li>Γράψτε την απόλυτη τιμή του αντίθετου του <span class="math inline">\(-8\)</span>.</li>
+<li>Αν <span class="math inline">\(A(+2)\)</span> και <span class="math inline">\(B\)</span> είναι ο αντίθετός του, βρείτε το μήκος του τμήματος <span class="math inline">\(AB\)</span>..</li>
+</ol>
+<hr>
+</section>
+<section id="σύγκριση-δύο-ρητών" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="σύγκριση-δύο-ρητών"><span class="header-section-number">1.4</span> Σύγκριση δύο ρητών</h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<ul>
+<li><p>Από δύο ρητούς αριθμούς, <strong>μεγαλύτερος</strong> είναι εκείνος που βρίσκεται <strong>δεξιότερα</strong> πάνω στον άξονα.</p></li>
+<li><p><strong>Κανόνες Σύγκρισης:</strong></p>
+<ol type="1">
+<li>Κάθε θετικός αριθμός είναι μεγαλύτερος από το μηδέν και από κάθε αρνητικό.</li>
+<li>Κάθε αρνητικός αριθμός είναι μικρότερος από το μηδέν.</li>
+<li>Από δύο θετικούς ρητούς, μεγαλύτερος είναι αυτός με τη μεγαλύτερη απόλυτη τιμή.</li>
+<li>Από δύο αρνητικούς ρητούς, μεγαλύτερος είναι αυτός με τη <strong>μικρότερη απόλυτη τιμή</strong> (αυτός που είναι πιο κοντά στο μηδέν).</li>
+</ol></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li><span class="math inline">\(+5 &gt; +2\)</span> (ο <span class="math inline">\(5\)</span> είναι δεξιότερα).</li>
+<li><span class="math inline">\(+1 &gt; -100\)</span> (κάθε θετικός είναι μεγαλύτερος από κάθε αρνητικό).</li>
+<li><span class="math inline">\(0 &gt; -3\)</span> (το μηδέν είναι μεγαλύτερο από τους αρνητικούς).</li>
+<li><span class="math inline">\(-2 &gt; -5\)</span> (ο <span class="math inline">\(-2\)</span> είναι πιο κοντά στο <span class="math inline">\(0\)</span>, άρα δεξιότερα).</li>
+<li><span class="math inline">\(\dfrac{1}{2} &lt;\dfrac{3}{4}\)</span> (μετατρέπουμε σε ομώνυμα <span class="math inline">\(\dfrac{2}{4} &lt; \dfrac{3}{4}\)</span>).</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Συγκρίνετε τους αριθμούς: <span class="math inline">\(+8\)</span> και <span class="math inline">\(+12\)</span>, <span class="math inline">\(-5\)</span> και <span class="math inline">\(-3\)</span>..</li>
+<li>Βάλτε το σύμβολο <span class="math inline">\(&gt;\)</span> ή <span class="math inline">\(&lt;\)</span> : <span class="math inline">\(-10 ... +1\)</span>, <span class="math inline">\(0 ... -2\)</span>.</li>
+<li>Ποιος αριθμός είναι μεγαλύτερος: ο <span class="math inline">\(-0,5\)</span> ή ο <span class="math inline">\(-1\)</span>;</li>
+<li>Συγκρίνετε τα κλάσματα <span class="math inline">\(\dfrac{2}{3}\)</span> και <span class="math inline">\(\dfrac{4}{5}\)</span>..</li>
+<li>Αν <span class="math inline">\(a &gt; 0\)</span> και <span class="math inline">\(\beta &lt; 0\)</span>, ποια είναι η σχέση μεταξύ <span class="math inline">\(a\)</span> και <span class="math inline">\(\beta\)</span>;</li>
+<li>Ποιος αριθμός είναι δεξιότερα στον άξονα: ο <span class="math inline">\(-15\)</span> ή ο <span class="math inline">\(-20\)</span>;</li>
+<li>Συγκρίνετε τις απόλυτες τιμές των <span class="math inline">\(-7\)</span> και <span class="math inline">\(+4\)</span>. Ποιος αριθμός είναι πραγματικά μεγαλύτερος;</li>
+<li>Αν <span class="math inline">\(x &lt; -3\)</span>, μπορεί ο <span class="math inline">\(x\)</span> να είναι θετικός;</li>
+<li>Συγκρίνετε το <span class="math inline">\(-1/2\)</span> με το <span class="math inline">\(-1/4\)</span>.</li>
+<li>Βρείτε έναν ρητό <span class="math inline">\(x\)</span> τέτοιον ώστε <span class="math inline">\(-1 &lt; x &lt; 0\)</span>..</li>
+<li>Ποιο είναι μεγαλύτερο: το <span class="math inline">\(0,3\)</span> ή το <span class="math inline">\(1/3\)</span>; .</li>
+<li>Αν <span class="math inline">\(a &lt; \beta\)</span>, ποια είναι η σχέση των αντίθετων τους <span class="math inline">\(-a\)</span> και <span class="math inline">\(-\beta\)</span>;</li>
+<li>Συγκρίνετε το <span class="math inline">\(-5\)</span> με την απόλυτη τιμή του <span class="math inline">\(|-5|\)</span>.</li>
+<li>Ποιος αριθμός ισαπέχει από τους <span class="math inline">\(-2\)</span> και <span class="math inline">\(+2\)</span>; Είναι μεγαλύτερος από τον <span class="math inline">\(-1\)</span>;</li>
+<li>Διατάξτε σε φθίνουσα σειρά: <span class="math inline">\(-3, +2, 0, -1, +5\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="διάταξη-ρητών-αριθμών" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="διάταξη-ρητών-αριθμών"><span class="header-section-number">1.5</span> Διάταξη ρητών αριθμών</h3>
+<div style="background-color: #b5b1de; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Θεωρία, Ορισμοί και Ιδιότητες</strong></p>
+<ul>
+<li><p><strong>Διάταξη</strong> είναι η τοποθέτηση των αριθμών σε μια σειρά από τον μικρότερο στον μεγαλύτερο (<strong>αύξουσα</strong>) ή αντίστροφα (<strong>φθίνουσα</strong>).</p></li>
+<li><p>Χρησιμοποιείται η <strong>μεταβατική ιδιότητα</strong>: Αν <span class="math inline">\(a &lt; \beta\)</span> και <span class="math inline">\(\beta &lt; \gamma\)</span>, τότε <span class="math inline">\(a &lt; \gamma\)</span>.</p></li>
+<li><p>Για κλάσματα, η διάταξη διευκολύνεται με τη μετατροπή τους σε <strong>ομώνυμα</strong> (ίδιο παρονομαστή).</p></li>
+</ul>
+</div>
+<p><strong>Παραδείγματα</strong></p>
+<ol type="1">
+<li>Αύξουσα διάταξη: <span class="math inline">\(-5 &lt; -2 &lt; 0 &lt; +3 &lt; +7\)</span>.</li>
+<li>Φθίνουσα διάταξη: <span class="math inline">\(+10 &gt; +4 &gt; 0 &gt; -1 &gt; -8\)</span>.</li>
+<li>Διάταξη κλασμάτων: <span class="math inline">\(\dfrac{1}{4} &lt; \dfrac{1}{2} &lt; \dfrac{3}{4}\)</span>.</li>
+<li>Ανάμεσα στο <span class="math inline">\(-1\)</span> και το <span class="math inline">\(+1\)</span> υπάρχουν άπειροι ρητοί (πυκνότητα).</li>
+<li>Διπλή ανισότητα: <span class="math inline">\(-3 &lt; x &lt; +2\)</span> (ο <span class="math inline">\(x\)</span> είναι μεταξύ <span class="math inline">\(-3\)</span> και <span class="math inline">\(2\)</span>).</li>
+</ol>
+<p><strong>Ασκήσεις</strong></p>
+<ol type="1">
+<li>Βάλτε στη σειρά (αύξουσα): <span class="math inline">\(-4, +6, -1, 0, +2, -9\)</span>..</li>
+<li>Τοποθετήστε σε φθίνουσα σειρά: <span class="math inline">\(\dfrac{1}{2}, -1, \dfrac{3}{4}, -\dfrac{1}{2}, 0\)</span>..</li>
+<li>Βρείτε τρεις ρητούς ανάμεσα στο <span class="math inline">\(-2\)</span> και το <span class="math inline">\(-1\)</span>..</li>
+<li>Γράψτε μια διπλή ανισότητα για τους αριθμούς <span class="math inline">\(-5, +3, -2\)</span>..</li>
+<li>Ποιοι ακέραιοι <span class="math inline">\(x\)</span> ικανοποιούν τη σχέση <span class="math inline">\(-3 &lt; x \le +1\)</span>;.</li>
+<li>Αν <span class="math inline">\(a &lt; \beta &lt; \gamma\)</span>, ποιο σημείο είναι το πιο αριστερό στον άξονα;.</li>
+<li>Διατάξτε τα κλάσματα: <span class="math inline">\(\dfrac{2}{5}, \dfrac{2}{3}, \dfrac{2}{7}\)</span>. (Ίδιοι αριθμητές)..</li>
+<li>Τοποθετήστε στον άξονα και διατάξτε: <span class="math inline">\(-1,5, +0,5, -0,5, +1,5\)</span>.</li>
+<li>Βρείτε το σύνολο των φυσικών αριθμών <span class="math inline">\(x\)</span> ώστε <span class="math inline">\(x &lt; 5\)</span>..</li>
+<li>Διατάξτε κατά σειρά μεγέθους τις αποστάσεις των αριθμών <span class="math inline">\(-8, +3, -2\)</span> από το μηδέν.</li>
+<li>Αν <span class="math inline">\(-2 &lt; a &lt; 0\)</span>, είναι ο <span class="math inline">\(a\)</span> θετικός ή αρνητικός;</li>
+<li>Συμπληρώστε: <span class="math inline">\(-10 &lt; ... &lt; -8\)</span>.</li>
+<li>Ποιος αριθμός λείπει από τη διάταξη των διαδοχικών ακεραίων: <span class="math inline">\(-2, -1, ..., +1, +2\)</span>..</li>
+<li>Διατάξτε τους αριθμούς: <span class="math inline">\(2, -2, | -2 |, 0\)</span>.</li>
+<li>Πόσοι ακέραιοι υπάρχουν ανάμεσα στο <span class="math inline">\(-100\)</span> και το <span class="math inline">\(+100\)</span>;.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

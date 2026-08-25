@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>18. Ανατοκισμός Ίσες καταθέσεις – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-alalgebra quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">18. Ανατοκισμός Ίσες καταθέσεις</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">18. Ανατοκισμός Ίσες καταθέσεις</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">17 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ανατοκισμός-ίσες-καταθέσεις" id="toc-ανατοκισμός-ίσες-καταθέσεις" class="nav-link active" data-scroll-target="#ανατοκισμός-ίσες-καταθέσεις"><span class="header-section-number">1</span> Ανατοκισμός Ίσες καταθέσεις</a>
+  <ul>
+  <li><a href="#ανατοκισμός" id="toc-ανατοκισμός" class="nav-link" data-scroll-target="#ανατοκισμός"><span class="header-section-number">1.1</span> Ανατοκισμός</a>
+  <ul>
+  <li><a href="#παραδείγματα-διαφόρων-περιπτώσεων" id="toc-παραδείγματα-διαφόρων-περιπτώσεων" class="nav-link" data-scroll-target="#παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.1.4</span> Παραδείγματα διαφόρων περιπτώσεων</a></li>
+  </ul></li>
+  <li><a href="#ίσες-καταθέσεις" id="toc-ίσες-καταθέσεις" class="nav-link" data-scroll-target="#ίσες-καταθέσεις"><span class="header-section-number">1.2</span> Ίσες καταθέσεις</a>
+  <ul>
+  <li><a href="#παρουσίαση-μέσω-παραδείγματος-ληξιπρόθεσμης-ράντας" id="toc-παρουσίαση-μέσω-παραδείγματος-ληξιπρόθεσμης-ράντας" class="nav-link" data-scroll-target="#παρουσίαση-μέσω-παραδείγματος-ληξιπρόθεσμης-ράντας"><span class="header-section-number">1.2.4</span> Παρουσίαση μέσω Παραδείγματος ληξιπρόθεσμης ράντας</a></li>
+  <li><a href="#παρουσίαση-μέσω-παραδείγματος-προκαταβλητέας-ράντας" id="toc-παρουσίαση-μέσω-παραδείγματος-προκαταβλητέας-ράντας" class="nav-link" data-scroll-target="#παρουσίαση-μέσω-παραδείγματος-προκαταβλητέας-ράντας"><span class="header-section-number">1.2.5</span> Παρουσίαση μέσω Παραδείγματος προκαταβλητέας ράντας</a></li>
+  <li><a href="#παραδείγματα-στις-ίσες-καταθέσεις-προκαταβλητέων" id="toc-παραδείγματα-στις-ίσες-καταθέσεις-προκαταβλητέων" class="nav-link" data-scroll-target="#παραδείγματα-στις-ίσες-καταθέσεις-προκαταβλητέων"><span class="header-section-number">1.2.6</span> Παραδείγματα στις ίσες καταθέσεις (προκαταβλητέων)</a></li>
+  </ul></li>
+  <li><a href="#ασκήσεις" id="toc-ασκήσεις" class="nav-link" data-scroll-target="#ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ανατοκισμός-ίσες-καταθέσεις" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ανατοκισμός-ίσες-καταθέσεις"><span class="header-section-number">1</span> Ανατοκισμός Ίσες καταθέσεις</h2>
+<section id="ανατοκισμός" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="ανατοκισμός"><span class="header-section-number">1.1</span> Ανατοκισμός</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Ο <strong>ανατοκισμός</strong> (compound interest) είναι μια από τις πιο ισχυρές έννοιες στα χρηματοοικονομικά. Συχνά περιγράφεται ως «τόκος επί του τόκου». Στην ουσία, σημαίνει ότι ο τόκος που κερδίζεις σε κάθε περίοδο προστίθεται στο αρχικό σου κεφάλαιο, με αποτέλεσμα στην επόμενη περίοδο να υπολογίζεται τόκος πάνω στο νέο, αυξημένο ποσό.</p>
+<section id="θεωρία-ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="θεωρία-ορισμοί"><span class="header-section-number">1.1.1</span> Θεωρία &amp; Ορισμοί</h4>
+<p>Για να κατανοήσουμε τον ανατοκισμό, πρέπει πρώτα να γνωρίζουμε τα βασικά του συστατικά:</p>
+<ul>
+<li><p><strong>Αρχικό Κεφάλαιο (<span class="math inline">\(K_0\)</span> ή <span class="math inline">\(P\)</span>):</strong> Το ποσό των χρημάτων που καταθέτεις ή δανείζεσαι στην αρχή.</p></li>
+<li><p><strong>Επιτόκιο (<span class="math inline">\(i\)</span> ή <span class="math inline">\(r\)</span>):</strong> Το ποσοστό του τόκου, συνήθως εκφρασμένο ανά έτος (π.χ. 5% ή 0,05).</p></li>
+<li><p><strong>Περίοδος Ανατοκισμού:</strong> Το χρονικό διάστημα στο τέλος του οποίου ο τόκος προστίθεται στο κεφάλαιο (ετήσιος, εξαμηνιαίος, μηνιαίος κ.λπ.).</p></li>
+<li><p><strong>Χρόνος (<span class="math inline">\(t\)</span> ή <span class="math inline">\(n\)</span>):</strong> Η συνολική διάρκεια της επένδυσης ή του δανείου σε έτη ή περιόδους.</p></li>
+<li><p><strong>Τελικό Κεφάλαιο (<span class="math inline">\(K_n\)</span> ή <span class="math inline">\(A\)</span>):</strong> Το συνολικό ποσό που συγκεντρώνεται στο τέλος της χρονικής περιόδου (Αρχικό Κεφάλαιο + Συνολικοί Τόκοι).</p></li>
+</ul>
+</section>
+<section id="ο-βασικός-μαθηματικός-τύπος" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="ο-βασικός-μαθηματικός-τύπος"><span class="header-section-number">1.1.2</span> Ο Βασικός Μαθηματικός Τύπος</h4>
+<p>Όταν ο ανατοκισμός γίνεται <strong>μία φορά το χρόνο</strong>, ο τύπος είναι:</p>
+<p><span class="math display">\[K_n = K_0 \cdot (1 + i)^n\]</span></p>
+<p>Αν ο ανατοκισμός γίνεται <strong><span class="math inline">\(m\)</span> φορές το χρόνο</strong> (π.χ. μηνιαία <span class="math inline">\(m=12\)</span>, εξαμηνιαία <span class="math inline">\(m=2\)</span>), ο τύπος προσαρμόζεται ως εξής:</p>
+<p><span class="math display">\[K_n = K_0 \cdot \left(1 + \frac{i}{m}\right)^{n \cdot m}\]</span></p>
+</section>
+<section id="παρουσίαση-μέσω-παραδείγματος" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="παρουσίαση-μέσω-παραδείγματος"><span class="header-section-number">1.1.3</span> Παρουσίαση μέσω Παραδείγματος</h4>
+<p>Ας υποθέσουμε ότι καταθέτεις <strong>1.000 €</strong> (<span class="math inline">\(K_0 = 1000\)</span>) σε έναν λογαριασμό με ετήσιο επιτόκιο <strong>10%</strong> (<span class="math inline">\(i = 0,10\)</span>) για <strong>3 χρόνια</strong> (<span class="math inline">\(n = 3\)</span>).</p>
+<ul>
+<li><p><strong>Έτος 1:</strong></p>
+<ul>
+<li>Τόκος: <span class="math inline">\(1.000\cdot10\%=100 \text{ €}\)</span></li>
+<li>Κεφάλαιο στο τέλος του έτους: <span class="math inline">\(1.000 + 100 = 1.100\text{ €}\)</span></li>
+</ul></li>
+<li><p><strong>Έτος 2:</strong></p>
+<ul>
+<li>Τόκος: Ο τόκος υπολογίζεται στα 1.100 € (όχι στα 1.000 €). Συνεπώς, <span class="math inline">\(1.100 \cdot 10\% = 110\text{ €}\)</span></li>
+<li>Κεφάλαιο στο τέλος του έτους: <span class="math inline">\(1.100 + 110 = 1.210\text{ €}\)</span></li>
+</ul></li>
+<li><p><strong>Έτος 3:</strong></p>
+<ul>
+<li>Τόκος: Ο τόκος υπολογίζεται στα 1.210 €. Συνεπώς, <span class="math inline">\(1.210 \cdot 10\% = 121\text{ €}\)</span></li>
+<li>Κεφάλαιο στο τέλος του έτους: <span class="math inline">\(1.210 + 121 = 1.331\text{ €}\)</span></li>
+</ul></li>
+</ul>
+<p>Αν χρησιμοποιούσαμε τον τύπο:</p>
+<p><span class="math display">\[K_3 = 1000 \cdot (1 + 0,10)^3 = 1000 \cdot 1,331 = 1.331\text{ €}\]</span></p>
+<blockquote class="blockquote">
+<p><strong>Η διαφορά με τον απλό τόκο:</strong> Στον απλό τόκο, θα έπαιρνες 100 € κάθε χρόνο, άρα στο τέλος θα είχες 1.300 €. Λόγω του ανατοκισμού, κέρδισες <strong>31 € επιπλέον</strong>, επειδή οι τόκοι σου παρήγαγαν νέους τόκους.</p>
+</blockquote>
+</section>
+</div>
+<section id="παραδείγματα-διαφόρων-περιπτώσεων" class="level4" data-number="1.1.4">
+<h4 data-number="1.1.4" class="anchored" data-anchor-id="παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.1.4</span> Παραδείγματα διαφόρων περιπτώσεων</h4>
+<ol type="1">
+<li>Βασικός Ετήσιος Ανατοκισμός</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Επενδύεις 5.000 € με ετήσιο επιτόκιο 4% για 5 χρόνια. Ποιο θα είναι το τελικό ποσό;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><span class="math inline">\(K_0 = 5000\)</span>, <span class="math inline">\(i = 0,04\)</span>, <span class="math inline">\(n = 5\)</span></li>
+<li><span class="math inline">\(K_5 = 5000 \cdot (1 + 0,04)^5\)</span></li>
+<li><span class="math inline">\(K_5 = 5000 \cdot (1,04)^5 \approx 5000 \cdot 1,21665 = 6.083,26 \text{ €}\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li>Εξαμηνιαίος Ανατοκισμός</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Καταθέτεις 2.000 € με ονομαστικό ετήσιο επιτόκιο 6%, αλλά ο ανατοκισμός γίνεται κάθε εξάμηνο. Πόσα χρήματα θα έχεις σε 4 χρόνια;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Εδώ <span class="math inline">\(m = 2\)</span> (2 εξάμηνα το χρόνο), άρα οι συνολικές περίοδοι είναι <span class="math inline">\(4 \cdot 2 = 8\)</span>. Το επιτόκιο ανά εξάμηνο είναι <span class="math inline">\(6\% / 2 = 3\% = 0,03\)</span>.</li>
+<li><span class="math inline">\(K_8 = 2000 \cdot (1 + 0,03)^8\)</span></li>
+<li><span class="math inline">\(K_8 = 2000 \cdot (1,03)^8 \approx 2000 \cdot 1,26677 = 2.533,54\text{ €}\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>Μηνιαίος Ανατοκισμός</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ένα κεφάλαιο 10.000 € ανατοκίζεται μηνιαίως με ετήσιο επιτόκιο 3% για 2 χρόνια. Ποιο είναι το τελικό ποσό;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><span class="math inline">\(m = 12\)</span>, συνολικοί μήνες <span class="math inline">\(2 \cdot 12 = 24\)</span>. Μηνιαίο επιτόκιο <span class="math inline">\(0,03 / 12 = 0,0025\)</span>.</li>
+<li><span class="math inline">\(K_{24} = 10000 \cdot (1 + 0,0025)^{24}\)</span></li>
+<li><span class="math inline">\(K_{24} = 10000 \cdot (1,0025)^{24} \approx 10000 \cdot 1,06176 = 10.617,60\text{ €}\)</span></li>
+</ul>
+<ol start="4" type="1">
+<li>Εύρεση του Αρχικού Κεφαλαίου (Παρούσα Αξία)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Πόσα χρήματα πρέπει να καταθέσεις σήμερα με ετήσιο επιτόκιο 5% ώστε σε 6 χρόνια να έχεις 3.000 €;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Ζητάμε το <span class="math inline">\(K_0\)</span>. Έχουμε <span class="math inline">\(K_6 = 3000\)</span>, <span class="math inline">\(i = 0,05\)</span>, <span class="math inline">\(n = 6\)</span>.</li>
+<li>Τύπος: <span class="math inline">\(K_0 = \dfrac{K_n}{(1 + i)^n}\)</span></li>
+<li><span class="math inline">\(K_0 = \dfrac{3000}{(1,05)^6} = \dfrac{3000}{1,3401} \approx 2.238,64\text{ €}\)</span></li>
+</ul>
+<ol start="5" type="1">
+<li>Εύρεση του Απαιτούμενου Επιτοκίου</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ένα κεφάλαιο 4.000 € έγινε 5.000 € μέσα σε 3 χρόνια με ετήσιο ανατοκισμό. Ποιο ήταν το επιτόκιο;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><span class="math inline">\(5000 = 4000 \cdot (1 + i)^3 \implies (1 + i)^3 = \dfrac{5000}{4000} = 1,25\)</span></li>
+<li><span class="math inline">\(1 + i = \sqrt[3]{1,25} \approx 1,0772\)</span></li>
+<li><span class="math inline">\(i = 0,0772\)</span> ή <strong>7,72%</strong></li>
+</ul>
+<ol start="6" type="1">
+<li>Εύρεση του Χρόνου (Διάρκειας)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Σε πόσα χρόνια θα διπλασιαστεί ένα κεφάλαιο αν το ετήσιο επιτόκιο ανατοκισμού είναι 7%;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Θέλουμε το <span class="math inline">\(K_n\)</span> να γίνει <span class="math inline">\(2 \cdot K_0\)</span>.</li>
+<li><span class="math inline">\(2 \cdot K_0 = K_0 \cdot (1,07)^n \implies 2 = (1,07)^n\)</span></li>
+<li>Χρησιμοποιούμε λογαρίθμους: <span class="math inline">\(\ln(2) = n \cdot \ln(1,07)\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>εντάξει λογαρίθμους θα κάνουμε του χρόνου.</p>
+</blockquote>
+<ul>
+<li><span class="math inline">\(n = \dfrac{\ln(2)}{\ln(1,07)} \approx \dfrac{0,69315}{0,06766} \approx 10,24\ \text{χρόνια}\)</span></li>
+</ul>
+<ol start="7" type="1">
+<li>Σύγκριση Απλού και Ανατοκισμένου Τόκου</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ποια είναι η διαφορά στα κέρδη αν επενδύσεις 8.000 € για 10 χρόνια με 5% απλό τόκο έναντι 5% ανατοκισμό;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><strong>Απλός Τόκος:</strong> <span class="math inline">\(T = K_0 \cdot i \cdot n = 8000 \cdot 0,05 \cdot 10 = 4.000\text{ €}\)</span> τόκος (Σύνολο 12.000 €).</li>
+<li><strong>Ανατοκισμός:</strong> <span class="math inline">\(K_{10} = 8000 \cdot (1,05)^{10} \approx 8000 \cdot 1,62889 = 13.031,12\text{ €}\)</span>. Ο τόκος είναι <span class="math inline">\(13.031,12 - 8000 = 5.031,12\text{ €}\)</span>.</li>
+<li><strong>Διαφορά:</strong> <span class="math inline">\(5.031,12 - 4.000 = 1.031,12\text{ €}\)</span> περισσότερα κέρδη με τον ανατοκισμό.</li>
+</ul>
+<ol start="8" type="1">
+<li>Μεταβαλλόμενο Επιτόκιο</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Καταθέτεις 10.000 € για 4 χρόνια. Τα πρώτα 2 χρόνια το επιτόκιο είναι 3% και τα επόμενα 2 χρόνια γίνεται 5%. Ποιο είναι το τελικό ποσό;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Στο τέλος των πρώτων 2 ετών: <span class="math inline">\(K_2 = 10000 \cdot (1,03)^2 = 10.609\text{ €}\)</span></li>
+<li>Αυτό το ποσό ανατοκίζεται για τα επόμενα 2 χρόνια με 5%: <span class="math inline">\(K_4 = 10609 \cdot (1,05)^2 = 10609 \cdot 1,1025 = 11.696,42\text{ €}\)</span></li>
+</ul>
+<ol start="9" type="1">
+<li>Πραγματικό έναντι Ονομαστικού Επιτοκίου</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Μια τράπεζα προσφέρει ονομαστικό επιτόκιο 8% με τριμηνιαίο ανατοκισμό. Ποιο είναι το πραγματικό ετήσιο επιτόκιο (το κέρδος στο τέλος του χρόνου);</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><span class="math inline">\(m = 4\)</span>. Το τριμηνιαίο επιτόκιο είναι <span class="math inline">\(8\% / 4 = 2\% = 0,02\)</span>.</li>
+<li>Για 1 € αρχικό κεφάλαιο, σε 1 χρόνο (4 τρίμηνα) θα έχουμε: <span class="math inline">\((1 + 0,02)^4 = 1,0824\)</span></li>
+<li>Το πραγματικό ετήσιο επιτόκιο είναι <span class="math inline">\(1,0824 - 1 = 0,0824\)</span> ή <strong>8,24%</strong>.</li>
+</ul>
+<ol start="10" type="1">
+<li>Συνεχής Ανατοκισμός (Θεωρητική Περίπτωση)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Αν ένα κεφάλαιο 1.000 € ανατοκίζεται <em>συνεχώς</em> (κάθε κλάσμα του δευτερολέπτου) με ετήσιο επιτόκιο 5% για 3 χρόνια, ποιο θα είναι το αποτέλεσμα;</p>
+<p><strong>Λύση:</strong></p>
+<p><strong>Δες παρακάτω</strong></p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #034f84;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ο Συνεχής Ανατοκισμός
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>είναι η διαδικασία όπου ο τόκος υπολογίζεται και προστίθεται στο κεφάλαιο σε κάθε απειροελάχιστη χρονική στιγμή. Αντί ο τόκος να μπαίνει κάθε χρόνο, μήνα ή μέρα, θεωρούμε ότι ο αριθμός των περιόδων ανατοκισμού τείνει στο άπειρο.</p>
+<p><strong>Παράδειγμα:</strong> Επενδύετε <strong>1.000€</strong> με ετήσιο επιτόκιο <strong>5%</strong> για <strong>3 χρόνια</strong> με συνεχή ανατοκισμό.</p>
+<p><strong>1: Προσδιορισμός των μεταβλητών</strong> Αναγνωρίζουμε τα δεδομένα του προβλήματος:</p>
+<ul>
+<li>Αρχικό Κεφάλαιο (<span class="math inline">\(P\)</span>): <span class="math inline">\(1.000 \text{ €}\)</span></li>
+<li>Ετήσιο επιτόκιο (<span class="math inline">\(r\)</span>): <span class="math inline">\(0,05\)</span> (σε δεκαδική μορφή)</li>
+<li>Χρόνος σε έτη (<span class="math inline">\(t\)</span>): <span class="math inline">\(3\)</span></li>
+<li>Σταθερά του Euler (<span class="math inline">\(e\)</span>): <span class="math inline">\(\approx 2,71828\)</span></li>
+</ul>
+<p><strong>2: Εφαρμογή του τύπου συνεχούς ανατοκισμού</strong> Ο τύπος που χρησιμοποιούμε είναι ο <span class="math inline">\(A = P \cdot e^{rt}\)</span>, όπου <span class="math inline">\(A\)</span> είναι το τελικό ποσό: <span class="math inline">\(A = 1.000 \cdot e^{(0,05 \cdot 3)}\)</span></p>
+<p><strong>3: Υπολογισμός του εκθέτη</strong> Πολλαπλασιάζουμε το επιτόκιο με τον χρόνο: <span class="math inline">\(0,05 \cdot 3 = 0,15\)</span> Άρα: <span class="math inline">\(A = 1.000 \cdot e^{0,15}\)</span></p>
+<p><strong>4: Υπολογισμός της δύναμης του e</strong> Χρησιμοποιώντας την τιμή του <span class="math inline">\(e^{0,15}\)</span>: <span class="math inline">\(e^{0,15} \approx 1,161834\)</span></p>
+<p><strong>5: Τελικός υπολογισμός ποσού</strong> Πολλαπλασιάζουμε το αρχικό κεφάλαιο με το αποτέλεσμα: <span class="math inline">\(A = 1.000 \cdot 1,161834 = 1.161,83 \text{ €}\)</span></p>
+<p><strong>Τελική απάντηση</strong> Το τελικό ποσό μετά από 3 χρόνια με συνεχή ανατοκισμό θα είναι <strong>1.161,83€</strong>.</p>
+<p><strong>Η Μαθηματική Βάση του Συνεχούς Ανατοκισμού</strong> Στον απλό ανατοκισμό (π.χ. ανά έτος), ο τύπος είναι <span class="math inline">\(A = P(1 + \dfrac{r}{n})^{nt}\)</span>. Όσο το <span class="math inline">\(n\)</span> (πλήθος ανατοκισμών ανά έτος) μεγαλώνει και τείνει στο άπειρο, η παράσταση <span class="math inline">\((1 + \dfrac{r}{n})^n\)</span> προσεγγίζει τη μαθηματική σταθερά <span class="math inline">\(e^r\)</span>.</p>
+<p><strong>Σχέση με το Πρόβλημα</strong> Ο συνεχής ανατοκισμός αντιπροσωπεύει το “ανώτατο όριο” απόδοσης που μπορεί να έχει ένα επιτόκιο. Αν στο ίδιο παράδειγμα ο ανατοκισμός γινόταν μία φορά το χρόνο, το ποσό θα ήταν <span class="math inline">\(1.157,63 \text{ €}\)</span>. Με τον συνεχή ανατοκισμό, κερδίζετε το μέγιστο δυνατό (<span class="math inline">\(\approx 4\)</span> ευρώ επιπλέον), καθώς ο τόκος παράγει νέο τόκο ακατάπαυστα.</p>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #6A5ACD;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Μικτός Ανατοκισμός
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Όταν η χρονική διάρκεια μιας επένδυσης δεν είναι ακέραιο πολλαπλάσιο των περιόδων ανατοκισμού (π.χ. 5 χρόνια και 8 μήνες), η περίπτωση αυτή ονομάζεται <strong>Μικτός Ανατοκισμός</strong> (ή ανατοκισμός με κλασματικό χρόνο).</p>
+<p>Υπάρχουν δύο τρόποι υπολογισμού, αλλά ο πιο συνηθισμένος στην τραπεζική πρακτική είναι ο <strong>Γραμμικός ή Συμβατικός Τρόπος</strong>. Σε αυτόν, χρησιμοποιούμε σύνθετο ανατοκισμό για τα ολόκληρα έτη και απλό τόκο για το κλάσμα του έτους.</p>
+<p><strong>Παράδειγμα:</strong> Κεφάλαιο <strong>1.000€</strong> με ετήσιο επιτόκιο <strong>5%</strong> για <strong>5 χρόνια και 8 μήνες</strong>.</p>
+<p><strong>1: Διαχωρισμός του χρόνου</strong> Χωρίζουμε το χρόνο σε ακέραιο και κλασματικό μέρος: * Ακέραια έτη (<span class="math inline">\(t\)</span>): <span class="math inline">\(5\)</span> * Κλασματικό μέρος (<span class="math inline">\(f\)</span>): <span class="math inline">\(\dfrac{8}{12}\)</span> του έτους (ή <span class="math inline">\(\dfrac{2}{3} \approx 0,666\)</span>)</p>
+<p><strong>2: Υπολογισμός σύνθετου ανατοκισμού για τα ακέραια έτη</strong> Υπολογίζουμε το ποσό στο τέλος των 5 ετών χρησιμοποιώντας τον τύπο <span class="math inline">\(A_1 = P(1 + r)^t\)</span>: <span class="math inline">\(A_1 = 1.000 \cdot (1 + 0,05)^5 = 1.000 \cdot 1,27628 = 1.276,28 \text{ €}\)</span></p>
+<p><strong>3: Υπολογισμός απλού τόκου για τους υπόλοιπους μήνες</strong> Το ποσό <span class="math inline">\(A_1\)</span> θεωρείται πλέον κεφάλαιο για τους επόμενους 8 μήνες με απλό τόκο. Χρησιμοποιούμε τον τύπο: <span class="math inline">\(A_{Τελικό} = A_1 \cdot (1 + r \cdot f)\)</span> <span class="math inline">\(A_{Τελικό} = 1.276,28 \cdot (1 + 0,05 \cdot \dfrac{8}{12})\)</span></p>
+<p><strong>4: Εκτέλεση της τελικής πράξης</strong> <span class="math inline">\(0,05 \cdot 0,6666 = 0,03333\)</span> <span class="math inline">\(A_{Τελικό} = 1.276,28 \cdot 1,03333 = 1.318,82 \text{ €}\)</span></p>
+<p><strong>Τελική απάντηση</strong> Το τελικό ποσό για 5 χρόνια και 8 μήνες είναι <strong>1.318,82€</strong>.</p>
+<p><strong>Συμβατικός vs.&nbsp;Μαθηματικός Τρόπος</strong></p>
+<ol type="1">
+<li><strong>Συμβατικός Τρόπος (αυτός που λύσαμε):</strong> Συνδυάζει σύνθετο ανατοκισμό για τα ακέραια έτη και απλό τόκο για το τμήμα του έτους. Είναι ο πιο δίκαιος και συνηθισμένος τρόπος στις συναλλαγές.</li>
+<li><strong>Μαθηματικός Τρόπος:</strong> Χρησιμοποιεί τον τύπο του σύνθετου ανατοκισμού απευθείας με δεκαδικό εκθέτη: <span class="math inline">\(A = P(1 + r)^{5,666}\)</span>.</li>
+</ol>
+<p><strong>Σχέση με το Πρόβλημα</strong> Επειδή ο απλός τόκος “τρέχει” γραμμικά, σε περιόδους μικρότερες του έτους αποδίδει ελαφρώς περισσότερο από τον σύνθετο ανατοκισμό. Έτσι, ο συμβατικός τρόπος δίνει ένα ελάχιστα μεγαλύτερο ποσό στον καταθέτη σε σχέση με τον καθαρά μαθηματικό τύπο.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="ίσες-καταθέσεις" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ίσες-καταθέσεις"><span class="header-section-number">1.2</span> Ίσες καταθέσεις</h3>
+<div style="background-color: #d5f4e6; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>Η έννοια των <strong>ίσων καταθέσεων</strong> (ή αλλιώς <strong>ράντες καταθέσεων</strong> / <em>annuities</em>) αποτελεί την πρακτική προέκταση του ανατοκισμού στην καθημερινή ζωή. Ενώ στον απλό ανατοκισμό βάζουμε ένα ποσό στην τράπεζα <em>μία φορά</em> και το αφήνουμε να τοκίζεται, στις ίσες καταθέσεις αποταμιεύουμε ένα <strong>σταθερό ποσό σε τακτά χρονικά διαστήματα</strong> (π.χ. κάθε μήνα ή κάθε χρόνο) με σκοπό να μαζέψουμε ένα συγκεκριμένο τελικό κεφάλαιο.</p>
+<p>Είναι ο τρόπος με τον οποίο λειτουργούν τα συνταξιοδοτικά προγράμματα, τα αποταμιευτικά προγράμματα για σπουδές, ή η δημιουργία ενός κεφαλαίου για μια μελλοντική αγορά.</p>
+<section id="θεωρία-ορισμοί-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="θεωρία-ορισμοί-1"><span class="header-section-number">1.2.1</span> Θεωρία &amp; Ορισμοί</h4>
+<p>Για να μελετήσουμε τις ίσες καταθέσεις, χρησιμοποιούμε τους εξής όρους:</p>
+<ul>
+<li><strong>Όρος της Ράντας (<span class="math inline">\(R\)</span> ή <span class="math inline">\(C\)</span>):</strong> Το σταθερό ποσό που κατατίθεται σε κάθε περίοδο (π.χ. 100 € το μήνα).</li>
+<li><strong>Περίοδος:</strong> Το σταθερό χρονικό διάστημα μεταξύ δύο διαδοχικών καταθέσεων (μήνας, τρίμηνο, έτος).</li>
+<li><strong>Επιτόκιο (<span class="math inline">\(i\)</span>):</strong> Το επιτόκιο της περιόδου ανατοκισμού, εκφρασμένο σε δεκαδική μορφή.</li>
+<li><strong>Πλήθος καταθέσεων (<span class="math inline">\(n\)</span>):</strong> Ο συνολικός αριθμός των καταθέσεων που θα πραγματοποιηθούν.</li>
+<li><strong>Τελική Αξία Ράντας (<span class="math inline">\(S_n\)</span>):</strong> Το συνολικό ποσό που θα έχει συγκεντρωθεί στο λογαριασμό αμέσως μετά την τελευταία κατάθεση (περιλαμβάνει όλες τις καταθέσεις + όλους τους ανατοκισμένους τόκους).</li>
+</ul>
+</section>
+<section id="κατηγορίες-ραντών-ανάλογα-με-το-χρόνο-κατάθεσης" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="κατηγορίες-ραντών-ανάλογα-με-το-χρόνο-κατάθεσης"><span class="header-section-number">1.2.2</span> Κατηγορίες Ραντών (Ανάλογα με το χρόνο κατάθεσης)</h4>
+<ol type="1">
+<li><strong>Ληξιπρόθεσμες (Ordinary Annuities):</strong> Οι καταθέσεις γίνονται στο <strong>τέλος</strong> κάθε περιόδου (π.χ. 31 Δεκεμβρίου).</li>
+<li><strong>Προκαταβλητέες (Annuities Due):</strong> Οι καταθέσεις γίνονται στην <strong>αρχή</strong> κάθε περιόδου (π.χ. 1 Ιανουαρίου). Επειδή τα χρήματα μένουν περισσότερο χρόνο στην τράπεζα, αποδίδουν παραπάνω τόκο.</li>
+</ol>
+</section>
+<section id="οι-μαθηματικοί-τύποι-τελική-αξία" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="οι-μαθηματικοί-τύποι-τελική-αξία"><span class="header-section-number">1.2.3</span> Οι Μαθηματικοί Τύποι (Τελική Αξία)</h4>
+<p>Για <strong>Ληξιπρόθεσμες</strong> καταθέσεις:</p>
+<p><span class="math display">\[S_n = R \cdot \frac{(1 + i)^n - 1}{i}\]</span></p>
+<p>Για <strong>Προκαταβλητέες</strong> καταθέσεις:</p>
+<p><span class="math display">\[S_n = R \cdot \frac{(1 + i)^n - 1}{i} \cdot (1 + i)\]</span></p>
+</section>
+</div>
+<section id="παρουσίαση-μέσω-παραδείγματος-ληξιπρόθεσμης-ράντας" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="παρουσίαση-μέσω-παραδείγματος-ληξιπρόθεσμης-ράντας"><span class="header-section-number">1.2.4</span> Παρουσίαση μέσω Παραδείγματος ληξιπρόθεσμης ράντας</h4>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #8B0000;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Ληξιπρόθεσμη ράντα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ας υποθέσουμε ότι αποφασίζεις να αποταμιεύεις <strong>1.000 € στο τέλος κάθε χρόνου</strong> (<span class="math inline">\(R = 1000\)</span>) σε έναν λογαριασμό με ετήσιο επιτόκιο <strong>10%</strong> (<span class="math inline">\(i = 0,10\)</span>) για <strong>3 χρόνια</strong> (<span class="math inline">\(n = 3\)</span>). Πρόκειται για <em>ληξιπρόθεσμη</em> ράντα.</p>
+<p>Ας δούμε τι συμβαίνει με τα χρήματα βήμα-βήμα:</p>
+<ul>
+<li><p><strong>Τέλος 1ου Έτους:</strong> Κάνεις την 1η κατάθεση <strong>1.000 €</strong>. Αυτά τα χρήματα θα μείνουν στην τράπεζα για τα επόμενα 2 χρόνια.</p></li>
+<li><p><strong>Τέλος 2ου Έτους:</strong></p>
+<ul>
+<li>Τα πρώτα 1.000 € παίρνουν τόκο 10% (<span class="math inline">\(1.000 \cdot 0,10 = 100 \text{ €}\)</span>), άρα γίνονται 1.100 €.</li>
+<li>Κάνεις τη 2η κατάθεση <strong>1.000 €</strong>.</li>
+<li>Σύνολο στο λογαριασμό: <span class="math inline">\(1.100 + 1.000 = 2.100 \text{ €}\)</span>.</li>
+</ul></li>
+<li><p><strong>Τέλος 3ου Έτους:</strong></p>
+<ul>
+<li>Τα 2.100 € παίρνουν τόκο 10% (<span class="math inline">\(2.100 \cdot 0,10 = 210 \text{ €}\)</span>), άρα γίνονται 2.310 €.</li>
+<li>Κάνεις την 3η και τελευταία κατάθεση <strong>1.000 €</strong>.</li>
+<li><strong>Τελικό Σύνολο:</strong> <span class="math inline">\(2.310 + 1.000 = 3.310 \text{ €}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Αν εφαρμόσουμε τον τύπο της ληξιπρόθεσμης ράντας:</p>
+<p><span class="math display">\[S_3 = 1000 \cdot \frac{(1 + 0,10)^3 - 1}{0,10} = 1000 \cdot \frac{1,331 - 1}{0,10} = 1000 \cdot \frac{0,331}{0,10} = 1000 \cdot 3,31 = 3.310 \text{ €}\]</span></p>
+<blockquote class="blockquote">
+<p><strong>Το κέρδος σου:</strong> Εσύ έβαλες από την τσέπη σου <span class="math inline">\(3 \cdot 1.000 = 3.000 \text{ €}\)</span>. Τα υπόλοιπα <strong>310 €</strong> είναι οι τόκοι που γεννήθηκαν και ανατοκίστηκαν!</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Στην πραγματικότητα είναι σαν να κάνεις Προκαταβλητέα ράντα για δύο χρόνια Οι λόγοι που υπάρχει αυτό το είδος ράντας είναι τραπεζοικονομικοί και δεν μας αφορούν εδώ (επενδυτικοί, δανειακοί κτλπ).</p>
+</blockquote>
+</div>
+</div>
+<hr>
+</section>
+<section id="παρουσίαση-μέσω-παραδείγματος-προκαταβλητέας-ράντας" class="level4" data-number="1.2.5">
+<h4 data-number="1.2.5" class="anchored" data-anchor-id="παρουσίαση-μέσω-παραδείγματος-προκαταβλητέας-ράντας"><span class="header-section-number">1.2.5</span> Παρουσίαση μέσω Παραδείγματος προκαταβλητέας ράντας</h4>
+<div class="callout callout-style-default callout-note callout-titled" style="color: #45614f;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημείωση</span>Προκαταβλητέα ράντα
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(όπου τα χρήματα μπαίνουν στην <strong>αρχή</strong> κάθε περιόδου) για να καταλάβετε ακριβώς πώς λειτουργεί ο μηχανισμός τους βήμα-βήμα, αλλά και πώς εφαρμόζεται ο μαθηματικός τύπος.</p>
+<p>Αποφασίζεις να ανοίξεις έναν αποταμιευτικό λογαριασμό για <strong>3 χρόνια</strong> (<span class="math inline">\(n = 3\)</span>). Το ετήσιο επιτόκιο είναι <strong>10%</strong> (<span class="math inline">\(i = 0,10\)</span>).</p>
+<p>Αυτή τη φορά, καταθέτεις <strong>1.000 € στην αρχή κάθε χρόνου</strong> (<span class="math inline">\(R = 1000\)</span>).</p>
+<ul>
+<li><strong>Αρχή 1ου Έτους (Ημέρα 0):</strong>
+<ul>
+<li>Κάνεις την 1η κατάθεση: <strong>1.000 €</strong>.</li>
+<li>Τα χρήματα αυτά μένουν στον λογαριασμό όλο τον χρόνο και τοκίζονται.</li>
+<li><em>Τέλος 1ου έτους:</em> Τα 1.000 € παίρνουν 10% τόκο (<span class="math inline">\(100\text{ €}\)</span>), άρα το υπόλοιπο γίνεται <strong>1.100 €</strong>.</li>
+</ul></li>
+<li><strong>Αρχή 2ου Έτους:</strong>
+<ul>
+<li>Ξεκινάς τη χρονιά κάνοντας τη 2η κατάθεση: <strong>1.000 €</strong>.</li>
+<li>Το νέο σου κεφάλαιο είναι <span class="math inline">\(1.100 + 1.000 = 2.100\text{ €}\)</span>.</li>
+<li>Αυτά τα 2.100 € μένουν στον λογαριασμό όλο το 2ο έτος.</li>
+<li><em>Τέλος 2ου έτους:</em> Τοκίζονται με 10% (<span class="math inline">\(210\text{ €}\)</span> τόκος), άρα το υπόλοιπο γίνεται <strong>2.310 €</strong>.</li>
+</ul></li>
+<li><strong>Αρχή 3ου Έτους:</strong>
+<ul>
+<li>Κάνεις την 3η και τελευταία κατάθεση: <strong>1.000 €</strong>.</li>
+<li>Το κεφάλαιό σου γίνεται <span class="math inline">\(2.310 + 1.000 = 3.310\text{ €}\)</span>.</li>
+<li>Αυτά τα 3.310 € μένουν μέσα όλο το 3ο έτος.</li>
+<li><em>Τέλος 3ου έτους (Λήξη):</em> Τοκίζονται για τελευταία φορά με 10% (<span class="math inline">\(331\text{ €}\)</span> τόκος).</li>
+<li><strong>Τελικό Ποσό Στο Λογαριασμό:</strong> <span class="math inline">\(3.310 + 331 = \mathbf{3.641\text{ €}}\)</span></li>
+</ul></li>
+</ul>
+<p>Εφαρμογή του Τύπου</p>
+<p>Αν αντί να τα υπολογίζουμε χρόνο-χρόνο βάλουμε τα δεδομένα στον τύπο των προκαταβλητέων καταθέσεων:</p>
+<p><span class="math display">\[S_n = R \cdot \frac{(1 + i)^n - 1}{i} \cdot (1 + i)\]</span></p>
+<p>Αντικαθιστούμε τις τιμές (<span class="math inline">\(R = 1000\)</span>, <span class="math inline">\(i = 0,10\)</span>, <span class="math inline">\(n = 3\)</span>):</p>
+<p><span class="math display">\[S_3 = 1000 \cdot \frac{(1 + 0,10)^3 - 1}{0,10} \cdot (1 + 0,10)\]</span></p>
+<p><span class="math display">\[S_3 = 1000 \cdot \frac{1,331 - 1}{0,10} \cdot 1,10\]</span></p>
+<p><span class="math display">\[S_3 = 1000 \cdot \frac{0,331}{0,10} \cdot 1,10\]</span></p>
+<p><span class="math display">\[S_3 = 1000 \cdot 3,31 \cdot 1,10 = 3.310 \cdot 1,10 = \mathbf{3.641 \text{ €}}\]</span></p>
+<blockquote class="blockquote">
+<p>💡 Η Σύγκριση που κάνει τη διαφορά:</p>
+<ul>
+<li>Αν έκανες τις ίδιες καταθέσεις στο <strong>τέλος</strong> κάθε χρόνου (ληξιπρόθεσμες), στο τέλος θα είχες <strong>3.310 €</strong>.</li>
+<li>Επειδή τις έκανες στην <strong>αρχή</strong> (προκαταβλητέες), κέρδισες <strong>331 € παραπάνω</strong> (<span class="math inline">\(3.641 - 3.310\)</span>).</li>
+</ul>
+<p>Αυτό συμβαίνει γιατί κάθε μία από τις 3 καταθέσεις σου έμεινε στην τράπεζα ακριβώς <strong>έναν χρόνο περισσότερο</strong> σε σχέση με την αντίστοιχη ληξιπρόθεσμη, παράγοντας επιπλέον τόκο!</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="παραδείγματα-στις-ίσες-καταθέσεις-προκαταβλητέων" class="level4" data-number="1.2.6">
+<h4 data-number="1.2.6" class="anchored" data-anchor-id="παραδείγματα-στις-ίσες-καταθέσεις-προκαταβλητέων"><span class="header-section-number">1.2.6</span> Παραδείγματα στις ίσες καταθέσεις (προκαταβλητέων)</h4>
+<p>Ο γενικός τύπος για τον υπολογισμό του συνολικού ποσού <span class="math inline">\(\Sigma\)</span> που θα εισπραχθεί στο τέλος της περιόδου είναι: <span class="math display">\[\Sigma = \alpha \cdot (1 + i) \cdot \frac{(1+i)^\nu - 1}{i}\]</span></p>
+<ol type="1">
+<li>Ετήσια αποταμίευση 5.000€</li>
+</ol>
+<p>Στην αρχή κάθε χρόνου και για <strong>5 συνεχή χρόνια</strong> καταθέτουμε στην τράπεζα <strong>5.000€</strong> με ανατοκισμό ανά έτος και επιτόκιο <strong>3%</strong>.</p>
+<ul>
+<li><strong>Δεδομένα:</strong> <span class="math inline">\(\alpha = 5.000\)</span>, <span class="math inline">\(i = 0,03\)</span>, <span class="math inline">\(\nu = 5\)</span>.</li>
+<li><strong>Λύση:</strong> <span class="math inline">\(\Sigma = 5.000 \cdot (1 + 0,03) \cdot \dfrac{(1,03)^5 - 1}{0,03} \approx \mathbf{27.342 \text{ €}}\)</span>.</li>
+</ul>
+<ol start="2" type="1">
+<li>Ετήσια αποταμίευση 15.000€</li>
+</ol>
+<p>Αν ένας καταθέτης αποταμιεύει <strong>15.000€</strong> στην αρχή κάθε έτους για <strong>5 χρόνια</strong> με ετήσιο επιτόκιο <strong>3%</strong>, το τελικό ποσό υπολογίζεται με τον ίδιο τύπο.</p>
+<ul>
+<li><strong>Δεδομένα:</strong> <span class="math inline">\(\alpha = 15.000\)</span>, <span class="math inline">\(i = 0,03\)</span>, <span class="math inline">\(\nu = 5\)</span>.</li>
+<li><strong>Λύση:</strong> <span class="math inline">\(\Sigma = 15.000 \cdot (1,03) \cdot \dfrac{1,03^5 - 1}{0,03}\)</span>. Το ποσό αυτό θα είναι ακριβώς τριπλάσιο από το παράδειγμα 1, δηλαδή περίπου <strong>82.026€</strong>.</li>
+</ul>
+<ol start="3" type="1">
+<li>Πρόγραμμα αποταμίευσης με διπλασιασμό</li>
+</ol>
+<p>Μια οικογένεια καταθέτει τον 1ο μήνα 1€, τον 2ο μήνα 2€, τον 3ο μήνα 4€ και γενικά κάθε μήνα <strong>διπλασιάζει</strong> το ποσό του προηγούμενου μήνα για 12 μήνες.</p>
+<ul>
+<li><strong>Ανάλυση:</strong> Πρόκειται για γεωμετρική πρόοδο με πρώτο όρο <span class="math inline">\(\alpha_1 = 1\)</span> και λόγο <span class="math inline">\(\lambda = 2\)</span>.</li>
+<li><strong>Λύση:</strong> Το ποσό που θα κατατεθεί τον 12ο μήνα είναι <span class="math inline">\(\alpha_{12} = 1 \cdot 2^{11} = 2.048 \text{ €}\)</span>. Το συνολικό ποσό μετά από 12 μήνες θα είναι <span class="math inline">\(S_{12} = 1 \cdot \dfrac{2^{12} - 1}{2-1} = \mathbf{4.095 \text{ €}}\)</span>.</li>
+</ul>
+<ol start="4" type="1">
+<li>Αποταμίευση με τριπλασιασμό</li>
+</ol>
+<p>Ένας παππούς αποταμιεύει 1€ τον 1ο χρόνο γέννησης του εγγονού του, 3€ τον 2ο, 9€ τον 3ο κ.ο.κ. (κάθε χρόνο το ποσό <strong>τριπλασιάζεται</strong>).</p>
+<ul>
+<li><strong>Ερώτημα:</strong> Πόσα χρήματα θα έχει συνολικά μέχρι και τον 8ο χρόνο;</li>
+<li><strong>Λύση:</strong> Πρόκειται για γεωμετρική πρόοδο με <span class="math inline">\(\alpha_1 = 1\)</span> και <span class="math inline">\(\lambda = 3\)</span>. Το συνολικό ποσό είναι <span class="math inline">\(S_8 = 1 \cdot \dfrac{3^8 - 1}{3-1} = \dfrac{6561 - 1}{2} = \mathbf{3.280 \text{ €}}\)</span>.</li>
+</ul>
+<ol start="5" type="1">
+<li>Σύγκριση αποταμιευτικών πλάνων</li>
+</ol>
+<p>Ένας πατέρας καταθέτει 150€ στα πρώτα γενέθλια και αυξάνει το ποσό κατά 6€ κάθε χρόνο (αριθμητική πρόοδος), ενώ η μητέρα καταθέτει 1€ και το <strong>διπλασιάζει</strong> κάθε χρόνο (γεωμετρική πρόοδος/ανατοκισμός).</p>
+<ul>
+<li><strong>Σύγκριση:</strong> Μετά από 18 χρόνια, το παιδί κάνει ανάληψη. Ενώ το πλάνο του πατέρα φαίνεται αρχικά μεγαλύτερο, η γεωμετρική αύξηση (ανατοκισμός) του ποσού της μητέρας οδηγεί σε πολύ μεγαλύτερα ποσά με την πάροδο του χρόνου. Στα 10α γενέθλια, η μητέρα καταθέτει <span class="math inline">\(2^9 = 512 \text{ €}\)</span>, ενώ ο πατέρας <span class="math inline">\(150 + 9 \cdot 6 = 204 \text{ €}\)</span>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ασκήσεις"><span class="header-section-number">1.3</span> Ασκήσεις</h3>
+<ol type="1">
+<li><p>Υπολογισμός Τελικού Κεφαλαίου Κάποιος δανείζει 8.000€ με ανατοκισμό και ετήσιο επιτόκιο <span class="math inline">\(4\%\)</span>. Πόσα χρήματα θα πάρει συνολικά ύστερα από 7 χρόνια;</p></li>
+<li><p>Εύρεση Αρχικού Κεφαλαίου Πόσα χρήματα πρέπει να τοκίσει κάποιος με ετήσιο επιτόκιο <span class="math inline">\(2\%\)</span> για να πάρει μετά από 8 χρόνια συνολικά 25.000€;</p></li>
+<li><p>Εύρεση Επιτοκίου Κεφάλαιο 20.000€ κατατίθεται σήμερα και σε 4 έτη γίνεται 21.648,64€. Ποιο είναι το ετήσιο επιτόκιο ανατοκισμού;</p></li>
+<li><p>Τριμηνιαίος Ανατοκισμός Να βρεθεί η τελική αξία κεφαλαίου 3.000€ το οποίο ανατοκίζεται για 3 έτη με επιτόκιο τριμήνου <span class="math inline">\(1\%\)</span>.</p></li>
+<li><p>Εξαμηνιαίος Ανατοκισμός Κεφάλαιο 4.500€ ανατοκίζεται κάθε εξάμηνο για 6 έτη με εξαμηνιαίο επιτόκιο <span class="math inline">\(2\%\)</span>. Πόσο θα είναι το κεφάλαιο στο τέλος;</p></li>
+<li><p>Σύγκριση Επένδυσης (Αγορά ή Κατάθεση) Συμφέρει να αγοράσουμε ένα αυτοκίνητο σήμερα με 13.000€ ή να καταθέσουμε τα χρήματα με εξαμηνιαίο επιτόκιο <span class="math inline">\(2\%\)</span> και να το αγοράσουμε σε 2 χρόνια που θα κοστίζει 14.000€;</p></li>
+<li><p>Μικτός Ανατοκισμός (Έτη και Μήνες) Να βρεθεί το τελικό κεφάλαιο 6.000€ που ανατοκίζεται για 5 έτη και 9 μήνες με ετήσιο επιτόκιο <span class="math inline">\(4\%\)</span>.</p></li>
+<li><p>Ανατοκισμός ανά Εξάμηνο με Ετήσιο Επιτόκιο** Βρείτε το τελικό κεφάλαιο 6.000€ μετά από 5 έτη και 9 μήνες, αν ο ανατοκισμός είναι εξαμηνιαίος με ετήσιο επιτόκιο <span class="math inline">\(4\%\)</span>.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Ο χρόνος είναι <span class="math inline">\(11,5\)</span> εξάμηνα. <span class="math inline">\(K = 6.000 \cdot (1,02)^{11,5} = 7.534,5 \text{ €}\)</span>.</p>
+</blockquote>
+<ol start="9" type="1">
+<li>Προεξόφληση (Παρούσα Αξία) Ποιο κεφάλαιο πρέπει να κατατεθεί σήμερα με ετήσιο επιτόκιο <span class="math inline">\(4\%\)</span> ώστε σε 5 έτη και 4 μήνες να εισπράξουμε 9.000€;</li>
+</ol>
+<p><em>Λύση:</em></p>
+<p>Χρήση τύπου παρούσας αξίας για μικτό ανατοκισμό:</p>
+<p><span class="math inline">\(K_0 = \dfrac{9.000}{(1,04)^5 \cdot (1 + \dfrac{4}{12} \cdot 0,04)} = \dfrac{9.000}{1,2166 \cdot 1,0133} \approx 7.300,58 \text{ €}\)</span>.</p>
+<ol start="10" type="1">
+<li>Βασική Ληξιπρόθεσμη Ράντα (Ετήσια)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ένας γονιός καταθέτει 500 € στο τέλος κάθε έτους για 10 χρόνια με ετήσιο επιτόκιο 4%. Ποιο ποσό θα συγκεντρωθεί;</p>
+<ol start="11" type="1">
+<li>Βασική Προκαταβλητέα Ράντα (Ετήσια)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Αν στην προηγούμενη άσκηση ο γονιός έκανε τις καταθέσεις στην <strong>αρχή</strong> κάθε έτους, ποιο θα ήταν το τελικό ποσό;</p>
+<ol start="12" type="1">
+<li>Μηνιαίες Ληξιπρόθεσμες Καταθέσεις</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Αποταμιεύεις 100 € στο τέλος κάθε μήνα για 5 χρόνια. Το ονομαστικό ετήσιο επιτόκιο είναι 6% και ο ανατοκισμός γίνεται μηνιαίως. Πόσα χρήματα θα έχεις στο τέλος;</p>
+<p>13.Εύρεση του Ποσού της Κατάθεσης (Στόχος Αποταμίευσης)</p>
+<p><strong>Ερώτηση:</strong> Θέλεις να αγοράσεις ένα αυτοκίνητο αξίας 15.000 € σε 4 χρόνια από τώρα. Πόσα χρήματα πρέπει να καταθέτεις στο τέλος κάθε χρόνου σε έναν λογαριασμό με επιτόκιο 5%, ώστε να μαζέψεις το ποσό;</p>
+<ol start="14" type="1">
+<li>Μηνιαία Κατάθεση Προκαταβλητέα (Συνταξιοδοτικό)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ένας 25άρης αποφασίζει να βάζει 150 € στην αρχή κάθε μήνα σε ένα πρόγραμμα με σταθερό ετήσιο επιτόκιο 4% (μηνιαίος ανατοκισμός) μέχρι να γίνει 35 ετών (για 10 χρόνια). Πόσα χρήματα θα έχει μαζέψει;</p>
+<ol start="15" type="1">
+<li>Εύρεση του Συνολικού Τόκου που Κερδήθηκε</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Στην Άσκηση 12 (100 € το μήνα για 5 χρόνια με 6%), πόσος είναι ο καθαρός τόκος που πλήρωσε η τράπεζα;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Το τελικό ποσό που μαζεύτηκε είναι <span class="math inline">\(6.977,00 \text{ €}\)</span>.</li>
+<li>Οι συνολικές καταθέσεις που κάναμε από την τσέπη μας είναι: <span class="math inline">\(60 \text{ μήνες} \cdot 100 \text{ €} = 6.000 \text{ €}\)</span>.</li>
+<li>Συνολικός Τόκος = Τελική Αξία - Συνολικές Καταθέσεις = <span class="math inline">\(6.977,00 - 6.000 = 977,00 \text{ €}\)</span>.</li>
+</ul>
+<ol start="16" type="1">
+<li>Εύρεση του Πλήθους των Καταθέσεων (<span class="math inline">\(n\)</span>)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Πόσα έτη πρέπει να καταθέτεις 2.000 € στο τέλος κάθε έτους με επιτόκιο 6%, ώστε το τελικό ποσό να ξεπεράσει τις 25.000 €;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li><span class="math inline">\(25000 = 2000 \cdot \dfrac{(1,06)^n - 1}{0,06} \implies \dfrac{25000 \cdot 0,06}{2000} = (1,06)^n - 1\)</span></li>
+<li><span class="math inline">\(0,75 = (1,06)^n - 1 \implies (1,06)^n = 1,75\)</span></li>
+<li>Λογάριθμοι: <span class="math inline">\(n \cdot \ln(1,06) = \ln(1,75) \implies n = \dfrac{\ln(1,75)}{\ln(1,06)} \approx \dfrac{0,5596}{0,0582} \approx 9,6\ \text{έτη}\)</span>.</li>
+<li>Άρα απαιτούνται <strong>10 καταθέσεις</strong> (10 έτη).</li>
+</ul>
+<blockquote class="blockquote">
+<p>Εντάξει είπαμε λογάριθμοι του χρόνου.</p>
+</blockquote>
+<ol start="17" type="1">
+<li>Παρούσα Αξία Ίσων Καταθέσεων (Αγορά με Δόσεις)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Σου προσφέρουν ένα έπιπλο με 12 άτοκες μηνιαίες δόσεις των 100 € (πληρωτέες στο τέλος κάθε μήνα). Αν plhρώνες με μετρητά σήμερα, θα είχες έκπτωση. Αν το εναλλακτικό σου επιτόκιο στην τράπεζα είναι 3% το χρόνο (0,25% το μήνα), ποια είναι η “πραγματική παρούσα αξία” αυτών των δόσεων σήμερα;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Εδώ ψάχνουμε την <em>Παρούσα Αξία</em> (<span class="math inline">\(V_0\)</span>) μιας ληξιπρόθεσμης ράντας. Ο τύπος είναι: <span class="math inline">\(V_0 = R \cdot \dfrac{1 - (1+i)^{-n}}{i}\)</span></li>
+<li><span class="math inline">\(R = 100\)</span>, <span class="math inline">\(i = 0,0025\)</span>, <span class="math inline">\(n = 12\)</span></li>
+<li><span class="math inline">\(V_0 = 100 \cdot \dfrac{1 - (1,0025)^{-12}}{0,0025} \approx 100 \cdot \dfrac{1 - 0,97044}{0,0025} = 100 \cdot 11,824 = 1.182,40\text{ €}\)</span></li>
+</ul>
+<p><em>(Δηλαδή, το να πληρώσεις 12 δόσεις των 100 € ισοδυναμεί με το να πληρώσεις 1.182,40 € μετρητά σήμερα).</em></p>
+<ol start="18" type="1">
+<li>Ράντα με Αναβολή (Αποταμίευση που μένει να τοκιστεί)</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Καταθέτεις 1.000 € στο τέλος κάθε χρόνου για 5 χρόνια με επιτόκιο 5%. Μόλις κάνεις την 5η κατάθεση, σταματάς να βάζεις χρήματα, αλλά <strong>αφήνεις το ποσό στην τράπεζα για άλλα 3 χρόνια</strong> χωρίς να κάνεις ανάληψη. Πόσα χρήματα θα έχεις στο τέλος του 8ου χρόνου;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Βήμα 1: Βρίσκουμε την αξία των καταθέσεων στο τέλος του 5ου έτους. <span class="math inline">\(S_5 = 1000 \cdot \dfrac{(1,05)^5 - 1}{0,05} \approx 1000 \cdot 5,5256 = 5.525,60\text{ €}\)</span></li>
+<li>Βήμα 2: Αυτό το εφάπαξ ποσό πλέον ανατοκίζεται απλά (σαν ένα απλό κεφάλαιο) για 3 χρόνια με 5%. <span class="math inline">\(K_{τελικό} = 5.525,60 \cdot (1,05)^3 = 5.525,60 \cdot 1,1576 \approx 6.396,44\text{ €}\)</span></li>
+</ul>
+<ol start="19" type="1">
+<li>Τριμηνιαίες Καταθέσεις</li>
+</ol>
+<p><strong>Ερώτηση:</strong> Ένας ελεύθερος επαγγελματίας βάζει στην άκρη 400 € στο τέλος κάθε τριμήνου για 3 χρόνια. Το ετήσιο επιτόκιο είναι 4% και ο ανατοκισμός γίνεται ανά τρίμηνο. Ποιο είναι το τελικό ποσό;</p>
+<p><strong>Λύση:</strong></p>
+<ul>
+<li>Ένα έτος έχει 4 τρίμηνα, άρα σε 3 χρόνια έχουμε <span class="math inline">\(n = 3 \cdot 4 = 12\)</span> περιόδους (τρίμηνα).</li>
+<li>Το τριμηνιαίο επιτόκιο είναι <span class="math inline">\(i = 4\% / 4 = 1\% = 0,01\)</span>.</li>
+<li><span class="math inline">\(S_{12} = 400 \cdot \dfrac{(1,01)^{12} - 1}{0,01}\)</span></li>
+<li><span class="math inline">\(S_{12} \approx 400 \cdot \dfrac{1,1268 - 1}{0,01} = 400 \cdot \dfrac{0,1268}{0,01} = 400 \cdot 12,68 = 5.072,00\text{ €}\)</span></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled" style="color: #8B0000;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+<p><br>
+<br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

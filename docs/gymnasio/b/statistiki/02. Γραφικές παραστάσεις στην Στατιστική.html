@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>02. Γραφικές παραστάσεις στην Στατιστική – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-bluelight quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">02. Γραφικές παραστάσεις στην Στατιστική</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">02. Γραφικές παραστάσεις στην Στατιστική</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">24 Απρίλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#γραφικές-παραστάσεις-στην-στατιστική" id="toc-γραφικές-παραστάσεις-στην-στατιστική" class="nav-link active" data-scroll-target="#γραφικές-παραστάσεις-στην-στατιστική"><span class="header-section-number">1</span> Γραφικές παραστάσεις στην Στατιστική</a>
+  <ul>
+  <li><a href="#εικονόγραμμα" id="toc-εικονόγραμμα" class="nav-link" data-scroll-target="#εικονόγραμμα"><span class="header-section-number">1.1</span> Εικονόγραμμα</a></li>
+  <li><a href="#ραβδόγραμμα" id="toc-ραβδόγραμμα" class="nav-link" data-scroll-target="#ραβδόγραμμα"><span class="header-section-number">1.2</span> <strong>Ραβδόγραμμα</strong></a></li>
+  <li><a href="#κυκλικό-διάγραμμα" id="toc-κυκλικό-διάγραμμα" class="nav-link" data-scroll-target="#κυκλικό-διάγραμμα"><span class="header-section-number">1.3</span> <strong>Κυκλικό διάγραμμα</strong></a></li>
+  <li><a href="#χρονόγραμμα" id="toc-χρονόγραμμα" class="nav-link" data-scroll-target="#χρονόγραμμα"><span class="header-section-number">1.4</span> <strong>Χρονόγραμμα</strong></a></li>
+  <li><a href="#εξάσκηση" id="toc-εξάσκηση" class="nav-link" data-scroll-target="#εξάσκηση"><span class="header-section-number">1.5</span> Εξάσκηση</a>
+  <ul>
+  <li><a href="#εικονογράμματα-για-να-μετράω-με-εικόνες" id="toc-εικονογράμματα-για-να-μετράω-με-εικόνες" class="nav-link" data-scroll-target="#εικονογράμματα-για-να-μετράω-με-εικόνες"><span class="header-section-number">1.5.1</span> Εικονογράμματα – για να “μετράω με εικόνες”</a>
+  <ul class="collapse">
+  <li><a href="#παράδειγμα" id="toc-παράδειγμα" class="nav-link" data-scroll-target="#παράδειγμα"><span class="header-section-number">1.5.1.1</span> Παράδειγμα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης" id="toc-ερωτήσεις-κατανόησης" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης"><span class="header-section-number">1.5.1.2</span> Ερωτήσεις κατανόησης</a></li>
+  </ul></li>
+  <li><a href="#ραβδόγραμμα-για-γρήγορη-σύγκριση" id="toc-ραβδόγραμμα-για-γρήγορη-σύγκριση" class="nav-link" data-scroll-target="#ραβδόγραμμα-για-γρήγορη-σύγκριση"><span class="header-section-number">1.5.2</span> Ραβδόγραμμα – για γρήγορη σύγκριση</a>
+  <ul class="collapse">
+  <li><a href="#παράδειγμα-1" id="toc-παράδειγμα-1" class="nav-link" data-scroll-target="#παράδειγμα-1"><span class="header-section-number">1.5.2.1</span> Παράδειγμα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης-1" id="toc-ερωτήσεις-κατανόησης-1" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης-1"><span class="header-section-number">1.5.2.2</span> Ερωτήσεις κατανόησης</a></li>
+  </ul></li>
+  <li><a href="#κυκλικό-διάγραμμα-πίτας-για-κομμάτια-του-100" id="toc-κυκλικό-διάγραμμα-πίτας-για-κομμάτια-του-100" class="nav-link" data-scroll-target="#κυκλικό-διάγραμμα-πίτας-για-κομμάτια-του-100"><span class="header-section-number">1.5.3</span> Κυκλικό διάγραμμα (πίτας) – για “κομμάτια του 100%”</a>
+  <ul class="collapse">
+  <li><a href="#παράδειγμα-2" id="toc-παράδειγμα-2" class="nav-link" data-scroll-target="#παράδειγμα-2"><span class="header-section-number">1.5.3.1</span> Παράδειγμα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης-2" id="toc-ερωτήσεις-κατανόησης-2" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης-2"><span class="header-section-number">1.5.3.2</span> Ερωτήσεις κατανόησης</a></li>
+  </ul></li>
+  <li><a href="#χρονογράμματα-για-αλλαγή-στον-χρόνο-τάση" id="toc-χρονογράμματα-για-αλλαγή-στον-χρόνο-τάση" class="nav-link" data-scroll-target="#χρονογράμματα-για-αλλαγή-στον-χρόνο-τάση"><span class="header-section-number">1.5.4</span> Χρονογράμματα – για αλλαγή στον χρόνο (τάση)</a>
+  <ul class="collapse">
+  <li><a href="#παράδειγμα-3" id="toc-παράδειγμα-3" class="nav-link" data-scroll-target="#παράδειγμα-3"><span class="header-section-number">1.5.4.1</span> Παράδειγμα</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης-3" id="toc-ερωτήσεις-κατανόησης-3" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης-3"><span class="header-section-number">1.5.4.2</span> Ερωτήσεις κατανόησης</a></li>
+  <li><a href="#παράδειγμα-με-όλα" id="toc-παράδειγμα-με-όλα" class="nav-link" data-scroll-target="#παράδειγμα-με-όλα"><span class="header-section-number">1.5.4.3</span> Παράδειγμα με όλα</a></li>
+  <li><a href="#ερώτηση-επιλογής" id="toc-ερώτηση-επιλογής" class="nav-link" data-scroll-target="#ερώτηση-επιλογής"><span class="header-section-number">1.5.4.4</span> Ερώτηση επιλογής</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="γραφικές-παραστάσεις-στην-στατιστική" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="γραφικές-παραστάσεις-στην-στατιστική"><span class="header-section-number">1</span> Γραφικές παραστάσεις στην Στατιστική</h2>
+<section id="εικονόγραμμα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="εικονόγραμμα"><span class="header-section-number">1.1</span> Εικονόγραμμα</h3>
+<div style="background-color: #a5c2ee; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα που χρησιμοποιεί εικόνες ή σύμβολα για να παρουσιάσει δεδομένα. Κάθε εικόνα αντιστοιχεί σε έναν αριθμό μονάδων που ορίζεται στο υπόμνημα.</p>
+<p>Πώς χρησιμοποιούνται:</p>
+<p>Διαλέγεις ένα εικονίδιο (π.χ. ένα ανθρωπάκι) και ορίζεις τι “αξίζει” (π.χ. 1 ανθρωπάκι = 5 μαθητές). Μετά βάζεις τόσα εικονίδια όσα χρειάζονται.</p>
+<p>Χρησιμοποιείται κυρίως για απλά, ευχάριστα δεδομένα — ιδανικό για μικρότερες ηλικίες και παρουσιάσεις.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Σημείωση
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Να σημειώσουμε ότι πάντα σε όλα τα διαγράμματα παρουσίασης δεδομένων θα πρέπει να υπάρχει <strong>τίτλος</strong> που θα εξηγεί τι ακριβώς παρουσιάζει το διάγραμμα.</p>
+<p>Επίσης σε κάθε διάγραμμα θα πρέπει να υπάρχουν όλα τα απαραίτητα στοιχεία που αναφέρουν τις μεταβλητές και τα ποσά ή ποσοστά για κάθε μεταβλητή.</p>
+</div>
+</div>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-2008442564.png" class="img-fluid"></p>
+</section>
+<section id="ραβδόγραμμα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ραβδόγραμμα"><span class="header-section-number">1.2</span> <strong>Ραβδόγραμμα</strong></h3>
+<div style="background-color: #a5c2ee; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα με <strong>οριζόντιες ή κατακόρυφες ράβδους</strong> (μπάρες) που δείχνουν ποσότητες. Το μήκος κάθε ράβδου αντιστοιχεί στην τιμή που παρουσιάζει.</p>
+<p>Ιδανικό για <strong>σύγκριση κατηγοριών</strong> μεταξύ τους.</p>
+</div>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-3206562024.png" class="img-fluid"></p>
+</section>
+<section id="κυκλικό-διάγραμμα" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="κυκλικό-διάγραμμα"><span class="header-section-number">1.3</span> <strong>Κυκλικό διάγραμμα</strong></h3>
+<div style="background-color: #a5c2ee; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι;</strong></p>
+<p>Ένας <strong>κύκλος χωρισμένος σε τομείς</strong> (σαν πίτα), όπου κάθε τομέας δείχνει το ποσοστό που καταλαμβάνει κάθε κατηγορία από το σύνολο.</p>
+<p>Ιδανικό για να δείξουμε <strong>πώς μοιράζεται ένα σύνολο (100%)</strong> σε κατηγορίες.</p>
+</div>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-1483143088.png" class="img-fluid"></p>
+<p><strong>Πως χωρίζω τον κύκλο</strong></p>
+<ul>
+<li><p>μετατρέπω την κατηγορία σε ποσοστό <span class="math inline">\(\dfrac{\text{Ποσό κατηγορίας}}{\text{Σύνολο όλων των κατηγοριών (Όλο το δείγμα)}}\)</span></p></li>
+<li><p>Κάνω αναγωγή στο μέρος του κυκλικού δίσκου. Αφού όλος ο δίσκος είναι <span class="math inline">\(360^0\)</span>, και το συνολικό ποσοστό των κατηγοριών θα είναι φυσικά 100%, θα πρέπει το α% της κατηγορίας να αντιστοιχεί σε <span class="math inline">\(α\% \cdot{360^0}\)</span></p></li>
+</ul>
+<p>Ετσι για το παραπάνω παράδειγμα θα έχουμε</p>
+<p>για το <span class="math inline">\(40\% \Rightarrow40\%\cdot{360^0}=144^0\)</span></p>
+<p>για το <span class="math inline">\(25\% \Rightarrow 25\% \cdot{360^0}=90^0\)</span></p>
+<p>για το <span class="math inline">\(20\% \Rightarrow 20\% \cdot {360^0}=72^0\)</span></p>
+<p>για το <span class="math inline">\(15\% \Rightarrow 15\% \cdot {360^0}=54^0\)</span></p>
+<p>Σύνολα: <em>Ποσοστά</em> 100% <em>Μοίρες</em> <span class="math inline">\(360^0\)</span></p>
+</section>
+<section id="χρονόγραμμα" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="χρονόγραμμα"><span class="header-section-number">1.4</span> <strong>Χρονόγραμμα</strong></h3>
+<div style="background-color: #a5c2ee; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p><strong>Τι είναι;</strong></p>
+<p>Διάγραμμα που δείχνει πώς <strong>μεταβάλλεται μια ποσότητα με το χρόνο</strong>. Στον οριζόντιο άξονα (x) έχουμε τον χρόνο και στον κατακόρυφο (y) την ποσότητα.</p>
+<p>Ιδανικό για να δούμε <strong>τάσεις, αυξήσεις, μειώσεις</strong> μέσα σε χρονική περίοδο.</p>
+</div>
+<p><strong>Παράδειγμα</strong></p>
+<p><img src="images/clipboard-2107151219.png" class="img-fluid"></p>
+</section>
+<section id="εξάσκηση" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="εξάσκηση"><span class="header-section-number">1.5</span> Εξάσκηση</h3>
+<hr>
+<section id="εικονογράμματα-για-να-μετράω-με-εικόνες" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="εικονογράμματα-για-να-μετράω-με-εικόνες"><span class="header-section-number">1.5.1</span> Εικονογράμματα – για να “μετράω με εικόνες”</h4>
+<section id="παράδειγμα" class="level5" data-number="1.5.1.1">
+<h5 data-number="1.5.1.1" class="anchored" data-anchor-id="παράδειγμα"><span class="header-section-number">1.5.1.1</span> Παράδειγμα</h5>
+<p>“Στην τάξη ρωτήσαμε ποιο κατοικίδιο οι μαθητές έχουν και πήραμε τις παρακάτω απαντήσεις.”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Γάτα: 8 μαθητές<br>
+</li>
+<li>Σκύλος: 6 μαθητές<br>
+</li>
+<li>Ψάρι: 4 μαθητές</li>
+</ul>
+<p><strong>Κανόνας εικονογράμματος</strong> <code>Παρουσιάστε τα δεδομένα με ένα εικονόγραμμα όπου 1 εικονίδιο = 2 μαθητές</code></p>
+<p>Άρα</p>
+<ul>
+<li>Γάτα: 8 → 4 εικονίδια<br>
+</li>
+<li>Σκύλος: 6 → ▭ εικονίδια<br>
+</li>
+<li>Ψάρι: 4 → ▭ εικονίδια</li>
+</ul>
+</section>
+<section id="ερωτήσεις-κατανόησης" class="level5" data-number="1.5.1.2">
+<h5 data-number="1.5.1.2" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης"><span class="header-section-number">1.5.1.2</span> Ερωτήσεις κατανόησης</h5>
+<p>“Ποιο είναι το πιο συχνό;”<br>
+“Πόσο περισσότερες είναι οι γάτες από τα ψάρια;”<br>
+“Αν είχαμε 10 μαθητές με γάτα, τι πρόβλημα θα είχαμε με τα εικονίδια;”</p>
+<hr>
+</section>
+</section>
+<section id="ραβδόγραμμα-για-γρήγορη-σύγκριση" class="level4" data-number="1.5.2">
+<h4 data-number="1.5.2" class="anchored" data-anchor-id="ραβδόγραμμα-για-γρήγορη-σύγκριση"><span class="header-section-number">1.5.2</span> Ραβδόγραμμα – για γρήγορη σύγκριση</h4>
+<section id="παράδειγμα-1" class="level5" data-number="1.5.2.1">
+<h5 data-number="1.5.2.1" class="anchored" data-anchor-id="παράδειγμα-1"><span class="header-section-number">1.5.2.1</span> Παράδειγμα</h5>
+<p>“ Ρωτήσαμε τους μαθητές με τι μέσο έρχονται στο σχολείο και μας είπαν:”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Με τα πόδια: 10<br>
+</li>
+<li>Λεωφορείο: 7<br>
+</li>
+<li>Αυτοκίνητο: 5</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Ραβδόγραμμα</strong> .</p>
+</section>
+<section id="ερωτήσεις-κατανόησης-1" class="level5" data-number="1.5.2.2">
+<h5 data-number="1.5.2.2" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-1"><span class="header-section-number">1.5.2.2</span> Ερωτήσεις κατανόησης</h5>
+<p>“Πόσοι περισσότεροι πάνε με πόδια απ’ ότι με λεοφωρείο;</p>
+<p>“Πόση είναι η διαφορά μεγαλύτερου–μικρότερου;”</p>
+<p>“Πόσοι είναι συνολικά οι μαθητές;”</p>
+<hr>
+</section>
+</section>
+<section id="κυκλικό-διάγραμμα-πίτας-για-κομμάτια-του-100" class="level4" data-number="1.5.3">
+<h4 data-number="1.5.3" class="anchored" data-anchor-id="κυκλικό-διάγραμμα-πίτας-για-κομμάτια-του-100"><span class="header-section-number">1.5.3</span> Κυκλικό διάγραμμα (πίτας) – για “κομμάτια του 100%”</h4>
+<section id="παράδειγμα-2" class="level5" data-number="1.5.3.1">
+<h5 data-number="1.5.3.1" class="anchored" data-anchor-id="παράδειγμα-2"><span class="header-section-number">1.5.3.1</span> Παράδειγμα</h5>
+<p>“Ρωτήσαμε τους μαθητές πώς μοιράζεται ο ελεύθερος χρόνος τους μέσα σε 1 ημέρα και μας είπαν:”</p>
+<p><strong>Δεδομένα (σε ώρες, σύνολο 24)</strong></p>
+<ul>
+<li>Ύπνος: 8 ώρες<br>
+</li>
+<li>Σχολείο/διάβασμα: 10 ώρες<br>
+</li>
+<li>Χόμπι/οθόνες/βόλτα: 6 ώρες</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Κυκλικό διάγραμμα</strong> .</p>
+</section>
+<section id="ερωτήσεις-κατανόησης-2" class="level5" data-number="1.5.3.2">
+<h5 data-number="1.5.3.2" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-2"><span class="header-section-number">1.5.3.2</span> Ερωτήσεις κατανόησης</h5>
+<p>“Ποιο κομμάτι είναι μεγαλύτερο;”<br>
+“Αν ο ύπνος γίνει 9 ώρες, ποιο κομμάτι θα μεγαλώσει και ποιο θα μικρύνει;”</p>
+<hr>
+</section>
+</section>
+<section id="χρονογράμματα-για-αλλαγή-στον-χρόνο-τάση" class="level4" data-number="1.5.4">
+<h4 data-number="1.5.4" class="anchored" data-anchor-id="χρονογράμματα-για-αλλαγή-στον-χρόνο-τάση"><span class="header-section-number">1.5.4</span> Χρονογράμματα – για αλλαγή στον χρόνο (τάση)</h4>
+<section id="παράδειγμα-3" class="level5" data-number="1.5.4.1">
+<h5 data-number="1.5.4.1" class="anchored" data-anchor-id="παράδειγμα-3"><span class="header-section-number">1.5.4.1</span> Παράδειγμα</h5>
+<p>“Μετρήσαμε την Θερμοκρασία στην πόλη μας σε 5 μέρες και βρήκαμε ότι:”</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Δευτέρα: 18°C<br>
+</li>
+<li>Τρίτη: 20°C<br>
+</li>
+<li>Τετάρτη: 19°C<br>
+</li>
+<li>Πέμπτη: 22°C<br>
+</li>
+<li>Παρασκευή: 21°C</li>
+</ul>
+<p>Παρουσιάστε τα δεδομένα με ένα <strong>Χρονόγραμμα</strong> .</p>
+</section>
+<section id="ερωτήσεις-κατανόησης-3" class="level5" data-number="1.5.4.2">
+<h5 data-number="1.5.4.2" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης-3"><span class="header-section-number">1.5.4.2</span> Ερωτήσεις κατανόησης</h5>
+<p>“Ποια μέρα είχαμε τη μεγαλύτερη θερμοκρασία;”<br>
+“Μεταξύ ποιων ημερών η αύξηση ήταν μεγαλύτερη;”<br>
+“Αν συνεχίσει έτσι, τι περίπου περιμένεις το Σάββατο;”</p>
+</section>
+<section id="παράδειγμα-με-όλα" class="level5" data-number="1.5.4.3">
+<h5 data-number="1.5.4.3" class="anchored" data-anchor-id="παράδειγμα-με-όλα"><span class="header-section-number">1.5.4.3</span> Παράδειγμα με όλα</h5>
+<section id="η-β2-κατέγραψε-πόσα-λεπτά-διάβασε-κάθε-μέρα-για-5-μέρες." class="level6" data-number="1.5.4.3.1">
+<h6 data-number="1.5.4.3.1" class="anchored" data-anchor-id="η-β2-κατέγραψε-πόσα-λεπτά-διάβασε-κάθε-μέρα-για-5-μέρες."><span class="header-section-number">1.5.4.3.1</span> «Η Β2 κατέγραψε πόσα λεπτά διάβασε κάθε μέρα για 5 μέρες.</h6>
+<p>Επίσης, σε μια έρευνα στην τάξη, οι μαθητές είπαν ποιο μάθημα διαβάζουν περισσότερο και <em>πώς μοιράζουν</em> συνολικά τον χρόνο διαβάσματος.»</p>
+<p>Κάντε τα αντίστοιχα διαγράμματα και απαντήστε στις ερωτήσεις</p>
+<p><strong>1) Εικονογράμμα:</strong> <strong>Πόσοι μαθητές διαβάζουν πάνω από 1 ώρα την ημέρα</strong></p>
+<p><strong>Δεδομένα (έρευνα τάξης)</strong> Από 20 μαθητές:</p>
+<ul>
+<li>Πάνω από 60′: 10 μαθητές</li>
+<li>30′–60′: 6 μαθητές</li>
+<li>Κάτω από 30′: 4 μαθητές</li>
+</ul>
+<p><strong>Εικονογράμμα (κανόνας)</strong> Θέτεις <code>1 βιβλιαράκι = 2 μαθητές</code>.</p>
+<p>Άρα:</p>
+<ul>
+<li>Πάνω από 60′ → 10 μαθητές → 5 βιβλιαράκια</li>
+<li>30′–60′ → 6 μαθητές → 3 βιβλιαράκια</li>
+<li>Κάτω από 30′ → 4 μαθητές → 2 βιβλιαράκια</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποια κατηγορία έχει τους περισσότερους μαθητές;</li>
+<li>Πόσοι περισσότεροι διαβάζουν πάνω από 60′ σε σχέση με κάτω από 30′;</li>
+<li>Αν το σύνολο ήταν 24 μαθητές και οι αναλογίες ίδιες, πόσοι θα ήταν “πάνω από 60′”;</li>
+</ol>
+<p><strong>2) Ραβδόγραμμα:</strong> Ποιο μάθημα διαβάζουν περισσότερο.</p>
+<p><strong>Δεδομένα</strong></p>
+<ul>
+<li>Μαθηματικά: 8<br>
+</li>
+<li>Γλώσσα: 6<br>
+</li>
+<li>Ιστορία: 4<br>
+</li>
+<li>Φυσική: 2</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποιο μάθημα έχει τη μεγαλύτερη ράβδο;<br>
+</li>
+<li>Πόσοι περισσότεροι διάλεξαν Μαθηματικά από Φυσική;<br>
+</li>
+<li>Αν προστεθούν 3 μαθητές στη Γλώσσα, ποιο μάθημα θα βγει πρώτο;</li>
+</ol>
+<hr>
+<p><strong>3) Κυκλικό διάγραμμα:</strong> Πώς μοιράζεται το 100% του συνολικού διαβάσματος</p>
+<p><strong>Δεδομένα</strong> (Αν υποθέσουμε ότι σύνολο χρόνου διαβάσματος μιας μέρας = 2 ώρες = 120′)</p>
+<ul>
+<li>Μαθηματικά: 60′<br>
+</li>
+<li>Γλώσσα: 30′<br>
+</li>
+<li>Ιστορία: 20′<br>
+</li>
+<li>Φυσική: 10′</li>
+</ul>
+<p>Σε ποσοστά:</p>
+<ul>
+<li>Μαθηματικά: 60/120 = 50%<br>
+</li>
+<li>Γλώσσα: 25%<br>
+</li>
+<li>Ιστορία: 16,7% (περίπου 17%)<br>
+</li>
+<li>Φυσική: 8,3% (περίπου 8%)</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποιο μάθημα πήρε το μεγαλύτερο ποσοστό;<br>
+</li>
+<li>Μαθηματικά + Γλώσσα μαζί τι ποσοστό είναι; (75%)<br>
+</li>
+<li>Αν η Φυσική διπλασιαστεί (από 10′ σε 20′) χωρίς να αλλάξει το σύνολο 120′, τι πρέπει να μειωθεί; (κάποιο άλλο κομμάτι)</li>
+</ol>
+<hr>
+<p><strong>4) Χρονογράφημα:</strong> Πώς αλλάζει ο χρόνος διαβάσματος μέσα στην εβδομάδα</p>
+<p><strong>Δεδομένα</strong> (λεπτά διαβάσματος ανά μέρα) - Δευτέρα: 40′<br>
+</p>
+<ul>
+<li>Τρίτη: 50′<br>
+</li>
+<li>Τετάρτη: 35′<br>
+</li>
+<li>Πέμπτη: 60′<br>
+</li>
+<li>Παρασκευή: 45′</li>
+</ul>
+<p><strong>ερωτήσεις</strong></p>
+<ol type="1">
+<li>Ποια μέρα ήταν η μεγαλύτερη τιμή;<br>
+</li>
+<li>Από ποια μέρα σε ποια είχαμε τη μεγαλύτερη αύξηση; (Τετάρτη → Πέμπτη, +25′)<br>
+</li>
+<li>Ποια μέρα είχαμε “πτώση” σε σχέση με την προηγούμενη; (Τρίτη→Τετάρτη, Πέμπτη→Παρασκευή)</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="ερώτηση-επιλογής" class="level5" data-number="1.5.4.4">
+<h5 data-number="1.5.4.4" class="anchored" data-anchor-id="ερώτηση-επιλογής"><span class="header-section-number">1.5.4.4</span> Ερώτηση επιλογής</h5>
+<p>Αν</p>
+<ul>
+<li><p>Θέλω να δείξω <strong>ποιο μέρος του συνόλου</strong> πήρε κάθε μάθημα. Ποιο διάγραμμα ταιριάζει;<br>
+Απάντηση: <strong>_____________</strong>.</p></li>
+<li><p>Θέλω να δείξω <strong>πώς αλλάζει</strong> κάτι μέσα στο χρόνο;<br>
+Απάντηση: <strong>_______________</strong>.</p></li>
+<li><p>Θέλω να <strong>συγκρίνω κατηγορίες</strong> (μαθήματα) γρήγορα.<br>
+Απάντηση: <strong>__________________</strong>.</p></li>
+<li><p>Θέλω κάτι <strong>πιο παιχνιδιάρικο/οπτικό</strong> για μικρούς αριθμούς.<br>
+Απάντηση: <strong>____________________</strong>.</p></li>
+</ul>
+<p><a href="Φύλλο Εργασίας_ Διαγράμματα (Αθλητισμός).pdf" download="Φύλλο Εργασίας_ Διαγράμματα (Αθλητισμός).pdf">Κατεβάστε ένα Test</a></p>
+<hr>
+<div style="background-color: #f0f8cc; border: 2px solid #2f3e50; color: #25188a; padding: 15px; border-radius: 5px;">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !</p>
+</div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
