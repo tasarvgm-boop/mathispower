@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>03.05. Ευθεία και κύκλος – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-algeometria quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/a/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html">03.05. Ευθεία και κύκλος</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../gymnasio/a/index.html">Γυμνάσιο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html">03.05. Ευθεία και κύκλος</a></li></ol></nav>
+      <h1 class="title">03.05. Ευθεία και κύκλος</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">18 Αύγουστος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">28 Αύγουστος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Δυνάμεις φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δυνάμεις φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Ευκλείδεια διαίρεση - Διαιρετότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ευκλείδεια διαίρεση - Διαιρετότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Η έννοια του κλάσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η έννοια του κλάσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Ισοδύναμα κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Ισοδύναμα κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Σύγκριση κλασμάτων  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Σύγκριση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Πρόσθεση και Αφαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Πρόσθεση και Αφαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Πολλαπλασιασμός κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πολλαπλασιασμός κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11. Διαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Διαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Τυποποιημένη μορφή μεγάλων αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Τυποποιημένη μορφή μεγάλων αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Μονάδες μέτρησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Μονάδες μέτρησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/18. Επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/20. Ποσοστά και επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Ποσοστά και επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/21.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/22. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/23.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/24. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/25.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/28. Πρόσθεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">28. Πρόσθεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/29. Αφαίρεση ρητών αριθμών  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">29. Αφαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/30. Πολλαπλασιασμός ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30. Πολλαπλασιασμός ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/31. Διαίρεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Διαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/32. Δεκαδική μορφή ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">32. Δεκαδική μορφή ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/Θέματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Θέματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση σύγκριση ισότητα τμημάτων-Απόσταση σημείων Μέσο τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση, σύγκριση και ισότητα ευθυγράμμων τμημάτων – Απόσταση σημείων – Μέσο ευθύγραμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 . Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13. Θέσεις ευθείας και κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Θέσεις ευθείας και κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Άξονας συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Άξονας συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/16. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/17. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/18. Κέντρο συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Κέντρο συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/19.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/20. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Προβλήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Προβλήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09.  Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/11. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/12. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Η συνάρτηση y=α/x - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01.1. Μονάδες μέτρησης επιφανειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.1. Μονάδες μέτρησης επιφανειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.1. Άθροισμα και διαφορά διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.1. Άθροισμα και διαφορά διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15.1. Όγκος πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1. Όγκος πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Η πυραμίδα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η πυραμίδα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/15. Η έννοια της γραμμικής εξίσωσης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Η έννοια της γραμμικής εξίσωσης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/17. Αλγεβρική επίλυση γραμμικού συστήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Αλγεβρική επίλυση γραμμικού συστήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/18. Η συνάρτηση αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Η συνάρτηση <span class="math inline">\(αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/19. H συνάρτηση y = αx^2 + βx + γ με α ≠ 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. H συνάρτηση <span class="math inline">\(y = αx^2 + βx + γ\)</span> με α ≠ 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/20. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/21. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/01. Ισότητα τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Ισότητα τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/03. Θεώρημα του Θαλή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Θεώρημα του Θαλή</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/04. Ομοιοθεσία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ομοιοθεσία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/05. Ομοιότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ομοιότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Το λεξιλόγιο της λογικής</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/04. Η έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Η έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/05. Οι πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Οι πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/06. Η διάταξη των πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η διάταξη των πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/08. Ρίζες πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ρίζες πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/11. Η εξίσωση 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/12. Ανισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Ανισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/13. Ανισώσεις 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ανισώσεις <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Ακολουθίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/17. Γεωμετρική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Γεωμετρική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/18. Ανατοκισμός Ίσες καταθέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Ανατοκισμός Ίσες καταθέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/19. Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/20. Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/21. Η συνάρτηση ƒ(x) = αx + β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Η συνάρτηση ƒ(x) = αx + β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/24. Μελέτη της συνάρτησης f(x)=αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/25. Μελέτη της συνάρτησης f(x)=α προς x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=α/x\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.01. Οι πρωταρχικές γεωμετρικές έννοιες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Οι πρωταρχικές γεωμετρικές έννοιες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.02. Γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.03. O Κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03. O Κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.04. Ευθύγραμμα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04. Ευθύγραμμα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.01. Τρίγωνα Κριτήρια ισότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τρίγωνα Κριτήρια ισότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.02. Βασικοί γεωμετρικοί τόποι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικοί γεωμετρικοί τόποι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.03. Συμμετρικά σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Συμμετρικά σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.04. Ανισοτικές σχέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Ανισοτικές σχέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03.05. Ευθεία και κύκλος</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#ευθεία-και-κύκλος" id="toc-ευθεία-και-κύκλος" class="nav-link active" data-scroll-target="#ευθεία-και-κύκλος"><span class="header-section-number">1</span> Ευθεία και κύκλος</a>
+  <ul>
+  <li><a href="#μεροσ-1-σχετικεσ-θεσεισ-ευθειασ-και-κυκλου" id="toc-μεροσ-1-σχετικεσ-θεσεισ-ευθειασ-και-κυκλου" class="nav-link" data-scroll-target="#μεροσ-1-σχετικεσ-θεσεισ-ευθειασ-και-κυκλου"><span class="header-section-number">1.1</span> ΜΕΡΟΣ 1: ΣΧΕΤΙΚΕΣ ΘΕΣΕΙΣ ΕΥΘΕΙΑΣ ΚΑΙ ΚΥΚΛΟΥ</a>
+  <ul>
+  <li><a href="#ορισμοί" id="toc-ορισμοί" class="nav-link" data-scroll-target="#ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</a></li>
+  <li><a href="#θεωρήματα" id="toc-θεωρήματα" class="nav-link" data-scroll-target="#θεωρήματα"><span class="header-section-number">1.1.2</span> Θεωρήματα</a></li>
+  <li><a href="#πορίσματα" id="toc-πορίσματα" class="nav-link" data-scroll-target="#πορίσματα"><span class="header-section-number">1.1.3</span> Πορίσματα</a></li>
+  <li><a href="#εφαρμογές-λυμένα-παραδείγματα" id="toc-εφαρμογές-λυμένα-παραδείγματα" class="nav-link" data-scroll-target="#εφαρμογές-λυμένα-παραδείγματα"><span class="header-section-number">1.1.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</a></li>
+  <li><a href="#ασκήσεις-με-πλήρεις-αποδείξεις" id="toc-ασκήσεις-με-πλήρεις-αποδείξεις" class="nav-link" data-scroll-target="#ασκήσεις-με-πλήρεις-αποδείξεις"><span class="header-section-number">1.1.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  <li><a href="#μεροσ-2-εφαπτομενα-τμηματα" id="toc-μεροσ-2-εφαπτομενα-τμηματα" class="nav-link" data-scroll-target="#μεροσ-2-εφαπτομενα-τμηματα"><span class="header-section-number">1.2</span> ΜΕΡΟΣ 2: ΕΦΑΠΤΟΜΕΝΑ ΤΜΗΜΑΤΑ</a>
+  <ul>
+  <li><a href="#ορισμοί-1" id="toc-ορισμοί-1" class="nav-link" data-scroll-target="#ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</a></li>
+  <li><a href="#θεωρήματα-1" id="toc-θεωρήματα-1" class="nav-link" data-scroll-target="#θεωρήματα-1"><span class="header-section-number">1.2.2</span> Θεωρήματα</a></li>
+  <li><a href="#πορίσματα-1" id="toc-πορίσματα-1" class="nav-link" data-scroll-target="#πορίσματα-1"><span class="header-section-number">1.2.3</span> Πορίσματα</a></li>
+  <li><a href="#εφαρμογές-λυμένα-παραδείγματα-1" id="toc-εφαρμογές-λυμένα-παραδείγματα-1" class="nav-link" data-scroll-target="#εφαρμογές-λυμένα-παραδείγματα-1"><span class="header-section-number">1.2.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</a></li>
+  <li><a href="#ασκήσεις-με-πλήρεις-αποδείξεις-1" id="toc-ασκήσεις-με-πλήρεις-αποδείξεις-1" class="nav-link" data-scroll-target="#ασκήσεις-με-πλήρεις-αποδείξεις-1"><span class="header-section-number">1.2.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  <li><a href="#μεροσ-3-σχετικεσ-θεσεισ-δυο-κυκλων" id="toc-μεροσ-3-σχετικεσ-θεσεισ-δυο-κυκλων" class="nav-link" data-scroll-target="#μεροσ-3-σχετικεσ-θεσεισ-δυο-κυκλων"><span class="header-section-number">1.3</span> ΜΕΡΟΣ 3: ΣΧΕΤΙΚΕΣ ΘΕΣΕΙΣ ΔΥΟ ΚΥΚΛΩΝ</a>
+  <ul>
+  <li><a href="#ορισμοί-2" id="toc-ορισμοί-2" class="nav-link" data-scroll-target="#ορισμοί-2"><span class="header-section-number">1.3.1</span> Ορισμοί</a></li>
+  <li><a href="#θεωρήματα-2" id="toc-θεωρήματα-2" class="nav-link" data-scroll-target="#θεωρήματα-2"><span class="header-section-number">1.3.2</span> Θεωρήματα</a></li>
+  <li><a href="#πορίσματα-2" id="toc-πορίσματα-2" class="nav-link" data-scroll-target="#πορίσματα-2"><span class="header-section-number">1.3.3</span> Πορίσματα</a></li>
+  <li><a href="#εφαρμογές-λυμένα-παραδείγματα-2" id="toc-εφαρμογές-λυμένα-παραδείγματα-2" class="nav-link" data-scroll-target="#εφαρμογές-λυμένα-παραδείγματα-2"><span class="header-section-number">1.3.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</a></li>
+  <li><a href="#ασκήσεις-με-πλήρεις-αποδείξεις-2" id="toc-ασκήσεις-με-πλήρεις-αποδείξεις-2" class="nav-link" data-scroll-target="#ασκήσεις-με-πλήρεις-αποδείξεις-2"><span class="header-section-number">1.3.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="ευθεία-και-κύκλος" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ευθεία-και-κύκλος"><span class="header-section-number">1</span> Ευθεία και κύκλος</h2>
+<section id="μεροσ-1-σχετικεσ-θεσεισ-ευθειασ-και-κυκλου" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="μεροσ-1-σχετικεσ-θεσεισ-ευθειασ-και-κυκλου"><span class="header-section-number">1.1</span> ΜΕΡΟΣ 1: ΣΧΕΤΙΚΕΣ ΘΕΣΕΙΣ ΕΥΘΕΙΑΣ ΚΑΙ ΚΥΚΛΟΥ</h3>
+<section id="ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Απόσταση Κέντρου από Ευθεία</strong>:</li>
+</ul>
+</div>
+<p>Έστω κύκλος <span class="math inline">\((O, R)\)</span> και μια ευθεία <span class="math inline">\(\epsilon\)</span> του επιπέδου. Ονομάζουμε <strong>απόσταση</strong> <span class="math inline">\(d\)</span> του κέντρου <span class="math inline">\(O\)</span> από την ευθεία <span class="math inline">\(\epsilon\)</span>, το μήκος του κάθετου ευθυγράμμου τμήματος <span class="math inline">\(OH\)</span> από το <span class="math inline">\(O\)</span> προς την <span class="math inline">\(\epsilon\)</span> (<span class="math inline">\(OH \perp \epsilon\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1906750892.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Σχήμα 1</figcaption>
+</figure>
+</div>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Εξωτερική Ευθεία</strong>:</li>
+</ul>
+</div>
+<p>Μια ευθεία <span class="math inline">\(\epsilon\)</span> ονομάζεται <strong>εξωτερική</strong> του κύκλου <span class="math inline">\((O, R)\)</span> αν και μόνο αν δεν έχει κανένα κοινό σημείο με αυτόν. Αυτό συμβαίνει όταν η απόσταση <span class="math inline">\(d\)</span> είναι μεγαλύτερη από την ακτίνα (<span class="math inline">\(d &gt; R\)</span>). (Σχήμα 1)</p>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Εφαπτομένη Ευθεία</strong>:</li>
+</ul>
+</div>
+<p>Μια ευθεία <span class="math inline">\(\epsilon\)</span> ονομάζεται <strong>εφαπτομένη</strong> του κύκλου <span class="math inline">\((O, R)\)</span> αν και μόνο αν έχει ακριβώς ένα κοινό σημείο με τον κύκλο. Το σημείο αυτό ονομάζεται <strong>σημείο επαφής</strong>. Αυτό συμβαίνει όταν η απόσταση <span class="math inline">\(d\)</span> είναι ίση με την ακτίνα (<span class="math inline">\(d = R\)</span>).</p>
+<p><img src="images/clipboard-4026681139.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Τέμνουσα Ευθεία</strong>:</li>
+</ul>
+</div>
+<p>Μια ευθεία <span class="math inline">\(\epsilon\)</span> ονομάζεται <strong>τέμνουσα</strong> του κύκλου <span class="math inline">\((O, R)\)</span> αν και μόνο αν έχει ακριβώς δύο κοινά σημεία με τον κύκλο. Αυτό συμβαίνει όταν η απόσταση <span class="math inline">\(d\)</span> είναι μικρότερη από την ακτίνα (<span class="math inline">\(d &lt; R\)</span>).</p>
+<p><img src="images/clipboard-3130226097.png" class="img-fluid" width="300"></p>
+</div>
+<hr>
+</section>
+<section id="θεωρήματα" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="θεωρήματα"><span class="header-section-number">1.1.2</span> Θεωρήματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 1.1</strong></p>
+</div>
+<p>Μια ευθεία και ένας κύκλος έχουν το πολύ δύο κοινά σημεία.</p>
+<p><img src="images/clipboard-1412687566.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη (Με απαγωγή σε άτοπο):</strong></p>
+</div>
+<p>Ας υποθέσουμε ότι μια ευθεία <span class="math inline">\(\epsilon\)</span> και ένας κύκλος <span class="math inline">\((O, R)\)</span> έχουν τρία κοινά σημεία, τα <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span>.</p>
+<p>Επειδή τα σημεία αυτά ανήκουν στον κύκλο, οι αποστάσεις τους από το κέντρο <span class="math inline">\(O\)</span> είναι ίσες με την ακτίνα <span class="math inline">\(R\)</span>: <span class="math display">\[OA = OB = O\Gamma = R\]</span></p>
+<p>Συνεπώς, τα τρίγωνα <span class="math inline">\(\triangle OAB\)</span> και <span class="math inline">\(\triangle OB\Gamma\)</span> είναι ισοσκελή. Οι μεσοκάθετοι <span class="math inline">\(\xi\)</span> και <span class="math inline">\(\zeta\)</span> των τμημάτων <span class="math inline">\(AB\)</span> και <span class="math inline">\(B\Gamma\)</span> αντίστοιχα διέρχονται από το κέντρο <span class="math inline">\(O\)</span> του κύκλου.</p>
+<p>Όμως, οι μεσοκάθετοι <span class="math inline">\(\xi\)</span> και <span class="math inline">\(\zeta\)</span> δύο διαδοχικών τμημάτων της ίδιας ευθείας <span class="math inline">\(\epsilon\)</span> είναι κάθετες στην <span class="math inline">\(\epsilon\)</span>, άρα είναι παράλληλες μεταξύ τους (<span class="math inline">\(\xi \parallel \zeta\)</span>).</p>
+<p>Το γεγονός ότι δύο παράλληλες ευθείες <span class="math inline">\(\xi\)</span> και <span class="math inline">\(\zeta\)</span> τέμνονται στο σημείο <span class="math inline">\(O\)</span> είναι άτοπο.</p>
+<p>Άρα, η ευθεία και ο κύκλος έχουν το πολύ δύο κοινά σημεία.</p>
+</div>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 1.2 (Χαρακτηριστική Ιδιότητα Εφαπτομένης)</strong></p>
+</div>
+<p>Η εφαπτομένη του κύκλου σε ένα σημείο του είναι κάθετη στην ακτίνα που καταλήγει στο σημείο αυτό.</p>
+<p><img src="images/clipboard-4000614658.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(\epsilon\)</span> η εφαπτομένη του κύκλου <span class="math inline">\((O, R)\)</span> στο σημείο <span class="math inline">\(A\)</span>. Αν η <span class="math inline">\(\epsilon\)</span> δεν ήταν κάθετη στην ακτίνα <span class="math inline">\(OA\)</span>, τότε το κάθετο τμήμα <span class="math inline">\(OH\)</span> από το <span class="math inline">\(O\)</span> προς την <span class="math inline">\(\epsilon\)</span> θα ήταν διαφορετικό από το <span class="math inline">\(OA\)</span>.</p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OHA\)</span> (ορθογώνιο στο <span class="math inline">\(H\)</span>), η υποτείνουσα <span class="math inline">\(OA\)</span> είναι μεγαλύτερη από την κάθετη πλευρά <span class="math inline">\(OH\)</span>: <span class="math display">\[OH &lt; OA \implies OH &lt; R\]</span></p>
+<p>Εφόσον <span class="math inline">\(OH &lt; R\)</span>, το σημείο <span class="math inline">\(H\)</span> θα ήταν εσωτερικό σημείο του κύκλου. Αν προεκτείνουμε το τμήμα <span class="math inline">\(HA\)</span> κατά τμήμα <span class="math inline">\(HA' = HA\)</span>, τότε το τρίγωνο <span class="math inline">\(\triangle OAA'\)</span> θα ήταν ισοσκελές με <span class="math inline">\(OA' = OA = R\)</span>.</p>
+<p>Συνεπώς, το σημείο <span class="math inline">\(A'\)</span> θα ανήκε επίσης στον κύκλο.</p>
+<p>Αυτό σημαίνει ότι η ευθεία <span class="math inline">\(\epsilon\)</span> θα είχε και δεύτερο κοινό σημείο με τον κύκλο (το <span class="math inline">\(A'\)</span>), πράγμα που αντιφάσκει με την υπόθεση ότι η <span class="math inline">\(\epsilon\)</span> είναι εφαπτομένη (έχει μοναδικό κοινό σημείο).</p>
+<p>Άρα, η ακτίνα <span class="math inline">\(OA\)</span> είναι κάθετη στην εφαπτομένη <span class="math inline">\(\epsilon\)</span> στο σημείο <span class="math inline">\(A\)</span> (<span class="math inline">\(OA \perp \epsilon\)</span>).</p>
+</div>
+<hr>
+</section>
+<section id="πορίσματα" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="πορίσματα"><span class="header-section-number">1.1.3</span> Πορίσματα</h4>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<ul>
+<li><strong>Πόρισμα 1</strong>:</li>
+</ul>
+</div>
+<p>Μια ευθεία <span class="math inline">\(\epsilon\)</span> είναι εφαπτομένη του κύκλου <span class="math inline">\((O, R)\)</span> στο σημείο <span class="math inline">\(A\)</span> αν και μόνο αν είναι κάθετη στην ακτίνα <span class="math inline">\(OA\)</span> στο άκρο της <span class="math inline">\(A\)</span>.</p>
+<p><img src="images/clipboard-455694766.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<ul>
+<li><strong>Πόρισμα 2</strong>:</li>
+</ul>
+</div>
+<p>Αν <span class="math inline">\(d\)</span> είναι η απόσταση του κέντρου <span class="math inline">\(O\)</span> από την ευθεία <span class="math inline">\(\epsilon\)</span>, τότε:</p>
+<ul>
+<li><span class="math inline">\(d &gt; R \iff \epsilon\)</span> εξωτερική ευθεία.</li>
+<li><span class="math inline">\(d = R \iff \epsilon\)</span> εφαπτομένη ευθεία.</li>
+<li><span class="math inline">\(d &lt; R \iff \epsilon\)</span> τέμνουσα ευθεία.</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="εφαρμογές-λυμένα-παραδείγματα" class="level4" data-number="1.1.4">
+<h4 data-number="1.1.4" class="anchored" data-anchor-id="εφαρμογές-λυμένα-παραδείγματα"><span class="header-section-number">1.1.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1</strong></p>
+</div>
+<p>Αν <span class="math inline">\(\epsilon\)</span> είναι η εφαπτομένη ενός κύκλου <span class="math inline">\((O, R)\)</span> στο σημείο <span class="math inline">\(A\)</span>, να αποδειχθεί ότι για κάθε άλλο σημείο <span class="math inline">\(M \in \epsilon\)</span> (<span class="math inline">\(M \neq A\)</span>), ισχύει <span class="math inline">\(OM &gt; R\)</span>.</p>
+<p><img src="images/clipboard-1902564431.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Εφόσον η ευθεία <span class="math inline">\(\epsilon\)</span> εφάπτεται του κύκλου στο σημείο <span class="math inline">\(A\)</span>, η ακτίνα <span class="math inline">\(OA\)</span> είναι κάθετη στην <span class="math inline">\(\epsilon\)</span> (<span class="math inline">\(OA \perp \epsilon\)</span>).</p>
+<p>Για οποιοδήποτε σημείο <span class="math inline">\(M\)</span> της εφαπτομένης διάφορο του <span class="math inline">\(A\)</span>, σχηματίζεται το ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAM\)</span> με ορθή γωνία την <span class="math inline">\(\widehat{OAM} = 90^\circ\)</span>.</p>
+<p>Η πλευρά <span class="math inline">\(OM\)</span> είναι η υποτείνουσα του ορθογωνίου τριγώνου, συνεπώς είναι μεγαλύτερη από την κάθετη πλευρά <span class="math inline">\(OA\)</span>: <span class="math display">\[OM &gt; OA \implies OM &gt; R\]</span></p>
+<p>Άρα, κάθε σημείο της εφαπτομένης εκτός από το σημείο επαφής <span class="math inline">\(A\)</span> είναι εξωτερικό σημείο του κύκλου.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 2</strong></p>
+</div>
+<p>Αν δύο χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma\Delta\)</span> ενός κύκλου είναι παράλληλες, να αποδειχθεί ότι τα τόξα που περιέχονται μεταξύ τους είναι ίσα: <span class="math inline">\(\overparen{AΓ} = \overparen{BΔ}\)</span>.</p>
+<p><img src="images/clipboard-2977775124.png" class="img-fluid" width="250"></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Φέρουμε τη διάμετρο <span class="math inline">\(\epsilon\)</span> του κύκλου η οποία είναι κάθετη στις παράλληλες χορδές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma\Delta\)</span>.</p>
+<p>Η ευθεία <span class="math inline">\(\epsilon\)</span> αποτελεί άξονα συμμετρίας του κύκλου και είναι η κοινή μεσοκάθετος των χορδών <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma\Delta\)</span>.</p>
+<p>Λόγω της αξονικής συμμετρίας ως προς την <span class="math inline">\(\epsilon\)</span>:</p>
+<ul>
+<li><p>Το συμμετρικό του σημείου <span class="math inline">\(A\)</span> είναι το σημείο <span class="math inline">\(B\)</span>.</p></li>
+<li><p>Το συμμετρικό του σημείου <span class="math inline">\(\Gamma\)</span> είναι το σημείο <span class="math inline">\(\Delta\)</span>.</p></li>
+</ul>
+<p>Συνεπώς, το συμμετρικό του τόξου <span class="math inline">\(\overparen{A\Gamma}\)</span> είναι το τόξο <span class="math inline">\(\overparen{B\Delta}\)</span>. Επειδή η αξονική συμμετρία είναι ισομετρία (διατηρεί τα μήκη και τα σχήματα), προκύπτει άμεσα ότι τα τόξα είναι ίσα: <span class="math inline">\(\overparen{A\Gamma} = \overparen{B\Delta}\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 3</strong></p>
+</div>
+<p><strong>Σε κύκλο</strong> <span class="math inline">\((O, R)\)</span> φέρουμε χορδή <span class="math inline">\(AB\)</span> και τη μεσοκάθετο αυτής, η οποία τέμνει τον κύκλο στα σημεία <span class="math inline">\(\Sigma\)</span> και <span class="math inline">\(\Sigma'\)</span>. Να αποδειχθεί ότι η ευθεία <span class="math inline">\(\Sigma\Sigma'\)</span> είναι διάμετρος του κύκλου.</p>
+<p><img src="images/clipboard-1790786412.png" class="img-fluid" width="250"></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(M\)</span> το μέσο της χορδής <span class="math inline">\(AB\)</span>. Από το Θεώρημα της μεσοκαθέτου, η μεσοκάθετος κάθε χορδής διέρχεται υποχρεωτικά από το κέντρο <span class="math inline">\(O\)</span> του κύκλου.</p>
+<p>Επειδή η ευθεία της μεσοκαθέτου διέρχεται από το σταθερό σημείο <span class="math inline">\(O\)</span> (κέντρο) και τέμνει την περιφέρεια στα <span class="math inline">\(\Sigma\)</span> και <span class="math inline">\(\Sigma'\)</span>, το ευθύγραμμο τμήμα <span class="math inline">\(\Sigma\Sigma'\)</span> διέρχεται από το κέντρο του κύκλου, άρα είναι εξ ορισμού διάμετρος του κύκλου.</p>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-με-πλήρεις-αποδείξεις" class="level4" data-number="1.1.5">
+<h4 data-number="1.1.5" class="anchored" data-anchor-id="ασκήσεις-με-πλήρεις-αποδείξεις"><span class="header-section-number">1.1.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<p><strong>Άσκηση 1</strong></p>
+<p>Εφαπτομένη <span class="math inline">\(\epsilon\)</span> στο σημείο <span class="math inline">\(A\)</span> κύκλου <span class="math inline">\((O, R)\)</span> είναι παράλληλη προς χορδή <span class="math inline">\(B\Gamma\)</span>. Αποδείξτε ότι η ακτίνα <span class="math inline">\(OA\)</span> διχοτομεί τη χορδή <span class="math inline">\(B\Gamma\)</span>.</p>
+<p><img src="images/clipboard-1540185528.png" class="img-fluid" width="250"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Η <span class="math inline">\(\epsilon\)</span> είναι κάθετη στην <span class="math inline">\(OA\)</span>.</p>
+<p>Λόγω παραλληλίας <span class="math inline">\(\epsilon \parallel B\Gamma\)</span>, ο φορέας της <span class="math inline">\(OA\)</span> είναι επίσης κάθετος στη χορδή <span class="math inline">\(B\Gamma\)</span>.</p>
+<p>Σύμφωνα με το Πόρισμα, ο φορέας της ακτίνας που είναι κάθετος σε χορδή τη διχοτομεί.</p>
+<p>Άρα η <span class="math inline">\(OA\)</span> διέρχεται από το μέσο της <span class="math inline">\(B\Gamma\)</span>.</p>
+<p><strong>Άσκηση 2</strong></p>
+<p><strong>Εκφώνηση:</strong> Αν μια ευθεία <span class="math inline">\(\epsilon\)</span> είναι τέμνουσα ενός κύκλου <span class="math inline">\((O, R)\)</span>, να αποδείξετε ότι η απόστασή της <span class="math inline">\(d\)</span> από το κέντρο είναι <span class="math inline">\(d = \sqrt{R^2 - \left(\dfrac{AB}{2}\right)^2}\)</span>, όπου <span class="math inline">\(AB\)</span> είναι η χορδή που ορίζεται από τα σημεία τομής.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(H\)</span> η προβολή του <span class="math inline">\(O\)</span> στην <span class="math inline">\(\epsilon\)</span>, οπότε <span class="math inline">\(OH = d\)</span> και <span class="math inline">\(OH \perp AB\)</span>. Από την <em>Άσκηση 1</em>, το <span class="math inline">\(H\)</span> είναι το μέσο της χορδής <span class="math inline">\(AB\)</span>, άρα <span class="math inline">\(HA = \dfrac{AB}{2}\)</span>.</p>
+<p>Εφαρμόζουμε το Πυθαγόρειο Θεώρημα στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OHA\)</span>: <span class="math display">\[OA^2 = OH^2 + HA^2 \implies R^2 = d^2 + \left(\frac{AB}{2}\right)^2 \implies d^2 = R^2 - \left(\frac{AB}{2}\right)^2 \implies d = \sqrt{R^2 - \left(\frac{AB}{2}\right)^2}\]</span></p>
+<p><strong>Άσκηση 3</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνονται δύο ομόκεντροι κύκλοι <span class="math inline">\((O, R)\)</span> και <span class="math inline">\((O, \rho)\)</span> με <span class="math inline">\(R &gt; \rho\)</span>. Μια ευθεία <span class="math inline">\(\epsilon\)</span> τέμνει τον εξωτερικό κύκλο στα σημεία <span class="math inline">\(A, \Delta\)</span> και τον εσωτερικό στα <span class="math inline">\(B, \Gamma\)</span>. Να αποδείξετε ότι <span class="math inline">\(AB = \Gamma\Delta\)</span>.</p>
+<p><img src="images/clipboard-2705437640.png" class="img-fluid" width="250"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Φέρουμε το κάθετο τμήμα <span class="math inline">\(OH \perp \epsilon\)</span>.</p>
+<ul>
+<li>Για τον εσωτερικό κύκλο <span class="math inline">\((O, \rho)\)</span>, η <span class="math inline">\(OH\)</span> είναι κάθετη στη χορδή <span class="math inline">\(B\Gamma\)</span>, άρα τη διχοτομεί: <span class="math inline">\(HB = H\Gamma\)</span> (1).</li>
+<li>Για τον εξωτερικό κύκλο <span class="math inline">\((O, R)\)</span>, η <span class="math inline">\(OH\)</span> είναι κάθετη στη χορδή <span class="math inline">\(A\Delta\)</span>, άρα τη διχοτομεί: <span class="math inline">\(HA = H\Delta\)</span> (2).</li>
+</ul>
+<p>Αφαιρούμε κατά μέλη τη σχέση (1) από τη σχέση (2): <span class="math display">\[HA - HB = H\Delta - H\Gamma \implies AB = \Gamma\Delta\]</span></p>
+<p><strong>Άσκηση 4</strong></p>
+<p><strong>Εκφώνηση:</strong> Να αποδείξετε ότι όλες οι χορδές ενός κύκλου <span class="math inline">\((O, R)\)</span> που εφάπτονται σε έναν εσωτερικό ομόκεντρο κύκλο <span class="math inline">\((O, \rho)\)</span> είναι ίσες μεταξύ τους.</p>
+<p><img src="images/clipboard-1611319791.png" class="img-fluid" width="250"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(AB\)</span> μια τυχαία χορδή του κύκλου <span class="math inline">\((O, R)\)</span> η οποία εφάπτεται στον κύκλο <span class="math inline">\((O, \rho)\)</span> στο σημείο <span class="math inline">\(H\)</span>.</p>
+<p>Εφόσον η <span class="math inline">\(AB\)</span> εφάπτεται στον εσωτερικό κύκλο, η ακτίνα <span class="math inline">\(OH\)</span> είναι κάθετη στη χορδή <span class="math inline">\(AB\)</span>.</p>
+<p>Η απόσταση της χορδής <span class="math inline">\(AB\)</span> από το κοινό κέντρο <span class="math inline">\(O\)</span> ισούται με <span class="math inline">\(OH = \rho\)</span> (σταθερή).</p>
+<p>Επειδή όλες οι χορδές του εξωτερικού κύκλου που εφάπτονται στον εσωτερικό απέχουν την ίδια απόσταση <span class="math inline">\(\rho\)</span> από το κέντρο <span class="math inline">\(O\)</span>, σύμφωνα με το σχετικό θεώρημα, οι χορδές αυτές είναι ίσες μεταξύ τους.</p>
+<p><strong>Άσκηση 5</strong></p>
+<p><strong>Εκφώνηση:</strong> Έστω <span class="math inline">\(AB\)</span> διάμετρος κύκλου <span class="math inline">\((O, R)\)</span>. Φέρουμε τις εφαπτόμενες <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> του κύκλου στα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> αντίστοιχα. Να αποδείξετε ότι <span class="math inline">\(\epsilon_1 \parallel \epsilon_2\)</span>.</p>
+<p><img src="images/clipboard-970822965.png" class="img-fluid" width="250"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Η ευθεία <span class="math inline">\(AB\)</span> είναι ο φορέας της διαμέτρου, άρα διέρχεται από το κέντρο <span class="math inline">\(O\)</span>.</p>
+<ul>
+<li>Επειδή η <span class="math inline">\(\epsilon_1\)</span> εφάπτεται του κύκλου στο <span class="math inline">\(A\)</span>, ισχύει <span class="math inline">\(\epsilon_1 \perp OA \implies \epsilon_1 \perp AB\)</span>.</li>
+<li>Επειδή η <span class="math inline">\(\epsilon_2\)</span> εφάπτεται του κύκλου στο <span class="math inline">\(B\)</span>, ισχύει <span class="math inline">\(\epsilon_2 \perp OB \implies \epsilon_2 \perp AB\)</span>.</li>
+</ul>
+<p>Εφόσον οι ευθείες <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> είναι κάθετες στην ίδια ευθεία <span class="math inline">\(AB\)</span>, είναι παράλληλες μεταξύ τους (<span class="math inline">\(\epsilon_1 \parallel \epsilon_2\)</span>).</p>
+<p><strong>Άσκηση 6</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνεται κύκλος <span class="math inline">\((O, R)\)</span> και σημείο <span class="math inline">\(P\)</span> στην προέκταση της ακτίνας <span class="math inline">\(OA\)</span> τέτοιο ώστε <span class="math inline">\(OA = AP\)</span>. Αν φέρουμε την εφαμτομένη του κύκλου στο <span class="math inline">\(A\)</span>, να αποδείξετε ότι αυτή είναι η μεσοκάθετος του ευθυγράμμου τμήματος <span class="math inline">\(OP\)</span>.</p>
+<p><img src="images/clipboard-1383896678.png" class="img-fluid" width="300"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(\epsilon\)</span> η εφαπτομένη του κύκλου στο σημείο <span class="math inline">\(A\)</span>.</p>
+<p>Σύμφωνα με το θεώρημα της εφαπτομένης, ισχύει <span class="math inline">\(\epsilon \perp OA \implies \epsilon \perp OP\)</span>.</p>
+<p>Επίσης, από την υπόθεση ισχύει <span class="math inline">\(OA = AP\)</span>, δηλαδή το σημείο <span class="math inline">\(A\)</span> είναι το μέσο του ευθυγράμμου τμήματος <span class="math inline">\(OP\)</span>.</p>
+<p>Εφόσον η ευθεία <span class="math inline">\(\epsilon\)</span> είναι κάθετη στο τμήμα <span class="math inline">\(OP\)</span> στο μέσο του <span class="math inline">\(A\)</span>, είναι η μεσοκάθετος του <span class="math inline">\(OP\)</span>.</p>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 7</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Από το κέντρο <span class="math inline">\(O\)</span> κύκλου <span class="math inline">\((O, R)\)</span> φέρουμε ακτίνα <span class="math inline">\(OA\)</span>. Γράφουμε νέο κύκλο με διάμετρο την ακτίνα <span class="math inline">\(OA\)</span>. Να αποδείξετε ότι ο νέος κύκλος εφάπτεται εσωτερικά στον αρχικό κύκλο.</p>
+<p><img src="images/clipboard-402945471.png" class="img-fluid" width="250"></p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(K\)</span> το κέντρο του νέου κύκλου. Επειδή η <span class="math inline">\(OA\)</span> είναι διάμετρος του νέου κύκλου, το <span class="math inline">\(K\)</span> είναι το μέσο της <span class="math inline">\(OA\)</span>. Συνεπώς, η ακτίνα του νέου κύκλου είναι <span class="math inline">\(\rho = \dfrac{OA}{2} = \dfrac{R}{2}\)</span>.</p>
+<p>Η απόσταση <span class="math inline">\(d\)</span> των κέντρων των δύο κύκλων είναι: <span class="math display">\[d = OK = \frac{R}{2}\]</span></p>
+<p>Παρατηρούμε ότι: <span class="math display">\[R - \rho = R - \frac{R}{2} = \frac{R}{2} = d\]</span></p>
+<p>Επειδή η απόσταση των κέντρων ισούται με τη διαφορά των ακτινών τους (<span class="math inline">\(d = R - \rho\)</span>), οι δύο κύκλοι εφάπτονται εσωτερικά στο κοινό σημείο <span class="math inline">\(A\)</span>.</p>
+</div>
+<p><strong>Άσκηση 8</strong></p>
+<p><strong>Εκφώνηση:</strong> Από εξωτερικό σημείο <span class="math inline">\(P\)</span> άγονται εφαπτόμενες <span class="math inline">\(PA,PB\)</span>. Αν <span class="math inline">\(\widehat{APB} = 60^\circ\)</span>, αποδείξτε ότι το τρίγωνο <span class="math inline">\(PAB\)</span> είναι ισόπλευρο.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Ισχύει <span class="math inline">\(PA = PB\)</span> (εφαπτόμενα τμήματα), άρα το <span class="math inline">\(\triangle PAB\)</span> είναι ισοσκελές.</p>
+<p>Αφού μια γωνία ισοσκελούς τριγώνου είναι $ 60^$, έπεται ότι όλες οι γωνίες είναι $ 60^$, συνεπώς το τρίγωνο είναι ισόπλευρο.</p>
+<p><strong>Άσκηση 9</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνεται κύκλος <span class="math inline">\((O, R)\)</span> και μια τέμνουσα ευθεία <span class="math inline">\(\epsilon\)</span> η οποία τέμνει τον κύκλο στα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>.</p>
+<p>Αν φέρουμε τη μεσοκάθετο του τμήματος <span class="math inline">\(AB\)</span>, να αποδείξετε ότι αυτή διέρχεται από το κέντρο <span class="math inline">\(O\)</span> του κύκλου.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(M\)</span> το μέσο του τμήματος <span class="math inline">\(AB\)</span>. Το τρίγωνο <span class="math inline">\(\triangle OAB\)</span> είναι ισοσκελές, καθώς <span class="math inline">\(OA = OB = R\)</span> (ως ακτίνες του κύκλου).</p>
+<p>Σε κάθε ισοσκελές τρίγωνο, η διάμεσος προς τη βάση (<span class="math inline">\(OM\)</span>) είναι και ύψος, άρα <span class="math inline">\(OM \perp AB\)</span>.</p>
+<p>Εφόσον η ευθεία <span class="math inline">\(OM\)</span> διέρχεται από το μέσο <span class="math inline">\(M\)</span> του <span class="math inline">\(AB\)</span> και είναι κάθετη σε αυτό, είναι η μεσοκάθετος του <span class="math inline">\(AB\)</span>.</p>
+<p>Συνεπώς, η μεσοκάθετος διέρχεται από το κέντρο <span class="math inline">\(O\)</span>.</p>
+<p><strong>Άσκηση 10</strong></p>
+<p><strong>Εκφώνηση:</strong> Έστω <span class="math inline">\(AB\)</span> μια χορδή κύκλου <span class="math inline">\((O, R)\)</span> και <span class="math inline">\(\epsilon\)</span> η εφαπτομένη του κύκλου στο <span class="math inline">\(A\)</span>. Αν φέρουμε <span class="math inline">\(OH \perp \epsilon\)</span> και <span class="math inline">\(OK \perp AB\)</span>, να αποδείξετε ότι το τετράπλευρο <span class="math inline">\(OHAK\)</span> είναι ορθογώνιο και να βρεθεί η διαγώνιός του <span class="math inline">\(HK\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>Λόγω της εφαπτομένης, ισχύει <span class="math inline">\(OA \perp \epsilon \implies \widehat{OAH} = 90^\circ\)</span>.</p></li>
+<li><p>Από την κατασκευή, <span class="math inline">\(OH \perp \epsilon \implies \widehat{OHA} = 90^\circ\)</span> και <span class="math inline">\(OK \perp AB \implies \widehat{OKA} = 90^\circ\)</span>.</p></li>
+</ul>
+<p>Εφόσον το τετράπλευρο <span class="math inline">\(OHAK\)</span> έχει τρεις ορθές γωνίες, είναι ορθογώνιο.</p>
+<p>Οι διαγώνιοι κάθε ορθογωνίου είναι ίσες, άρα <span class="math inline">\(HK = OA\)</span>.</p>
+<p>Επειδή <span class="math inline">\(OA = R\)</span> (ακτίνα του κύκλου), προκύπτει ότι <span class="math inline">\(HK = R\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="μεροσ-2-εφαπτομενα-τμηματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μεροσ-2-εφαπτομενα-τμηματα"><span class="header-section-number">1.2</span> ΜΕΡΟΣ 2: ΕΦΑΠΤΟΜΕΝΑ ΤΜΗΜΑΤΑ</h3>
+<section id="ορισμοί-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p><strong>Εφαπτόμενα τμήματα</strong></p>
+</div>
+<p>Έστω κύκλος <span class="math inline">\((O, R)\)</span> και ένα εξωτερικό σημείο <span class="math inline">\(P\)</span>. Από το <span class="math inline">\(P\)</span> άγονται δύο εφαπτόμενες προς τον κύκλο, με σημεία επαφής τα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Τα ευθύγραμμα τμήματα <span class="math inline">\(PA\)</span> και <span class="math inline">\(PB\)</span> ονομάζονται <strong>εφαπτόμενα τμήματα</strong> του κύκλου από το σημείο <span class="math inline">\(P\)</span>.</p>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p><strong>Διακεντρική Ευθεία Σημείου</strong>:</p>
+</div>
+<p>Η ευθεία <span class="math inline">\(OP\)</span> που συνδέει το σταθερό κέντρο <span class="math inline">\(O\)</span> με το εξωτερικό σημείο <span class="math inline">\(P\)</span> ονομάζεται <strong>διακεντρική ευθεία του σημείου</strong> <span class="math inline">\(P\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="θεωρήματα-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="θεωρήματα-1"><span class="header-section-number">1.2.2</span> Θεωρήματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 2.1</strong></p>
+</div>
+<p>Τα εφαπτόμενα τμήματα κύκλου που άγονται από εξωτερικό σημείο είναι ίσα μεταξύ τους: <span class="math inline">\(PA = PB\)</span>.</p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Φέρουμε τις ακτίνες <span class="math inline">\(OA\)</span> και <span class="math inline">\(OB\)</span> στα σημεία επαφής.</p>
+<p>Σύμφωνα με το <em>Θεώρημα 1.2</em>, οι ακτίνες αυτές είναι κάθετες στις εφαπτόμενες, άρα <span class="math inline">\(\widehat{OAP} = \widehat{OBP} = 90^\circ\)</span>.</p>
+<p>Συγκρίνουμε τα ορθογώνια τρίγωνα <span class="math inline">\(\triangle OAP\)</span> και <span class="math inline">\(\triangle OBP\)</span>:</p>
+<ol type="1">
+<li><p><span class="math inline">\(OP\)</span> κοινή υποτείνουσα.</p></li>
+<li><p><span class="math inline">\(OA = OB = R\)</span> (ως ακτίνες του κύκλου - ίσες κάθετες πλευρές).</p></li>
+</ol>
+<p>Τα ορθογώνια τρίγωνα έχουν την υποτείνουσα και μία κάθετη πλευρά ίσες, άρα είναι ίσα. Από την ισότητα αυτή προκύπτει άμεσα ότι και οι αντίστοιχες πλευρές τους είναι ίσες, δηλαδή <span class="math inline">\(PA = PB\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="πορίσματα-1" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="πορίσματα-1"><span class="header-section-number">1.2.3</span> Πορίσματα</h4>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<p><strong>Πόρισμα 2.1</strong></p>
+</div>
+<p>Αν <span class="math inline">\(P\)</span> είναι ένα εξωτερικό σημείο ενός κύκλου, τότε η διακεντρική ευθεία <span class="math inline">\(OP\)</span>:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Είναι η μεσοκάθετος της χορδής <span class="math inline">\(AB\)</span> του κύκλου, που ενώνει τα σημεία επαφής.</li>
+<li>Διχοτομεί τη γωνία <span class="math inline">\(\widehat{APB}\)</span> των εφαπτόμενων τμημάτων και τη γωνία <span class="math inline">\(\widehat{AOB}\)</span> των ακτίνων.</li>
+</ol>
+</blockquote>
+</div>
+<div class="math-box corollaryproof-box">
+<div class="math-title corollaryproof-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<ol type="1">
+<li><p>Επειδή <span class="math inline">\(PA = PB\)</span> (από το <em>Θεώρημα 2.1</em>) και <span class="math inline">\(OA = OB = R\)</span>, τα σημεία <span class="math inline">\(P\)</span> και <span class="math inline">\(O\)</span> ισαπέχουν από τα άκρα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> της χορδής <span class="math inline">\(AB\)</span>. Από τη χαρακτηριστική ιδιότητα, τα <span class="math inline">\(P\)</span> και <span class="math inline">\(O\)</span> ανήκουν στη μεσοκάθετο του <span class="math inline">\(AB\)</span>. Συνεπώς, η ευθεία <span class="math inline">\(OP\)</span> είναι η μεσοκάθετος της χορδής <span class="math inline">\(AB\)</span>.</p></li>
+<li><p>Από την ισότητα των τριγώνων <span class="math inline">\(\triangle OAP \cong \triangle OBP\)</span>, προκύπτει ότι: <span class="math display">\[\widehat{APO} = \widehat{BPO} \implies \text{η } OP \text{ είναι διχοτόμος της } \widehat{APB}\]</span> <span class="math display">\[\widehat{AOP} = \widehat{BOP} \implies \text{η } OP \text{ είναι διχοτόμος της } \widehat{AOB} \quad\]</span></p></li>
+</ol>
+</div>
+<hr>
+</section>
+<section id="εφαρμογές-λυμένα-παραδείγματα-1" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="εφαρμογές-λυμένα-παραδείγματα-1"><span class="header-section-number">1.2.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1</strong></p>
+</div>
+<p><strong>Από εξωτερικό σημείο</strong> <span class="math inline">\(P\)</span> κύκλου <span class="math inline">\((O, R)\)</span> φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA\)</span> και <span class="math inline">\(PB\)</span>. Μια τρίτη εφαπτομένη σε σημείο <span class="math inline">\(M\)</span> του μικρού τόξου <span class="math inline">\(AB\)</span> τέμνει τα <span class="math inline">\(PA\)</span> και <span class="math inline">\(PB\)</span> στα σημεία <span class="math inline">\(\Gamma\)</span> και <span class="math inline">\(\Delta\)</span> αντίστοιχα. Να αποδειχθεί ότι η περίμετρος του τριγώνου <span class="math inline">\(P\Gamma\Delta\)</span> είναι σταθερή και ίση με <span class="math inline">\(2PA\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Τα τμήματα <span class="math inline">\(\Gamma A\)</span> και <span class="math inline">\(\Gamma M\)</span> είναι εφαπτόμενα τμήματα από το εξωτερικό σημείο <span class="math inline">\(\Gamma\)</span>, άρα <span class="math inline">\(\Gamma A = \Gamma M\)</span>.</p>
+<p>Ομοίως, τα τμήματα <span class="math inline">\(\Delta B\)</span> και <span class="math inline">\(\Delta M\)</span> είναι εφαπτόμενα τμήματα από το εξωτερικό σημείο <span class="math inline">\(\Delta\)</span>, άρα <span class="math inline">\(\Delta B = \Delta M\)</span>.</p>
+<p>Η περίμετρος <span class="math inline">\(\Pi\)</span> του τριγώνου <span class="math inline">\(P\Gamma\Delta\)</span> είναι: <span class="math display">\[\Pi = P\Gamma + \Gamma\Delta + P\Delta = P\Gamma + (\Gamma M + M\Delta) + P\Delta\]</span></p>
+<p>Αντικαθιστούμε τα ίσες τμήματα: <span class="math display">\[\Pi = (P\Gamma + \Gamma A) + (\Delta B + P\Delta) = PA + PB\]</span></p>
+<p>Επειδή <span class="math inline">\(PA = PB\)</span> (από το <em>Θεώρημα 2.1</em>), η περίμετρος γίνεται: <span class="math display">\[\Pi = 2PA\]</span></p>
+<p>Εφόσον το <span class="math inline">\(P\)</span> είναι σταθερό σημείο, το μήκος <span class="math inline">\(PA\)</span> είναι σταθερό, άρα η περίμετρος του τριγώνου <span class="math inline">\(P\Gamma\Delta\)</span> παραμένει σταθερή και ίση με <span class="math inline">\(2PA\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 2</strong></p>
+</div>
+<p><strong>Αν</strong> <span class="math inline">\(PA, PB\)</span> είναι τα εφαπτόμενα τμήματα από εξωτερικό σημείο <span class="math inline">\(P\)</span> προς κύκλο <span class="math inline">\((O, R)\)</span>, να αποδειχθεί ότι η χορδή <span class="math inline">\(AB\)</span> είναι κάθετη στη διακεντρική ευθεία <span class="math inline">\(OP\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(H\)</span> το σημείο τομής της χορδής <span class="math inline">\(AB\)</span> με τη διακεντρική ευθεία <span class="math inline">\(OP\)</span>.</p>
+<p>Σύμφωνα με το <em>Πόρισμα 2.2</em>, η ευθεία <span class="math inline">\(OP\)</span> είναι η μεσοκάθετος του ευθυγράμμου τμήματος <span class="math inline">\(AB\)</span>.</p>
+<p>Από τον ορισμό της μεσοκαθέτου, η ευθεία <span class="math inline">\(OP\)</span> είναι κάθετη στο τμήμα <span class="math inline">\(AB\)</span> και μάλιστα το σημείο <span class="math inline">\(H\)</span> είναι το μέσο της χορδής <span class="math inline">\(AB\)</span> (<span class="math inline">\(AH = HB\)</span> και <span class="math inline">\(OP \perp AB\)</span>).</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 3 (Θεώρημα Pitot)</strong></p>
+</div>
+<p><strong>Να αποδειχθεί ότι αν ένα τετράπλευρο</strong> <span class="math inline">\(AB\Gamma\Delta\)</span> είναι περιγεγραμμένο σε κύκλο, τότε τα αθροίσματα των απέναντι πλευρών του είναι ίσα: <span class="math inline">\(AB + \Gamma\Delta = A\Delta + B\Gamma\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(E, Z, H, \Theta\)</span> τα σημεία επαφής του κύκλου με τις πλευρές <span class="math inline">\(AB, B\Gamma, \Gamma\Delta, \Delta A\)</span> αντίστοιχα.</p>
+<p>Τα εφαπτόμενα τμήματα από κάθε κορυφή του τετραπλεύρου είναι ίσα, συνεπώς ισχύουν οι σχέσεις: <span class="math display">\[AE = A\Theta = x, \quad BE = BZ = y, \quad \Gamma Z = \Gamma H = z, \quad \Delta H = \Delta\Theta = \omega \quad\]</span></p>
+<p>Υπολογίζουμε τα αθροίσματα των απέναντι πλευρών: <span class="math display">\[AB + \Gamma\Delta = (AE + EB) + (\Gamma H + H\Delta) = x + y + z + \omega\]</span> <span class="math display">\[A\Delta + B\Gamma = (A\Theta + \Theta\Delta) + (BZ + Z\Gamma) = x + \omega + y + z\]</span></p>
+<p>Παρατηρούμε ότι και τα δύο αθροίσματα ισούνται με <span class="math inline">\(x + y + z + \omega\)</span>. Συνεπώς: <span class="math display">\[AB + \Gamma\Delta = A\Delta + B\Gamma \quad\]</span></p>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-με-πλήρεις-αποδείξεις-1" class="level4" data-number="1.2.5">
+<h4 data-number="1.2.5" class="anchored" data-anchor-id="ασκήσεις-με-πλήρεις-αποδείξεις-1"><span class="header-section-number">1.2.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<p><strong>Άσκηση 11</strong></p>
+<p><strong>Εκφώνηση:</strong> Από εξωτερικό σημείο <span class="math inline">\(P\)</span> κύκλου <span class="math inline">\((O, R)\)</span> φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA, PB\)</span>. Αν η γωνία <span class="math inline">\(\widehat{APB}\)</span> είναι ίση με <span class="math inline">\(60^\circ\)</span>, να αποδείξετε ότι η διακεντρική απόσταση είναι <span class="math inline">\(OP = 2R\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+<p>Η διακεντρική ευθεία <span class="math inline">\(OP\)</span> διχοτομεί τη γωνία των εφαπτόμενων τμημάτων, άρα: <span class="math display">\[\widehat{APO} = \frac{\widehat{APB}}{2} = \frac{60^\circ}{2} = 30^\circ \quad\]</span></p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), η οξεία γωνία <span class="math inline">\(\widehat{APO}\)</span> είναι ίση με <span class="math inline">\(30^\circ\)</span>.</p>
+<p>Σε κάθε ορθογώνιο τρίγωνο, η πλευρά απέναντι από τη γωνία των <span class="math inline">\(30^\circ\)</span> ισούται με το μισό της υποτείνουσας.</p>
+<p>Συνεπώς: <span class="math display">\[OA = \frac{OP}{2} \implies R = \frac{OP}{2} \implies OP = 2R \quad\]</span></p>
+<p><strong>Άσκηση 12</strong></p>
+<p><strong>Εκφώνηση:</strong> Αν <span class="math inline">\(PA, PB\)</span> είναι τα εφαπτόμενα τμήματα από εξωτερικό σημείο <span class="math inline">\(P\)</span> και η διακεντρική απόσταση είναι <span class="math inline">\(OP = 2R\)</span>, να αποδείξετε ότι η χορδή <span class="math inline">\(AB\)</span> ισούται με <span class="math inline">\(R\sqrt{3}\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), επειδή <span class="math inline">\(OA = R\)</span> και <span class="math inline">\(OP = 2R\)</span>, η γωνία <span class="math inline">\(\widehat{APO}\)</span> είναι <span class="math inline">\(30^\circ\)</span> (αφού η κάθετη πλευρά είναι το μισό της υποτείνουσας).</p>
+<p>Από το Πυθαγόρειο Θεώρημα στο <span class="math inline">\(\triangle OAP\)</span>: <span class="math display">\[PA^2 = OP^2 - OA^2 = (2R)^2 - R^2 = 3R^2 \implies PA = R\sqrt{3}\]</span> Έστω <span class="math inline">\(H\)</span> η τομή της <span class="math inline">\(AB\)</span> με την <span class="math inline">\(OP\)</span>. Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AHP\)</span> (<span class="math inline">\(\widehat{H} = 90^\circ\)</span>), η γωνία <span class="math inline">\(\widehat{APH}\)</span> είναι <span class="math inline">\(30^\circ\)</span>.</p>
+<p>Η πλευρά <span class="math inline">\(AH\)</span> βρίσκεται απέναντι από τη γωνία των <span class="math inline">\(30^\circ\)</span>, άρα: <span class="math display">\[AH = \frac{PA}{2} = \frac{R\sqrt{3}}{2}\]</span></p>
+<p>Επειδή η <span class="math inline">\(OP\)</span> είναι μεσοκάθετος της <span class="math inline">\(AB\)</span>, ισχύει <span class="math inline">\(AB = 2AH = 2 \cdot \dfrac{R\sqrt{3}}{2} = R\sqrt{3}\)</span>.</p>
+<p><strong>Άσκηση 13</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνεται κύκλος <span class="math inline">\((O, R)\)</span> και εξωτερικό σημείο <span class="math inline">\(P\)</span>. Φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA, PB\)</span>. Αν η χορδή <span class="math inline">\(AB\)</span> είναι ίση με την ακτίνα <span class="math inline">\(R\)</span>, να υπολογίσετε τη γωνία <span class="math inline">\(\widehat{APB}\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+<p>Επειδή <span class="math inline">\(OA = OB = R\)</span> (ακτίνες) και από την υπόθεση <span class="math inline">\(AB = R\)</span>, το τρίγωνο <span class="math inline">\(\triangle OAB\)</span> είναι ισόπλευρο.</p>
+<p>Συνεπώς, η κεντρική γωνία είναι <span class="math inline">\(\widehat{AOB} = 60^\circ\)</span>.</p>
+<p>Η διακεντρική ευθεία <span class="math inline">\(OP\)</span> διχοτομεί τη γωνία <span class="math inline">\(\widehat{AOB}\)</span>, άρα στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span>: <span class="math display">\[\widehat{AOP} = \frac{\widehat{AOB}}{2} = 30^\circ \quad\]</span></p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), οι οξείες γωνίες είναι συμπληρωματικές: <span class="math display">\[\widehat{APO} = 90^\circ - \widehat{AOP} = 90^\circ - 30^\circ = 60^\circ\]</span></p>
+<p>Επειδή η <span class="math inline">\(OP\)</span> διχοτομεί τη γωνία <span class="math inline">\(\widehat{APB}\)</span>, έχουμε: <span class="math display">\[\widehat{APB} = 2\widehat{APO} = 2 \cdot 60^\circ = 120^\circ \quad\]</span></p>
+<p><strong>Άσκηση 14</strong></p>
+<p><strong>Εκφώνηση:</strong> Από εξωτερικό σημείο <span class="math inline">\(P\)</span> κύκλου <span class="math inline">\((O, R)\)</span> φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA, PB\)</span>. Αν <span class="math inline">\(M\)</span> είναι τυχαίο εσωτερικό σημείο του ευθυγράμμου τμήματος <span class="math inline">\(OP\)</span>, να αποδείξετε ότι <span class="math inline">\(\widehat{MAP} = \widehat{MBP}\)</span>.</p>
+<p><img src="images/clipboard-2344437873.png" class="img-fluid" width="300"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Συγκρίνουμε τα τρίγωνα <span class="math inline">\(\triangle MAP\)</span> και <span class="math inline">\(\triangle MBP\)</span>:</p>
+<ol type="1">
+<li><p><span class="math inline">\(PA = PB\)</span> (από το <em>Θεώρημα 2.1</em>).</p></li>
+<li><p><span class="math inline">\(PM\)</span> κοινή πλευρά.</p></li>
+<li><p><span class="math inline">\(\widehat{APM} = \widehat{BPM}\)</span> (καθώς η διακεντρική ευθεία <span class="math inline">\(OP\)</span> διχοτομεί τη γωνία <span class="math inline">\(\widehat{APB}\)</span>).</p></li>
+</ol>
+<p>Από το <strong>Κριτήριο Ισότητας ΠΓΠ</strong>, τα τρίγωνα είναι ίσα.</p>
+<p>Επομένως, όλες οι αντίστοιχες γωνίες τους είναι ίσες, άρα <span class="math inline">\(\widehat{MAP} = \widehat{MBP}\)</span>.</p>
+<p><strong>Άσκηση 15</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνονται δύο ομόκεντροι κύκλοι <span class="math inline">\((O, R)\)</span> και <span class="math inline">\((O, \rho)\)</span> με <span class="math inline">\(R &gt; \rho\)</span>. Από ένα σημείο <span class="math inline">\(P\)</span> του εξωτερικού κύκλου φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA, PB\)</span> προς τον εσωτερικό κύκλο. Να αποδείξετε ότι η γωνία <span class="math inline">\(\widehat{APB}\)</span> παραμένει σταθερή καθώς το <span class="math inline">\(P\)</span> κινείται στον εξωτερικό κύκλο.</p>
+<p><img src="images/clipboard-726041699.png" class="img-fluid" width="350"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>, καθώς η <span class="math inline">\(PA\)</span> εφάπτεται στον εσωτερικό κύκλο), ισχύει:</p>
+<p>’Ας θυμηθούμε τα μαθήματα τριγωνομετρίας Β Γυμνασίου` <span class="math display">\[ημ(\widehat{APO}) = \frac{OA}{OP} = \frac{\rho}{R}\]</span></p>
+<p>Επειδή τα μήκη των ακτινών <span class="math inline">\(R\)</span> και <span class="math inline">\(\rho\)</span> είναι σταθερά, ο λόγος <span class="math inline">\(\dfrac{\rho}{R}\)</span> είναι σταθερός, άρα και η γωνία <span class="math inline">\(\widehat{APO}\)</span> παραμένει σταθερή.</p>
+<p>Επειδή η <span class="math inline">\(OP\)</span> διχοτομεί τη γωνία <span class="math inline">\(\widehat{APB}\)</span>, έχουμε: <span class="math display">\[\widehat{APB} = 2\widehat{APO}\]</span></p>
+<p>Συνεπώς, η γωνία <span class="math inline">\(\widehat{APB}\)</span> είναι σταθερή.</p>
+<p><strong>Άσκηση 16</strong></p>
+<p>Τρεις κύκλοι με ακτίνες <span class="math inline">\(a,β, γ\)</span> εφάπτονται ανά δύο εξωτερικά. Υπολογίστε την περίμετρο του τριγώνου των κέντρων.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα.</p>
+</blockquote>
+</blockquote>
+<p>Οι πλευρές του τριγώνου είναι οι διάκεντροι <span class="math inline">\(\delta_1 = a+β\)</span>, <span class="math inline">\(\delta_2 = β+γ\)</span>, <span class="math inline">\(\delta_3 = α+γ\)</span>.</p>
+<p>Η περίμετρος είναι <span class="math inline">\(\Pi = (α+β) + (β+γ) + (α+γ) = 2(α+β+γ)\)</span>.</p>
+<p><strong>Άσκηση 17</strong></p>
+<p>Από εξωτερικό σημείο Ρ κύκλου <span class="math inline">\((Ο,R)\)</span> φέρουμε τα εφαπτόμενα τμήματα ΡΑ και ΡΒ. Μία τρίτη εφαπτομένη στο σημείο Ε του κύκλου τέμνει τα ΡΑ και ΡΒ στα σημεία Γ,Δ αντίστοιχα. Να αποδείξετε ότι η περίμετρος του τριγώνου ΡΓΔ είναι ΡΑ+ΡΒ.</p>
+<p><img src="images/clipboard-3523947988.png" class="img-fluid" width="250"></p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>ΓΑ=ΓΕ και ΔΒ=ΔΕ</p>
+</blockquote>
+</blockquote>
+<p>………………</p>
+<p><strong>Άσκηση 18</strong></p>
+<p><strong>Εκφώνηση:</strong> Έστω <span class="math inline">\(PA, PB\)</span> τα εφαπτόμενα τμήματα από εξωτερικό σημείο <span class="math inline">\(P\)</span> προς κύκλο <span class="math inline">\((O, R)\)</span>. Αν η <span class="math inline">\(OP\)</span> τέμνει τον κύκλο στα σημεία <span class="math inline">\(\Gamma\)</span> και <span class="math inline">\(\Delta\)</span>, να αποδείξετε ότι <span class="math inline">\(PA^2 = P\Gamma \cdot P\Delta\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle OAP\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), από το Πυθαγόρειο Θεώρημα έχουμε: <span class="math display">\[PA^2 = OP^2 - OA^2 = OP^2 - R^2 \quad (1)\]</span></p>
+<p>Τα σημεία <span class="math inline">\(\Gamma\)</span> και <span class="math inline">\(\Delta\)</span> είναι τα άκρα της διαμέτρου επί της <span class="math inline">\(OP\)</span>, άρε <span class="math inline">\(O\Gamma = O\Delta = R\)</span>.</p>
+<p>Συνεπώς: <span class="math display">\[P\Gamma = OP - O\Gamma = OP - R\]</span> <span class="math display">\[P\Delta = OP + O\Delta = OP + R\]</span></p>
+<p>Πολλαπλασιάζουμε τα δύο τμήματα: <span class="math display">\[P\Gamma \cdot P\Delta = (OP - R)(OP + R) = OP^2 - R^2 \quad (2)\]</span></p>
+<p>Από τις σχέσεις (1) και (2) προκύπτει άμεσα ότι: <span class="math display">\[PA^2 = P\Gamma \cdot P\Delta\]</span></p>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 19</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Από εξωτερικό σημείο <span class="math inline">\(P\)</span> κύκλου <span class="math inline">\((O, R)\)</span> φέρουμε τα εφαπτόμενα τμήματα <span class="math inline">\(PA, PB\)</span> και τη διάκεντρο <span class="math inline">\(OP\)</span>, η οποία τέμνει τη χορδή <span class="math inline">\(AB\)</span> στο <span class="math inline">\(H\)</span>. Να αποδείξετε ότι <span class="math inline">\(OH \cdot OP = R^2\)</span>.</p>
+<p><img src="images/clipboard-3534135500.png" class="img-fluid" width="250"></p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+<p>(με Πυθαγόρειο Θεώρημα)</p>
+</div>
+<p><strong>1. Ιδιότητες του σχήματος:</strong></p>
+<ul>
+<li>Τα εφαπτόμενα τμήματα από εξωτερικό σημείο είναι ίσα, άρα <span class="math inline">\(PA = PB\)</span>.</li>
+<li>Το σημείο <span class="math inline">\(O\)</span> ισαπέχει από τα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> (<span class="math inline">\(OA = OB = R\)</span>).</li>
+<li>Επομένως, η ευθεία <span class="math inline">\(OP\)</span> είναι η μεσοκάθετος του τμήματος <span class="math inline">\(AB\)</span>. Αυτό σημαίνει ότι:</li>
+</ul>
+<ol type="1">
+<li>Η <span class="math inline">\(OP\)</span> είναι κάθετη στην <span class="math inline">\(AB\)</span> (<span class="math inline">\(OP \perp AB\)</span>) στο σημείο <span class="math inline">\(H\)</span>.</li>
+<li>Το τρίγωνο <span class="math inline">\(AHO\)</span> είναι <strong>ορθογώνιο</strong> στο <span class="math inline">\(H\)</span>.</li>
+</ol>
+<ul>
+<li>Επίσης, η ακτίνα <span class="math inline">\(OA\)</span> είναι κάθετη στην εφαπτομένη <span class="math inline">\(PA\)</span> (<span class="math inline">\(OA \perp PA\)</span>), οπότε το τρίγωνο <span class="math inline">\(PAO\)</span> είναι <strong>ορθογώνιο</strong> στο <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p><strong>2. Εφαρμογή Πυθαγορείου Θεωρήματος:</strong></p>
+<ul>
+<li><strong>Στο ορθογώνιο τρίγωνο</strong> <span class="math inline">\(AHO\)</span> (<span class="math inline">\(\hat{H} = 90^\circ\)</span>):</li>
+</ul>
+<p><span class="math display">\[OA^2 = OH^2 + AH^2 \implies R^2 = OH^2 + AH^2 \quad (1)\]</span></p>
+<ul>
+<li><strong>Στο ορθογώνιο τρίγωνο</strong> <span class="math inline">\(AHP\)</span> (<span class="math inline">\(\hat{H} = 90^\circ\)</span>):</li>
+</ul>
+<p><span class="math display">\[AP^2 = PH^2 + AH^2 \implies AH^2 = AP^2 - PH^2 \quad (2)\]</span></p>
+<p>Αντικαθιστούμε το <span class="math inline">\(AH^2\)</span> της σχέσης (2) στη σχέση (1):</p>
+<p><span class="math display">\[R^2 = OH^2 + AP^2 - PH^2 \quad (3)\]</span></p>
+<ul>
+<li><strong>Στο ορθογώνιο τρίγωνο</strong> <span class="math inline">\(PAO\)</span> (<span class="math inline">\(\hat{A} = 90^\circ\)</span>):</li>
+</ul>
+<p><span class="math display">\[OP^2 = OA^2 + AP^2 \implies AP^2 = OP^2 - R^2 \quad (4)\]</span></p>
+<p><strong>3. Τελική αντικατάσταση και αλγεβρική απλοποίηση:</strong></p>
+<p>Αντικαθιστούμε το <span class="math inline">\(AP^2\)</span> της σχέσης (4) στη σχέση (3):</p>
+<p><span class="math display">\[R^2 = OH^2 + (OP^2 - R^2) - PH^2\]</span></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(PH = OP - OH\)</span>. Αντικαθιστούμε το <span class="math inline">\(PH\)</span>:</p>
+<p><span class="math display">\[R^2 = OH^2 + OP^2 - R^2 - (OP - OH)^2\]</span></p>
+<p>Αναπτύσσουμε την ταυτότητα <span class="math inline">\((OP - OH)^2 = OP^2 - 2 \cdot OP \cdot OH + OH^2\)</span>:</p>
+<p><span class="math display">\[R^2 = OH^2 + OP^2 - R^2 - (OP^2 - 2 \cdot OP \cdot OH + OH^2)\]</span></p>
+<p><span class="math display">\[R^2 = OH^2 + OP^2 - R^2 - OP^2 + 2 \cdot OP \cdot OH - OH^2\]</span></p>
+<p>Απλοποιούμε τους όρους που αλληλοαναιρούνται (<span class="math inline">\(OH^2 - OH^2 = 0\)</span> και <span class="math inline">\(OP^2 - OP^2 = 0\)</span>):</p>
+<p><span class="math display">\[R^2 = -R^2 + 2 \cdot OP \cdot OH\]</span></p>
+<p>Μεταφέρουμε το <span class="math inline">\(-R^2\)</span> στο αριστερό μέλος:</p>
+<p><span class="math display">\[2 \cdot R^2 = 2 \cdot OP \cdot OH\]</span></p>
+<p>Διαιρούμε με το <span class="math inline">\(2\)</span>:</p>
+<p><span class="math display">\[OH \cdot OP = R^2\]</span></p>
+</div>
+<p><strong>Άσκηση 20</strong></p>
+<p><strong>Εκφώνηση:</strong> Αν η γωνία μεταξύ των εφαπτόμενων τμημάτων <span class="math inline">\(PA, PB\)</span> από ένα εξωτερικό σημείο <span class="math inline">\(P\)</span> είναι ορθή (<span class="math inline">\(\widehat{APB} = 90^\circ\)</span>), να αποδείξετε ότι το τετράπλευρο <span class="math inline">\(OAPB\)</span> είναι τετράγωνο και ότι <span class="math inline">\(PA = R\)</span>.</p>
+<p><img src="images/clipboard-1767209492.png" class="img-fluid" width="180"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Στο τετράπλευρο <span class="math inline">\(OAPB\)</span>:</p>
+<ol type="1">
+<li><span class="math inline">\(\widehat{APB} = 90^\circ\)</span> (από υπόθεση).</li>
+<li><span class="math inline">\(\widehat{OAP} = 90^\circ\)</span> (ακτίνα κάθετη στην εφαπτομένη).</li>
+<li><span class="math inline">\(\widehat{OBP} = 90^\circ\)</span> (ακτίνα κάθετη στην εφαπτομένη).</li>
+</ol>
+<p>Εφόσον το τετράπλευρο έχει τρεις ορθές γωνίες, είναι ορθογώνιο.</p>
+<p>Επίσης, έχει δύο διαδοχικές πλευρές ίσες, καθώς <span class="math inline">\(OA = OB = R\)</span> (ακτίνες).</p>
+<p>Ένα ορθογώνιο με δύο διαδοχικές πλευρές ίσες είναι τετράγωνο.</p>
+<p>Συνεπώς, όλες οι πλευρές του είναι ίσες, άρα <span class="math inline">\(PA = PB = OA = OB = R\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="μεροσ-3-σχετικεσ-θεσεισ-δυο-κυκλων" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μεροσ-3-σχετικεσ-θεσεισ-δυο-κυκλων"><span class="header-section-number">1.3</span> ΜΕΡΟΣ 3: ΣΧΕΤΙΚΕΣ ΘΕΣΕΙΣ ΔΥΟ ΚΥΚΛΩΝ</h3>
+<section id="ορισμοί-2" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="ορισμοί-2"><span class="header-section-number">1.3.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Διάκεντρος</strong>:</li>
+</ul>
+</div>
+<p>Έστω δύο κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, \rho)\)</span> με <span class="math inline">\(R \ge \rho\)</span>. Το ευθύγραμμο τμήμα <span class="math inline">\(K\Lambda\)</span> που συνδέει τα κέντρα των δύο κύκλων ονομάζεται <strong>διάκεντρος</strong> και το μήκος του συμβολίζεται με <span class="math inline">\(d\)</span>.</p>
+<p><img src="images/clipboard-3360831847.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<ul>
+<li><strong>Κοινή Εφαπτομένη</strong>:</li>
+</ul>
+</div>
+<p>Μια ευθεία η οποία εφάπτεται ταυτόχρονα και στους δύο κύκλους ονομάζεται <strong>κοινή εφαπτομένη</strong> τους.</p>
+<ul>
+<li><p><strong>Κοινή Εξωτερική Εφαπτομένη</strong>: Ονομάζεται η κοινή εφαπτομένη όταν οι δύο κύκλοι βρίσκονται προς το ίδιο μέρος αυτής. <img src="images/clipboard-1907178046.png" class="img-fluid" width="250"></p></li>
+<li><p><strong>Κοινή Εσωτερική Εφαπτομένη</strong>: Ονομάζεται η κοινή εφαπτομένη όταν οι δύο κύκλοι βρίσκονται εκατέρωθεν αυτής. <img src="images/clipboard-2853322137.png" class="img-fluid" width="250"></p></li>
+</ul>
+</div>
+<p>Οι σχετικές θέσεις δύο κύκλων εξαρτώνται από τη σχέση της διακέντρου με το άθροισμα ή τη διαφορά των ακτίνων τους. Διακρίνουμε τις παρακάτω περιπτώσεις:</p>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>• Κύκλοι χωρίς κοινά σημεία</p>
+</div>
+<ul>
+<li><p>Ο κύκλος <span class="math inline">\((Λ, ρ)\)</span> βρίσκεται στο <strong>εσωτερικό</strong> του <span class="math inline">\((Κ, R)\)</span>, αν και μόνο αν <span class="math inline">\(δ &lt; R - ρ\)</span> . <img src="images/clipboard-1124702704.png" class="img-fluid" width="200"></p></li>
+<li><p>Οι κύκλοι <span class="math inline">\((Κ, R)\)</span> και <span class="math inline">\((Λ, ρ)\)</span> βρίσκεται ο ένας στο <strong>εξωτερικό</strong> του άλλου, αν και μόνο αν <span class="math inline">\(δ &gt; R + ρ\)</span> . <img src="images/clipboard-4245511421.png" class="img-fluid" width="250"></p></li>
+</ul>
+</div>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>• Εφαπτόμενοι κύκλοι</p>
+</div>
+<ul>
+<li><p>Οι κύκλοι εφάπτονται <strong>εσωτερικά</strong>, δηλαδή έχουν ένα κοινό σημείο και ο κύκλος (<span class="math inline">\(Λ, ρ\)</span>) βρίσκεται στο εσωτερικό του <span class="math inline">\((Κ, R)\)</span>, αν και μόνο αν <span class="math inline">\(δ = R - ρ\)</span> . <img src="images/clipboard-1517421778.png" class="img-fluid" width="200"></p></li>
+<li><p>Οι κύκλοι εφάπτονται <strong>εξωτερικά</strong>, δηλαδή έχουν ένα κοινό σημείο και ο ένας βρίσκεται στο εξωτερικό του άλλου, αν και μόνο αν <span class="math inline">\(δ = R + ρ\)</span> . <img src="images/clipboard-2302324415.png" width="300" height="180"></p></li>
+</ul>
+<p>Το κοινό σημείο δύο εφαπτόμενων κύκλων λέγεται <strong>σημείο επαφής</strong> και είναι σημείο της διακέντρου.</p>
+</div>
+<p>Πράγματι, αν το σημείο επαφής Α δεν είναι σημείο της διακέντρου, τότε από το τρίγωνο ΑΚΛ έχουμε <span class="math inline">\(ΚΛ &lt; ΚΑ + ΑΛ\)</span>, δηλαδή <span class="math inline">\(δ &lt; R + ρ\)</span>, που είναι άτοπο.</p>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>• Τεμνόμενοι κύκλοι</p>
+</div>
+<p>Οι κύκλοι <strong>τέμνονται</strong>, δηλαδή έχουν δύο κοινά σημεία, αν και μόνο αν <span class="math inline">\(R - ρ &lt; δ &lt; R + ρ\)</span> .</p>
+<p><img src="images/clipboard-2916511142.png" class="img-fluid" width="300"></p>
+<p>Το ευθύγραμμο τμήμα ΑΒ που ενώνει τα κοινά σημεία λέγεται <strong>κοινή χορδή</strong> των δύο κύκλων.</p>
+</div>
+<hr>
+</section>
+<section id="θεωρήματα-2" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="θεωρήματα-2"><span class="header-section-number">1.3.2</span> Θεωρήματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p>Θεώρημα 3.1</p>
+</div>
+<p>Αν δύο κύκλοι τέμνονται σε δύο σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>, τότε η διάκεντρος <span class="math inline">\(K\Lambda\)</span> είναι η μεσοκάθετος της κοινής χορδής <span class="math inline">\(AB\)</span>.</p>
+<p><img src="images/clipboard-793126913.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Τα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span> ανήκουν και στους δύο κύκλους.</p>
+<ul>
+<li><p>Επειδή <span class="math inline">\(KA = KB = R\)</span>, το σημείο <span class="math inline">\(K\)</span> ισαπέχει από τα άκρα της κοινής χορδής <span class="math inline">\(AB\)</span>, άρα ανήκει στη μεσοκάθετό της.</p></li>
+<li><p>Επειδή <span class="math inline">\(\Lambda A = \Lambda B = \rho\)</span>, το σημείο <span class="math inline">\(\Lambda\)</span> επίσης ισαπέχει από τα άκρα της <span class="math inline">\(AB\)</span>, άρα ανήκει στη μεσοκάθετό της.</p></li>
+</ul>
+<p>Συνεπώς, η ευθεία της διακέντρου <span class="math inline">\(K\Lambda\)</span> είναι η <strong>μεσοκάθετος</strong> της κοινής χορδής <span class="math inline">\(AB\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="πορίσματα-2" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="πορίσματα-2"><span class="header-section-number">1.3.3</span> Πορίσματα</h4>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<p><strong>Πόρισμα 3.1</strong></p>
+</div>
+<p>Αν δύο κύκλοι εφάπτονται (εσωτερικά ή εξωτερικά), το σημείο επαφής τους <span class="math inline">\(A\)</span> ανήκει υποχρεωτικά στη διάκεντρο <span class="math inline">\(K\Lambda\)</span>.</p>
+<p><img src="images/clipboard-3814868331.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box corollaryproof-box">
+<div class="math-title corollaryproof-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω ότι οι κύκλοι εφάπτονται στο σημείο <span class="math inline">\(A\)</span> και <span class="math inline">\(\epsilon\)</span> είναι η κοινή εφαπτομένη τους στο <span class="math inline">\(A\)</span>.</p>
+<p>Σύμφωνα με το <em>Θεώρημα 1.2</em>, η ακτίνα <span class="math inline">\(KA\)</span> του πρώτου κύκλου είναι κάθετη στην <span class="math inline">\(\epsilon\)</span> στο <span class="math inline">\(A\)</span>, και η ακτίνα <span class="math inline">\(\Lambda A\)</span> του δεύτερου κύκλου είναι επίσης κάθετη στην <span class="math inline">\(\epsilon\)</span> στο <span class="math inline">\(A\)</span>.</p>
+<p>Από ένα σημείο <span class="math inline">\(A\)</span> της ευθείας <span class="math inline">\(\epsilon\)</span> άγεται μία μόνο κάθετος προς αυτήν.</p>
+<p>Συνεπώς, τα ευθύγραμμα τμήματα <span class="math inline">\(KA\)</span> και <span class="math inline">\(\Lambda A\)</span> βρίσκονται πάνω στην ίδια ευθεία, πράγμα που σημαίνει ότι το σημείο επαφής <span class="math inline">\(A\)</span>, το <span class="math inline">\(K\)</span> και το <span class="math inline">\(\Lambda\)</span> είναι συνευθειακά σημεία. Άρα, το <span class="math inline">\(A\)</span> ανήκει στη διάκεντρο <span class="math inline">\(K\Lambda\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="εφαρμογές-λυμένα-παραδείγματα-2" class="level4" data-number="1.3.4">
+<h4 data-number="1.3.4" class="anchored" data-anchor-id="εφαρμογές-λυμένα-παραδείγματα-2"><span class="header-section-number">1.3.4</span> Εφαρμογές (Λυμένα Παραδείγματα)</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1</strong></p>
+</div>
+<p><strong>Δύο κύκλοι με κέντρα</strong> <span class="math inline">\(K, \Lambda\)</span> εφάπτονται εξωτερικά στο σημείο <span class="math inline">\(A\)</span>. Μια ευθεία <span class="math inline">\(\epsilon\)</span> είναι κοινή εξωτερική εφαπτομένη των δύο κύκλων και εφάπτεται σε αυτούς στα σημεία <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> αντίστοιχα. Να αποδειχθεί ότι η κοινή εσωτερική εφαπτομένη <span class="math inline">\(\zeta\)</span> των δύο κύκλων στο <span class="math inline">\(A\)</span> διχοτομεί το τμήμα <span class="math inline">\(B\Gamma\)</span>.</p>
+<p><img src="images/clipboard-2247220877.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(M\)</span> το σημείο τομής της κοινής εσωτερικής εφαπτομένης <span class="math inline">\(\zeta\)</span> με την κοινή εξωτερική εφαπτομένη <span class="math inline">\(\epsilon\)</span>.</p>
+<ul>
+<li><p>Για τον κύκλο <span class="math inline">\((K)\)</span>, τα τμήματα <span class="math inline">\(MB\)</span> και <span class="math inline">\(MA\)</span> είναι εφαπτόμενα τμήματα από το εξωτερικό σημείο <span class="math inline">\(M\)</span>, άρα <span class="math inline">\(MB = MA\)</span> (1).</p></li>
+<li><p>Για τον κύκλο <span class="math inline">\((\Lambda)\)</span>, τα τμήματα <span class="math inline">\(M\Gamma\)</span> και <span class="math inline">\(MA\)</span> είναι εφαπτόμενα τμήματα από το εξωτερικό σημείο <span class="math inline">\(M\)</span>, άρα <span class="math inline">\(M\Gamma = MA\)</span> (2).</p></li>
+</ul>
+<p>Από τις σχέσεις (1) και (2) προκύπτει άμεσα ότι: <span class="math display">\[MB = M\Gamma\]</span></p>
+<p>Συνεπώς, το σημείο <span class="math inline">\(M\)</span> είναι το μέσο του ευθυγράμμου τμήματος <span class="math inline">\(B\Gamma\)</span>, δηλαδή η εσωτερική εφαπτομένη <span class="math inline">\(\zeta\)</span> <strong>διχοτομεί</strong> το τμήμα <span class="math inline">\(B\Gamma\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 2</strong></p>
+</div>
+<p><strong>Στο σχήμα της προηγούμενης <em>Εφαρμογής 1</em>, να αποδειχθεί ότι η γωνία</strong> <span class="math inline">\(\widehat{BA\Gamma}\)</span> είναι ορθή (<span class="math inline">\(\widehat{BA\Gamma} = 90^\circ\)</span>).</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Από την ισότητα των τμημάτων στην <em>Εφαρμογή 1</em>, έχουμε <span class="math inline">\(MA = MB = M\Gamma\)</span>.</p>
+<ul>
+<li><p>Στο τρίγωνο <span class="math inline">\(\triangle MAB\)</span>, επειδή <span class="math inline">\(MA = MB\)</span>, το τρίγωνο είναι ισοσκελές, άρα <span class="math inline">\(\widehat{MAB} = \widehat{MBA} = \alpha\)</span>.</p></li>
+<li><p>Στο τρίγωνο <span class="math inline">\(\triangle MA\Gamma\)</span>, επειδή <span class="math inline">\(MA = M\Gamma\)</span>, το τρίγωνο είναι ισοσκελές, άρα <span class="math inline">\(\widehat{MA\Gamma} = \widehat{M\Gamma A} = \beta\)</span>.</p></li>
+</ul>
+<p>Η γωνία <span class="math inline">\(\widehat{BA\Gamma}\)</span> ισούται με: <span class="math display">\[\widehat{BA\Gamma} = \widehat{MAB} + \widehat{MA\Gamma} = \alpha + \beta\]</span></p>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span>, το άθροισμα των εσωτερικών γωνιών είναι <span class="math inline">\(180^\circ\)</span>: <span class="math display">\[\widehat{A} + \widehat{B} + \widehat{\Gamma} = 180^\circ \implies (\alpha + \beta) + \alpha + \beta = 180^\circ \implies 2(\alpha + \beta) = 180^\circ \implies \alpha + \beta = 90^\circ\]</span></p>
+<p>Συνεπώς, η γωνία <span class="math inline">\(\widehat{BA\Gamma}\)</span> είναι ορθή (<span class="math inline">\(90^\circ\)</span>).</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 3</strong></p>
+</div>
+<p><strong>Δύο κύκλοι</strong> <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, \rho)\)</span> τέμνονται στα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Να αποδειχθεί ότι η διάκεντρος <span class="math inline">\(K\Lambda\)</span> διχοτομεί την κοινή χορδή <span class="math inline">\(AB\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Σύμφωνα με το <em>Πόρισμα 3.1</em>, η διάκεντρος <span class="math inline">\(K\Lambda\)</span> είναι η μεσοκάθετος της κοινής χορδής <span class="math inline">\(AB\)</span>.</p>
+<p>Από τον ορισμό της μεσοκαθέτου, η ευθεία της διακέντρου διέρχεται από το μέσο της χορδής <span class="math inline">\(AB\)</span>.</p>
+<p>Συνεπώς, η διάκεντρος διχοτομεί την κοινή χορδή <span class="math inline">\(AB\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-με-πλήρεις-αποδείξεις-2" class="level4" data-number="1.3.5">
+<h4 data-number="1.3.5" class="anchored" data-anchor-id="ασκήσεις-με-πλήρεις-αποδείξεις-2"><span class="header-section-number">1.3.5</span> Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<p><strong>Άσκηση 21</strong></p>
+<p><strong>Εκφώνηση:</strong> Δύο κύκλοι έχουν ακτίνες <span class="math inline">\(R = 8 \text{ cm}\)</span> και <span class="math inline">\(\rho = 3 \text{ cm}\)</span>. Να προσδιορίσετε τη σχετική τους θέση αν η διάκεντρος <span class="math inline">\(d\)</span> ισούται με:</p>
+<ul>
+<li>α. <span class="math inline">\(12 \text{ cm}\)</span>,</li>
+<li>β. <span class="math inline">\(11 \text{ cm}\)</span>,</li>
+<li>γ. <span class="math inline">\(8 \text{ cm}\)</span>,</li>
+<li>δ. <span class="math inline">\(5 \text{ cm}\)</span>,</li>
+<li>ε. <span class="math inline">\(2 \text{ cm}\)</span>.</li>
+</ul>
+<p><strong>Λύση:</strong></p>
+<p>Υπολογίζουμε το άθροισμα και τη διαφορά των ακτινών: <span class="math display">\[R + \rho = 8 + 3 = 11 \text{ cm}\]</span> <span class="math display">\[R - \rho = 8 - 3 = 5 \text{ cm}\]</span></p>
+<ul>
+<li><p>α. Αν <span class="math inline">\(d = 12 \text{ cm}\)</span>: Επειδή <span class="math inline">\(d &gt; R + \rho\)</span> (<span class="math inline">\(12 &gt; 11\)</span>), ο ένας κύκλος είναι <strong>εξωτερικός</strong> του άλλου.</p></li>
+<li><p>β. Αν <span class="math inline">\(d = 11 \text{ cm}\)</span>: Επειδή <span class="math inline">\(d = R + \rho\)</span> (<span class="math inline">\(11 = 11\)</span>), οι κύκλοι <strong>εφάπτονται εξωτερικά</strong>.</p></li>
+<li><p>γ. Αν <span class="math inline">\(d = 8 \text{ cm}\)</span>: Επειδή <span class="math inline">\(R - \rho &lt; d &lt; R + \rho\)</span> (<span class="math inline">\(5 &lt; 8 &lt; 11\)</span>), οι κύκλοι <strong>τέμνονται</strong> σε δύο σημεία.</p></li>
+<li><p>δ. Αν <span class="math inline">\(d = 5 \text{ cm}\)</span>: Επειδή <span class="math inline">\(d = R - \rho\)</span> (<span class="math inline">\(5 = 5\)</span>), οι κύκλοι <strong>εφάπτονται εσωτερικά</strong>.</p></li>
+<li><p>ε. Αν <span class="math inline">\(d = 2 \text{ cm}\)</span>: Επειδή <span class="math inline">\(d &lt; R - \rho\)</span> (<span class="math inline">\(2 &lt; 5\)</span>), ο ένας κύκλος είναι <strong>εσωτερικός</strong> του άλλου.</p></li>
+</ul>
+<p><strong>Άσκηση 22</strong></p>
+<p><strong>Εκφώνηση:</strong> Δύο ίσοι κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, R)\)</span> τέμνονται στα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Να αποδείξετε ότι η κοινή χορδή <span class="math inline">\(AB\)</span> είναι η μεσοκάθετος της διακέντρου <span class="math inline">\(K\Lambda\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Τα σημεία <span class="math inline">\(K\)</span> και <span class="math inline">\(\Lambda\)</span> ισαπέχουν από τα κοινά σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>: <span class="math display">\[KA = \Lambda A = R \quad \text{και} \quad KB = \Lambda B = R\]</span></p>
+<p>Συνεπώς:</p>
+<ul>
+<li>Το σημείο <span class="math inline">\(A\)</span> ισαπέχει από τα <span class="math inline">\(K\)</span> και <span class="math inline">\(\Lambda\)</span>, άρα ανήκει στη μεσοκάθετο του τμήματος <span class="math inline">\(K\Lambda\)</span>.</li>
+<li>Το σημείο <span class="math inline">\(B\)</span> ισαπέχει από τα <span class="math inline">\(K\)</span> και <span class="math inline">\(\Lambda\)</span>, άρα ανήκει στη μεσοκάθετο του τμήματος <span class="math inline">\(K\Lambda\)</span>.</li>
+</ul>
+<p>Εφόσον η ευθεία <span class="math inline">\(AB\)</span> συνδέει δύο σημεία της μεσοκαθέτου του τμήματος <span class="math inline">\(K\Lambda\)</span>, είναι η μεσοκάθετος της διακέντρου <span class="math inline">\(K\Lambda\)</span>.</p>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 23</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Αν δύο κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, \rho)\)</span> είναι εξωτερικοί, να αποδείξετε ότι το μήκος <span class="math inline">\(L\)</span> της κοινής εξωτερικής εφαπτομένης τους <span class="math inline">\(B\Gamma\)</span> ισούται με <span class="math inline">\(L = \sqrt{d^2 - (R - \rho)^2}\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> τα σημεία επαφής στους δύο κύκλους αντίστοιχα, οπότε <span class="math inline">\(KB \perp B\Gamma\)</span> και <span class="math inline">\(\Lambda\Gamma \perp B\Gamma\)</span>.</p>
+<p>Από το κέντρο <span class="math inline">\(\Lambda\)</span> του μικρότερου κύκλου φέρουμε παράλληλη προς την <span class="math inline">\(B\Gamma\)</span>, η οποία τέμνει την ακτίνα <span class="math inline">\(KB\)</span> στο σημείο <span class="math inline">\(H\)</span>.</p>
+<p>Το τετράπλευρο <span class="math inline">\(H\Gamma\Lambda B\)</span> είναι ορθογώνιο (έχει τρεις ορθές γωνίες), άρα: <span class="math display">\[H\Lambda = B\Gamma = L \quad \text{και} \quad KH = KB - HB = R - \rho \quad\]</span></p>
+<p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle KH\Lambda\)</span> (ορθογώνιο στο <span class="math inline">\(H\)</span>), εφαρμόζουμε το Πυθαγόρειο Θεώρημα: <span class="math display">\[\begin{align}
+K\Lambda^2 &amp;= KH^2 + H\Lambda^2 \implies \\ d^2 &amp;= (R - \rho)^2 + L^2 \implies \\ L^2 &amp;= d^2 - (R - \rho)^2 \implies \\ L &amp;= \sqrt{d^2 - (R - \rho)^2} \quad
+\end{align}\]</span></p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 24</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Δύο κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, \rho)\)</span> εφάπτονται εξωτερικά στο σημείο <span class="math inline">\(A\)</span>. Να αποδείξετε ότι το μήκος <span class="math inline">\(L\)</span> της κοινής εξωτερικής εφαπτομένης τους <span class="math inline">\(B\Gamma\)</span> ισούται με <span class="math inline">\(L = 2\sqrt{R\rho}\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Εφόσον οι κύκλοι εφάπτονται εξωτερικά, η διάκεντρος είναι <span class="math inline">\(d = R + \rho\)</span>.</p>
+<p>Χρησιμοποιούμε τον τύπο της κοινής εξωτερικής εφαπτομένης από την <em>Άσκηση 23</em>:</p>
+<p><span class="math display">\[L^2 = d^2 - (R - \rho)^2 \implies L^2 = (R + \rho)^2 - (R - \rho)^2\]</span></p>
+<p><span class="math display">\[L^2 = (R^2 + 2R\rho + \rho^2) - (R^2 - 2R\rho + \rho^2) = 4R\rho \implies L = 2\sqrt{R\rho} \quad\]</span></p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 25</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Δύο ίσοι κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, R)\)</span> τέμνονται στα σημεία <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>. Αν η διάκεντρος είναι <span class="math inline">\(K\Lambda = R\)</span>, να αποδείξετε ότι το τετράπλευρο <span class="math inline">\(K A \Lambda B\)</span> αποτελείται από δύο κολλημένα ισόπλευρα τρίγωνα και οι γωνίες του είναι <span class="math inline">\(60^\circ\)</span> και <span class="math inline">\(120^\circ\)</span>.</p>
+<p><img src="images/clipboard-2662088528.png" class="img-fluid" width="300"></p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Οι πλευρές του τετραπλεύρου <span class="math inline">\(K A \Lambda B\)</span> είναι ακτίνες των δύο ίσων κύκλων: <span class="math display">\[KA = KB = \Lambda A = \Lambda B = R\]</span></p>
+<p>Επίσης, δίνεται ότι η διαγώνιος <span class="math inline">\(K\Lambda\)</span> ισούται με <span class="math inline">\(R\)</span>.</p>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle KA\Lambda\)</span>, όλες οι πλευρές είναι ίσες με <span class="math inline">\(R\)</span> (<span class="math inline">\(KA = A\Lambda = K\Lambda = R\)</span>), άρα το τρίγωνο είναι ισόπλευρο, οπότε η γωνία <span class="math inline">\(\widehat{KA\Lambda} = 60^\circ\)</span>.</p>
+<p>Όμοια, το τρίγωνο <span class="math inline">\(\triangle KB\Lambda\)</span> είναι ισόπλευρο με <span class="math inline">\(\widehat{KB\Lambda} = 60^\circ\)</span>.</p>
+<p>Οι γωνίες του ρόμβου <span class="math inline">\(K A \Lambda B\)</span> είναι: <span class="math display">\[\widehat{A} = \widehat{B} = 60^\circ\]</span> <span class="math display">\[\widehat{K} = \widehat{\Lambda} = 60^\circ + 60^\circ = 120^\circ\]</span></p>
+</div>
+<p><strong>Άσκηση 26</strong></p>
+<p><strong>Εκφώνηση:</strong> Δύο κύκλοι <span class="math inline">\((K, R)\)</span> και <span class="math inline">\((\Lambda, \rho)\)</span> είναι εξωτερικοί με διάκεντρο <span class="math inline">\(d\)</span>. Να αποδείξετε ότι η μέγιστη απόσταση μεταξύ ενός σημείου του πρώτου κύκλου και ενός σημείου του δεύτερου κύκλου είναι <span class="math inline">\(d + R + \rho\)</span>, και η ελάχιστη απόσταση είναι <span class="math inline">\(d - R - \rho\)</span>.</p>
+<p><img src="images/clipboard-1616451848.png" class="img-fluid" width="350"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(M\)</span> τυχαίο σημείο του πρώτου κύκλου και <span class="math inline">\(N\)</span> τυχαίο σημείο του δεύτερου κύκλου.</p>
+<p>Από την τριγωνική ανισότητα στο τρίγωνο <span class="math inline">\(\triangle KM\Lambda\)</span> και στο <span class="math inline">\(\triangle \Lambda NK\)</span> προκύπτει ότι: <span class="math display">\[MN \le KM + K\Lambda + \Lambda N = R + d + \rho\]</span></p>
+<p>Η ισότητα ισχύει όταν τα σημεία <span class="math inline">\(M, K, \Lambda, N\)</span> είναι συνευθειακά με τη σειρά αυτή (δηλαδή στα εξωτερικά άκρα της διακέντρου).</p>
+<p>Συνεπώς, η μέγιστη απόσταση είναι <span class="math inline">\(d + R + \rho\)</span>.</p>
+<p>Ομοίως, για την ελάχιστη απόσταση: <span class="math display">\[MN \ge K\Lambda - KM - \Lambda N = d - R - \rho\]</span></p>
+<p>Η ισότητα ισχύει όταν τα σημεία βρίσκονται πάνω στη διάκεντρο στα εσωτερικά άκρα, άρα η ελάχιστη απόσταση είναι <span class="math inline">\(d - R - \rho\)</span>.</p>
+<p><strong>Άσκηση 27</strong></p>
+<p><strong>Εκφώνηση:</strong> Τρεις κύκλοι εφάπτονται εξωτερικά ανά δύο. Να αποδείξετε ότι οι κοινές εσωτερικές εφαπτόμενές τους στα σημεία επαφής συντρέχουν στο ίδιο σημείο (ριζικό κέντρο), το οποίο είναι το κέντρο κύκλου που τέμνει και τους τρεις κύκλους.</p>
+<p><img src="images/clipboard-2539465278.png" class="img-fluid" width="350"></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(\epsilon_1, \epsilon_2, \epsilon_3\)</span> οι τρεις κοινές εσωτερικές εφαπτόμενες στα σημεία επαφής των κύκλων ανά δύο. Οι ευθείες <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> τέμνονται σε ένα σημείο <span class="math inline">\(M\)</span>.</p>
+<p>Από την ιδιότητα των εφαπτόμενων τμημάτων, το σημείο <span class="math inline">\(M\)</span> ως σημείο της <span class="math inline">\(\epsilon_1\)</span> ισαπέχει από τους δύο πρώτους κύκλους ΜΑ=ΜΒ, και ως σημείο της <span class="math inline">\(\epsilon_2\)</span> ισαπέχει από τον δεύτερο και τον τρίτο κύκλο ΜΒ=ΜΓ.</p>
+<p>Λόγω της μεταβατικής ιδιότητας, το <span class="math inline">\(M\)</span> θα ισαπέχει και από τον πρώτο και τον τρίτο κύκλο ΜΑ=ΜΓ.</p>
+<p>Συνεπώς, το σημείο <span class="math inline">\(M\)</span> ανήκει και στην τρίτη κοινή εσωτερική εφαπτομένη <span class="math inline">\(\epsilon_3\)</span>.</p>
+<p>Άρα, οι τρεις εσωτερικές εφαπτόμενες συντρέχουν στο σημείο <span class="math inline">\(M\)</span>, το οποίο είναι το κέντρο κύκλου που τέμνει και τους τρεις κύκλους.</p>
+<p><strong>Άσκηση 28</strong></p>
+<p>Αν δύο κύκλοι είναι ομόκεντροι με <span class="math inline">\(R \neq \rho\)</span>, αποδείξτε ότι δεν διαθέτουν κοινά σημεία.</p>
+<p><strong>Άσκηση 29</strong></p>
+<p>Δύο κύκλοι <span class="math inline">\((O, 12)\)</span> και <span class="math inline">\((K, 7)\)</span> έχουν <span class="math inline">\(\delta = 3\)</span>. Ποια η σχετική θέση;</p>
+<p>(Λύση: Εσωτερικοί).</p>
+<p><strong>Άσκηση 30</strong> Αποδείξτε ότι η κοινή χορδή δύο τεμνόμενων κύκλων είναι πάντοτε μικρότερη από τη διάμετρο του μικρότερου κύκλου.</p>
+<p><strong>Άσκηση 31</strong> Τρεις ίσοι κύκλοι εφάπτονται ανά δύο εξωτερικά. Τι είδους τρίγωνο σχηματίζουν τα κέντρα τους;</p>
+<p>(Λύση: Ισόπλευρο).</p>
+<p><strong>Άσκηση 32</strong> Αποδείξτε ότι αν δύο κύκλοι εφάπτονται εσωτερικά, η διάκεντρος είναι μικρότερη από την ακτίνα του μεγαλύτερου κύκλου.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="ΣΑΣ ΕΥΧΟΜΑΙ">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημαντικό</span>ΣΑΣ ΕΥΧΟΜΑΙ
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !!!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
