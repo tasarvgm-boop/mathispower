@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>04.03. Αξιοσημείωτοι κύκλοι τριγώνου – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-algeometria quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Α’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Α’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html">Γεωμετρία</a></li><li class="breadcrumb-item"><a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</a></li></ol></nav>
+      <h1 class="title">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">30 Αύγουστος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">3 Σεπτέμβριος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Δυνάμεις φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δυνάμεις φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Ευκλείδεια διαίρεση - Διαιρετότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ευκλείδεια διαίρεση - Διαιρετότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Η έννοια του κλάσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η έννοια του κλάσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Ισοδύναμα κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Ισοδύναμα κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Σύγκριση κλασμάτων  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Σύγκριση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Πρόσθεση και Αφαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Πρόσθεση και Αφαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Πολλαπλασιασμός κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πολλαπλασιασμός κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11. Διαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Διαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Τυποποιημένη μορφή μεγάλων αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Τυποποιημένη μορφή μεγάλων αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Μονάδες μέτρησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Μονάδες μέτρησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/18. Επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/20. Ποσοστά και επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Ποσοστά και επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/21.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/22. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/23.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/24. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/25.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/28. Πρόσθεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">28. Πρόσθεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/29. Αφαίρεση ρητών αριθμών  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">29. Αφαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/30. Πολλαπλασιασμός ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30. Πολλαπλασιασμός ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/31. Διαίρεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Διαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/32. Δεκαδική μορφή ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">32. Δεκαδική μορφή ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/Θέματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Θέματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση σύγκριση ισότητα τμημάτων-Απόσταση σημείων Μέσο τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση, σύγκριση και ισότητα ευθυγράμμων τμημάτων – Απόσταση σημείων – Μέσο ευθύγραμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 . Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13. Θέσεις ευθείας και κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Θέσεις ευθείας και κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Άξονας συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Άξονας συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/16. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/17. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/18. Κέντρο συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Κέντρο συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/19.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/20. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Προβλήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Προβλήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09.  Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/11. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/12. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Η συνάρτηση y=α/x - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01.1. Μονάδες μέτρησης επιφανειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.1. Μονάδες μέτρησης επιφανειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.1. Άθροισμα και διαφορά διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.1. Άθροισμα και διαφορά διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15.1. Όγκος πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1. Όγκος πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Η πυραμίδα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η πυραμίδα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/15. Η έννοια της γραμμικής εξίσωσης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Η έννοια της γραμμικής εξίσωσης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/17. Αλγεβρική επίλυση γραμμικού συστήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Αλγεβρική επίλυση γραμμικού συστήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/18. Η συνάρτηση αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Η συνάρτηση <span class="math inline">\(αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/19. H συνάρτηση y = αx^2 + βx + γ με α ≠ 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. H συνάρτηση <span class="math inline">\(y = αx^2 + βx + γ\)</span> με α ≠ 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/20. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/21. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/01. Ισότητα τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Ισότητα τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/03. Θεώρημα του Θαλή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Θεώρημα του Θαλή</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/04. Ομοιοθεσία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ομοιοθεσία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/05. Ομοιότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ομοιότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Το λεξιλόγιο της λογικής</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/04. Η έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Η έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/05. Οι πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Οι πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/06. Η διάταξη των πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η διάταξη των πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/08. Ρίζες πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ρίζες πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/11. Η εξίσωση 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/12. Ανισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Ανισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/13. Ανισώσεις 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ανισώσεις <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Ακολουθίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/17. Γεωμετρική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Γεωμετρική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/18. Ανατοκισμός Ίσες καταθέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Ανατοκισμός Ίσες καταθέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/19. Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/20. Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/21. Η συνάρτηση ƒ(x) = αx + β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Η συνάρτηση ƒ(x) = αx + β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/24. Μελέτη της συνάρτησης f(x)=αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/25. Μελέτη της συνάρτησης f(x)=α προς x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=α/x\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.01. Οι πρωταρχικές γεωμετρικές έννοιες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Οι πρωταρχικές γεωμετρικές έννοιες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.02. Γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.03. O Κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03. O Κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.04. Ευθύγραμμα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04. Ευθύγραμμα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.01. Τρίγωνα Κριτήρια ισότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τρίγωνα Κριτήρια ισότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.02. Βασικοί γεωμετρικοί τόποι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικοί γεωμετρικοί τόποι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.03. Συμμετρικά σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Συμμετρικά σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.04. Ανισοτικές σχέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Ανισοτικές σχέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Ευθεία και κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.06. Γεωμετρικές κατασκευές.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Γεωμετρικές κατασκευές</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.01. Ευθείες στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01. Ευθείες στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.02. Ιδιότητες παράλληλων ευθειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02. Ιδιότητες παράλληλων ευθειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#αξιοσημείωτοι-κύκλοι-τριγώνου" id="toc-αξιοσημείωτοι-κύκλοι-τριγώνου" class="nav-link active" data-scroll-target="#αξιοσημείωτοι-κύκλοι-τριγώνου"><span class="header-section-number">1</span> Αξιοσημείωτοι κύκλοι τριγώνου</a>
+  <ul>
+  <li><a href="#μεροσ-1-ο-περιγεγραμμενοσ-κυκλοσ-τριγωνου-circumcircle" id="toc-μεροσ-1-ο-περιγεγραμμενοσ-κυκλοσ-τριγωνου-circumcircle" class="nav-link" data-scroll-target="#μεροσ-1-ο-περιγεγραμμενοσ-κυκλοσ-τριγωνου-circumcircle"><span class="header-section-number">1.1</span> ΜΕΡΟΣ 1: Ο ΠΕΡΙΓΕΓΡΑΜΜΕΝΟΣ ΚΥΚΛΟΣ ΤΡΙΓΩΝΟΥ (CIRCUMCIRCLE)</a>
+  <ul>
+  <li><a href="#α.-ορισμοί" id="toc-α.-ορισμοί" class="nav-link" data-scroll-target="#α.-ορισμοί"><span class="header-section-number">1.1.1</span> Α. Ορισμοί</a></li>
+  <li><a href="#β.-θεωρήματα-πορίσματα" id="toc-β.-θεωρήματα-πορίσματα" class="nav-link" data-scroll-target="#β.-θεωρήματα-πορίσματα"><span class="header-section-number">1.1.2</span> Β. Θεωρήματα &amp; Πορίσματα</a></li>
+  <li><a href="#γ.-εφαρμογές" id="toc-γ.-εφαρμογές" class="nav-link" data-scroll-target="#γ.-εφαρμογές"><span class="header-section-number">1.1.3</span> Γ. Εφαρμογές</a></li>
+  <li><a href="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις" id="toc-δ.-ασκήσεις-με-πλήρεις-αποδείξεις" class="nav-link" data-scroll-target="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις"><span class="header-section-number">1.1.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  <li><a href="#μεροσ-2-ο-εγγεγραμμενοσ-κυκλοσ-τριγωνου-incircle" id="toc-μεροσ-2-ο-εγγεγραμμενοσ-κυκλοσ-τριγωνου-incircle" class="nav-link" data-scroll-target="#μεροσ-2-ο-εγγεγραμμενοσ-κυκλοσ-τριγωνου-incircle"><span class="header-section-number">1.2</span> ΜΕΡΟΣ 2: Ο ΕΓΓΕΓΡΑΜΜΕΝΟΣ ΚΥΚΛΟΣ ΤΡΙΓΩΝΟΥ (INCIRCLE)</a>
+  <ul>
+  <li><a href="#α.-ορισμοί-1" id="toc-α.-ορισμοί-1" class="nav-link" data-scroll-target="#α.-ορισμοί-1"><span class="header-section-number">1.2.1</span> Α. Ορισμοί</a></li>
+  <li><a href="#β.-θεωρήματα-πορίσματα-1" id="toc-β.-θεωρήματα-πορίσματα-1" class="nav-link" data-scroll-target="#β.-θεωρήματα-πορίσματα-1"><span class="header-section-number">1.2.2</span> Β. Θεωρήματα &amp; Πορίσματα</a></li>
+  <li><a href="#γ.-εφαρμογές-1" id="toc-γ.-εφαρμογές-1" class="nav-link" data-scroll-target="#γ.-εφαρμογές-1"><span class="header-section-number">1.2.3</span> Γ. Εφαρμογές</a></li>
+  <li><a href="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις-1" id="toc-δ.-ασκήσεις-με-πλήρεις-αποδείξεις-1" class="nav-link" data-scroll-target="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις-1"><span class="header-section-number">1.2.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  <li><a href="#μεροσ-3-οι-παρεγγεγραμμενοι-κυκλοι-τριγωνου-excircles" id="toc-μεροσ-3-οι-παρεγγεγραμμενοι-κυκλοι-τριγωνου-excircles" class="nav-link" data-scroll-target="#μεροσ-3-οι-παρεγγεγραμμενοι-κυκλοι-τριγωνου-excircles"><span class="header-section-number">1.3</span> ΜΕΡΟΣ 3: ΟΙ ΠΑΡΕΓΓΕΓΡΑΜΜΕΝΟΙ ΚΥΚΛΟΙ ΤΡΙΓΩΝΟΥ (EXCIRCLES)</a>
+  <ul>
+  <li><a href="#α.-ορισμοί-2" id="toc-α.-ορισμοί-2" class="nav-link" data-scroll-target="#α.-ορισμοί-2"><span class="header-section-number">1.3.1</span> Α. Ορισμοί</a></li>
+  <li><a href="#β.-θεωρήματα-πορίσματα-2" id="toc-β.-θεωρήματα-πορίσματα-2" class="nav-link" data-scroll-target="#β.-θεωρήματα-πορίσματα-2"><span class="header-section-number">1.3.2</span> Β. Θεωρήματα &amp; Πορίσματα</a></li>
+  <li><a href="#γ.-εφαρμογές-2" id="toc-γ.-εφαρμογές-2" class="nav-link" data-scroll-target="#γ.-εφαρμογές-2"><span class="header-section-number">1.3.3</span> Γ. Εφαρμογές</a></li>
+  <li><a href="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις-2" id="toc-δ.-ασκήσεις-με-πλήρεις-αποδείξεις-2" class="nav-link" data-scroll-target="#δ.-ασκήσεις-με-πλήρεις-αποδείξεις-2"><span class="header-section-number">1.3.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="αξιοσημείωτοι-κύκλοι-τριγώνου" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="αξιοσημείωτοι-κύκλοι-τριγώνου"><span class="header-section-number">1</span> Αξιοσημείωτοι κύκλοι τριγώνου</h2>
+<section id="μεροσ-1-ο-περιγεγραμμενοσ-κυκλοσ-τριγωνου-circumcircle" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="μεροσ-1-ο-περιγεγραμμενοσ-κυκλοσ-τριγωνου-circumcircle"><span class="header-section-number">1.1</span> ΜΕΡΟΣ 1: Ο ΠΕΡΙΓΕΓΡΑΜΜΕΝΟΣ ΚΥΚΛΟΣ ΤΡΙΓΩΝΟΥ (CIRCUMCIRCLE)</h3>
+<section id="α.-ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="α.-ορισμοί"><span class="header-section-number">1.1.1</span> Α. Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+
+</div>
+<ul>
+<li><strong>Περιγεγραμμένος Κύκλος:</strong></li>
+</ul>
+<p>Ο κύκλος ο οποίος διέρχεται και από τις τρεις κορυφές <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> ενός τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> ονομάζεται περιγεγραμμένος κύκλος του τριγώνου.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3517870577.png" class="img-fluid figure-img" width="450"></p>
+<figcaption>Σχήμα 1</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Περίκεντρο:</strong></li>
+</ul>
+<p>Το κέντρο του περιγεγραμμένου κύκλου ονομάζεται περίκεντρο, συμβολίζεται με το γράμμα <span class="math inline">\(O\)</span>, και είναι το σημείο στο οποίο συντρέχουν οι μεσοκάθετοι των τριών πλευρών του τριγώνου.</p>
+<ul>
+<li><strong>Ακτίνα</strong> <span class="math inline">\(R\)</span>:</li>
+</ul>
+<p>Η απόσταση του περικέντρου <span class="math inline">\(O\)</span> από τις κορυφές του τριγώνου είναι σταθερή και ίση με την ακτίνα του περιγεγραμμένου κύκλου: <span class="math display">\[OA = OB = O\Gamma = R\]</span></p>
+</div>
+<hr>
+</section>
+<section id="β.-θεωρήματα-πορίσματα" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="β.-θεωρήματα-πορίσματα"><span class="header-section-number">1.1.2</span> Β. Θεωρήματα &amp; Πορίσματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 1</strong></p>
+</div>
+<p>Οι μεσοκάθετοι των τριών πλευρών κάθε τριγώνου συντρέχουν σε ένα σημείο, το οποίο είναι το περίκεντρο του τριγώνου.</p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span>. (Σχήμα 1)</p>
+<p>Θεωρούμε τις μεσοκαθέτους των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span>, οι οποίες τέμνονται σε ένα σημείο <span class="math inline">\(O\)</span> (ταυτίζονται μόνο αν οι πλευρές είναι συνευθειακές, πράγμα άτοπο για τρίγωνο).</p>
+<p>Επειδή το σημείο <span class="math inline">\(O\)</span> ανήκει στη μεσοκάθετο της πλευράς <span class="math inline">\(AB\)</span>, ισαπέχει από τα άκρα <span class="math inline">\(A\)</span> και <span class="math inline">\(B\)</span>: <span class="math display">\[OA = OB \quad (1)\]</span> Επειδή το σημείο <span class="math inline">\(O\)</span> ανήκει στη μεσοκάθετο της πλευράς <span class="math inline">\(A\Gamma\)</span>, ισαπέχει από τα άκρα <span class="math inline">\(A\)</span> και <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[OA = O\Gamma \quad (2)\]</span> Από τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span> προκύπτει άμεσα ότι: <span class="math display">\[OB = O\Gamma\]</span> Η σχέση αυτή δηλώνει ότι το σημείο <span class="math inline">\(O\)</span> ισαπέχει από τα άκρα <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> της τρίτης πλευράς <span class="math inline">\(B\Gamma\)</span>.</p>
+<p>Συνεπώς, από τη χαρακτηριστική ιδιότητα της μεσοκαθέτου, το σημείο <span class="math inline">\(O\)</span> ανήκει και στη μεσοκάθετο της πλευράς <span class="math inline">\(B\Gamma\)</span>.</p>
+<p>Άρα, οι τρεις μεσοκάθετοι των πλευρών του τριγώνου συντρέχουν στο ίδιο σημείο <span class="math inline">\(O\)</span>, το οποίο είναι το κέντρο του κύκλου που διέρχεται από τις κορυφές <span class="math inline">\(A, B, \Gamma\)</span> με ακτίνα <span class="math inline">\(R = OA = OB = O\Gamma\)</span>.</p>
+</div>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<p><strong>Πόρισμα 1</strong></p>
+</div>
+<p>Σε κάθε ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), το περίκεντρο <span class="math inline">\(O\)</span> συμπίπτει με το μέσο της υποτείνουσας <span class="math inline">\(B\Gamma\)</span>, και η ακτίνα του περιγεγραμμένου κύκλου ισούται με το μισό της υποτείνουσας: <span class="math display">\[R = \dfrac{B\Gamma}{2}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4014246959.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+</div>
+<hr>
+</section>
+<section id="γ.-εφαρμογές" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="γ.-εφαρμογές"><span class="header-section-number">1.1.3</span> Γ. Εφαρμογές</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1</strong></p>
+</div>
+<p><strong>Αν</strong> <span class="math inline">\(O\)</span> είναι το περίκεντρο οξυγωνίου τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, να αποδειχθεί ότι η γωνία <span class="math inline">\(\widehat{BO\Gamma}\)</span> που σχηματίζεται στο περίκεντρο είναι διπλάσια της γωνίας <span class="math inline">\(\widehat{A}\)</span> του τριγώνου: <span class="math inline">\(\widehat{BO\Gamma} = 2\widehat{A}\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1352990948.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+</div>
+<p>Φέρουμε την ημιευθεία <span class="math inline">\(AO\)</span>, η οποία τέμνει τον περιγεγραμμένο κύκλο στο σημείο <span class="math inline">\(\Delta\)</span>, οπότε το ευθύγραμμο τμήμα <span class="math inline">\(A\Delta\)</span> είναι διάμετρος του κύκλου.</p>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle OAB\)</span>, επειδή <span class="math inline">\(OA = OB = R\)</span>, το τρίγωνο είναι ισοσκελές.</p>
+<p>Συνεπώς, οι προσκείμενες στη βάση γωνίες είναι ίσες: <span class="math inline">\(\widehat{OAB} = \widehat{OBA}\)</span>.</p>
+<p>Η γωνία <span class="math inline">\(\widehat{BO\Delta}\)</span> είναι εξωτερική γωνία του τριγώνου <span class="math inline">\(\triangle OAB\)</span>, άρα ισούται με το άθροισμα των δύο απέναντι εσωτερικών γωνιών: <span class="math display">\[\widehat{BO\Delta} = \widehat{OAB} + \widehat{OBA} = 2\widehat{OAB} \quad (1)\]</span> Ομοίως, στο ισοσκελές τρίγωνο <span class="math inline">\(\triangle OA\Gamma\)</span> (<span class="math inline">\(OA = O\Gamma = R\)</span>), η γωνία <span class="math inline">\(\widehat{\Gamma O\Delta}\)</span> είναι εξωτερική γωνία, οπότε: <span class="math display">\[\widehat{\Gamma O\Delta} = \widehat{OA\Gamma} + \widehat{O\Gamma A} = 2\widehat{OA\Gamma} \quad (2)\]</span> Προσθέτοντας κατά μέλη τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>, έχουμε: <span class="math display">\[\widehat{BO\Delta} + \widehat{\Gamma O\Delta} = 2\widehat{OAB} + 2\widehat{OA\Gamma} \implies \widehat{BO\Gamma} = 2(\widehat{OAB} + \widehat{OA\Gamma}) = 2\widehat{A}\]</span></p>
+<p>Συνεπώς, αποδείχθηκε ότι <span class="math inline">\(\widehat{BO\Gamma} = 2\widehat{A}\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 2</strong></p>
+</div>
+<p><strong>Να αποδειχθεί ότι αν σε ένα τρίγωνο</strong> <span class="math inline">\(\triangle AB\Gamma\)</span> η διάμεσος <span class="math inline">\(AM\)</span> προς την πλευρά <span class="math inline">\(B\Gamma\)</span> ισούται με το μισό της πλευράς αυτής (<span class="math inline">\(AM = \dfrac{B\Gamma}{2}\)</span>), τότε το τρίγωνο είναι ορθογώνιο με ορθή γωνία την <span class="math inline">\(\widehat{A}\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2501646028.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<p>Από την υπόθεση ισχύει: <span class="math display">\[AM = \dfrac{B\Gamma}{2} \implies AM = BM = M\Gamma\]</span> Αυτό σημαίνει ότι το σημείο <span class="math inline">\(M\)</span> ισαπέχει από τις τρεις κορυφές <span class="math inline">\(A, B\)</span> και <span class="math inline">\(\Gamma\)</span> του τριγώνου.</p>
+<p>Συνεπώς, το σημείο <span class="math inline">\(M\)</span> είναι το περίκεντρο του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>.</p>
+<p>Εφόσον το περίκεντρο <span class="math inline">\(M\)</span> ανήκει στην πλευρά <span class="math inline">\(B\Gamma\)</span> (είναι το μέσο της), η πλευρά <span class="math inline">\(B\Gamma\)</span> αποτελεί διάμετρο του περιγεγραμμένου κύκλου.</p>
+<p>Η εγγεγραμμένη γωνία <span class="math inline">\(\widehat{A}\)</span> βαίνει σε ημικύκλιο, άρα είναι ορθή: <span class="math display">\[\widehat{A} = 90^\circ\]</span> Συνεπώς, το τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> είναι ορθογώνιο στην κορυφή <span class="math inline">\(A\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις" class="level4" data-number="1.1.4">
+<h4 data-number="1.1.4" class="anchored" data-anchor-id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις"><span class="header-section-number">1.1.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 1</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong></p>
+<p>Σε ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), φέρουμε το ύψος <span class="math inline">\(A\Delta\)</span>.</p>
+<p>Αν <span class="math inline">\(O_1\)</span> είναι το περίκεντρο του τριγώνου <span class="math inline">\(\triangle AB\Delta\)</span> και <span class="math inline">\(O_2\)</span> το περίκεντρο του τριγώνου <span class="math inline">\(\triangle A\Delta\Gamma\)</span>, να αποδείξετε ότι η διάκεντρος <span class="math inline">\(O_1 O_2\)</span> είναι παράλληλη προς την υποτείνουσα <span class="math inline">\(B\Gamma\)</span> και ισούται με το μισό της: <span class="math inline">\(O_1 O_2 = \dfrac{B\Gamma}{2}\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1126828220.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<p><strong>Βήμα 1: Τα περίκεντρα</strong> <span class="math inline">\(O_1\)</span> και <span class="math inline">\(O_2\)</span></p>
+<ul>
+<li><p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AB\Delta\)</span> (<span class="math inline">\(\widehat{\Delta} = 90^\circ\)</span>), το περίκεντρο <span class="math inline">\(O_1\)</span> είναι το <strong>μέσο</strong> της υποτείνουσας <span class="math inline">\(AB\)</span>.<br>
+Άρα: <span class="math display">\[AO_1 = O_1B = \frac{AB}{2}\]</span></p></li>
+<li><p>Στο ορθογώνιο τρίγωνο <span class="math inline">\(\triangle A\Delta\Gamma\)</span> (<span class="math inline">\(\widehat{\Delta} = 90^\circ\)</span>), το περίκεντρο <span class="math inline">\(O_2\)</span> είναι το <strong>μέσο</strong> της υποτείνουσας <span class="math inline">\(A\Gamma\)</span>.<br>
+Άρα: <span class="math display">\[AO_2 = O_2\Gamma = \frac{A\Gamma}{2}\]</span></p></li>
+</ul>
+<p><strong>Βήμα 2: Κατασκευή του ορθογωνίου</strong> <span class="math inline">\(AO_1 M O_2\)</span></p>
+<p>Από το <span class="math inline">\(O_2\)</span> φέρουμε κάθετη στην <span class="math inline">\(A\Gamma\)</span> και από το <span class="math inline">\(O_1\)</span> φέρουμε κάθετη στην <span class="math inline">\(AB\)</span>. Αυτές οι δύο γραμμές τέμνονται σε ένα σημείο <span class="math inline">\(M\)</span> (μέσο της ΒΓ) και είναι οι μεσοκάθετες των ΑΒ και ΑΓ αφού <span class="math inline">\(Ο_1\)</span> και <span class="math inline">\(Ο_2\)</span> είναι μέσα.</p>
+<p>Το τετράπλευρο <span class="math inline">\(AO_1MO_2\)</span> έχει τρεις ορθές γωνίες (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>, <span class="math inline">\(\widehat{O_1} = 90^\circ\)</span>, <span class="math inline">\(\widehat{O_2} = 90^\circ\)</span>), επομένως είναι <strong>ορθογώνιο παραλληλόγραμμο</strong>.</p>
+<p>Από τις ιδιότητες του ορθογωνίου:</p>
+<ul>
+<li><p>Οι απέναντι πλευρές είναι ίσες: <span class="math display">\[O_2M = // AO_1 = O_1B\]</span> <span class="math display">\[O_1M = // AO_2 = O_2\Gamma\]</span></p></li>
+<li><p>Η γωνία <span class="math inline">\(\widehat{O_2 M O_1} = 90^\circ\)</span>.</p></li>
+</ul>
+<p><strong>Βήμα 3: Το παραλληλόγραμμο</strong> <span class="math inline">\(O_2 M B O_1\)</span> και το τελικό συμπέρασμα</p>
+<p>Κοιτάμε το τετράπλευρο <span class="math inline">\(O_2 M B O_1\)</span>:</p>
+<ul>
+<li><span class="math inline">\(O_2M \parallel O_1B\)</span> (και τα δύο είναι κάθετα στην <span class="math inline">\(A\Gamma\)</span>)</li>
+<li><span class="math inline">\(O_2M = O_1B\)</span></li>
+</ul>
+<p>Ένα τετράπλευρο που έχει δύο απέναντι πλευρές <strong>ίσες και παράλληλες</strong> είναι <strong>παραλληλόγραμμο</strong>!</p>
+<p>Άρα και οι άλλες δύο απέναντι πλευρές του είναι παράλληλες και ίσες: <span class="math display">\[O_1 O_2 \parallel MB \implies O_1 O_2 \parallel B\Gamma\]</span> <span class="math display">\[O_1 O_2 = MB = \frac{B\Gamma}{2}\]</span></p>
+</div>
+<p><strong>Άσκηση 2</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνεται ισοσκελές τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> (<span class="math inline">\(AB = A\Gamma\)</span>) εγγεγραμμένο σε κύκλο με κέντρο <span class="math inline">\(O\)</span>. Να αποδείξετε ότι η διάμεσος <span class="math inline">\(AM\)</span> προς τη βάση <span class="math inline">\(B\Gamma\)</span> διέρχεται από το περίκεντρο <span class="math inline">\(O\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3787815492.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<p>Εφόσον το τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> είναι ισοσκελές με <span class="math inline">\(AB = A\Gamma\)</span>, η διάμεσος <span class="math inline">\(AM\)</span> προς τη βάση <span class="math inline">\(B\Gamma\)</span> είναι ταυτόχρονα και ύψος του τριγώνου.</p>
+<p>Συνεπώς, η ευθεία <span class="math inline">\(AM\)</span> είναι κάθετη στη βάση <span class="math inline">\(B\Gamma\)</span> στο μέσο της <span class="math inline">\(M\)</span>, δηλαδή η ευθεία <span class="math inline">\(AM\)</span> είναι η μεσοκάθετος της πλευράς <span class="math inline">\(B\Gamma\)</span>.</p>
+<p>Από το θεώρημα του περικέντρου, το κέντρο <span class="math inline">\(O\)</span> του περιγεγραμμένου κύκλου είναι το σημείο τομής των μεσοκαθέτων των πλευρών του τριγώνου.</p>
+<p>Άρα, το <span class="math inline">\(O\)</span> ανήκει υποχρεωτικά στη μεσοκάθετο της <span class="math inline">\(B\Gamma\)</span>, η οποία είναι η ευθεία <span class="math inline">\(AM\)</span>.</p>
+<p>Συνεπώς, η διάμεσος <span class="math inline">\(AM\)</span> διέρχεται από το περίκεντρο <span class="math inline">\(O\)</span>.</p>
+<p><strong>Άσκηση 3</strong></p>
+<p><strong>Εκφώνηση:</strong> Δίνεται τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> με περίκεντρο <span class="math inline">\(O\)</span>. Αν <span class="math inline">\(M, N\)</span> είναι τα μέσα των πλευρών <span class="math inline">\(AB, A\Gamma\)</span> αντίστοιχα, να αποδείξετε ότι το τετράπλευρο <span class="math inline">\(AMON\)</span> είναι εγγράψιμο σε κύκλο με διάμετρο το τμήμα <span class="math inline">\(AO\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1752907426.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<ul>
+<li><p>Επειδή το <span class="math inline">\(M\)</span> είναι το μέσο της χορδής <span class="math inline">\(AB\)</span> του περιγεγραμμένου κύκλου, η ακτίνα <span class="math inline">\(OM\)</span> είναι κάθετη στη χορδή: <span class="math inline">\(OM \perp AB \implies \widehat{AMO} = 90^\circ\)</span>.</p></li>
+<li><p>Επειδή το <span class="math inline">\(N\)</span> είναι το μέσο της χορδής <span class="math inline">\(A\Gamma\)</span> του περιγεγραμμένου κύκλου, η ακτίνα <span class="math inline">\(ON\)</span> είναι κάθετη στη χορδή: <span class="math inline">\(ON \perp A\Gamma \implies \widehat{ANO} = 90^\circ\)</span>.</p></li>
+</ul>
+<p>Τα ορθογώνια τρίγωνα <span class="math inline">\(\triangle ΑΜΟ\)</span> και <span class="math inline">\(\triangle ΑΝΟ\)</span> έχουν κοινή υποτείνουσα την ΑΟ.</p>
+<p>Αν Κ το μέσον της υποτείνουσας ΑΟ, τότε ΑΚ=ΜΚ=ΟΚ=ΝΚ.</p>
+<p>Άρα τα 4 σημεία Α, Μ, Ο και Ν βρίσκονται στον ίδιο κύκλο (Κ,ΚΑ).</p>
+<p><strong>Άσκηση 4</strong></p>
+<p><strong>Εκφώνηση:</strong> Σε κύκλο με κέντρο <span class="math inline">\(O\)</span> φέρουμε μια διάμετρο <span class="math inline">\(AB\)</span>. Αν <span class="math inline">\(M\)</span> είναι ένα τυχαίο σημείο της περιφέρειας του κύκλου, να αποδείξετε ότι το σημείο <span class="math inline">\(O\)</span> είναι το περίκεντρο του τριγώνου <span class="math inline">\(\triangle MAB\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1569923227.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+<ul>
+<li><p>Το σημείο <span class="math inline">\(O\)</span> είναι το μέσο της διαμέτρου <span class="math inline">\(AB\)</span>.</p></li>
+<li><p>Οι αποστάσεις του <span class="math inline">\(O\)</span> από τις κορυφές του τριγώνου είναι ίσες με την ακτίνα <span class="math inline">\(R\)</span> του κύκλου: <span class="math inline">\(OA = OB = OM = R\)</span>.</p></li>
+</ul>
+<p>Επειδή το <span class="math inline">\(O\)</span> ισαπέχει από τις τρεις κορυφές του τριγώνου, είναι εξ ορισμού το περίκεντρο του τριγώνου <span class="math inline">\(\triangle MAB\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="μεροσ-2-ο-εγγεγραμμενοσ-κυκλοσ-τριγωνου-incircle" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μεροσ-2-ο-εγγεγραμμενοσ-κυκλοσ-τριγωνου-incircle"><span class="header-section-number">1.2</span> ΜΕΡΟΣ 2: Ο ΕΓΓΕΓΡΑΜΜΕΝΟΣ ΚΥΚΛΟΣ ΤΡΙΓΩΝΟΥ (INCIRCLE)</h3>
+<section id="α.-ορισμοί-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="α.-ορισμοί-1"><span class="header-section-number">1.2.1</span> Α. Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1282364093.png" class="img-fluid figure-img" width="350"></p>
+<figcaption>Σχήμα 2</figcaption>
+</figure>
+</div>
+</div>
+<ul>
+<li><p><strong>Εγγεγραμμένος Κύκλος:</strong> Ο κύκλος ο οποίος βρίσκεται στο εσωτερικό ενός τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> και εφάπτεται εσωτερικά και στις τρεις πλευρές του (<span class="math inline">\(AB, B\Gamma, A\Gamma\)</span>).</p></li>
+<li><p><strong>Έγκεντρο:</strong> Το κέντρο του εγγεγραμμένου κύκλου ονομάζεται έγκεντρο, συμβολίζεται με το γράμμα <span class="math inline">\(I\)</span>, και είναι το σημείο στο οποίο συντρέχουν οι εσωτερικές διχοτόμοι των τριών γωνιών του τριγώνου.</p></li>
+<li><p><strong>Ακτίνα</strong> <span class="math inline">\(\rho\)</span>: Η ακτίνα του εγγεγραμμένου κύκλου συμβολίζεται με <span class="math inline">\(\rho\)</span> και ισούται με την κάθετη απόσταση του εγκέντρου <span class="math inline">\(I\)</span> από οποιαδήποτε πλευρά του τριγώνου.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="β.-θεωρήματα-πορίσματα-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="β.-θεωρήματα-πορίσματα-1"><span class="header-section-number">1.2.2</span> Β. Θεωρήματα &amp; Πορίσματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 2</strong></p>
+</div>
+<p>Οι διχοτόμοι των τριών εσωτερικών γωνιών κάθε τριγώνου συντρέχουν σε ένα σημείο, το οποίο είναι το έγκεντρο του τριγώνου.</p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη:</strong></p>
+</div>
+<p>Έστω τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span>. (Σχήμα 2)</p>
+<p>Οι εσωτερικές διχοτόμοι των γωνιών <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> τέμνονται σε ένα σημείο <span class="math inline">\(I\)</span>, το οποίο βρίσκεται στο εσωτερικό του τριγώνου.</p>
+<p>Φέρουμε τις κάθετες αποστάσεις του <span class="math inline">\(I\)</span> προς τις πλευρές του τριγώνου: <span class="math inline">\(I\Delta \perp B\Gamma\)</span>, <span class="math inline">\(IE \perp A\Gamma\)</span> και <span class="math inline">\(IZ \perp AB\)</span>.</p>
+<ul>
+<li><p>Επειδή το <span class="math inline">\(I\)</span> ανήκει στη διχοτόμο της γωνίας <span class="math inline">\(\widehat{B}\)</span>, ισαπέχει από τις πλευρές <span class="math inline">\(AB\)</span> και <span class="math inline">\(B\Gamma\)</span>: <span class="math display">\[IZ = I\Delta \quad (1)\]</span></p></li>
+<li><p>Επειδή το <span class="math inline">\(I\)</span> ανήκει στη διχοτόμο της γωνίας <span class="math inline">\(\widehat{\Gamma}\)</span>, ισαπέχει από τις πλευρές <span class="math inline">\(A\Gamma\)</span> και <span class="math inline">\(B\Gamma\)</span>: <span class="math display">\[IE = I\Delta \quad (2)\]</span></p></li>
+</ul>
+<p>Από τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span> προκύπτει άμεσα ότι: <span class="math display">\[IZ = IE\]</span> Η σχέση αυτή δηλώνει ότι το σημείο <span class="math inline">\(I\)</span> ισαπέχει από τις πλευρές <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span> της γωνίας <span class="math inline">\(\widehat{A}\)</span>.</p>
+<p>Επειδή το <span class="math inline">\(I\)</span> είναι εσωτερικό σημείο της γωνίας <span class="math inline">\(\widehat{A}\)</span> και ισαπέχει από τις πλευρές της, ανήκει υποχρεωτικά στη διχοτόμο της γωνίας <span class="math inline">\(\widehat{A}\)</span>.</p>
+<p>Συνεπώς, οι τρεις εσωτερικές διχοτόμοι συντρέχουν στο σημείο <span class="math inline">\(I\)</span>, το οποίο ισαπέχει από τις πλευρές του τριγώνου με απόσταση ίση με την ακτίνα του εγγεγραμμένου κύκλου: <span class="math inline">\(\rho = I\Delta = IE = IZ\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="γ.-εφαρμογές-1" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="γ.-εφαρμογές-1"><span class="header-section-number">1.2.3</span> Γ. Εφαρμογές</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 3</strong></p>
+</div>
+<p><strong>Να αποδειχθεί ότι η γωνία</strong> <span class="math inline">\(\widehat{BI\Gamma}\)</span>, που σχηματίζεται στο έγκεντρο <span class="math inline">\(I\)</span> από τις διχοτόμους των γωνιών <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, ισούται με: <span class="math display">\[\widehat{BI\Gamma} = 90^\circ + \dfrac{\widehat{A}}{2}\]</span></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong> (Σχήμα 2)</p>
+</div>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle IB\Gamma\)</span>, το άθροισμα των εσωτερικών γωνιών είναι <span class="math inline">\(180^\circ\)</span>: <span class="math display">\[\widehat{BI\Gamma} + \widehat{I B\Gamma} + \widehat{I\Gamma B} = 180^\circ \quad (1)\]</span> Επειδή οι <span class="math inline">\(BI\)</span> και <span class="math inline">\(\Gamma I\)</span> είναι οι διχοτόμοι των γωνιών <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, ισχύει: <span class="math display">\[\widehat{I B\Gamma} = \dfrac{\widehat{B}}{2} \quad \text{και} \quad \widehat{I\Gamma B} = \dfrac{\widehat{\Gamma}}{2}\]</span> Αντικαθιστώντας τις τιμές αυτές στη σχέση <span class="math inline">\((1)\)</span>, έχουμε: <span class="math display">\[\widehat{BI\Gamma} = 180^\circ - \left(\dfrac{\widehat{B}}{2} + \dfrac{\widehat{\Gamma}}{2}\right) = 180^\circ - \dfrac{\widehat{B} + \widehat{\Gamma}}{2} \quad (2)\]</span> Στο αρχικό τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> ισχύει: <span class="math display">\[\widehat{A} + \widehat{B} + \widehat{\Gamma} = 180^\circ \implies \widehat{B} + \widehat{\Gamma} = 180^\circ - \widehat{A}\]</span> Αντικαθιστούμε στη σχέση <span class="math inline">\((2)\)</span>: <span class="math display">\[\widehat{BI\Gamma} = 180^\circ - \dfrac{180^\circ - \widehat{A}}{2} = 180^\circ - 90^\circ + \dfrac{\widehat{A}}{2} = 90^\circ + \dfrac{\widehat{A}}{2}\]</span> Συνεπώς, αποδείχθηκε η ζητούμενη σχέση: <span class="math inline">\(\widehat{BI\Gamma} = 90^\circ + \dfrac{\widehat{A}}{2}\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 4</strong></p>
+</div>
+<p><strong>Αν</strong> <span class="math inline">\(\tau = \dfrac{\alpha + \beta + \gamma}{2}\)</span> είναι η ημιπερίμετρος του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, να αποδειχθεί ότι οι αποστάσεις των κορυφών <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> από τα σημεία επαφής του εγγεγραμμένου κύκλου με τις πλευρές ισούνται με <span class="math inline">\(\tau - \alpha\)</span>, <span class="math inline">\(\tau - \beta\)</span> και <span class="math inline">\(\tau - \gamma\)</span> αντίστοιχα.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1705893833.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+</div>
+<p>Έστω <span class="math inline">\(E, Z, \Delta\)</span> τα σημεία επαφής του εγγεγραμμένου κύκλου με τις πλευρές <span class="math inline">\(A\Gamma, AB\)</span> και <span class="math inline">\(B\Gamma\)</span> αντίστοιχα.</p>
+<p>Τα εφαπτόμενα τμήματα από κάθε κορυφή προς τον κύκλο είναι ίσα μεταξύ τους:</p>
+<ul>
+<li><p>Από την κορυφή <span class="math inline">\(A\)</span>: <span class="math inline">\(AE = AZ = x\)</span></p></li>
+<li><p>Από την κορυφή <span class="math inline">\(B\)</span>: <span class="math inline">\(B\Delta = BZ = y\)</span></p></li>
+<li><p>Από την κορυφή <span class="math inline">\(\Gamma\)</span>: <span class="math inline">\(\Gamma\Delta = \Gamma E = z\)</span></p></li>
+</ul>
+<p>Εκφράζουμε τα μήκη των πλευρών του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> ως προς τα <span class="math inline">\(x, y, z\)</span>: <span class="math display">\[\alpha = B\Gamma = y + z\]</span> <span class="math display">\[\beta = A\Gamma = x + z\]</span> <span class="math display">\[\gamma = AB = x + y\]</span></p>
+<p>Αθροίζουμε τις τρεις σχέσεις κατά μέλη: <span class="math display">\[\alpha + \beta + \gamma = 2(x + y + z) \implies 2\tau = 2(x + y + z) \implies \tau = x + y + z \quad (1)\]</span> Από τη σχέση <span class="math inline">\((1)\)</span> υπολογίζουμε το <span class="math inline">\(x\)</span>: <span class="math display">\[x = \tau - (y + z) \implies AE = AZ = \tau - \alpha \quad (2)\]</span> Με όμοιο τρόπο, υπολογίζουμε τα <span class="math inline">\(y\)</span> και <span class="math inline">\(z\)</span>: <span class="math display">\[y = \tau - (x + z) \implies B\Delta = BZ = \tau - \beta \quad (3)\]</span> <span class="math display">\[z = \tau - (x + y) \implies \Gamma\Delta = \Gamma E = \tau - \gamma \quad (4)\]</span> Οι σχέσεις αυτές αποδεικνύουν πλήρως το ζητούμενο.</p>
+</div>
+<hr>
+</section>
+<section id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις-1" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις-1"><span class="header-section-number">1.2.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<p><strong>Άσκηση 6</strong></p>
+<p><strong>Εκφώνηση:</strong> Σε ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), να αποδειχθεί ότι η ακτίνα <span class="math inline">\(\rho\)</span> του εγγεγραμμένου κύκλου ισούται με: <span class="math display">\[\rho = \tau - \alpha = \dfrac{\beta + \gamma - \alpha}{2}\]</span></p>
+<p><strong>Απόδειξη:</strong></p>
+<p>Έστω <span class="math inline">\(\Delta, E, Z\)</span> τα σημεία επαφής του εγγεγραμμένου κύκλου με τις πλευρές <span class="math inline">\(B\Gamma, A\Gamma\)</span> και <span class="math inline">\(AB\)</span> αντίστοιχα.</p>
+<p>Στο τετράπλευρο <span class="math inline">\(AEIZ\)</span>:</p>
+<ul>
+<li><p>Οι γωνίες <span class="math inline">\(\widehat{AEI}\)</span> και <span class="math inline">\(\widehat{AZI}\)</span> είναι ορθές (<span class="math inline">\(90^\circ\)</span>), καθώς οι ακτίνες του εγγεγραμμένου κύκλου είναι κάθετες στις εφαπτόμενες πλευρές.</p></li>
+<li><p>Η γωνία <span class="math inline">\(\widehat{EAZ}\)</span> (δηλαδή η γωνία <span class="math inline">\(\widehat{A}\)</span> του τριγώνου) είναι ορθή (<span class="math inline">\(90^\circ\)</span>) από την υπόθεση.</p></li>
+</ul>
+<p>Εφόσον το τετράπλευρο <span class="math inline">\(AEIZ\)</span> έχει τρεις ορθές γωνίες, είναι ορθογώνιο.</p>
+<p>Επιπλέον, οι διαδοχικές πλευρές του <span class="math inline">\(IE\)</span> και <span class="math inline">\(IZ\)</span> είναι ίσες με την ακτίνα <span class="math inline">\(\rho\)</span> του κύκλου (<span class="math inline">\(IE = IZ = \rho\)</span>).</p>
+<p>Ένα ορθογώνιο με δύο διαδοχικές πλευρές ίσες είναι τετράγωνο.</p>
+<p>Συνεπώς: <span class="math display">\[AE = AZ = \rho\]</span> Από την <em>Εφαρμογή 4</em>, γνωρίζουμε ότι το εφαπτόμενο τμήμα από την κορυφή <span class="math inline">\(A\)</span> ισούται με <span class="math inline">\(AE = \tau - \alpha\)</span>.</p>
+<p>Άρα: <span class="math display">\[\rho = \tau - \alpha\]</span> Αντικαθιστώντας την τιμή του <span class="math inline">\(\tau = \dfrac{\alpha + \beta + \gamma}{2}\)</span>, έχουμε: <span class="math display">\[\rho = \dfrac{\alpha + \beta + \gamma}{2} - \alpha = \dfrac{\beta + \gamma - \alpha}{2}\]</span></p>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 7</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong> Αν <span class="math inline">\(I\)</span> είναι το έγκεντρο του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> και <span class="math inline">\(E, Z\)</span> είναι τα σημεία επαφής του εγγεγραμμένου κύκλου με τις πλευρές <span class="math inline">\(A\Gamma\)</span> και <span class="math inline">\(AB\)</span> αντίστοιχα, να αποδείξετε ότι η ευθεία <span class="math inline">\(AI\)</span> είναι κάθετη στο ευθύγραμμο τμήμα <span class="math inline">\(EZ\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1266731675.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<ul>
+<li><p>Από την <em>Εφαρμογή 4</em>, τα εφαπτόμενα τμήματα από την κορυφή <span class="math inline">\(A\)</span> είναι ίσες: <span class="math inline">\(AE = AZ = \tau - \alpha\)</span>.</p></li>
+<li><p>Συνεπώς, το τρίγωνο <span class="math inline">\(\triangle AEZ\)</span> είναι ισοσκελές με κορυφή το <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Η ευθεία <span class="math inline">\(AI\)</span> είναι η διχοτόμος της γωνίας <span class="math inline">\(\widehat{A}\)</span> του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, καθώς το έγκεντρο <span class="math inline">\(I\)</span> είναι το σημείο τομής των εσωτερικών διχοτόμων του τριγώνου.</p></li>
+</ul>
+<p>Σε κάθε ισοσκελές τρίγωνο, η διχοτόμος της γωνίας της κορυφής είναι ταυτόχρονα διάμεσος και ύψος προς τη βάση.</p>
+<p>Συνεπώς, η διχοτόμος <span class="math inline">\(AI\)</span> είναι κάθετη στη βάση <span class="math inline">\(EZ\)</span>: <span class="math display">\[AI \perp EZ\]</span></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="μεροσ-3-οι-παρεγγεγραμμενοι-κυκλοι-τριγωνου-excircles" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="μεροσ-3-οι-παρεγγεγραμμενοι-κυκλοι-τριγωνου-excircles"><span class="header-section-number">1.3</span> ΜΕΡΟΣ 3: ΟΙ ΠΑΡΕΓΓΕΓΡΑΜΜΕΝΟΙ ΚΥΚΛΟΙ ΤΡΙΓΩΝΟΥ (EXCIRCLES)</h3>
+<section id="α.-ορισμοί-2" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="α.-ορισμοί-2"><span class="header-section-number">1.3.1</span> Α. Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1562110675.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Σχήμα 3</figcaption>
+</figure>
+</div>
+</div>
+<ul>
+<li><p><strong>Παρεγγεγραμμένος Κύκλος:</strong> Ο κύκλος ο οποίος βρίσκεται στο εξωτερικό ενός τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, εφάπτεται εξωτερικά σε μία πλευρά του τριγώνου (π.χ. στην πλευρά <span class="math inline">\(B\Gamma\)</span>) και στις προεκτάσεις των άλλων δύο πλευρών (<span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span>). Κάθε τρίγωνο έχει ακριβώς τρεις παρεγγεγραμμένους κύκλους.</p></li>
+<li><p><strong>Παράκεντρα:</strong> Τα κέντρα των τριών αυτών κύκλων ονομάζονται παράκεντρα και συμβολίζονται με <span class="math inline">\(I_\alpha, I_\beta, I_\gamma\)</span> αντίστοιχα για τις πλευρές <span class="math inline">\(\alpha, \beta, \gamma\)</span>.</p></li>
+<li><p><strong>Ακτίνες</strong> <span class="math inline">\(\rho_α, \rho_β, \rho_γ\)</span>: Οι ακτίνες των τριών παρεγγεγραμμένων κύκλων συμβολίζονται με <span class="math inline">\(\rho_α, \rho_β\)</span> και <span class="math inline">\(\rho_γ\)</span> αντίστοιχα.</p></li>
+</ul>
+</div>
+</section>
+<section id="β.-θεωρήματα-πορίσματα-2" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="β.-θεωρήματα-πορίσματα-2"><span class="header-section-number">1.3.2</span> Β. Θεωρήματα &amp; Πορίσματα</h4>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα 3</strong></p>
+</div>
+<p>Η εσωτερική διχοτόμος μιας γωνίας τριγώνου (π.χ. της <span class="math inline">\(\widehat{A}\)</span>) και οι εξωτερικές διχοτόμοι των δύο άλλων γωνιών (των <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span>) συντρέχουν στο παράκεντρο <span class="math inline">\(I_a\)</span> του τριγώνου.</p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη: (Σχήμα 3)</strong></p>
+</div>
+<p>Έστω τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span>.</p>
+<p>Οι εξωτερικές διχοτόμοι των γωνιών <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> τέμνονται σε ένα σημείο <span class="math inline">\(I_a\)</span> στο εξωτερικό του τριγώνου.</p>
+<p>Φέρουμε τις κάθετες αποστάσεις του σημείου <span class="math inline">\(I_a\)</span> προς τις ευθείες των πλευρών: <span class="math inline">\(I_a\Delta \perp B\Gamma\)</span>, <span class="math inline">\(I_aE \perp A\Gamma\)</span> (στην προέκταση) και <span class="math inline">\(I_aZ \perp AB\)</span> (στην προέκταση).</p>
+<ul>
+<li><p>Επειδή το <span class="math inline">\(I_a\)</span> ανήκει στην εξωτερική διχοτόμο της γωνίας <span class="math inline">\(\widehat{B}\)</span>, ισαπέχει από τις ευθείες <span class="math inline">\(B\Gamma\)</span> και <span class="math inline">\(AB\)</span>: <span class="math display">\[I_aZ = I_a\Delta \quad (1)\]</span></p></li>
+<li><p>Επειδή το <span class="math inline">\(I_a\)</span> ανήκει στην εξωτερική διχοτόμο της γωνίας <span class="math inline">\(\widehat{\Gamma}\)</span>, ισαπέχει από τις ευθείες <span class="math inline">\(B\Gamma\)</span> και <span class="math inline">\(A\Gamma\)</span>: <span class="math display">\[I_aE = I_a\Delta \quad (2)\]</span></p></li>
+</ul>
+<p>Από τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span> προκύπτει άμεσα ότι: <span class="math display">\[I_aZ = I_aE\]</span> Η σχέση αυτή δηλώνει ότι το σημείο <span class="math inline">\(I_a\)</span> ισαπέχει από τις ευθείες των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span> της γωνίας <span class="math inline">\(\widehat{A}\)</span>.</p>
+<p>Επειδή το <span class="math inline">\(I_a\)</span> βρίσκεται στο εσωτερικό της γωνίας <span class="math inline">\(\widehat{A}\)</span> και ισαπέχει από τις πλευρές της, ανήκει υποχρεωτικά στη διχοτόμο της εσωτερικής γωνίας <span class="math inline">\(\widehat{A}\)</span>.</p>
+<p>Συνεπώς, οι τρεις διχοτόμοι (η εσωτερική της <span class="math inline">\(\widehat{A}\)</span> και οι εξωτερικές των <span class="math inline">\(\widehat{B}, \widehat{\Gamma}\)</span>) συντρέχουν στο σημείο <span class="math inline">\(I_a\)</span>, το οποίο είναι το κέντρο του παρεγγεγραμμένου κύκλου που εφάπτεται στην πλευρά <span class="math inline">\(B\Gamma\)</span> με ακτίνα <span class="math inline">\(\rho_a = I_a\Delta = I_aE = I_aZ\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="γ.-εφαρμογές-2" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="γ.-εφαρμογές-2"><span class="header-section-number">1.3.3</span> Γ. Εφαρμογές</h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 5</strong></p>
+</div>
+<p><strong>Να αποδειχθεί ότι η γωνία</strong> <span class="math inline">\(\widehat{B I_a \Gamma}\)</span>, που σχηματίζεται στο παράκεντρο <span class="math inline">\(I_a\)</span> από τις εξωτερικές διχοτόμους των γωνιών <span class="math inline">\(\widehat{B}\)</span> και <span class="math inline">\(\widehat{\Gamma}\)</span> του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, ισούται με: <span class="math display">\[\widehat{B I_a \Gamma} = 90^\circ - \dfrac{\widehat{A}}{2}\]</span></p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3450773501.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+</div>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle I_a B \Gamma\)</span>, το άθροισμα των εσωτερικών γωνιών είναι <span class="math inline">\(180^\circ\)</span>: <span class="math display">\[\widehat{B I_a \Gamma} + \widehat{I_a B \Gamma} + \widehat{I_a \Gamma B} = 180^\circ \quad (1)\]</span></p>
+<ul>
+<li><p>Η γωνία <span class="math inline">\(\widehat{I_a B \Gamma}\)</span> είναι το μισό της εξωτερικής γωνίας <span class="math inline">\(\widehat{B}_{ex}\)</span>, δηλαδή:</p></li>
+<li><p><span class="math display">\[\widehat{I_a B \Gamma} = \dfrac{\widehat{B}_{ex}}{2} = \dfrac{180^\circ - \widehat{B}}{2} = 90^\circ - \dfrac{\widehat{B}}{2}\]</span></p></li>
+<li><p>Η γωνία <span class="math inline">\(\widehat{I_a \Gamma B}\)</span> είναι το μισό της εξωτερικής γωνίας <span class="math inline">\(\widehat{\Gamma}_{ex}\)</span>, δηλαδή: <span class="math display">\[\widehat{I_a \Gamma B} = \dfrac{\widehat{\Gamma}_{ex}}{2} = \dfrac{180^\circ - \widehat{\Gamma}}{2} = 90^\circ - \dfrac{\widehat{\Gamma}}{2}\]</span></p></li>
+</ul>
+<p>Αντικαθιστούμε τις τιμές αυτές στη σχέση <span class="math inline">\((1)\)</span>: <span class="math display">\[\widehat{B I_a \Gamma} = 180^\circ - \left(90^\circ - \dfrac{\widehat{B}}{2} + 90^\circ - \dfrac{\widehat{\Gamma}}{2}\right) = 180^\circ - 180^\circ + \dfrac{\widehat{B} + \widehat{\Gamma}}{2} = \dfrac{\widehat{B} + \widehat{\Gamma}}{2} \quad (2)\]</span> Στο αρχικό τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> ισχύει: <span class="math display">\[\widehat{B} + \widehat{\Gamma} = 180^\circ - \widehat{A}\]</span> Αντικαθιστούμε στη σχέση <span class="math inline">\((2)\)</span>: <span class="math display">\[\widehat{B I_a \Gamma} = \dfrac{180^\circ - \widehat{A}}{2} = 90^\circ - \dfrac{\widehat{A}}{2}\]</span> Συνεπώς, αποδείχθηκε η ζητούμενη σχέση: <span class="math inline">\(\widehat{B I_a \Gamma} = 90^\circ - \dfrac{\widehat{A}}{2}\)</span>.</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 6</strong></p>
+</div>
+<p><strong>Αν</strong> <span class="math inline">\(\tau\)</span> είναι η ημιπερίμετρος του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span>, να αποδειχθεί ότι οι αποστάσεις της κορυφής <span class="math inline">\(A\)</span> από τα σημεία επαφής του παρεγγεγραμμένου κύκλου <span class="math inline">\((I_a, \rho_a)\)</span> με τις προεκτάσεις των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span> είναι ίσες με την ημιπερίμετρο <span class="math inline">\(\tau\)</span>: <span class="math inline">\(AZ = AE = \tau\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4181713384.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="280"></p>
+</figure>
+</div>
+</div>
+<p>Έστω <span class="math inline">\(Z\)</span> και <span class="math inline">\(E\)</span> τα σημεία επαφής του παρεγγεγραμμένου κύκλου με τις προεκτάσεις των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span> αντίστοιχα, και <span class="math inline">\(\Delta\)</span> το σημείο επαφής με την πλευρά <span class="math inline">\(B\Gamma\)</span>.</p>
+<p>Τα εφαπτόμενα τμήματα από την κορυφή <span class="math inline">\(A\)</span> προς τον κύκλο είναι ίσα: <span class="math inline">\(AZ = AE\)</span>.</p>
+<p>Αναλύουμε το άθροισμα των δύο αυτών ίσων τμημάτων: <span class="math display">\[AZ + AE = (AB + BZ) + (A\Gamma + \Gamma E) \quad (1)\]</span> Τα εφαπτόμενα τμήματα από τις κορυφές <span class="math inline">\(B\)</span> και <span class="math inline">\(\Gamma\)</span> προς τον κύκλο είναι επίσης ίσα:</p>
+<ul>
+<li><p>Από την κορυφή <span class="math inline">\(B\)</span>: <span class="math inline">\(BZ = B\Delta\)</span></p></li>
+<li><p>Από την κορυφή <span class="math inline">\(\Gamma\)</span>: <span class="math inline">\(\Gamma E = \Gamma\Delta\)</span></p></li>
+</ul>
+<p>Αντικαθιστούμε τις ισότητες αυτές στη σχέση <span class="math inline">\((1)\)</span>: <span class="math display">\[AZ + AE = (AB + B\Delta) + (A\Gamma + \Gamma\Delta) = AB + A\Gamma + (B\Delta + \Gamma\Delta) = \gamma + \beta + \alpha\]</span> Εφόσον η περίμετρος του τριγώνου είναι <span class="math inline">\(\alpha + \beta + \gamma = 2\tau\)</span>, η σχέση γίνεται: <span class="math display">\[AZ + AE = 2\tau\]</span> Επειδή <span class="math inline">\(AZ = AE\)</span>, προκύπτει άμεσα ότι: <span class="math display">\[AZ = AE = \tau\]</span> Δηλαδή, η απόσταση από την κορυφή μέχρι τα σημεία επαφής στις προεκτάσεις ισούται με την ημιπερίμετρο του τριγώνου.</p>
+</div>
+<hr>
+</section>
+<section id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις-2" class="level4" data-number="1.3.4">
+<h4 data-number="1.3.4" class="anchored" data-anchor-id="δ.-ασκήσεις-με-πλήρεις-αποδείξεις-2"><span class="header-section-number">1.3.4</span> Δ. Ασκήσεις με Πλήρεις Αποδείξεις</h4>
+<p><strong>Άσκηση 8</strong></p>
+<p><strong>Εκφώνηση:</strong> Να αποδείξετε ότι το σημείο επαφής <span class="math inline">\(\Delta_1\)</span> του εγγεγραμμένου κύκλου με την πλευρά <span class="math inline">\(B\Gamma\)</span> και το σημείο επαφής <span class="math inline">\(\Delta_2\)</span> του παρεγγεγραμμένου κύκλου <span class="math inline">\(I_a\)</span> με την ίδια πλευρά <span class="math inline">\(B\Gamma\)</span> είναι σημεία συμμετρικά ως προς το μέσον <span class="math inline">\(M\)</span> της πλευράς <span class="math inline">\(B\Gamma\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2741632569.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<ul>
+<li><p>Από την <em>Εφαρμογή 4</em>, η απόσταση του σημείου επαφής <span class="math inline">\(\Delta_1\)</span> του εγγεγραμμένου κύκλου από την κορυφή <span class="math inline">\(B\)</span> είναι: <span class="math display">\[B\Delta_1 = \tau - \beta\]</span></p></li>
+<li><p>Από την <em>Εφαρμογή 6</em>, γνωρίζουμε ότι <span class="math inline">\(AZ = \tau\)</span>, όπου <span class="math inline">\(Z\)</span> το σημείο επαφής στην προέκταση της <span class="math inline">\(AB\)</span>.</p></li>
+</ul>
+<p>Η απόσταση του σημείου επαφής <span class="math inline">\(\Delta_2\)</span> του παρεγγεγραμμένου κύκλου από την κορυφή <span class="math inline">\(B\)</span> είναι: <span class="math display">\[B\Delta_2 = BZ = AZ - AB = \tau - \gamma\]</span></p>
+<p>Θέλουμε να αποδείξουμε ότι τα σημεία <span class="math inline">\(\Delta_1\)</span> και <span class="math inline">\(\Delta_2\)</span> ισαπέχουν από το μέσο <span class="math inline">\(M\)</span> της πλευράς <span class="math inline">\(B\Gamma\)</span>, δηλαδή <span class="math inline">\(M\Delta_1 = M\Delta_2\)</span>.</p>
+<p>Υπολογίζουμε τις αποστάσεις από την κορυφή <span class="math inline">\(B\)</span> (λαμβάνοντας υπόψη ότι <span class="math inline">\(BM = \dfrac{\alpha}{2}\)</span>): <span class="math display">\[M\Delta_1 = |BM - B\Delta_1| = \left| \dfrac{\alpha}{2} - (\tau - \beta) \right| = \left| \dfrac{\alpha}{2} - \dfrac{\alpha + \beta + \gamma}{2} + \beta \right| = \left| \dfrac{\beta - \gamma}{2} \right|\]</span> <span class="math display">\[M\Delta_2 = |BM - B\Delta_2| = \left| \dfrac{\alpha}{2} - (\tau - \gamma) \right| = \left| \dfrac{\alpha}{2} - \dfrac{\alpha + \beta + \gamma}{2} + \gamma \right| = \left| \dfrac{\gamma - \beta}{2} \right|\]</span> Επειδή <span class="math inline">\(\left| \dfrac{\beta - \gamma}{2} \right| = \left| \dfrac{\gamma - \beta}{2} \right|\)</span>, προκύπτει ότι <span class="math inline">\(M\Delta_1 = M\Delta_2\)</span>.</p>
+<p>Συνεπώς, τα δύο σημεία επαφής είναι συμμετρικά ως προς το μέσο <span class="math inline">\(M\)</span> της πλευράς <span class="math inline">\(B\Gamma\)</span>.</p>
+<p><strong>Άσκηση 9</strong></p>
+<p><strong>Εκφώνηση:</strong> Σε ορθογώνιο τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> (<span class="math inline">\(\widehat{A} = 90^\circ\)</span>), να αποδείξετε ότι η ακτίνα <span class="math inline">\(\rho_a\)</span> του παρεγγεγραμμένου κύκλου που αντιστοιχεί στην υποτείνουσα <span class="math inline">\(B\Gamma\)</span> είναι ίση με την ημιπερίμετρο <span class="math inline">\(\tau\)</span> του τριγώνου: <span class="math inline">\(\rho_a = \tau\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Έστω <span class="math inline">\(E\)</span> και <span class="math inline">\(Z\)</span> τα σημεία επαφής του παρεγγεγραμμένου κύκλου <span class="math inline">\(I_a\)</span> με τις προεκτάσεις των κάθετων πλευρών <span class="math inline">\(A\Gamma\)</span> και <span class="math inline">\(AB\)</span> αντίστοιχα.</p>
+<p>Στο τετράπλευρο <span class="math inline">\(AZI_aE\)</span>:</p>
+<ul>
+<li><p>Οι γωνίες <span class="math inline">\(\widehat{AZI_a}\)</span> και <span class="math inline">\(\widehat{AEI_a}\)</span> είναι ορθές (<span class="math inline">\(90^\circ\)</span>), καθώς οι ακτίνες του παρεγγεγραμμένου κύκλου <span class="math inline">\(I_aZ\)</span> και <span class="math inline">\(I_aE\)</span> είναι κάθετες στις εφαπτόμενες ευθείες <span class="math inline">\(AB\)</span> και <span class="math inline">\(A\Gamma\)</span>.</p></li>
+<li><p>Η γωνία <span class="math inline">\(\widehat{A}\)</span> του τριγώνου είναι ορθή (<span class="math inline">\(90^\circ\)</span>) από την υπόθεση. Συνεπώς, το τετράπλευρο <span class="math inline">\(AZI_aE\)</span> είναι ορθογώνιο.</p></li>
+</ul>
+<p>Επίσης, οι διαδοχικές πλευρές του <span class="math inline">\(I_aE\)</span> και <span class="math inline">\(I_aZ\)</span> είναι ίσες με την ακτίνα <span class="math inline">\(\rho_a\)</span> του κύκλου (<span class="math inline">\(I_aE = I_aZ = \rho\_a\)</span>).</p>
+<p>Ένα ορθογώνιο με δύο διαδοχικές πλευρές ίσες είναι τετράγωνο.</p>
+<p>Συνεπώς: <span class="math display">\[AZ = AE = \rho_a\]</span> Από την <em>Εφαρμογή 6</em>, το εφαπτόμενο τμήμα <span class="math inline">\(AZ\)</span> ισούται με την ημιπερίμετρο <span class="math inline">\(\tau\)</span>.</p>
+<p>Άρα: <span class="math display">\[\rho_a = \tau\]</span></p>
+<p><strong>Άσκηση 10</strong></p>
+<p><strong>Εκφώνηση:</strong> Αν η γωνία <span class="math inline">\(\widehat{B I_a \Gamma}\)</span> που σχηματίζεται στο παράκεντρο <span class="math inline">\(I_a\)</span> είναι ίση με <span class="math inline">\(45^\circ\)</span>, να αποδείξετε ότι το αρχικό τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> είναι ορθογώνιο στην κορυφή <span class="math inline">\(A\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Από την <em>Εφαρμογή 5</em>, γνωρίζουμε τη σχέση για τη γωνία του παρακέντρου: <span class="math display">\[\widehat{B I_a \Gamma} = 90^\circ - \dfrac{\widehat{A}}{2}\]</span> Από τα δεδομένα της άσκησης, η γωνία αυτή είναι ίση με <span class="math inline">\(45^\circ\)</span>: <span class="math display">\[90^\circ - \dfrac{\widehat{A}}{2} = 45^\circ \implies \dfrac{\widehat{A}}{2} = 90^\circ - 45^\circ \implies \dfrac{\widehat{A}}{2} = 45^\circ \implies \widehat{A} = 90^\circ\]</span></p>
+<p>Εφόσον η γωνία <span class="math inline">\(\widehat{A}\)</span> είναι ίση με <span class="math inline">\(90^\circ\)</span>, το τρίγωνο <span class="math inline">\(\triangle AB\Gamma\)</span> είναι ορθογώνιο στην κορυφή <span class="math inline">\(A\)</span>.</p>
+<p><strong>Άσκηση 11</strong></p>
+<p><strong>Εκφώνηση:</strong> Να αποδείξετε ότι το εμβαδόν <span class="math inline">\(E\)</span> του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> εκφράζεται από τη σχέση <span class="math inline">\(E = (\tau - \alpha)\rho_a\)</span>, όπου <span class="math inline">\(\rho_a\)</span> η ακτίνα του παρεγγεγραμμένου κύκλου που εφάπτεται στην πλευρά <span class="math inline">\(\alpha\)</span>.</p>
+<p><strong>Απόδειξη:</strong></p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Σχεδιάστε το σχήμα</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Το παράκεντρο <span class="math inline">\(I_a\)</span> συνδέεται με τις κορυφές του τριγώνου <span class="math inline">\(A, B\)</span> και <span class="math inline">\(\Gamma\)</span>.</p>
+<p>Το εμβαδόν του τριγώνου <span class="math inline">\(\triangle AB\Gamma\)</span> εκφράζεται ως άθροισμα και διαφορά των εμβαδών των επιμέρους τριγώνων: <span class="math display">\[E_{AB\Gamma} = E_{I_aAB} + E_{I_aA\Gamma} - E_{I_aB\Gamma}\]</span> Τα ύψη των τριγώνων αυτών με βάσεις <span class="math inline">\(AB, A\Gamma\)</span> και <span class="math inline">\(B\Gamma\)</span> είναι αντίστοιχα ίσα με την ακτίνα <span class="math inline">\(\rho_a\)</span> του παρεγγεγραμμένου κύκλου:</p>
+<ul>
+<li><p><span class="math inline">\(E\_{I_aAB} = \dfrac{1}{2} \cdot AB \cdot \rho\_a = \dfrac{1}{2} \gamma \rho*a\)</span></p></li>
+<li><p><span class="math inline">\(E*{I_aA\Gamma} = \dfrac{1}{2} \cdot A\Gamma \cdot \rho\_a = \dfrac{1}{2} \beta \rho*a\)</span></p></li>
+<li><p><span class="math inline">\(E*{I_aB\Gamma} = \dfrac{1}{2} \cdot B\Gamma \cdot \rho\_a = \dfrac{1}{2} \alpha \rho\_a\)</span></p></li>
+</ul>
+<p>Αντικαθιστούμε στην αρχική σχέση: <span class="math display">\[E_{AB\Gamma} = \dfrac{1}{2} \gamma \rho_a + \dfrac{1}{2} \beta \rho_a - \dfrac{1}{2} \alpha \rho_a = \dfrac{1}{2} (\beta + \gamma - \alpha) \rho_a\]</span> Εφόσον <span class="math inline">\(\tau = \dfrac{\alpha + \beta + \gamma}{2} \implies \beta + \gamma - \alpha = 2(\tau - \alpha)\)</span>, η σχέση γίνεται: <span class="math display">\[E_{AB\Gamma} = \dfrac{1}{2} \cdot 2(\tau - \alpha) \rho_a = (\tau - \alpha)\rho_a\]</span></p>
+<p>Συνεπώς, αποδείχθηκε ότι <span class="math inline">\(E = (\tau - \alpha)\rho_a\)</span>.</p>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 12</strong></p>
+</div>
+<p><strong>Εκφώνηση:</strong></p>
+<ul>
+<li><p>Τρίγωνο <span class="math inline">\(AB\Gamma\)</span> με <span class="math inline">\(AB &lt; A\Gamma\)</span>.</p></li>
+<li><p><span class="math inline">\(I_a\)</span>: το παρέγκεντρο που αντιστοιχεί στην πλευρά <span class="math inline">\(B\Gamma\)</span> (απέναντι από την κορυφή <span class="math inline">\(A\)</span>).</p></li>
+<li><p>Από το <span class="math inline">\(I_a\)</span> φέρουμε ευθεία παράλληλη στην <span class="math inline">\(AB\)</span>, η οποία τέμνει τη <span class="math inline">\(B\Gamma\)</span> στο <span class="math inline">\(\Delta\)</span> και την <span class="math inline">\(A\Gamma\)</span> στο <span class="math inline">\(E\)</span>.</p></li>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(\Delta E = AE - B\Delta\)</span>.</p></li>
+</ul>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2208061398.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<ol type="1">
+<li><strong>Ισοσκελές τρίγωνο</strong> <span class="math inline">\(\triangle AEI_a\)</span>:</li>
+</ol>
+<ul>
+<li>Το ευθύγραμμο τμήμα <span class="math inline">\(AI_a\)</span> είναι η <strong>εσωτερική διχοτόμος</strong> της γωνίας <span class="math inline">\(\widehat{A}\)</span>, άρα: <span class="math display">\[\widehat{EAI_a} = \widehat{BAI_a} = \frac{\widehat{A}}{2}\]</span></li>
+<li>Επειδή <span class="math inline">\(EI_a \parallel AB\)</span>, οι εντός εναλλάξ γωνίες ως προς την τέμνουσα <span class="math inline">\(AI_a\)</span> είναι ίσες: <span class="math display">\[\widehat{EI_aA} = \widehat{BAI_a} = \frac{\widehat{A}}{2}\]</span></li>
+<li>Επομένως, στο τρίγωνο <span class="math inline">\(\triangle AEI_a\)</span> ισχύει <span class="math inline">\(\widehat{EAI_a} = \widehat{EI_aA}\)</span>, οπότε είναι <strong>ισοσκελές</strong> με: <span class="math display">\[EI_a = AE \quad (1)\]</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Ισοσκελές τρίγωνο</strong> <span class="math inline">\(\triangle B\Delta I_a\)</span>:</li>
+</ol>
+<ul>
+<li>Το ευθύγραμμο τμήμα <span class="math inline">\(BI_a\)</span> είναι η <strong>εξωτερική διχοτόμος</strong> της γωνίας <span class="math inline">\(\widehat{B}\)</span>. Αν <span class="math inline">\(Bx\)</span> είναι η προέκταση της πλευράς <span class="math inline">\(AB\)</span> πέρα από το <span class="math inline">\(B\)</span>, τότε: <span class="math display">\[\widehat{xBI_a} = \widehat{\Delta BI_a} = \frac{\widehat{B}_{\text{εξ}}}{2}\]</span></li>
+<li>Επειδή <span class="math inline">\(EI_a \parallel AB\)</span> (και συνεπώς <span class="math inline">\(\Delta I_a \parallel Bx\)</span>), οι εντός εναλλάξ γωνίες ως προς την τέμνουσα <span class="math inline">\(BI_a\)</span> είναι ίσες: <span class="math display">\[\widehat{\Delta I_a B} = \widehat{xBI_a}\]</span></li>
+<li>Άρα στο τρίγωνο <span class="math inline">\(\triangle B\Delta I_a\)</span> ισχύει <span class="math inline">\(\widehat{\Delta I_a B} = \widehat{\Delta BI_a}\)</span>, οπότε είναι <strong>ισοσκελές</strong> με: <span class="math display">\[\Delta I_a = B\Delta \quad (2)\]</span></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Υπολογισμός του τμήματος</strong> <span class="math inline">\(\Delta E\)</span>:</li>
+</ol>
+<ul>
+<li>Το σημείο <span class="math inline">\(\Delta\)</span> βρίσκεται ανάμεσα στα <span class="math inline">\(E\)</span> και <span class="math inline">\(I_a\)</span>, επομένως: <span class="math display">\[EI_a = \Delta E + \Delta I_a \iff \Delta E = EI_a - \Delta I_a\]</span></li>
+<li>Αντικαθιστώντας από τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>: <span class="math display">\[\Delta E = AE - B\Delta\]</span></li>
+</ul>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>Άσκηση 13</strong></p>
+</div>
+<p><strong>Δεδομένα:</strong></p>
+<ul>
+<li>Τρίγωνο <span class="math inline">\(AB\Gamma\)</span> με <span class="math inline">\(AB &lt; A\Gamma\)</span>.</li>
+<li><span class="math inline">\(A\Delta\)</span>: εσωτερική διχοτόμος της γωνίας <span class="math inline">\(\widehat{A}\)</span> (<span class="math inline">\(\widehat{BA\Delta} = \widehat{\Delta A\Gamma} = \dfrac{\widehat{A}}{2}\)</span>).</li>
+<li><span class="math inline">\(M\)</span> σημείο της <span class="math inline">\(B\Gamma\)</span>. Από το <span class="math inline">\(M\)</span> φέρουμε ευθεία παράλληλη στην <span class="math inline">\(A\Delta\)</span>, που τέμνει την προέκταση της <span class="math inline">\(BA\)</span> στο <span class="math inline">\(E\)</span> και την πλευρά <span class="math inline">\(A\Gamma\)</span> στο <span class="math inline">\(Z\)</span>.</li>
+</ul>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4167384426.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>α. <strong>Απόδειξη ότι το τρίγωνο</strong> <span class="math inline">\(EAZ\)</span> είναι ισοσκελές:</p>
+</div>
+<ul>
+<li><p>Επειδή <span class="math inline">\(EZ \parallel A\Delta\)</span>:</p>
+<ul>
+<li><p>Για την τέμνουσα <span class="math inline">\(A\Gamma\)</span>, οι γωνίες <span class="math inline">\(\widehat{AZE}\)</span> και <span class="math inline">\(\widehat{\Delta A\Gamma}\)</span> είναι <strong>εντός εναλλάξ</strong>, άρα: <span class="math display">\[\widehat{AZE} = \widehat{\Delta A\Gamma} = \frac{\widehat{A}}{2}\]</span></p></li>
+<li><p>Για την τέμνουσα <span class="math inline">\(EB\)</span>, οι γωνίες <span class="math inline">\(\widehat{AEZ}\)</span> και <span class="math inline">\(\widehat{BA\Delta}\)</span> είναι <strong>εντός εκτός και επί τα αυτά μέρη</strong> (αντίστοιχες), άρα: <span class="math display">\[\widehat{AEZ} = \widehat{BA\Delta} = \frac{\widehat{A}}{2}\]</span></p></li>
+</ul></li>
+<li><p>Εφόσον <span class="math inline">\(\widehat{AEZ} = \widehat{AZE} = \dfrac{\widehat{A}}{2}\)</span>, το τρίγωνο <span class="math inline">\(\triangle EAZ\)</span> είναι <strong>ισοσκελές</strong> με: <span class="math display">\[AE = AZ\]</span></p></li>
+</ul>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>β. <strong>Απόδειξη ότι</strong> <span class="math inline">\(BE + \Gamma Z = \text{σταθερό}\)</span>:</p>
+</div>
+<ul>
+<li>Το σημείο <span class="math inline">\(A\)</span> βρίσκεται μεταξύ των <span class="math inline">\(B\)</span> και <span class="math inline">\(E\)</span>, άρα: <span class="math display">\[BE = AB + AE\]</span></li>
+<li>Το σημείο <span class="math inline">\(Z\)</span> βρίσκεται εσωτερικά του τμήματος <span class="math inline">\(A\Gamma\)</span>, άρα: <span class="math display">\[\Gamma Z = A\Gamma - AZ\]</span></li>
+<li>Προσθέτοντας κατά μέλη: <span class="math display">\[BE + \Gamma Z = (AB + AE) + (A\Gamma - AZ)\]</span></li>
+<li>Επειδή από το ερώτημα (α) ισχύει <span class="math inline">\(AE = AZ\)</span>: <span class="math display">\[BE + \Gamma Z = AB + A\Gamma = \text{σταθερό}\]</span> <em>(ίσο με το άθροισμα των δύο πλευρών του δοσμένου τριγώνου)</em>.</li>
+</ul>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>γ. <strong>Περίπτωση όπου το</strong> <span class="math inline">\(M\)</span> είναι το μέσο της <span class="math inline">\(B\Gamma\)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2759303445.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<p><strong>A. Απόδειξη ότι</strong> <span class="math inline">\(BE = \Gamma Z = \dfrac{A\Gamma + AB}{2}\)</span>:</p>
+<ol type="1">
+<li><p>Από το <span class="math inline">\(B\)</span> φέρουμε παράλληλη προς την <span class="math inline">\(A\Gamma\)</span>, η οποία τέμνει την ευθεία <span class="math inline">\(EZ\)</span> στο σημείο <span class="math inline">\(N\)</span>.</p></li>
+<li><p>Συγκρίνουμε τα τρίγωνα <span class="math inline">\(\triangle BMN\)</span> και <span class="math inline">\(\triangle \Gamma MZ\)</span>:</p></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(BM = M\Gamma\)</span> (το <span class="math inline">\(M\)</span> είναι μέσο της <span class="math inline">\(B\Gamma\)</span>).</p></li>
+<li><p><span class="math inline">\(\widehat{BMN} = \widehat{\Gamma MZ}\)</span> (κατακορυφήν γωνίες).</p></li>
+<li><p><span class="math inline">\(\widehat{MBN} = \widehat{M\Gamma Z}\)</span> (εντός εναλλάξ, αφού <span class="math inline">\(BN \parallel A\Gamma\)</span>).</p>
+<p>Άρα <span class="math inline">\(\triangle BMN \cong \triangle \Gamma MZ\)</span> (<span class="math inline">\(\Gamma-\Pi-\Gamma\)</span>), οπότε: <span class="math display">\[BN = \Gamma Z\]</span></p></li>
+</ul>
+<ol start="3" type="1">
+<li>Στο τρίγωνο <span class="math inline">\(\triangle BEN\)</span>:</li>
+</ol>
+<ul>
+<li>Επειδή <span class="math inline">\(BN \parallel AZ\)</span>, η εντός εναλλάξ γωνία είναι <span class="math inline">\(\widehat{BNE} = \widehat{AZE} = \dfrac{\widehat{A}}{2}\)</span>.</li>
+<li>Επίσης γνωρίζουμε ότι <span class="math inline">\(\widehat{BEN} = \dfrac{\widehat{A}}{2}\)</span>.</li>
+<li>Άρα το <span class="math inline">\(\triangle BEN\)</span> είναι ισοσκελές με <span class="math inline">\(BE = BN\)</span>.</li>
+</ul>
+<ol start="4" type="1">
+<li><p>Συνεπώς: <span class="math display">\[BE = \Gamma Z\]</span></p></li>
+<li><p>Χρησιμοποιώντας το αποτέλεσμα του ερωτήματος (β): <span class="math display">\[BE + \Gamma Z = A\Gamma + AB \implies 2 \cdot BE = A\Gamma + AB \implies BE = \Gamma Z = \frac{A\Gamma + AB}{2}\]</span></p></li>
+</ol>
+<p><strong>B. Απόδειξη ότι</strong> <span class="math inline">\(AE = AZ = \dfrac{A\Gamma - AB}{2}\)</span>:</p>
+<ul>
+<li><p>Από τη σχέση <span class="math inline">\(BE = AB + AE\)</span>, έχουμε: <span class="math display">\[AE = BE - AB = \frac{A\Gamma + AB}{2} - AB = \frac{A\Gamma + AB - 2AB}{2} = \frac{A\Gamma - AB}{2}\]</span></p></li>
+<li><p>Επειδή <span class="math inline">\(AE = AZ\)</span>, προκύπτει άμεσα: <span class="math display">\[AE = AZ = \frac{A\Gamma - AB}{2}\]</span></p></li>
+</ul>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<p><strong>’Ασκηση 14</strong></p>
+</div>
+<p><strong>Δεδομένα &amp; Ζητούμενο</strong></p>
+<ul>
+<li>Τρίγωνο <span class="math inline">\(AB\Gamma\)</span>.</li>
+<li><span class="math inline">\(B\Delta\)</span>: εσωτερική διχοτόμος της γωνίας <span class="math inline">\(\widehat{B}\)</span>.</li>
+<li><span class="math inline">\(Bx\)</span>: εξωτερική διχοτόμος της γωνίας <span class="math inline">\(\widehat{B}\)</span>.</li>
+<li><span class="math inline">\(E, K\)</span>: σημεία της πλευράς (ή της ευθείας) <span class="math inline">\(AB\)</span>.</li>
+<li>Κύκλος <span class="math inline">\((E, EB)\)</span> που τέμνει τη <span class="math inline">\(B\Delta\)</span> στο <span class="math inline">\(Z\)</span>.</li>
+<li>Κύκλος <span class="math inline">\((K, KB)\)</span> που τέμνει τη <span class="math inline">\(Bx\)</span> στο <span class="math inline">\(M\)</span>.</li>
+</ul>
+<p><strong>Ζητούμενο:</strong> Να αποδειχθεί ότι <span class="math inline">\(EZ \parallel MK\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p><strong>Απόδειξη</strong></p>
+</div>
+<p><strong>1. Μελέτη του ισοσκελούς τριγώνου <span class="math inline">\(\triangle EBZ\)</span></strong></p>
+<ul>
+<li>Επειδή το <span class="math inline">\(Z\)</span> ανήκει στον κύκλο <span class="math inline">\((E, EB)\)</span>, τα τμήματα <span class="math inline">\(EB\)</span> και <span class="math inline">\(EZ\)</span> είναι ακτίνες του ίδιου κύκλου: <span class="math display">\[EB = EZ\]</span></li>
+<li>Άρα το τρίγωνο <span class="math inline">\(\triangle EBZ\)</span> είναι <strong>ισοσκελές</strong> με βάση τη <span class="math inline">\(BZ\)</span>.</li>
+<li>Επομένως, οι προσκείμενες στη βάση γωνίες είναι ίσες: <span class="math display">\[\widehat{EZB} = \widehat{EBZ} = \frac{\widehat{B}}{2}\]</span> <em>(αφού η <span class="math inline">\(B\Delta\)</span> είναι η εσωτερική διχοτόμος της <span class="math inline">\(\widehat{B}\)</span>)</em>.</li>
+<li>Η γωνία της κορυφής <span class="math inline">\(\widehat{ZEB}\)</span> ισούται με: <span class="math display">\[\widehat{ZEB} = 180^\circ - (\widehat{EBZ} + \widehat{EZB}) = 180^\circ - 2 \cdot \frac{\widehat{B}}{2} = 180^\circ - \widehat{B} \quad (1)\]</span></li>
+</ul>
+<p><strong>2. Μελέτη του ισοσκελούς τριγώνου <span class="math inline">\(\triangle KBM\)</span></strong></p>
+<ul>
+<li>Γνωρίζουμε ότι η εσωτερική και η εξωτερική διχοτόμος μιας γωνίας είναι <strong>κάθετες μεταξύ τους</strong>: <span class="math display">\[B\Delta \perp Bx \implies \widehat{\Delta B x} = 90^\circ\]</span></li>
+<li>Επομένως, η γωνία <span class="math inline">\(\widehat{KBM}\)</span> (η γωνία μεταξύ της πλευράς <span class="math inline">\(AB\)</span> και της εξωτερικής διχοτόμου <span class="math inline">\(Bx\)</span>) είναι: <span class="math display">\[\widehat{KBM} = 90^\circ - \widehat{AB\Delta} = 90^\circ - \frac{\widehat{B}}{2}\]</span></li>
+<li>Επειδή το <span class="math inline">\(M\)</span> ανήκει στον κύκλο <span class="math inline">\((K, KB)\)</span>, τα τμήματα <span class="math inline">\(KB\)</span> και <span class="math inline">\(KM\)</span> είναι ακτίνες του ίδιου κύκλου: <span class="math display">\[KB = KM\]</span></li>
+<li>Άρα το τρίγωνο <span class="math inline">\(\triangle KBM\)</span> είναι <strong>ισοσκελές</strong> με βάση τη <span class="math inline">\(BM\)</span>, οπότε: <span class="math display">\[\widehat{KMB} = \widehat{KBM} = 90^\circ - \frac{\widehat{B}}{2}\]</span></li>
+<li>Η γωνία της κορυφής <span class="math inline">\(\widehat{BKM}\)</span> ισούται με: <span class="math display">\[\widehat{BKM} = 180^\circ - 2 \cdot \widehat{KBM} = 180^\circ - 2\left(90^\circ - \frac{\widehat{B}}{2}\right) = 180^\circ - 180^\circ + \widehat{B} = \widehat{B} \quad (2)\]</span></li>
+</ul>
+<p><strong>3. Απόδειξη Παραλληλίας <span class="math inline">\(EZ \parallel MK\)</span></strong></p>
+<ul>
+<li>Θεωρούμε τις ευθείες <span class="math inline">\(EZ\)</span> και <span class="math inline">\(MK\)</span> με τέμνουσα την ευθεία <span class="math inline">\(AB\)</span> (στην οποία ανήκουν τα σημεία <span class="math inline">\(E, K, B\)</span>).</li>
+<li>Οι γωνίες <span class="math inline">\(\widehat{ZEB}\)</span> και <span class="math inline">\(\widehat{BKM}\)</span> είναι <strong>εντός και επί τα αυτά μέρη</strong>.</li>
+<li>Το άθροισμά τους από τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span> είναι: <span class="math display">\[\widehat{ZEB} + \widehat{BKM} = (180^\circ - \widehat{B}) + \widehat{B} = 180^\circ\]</span></li>
+</ul>
+<p>Επειδή οι εντός και επί τα αυτά μέρη γωνίες είναι <strong>παραπληρωματικές</strong> (έχουν άθροισμα <span class="math inline">\(180^\circ\)</span>), οι ευθείες είναι παράλληλες: <span class="math display">\[EZ \parallel MK\]</span></p>
+</div>
+<hr>
+<div class="callout callout-style-default callout-important callout-titled" title="ΣΑΣ ΕΥΧΟΜΑΙ">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Σημαντικό</span>ΣΑΣ ΕΥΧΟΜΑΙ
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ !!!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
