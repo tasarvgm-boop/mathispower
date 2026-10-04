@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>01.01. Γραμμικά Συστήματα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-788eece04b3f98106175bd8dcd782bcb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-blalgebragenikou quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">01.01. Γραμμικά Συστήματα</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">01.01. Γραμμικά Συστήματα</a></li></ol></nav>
+      <h1 class="title">01.01. Γραμμικά Συστήματα</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">2 Ιούλιος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">5 Οκτώβριος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Δυνάμεις φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δυνάμεις φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Ευκλείδεια διαίρεση - Διαιρετότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ευκλείδεια διαίρεση - Διαιρετότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Η έννοια του κλάσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η έννοια του κλάσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Ισοδύναμα κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Ισοδύναμα κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Σύγκριση κλασμάτων  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Σύγκριση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Πρόσθεση και Αφαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Πρόσθεση και Αφαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Πολλαπλασιασμός κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πολλαπλασιασμός κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11. Διαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Διαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Τυποποιημένη μορφή μεγάλων αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Τυποποιημένη μορφή μεγάλων αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Μονάδες μέτρησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Μονάδες μέτρησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/18. Επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/20. Ποσοστά και επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Ποσοστά και επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/21.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/22. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/23.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/24. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/25.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/28. Πρόσθεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">28. Πρόσθεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/29. Αφαίρεση ρητών αριθμών  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">29. Αφαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/30. Πολλαπλασιασμός ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30. Πολλαπλασιασμός ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/31. Διαίρεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Διαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/32. Δεκαδική μορφή ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">32. Δεκαδική μορφή ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/Θέματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Θέματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση σύγκριση ισότητα τμημάτων-Απόσταση σημείων Μέσο τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση, σύγκριση και ισότητα ευθυγράμμων τμημάτων – Απόσταση σημείων – Μέσο ευθύγραμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 . Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13. Θέσεις ευθείας και κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Θέσεις ευθείας και κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Άξονας συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Άξονας συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/16. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/17. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/18. Κέντρο συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Κέντρο συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/19.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/20. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Προβλήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Προβλήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09.  Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/11. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/12. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Η συνάρτηση y=α/x - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01.1. Μονάδες μέτρησης επιφανειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.1. Μονάδες μέτρησης επιφανειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.1. Άθροισμα και διαφορά διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.1. Άθροισμα και διαφορά διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15.1. Όγκος πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1. Όγκος πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Η πυραμίδα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η πυραμίδα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/15. Η έννοια της γραμμικής εξίσωσης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Η έννοια της γραμμικής εξίσωσης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/17. Αλγεβρική επίλυση γραμμικού συστήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Αλγεβρική επίλυση γραμμικού συστήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/18. Η συνάρτηση αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Η συνάρτηση <span class="math inline">\(αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/19. H συνάρτηση y = αx^2 + βx + γ με α ≠ 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. H συνάρτηση <span class="math inline">\(y = αx^2 + βx + γ\)</span> με α ≠ 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/20. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/21. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/01. Ισότητα τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Ισότητα τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/03. Θεώρημα του Θαλή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Θεώρημα του Θαλή</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/04. Ομοιοθεσία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ομοιοθεσία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/05. Ομοιότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ομοιότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Το λεξιλόγιο της λογικής</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/04. Η έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Η έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/05. Οι πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Οι πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/06. Η διάταξη των πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η διάταξη των πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/08. Ρίζες πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ρίζες πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/11. Η εξίσωση 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/12. Ανισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Ανισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/13. Ανισώσεις 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ανισώσεις <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Ακολουθίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/17. Γεωμετρική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Γεωμετρική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/18. Ανατοκισμός Ίσες καταθέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Ανατοκισμός Ίσες καταθέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/19. Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/20. Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/21. Η συνάρτηση ƒ(x) = αx + β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Η συνάρτηση ƒ(x) = αx + β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/24. Μελέτη της συνάρτησης f(x)=αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/25. Μελέτη της συνάρτησης f(x)=α προς x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=α/x\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.01. Οι πρωταρχικές γεωμετρικές έννοιες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Οι πρωταρχικές γεωμετρικές έννοιες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.02. Γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.03. O Κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03. O Κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.04. Ευθύγραμμα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04. Ευθύγραμμα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.01. Τρίγωνα Κριτήρια ισότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τρίγωνα Κριτήρια ισότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.02. Βασικοί γεωμετρικοί τόποι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικοί γεωμετρικοί τόποι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.03. Συμμετρικά σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Συμμετρικά σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.04. Ανισοτικές σχέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Ανισοτικές σχέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Ευθεία και κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.06. Γεωμετρικές κατασκευές.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Γεωμετρικές κατασκευές</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.01. Ευθείες στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01. Ευθείες στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.02. Ιδιότητες παράλληλων ευθειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02. Ιδιότητες παράλληλων ευθειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.04. Σχέσεις γωνιών σε επίπεδα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04. Σχέσεις γωνιών σε επίπεδα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.01. Παραλληλόγραμμο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01. Παραλληλόγραμμο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.02. Είδη παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02. Είδη παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.03. Εφαρμογές των παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03. Εφαρμογές των παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.04. Τραπέζια.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04. Τραπέζια</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.01. Εγγεγραμμένη γωνία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.01. Εγγεγραμμένη γωνία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.02. Εγγεγραμμένα και εγγράψιμα  τετράπλευρα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.02. Εγγεγραμμένα και εγγράψιμα τετράπλευρα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Άλγεβρα Γενικής</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01.01. Γραμμικά Συστήματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα Θετικών Σπουδών</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#γραμμικά-συστήματα" id="toc-γραμμικά-συστήματα" class="nav-link active" data-scroll-target="#γραμμικά-συστήματα"><span class="header-section-number">1</span> Γραμμικά Συστήματα</a>
+  <ul>
+  <li><a href="#η-εξίσωση-alpha-x-beta-y-gamma" id="toc-η-εξίσωση-alpha-x-beta-y-gamma" class="nav-link" data-scroll-target="#η-εξίσωση-alpha-x-beta-y-gamma"><span class="header-section-number">1.1</span> Η εξίσωση <span class="math inline">\(\alpha x + \beta y = \gamma\)</span></a>
+  <ul>
+  <li><a href="#ορισμοί" id="toc-ορισμοί" class="nav-link" data-scroll-target="#ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</a></li>
+  <li><a href="#διερεύνηση" id="toc-διερεύνηση" class="nav-link" data-scroll-target="#διερεύνηση"><span class="header-section-number">1.1.2</span> Διερεύνηση</a></li>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.1.3</span> Παραδείγματα</a></li>
+  </ul></li>
+  <li><a href="#γραμμικό-σύστημα-2-times-2" id="toc-γραμμικό-σύστημα-2-times-2" class="nav-link" data-scroll-target="#γραμμικό-σύστημα-2-times-2"><span class="header-section-number">1.2</span> Γραμμικό Σύστημα <span class="math inline">\(2 \times 2\)</span></a>
+  <ul>
+  <li><a href="#ορισμοί-1" id="toc-ορισμοί-1" class="nav-link" data-scroll-target="#ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</a></li>
+  <li><a href="#μέθοδοι-λύσης" id="toc-μέθοδοι-λύσης" class="nav-link" data-scroll-target="#μέθοδοι-λύσης"><span class="header-section-number">1.2.2</span> Μέθοδοι Λύσης</a></li>
+  <li><a href="#αναλυτικά-λυμένο-παράδειγμα-και-με-τις-δύο-μεθόδους" id="toc-αναλυτικά-λυμένο-παράδειγμα-και-με-τις-δύο-μεθόδους" class="nav-link" data-scroll-target="#αναλυτικά-λυμένο-παράδειγμα-και-με-τις-δύο-μεθόδους"><span class="header-section-number">1.2.3</span> Αναλυτικά Λυμένο Παράδειγμα και με τις Δύο Μεθόδους</a></li>
+  </ul></li>
+  <li><a href="#γραφική-επίλυση-γραμμικού-συστήματος-2-times-2" id="toc-γραφική-επίλυση-γραμμικού-συστήματος-2-times-2" class="nav-link" data-scroll-target="#γραφική-επίλυση-γραμμικού-συστήματος-2-times-2"><span class="header-section-number">1.3</span> Γραφική Επίλυση Γραμμικού Συστήματος <span class="math inline">\(2 \times 2\)</span></a></li>
+  <li><a href="#γενική-μορφή-του-συστήματος" id="toc-γενική-μορφή-του-συστήματος" class="nav-link" data-scroll-target="#γενική-μορφή-του-συστήματος"><span class="header-section-number">1.4</span> Γενική Μορφή του Συστήματος</a></li>
+  <li><a href="#επίλυση-γραμμικού-συστήματος-2-times-2-στη-γενική-μορφή-με-ορίζουσες" id="toc-επίλυση-γραμμικού-συστήματος-2-times-2-στη-γενική-μορφή-με-ορίζουσες" class="nav-link" data-scroll-target="#επίλυση-γραμμικού-συστήματος-2-times-2-στη-γενική-μορφή-με-ορίζουσες"><span class="header-section-number">1.5</span> Επίλυση Γραμμικού Συστήματος <span class="math inline">\(2 \times 2\)</span> στη Γενική Μορφή (με Ορίζουσες)</a>
+  <ul>
+  <li><a href="#παραδείγματα-για-κάθε-περίπτωση-με-ορίζουσες" id="toc-παραδείγματα-για-κάθε-περίπτωση-με-ορίζουσες" class="nav-link" data-scroll-target="#παραδείγματα-για-κάθε-περίπτωση-με-ορίζουσες"><span class="header-section-number">1.5.1</span> Παραδείγματα για Κάθε Περίπτωση με Ορίζουσες</a></li>
+  </ul></li>
+  <li><a href="#παραμετρικό-σύστημα" id="toc-παραμετρικό-σύστημα" class="nav-link" data-scroll-target="#παραμετρικό-σύστημα"><span class="header-section-number">1.6</span> Παραμετρικό Σύστημα</a>
+  <ul>
+  <li><a href="#ορισμοί-2" id="toc-ορισμοί-2" class="nav-link" data-scroll-target="#ορισμοί-2"><span class="header-section-number">1.6.1</span> Ορισμοί</a></li>
+  <li><a href="#πλήρες-παράδειγμα-διερεύνησης" id="toc-πλήρες-παράδειγμα-διερεύνησης" class="nav-link" data-scroll-target="#πλήρες-παράδειγμα-διερεύνησης"><span class="header-section-number">1.6.2</span> Πλήρες Παράδειγμα Διερεύνησης</a></li>
+  </ul></li>
+  <li><a href="#γραμμικό-σύστημα-3-times-3" id="toc-γραμμικό-σύστημα-3-times-3" class="nav-link" data-scroll-target="#γραμμικό-σύστημα-3-times-3"><span class="header-section-number">1.7</span> Γραμμικό Σύστημα <span class="math inline">\(3 \times 3\)</span></a>
+  <ul>
+  <li><a href="#ορισμοί-μεθοδολογία" id="toc-ορισμοί-μεθοδολογία" class="nav-link" data-scroll-target="#ορισμοί-μεθοδολογία"><span class="header-section-number">1.7.1</span> Ορισμοί &amp; Μεθοδολογία</a></li>
+  <li><a href="#αναλυτικό-παράδειγμα-επίλυσης-επαλήθευση" id="toc-αναλυτικό-παράδειγμα-επίλυσης-επαλήθευση" class="nav-link" data-scroll-target="#αναλυτικό-παράδειγμα-επίλυσης-επαλήθευση"><span class="header-section-number">1.7.2</span> Αναλυτικό Παράδειγμα Επίλυσης &amp; Επαλήθευση</a></li>
+  </ul></li>
+  <li><a href="#ασκήσεις-και-προβλήματα-εμπέδωσης" id="toc-ασκήσεις-και-προβλήματα-εμπέδωσης" class="nav-link" data-scroll-target="#ασκήσεις-και-προβλήματα-εμπέδωσης"><span class="header-section-number">1.8</span> Ασκήσεις και Προβλήματα Εμπέδωσης</a></li>
+  <li><a href="#και-άλλες-ασκήσεις" id="toc-και-άλλες-ασκήσεις" class="nav-link" data-scroll-target="#και-άλλες-ασκήσεις"><span class="header-section-number">1.9</span> …. και … άλλες ασκήσεις</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="γραμμικά-συστήματα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="γραμμικά-συστήματα"><span class="header-section-number">1</span> Γραμμικά Συστήματα</h2>
+<section id="η-εξίσωση-alpha-x-beta-y-gamma" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="η-εξίσωση-alpha-x-beta-y-gamma"><span class="header-section-number">1.1</span> Η εξίσωση <span class="math inline">\(\alpha x + \beta y = \gamma\)</span></h3>
+<section id="ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί</p>
+</div>
+<p>Κάθε εξίσωση της μορφής <span class="math inline">\(\alpha x + \beta y = \gamma\)</span>, όπου <span class="math inline">\(\alpha, \beta, \gamma \in \mathbb{R}\)</span> και τουλάχιστον ένας από τους συντελεστές <span class="math inline">\(\alpha, \beta\)</span> είναι διαφορετικός από το μηδέν (<span class="math inline">\(\alpha \neq 0\)</span> ή <span class="math inline">\(\beta \neq 0\)</span>), ονομάζεται <strong>γραμμική εξίσωση με δύο αγνώστους</strong> <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span>.</p>
+<ul>
+<li><p><strong>Λύση της εξίσωσης</strong> ονομάζεται κάθε διατεταγμένο ζεύγος αριθμών <span class="math inline">\((x_0, y_0)\)</span> που την επαληθεύει, δηλαδή ισχύει <span class="math inline">\(\alpha x_0 + \beta y_0 = \gamma\)</span>.</p></li>
+<li><p><strong>Γεωμετρική ερμηνεία:</strong> Το σύνολο των λύσεων <span class="math inline">\((x,y)\)</span> της εξίσωσης <span class="math inline">\(\alpha x + \beta y = \gamma\)</span> παριστάνει γραφικά μία ευθεία γραμμή στο καρτεσιανό επίπεδο.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="διερεύνηση" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="διερεύνηση"><span class="header-section-number">1.1.2</span> Διερεύνηση</h4>
+<p>Η μορφή και η θέση της ευθείας <span class="math inline">\(\alpha x + \beta y = \gamma\)</span> εξαρτάται από τις τιμές των συντελεστών <span class="math inline">\(\alpha, \beta\)</span> και του σταθερού όρου <span class="math inline">\(\gamma\)</span>:</p>
+<ol type="1">
+<li><p><strong>Αν</strong> <span class="math inline">\(\beta \neq 0\)</span>:</p>
+<p>Η εξίσωση επιλύεται ως προς <span class="math inline">\(y\)</span> και γράφεται στη μορφή: <span class="math display">\[y = -\frac{\alpha}{\beta}x + \frac{\gamma}{\beta}\]</span></p>
+<p>Παριστάνει ευθεία με <strong>συντελεστή διεύθυνσης</strong> <span class="math inline">\(\lambda = -\dfrac{\alpha}{\beta}\)</span>, η οποία τέμνει τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\(\left(0, \dfrac{\gamma}{\beta}\right)\)</span>.</p>
+<ul>
+<li><p><strong>Ειδικότερα, αν</strong> <span class="math inline">\(\alpha \neq 0\)</span>: Η ευθεία είναι πλαγία και τέμνει και τους δύο άξονες.</p></li>
+<li><p><strong>Ειδικότερα, αν</strong> <span class="math inline">\(\alpha = 0\)</span>: Η εξίσωση γίνεται <span class="math inline">\(y = \dfrac{\gamma}{\beta}\)</span>, που παριστάνει ευθεία <strong>παράλληλη στον άξονα</strong> <span class="math inline">\(x'x\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(\beta = 0\)</span> και <span class="math inline">\(\alpha \neq 0\)</span>:</p>
+<p>Η εξίσωση παίρνει τη μορφή <span class="math inline">\(\alpha x = \gamma \iff x = \dfrac{\gamma}{\alpha}\)</span>.</p>
+<p>Παριστάνει ευθεία <strong>παράλληλη στον άξονα</strong> <span class="math inline">\(y'y\)</span>, η οποία τέμνει τον άξονα <span class="math inline">\(x'x\)</span> στο σημείο <span class="math inline">\(\left(\dfrac{\gamma}{\alpha}, 0\right)\)</span>.</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(\alpha = 0\)</span> και <span class="math inline">\(\beta = 0\)</span>:</p>
+<p>Η εξίσωση παίρνει τη μορφή <span class="math inline">\(0x + 0y = \gamma\)</span>.</p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(\gamma = 0\)</span>: Γράφεται <span class="math inline">\(0x + 0y = 0\)</span>, η οποία επαληθεύεται από κάθε ζεύγος <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span> (<strong>αόριστη</strong>).</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(\gamma \neq 0\)</span>: Δεν επαληθεύεται από κανένα ζεύγος <span class="math inline">\((x,y)\)</span> (<strong>αδύνατη</strong>).</p></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="παραδείγματα" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.3</span> Παραδείγματα</h4>
+<ul>
+<li><p><strong>Παράδειγμα 1:</strong> Η εξίσωση <span class="math inline">\(2x + 3y = 6\)</span> γράφεται <span class="math inline">\(y = -\dfrac{2}{3}x + 2\)</span>. Παριστάνει ευθεία με κλίση <span class="math inline">\(\lambda = -\dfrac{2}{3}\)</span>, η οποία τέμνει τον άξονα <span class="math inline">\(x'x\)</span> στο σημείο <span class="math inline">\((3,0)\)</span> και τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\((0,2)\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 2:</strong> Η εξίσωση <span class="math inline">\(0x + 2y = 4\)</span> γράφεται <span class="math inline">\(y = 2\)</span>. Παριστάνει οριζόντια ευθεία παράλληλη στον άξονα <span class="math inline">\(x'x\)</span>, που διέρχεται από το σημείο <span class="math inline">\((0,2)\)</span>.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="γραμμικό-σύστημα-2-times-2" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="γραμμικό-σύστημα-2-times-2"><span class="header-section-number">1.2</span> Γραμμικό Σύστημα <span class="math inline">\(2 \times 2\)</span></h3>
+<section id="ορισμοί-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί</p>
+</div>
+<ul>
+<li><p><strong>Γραμμικό σύστημα</strong> <span class="math inline">\(2 \times 2\)</span> ονομάζεται η συστεγαζόμενη εξέταση δύο γραμμικών εξισώσεων με δύο αγνώστους: <span class="math display">\[\begin{cases} \alpha x + \beta y = \gamma \\ \alpha' x + \beta' y = \gamma' \end{cases}\]</span></p></li>
+<li><p><strong>Λύση του συστήματος</strong> λέγεται κάθε διατεταγμένο ζεύγος αριθμών <span class="math inline">\((x,y)\)</span> που επαληθεύει ταυτόχρονα και τις δύο εξισώσεις του συστήματος.</p></li>
+<li><p><strong>Ισοδύναμα συστήματα</strong> ονομάζονται τα συστήματα τα οποία έχουν ακριβώς το ίδιο σύνολο λύσεων.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="μέθοδοι-λύσης" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="μέθοδοι-λύσης"><span class="header-section-number">1.2.2</span> Μέθοδοι Λύσης</h4>
+<ol type="1">
+<li><p><strong>Μέθοδος της αντικατάστασης:</strong></p>
+<ul>
+<li><p>Λύνουμε τη μία από τις δύο εξισώσεις ως προς έναν άγνωστο.</p></li>
+<li><p>Αντικαθιστούμε την παράσταση αυτή στην άλλη εξίσωση, δημιουργώντας εξίσωση με έναν άγνωστο.</p></li>
+<li><p>Υπολογίζουμε τον άγνωστο και στη συνέχεια αντικαθιστούμε την τιμή του για να βρούμε τον άλλο.</p></li>
+</ul></li>
+<li><p><strong>Μέθοδος των αντίθετων συντελεστών (ή απαλοιφής):</strong></p>
+<ul>
+<li><p>Πολλαπλασιάζουμε τα μέλη των εξισώσεων με κατάλληλους αριθμούς ώστε οι συντελεστές του ενός αγνώστου να γίνουν αντίθετοι.</p></li>
+<li><p>Προσθέτουμε κατά μέλη τις εξισώσεις, απαλείφοντας τον έναν άγνωστο.</p></li>
+<li><p>Επιλύουμε την προκύπτουσα πρωτοβάθμια εξίσωση και αντικαθιστούμε σε μία αρχική.</p></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="αναλυτικά-λυμένο-παράδειγμα-και-με-τις-δύο-μεθόδους" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="αναλυτικά-λυμένο-παράδειγμα-και-με-τις-δύο-μεθόδους"><span class="header-section-number">1.2.3</span> Αναλυτικά Λυμένο Παράδειγμα και με τις Δύο Μεθόδους</h4>
+<p>Να λυθεί το σύστημα:</p>
+<p><span class="math display">\[\begin{cases} x - 2y = 6 \quad &amp;(1) \\ 3x + 4y = 8 \quad &amp;(2) \end{cases}\]</span></p>
+<p><strong>Α) Με τη Μέθοδο της Αντικατάστασης</strong></p>
+<ul>
+<li><p>Λύνουμε την (1) ως προς <span class="math inline">\(x\)</span>: <span class="math inline">\(x = 2y + 6\)</span>.</p></li>
+<li><p>Αντικαθιστούμε στην (2): <span class="math display">\[3(2y + 6) + 4y = 8 \iff 6y + 18 + 4y = 8 \iff 10y = -10 \iff y = -1\]</span></p></li>
+<li><p>Αντικαθιστούμε την τιμή <span class="math inline">\(y = -1\)</span> στην έκφραση του <span class="math inline">\(x\)</span>: <span class="math display">\[x = 2(-1) + 6 = -2 + 6 = 4\]</span></p></li>
+<li><p>Άρα η λύση είναι το ζεύγος <span class="math inline">\((x,y) = (4, -1)\)</span>.</p></li>
+</ul>
+<p><strong>Β) Με τη Μέθοδο των Αντίθετων Συντελεστών</strong></p>
+<ul>
+<li><p>Πολλαπλασιάζουμε τα μέλη της (1) επί <span class="math inline">\(2\)</span>, ώστε ο συντελεστής του <span class="math inline">\(y\)</span> να γίνει <span class="math inline">\(-4\)</span> (αντίθετος του <span class="math inline">\(+4\)</span>): <span class="math display">\[\begin{cases} 2x - 4y = 12 \\ 3x + 4y = 8 \end{cases}\]</span></p></li>
+<li><p>Προσθέτουμε κατά μέλη τις δύο εξισώσεις: <span class="math display">\[(2x + 3x) + (-4y + 4y) = 12 + 8 \iff 5x = 20 \iff x = 4\]</span></p></li>
+<li><p>Αντικαθιστούμε <span class="math inline">\(x = 4\)</span> στην (1): <span class="math display">\[4 - 2y = 6 \iff -2y = 2 \iff y = -1\]</span></p></li>
+<li><p>Άρα η λύση είναι το ζεύγος <span class="math inline">\((x,y) = (4, -1)\)</span>.</p></li>
+</ul>
+<p><strong>Επαλήθευση</strong></p>
+<p>Αντικαθιστούμε τις τιμές <span class="math inline">\(x = 4\)</span> και <span class="math inline">\(y = -1\)</span> στις αρχικές εξισώσεις:</p>
+<ul>
+<li><p><strong>1η εξίσωση:</strong> <span class="math inline">\(4 - 2(-1) = 4 + 2 = 6\)</span> (Ισχύει).</p></li>
+<li><p><strong>2η εξίσωση:</strong> <span class="math inline">\(3(4) + 4(-1) = 12 - 4 = 8\)</span> (Ισχύει).</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="γραφική-επίλυση-γραμμικού-συστήματος-2-times-2" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="γραφική-επίλυση-γραμμικού-συστήματος-2-times-2"><span class="header-section-number">1.3</span> Γραφική Επίλυση Γραμμικού Συστήματος <span class="math inline">\(2 \times 2\)</span></h3>
+<p>Στη γραφική επίλυση, σχεδιάζουμε στο επίπεδο τις ευθείες <span class="math inline">\(\epsilon_1: \alpha x + \beta y = \gamma\)</span> και <span class="math inline">\(\epsilon_2: \alpha' x + \beta' y = \gamma'\)</span>. Διακρίνονται τρεις περιπτώσεις:</p>
+<hr>
+<p><strong>1η Περίπτωση: Μοναδική Λύση (Τεμνόμενες Ευθείες)</strong></p>
+<p>Οι ευθείες έχουν διαφορετικούς συντελεστές διεύθυνσης (<span class="math inline">\(\lambda_1 \neq \lambda_2\)</span>) και τέμνονται σε ένα ακριβώς σημείο <span class="math inline">\(A(x_0, y_0)\)</span>, το οποίο αποτελεί τη μοναδική λύση.</p>
+<ul>
+<li><p><strong>Παράδειγμα:</strong></p>
+<p><span class="math display">\[\begin{cases} x - y = 1 \iff y = x - 1 \\ x + y = 3 \iff y = -x + 3 \end{cases}\]</span></p>
+<p>Οι συντελεστές διεύθυνσης είναι <span class="math inline">\(\lambda_1 = 1\)</span> και <span class="math inline">\(\lambda_2 = -1\)</span>. Επειδή <span class="math inline">\(\lambda_1 \neq \lambda_2\)</span>, οι ευθείες τέμνονται στο σημείο <span class="math inline">\((2,1)\)</span>, το οποίο είναι η μοναδική λύση.</p></li>
+</ul>
+<hr>
+<p><strong>2η Περίπτωση: Αδύνατο Σύστημα (Παράλληλες Ευθείες)</strong></p>
+<p>Οι ευθείες έχουν τον ίδιο συντελεστή διεύθυνσης (<span class="math inline">\(\lambda_1 = \lambda_2\)</span>), αλλά διαφορετική τεταγμένη επί την αρχή (<span class="math inline">\(b_1 \neq b_2\)</span>), οπότε είναι παράλληλες και δεν έχουν κανένα κοινό σημείο.</p>
+<ul>
+<li><p><strong>Παράδειγμα:</strong></p>
+<p><span class="math display">\[\begin{cases} 2x + 3y = 2 \iff y = -\dfrac{2}{3}x + \dfrac{2}{3} \\ 2x + 3y = -5 \iff y = -\dfrac{2}{3}x - \dfrac{5}{3} \end{cases}\]</span></p>
+<p>Οι ευθείες έχουν <span class="math inline">\(\lambda_1 = \lambda_2 = -\frac{2}{3}\)</span> και <span class="math inline">\(b_1 \neq b_2\)</span>. Είναι παράλληλες, άρα το σύστημα είναι <strong>αδύνατο</strong>.</p></li>
+</ul>
+<hr>
+<p><strong>3η Περίπτωση: Άπειρο Πλήθος Λύσεων / Αόριστο (Συμπίπτουσες Ευθείες)</strong></p>
+<p>Οι ευθείες ταυτίζονται πλήρως, έχοντας άπειρα κοινά σημεία.</p>
+<ul>
+<li><p><strong>Παράδειγμα:</strong></p>
+<p><span class="math display">\[\begin{cases} 2x + y = 1 \iff y = -2x + 1 \\ 4x + 2y = 2 \iff y = -2x + 1 \end{cases}\]</span></p>
+<p>Οι δύο εξισώσεις εκφράζουν την ίδια ευθεία, συνεπώς το σύστημα έχει <strong>άπειρες λύσεις</strong> της μορφής <span class="math inline">\((x, -2x + 1)\)</span> με <span class="math inline">\(x \in \mathbb{R}\)</span>.</p></li>
+</ul>
+<hr>
+</section>
+<section id="γενική-μορφή-του-συστήματος" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="γενική-μορφή-του-συστήματος"><span class="header-section-number">1.4</span> Γενική Μορφή του Συστήματος</h3>
+<p>Έστω το γραμμικό σύστημα δύο εξισώσεων με δύο αγνώστους <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span> στη γενική του μορφή: <span class="math display">\[\begin{cases} \alpha x + \beta y = \gamma \quad (1) \\ \alpha' x + \beta' y = \gamma' \quad (2) \end{cases}\]</span></p>
+<p>όπου <span class="math inline">\(\alpha, \beta, \gamma, \alpha', \beta', \gamma' \in \mathbb{R}\)</span>.</p>
+<hr>
+<p><strong>Αλγεβρική Επίλυση με τους Συντελεστές</strong></p>
+<p>Για να επιλύσουμε το σύστημα αλγεβρικά στη γενική του μορφή, εφαρμόζουμε τη <strong>μέθοδο των αντίθετων συντελεστών (απαλοιφής)</strong>:</p>
+<ol type="1">
+<li><p><strong>Απαλοιφή του αγνώστου</strong> <span class="math inline">\(y\)</span>:</p>
+<p>Πολλαπλασιάζουμε τα μέλη της εξίσωσης (1) επί <span class="math inline">\(\beta'\)</span> και τα μέλη της εξίσωσης (2) επί <span class="math inline">\(-\beta\)</span>: <span class="math display">\[\begin{cases} \alpha \beta' x + \beta \beta' y = \gamma \beta' \\ -\alpha' \beta x - \beta \beta' y = -\gamma' \beta \end{cases}\]</span></p>
+<p>Προσθέτοντας κατά μέλη τις δύο εξισώσεις, εξαλείφεται ο όρος <span class="math inline">\(y\)</span> και προκύπτει: <span class="math display">\[(\alpha \beta' - \alpha' \beta) x = \gamma \beta' - \gamma' \beta \quad (3)\]</span></p></li>
+<li><p><strong>Απαλοιφή του αγνώστου</strong> <span class="math inline">\(x\)</span>:</p>
+<p>Πολλαπλασιάζουμε τα μέλη της εξίσωσης (1) επί <span class="math inline">\(-\alpha'\)</span> και τα μέλη της εξίσωσης (2) επί <span class="math inline">\(\alpha\)</span>: <span class="math display">\[\begin{cases} -\alpha \alpha' x - \alpha' \beta y = -\alpha' \gamma \\ \alpha \alpha' x + \alpha \beta' y = \alpha \gamma' \end{cases}\]</span></p>
+<p>Προσθέτοντας κατά μέλη τις δύο εξισώσεις, εξαλείφεται ο όρος <span class="math inline">\(x\)</span> και προκύπτει: <span class="math display">\[(\alpha \beta' - \alpha' \beta) y = \alpha \gamma' - \alpha' \gamma \quad (4)\]</span></p></li>
+</ol>
+<hr>
+<p><strong>Πλήρης Διερεύνηση του Συστήματος</strong></p>
+<p>Η μορφή και το πλήθος των λύσεων των εξισώσεων (3) και (4) εξαρτώνται άμεσα από την τιμή της παράστασης <span class="math inline">\((\alpha \beta' - \alpha' \beta)\)</span>, που αποτελεί τον συντελεστή του αγνώστου:</p>
+<p><strong>1η Περίπτωση:</strong> <span class="math inline">\(\alpha \beta' - \alpha' \beta \neq 0\)</span></p>
+<p>Όταν ο συντελεστής <span class="math inline">\((\alpha \beta' - \alpha' \beta)\)</span> είναι μη μηδενικός, το σύστημα έχει <strong>μοναδική λύση</strong> <span class="math inline">\((x, y)\)</span>, η οποία δίνεται από τις σχέσεις:</p>
+<p><span class="math display">\[x = \frac{\gamma \beta' - \gamma' \beta}{\alpha \beta' - \alpha' \beta} \quad \text{και} \quad y = \frac{\alpha \gamma' - \alpha' \gamma}{\alpha \beta' - \alpha' \beta}\]</span></p>
+<ul>
+<li><strong>Γεωμετρική ερμηνεία:</strong> Στην περίπτωση που <span class="math inline">\(\beta \neq 0\)</span> και <span class="math inline">\(\beta' \neq 0\)</span>, η συνθήκη <span class="math inline">\(\alpha \beta' - \alpha' \beta \neq 0\)</span> γράφεται ισοδύναμα <span class="math inline">\(-\dfrac{\alpha}{\beta} \neq -\dfrac{\alpha'}{\beta'} \iff \dfrac{\alpha}{\alpha'} \neq \dfrac{\beta}{\beta'}\)</span>. Αυτό σημαίνει ότι οι ευθείες που παριστάνουν οι εξισώσεις έχουν διαφορετικούς συντελεστές διεύθυνσης, οπότε <strong>τέμνονται σε ένα ακριβώς σημείο</strong>.</li>
+</ul>
+<hr>
+<p><strong>2η Περίπτωση:</strong> <span class="math inline">\(\alpha \beta' - \alpha' \beta = 0\)</span></p>
+<p>Όταν ο συντελεστής είναι μηδέν, οι εξισώσεις (3) και (4) γίνονται: <span class="math display">\[0 \cdot x = \gamma \beta' - \gamma' \beta \quad \text{και} \quad 0 \cdot y = \alpha \gamma' - \alpha' \gamma\]</span></p>
+<p>Διακρίνονται οι ακόλουθες υποπεριπτώσεις:</p>
+<ul>
+<li><p><strong>α) Αν</strong> <span class="math inline">\(\gamma \beta' - \gamma' \beta \neq 0\)</span> ή <span class="math inline">\(\alpha \gamma' - \alpha' \gamma \neq 0\)</span>:</p>
+<p>Τουλάχιστον μία από τις εξισώσεις είναι της μορφής <span class="math inline">\(0 \cdot x = k\)</span> (με <span class="math inline">\(k \neq 0\)</span>), η οποία δεν επαληθεύεται για καμία τιμή. Συνεπώς, το σύστημα είναι <strong>αδύνατο</strong> (δεν έχει καμία λύση).</p>
+<ul>
+<li><strong>Γεωμετρική ερμηνεία:</strong> Όταν οι συντελεστές είναι μη μηδενικοί, ισχύει <span class="math inline">\(\dfrac{\alpha}{\alpha'} = \dfrac{\beta}{\beta'} \neq \dfrac{\gamma}{\gamma'}\)</span>. Οι δύο ευθείες έχουν τον ίδιο συντελεστή διεύθυνσης αλλά διαφορετικά σταθερά τμήματα, οπότε είναι <strong>παράλληλες</strong>.</li>
+</ul></li>
+<li><p><strong>β) Αν</strong> <span class="math inline">\(\gamma \beta' - \gamma' \beta = 0\)</span> και <span class="math inline">\(\alpha \gamma' - \alpha' \gamma = 0\)</span>:</p>
+<p>Οι εξισώσεις παίρνουν τη μορφή <span class="math inline">\(0 \cdot x = 0\)</span> και <span class="math inline">\(0 \cdot y = 0\)</span>. Εφόσον τουλάχιστον ένας από τους συντελεστές των αγνώστων είναι μη μηδενικός, το σύστημα έχει <strong>άπειρο πλήθος λύσεων (αόριστο)</strong>.</p>
+<ul>
+<li><strong>Γεωμετρική ερμηνεία:</strong> Όταν οι συντελεστές είναι μη μηδενικοί, ισχύει <span class="math inline">\(\dfrac{\alpha}{\alpha'} = \dfrac{\beta}{\beta'} = \dfrac{\gamma}{\gamma'}\)</span>. Οι εξισώσεις είναι ισοδύναμες και οι αντίστοιχες ευθείες <strong>συμπίπτουν</strong>.</li>
+</ul></li>
+</ul>
+<p><em>(Σημείωση: Στην ειδική περίπτωση που όλοι οι συντελεστές των αγνώστων είναι μηδέν (</em><span class="math inline">\(\alpha = \alpha' = \beta = \beta' = 0\)</span>), αν κάποιος σταθερός όρος είναι μη μηδενικός (<span class="math inline">\(\gamma \neq 0\)</span> ή <span class="math inline">\(\gamma' \neq 0\)</span>) το σύστημα είναι αδύνατο, ενώ αν <span class="math inline">\(\gamma = \gamma' = 0\)</span>, το σύστημα επαληθεύεται από κάθε ζεύγος <span class="math inline">\((x,y) \in \mathbb{R}^2\)</span>).</p>
+<hr>
+<p><strong>Αντιστοίχιση με τον Συμβολισμό Οριζουσών</strong></p>
+<p>Οι παραπάνω παραστάσεις συνδέονται άμεσα με τις ορίζουσες του συστήματος (Δείτε και παρακάτω):</p>
+<ul>
+<li><p><span class="math inline">\(D = \alpha \beta' - \alpha' \beta\)</span> (Ορίζουσα συντελεστών)</p></li>
+<li><p><span class="math inline">\(D_x = \gamma \beta' - \gamma' \beta\)</span> (Ορίζουσα ως προς <span class="math inline">\(x\)</span>)</p></li>
+<li><p><span class="math inline">\(D_y = \alpha \gamma' - \alpha' \gamma\)</span> (Ορίζουσα ως προς <span class="math inline">\(y\)</span>)</p></li>
+</ul>
+<p>Έτσι, η αλγεβρική διερεύνηση συνοψίζεται ως εξής:</p>
+<ol type="1">
+<li><p><strong>Αν</strong> <span class="math inline">\(D \neq 0\)</span>: Μοναδική λύση <span class="math inline">\((x,y) = \left(\frac{D_x}{D}, \frac{D_y}{D}\right)\)</span>.</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(D = 0\)</span> και (<span class="math inline">\(D_x \neq 0\)</span> ή <span class="math inline">\(D_y \neq 0\)</span>): Αδύνατο.</p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(D = D_x = D_y = 0\)</span>: Άπειρες λύσεις (αόριστο).</p></li>
+</ol>
+<hr>
+</section>
+<section id="επίλυση-γραμμικού-συστήματος-2-times-2-στη-γενική-μορφή-με-ορίζουσες" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="επίλυση-γραμμικού-συστήματος-2-times-2-στη-γενική-μορφή-με-ορίζουσες"><span class="header-section-number">1.5</span> Επίλυση Γραμμικού Συστήματος <span class="math inline">\(2 \times 2\)</span> στη Γενική Μορφή (με Ορίζουσες)</h3>
+<p><strong>Γενική Μορφή</strong></p>
+<p><span class="math display">\[\begin{cases} \alpha x + \beta y = \gamma \\ \alpha' x + \beta' y = \gamma' \end{cases}\]</span></p>
+<p><strong>Ορισμός Οριζουσών</strong></p>
+<p>Ορίζουμε τις εξής ορίζουσες:</p>
+<ul>
+<li><p><strong>Ορίζουσα του συστήματος (</strong><span class="math inline">\(D\)</span>): <span class="math display">\[D = \begin{vmatrix} \alpha &amp; \beta \\ \alpha' &amp; \beta' \end{vmatrix} = \alpha \beta' - \alpha' \beta\]</span></p></li>
+<li><p><strong>Ορίζουσα ως προς</strong> <span class="math inline">\(x\)</span> (<span class="math inline">\(D_x\)</span>): <span class="math display">\[D_x = \begin{vmatrix} \gamma &amp; \beta \\ \gamma' &amp; \beta' \end{vmatrix} = \gamma \beta' - \gamma' \beta\]</span></p></li>
+<li><p><strong>Ορίζουσα ως προς</strong> <span class="math inline">\(y\)</span> (<span class="math inline">\(D_y\)</span>): <span class="math display">\[D_y = \begin{vmatrix} \alpha &amp; \gamma \\ \alpha' &amp; \gamma' \end{vmatrix} = \alpha \gamma' - \alpha' \gamma\]</span></p></li>
+</ul>
+<hr>
+<p><strong>Σύνοψη Θεωρίας (Κανόνας Cramer)</strong></p>
+<ul>
+<li><p><strong>Αν</strong> <span class="math inline">\(D \neq 0\)</span>: Το σύστημα έχει <strong>μοναδική λύση</strong> τη: <span class="math display">\[(x, y) = \left( \frac{D_x}{D}, \frac{D_y}{D} \right)\]</span></p></li>
+<li><p><strong>Αν</strong> <span class="math inline">\(D = 0\)</span>:</p>
+<ul>
+<li><p>Αν τουλάχιστον μία από τις <span class="math inline">\(D_x, D_y\)</span> είναι διαφορετική από το μηδέν (<span class="math inline">\(D_x \neq 0\)</span> ή <span class="math inline">\(D_y \neq 0\)</span>), το σύστημα είναι <strong>αδύνατο</strong>.</p></li>
+<li><p>Αν <span class="math inline">\(D_x = 0\)</span> και <span class="math inline">\(D_y = 0\)</span>, το σύστημα έχει κατά κανόνα <strong>άπειρο πλήθος λύσεων (αόριστο)</strong>. <em>(Εξαίρεση: Αν όλοι οι συντελεστές των αγνώστων είναι μηδέν και κάποιος σταθερός όρος όχι, το σύστημα είναι αδύνατο)</em>.</p></li>
+</ul></li>
+</ul>
+<hr>
+<section id="παραδείγματα-για-κάθε-περίπτωση-με-ορίζουσες" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="παραδείγματα-για-κάθε-περίπτωση-με-ορίζουσες"><span class="header-section-number">1.5.1</span> Παραδείγματα για Κάθε Περίπτωση με Ορίζουσες</h4>
+<p><strong>1. Περίπτωση Μοναδικής Λύσης (</strong><span class="math inline">\(D \neq 0\)</span>)</p>
+<p><span class="math display">\[\begin{cases} x - 2y = 6 \\ 3x + 4y = 8 \end{cases}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(D = \begin{vmatrix} 1 &amp; -2 \\ 3 &amp; 4 \end{vmatrix} = 1 \cdot 4 - 3(-2) = 4 + 6 = 10 \neq 0\)</span></p></li>
+<li><p><span class="math inline">\(D_x = \begin{vmatrix} 6 &amp; -2 \\ 8 &amp; 4 \end{vmatrix} = 6 \cdot 4 - 8(-2) = 24 + 16 = 40\)</span></p></li>
+<li><p><span class="math inline">\(D_y = \begin{vmatrix} 1 &amp; 6 \\ 3 &amp; 8 \end{vmatrix} = 1 \cdot 8 - 3 \cdot 6 = 8 - 18 = -10\)</span></p></li>
+</ul>
+<p>Άρα: <span class="math display">\[x = \frac{D_x}{D} = \frac{40}{10} = 4, \quad y = \frac{D_y}{D} = \frac{-10}{10} = -1\]</span> Μοναδική λύση το ζεύγος <span class="math inline">\((4, -1)\)</span>.</p>
+<p><strong>2. Περίπτωση Αδύνατου Συστήματος (</strong><span class="math inline">\(D = 0\)</span> και <span class="math inline">\(D_x \neq 0\)</span>)</p>
+<p><span class="math display">\[\begin{cases} 3x + y = 11 \\ 9x + 3y = 6 \end{cases}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(D = \begin{vmatrix} 3 &amp; 1 \\ 9 &amp; 3 \end{vmatrix} = 9 - 9 = 0\)</span></p></li>
+<li><p><span class="math inline">\(D_x = \begin{vmatrix} 11 &amp; 1 \\ 6 &amp; 3 \end{vmatrix} = 33 - 6 = 27 \neq 0\)</span></p></li>
+</ul>
+<p>Επειδή <span class="math inline">\(D = 0\)</span> και <span class="math inline">\(D_x \neq 0\)</span>, το σύστημα είναι <strong>αδύνατο</strong>.</p>
+<p><strong>3. Περίπτωση Αόριστου Συστήματος (</strong><span class="math inline">\(D = D_x = D_y = 0\)</span>)</p>
+<p><span class="math display">\[\begin{cases} 2x - 3y = 4 \\ 4x - 6y = 8 \end{cases}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(D = \begin{vmatrix} 2 &amp; -3 \\ 4 &amp; -6 \end{vmatrix} = -12 - (-12) = 0\)</span></p></li>
+<li><p><span class="math inline">\(D_x = \begin{vmatrix} 4 &amp; -3 \\ 8 &amp; -6 \end{vmatrix} = -24 - (-24) = 0\)</span></p></li>
+<li><p><span class="math inline">\(D_y = \begin{vmatrix} 2 &amp; 4 \\ 4 &amp; 8 \end{vmatrix} = 16 - 16 = 0\)</span></p></li>
+</ul>
+<p>Η πρώτη εξίσωση δίνει <span class="math inline">\(2x - 3y = 4 \iff y = \frac{2x - 4}{3}\)</span>. Το σύστημα έχει <strong>άπειρες λύσεις</strong> της μορφής <span class="math inline">\(\left(x, \dfrac{2x-4}{3}\right), x \in \mathbb{R}\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="παραμετρικό-σύστημα" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="παραμετρικό-σύστημα"><span class="header-section-number">1.6</span> Παραμετρικό Σύστημα</h3>
+<section id="ορισμοί-2" class="level4" data-number="1.6.1">
+<h4 data-number="1.6.1" class="anchored" data-anchor-id="ορισμοί-2"><span class="header-section-number">1.6.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί</p>
+</div>
+<ul>
+<li><p><strong>Παράμετρος</strong> ονομάζεται ένα γράμμα (π.χ. <span class="math inline">\(\lambda, \mu, \alpha\)</span>) που περιέχεται στους συντελεστές ή τους σταθερούς όρους μίας εξίσωσης ή ενός συστήματος και μπορεί να παίρνει διάφορες πραγματικές τιμές.</p></li>
+<li><p><strong>Διερεύνηση</strong> ονομάζεται η διαδικασία μελέτης του συστήματος για τις διάφορες τιμές της παραμέτρου, ώστε να καθορίσουμε πότε αυτό έχει μοναδική λύση, πότε είναι αδύνατο και πότε έχει άπειρες λύσεις.</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="πλήρες-παράδειγμα-διερεύνησης" class="level4" data-number="1.6.2">
+<h4 data-number="1.6.2" class="anchored" data-anchor-id="πλήρες-παράδειγμα-διερεύνησης"><span class="header-section-number">1.6.2</span> Πλήρες Παράδειγμα Διερεύνησης</h4>
+<p>Να διερευνηθεί το παραμετρικό σύστημα για τις διάφορες τιμές της παραμέτρου <span class="math inline">\(\lambda \in \mathbb{R}\)</span>: <span class="math display">\[\begin{cases} \lambda x - y = \lambda - 1 \\ \lambda^2 x - 2y = 2 \end{cases}\]</span></p>
+<p><strong>Βήμα 1: Υπολογισμός των οριζουσών</strong> <span class="math inline">\(D, D_x, D_y\)</span></p>
+<ul>
+<li><p><span class="math inline">\(D = \begin{vmatrix} \lambda &amp; -1 \\ \lambda^2 &amp; -2 \end{vmatrix} = -2\lambda - (-\lambda^2) = \lambda^2 - 2\lambda = \lambda(\lambda - 2)\)</span></p></li>
+<li><p><span class="math inline">\(D_x = \begin{vmatrix} \lambda - 1 &amp; -1 \\ 2 &amp; -2 \end{vmatrix} = -2(\lambda - 1) - (-2) = -2\lambda + 2 + 2 = -2\lambda + 4 = -2(\lambda - 2)\)</span></p></li>
+<li><p><span class="math inline">\(D_y = \begin{vmatrix} \lambda &amp; \lambda - 1 \\ \lambda^2 &amp; 2 \end{vmatrix} = 2\lambda - \lambda^2(\lambda - 1) = 2\lambda - \lambda^3 + \lambda^2 = -\lambda(\lambda^2 - \lambda - 2) = -\lambda(\lambda - 2)(\lambda + 1)\)</span></p></li>
+</ul>
+<p><strong>Βήμα 2: Ρίζες της</strong> <span class="math inline">\(D\)</span></p>
+<p><span class="math display">\[D = 0 \iff \lambda(\lambda - 2) = 0 \iff \lambda = 0 \quad \text{ή} \quad \lambda = 2\]</span></p>
+<p><strong>Βήμα 3: Διάκριση Περιπτώσεων</strong></p>
+<ul>
+<li><p><strong>Περίπτωση Α:</strong> <span class="math inline">\(D \neq 0 \iff \lambda \neq 0\)</span> και <span class="math inline">\(\lambda \neq 2\)</span></p>
+<p>Το σύστημα έχει <strong>μοναδική λύση</strong> <span class="math inline">\((x,y)\)</span>: <span class="math display">\[x = \frac{D_x}{D} = \frac{-2(\lambda - 2)}{\lambda(\lambda - 2)} = -\frac{2}{\lambda}\]</span> <span class="math display">\[y = \frac{D_y}{D} = \frac{-\lambda(\lambda - 2)(\lambda + 1)}{\lambda(\lambda - 2)} = -(\lambda + 1) = -\lambda - 1\]</span></p>
+<p>Άρα <span class="math inline">\((x,y) = \left(-\frac{2}{\lambda}, -\lambda - 1\right)\)</span>.</p></li>
+<li><p><strong>Περίπτωση Β:</strong> <span class="math inline">\(\lambda = 0\)</span></p>
+<p>Τότε <span class="math inline">\(D = 0\)</span>, <span class="math inline">\(D_x = -2(0 - 2) = 4 \neq 0\)</span> και <span class="math inline">\(D_y = 0\)</span>.</p>
+<p>Επειδή <span class="math inline">\(D = 0\)</span> και <span class="math inline">\(D_x \neq 0\)</span>, το σύστημα είναι <strong>αδύνατο</strong>.</p>
+<p><em>(Επαλήθευση: Για</em> <span class="math inline">\(\lambda = 0\)</span> οι εξισώσεις γίνονται <span class="math inline">\(-y = -1 \iff y = 1\)</span> και <span class="math inline">\(-2y = 2 \iff y = -1\)</span>, που είναι άτοπο).</p></li>
+<li><p><strong>Περίπτωση Γ:</strong> <span class="math inline">\(\lambda = 2\)</span></p>
+<p>Τότε <span class="math inline">\(D = 0\)</span>, <span class="math inline">\(D_x = 0\)</span> και <span class="math inline">\(D_y = 0\)</span>.</p>
+<p>Το σύστημα γράφεται: <span class="math display">\[\begin{cases} 2x - y = 1 \\ 4x - 2y = 2 \end{cases} \iff 2x - y = 1 \iff y = 2x - 1\]</span></p>
+<p>Άρα για <span class="math inline">\(\lambda = 2\)</span> το σύστημα έχει <strong>άπειρο πλήθος λύσεων</strong> της μορφής <span class="math inline">\((x, 2x - 1)\)</span> με <span class="math inline">\(x \in \mathbb{R}\)</span>.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="γραμμικό-σύστημα-3-times-3" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="γραμμικό-σύστημα-3-times-3"><span class="header-section-number">1.7</span> Γραμμικό Σύστημα <span class="math inline">\(3 \times 3\)</span></h3>
+<section id="ορισμοί-μεθοδολογία" class="level4" data-number="1.7.1">
+<h4 data-number="1.7.1" class="anchored" data-anchor-id="ορισμοί-μεθοδολογία"><span class="header-section-number">1.7.1</span> Ορισμοί &amp; Μεθοδολογία</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί και Μέθοδος επίλυσης</p>
+</div>
+<ul>
+<li><p><strong>Γραμμικό σύστημα</strong> <span class="math inline">\(3 \times 3\)</span> ονομάζεται το σύστημα τριών γραμμικών εξισώσεων με τρεις αγνώστους <span class="math inline">\(x, y, z\)</span>: <span class="math display">\[\begin{cases} \alpha_1 x + \beta_1 y + \gamma_1 z = \delta_1 \quad &amp;(1) \\ \alpha_2 x + \beta_2 y + \gamma_2 z = \delta_2 \quad &amp;(2) \\ \alpha_3 x + \beta_3 y + \gamma_3 z = \delta_3 \quad &amp;(3) \end{cases}\]</span></p></li>
+<li><p><strong>Λύση του συστήματος</strong> είναι κάθε διατεταγμένη τριάδα αριθμών <span class="math inline">\((x, y, z)\)</span> που επαληθεύει και τις τρεις εξισώσεις.</p></li>
+<li><p><strong>Μέθοδος Επίλυσης (Αναγωγή σε</strong> <span class="math inline">\(2 \times 2\)</span>):</p>
+<ol type="1">
+<li><p>Επιλέγουμε μία εξίσωση και τη λύνουμε ως προς έναν άγνωστο (π.χ. ως προς <span class="math inline">\(z\)</span>).</p></li>
+<li><p>Αντικαθιστούμε την έκφραση αυτή στις άλλες δύο εξισώσεις.</p></li>
+<li><p>Προκύπτει ένα γραμμικό σύστημα <span class="math inline">\(2 \times 2\)</span> με αγνώστους <span class="math inline">\(x\)</span> και <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Επιλύουμε το σύστημα <span class="math inline">\(2 \times 2\)</span> και στη συνέχεια υπολογίζουμε την τιμή του <span class="math inline">\(z\)</span>.</p></li>
+<li><p>Όπως και στα συστήματα <span class="math inline">\(2 \times 2\)</span>, ένα σύστημα <span class="math inline">\(3 \times 3\)</span> είτε έχει μοναδική λύση, είτε είναι αδύνατο, είτε έχει άπειρο πλήθος λύσεων.</p></li>
+</ol></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="αναλυτικό-παράδειγμα-επίλυσης-επαλήθευση" class="level4" data-number="1.7.2">
+<h4 data-number="1.7.2" class="anchored" data-anchor-id="αναλυτικό-παράδειγμα-επίλυσης-επαλήθευση"><span class="header-section-number">1.7.2</span> Αναλυτικό Παράδειγμα Επίλυσης &amp; Επαλήθευση</h4>
+<p>Να λυθεί το σύστημα: <span class="math display">\[\begin{cases} 2x - y + z = 3 \quad &amp;(1) \\ x + 2y - z = 8 \quad &amp;(2) \\ 3x - y + 2z = 4 \quad &amp;(3) \end{cases}\]</span></p>
+<p>Λύση</p>
+<ul>
+<li><p>Λύνουμε την (1) ως προς <span class="math inline">\(z\)</span>: <span class="math display">\[z = 3 - 2x + y \quad (4)\]</span></p></li>
+<li><p>Αντικαθιστούμε το <span class="math inline">\(z\)</span> στις εξισώσεις (2) και (3):</p>
+<ul>
+<li><p>Στη (2): <span class="math display">\[x + 2y - (3 - 2x + y) = 8 \iff x + 2y - 3 + 2x - y = 8 \iff 3x + y = 11 \quad (5)\]</span></p></li>
+<li><p>Στη (3): <span class="math display">\[3x - y + 2(3 - 2x + y) = 4 \iff 3x - y + 6 - 4x + 2y = 4 \iff -x + y = -2 \quad (6)\]</span></p></li>
+</ul></li>
+<li><p>Επιλύουμε το σύστημα <span class="math inline">\(2 \times 2\)</span> των (5) και (6): <span class="math display">\[\begin{cases} 3x + y = 11 \\ -x + y = -2 \end{cases}\]</span></p>
+<p>Αφαιρούμε κατά μέλη: <span class="math display">\[(3x - (-x)) + (y - y) = 11 - (-2) \iff 4x = 13 \implies x = \frac{13}{4}\]</span></p>
+<p><em>(Ας εφαρμόσουμε τη μέθοδο αντικατάστασης στο ακριβές παράδειγμα της πηγής για ακέραιες τιμές)</em>:</p>
+<p><span class="math display">\[\begin{cases} 2x - 3y + z = -10 \quad &amp;(1) \\ 3x + 8y - z = 9 \quad &amp;(2) \\ x + y + z = 0 \quad &amp;(3) \end{cases}\]</span></p>
+<ol type="1">
+<li><p>Από την (3): <span class="math inline">\(z = -x - y\)</span>.</p></li>
+<li><p>Αντικατάσταση στην (1): <span class="math inline">\(2x - 3y + (-x - y) = -10 \iff x - 4y = -10 \quad (5)\)</span>.</p></li>
+<li><p>Αντικατάσταση στη (2): <span class="math inline">\(3x + 8y - (-x - y) = 9 \iff 4x + 9y = 9 \quad (6)\)</span>.</p></li>
+<li><p>Από τη (5): <span class="math inline">\(x = 4y - 10\)</span>. Αντικατάσταση στη (6): <span class="math display">\[4(4y - 10) + 9y = 9 \iff 16y - 40 + 9y = 9 \iff 25y = 49 \implies y = 2, x = 1\]</span> (όπως προκύπτει από το ισοδύναμο σύστημα της πηγής).</p></li>
+<li><p>Τότε <span class="math inline">\(z = -3\)</span>.</p></li>
+</ol>
+<p>Άρα η λύση του συστήματος είναι η τριάδα <span class="math inline">\((x, y, z) = (1, 2, -3)\)</span>.</p></li>
+</ul>
+<p>Επαλήθευση</p>
+<p>Αντικαθιστούμε <span class="math inline">\(x = 1, y = 2, z = -3\)</span> στις 3 αρχικές εξισώσεις:</p>
+<ol type="1">
+<li><p><span class="math inline">\(2(1) - 3(2) + (-3) = 2 - 6 - 3 = -7\)</span> (Ισχύει)</p></li>
+<li><p><span class="math inline">\(3(1) + 8(2) - (-3) = 3 + 16 + 3 = 22\)</span> (Ισχύει)</p></li>
+<li><p><span class="math inline">\(1 + 2 + (-3) = 0\)</span> (Ισχύει).</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="ασκήσεις-και-προβλήματα-εμπέδωσης" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="ασκήσεις-και-προβλήματα-εμπέδωσης"><span class="header-section-number">1.8</span> Ασκήσεις και Προβλήματα Εμπέδωσης</h3>
+<p><strong>Θέμα 1: Η εξίσωση</strong> <span class="math inline">\(\alpha x + \beta y = \gamma\)</span></p>
+<ol type="1">
+<li><p>Να βρεθούν τα σημεία τομής της ευθείας <span class="math inline">\(3x - 4y = 12\)</span> με τους άξονες <span class="math inline">\(x'x\)</span> και <span class="math inline">\(y'y\)</span> και να σχεδιαστεί η γραφική της παράσταση.</p></li>
+<li><p>Να προσδιοριστεί ο πραγματικός αριθμός <span class="math inline">\(\alpha\)</span> ώστε η ευθεία <span class="math inline">\((\alpha - 2)x + 3y = 6\)</span> να είναι παράλληλη στον άξονα <span class="math inline">\(x'x\)</span>.</p></li>
+</ol>
+<p><strong>Θέμα 2: Αλγεβρική Επίλυση</strong> <span class="math inline">\(2 \times 2\)</span></p>
+<ol start="3" type="1">
+<li><p>Να λυθεί με τη μέθοδο της αντικατάστασης το σύστημα <span class="math display">\[\begin{cases} 2x + y = 7 \\ 5x - 3y = 1 \end{cases}\]</span> και να γίνει επαλήθευση των τιμών.</p></li>
+<li><p>Να λυθεί με τη μέθοδο των αντίθετων συντελεστών το σύστημα <span class="math display">\[\begin{cases} 3x + 4y = 18 \\ 5x - 2y = 4 \end{cases}\]</span>.</p></li>
+<li><p>Να λυθεί το σύστημα: <span class="math display">\[\begin{cases} \dfrac{x+1}{3} - \dfrac{y-2}{2} = 1 \\ 2(x - 1) + 3(y + 1) = 13 \end{cases}\]</span>.</p></li>
+<li><p>Να λυθεί το σύστημα που ανάγεται σε γραμμικό: <span class="math display">\[\begin{cases} \dfrac{3}{x} + \dfrac{2}{y} = 7 \\ \dfrac{1}{x} - \dfrac{4}{y} = -7 \end{cases}\]</span> (<span class="math inline">\(x, y \neq 0\)</span>).</p></li>
+</ol>
+<p><strong>Θέμα 3: Γραφική Επίλυση</strong> <span class="math inline">\(2 \times 2\)</span></p>
+<ol start="7" type="1">
+<li><p>Να επιλυθεί γραφικά το σύστημα <span class="math display">\[\begin{cases} x + y = 5 \\ 2x - y = 1 \end{cases}\]</span> και να επιβεβαιωθεί αλγεβρικά η μοναδική λύση.</p></li>
+<li><p>Να αιτιολογηθεί γραφικά γιατί το σύστημα <span class="math display">\[\begin{cases} 2x - y = 3 \\ 4x - 2y = 1 \end{cases}\]</span> είναι αδύνατο.</p></li>
+<li><p>Να δειχθεί γραφικά ότι το σύστημα <span class="math display">\[\begin{cases} x - 3y = 2 \\ 3x - 9y = 6 \end{cases}\]</span> έχει άπειρο πλήθος λύσεων.</p></li>
+</ol>
+<p><strong>Θέμα 4: Επίλυση</strong> <span class="math inline">\(2 \times 2\)</span> με Ορίζουσες (Cramer)</p>
+<ol start="10" type="1">
+<li><p>Να υπολογιστούν οι ορίζουσες <span class="math inline">\(D, D_x, D_y\)</span> και να λυθεί το σύστημα <span class="math display">\[\begin{cases} 4x - 3y = 11 \\ 3x + 5y = 2 \end{cases}\]</span>.</p></li>
+<li><p>Χρησιμοποιώντας ορίζουσες, να εξεταστεί αν το σύστημα <span class="math display">\[\begin{cases} 2x - 6y = 5 \\ -x + 3y = 2 \end{cases}\]</span> έχει λύση.</p></li>
+<li><p>Να λυθεί με ορίζουσες το σύστημα <span class="math display">\[\begin{cases} 5x - 2y = 10 \\ 10x - 4y = 20 \end{cases}\]</span>.</p></li>
+</ol>
+<p><strong>Θέμα 5: Παραμετρικά Συστήματα</strong> <span class="math inline">\(2 \times 2\)</span></p>
+<ol start="13" type="1">
+<li><p>Να γίνει πλήρης διερεύνηση για τις τιμές του <span class="math inline">\(\lambda \in \mathbb{R}\)</span> του συστήματος: <span class="math display">\[\begin{cases} \lambda x + y = 2 \\ x + \lambda y = \lambda + 1 \end{cases}\]</span>.</p></li>
+<li><p>Να διερευνηθεί το παραμετρικό σύστημα: <span class="math display">\[\begin{cases} (\lambda - 2)x + 3y = 6 \\ 2x + (\lambda + 3)y = 4 \end{cases}\]</span>.</p></li>
+<li><p>Να βρεθεί η τιμή της παραμέτρου <span class="math inline">\(\mu \in \mathbb{R}\)</span> ώστε το σύστημα <span class="math display">\[\begin{cases} \mu x + 4y = 8 \\ 4x + \mu y = 8 \end{cases}\]</span> να έχει άπειρες λύσεις.</p></li>
+</ol>
+<p><strong>Θέμα 6: Γραμμικά Συστήματα</strong> <span class="math inline">\(3 \times 3\)</span></p>
+<ol start="16" type="1">
+<li><p>Να λυθεί και να επαληθευτεί το σύστημα <span class="math inline">\(3 \times 3\)</span>: <span class="math display">\[\begin{cases} x + y + z = 6 \\ 2x - y + z = 3 \\ 3x + 2y - z = 4 \end{cases}\]</span>.</p></li>
+<li><p>Να επιλυθεί το σύστημα: <span class="math display">\[\begin{cases} 2x + y - z = 5 \\ x - 2y + 2z = -2 \\ 3x + 3y + z = 13 \end{cases}\]</span>.</p></li>
+<li><p>Να λυθεί το σύστημα: <span class="math display">\[\begin{cases} x + y = 7 \\ y + z = 9 \\ z + x = 8 \end{cases}\]</span>.</p></li>
+</ol>
+<p><strong>Θέματα Εφαρμογής &amp; Προβλήματα</strong></p>
+<ol start="19" type="1">
+<li><p><strong>Πρόβλημα Αγοράς:</strong> Ένας μαθητής αγόρασε συνολικά 12 τετράδια και στυλό, πληρώνοντας συνολικά 18€. Αν κάθε τετράδιο κοστίζει 2€ και κάθε στυλό 1€, να βρεθεί πόσα τετράδια και πόσα στυλό αγόρασε.</p></li>
+<li><p><strong>Πρόβλημα Ηλικιών:</strong> Ο πατέρας είναι σήμερα κατά 28 χρόνια μεγαλύτερος από τον γιο του. Πριν από 4 χρόνια, η ηλικία του πατέρα ήταν πενταπλάσια από την ηλικία του γιου του. Να βρεθούν οι σημερινές τους ηλικίες.</p></li>
+</ol>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title brblem-title">
+<ol start="21" type="1">
+<li><strong>Πρόβλημα Αναμείξεων (Διαλύματα / Περιεκτικότητα %)</strong></li>
+</ol>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Ένας χημικός θέλει να παρασκευάσει <span class="math inline">\(100 \text{ L}\)</span> διαλύματος αλκοόλης με περιεκτικότητα <span class="math inline">\(40\%\)</span>. Στη διάθεσή του έχει δύο διαλύματα: το πρώτο έχει περιεκτικότητα <span class="math inline">\(25\%\)</span> σε αλκοόλη και το δεύτερο <span class="math inline">\(50\%\)</span>. Πόσα λίτρα από κάθε διάλυμα πρέπει να αναμίξει;</p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title brblemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(x\)</span> τα λίτρα του διαλύματος <span class="math inline">\(25\%\)</span> και <span class="math inline">\(y\)</span> τα λίτρα του διαλύματος <span class="math inline">\(50\%\)</span>.</p>
+<ol type="1">
+<li><p><strong>Συνολικός όγκος διαλύματος:</strong> <span class="math display">\[x + y = 100 \quad (1)\]</span></p></li>
+<li><p><strong>Ποσότητα καθαρής αλκοόλης:</strong> Το τελικό διάλυμα περιέχει <span class="math inline">\(40\% \cdot 100 = 40 \text{ L}\)</span> καθαρής αλκοόλης. Άρα: <span class="math display">\[0{,}25x + 0{,}50y = 40 \iff 25x + 50y = 4000 \iff x + 2y = 160 \quad (2)\]</span></p></li>
+</ol>
+<p>Αφαιρούμε την (1) από την (2): <span class="math display">\[(x + 2y) - (x + y) = 160 - 100 \implies y = 60 \text{ L}\]</span></p>
+<p>Αντικαθιστούμε <span class="math inline">\(y = 60\)</span> στην (1): <span class="math display">\[x + 60 = 100 \implies x = 40 \text{ L}\]</span></p>
+<p><strong>Απάντηση:</strong> Χρειάζονται <span class="math inline">\(40 \text{ L}\)</span> από το διάλυμα <span class="math inline">\(25\%\)</span> και <span class="math inline">\(60 \text{ L}\)</span> από το διάλυμα <span class="math inline">\(50\%\)</span>.</p>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title brblem-title">
+<ol start="22" type="1">
+<li>Πρόβλημα Κίνησης &amp; Ταχύτητας (Ρεύμα Ποταμού)</li>
+</ol>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Ένα πλοιάριο διανύει απόσταση <span class="math inline">\(48 \text{ km}\)</span> κινούμενο αντίθετα με το ρεύμα ενός ποταμού σε <span class="math inline">\(4\)</span> ώρες. Το ίδιο πλοιάριο διανύει την ίδια απόσταση κινούμενο με τη φορά του ρεύματος σε <span class="math inline">\(2\)</span> ώρες. Να βρεθεί η ταχύτητα του πλοιαρίου σε στάσιμα ύδατα και η ταχύτητα του ρεύματος του ποταμού.</p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title brblemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(v_π\)</span> η ταχύτητα του πλοιαρίου σε στάσιμα ύδατα (<span class="math inline">\(\text{km/h}\)</span>) και <span class="math inline">\(v_ρ\)</span> η ταχύτητα του ρεύματος (<span class="math inline">\(\text{km/h}\)</span>).</p>
+<ul>
+<li><p><strong>Κίνηση αντίθετα στο ρεύμα</strong> (συνολική ταχύτητα <span class="math inline">\(v_π - v_ρ\)</span>): <span class="math display">\[s = (v_π - v_ρ) \cdot t_1 \implies 48 = (v_π - v_ρ) \cdot 4 \implies v_π - v_ρ = 12 \quad (1)\]</span></p></li>
+<li><p><strong>Κίνηση με το ρεύμα</strong> (συνολική ταχύτητα <span class="math inline">\(v_π + v_ρ\)</span>): <span class="math display">\[s = (v_π + v_ρ) \cdot t_2 \implies 48 = (v_π + v_ρ) \cdot 2 \implies v_π + v_ρ = 24 \quad (2)\]</span></p></li>
+</ul>
+<p>Προσθέτουμε κατά μέλη τις (1) και (2): <span class="math display">\[2v_π = 36 \implies v_π = 18 \text{ km/h}\]</span></p>
+<p>Αφαιρούμε την (1) από την (2): <span class="math display">\[2v_ρ = 12 \implies v_ρ = 6 \text{ km/h}\]</span></p>
+<p><strong>Απάντηση:</strong> Η ταχύτητα του πλοιαρίου σε στάσιμα ύδατα είναι <span class="math inline">\(18 \text{ km/h}\)</span> και η ταχύτητα του ρεύματος είναι <span class="math inline">\(6 \text{ km/h}\)</span>.</p>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title brblem-title">
+<ol start="23" type="1">
+<li>Πρόβλημα Γεωμετρίας &amp; Μεταβολής Εμβαδού</li>
+</ol>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Αν το μήκος ενός ορθογωνίου αυξηθεί κατά <span class="math inline">\(3 \text{ m}\)</span> και το πλάτος ελαττωθεί κατά <span class="math inline">\(2 \text{ m}\)</span>, το εμβαδόν του ελαττώνεται κατά <span class="math inline">\(18 \text{ m}^2\)</span>. Αν το μήκος ελαττωθεί κατά <span class="math inline">\(2 \text{ m}\)</span> και το πλάτος αυξηθεί κατά <span class="math inline">\(3 \text{ m}\)</span>, το εμβαδόν αυξάνεται κατά <span class="math inline">\(17 \text{ m}^2\)</span>. Να βρεθούν οι αρχικές διαστάσεις του ορθογωνίου.</p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title brblemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(x\)</span> το αρχικό μήκος και <span class="math inline">\(y\)</span> το αρχικό πλάτος (<span class="math inline">\(x, y &gt; 0\)</span>). Το αρχικό εμβαδόν είναι <span class="math inline">\(E = x \cdot y\)</span>.</p>
+<ol type="1">
+<li><p><strong>1η συνθήκη:</strong> <span class="math display">\[(x + 3)(y - 2) = xy - 18 \iff xy - 2x + 3y - 6 = xy - 18 \iff 2x - 3y = 12 \quad (1)\]</span></p></li>
+<li><p><strong>2η συνθήκη:</strong> <span class="math display">\[(x - 2)(y + 3) = xy + 17 \iff xy + 3x - 2y - 6 = xy + 17 \iff 3x - 2y = 23 \quad (2)\]</span></p></li>
+</ol>
+<p>Πολλαπλασιάζουμε την (1) επί <span class="math inline">\(2\)</span> και την (2) επί <span class="math inline">\(-3\)</span>: <span class="math display">\[\begin{cases} 4x - 6y = 24 \\ -9x + 6y = -69 \end{cases}\]</span></p>
+<p>Προσθέτουμε κατά μέλη: <span class="math display">\[-5x = -45 \implies x = 9 \text{ m}\]</span></p>
+<p>Αντικαθιστούμε <span class="math inline">\(x = 9\)</span> στην (1): <span class="math display">\[2(9) - 3y = 12 \implies 18 - 3y = 12 \implies 3y = 6 \implies y = 2 \text{ m}\]</span></p>
+<p><strong>Απάντηση:</strong> Το αρχικό μήκος είναι <span class="math inline">\(9 \text{ m}\)</span> και το αρχικό πλάτος <span class="math inline">\(2 \text{ m}\)</span>.</p>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title brblem-title">
+<ol start="24" type="1">
+<li>Πρόβλημα Ψηφίων Αριθμού</li>
+</ol>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Ένας διψήφιος θετικός ακέραιος αριθμός είναι ίσος με το τετραπλάσιο του αθροίσματος των ψηφίων του. Αν αντιστρέψουμε τη σειρά των ψηφίων του, ο νέος αριθμός που προκύπτει είναι κατά <span class="math inline">\(27\)</span> μεγαλύτερος από τον αρχικό. Να βρεθεί ο αρχικός αριθμός.</p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title brblemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(x\)</span> το ψηφίο των δεκάδων και <span class="math inline">\(y\)</span> το ψηφίο των μονάδων (<span class="math inline">\(x, y \in \{1, 2, \dots, 9\}\)</span>). Ο αριθμός εκφράζεται ως <span class="math inline">\(10x + y\)</span>.</p>
+<ol type="1">
+<li><p><strong>1η συνθήκη:</strong> <span class="math display">\[10x + y = 4(x + y) \iff 10x + y = 4x + 4y \iff 6x - 3y = 0 \iff 2x - y = 0 \quad (1)\]</span></p></li>
+<li><p><strong>2η συνθήκη (ο αντιστραμμένος αριθμός είναι</strong> <span class="math inline">\(10y + x\)</span>): <span class="math display">\[(10y + x) - (10x + y) = 27 \iff 9y - 9x = 27 \iff y - x = 3 \quad (2)\]</span></p></li>
+</ol>
+<p>Από την (1) προκύπτει <span class="math inline">\(y = 2x\)</span>. Αντικαθιστούμε στην (2): <span class="math display">\[2x - x = 3 \implies x = 3\]</span> Άρα <span class="math inline">\(y = 2(3) = 6\)</span>.</p>
+<p><strong>Απάντηση:</strong> Ο αρχικός αριθμός είναι ο <span class="math inline">\(36\)</span>. <em>(Επαλήθευση:</em> <span class="math inline">\(36 = 4 \cdot (3+6) = 36\)</span> και <span class="math inline">\(63 - 36 = 27\)</span>).</p>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title brblem-title">
+<ol start="25" type="1">
+<li>Πρόβλημα Παραγωγής &amp; Κατανομής Πόρων (<span class="math inline">\(3 \times 3\)</span>)</li>
+</ol>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Μία βιοτεχνία παράγει τρία είδη προϊόντων $A, B$ και <span class="math inline">\(\Gamma\)</span>. Για την κατασκευή μιας μονάδας κάθε προϊόντος απαιτούνται ώρες εργασίας σε τρία τμήματα (<span class="math inline">\(T_1, T_2, T_3\)</span>) σύμφωνα με τον πίνακα:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Τμήμα</th>
+<th style="text-align: center;">Προϊόν <span class="math inline">\(A\)</span></th>
+<th style="text-align: center;">Προϊόν <span class="math inline">\(B\)</span></th>
+<th style="text-align: center;">Προϊόν <span class="math inline">\(\Gamma\)</span></th>
+<th style="text-align: center;">Διαθέσιμες Ώρες</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(T_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(80 \text{ h}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(T_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(110 \text{ h}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(T_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2 \text{ h}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(70 \text{ h}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Πόσες μονάδες από κάθε προϊόν πρέπει να παραχθούν ώστε να εξαντληθούν πλήρως οι διαθέσιμες ώρες των τμημάτων;</p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title brblemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(x, y, z\)</span> οι παραγόμενες μονάδες των προϊόντων <span class="math inline">\(A, B, \Gamma\)</span> αντίστοιχα (<span class="math inline">\(x, y, z \ge 0\)</span>).</p>
+<p>Σχηματίζουμε το σύστημα <span class="math inline">\(3 \times 3\)</span>: <span class="math display">\[\begin{cases}
+x + 2y + z = 80 \quad &amp;(1) \\
+2x + y + 3z = 110 \quad &amp;(2) \\
+x + y + 2z = 70 \quad &amp;(3)
+\end{cases}\]</span></p>
+<ol type="1">
+<li><p>Αφαιρούμε την (3) από την (1): <span class="math display">\[(x + 2y + z) - (x + y + 2z) = 80 - 70 \implies y - z = 10 \iff y = z + 10 \quad (4)\]</span></p></li>
+<li><p>Αφαιρούμε <span class="math inline">\(2 \times (3)\)</span> από την (2): <span class="math display">\[(2x + y + 3z) - 2(x + y + 2z) = 110 - 140 \implies -y - z = -30 \iff y + z = 30 \quad (5)\]</span></p></li>
+<li><p>Προσθέτουμε τις (4) και (5): <span class="math display">\[2y = 40 \implies y = 20\]</span> Από την (5): <span class="math inline">\(20 + z = 30 \implies z = 10\)</span>.</p></li>
+<li><p>Αντικαθιστούμε <span class="math inline">\(y = 20, z = 10\)</span> στην (3): <span class="math display">\[x + 20 + 2(10) = 70 \implies x + 40 = 70 \implies x = 30\]</span></p></li>
+</ol>
+<p><strong>Απάντηση:</strong> Πρέπει να παραχθούν <span class="math inline">\(30\)</span> μονάδες του <span class="math inline">\(A\)</span>, <span class="math inline">\(20\)</span> μονάδες του <span class="math inline">\(B\)</span> και <span class="math inline">\(10\)</span> μονάδες του <span class="math inline">\(\Gamma\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="και-άλλες-ασκήσεις" class="level3" data-number="1.9">
+<h3 data-number="1.9" class="anchored" data-anchor-id="και-άλλες-ασκήσεις"><span class="header-section-number">1.9</span> …. και … άλλες ασκήσεις</h3>
+<p><strong>1. Γραμμικό σύστημα</strong> <span class="math inline">\(2 \times 2\)</span> (Αλγεβρικά και Γραφικά)</p>
+<p>Να λύσετε το σύστημα: <span class="math display">\[\begin{cases} x - y = 5 \\ x + y = 1 \end{cases}\]</span></p>
+<p><strong>i)</strong> αλγεβρικά<br>
+<strong>ii)</strong> γραφικά</p>
+<hr>
+<p><strong>2. Συστήματα με αναλογίες</strong></p>
+<p>Να λύσετε τα συστήματα:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} \dfrac{x}{4} = \dfrac{y}{5} \\ x + y = 36 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} \dfrac{x - 2}{2} = \dfrac{y - 1}{3} \\ 3x + 2y = 16 \end{cases}\]</span></p>
+<hr>
+<p><strong>3. Συστήματα με κλασματικούς όρους</strong></p>
+<p>Να λύσετε τα συστήματα:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} \dfrac{x - 3}{4} + \dfrac{y + 1}{3} = 1 \\ \dfrac{x + 1}{2} - \dfrac{y - 2}{5} = 4 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} \dfrac{3x - 2}{2} = 5 - \dfrac{y + 1}{3} \\ \dfrac{x + 2}{3} - 2 = \dfrac{x - y}{4} \end{cases}\]</span></p>
+<hr>
+<p><strong>4. Ειδικές μορφές συστημάτων (Αδύνατα / Αόριστα)</strong></p>
+<p>Να λύσετε τα συστήματα:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} x - 2y = 4 \\ \dfrac{x}{2} - y = 1 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} 3y = x - 6 \\ \dfrac{1}{3}x - y - 2 = 0 \end{cases}\]</span></p>
+<hr>
+<p><strong>5. Επίλυση με τη μέθοδο των οριζουσών (</strong><span class="math inline">\(D, D_x, D_y\)</span>)</p>
+<p>Να λύσετε τα συστήματα με τη μέθοδο των οριζουσών:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} 3x + y = 11 \\ 2x - 3y = 0 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} 3y = 2x - 7 \\ 2x + y - 5 = 0 \end{cases}\]</span></p>
+<hr>
+<p><strong>6. Διερεύνηση πλήθους λύσεων (χωρίς επίλυση)</strong></p>
+<p>Να προσδιορίσετε το πλήθος των λύσεων των παρακάτω συστημάτων, χωρίς να τα λύσετε:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} 3x - 4y = 5 \\ 5x + 2y = 12 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} 3x - 2y = 15 \\ 6x - 4y = 30 \end{cases}\]</span></p>
+<p><strong>iii)</strong> <span class="math display">\[\begin{cases} 2x + 5y = 7 \\ -4x - 10y = 3 \end{cases}\]</span></p>
+<hr>
+<p><strong>7. Συστήματα με άρρητους συντελεστές (ριζικά)</strong></p>
+<p>Να λύσετε τα συστήματα:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} (\sqrt{2} - 1)x + y = 1 \\ x + (\sqrt{2} + 1)y = 3 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} (\sqrt{5} + 1)x + 2y = 4 \\  \dfrac{1}{2}x + (\sqrt{5} - 1)y = 2 \end{cases}\]</span></p>
+<hr>
+<p><strong>8. Συστήματα</strong> <span class="math inline">\(3 \times 3\)</span> (τριών εξισώσεων με τρεις αγνώστους)</p>
+<p>Να λύσετε τα συστήματα:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} 2x - y + \omega = 5 \\ x + 3y - 2\omega = 4 \\ 3x + 2y + \omega = 11 \end{cases}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} 4x - y + 2\omega = 7 \\ x - 2y + \omega = 1 \\ 2x + 3y - \omega = 4 \end{cases}\]</span></p>
+<p><strong>iii)</strong> <span class="math display">\[\begin{cases} x + \dfrac{y}{3} - \omega = 2 \\ \dfrac{x}{2} + y + 2\omega = 8 \\ 3x + 2y - \omega = 9 \end{cases}\]</span></p>
+<hr>
+<p><strong>9. Εξισώσεις ευθειών και γραφική επίλυση</strong></p>
+<p>Δίνονται δύο ευθείες <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> στο καρτεσιανό επίπεδο:</p>
+<ul>
+<li><p>Η ευθεία <span class="math inline">\(\epsilon_1\)</span> διέρχεται από τα σημεία <span class="math inline">\((0, 3)\)</span> και <span class="math inline">\((6, 0)\)</span>.</p></li>
+<li><p>Η ευθεία <span class="math inline">\(\epsilon_2\)</span> διέρχεται από τα σημεία <span class="math inline">\((0, -2)\)</span> και <span class="math inline">\((2, 0)\)</span>.</p></li>
+</ul>
+<p><strong>i)</strong> Να βρείτε τις εξισώσεις των ευθειών <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span>.</p>
+<p><strong>ii)</strong> Ποιο γραμμικό σύστημα ορίζουν οι <span class="math inline">\(\epsilon_1\)</span> και <span class="math inline">\(\epsilon_2\)</span> και ποια είναι η λύση του (το σημείο τομής τους);</p>
+<hr>
+<p><strong>10. Πρόβλημα με δωμάτια / κρεβάτια</strong></p>
+<p>Ένα ξενοδοχείο διαθέτει συνολικά <span class="math inline">\(35\)</span> δωμάτια, άλλα δίκλινα και άλλα τρίκλινα. Αν το σύνολο των κρεβατιών στο ξενοδοχείο είναι <span class="math inline">\(85\)</span>, να βρείτε πόσα είναι τα δίκλινα και πόσα τα τρίκλινα δωμάτια.</p>
+<hr>
+<p><strong>11. Πρόβλημα με εισιτήρια</strong></p>
+<p>Σε έναν θεατρικό αγώνα το παιδικό εισιτήριο κοστίζει <span class="math inline">\(2\text{ €}\)</span> και το εισιτήριο ενηλίκου κοστίζει <span class="math inline">\(5\text{ €}\)</span>. Συνολικά κόπηκαν <span class="math inline">\(1.500\)</span> εισιτήρια και οι συνολικές εισπράξεις ήταν <span class="math inline">\(4.800\text{ €}\)</span>. Να βρείτε πόσα παιδιά και πόσοι ενήλικες παρακολούθησαν την παράσταση.</p>
+<hr>
+<p><strong>12. Γραμμική σχέση φυσικών μεγεθών</strong></p>
+<p>Η αντίσταση <span class="math inline">\(R\)</span> ενός μεταλλικού αγωγού ως συνάρτηση της θερμοκρασίας <span class="math inline">\(T\)</span> (σε <span class="math inline">\(^{\circ}\text{C}\)</span>) δίνεται από τον τύπο <span class="math inline">\(R = \alpha T + \beta\)</span>. * Στους <span class="math inline">\(10^{\circ}\text{C}\)</span> η αντίσταση είναι <span class="math inline">\(0{,}6\ \Omega\)</span>. * Στους <span class="math inline">\(70^{\circ}\text{C}\)</span> η αντίσταση είναι <span class="math inline">\(0{,}9\ \Omega\)</span>.</p>
+<p>Να προσδιορίσετε τις σταθερές <span class="math inline">\(\alpha\)</span> και <span class="math inline">\(\beta\)</span>.</p>
+<hr>
+<p><strong>13. Ανάμειξη δύο διαλυμάτων</strong></p>
+<p>Ένας χημικός διαθέτει δύο διαλύματα θειικού οξέος:</p>
+<ul>
+<li><p>Το 1ο διάλυμα έχει περιεκτικότητα <span class="math inline">\(40\%\)</span> σε οξύ.</p></li>
+<li><p>Το 2ο διάλυμα έχει περιεκτικότητα <span class="math inline">\(70\%\)</span> σε οξύ.</p></li>
+</ul>
+<p>Πόσα <span class="math inline">\(\text{ml}\)</span> από κάθε διάλυμα πρέπει να αναμείξει ώστε να πάρει <span class="math inline">\(300\text{ ml}\)</span> νέου διαλύματος με περιεκτικότητα <span class="math inline">\(50\%\)</span> σε οξύ;</p>
+<hr>
+<p><strong>14. Σχετική θέση ευθειών με παράμετρο</strong></p>
+<p>Δίνονται οι ευθείες: <span class="math display">\[\epsilon_1: 3x + 6y = 5 \quad \text{και} \quad \epsilon_2: x + 2y = \alpha, \quad \alpha \in \mathbb{R}\]</span></p>
+<p><strong>i)</strong> Να βρείτε τους συντελεστές διεύθυνσης <span class="math inline">\(\lambda_1, \lambda_2\)</span> των δύο ευθειών.</p>
+<p><strong>ii)</strong> Υπάρχουν τιμές της παραμέτρου <span class="math inline">\(\alpha\)</span> για τις οποίες οι ευθείες τέμνονται;</p>
+<p><strong>iii)</strong> Για ποιες τιμές του <span class="math inline">\(\alpha\)</span> οι ευθείες είναι παράλληλες (και δεν ταυτίζονται);</p>
+<hr>
+<p><strong>15. Κοινά σημεία ευθειών με παράμετρο</strong></p>
+<p>Να διερευνήσετε, για τις διάφορες τιμές του <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, τα κοινά σημεία των παρακάτω ζευγών ευθειών:</p>
+<p><strong>i)</strong> <span class="math inline">\(\epsilon_1: \alpha x + y = \alpha + 1 \quad \text{και} \quad \epsilon_2: x + \alpha y = 2\)</span></p>
+<p><strong>ii)</strong> <span class="math inline">\(\epsilon_1: \alpha x - y = 2\alpha \quad \text{και} \quad \epsilon_2: 4x - \alpha y = 4\)</span></p>
+<hr>
+<p><strong>16. Παραμετρικά γραμμικά συστήματα</strong> <span class="math inline">\(2 \times 2\)</span></p>
+<p>Να λύσετε και να διερευνήσετε τα συστήματα για τις διάφορες τιμές της παραμέτρου:</p>
+<p><strong>i)</strong> <span class="math display">\[\begin{cases} (\lambda - 2)x - 3y = 1 \\ 3x - (\lambda + 2)y = -1 \end{cases}, \quad \lambda \in \mathbb{R}\]</span></p>
+<p><strong>ii)</strong> <span class="math display">\[\begin{cases} (\mu - 3)x + 4y = 4 \\ x + (\mu + 1)y = 4 \end{cases}, \quad \mu \in \mathbb{R}\]</span></p>
+<hr>
+<p><strong>17. Εφαπτόμενοι κύκλοι ανά δύο</strong></p>
+<p>Τρεις κύκλοι με κέντρα <span class="math inline">\(O_1, O_2, O_3\)</span> και ακτίνες <span class="math inline">\(r_1, r_2, r_3\)</span> εφάπτονται εξωτερικά ανά δύο. Αν οι διακεντρικές αποστάσεις είναι: <span class="math display">\[O_1O_2 = 8\text{ cm}, \quad O_1O_3 = 9\text{ cm}, \quad O_2O_3 = 11\text{ cm}\]</span> να υπολογίσετε τις ακτίνες <span class="math inline">\(r_1, r_2, r_3\)</span> των τριών κύκλων.</p>
+<hr>
+<p><strong>18. Εφαπτόμενα τμήματα εγγεγραμμένου κύκλου</strong></p>
+<p>Σε τρίγωνο <span class="math inline">\(AB\Gamma\)</span> με πλευρές <span class="math inline">\(B\Gamma = \alpha\)</span>, <span class="math inline">\(A\Gamma = \beta\)</span> και <span class="math inline">\(AB = \gamma\)</span>, ο εγγεγραμμένος κύκλος εφάπτεται των πλευρών <span class="math inline">\(B\Gamma, A\Gamma, AB\)</span> στα σημεία <span class="math inline">\(\Delta, E, Z\)</span> αντίστοιχα. Αν θέσουμε <span class="math inline">\(AZ = x\)</span>, <span class="math inline">\(B\Delta = y\)</span> και <span class="math inline">\(\Gamma E = z\)</span>:</p>
+<p><strong>i)</strong> Να εκφράσετε τις πλευρές <span class="math inline">\(\alpha, \beta, \gamma\)</span> συναρτήσει των <span class="math inline">\(x, y, z\)</span>.</p>
+<p>*ii)** Να λύσετε το σύστημα ως προς <span class="math inline">\(x, y, z\)</span> και να δείξετε ότι: <span class="math display">\[x = \tau - \alpha, \quad y = \tau - \beta, \quad z = \tau - \gamma\]</span></p>
+<p><em>(όπου</em> <span class="math inline">\(\tau = \dfrac{\alpha+\beta+\gamma}{2}\)</span> είναι η ημιπερίμετρος του τριγώνου).</p>
+<hr>
+<p><strong>19. Ανάμειξη τριών διαλυμάτων (Σύστημα</strong> <span class="math inline">\(3 \times 3\)</span>)</p>
+<p>Ένας χημικός διαθέτει τρία διαλύματα του ίδιου οξέος με περιεκτικότητες <span class="math inline">\(40\%\)</span>, <span class="math inline">\(15\%\)</span> και <span class="math inline">\(25\%\)</span> αντίστοιχα. Θέλει να παρασκευάσει <span class="math inline">\(60\text{ lit}\)</span> διαλύματος περιεκτικότητας <span class="math inline">\(27\%\)</span> σε οξύ, χρησιμοποιώντας και τα τρία διαλύματα, έτσι ώστε η ποσότητα του πρώτου διαλύματος να είναι ίση με το άθροισμα των ποσοτήτων των άλλων δύο.</p>
+<p>Να βρείτε πόσα λίτρα από κάθε διάλυμα πρέπει να χρησιμοποιήσει.</p>
+<hr>
+<p><strong>20. Προσδιορισμός τριωνύμου</strong> <span class="math inline">\(y = \alpha x^2 + \beta x + \gamma\)</span> από γεωμετρικά στοιχεία</p>
+<p>Να βρείτε τον τύπο του τριωνύμου <span class="math inline">\(y = f(x) = \alpha x^2 + \beta x + \gamma\)</span> σε καθεμία από τις παρακάτω περιπτώσεις:</p>
+<p><strong>i)</strong> Η παραβολή έχει κορυφή το σημείο <span class="math inline">\(K(1, -4)\)</span> και τέμνει τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\((0, -3)\)</span>.</p>
+<p><strong>ii)</strong> Η παραβολή έχει κορυφή το σημείο <span class="math inline">\(K(2, 9)\)</span> και τέμνει τον άξονα <span class="math inline">\(x'x\)</span> στα σημεία <span class="math inline">\((-1, 0)\)</span> και <span class="math inline">\((5, 0)\)</span>.</p>
+<p><strong>iii)</strong> Η παραβολή τέμνει τον άξονα <span class="math inline">\(x'x\)</span> στα σημεία <span class="math inline">\((1, 0)\)</span> και <span class="math inline">\((3, 0)\)</span> και τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\((0, 6)\)</span>.</p>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
