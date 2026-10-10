@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
 
-<title>Αλγεβρα Γενικού – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<title>02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -60,19 +61,33 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
   }
 }</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -106,10 +121,10 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed page-blalgebragenikou quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -117,8 +132,8 @@ window.Quarto = {
     <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -169,17 +184,51 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Αλγεβρα Γενικού</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</a></li></ol></nav>
+      <h1 class="title">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">1 Οκτώβριος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">10 Οκτώβριος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -200,7 +249,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Γυμνάσιο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -209,7 +258,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -218,7 +267,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Αλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -445,7 +494,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -596,7 +645,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -605,7 +654,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Αλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -694,7 +743,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -851,7 +900,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -860,7 +909,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Αλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1003,7 +1052,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1078,7 +1127,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
  <span class="menu-text">Λύκειο</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1087,7 +1136,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1096,7 +1145,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Άλγεβρα</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1263,7 +1312,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
  <span class="menu-text">Γεωμετρία</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -1408,20 +1457,20 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../../lykeio/b/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Β' Λυκείου – Μαθηματικά</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
  <span class="menu-text">Άλγεβρα Γενικής</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link">
@@ -1442,7 +1491,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</span></a>
   </div>
 </li>
@@ -1465,33 +1514,428 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#κατακόρυφη---οριζόντια-μετατόπιση-καμπύλης" id="toc-κατακόρυφη---οριζόντια-μετατόπιση-καμπύλης" class="nav-link active" data-scroll-target="#κατακόρυφη---οριζόντια-μετατόπιση-καμπύλης"><span class="header-section-number">1</span> Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</a>
+  <ul>
+  <li><a href="#κατακόρυφη-μετατόπιση-καμπύλης" id="toc-κατακόρυφη-μετατόπιση-καμπύλης" class="nav-link" data-scroll-target="#κατακόρυφη-μετατόπιση-καμπύλης"><span class="header-section-number">1.1</span> Κατακόρυφη Μετατόπιση Καμπύλης</a>
+  <ul>
+  <li><a href="#ορισμοί" id="toc-ορισμοί" class="nav-link" data-scroll-target="#ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</a></li>
+  <li><a href="#παραδείγματα-διαφόρων-περιπτώσεων" id="toc-παραδείγματα-διαφόρων-περιπτώσεων" class="nav-link" data-scroll-target="#παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.1.2</span> Παραδείγματα Διαφόρων Περιπτώσεων</a></li>
+  </ul></li>
+  <li><a href="#οριζόντια-μετατόπιση-καμπύλης" id="toc-οριζόντια-μετατόπιση-καμπύλης" class="nav-link" data-scroll-target="#οριζόντια-μετατόπιση-καμπύλης"><span class="header-section-number">1.2</span> Οριζόντια Μετατόπιση Καμπύλης</a>
+  <ul>
+  <li><a href="#ορισμοί-1" id="toc-ορισμοί-1" class="nav-link" data-scroll-target="#ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</a></li>
+  <li><a href="#παραδείγματα-διαφόρων-περιπτώσεων-1" id="toc-παραδείγματα-διαφόρων-περιπτώσεων-1" class="nav-link" data-scroll-target="#παραδείγματα-διαφόρων-περιπτώσεων-1"><span class="header-section-number">1.2.2</span> Παραδείγματα Διαφόρων Περιπτώσεων</a></li>
+  </ul></li>
+  <li><a href="#εφαρμογές" id="toc-εφαρμογές" class="nav-link" data-scroll-target="#εφαρμογές"><span class="header-section-number">1.3</span> Εφαρμογές</a></li>
+  <li><a href="#ερωτήσεις-κατανόησης" id="toc-ερωτήσεις-κατανόησης" class="nav-link" data-scroll-target="#ερωτήσεις-κατανόησης"><span class="header-section-number">1.4</span> Ερωτήσεις Κατανόησης</a></li>
+  <li><a href="#ασκήσεις-εμπέδωσης" id="toc-ασκήσεις-εμπέδωσης" class="nav-link" data-scroll-target="#ασκήσεις-εμπέδωσης"><span class="header-section-number">1.5</span> Ασκήσεις Εμπέδωσης</a></li>
+  </ul></li>
+  <li><a href="#διαγωνισμα-αξιολογησησ-μετατοπισεισ-συναρτησεων" id="toc-διαγωνισμα-αξιολογησησ-μετατοπισεισ-συναρτησεων" class="nav-link" data-scroll-target="#διαγωνισμα-αξιολογησησ-μετατοπισεισ-συναρτησεων"><span class="header-section-number">2</span> ΔΙΑΓΩΝΙΣΜΑ ΑΞΙΟΛΟΓΗΣΗΣ: ΜΕΤΑΤΟΠΙΣΕΙΣ ΣΥΝΑΡΤΗΣΕΩΝ</a>
+  <ul>
+  <li><a href="#θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" id="toc-θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες"><span class="header-section-number">2.1</span> <strong>ΘΕΜΑ Α (Θεωρία &amp; Ερωτήσεις Κατανόησης - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-β-συνάρτηση-απόλυτης-τιμής---25-μονάδες" id="toc-θεμα-β-συνάρτηση-απόλυτης-τιμής---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-β-συνάρτηση-απόλυτης-τιμής---25-μονάδες"><span class="header-section-number">2.2</span> <strong>ΘΕΜΑ Β (Συνάρτηση Απόλυτης Τιμής - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-γ-δευτεροβάθμιο-πολυώνυμο-παραβολή---25-μονάδες" id="toc-θεμα-γ-δευτεροβάθμιο-πολυώνυμο-παραβολή---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-γ-δευτεροβάθμιο-πολυώνυμο-παραβολή---25-μονάδες"><span class="header-section-number">2.3</span> <strong>ΘΕΜΑ Γ (Δευτεροβάθμιο Πολυώνυμο / Παραβολή - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-δ-σύνθετη-μελέτη-τομή-καμπυλών---25-μονάδες" id="toc-θεμα-δ-σύνθετη-μελέτη-τομή-καμπυλών---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-δ-σύνθετη-μελέτη-τομή-καμπυλών---25-μονάδες"><span class="header-section-number">2.4</span> <strong>ΘΕΜΑ Δ (Σύνθετη Μελέτη &amp; Τομή Καμπυλών - 25 Μονάδες)</strong></a></li>
+  </ul></li>
+  <li><a href="#αναλυτικεσ-λυσεισ-διαγωνισματοσ" id="toc-αναλυτικεσ-λυσεισ-διαγωνισματοσ" class="nav-link" data-scroll-target="#αναλυτικεσ-λυσεισ-διαγωνισματοσ"><span class="header-section-number">3</span> ΑΝΑΛΥΤΙΚΕΣ ΛΥΣΕΙΣ ΔΙΑΓΩΝΙΣΜΑΤΟΣ</a>
+  <ul>
+  <li><a href="#θεμα-α" id="toc-θεμα-α" class="nav-link" data-scroll-target="#θεμα-α"><span class="header-section-number">3.1</span> <strong>ΘΕΜΑ Α</strong></a></li>
+  <li><a href="#θεμα-β" id="toc-θεμα-β" class="nav-link" data-scroll-target="#θεμα-β"><span class="header-section-number">3.2</span> <strong>ΘΕΜΑ Β</strong></a></li>
+  <li><a href="#θεμα-γ" id="toc-θεμα-γ" class="nav-link" data-scroll-target="#θεμα-γ"><span class="header-section-number">3.3</span> <strong>ΘΕΜΑ Γ</strong></a></li>
+  <li><a href="#θεμα-δ" id="toc-θεμα-δ" class="nav-link" data-scroll-target="#θεμα-δ"><span class="header-section-number">3.4</span> <strong>ΘΕΜΑ Δ</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Αλγεβρα Γενικού</h1>
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="κατακόρυφη---οριζόντια-μετατόπιση-καμπύλης" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="κατακόρυφη---οριζόντια-μετατόπιση-καμπύλης"><span class="header-section-number">1</span> Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</h2>
+<section id="κατακόρυφη-μετατόπιση-καμπύλης" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="κατακόρυφη-μετατόπιση-καμπύλης"><span class="header-section-number">1.1</span> Κατακόρυφη Μετατόπιση Καμπύλης</h3>
+<section id="ορισμοί" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="ορισμοί"><span class="header-section-number">1.1.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί</p>
+</div>
+<ul>
+<li><p><strong>Μετατόπιση προς τα πάνω:</strong> Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f\)</span> με <span class="math inline">\(f(x) = \phi(x) + c\)</span>, όπου <span class="math inline">\(c &gt; 0\)</span>, προκύπτει από μια <strong>κατακόρυφη μετατόπιση της γραφικής παράστασης της</strong> <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(c\)</span> μονάδες προς τα πάνω. Αυτό συμβαίνει διότι για κάθε <span class="math inline">\(x \in A\)</span>, η τιμή <span class="math inline">\(f(x)\)</span> είναι κατά <span class="math inline">\(c\)</span> μονάδες μεγαλύτερη από την τιμή <span class="math inline">\(\phi(x)\)</span>.</p></li>
+<li><p><strong>Μετατόπιση προς τα κάτω:</strong> Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f\)</span> με <span class="math inline">\(f(x) = \phi(x) - c\)</span>, όπου <span class="math inline">\(c &gt; 0\)</span>, προκύπτει από μια <strong>κατακόρυφη μετατόπιση της γραφικής παράστασης της</strong> <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(c\)</span> μονάδες προς τα κάτω. Αυτό συμβαίνει διότι για κάθε <span class="math inline">\(x \in A\)</span>, η τιμή <span class="math inline">\(f(x)\)</span> είναι κατά <span class="math inline">\(c\)</span> μονάδες μικρότερη από την τιμή <span class="math inline">\(\phi(x)\)</span>.</p></li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/fptafbbf?embed" width="730" height="700" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+</div>
+<hr>
+</section>
+<section id="παραδείγματα-διαφόρων-περιπτώσεων" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="παραδείγματα-διαφόρων-περιπτώσεων"><span class="header-section-number">1.1.2</span> Παραδείγματα Διαφόρων Περιπτώσεων</h4>
+<ol type="1">
+<li><p><strong>Παράδειγμα 1 (Προς τα πάνω - Απόλυτη Τιμή):</strong></p>
+<p>Η συνάρτηση <span class="math inline">\(f(x) = |x| + 2\)</span> προκύπτει από τη μετατόπιση της καμπύλης της <span class="math inline">\(\phi(x) = |x|\)</span> κατά <span class="math inline">\(2\)</span> μονάδες κατακόρυφα προς τα πάνω. Η κορυφή της μετατοπίζεται από το <span class="math inline">\((0,0)\)</span> στο σημείο <span class="math inline">\((0,2)\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 2 (Προς τα κάτω - Παραβολή):</strong></p>
+<p>Η συνάρτηση <span class="math inline">\(g(x) = x^2 - 3\)</span> προκύπτει από τη μετατόπιση της παραβολής <span class="math inline">\(y = x^2\)</span> κατά <span class="math inline">\(3\)</span> μονάδες κατακόρυφα προς τα κάτω. Η κορυφή της βρίσκεται στο σημείο <span class="math inline">\((0,-3)\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 3 (Προς τα πάνω - Υπερβολή):</strong></p>
+<p>Η συνάρτηση <span class="math inline">\(h(x) =  \dfrac{2}{x} + 1\)</span> προκύπτει από την κατακόρυφη μετατόπιση της καμπύλης <span class="math inline">\(y = \dfrac{2}{x}\)</span> κατά <span class="math inline">\(1\)</span> μονάδα προς τα πάνω. Το πεδίο τιμών της γίνεται <span class="math inline">\(\mathbb{R} - \{ 1 \}\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 4 (Προς τα κάτω - Παραβολή):</strong></p>
+<p>Η συνάρτηση <span class="math inline">\(k(x) = 0,5x^2 - 4\)</span> προκύπτει από την κατακόρυφη μετατόπιση της καμπύλης <span class="math inline">\(y = 0,5x^2\)</span> κατά <span class="math inline">\(4\)</span> μονάδες προς τα κάτω.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="οριζόντια-μετατόπιση-καμπύλης" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="οριζόντια-μετατόπιση-καμπύλης"><span class="header-section-number">1.2</span> Οριζόντια Μετατόπιση Καμπύλης</h3>
+<section id="ορισμοί-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="ορισμοί-1"><span class="header-section-number">1.2.1</span> Ορισμοί</h4>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p>Ορισμοί</p>
+</div>
+<ul>
+<li><p><strong>Μετατόπιση προς τα δεξιά:</strong> Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f\)</span> με <span class="math inline">\(f(x) = \phi(x - c)\)</span>, όπου <span class="math inline">\(c &gt; 0\)</span>, προκύπτει από μια <strong>οριζόντια μετατόπιση της γραφικής παράστασης της</strong> <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(c\)</span> μονάδες προς τα δεξιά. Αυτό συμβαίνει διότι η τιμή της <span class="math inline">\(f\)</span> στη θέση <span class="math inline">\(x\)</span> είναι ίδια με την τιμή της <span class="math inline">\(\phi\)</span> στη θέση <span class="math inline">\(x - c\)</span>, η οποία βρίσκεται <span class="math inline">\(c\)</span> μονάδες αριστερότερα.</p></li>
+<li><p><strong>Μετατόπιση προς τα αριστερά:</strong> Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f\)</span> με <span class="math inline">\(f(x) = \phi(x + c)\)</span>, όπου <span class="math inline">\(c &gt; 0\)</span>, προκύπτει από μια <strong>οριζόντια μετατόπιση της γραφικής παράστασης της</strong> <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(c\)</span> μονάδες προς τα αριστερά. Αυτό συμβαίνει διότι η τιμή της <span class="math inline">\(f\)</span> στη θέση <span class="math inline">\(x\)</span> είναι ίδια με την τιμή της <span class="math inline">\(\phi\)</span> στη θέση <span class="math inline">\(x + c\)</span>, η οποία βρίσκεται <span class="math inline">\(c\)</span> μονάδες δεξιότερα.</p></li>
+</ul>
+<iframe src="https://www.geogebra.org/calculator/qqgt5gxc?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+</div>
+<hr>
+</section>
+<section id="παραδείγματα-διαφόρων-περιπτώσεων-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="παραδείγματα-διαφόρων-περιπτώσεων-1"><span class="header-section-number">1.2.2</span> Παραδείγματα Διαφόρων Περιπτώσεων</h4>
+<ol type="1">
+<li><p><strong>Παράδειγμα 1 (Προς τα δεξιά - Απόλυτη Τιμή):</strong></p>
+<p>Η συνάρτηση <span class="math inline">\(f(x) = |x - 1|\)</span> προκύπτει από την οριζόντια μετατόπιση της <span class="math inline">\(\phi(x) = |x|\)</span> κατά <span class="math inline">\(1\)</span> μονάδα προς τα δεξιά. Η κορυφή βρίσκεται στο σημείο <span class="math inline">\((1,0)\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 2 (Προς τα αριστερά - Παραβολή):</strong> Η συνάρτηση <span class="math inline">\(g(x) = (x + 3)^2\)</span> προκύπτει από την οριζόντια μετατόπιση της παραβολής <span class="math inline">\(y = x^2\)</span> κατά <span class="math inline">\(3\)</span> μονάδες προς τα αριστερά. Η κορυφή μετατοπίζεται στο σημείο <span class="math inline">\((-3,0)\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 3 (Προς τα δεξιά - Πολυωνυμική):</strong> Η συνάρτηση <span class="math inline">\(h(x) = (x - 2)^3\)</span> προκύπτει από την οριζόντια μετατόπιση της <span class="math inline">\(y = x^3\)</span> κατά <span class="math inline">\(2\)</span> μονάδες προς τα δεξιά. Η γραφική παράσταση τέμνει τώρα τον άξονα <span class="math inline">\(y'y\)</span> (<span class="math inline">\(x = 0\)</span>) στο σημείο <span class="math inline">\(y = -8\)</span>.</p></li>
+<li><p><strong>Παράδειγμα 4 (Προς τα αριστερά - με Απόλυτα):</strong> Η συνάρτηση <span class="math inline">\(k(x) = |x+2|^3\)</span> προκύπτει από την οριζόντια μετατόπιση της <span class="math inline">\(y = |x^3|\)</span> κατά <span class="math inline">\(2\)</span> μονάδες προς τα αριστερά.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="εφαρμογές" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="εφαρμογές"><span class="header-section-number">1.3</span> Εφαρμογές</h3>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1:</strong> <span class="math inline">\(f(x) = |x - 2| + 3\)</span></p>
+</div>
+<p>Για να παραστήσουμε γραφικά τη συνάρτηση <span class="math inline">\(f(x) = |x - 2| + 3\)</span>, αξιοποιούμε διαδοχικά την οριζόντια και την κατακόρυφη μετατόπιση ξεκινώντας από τη βασική συνάρτηση <span class="math inline">\(\phi(x) = |x|\)</span>:</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1828108236.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>1ο Βήμα (Οριζόντια μετατόπιση):</strong> Σχεδιάζουμε τη συνάρτηση <span class="math inline">\(g(x) = |x - 2|\)</span>, η οποία προκύπτει από οριζόντια μετατόπιση της γραφικής παράστασης της <span class="math inline">\(\phi(x) = |x|\)</span> <strong>κατά</strong> <span class="math inline">\(2\)</span> μονάδες προς τα δεξιά. Η κορυφή της βρίσκεται στο σημείο <span class="math inline">\((2,0)\)</span>.</p></li>
+<li><p><strong>2ο Βήμα (Κατακόρυφη μετατόπιση):</strong> Μετατοπίζουμε τη γραφική παράσταση της <span class="math inline">\(g(x) = |x - 2|\)</span> <strong>κατά</strong> <span class="math inline">\(3\)</span> μονάδες κατακόρυφα προς τα πάνω, λαμβάνοντας τη <span class="math inline">\(f(x) = |x - 2| + 3\)</span>.</p></li>
+<li><p><strong>Χαρακτηριστικά της</strong> <span class="math inline">\(f(x)\)</span>:</p>
+<ul>
+<li><p><strong>Κορυφή/Σημείο καμπής:</strong> Το σημείο <span class="math inline">\((2,3)\)</span>.</p></li>
+<li><p><strong>Πεδίο Ορισμού:</strong> <span class="math inline">\(A = \mathbb{R}\)</span>.</p></li>
+<li><p><strong>Σύνολο Τιμών:</strong> <span class="math inline">\(f(A) = [3, +\infty)\)</span>, αφού <span class="math inline">\(|x - 2| \ge 0 \implies |x - 2| + 3 \ge 3\)</span>.</p></li>
+<li><p><strong>Ακρότατο:</strong> Παρουσιάζει ολικό ελάχιστο στη θέση <span class="math inline">\(x_0 = 2\)</span> με τιμή <span class="math inline">\(f(2) = 3\)</span>.</p></li>
+</ul></li>
+</ol>
+</div>
+<hr>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p>Εφαρμογή 2: <span class="math inline">\(f(x) = (x + 2)^2 - 3\)</span></p>
+</div>
+<p>Για τη συνάρτηση <span class="math inline">\(f(x) = (x + 2)^2 - 3\)</span>, εργαζόμαστε με βάση την αρχική παραβολή <span class="math inline">\(\phi(x) = x^2\)</span>:</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1958164627.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
+</figure>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>1ο Βήμα (Οριζόντια μετατόπιση):</strong> Σχεδιάζουμε τη συνάρτηση <span class="math inline">\(g(x) = (x + 2)^2\)</span>, η οποία προκύπτει από οριζόντια μετατόπιση της <span class="math inline">\(y = x^2\)</span> <strong>κατά</strong> <span class="math inline">\(2\)</span> μονάδες προς τα αριστερά. Η κορυφή της παραβολής μεταφέρεται στο σημείο <span class="math inline">\((-2,0)\)</span>.</p></li>
+<li><p><strong>2ο Βήμα (Κατακόρυφη μετατόπιση):</strong> Μετατοπίζουμε τη γραφική παράσταση της <span class="math inline">\(g(x) = (x + 2)^2\)</span> <strong>κατά</strong> <span class="math inline">\(3\)</span> μονάδες κατακόρυφα προς τα κάτω, σχηματίζοντας τη <span class="math inline">\(f(x) = (x + 2)^2 - 3\)</span>.</p></li>
+<li><p><strong>Χαρακτηριστικά της</strong> <span class="math inline">\(f(x)\)</span>:</p>
+<ul>
+<li><p><strong>Κορυφή Παραβολής:</strong> <span class="math inline">\(K(-2, -3)\)</span>.</p></li>
+<li><p><strong>Άξονας Συμμετρίας:</strong> Η κατακόρυφη ευθεία <span class="math inline">\(x = -2\)</span>.</p></li>
+<li><p><strong>Μονοτονία:</strong> Η <span class="math inline">\(f\)</span> είναι γνησίως φθίνουσα στο <span class="math inline">\((-\infty, -2]\)</span> και γνησίως αύξουσα στο <span class="math inline">\([-2, +\infty)\)</span>.</p></li>
+<li><p><strong>Ακρότατο:</strong> Παρουσιάζει ολικό ελάχιστο στη θέση <span class="math inline">\(x_0 = -2\)</span> με τιμή <span class="math inline">\(f(-2) = -3\)</span>.</p></li>
+</ul></li>
+</ol>
+</div>
+<hr>
+</section>
+<section id="ερωτήσεις-κατανόησης" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ερωτήσεις-κατανόησης"><span class="header-section-number">1.4</span> Ερωτήσεις Κατανόησης</h3>
+<ol type="1">
+<li><p><strong>(Σωστό/Λάθος):</strong> Η γραφική παράσταση της <span class="math inline">\(f(x) = \phi(x) + 4\)</span> προκύπτει από τη γραφική παράσταση της <span class="math inline">\(\phi\)</span> με μετατόπιση κατά <span class="math inline">\(4\)</span> μονάδες προς τα κάτω.</p></li>
+<li><p><strong>(Σωστό/Λάθος):</strong> Η καμπύλη <span class="math inline">\(y = |x - 5|\)</span> βρίσκεται <span class="math inline">\(5\)</span> μονάδες δεξιότερα από την καμπύλη <span class="math inline">\(y = |x|\)</span>.</p></li>
+<li><p><strong>(Σωστό/Λάθος):</strong> Η συνάρτηση <span class="math inline">\(f(x) = (x + 1)^2 + 2\)</span> έχει κορυφή το σημείο <span class="math inline">\((1, 2)\)</span>.</p></li>
+<li><p><strong>(Σωστό/Λάθος):</strong> Αν η <span class="math inline">\(\phi(x)\)</span> διέρχεται από το <span class="math inline">\((0,0)\)</span>, η <span class="math inline">\(f(x) = \phi(x - 3) - 1\)</span> διέρχεται από το σημείο <span class="math inline">\((3, -1)\)</span>.</p></li>
+<li><p><strong>(Πολλαπλής Επιλογής):</strong> Η γραφική παράσταση της <span class="math inline">\(f(x) = (x + 2)^2 - 1\)</span> προκύπτει από την <span class="math inline">\(y = x^2\)</span> με μετατοπίσεις:</p>
+<ul>
+<li><p>Α) <span class="math inline">\(2\)</span> δεξιά και <span class="math inline">\(1\)</span> πάνω</p></li>
+<li><p>Β) <span class="math inline">\(2\)</span> αριστερά και <span class="math inline">\(1\)</span> κάτω</p></li>
+<li><p>Γ) <span class="math inline">\(2\)</span> πάνω και <span class="math inline">\(1\)</span> αριστερά</p></li>
+<li><p>Δ) <span class="math inline">\(2\)</span> κάτω και <span class="math inline">\(1\)</span> δεξιά</p></li>
+</ul></li>
+<li><p><strong>(Πολλαπλής Επιλογής):</strong> Η παραβολή <span class="math inline">\(y = x^2 - 6x + 9\)</span> προκύπτει από την <span class="math inline">\(y = x^2\)</span> με οριζόντια μετατόπιση κατά:</p>
+<ul>
+<li><p>Α) <span class="math inline">\(3\)</span> μονάδες αριστερά</p></li>
+<li><p>Β) <span class="math inline">\(3\)</span> μονάδες δεξιά</p></li>
+<li><p>Γ) <span class="math inline">\(9\)</span> μονάδες πάνω</p></li>
+<li><p>Δ) <span class="math inline">\(6\)</span> μονάδες κάτω</p></li>
+</ul></li>
+<li><p><strong>(Συμπλήρωση Κενού):</strong> Η γραφική παράσταση της <span class="math inline">\(f(x) = \phi(x + c)\)</span> με <span class="math inline">\(c &gt; 0\)</span> προκύπτει από οριζόντια μετατόπιση της <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(c\)</span> μονάδες προς τα ____________.</p></li>
+<li><p><strong>(Συμπλήρωση Κενού):</strong> Η ελάχιστη τιμή της συνάρτησης <span class="math inline">\(f(x) = (x - 4)^2 + 5\)</span> είναι <span class="math inline">\(y =\)</span> ____ και λαμβάνεται στη θέση <span class="math inline">\(x =\)</span> ____.</p></li>
+<li><p><strong>(Ερώτηση):</strong> Πώς μετατοπίζεται ο άξονας συμμετρίας της συνάρτησης <span class="math inline">\(y = x^2\)</span> όταν μετακινηθεί 3 μονάδες δεξιά και μονάδες κάτω;</p></li>
+<li><p><strong>(Ερώτηση):</strong> Αν η συνάρτηση <span class="math inline">\(y = \phi(x)\)</span> έχει πεδίο ορισμού το <span class="math inline">\(A\)</span>, ποιο είναι το πεδίο ορισμού της <span class="math inline">\(f(x) = \phi(x - 2)\)</span>;</p></li>
+</ol>
+<hr>
+</section>
+<section id="ασκήσεις-εμπέδωσης" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ασκήσεις-εμπέδωσης"><span class="header-section-number">1.5</span> Ασκήσεις Εμπέδωσης</h3>
+<ol type="1">
+<li><p>Να περιγράψετε πώς προκύπτουν από τη γραφική παράσταση της <span class="math inline">\(\phi(x) = x^2\)</span> οι γραφικές παραστάσεις των συναρτήσεων: <span class="math display">\[\text{α) } f(x) = x^2 + 4, \quad \text{β) } g(x) = (x - 1)^2, \quad \text{γ) } h(x) = (x + 3)^2 - 2\]</span></p></li>
+<li><p>Δίνεται η συνάρτηση <span class="math inline">\(\phi(x) = |x|\)</span>. Να βρείτε τον τύπο της συνάρτησης <span class="math inline">\(f\)</span> της οποίας η γραφική παράσταση προκύπτει από τη <span class="math inline">\(\phi\)</span> μετά από μετατόπιση κατά <span class="math inline">\(3\)</span> μονάδες προς τα δεξιά και <span class="math inline">\(2\)</span> μονάδες προς τα κάτω.</p></li>
+<li><p>Να φέρετε τη δευτεροβάθμια συνάρτηση <span class="math inline">\(f(x) = x^2 - 4x + 5\)</span> στη μορφή <span class="math inline">\(f(x) = (x - p)^2 + q\)</span> και να προσδιορίσετε τις μετατοπίσεις που απαιτούνται για να συμπέσει με την <span class="math inline">\(y = x^2\)</span>.</p></li>
+<li><p>Να βρεθούν η κορυφή και ο άξονας συμμετρίας της παραβολής <span class="math inline">\(f(x) = (x + 5)^2 + 1\)</span>.</p></li>
+<li><p>Δίνεται η συνάρτηση <span class="math inline">\(\phi(x) = |x|\)</span>. Στο ίδιο σύστημα συντεταγμένων να παρασταθούν γραφικά οι συναρτήσεις <span class="math inline">\(f(x) = |x - 2|\)</span> και <span class="math inline">\(g(x) = |x - 2| + 1\)</span>.</p></li>
+<li><p>Να μελετηθεί ως προς τη μονοτονία και τα ακρότατα η συνάρτηση <span class="math inline">\(f(x) = |x + 1| - 4\)</span>.</p></li>
+</ol>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="7" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Δίνεται η συνάρτηση <span class="math inline">\(\phi(x) = 2x-1\)</span>. Να προσδιοριστεί ο τύπος της συνάρτησης <span class="math inline">\(f\)</span> που προκύπτει από παράλληλη μετατόπιση της γραφικής παράστασης της <span class="math inline">\(\phi\)</span> κατά <span class="math inline">\(2\)</span> μονάδες προς τα αριστερά και <span class="math inline">\(3\)</span> μονάδες προς τα πάνω και στην συνέχεια σχεδιάσετε σε τετραγωνισμένο χαρτί τις γραφικές τους παραστάσεις.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p><strong>1. Προσδιορισμός του τύπου της συνάρτησης</strong> <span class="math inline">\(f(x)\)</span></p>
+<p>Γνωρίζουμε ότι όταν η γραφική παράσταση μιας συνάρτησης <span class="math inline">\(\phi(x)\)</span>:</p>
+<ol type="1">
+<li><p><strong>Μετατοπίζεται οριζόντια κατά</strong> <span class="math inline">\(c\)</span> μονάδες προς τα αριστερά (<span class="math inline">\(c &gt; 0\)</span>), αντικαθιστούμε το <span class="math inline">\(x\)</span> με το <span class="math inline">\(x + c\)</span>. Εδώ έχουμε μετατόπιση κατά <span class="math inline">\(2\)</span> μονάδες προς τα αριστερά, άρα το <span class="math inline">\(x\)</span> γίνεται <span class="math inline">\(x + 2\)</span>.</p></li>
+<li><p><strong>Μετατοπίζεται κατακόρυφα κατά</strong> <span class="math inline">\(d\)</span> μονάδες προς τα πάνω (<span class="math inline">\(d &gt; 0\)</span>), προσθέτουμε <span class="math inline">\(d\)</span> σε ολόκληρη τη συνάρτηση. Εδώ έχουμε μετατόπιση κατά <span class="math inline">\(3\)</span> μονάδες προς τα πάνω, άρα προσθέτουμε <span class="math inline">\(+3\)</span>.</p></li>
+</ol>
+<p>Επομένως, ο γενικός τύπος της νέας συνάρτησης <span class="math inline">\(f(x)\)</span> είναι: <span class="math display">\[f(x) = \phi(x + 2) + 3\]</span></p>
+<p>Αντικαθιστούμε στον τύπο της <span class="math inline">\(\phi(x) = 2x - 1\)</span>: <span class="math display">\[f(x) = 2(x + 2) - 1 + 3\]</span></p>
+<p>Κάνουμε τις πράξεις: <span class="math display">\[f(x) = 2x + 4 - 1 + 3\]</span> <span class="math display">\[f(x) = 2x + 6\]</span></p>
+<hr>
+<p><strong>2. Σημεία για τη σχεδίαση των γραφικών παραστάσεων</strong></p>
+<p>Και οι δύο συναρτήσεις παριστάνουν ευθείες γραμμές, οπότε αρκεί να βρούμε δύο σημεία για την καθεμία:</p>
+<ul>
+<li><p><strong>Για την</strong> <span class="math inline">\(\phi(x) = 2x - 1\)</span>:</p>
+<ul>
+<li><p>Για <span class="math inline">\(x = 0\)</span>: <span class="math inline">\(\phi(0) = 2(0) - 1 = -1 \implies (0, -1)\)</span></p></li>
+<li><p>Για <span class="math inline">\(x = 1\)</span>: <span class="math inline">\(\phi(1) = 2(1) - 1 = 1 \implies (1, 1)\)</span></p></li>
+<li><p>Για <span class="math inline">\(y = 0\)</span>: <span class="math inline">\(2x - 1 = 0 \implies x = 0{,}5 \implies (0{,}5, 0)\)</span></p></li>
+</ul></li>
+<li><p><strong>Για την</strong> <span class="math inline">\(f(x) = 2x + 6\)</span>:</p>
+<ul>
+<li><p>Για <span class="math inline">\(x = 0\)</span>: <span class="math inline">\(f(0) = 2(0) + 6 = 6 \implies (0, 6)\)</span></p></li>
+<li><p>Για <span class="math inline">\(x = -3\)</span>: <span class="math inline">\(f(-3) = 2(-3) + 6 = 0 \implies (-3, 0)\)</span></p></li>
+<li><p>Για <span class="math inline">\(x = -1\)</span>: <span class="math inline">\(f(-1) = 2(-1) + 6 = 4 \implies (-1, 4)\)</span></p></li>
+</ul></li>
+</ul>
+<p>Οι δύο ευθείες έχουν τον ίδιο συντελεστή διεύθυνσης (<span class="math inline">\(\lambda = 2\)</span>), επομένως είναι <strong>παράλληλες μεταξύ τους</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4016885249.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<ol start="8" type="1">
+<li><p>Να βρεθούν τα σημεία τομής της γραφικής παράστασης της <span class="math inline">\(f(x) = (x - 2)^2 - 9\)</span> με τους άξονες <span class="math inline">\(x'x\)</span> και <span class="math inline">\(y'y\)</span>.</p></li>
+<li><p>Δίνεται η συνάρτηση <span class="math inline">\(g(x) = -|x|\)</span>. Να περιγραφεί η γραφική παράσταση της <span class="math inline">\(f(x) = 1 + |x -2|\)</span> ως αποτέλεσμα μετατοπίσεων της <span class="math inline">\(g(x)\)</span>.</p></li>
+<li><p>Αν η γραφική παράσταση της <span class="math inline">\(\phi(x)\)</span> διέρχεται από τα σημεία <span class="math inline">\(A(-1, 2)\)</span> και <span class="math inline">\(B(2, 5)\)</span>, να βρεθούν δύο σημεία από τα οποία διέρχεται υποχρεωτικά η γραφική παράσταση της <span class="math inline">\(f(x) = \phi(x + 3) - 4\)</span>.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="διαγωνισμα-αξιολογησησ-μετατοπισεισ-συναρτησεων" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="διαγωνισμα-αξιολογησησ-μετατοπισεισ-συναρτησεων"><span class="header-section-number">2</span> ΔΙΑΓΩΝΙΣΜΑ ΑΞΙΟΛΟΓΗΣΗΣ: ΜΕΤΑΤΟΠΙΣΕΙΣ ΣΥΝΑΡΤΗΣΕΩΝ</h2>
+<p><strong>Ύλη:</strong> Κατακόρυφη &amp; Οριζόντια Μετατόπιση (Πολυώνυμα &amp; Απόλυτες Τιμές)</p>
+<hr>
+<section id="θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες"><span class="header-section-number">2.1</span> <strong>ΘΕΜΑ Α (Θεωρία &amp; Ερωτήσεις Κατανόησης - 25 Μονάδες)</strong></h3>
+<p><strong>Α1.</strong> Έστω συνάρτηση <span class="math inline">\(\phi(x)\)</span> και θετικοί πραγματικοί αριθμοί <span class="math inline">\(c &gt; 0\)</span> και <span class="math inline">\(k &gt; 0\)</span>.</p>
+<ol type="1">
+<li><p>Πώς προκύπτει η γραφική παράσταση της <span class="math inline">\(f(x) = \phi(x - c) + k\)</span> από τη γραφική παράσταση της <span class="math inline">\(\phi(x)\)</span>; <strong>(4 μονάδες)</strong></p></li>
+<li><p>Πώς προκύπτει η γραφική παράσταση της <span class="math inline">\(g(x) = \phi(x + c) - k\)</span> από τη γραφική παράσταση της <span class="math inline">\(\phi(x)\)</span>; <strong>(4 μονάδες)</strong></p></li>
+</ol>
+<p><strong>Α2.</strong> Να χαρακτηρίσετε τις παρακάτω προτάσεις ως <strong>Σωστό (Σ)</strong> ή <strong>Λάθος (Λ)</strong>: <strong>(10 μονάδες)</strong></p>
+<ol type="1">
+<li><p>Η γραφική παράσταση της <span class="math inline">\(f(x) = (x + 3)^2\)</span> προκύπτει από τη μετατόπιση της <span class="math inline">\(y = x^2\)</span> κατά <span class="math inline">\(3\)</span> μονάδες προς τα δεξιά.</p></li>
+<li><p>Η συνάρτηση <span class="math inline">\(f(x) = |x| - 4\)</span> παρουσιάζει ολικό ελάχιστο το <span class="math inline">\(y = -4\)</span> στη θέση <span class="math inline">\(x = 0\)</span>.</p></li>
+<li><p>Η κορυφή της παραβολής <span class="math inline">\(y = (x - 2)^2 + 5\)</span> είναι το σημείο <span class="math inline">\(K(2, 5)\)</span>.</p></li>
+<li><p>Αν η γραφική παράσταση της <span class="math inline">\(y = \phi(x)\)</span> διέρχεται από το σημείο <span class="math inline">\(A(1, 2)\)</span>, τότε η <span class="math inline">\(g(x) = \phi(x - 1) + 3\)</span> διέρχεται από το σημείο <span class="math inline">\(B(2, 5)\)</span>.</p></li>
+<li><p>Η γραφική παράσταση της <span class="math inline">\(f(x) = |x + 2| - 1\)</span> τέμνει τον άξονα <span class="math inline">\(y'y\)</span> στο σημείο <span class="math inline">\((0, -1)\)</span>.</p></li>
+</ol>
+<p><strong>Α3.</strong> Να επιλέξετε τη σωστή απάντηση: <strong>(7 μονάδες)</strong></p>
+<p>Η γραφική παράσταση της συνάρτησης <span class="math inline">\(f(x) = (x - 1)^3 + 2\)</span> προκύπτει από τη μετατόπιση της <span class="math inline">\(y = x^3\)</span>:</p>
+<ul>
+<li><p><strong>α)</strong> κατά <span class="math inline">\(1\)</span> μονάδα αριστερά και <span class="math inline">\(2\)</span> μονάδες πάνω</p></li>
+<li><p><strong>β)</strong> κατά <span class="math inline">\(1\)</span> μονάδα δεξιά και <span class="math inline">\(2\)</span> μονάδες πάνω</p></li>
+<li><p><strong>γ)</strong> κατά <span class="math inline">\(1\)</span> μονάδα δεξιά και <span class="math inline">\(2\)</span> μονάδες κάτω</p></li>
+<li><p><strong>δ)</strong> κατά <span class="math inline">\(1\)</span> μονάδα αριστερά και <span class="math inline">\(2\)</span> μονάδες κάτω</p></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-β-συνάρτηση-απόλυτης-τιμής---25-μονάδες" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="θεμα-β-συνάρτηση-απόλυτης-τιμής---25-μονάδες"><span class="header-section-number">2.2</span> <strong>ΘΕΜΑ Β (Συνάρτηση Απόλυτης Τιμής - 25 Μονάδες)</strong></h3>
+<p>Δίνεται η συνάρτηση <span class="math inline">\(f(x) = |x - 3| + 2\)</span>.</p>
+<ul>
+<li><p><strong>Β1.</strong> Να περιγράψετε τις μετατοπίσεις που απαιτούνται για να προκύψει η γραφική παράσταση της <span class="math inline">\(f(x)\)</span> από τη βασική συνάρτηση <span class="math inline">\(\phi(x) = |x|\)</span>. <strong>(8 μονάδες)</strong></p></li>
+<li><p><strong>Β2.</strong> Να βρείτε το πεδίο ορισμού, το σύνολο τιμών και το ακρότατο της <span class="math inline">\(f(x)\)</span> (θέση και τιμή ακροτάτου). <strong>(8 μονάδες)</strong></p></li>
+<li><p><strong>Β3.</strong> Να βρείτε τα σημεία τομής της γραφικής παράστασης της <span class="math inline">\(f(x)\)</span> με τον άξονα <span class="math inline">\(y'y\)</span> και να εξετάσετε αν τέμνει τον άξονα <span class="math inline">\(x'x\)</span>. <strong>(9 μονάδες)</strong></p></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-γ-δευτεροβάθμιο-πολυώνυμο-παραβολή---25-μονάδες" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="θεμα-γ-δευτεροβάθμιο-πολυώνυμο-παραβολή---25-μονάδες"><span class="header-section-number">2.3</span> <strong>ΘΕΜΑ Γ (Δευτεροβάθμιο Πολυώνυμο / Παραβολή - 25 Μονάδες)</strong></h3>
+<p>Δίνεται η πολυωνυμική συνάρτηση <span class="math inline">\(g(x) = x^2 - 6x + 11\)</span>.</p>
+<ul>
+<li><p><strong>Γ1.</strong> Να γράψετε τον τύπο της <span class="math inline">\(g(x)\)</span> στη μορφή <span class="math inline">\(g(x) = (x - p)^2 + q\)</span>. <strong>(7 μονάδες)</strong></p></li>
+<li><p><strong>Γ2.</strong> Να περιγράψετε πώς προκύπτει η γραφική παράσταση της <span class="math inline">\(g(x)\)</span> από τη γραφική παράσταση της <span class="math inline">\(y = x^2\)</span> και να προσδιορίσετε την κορυφή <span class="math inline">\(K\)</span> και τον άξονα συμμετρίας της. <strong>(9 μονάδες)</strong></p></li>
+<li><p><strong>Γ3.</strong> Να μελετήσετε τη συνάρτηση <span class="math inline">\(g(x)\)</span> ως προς τη μονοτονία και τα ακρότατα. <strong>(9 μονάδες)</strong></p></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-δ-σύνθετη-μελέτη-τομή-καμπυλών---25-μονάδες" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="θεμα-δ-σύνθετη-μελέτη-τομή-καμπυλών---25-μονάδες"><span class="header-section-number">2.4</span> <strong>ΘΕΜΑ Δ (Σύνθετη Μελέτη &amp; Τομή Καμπυλών - 25 Μονάδες)</strong></h3>
+<p>Δίνονται οι συναρτήσεις <span class="math inline">\(f(x) = |x + 1| - 3\)</span> και <span class="math inline">\(g(x) = -(x + 1)^2 + 1\)</span>.</p>
+<ul>
+<li><p><strong>Δ1.</strong> Να προσδιορίσετε το ελάχιστο της <span class="math inline">\(f(x)\)</span> και το μέγιστο της <span class="math inline">\(g(x)\)</span> καθώς και τις αντίστοιχες θέσεις ακροτάτων. <strong>(8 μονάδες)</strong></p></li>
+<li><p><strong>Δ2.</strong> Να βρείτε τα αλγεβρικά σημεία τομής των γραφικών παραστάσεων <span class="math inline">\(C_f\)</span> και <span class="math inline">\(C_g\)</span>. <strong>(9 μονάδες)</strong></p></li>
+<li><p><strong>Δ3.</strong> Να βρείτε για ποιες τιμές του <span class="math inline">\(x\)</span> η γραφική παράσταση της <span class="math inline">\(g(x)\)</span> βρίσκεται πάνω από τη γραφική παράσταση της <span class="math inline">\(f(x)\)</span> [δηλαδή <span class="math inline">\(g(x) &gt; f(x)\)</span>]. <strong>(8 μονάδες)</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="αναλυτικεσ-λυσεισ-διαγωνισματοσ" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="αναλυτικεσ-λυσεισ-διαγωνισματοσ"><span class="header-section-number">3</span> ΑΝΑΛΥΤΙΚΕΣ ΛΥΣΕΙΣ ΔΙΑΓΩΝΙΣΜΑΤΟΣ</h2>
+<section id="θεμα-α" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="θεμα-α"><span class="header-section-number">3.1</span> <strong>ΘΕΜΑ Α</strong></h3>
+<ul>
+<li><p><strong>Α1.1:</strong> Μετατόπιση κατά <span class="math inline">\(c\)</span> μονάδες προς τα <strong>δεξιά</strong> και κατά <span class="math inline">\(k\)</span> μονάδες προς τα <strong>πάνω</strong>.</p></li>
+<li><p><strong>Α1.2:</strong> Μετατόπιση κατά <span class="math inline">\(c\)</span> μονάδες προς τα <strong>αριστερά</strong> και κατά <span class="math inline">\(k\)</span> μονάδες προς τα <strong>κάτω</strong>.</p></li>
+<li><p><strong>Α2:</strong></p>
+<ol type="1">
+<li><p><strong>Λάθος</strong> (είναι <span class="math inline">\(3\)</span> μονάδες προς τα αριστερά).</p></li>
+<li><p><strong>Σωστό</strong> (αφού <span class="math inline">\(|x| \ge 0 \implies |x| - 4 \ge -4\)</span>).</p></li>
+<li><p><strong>Σωστό</strong> (κορυφή <span class="math inline">\((p, q) = (2, 5)\)</span>).</p></li>
+<li><p><strong>Σωστό</strong> (για <span class="math inline">\(x = 2 \implies g(2) = \phi(2 - 1) + 3 = \phi(1) + 3 = 2 + 3 = 5\)</span>).</p></li>
+<li><p><strong>Λάθος</strong> (για <span class="math inline">\(x = 0 \implies f(0) = |0 + 2| - 1 = 1\)</span>, άρα το σημείο είναι <span class="math inline">\((0, 1)\)</span>).</p></li>
+</ol></li>
+<li><p><strong>Α3:</strong> Σωστή απάντηση το <strong>β)</strong> (1 μονάδα δεξιά, 2 μονάδες πάνω).</p></li>
+</ul>
+</section>
+<section id="θεμα-β" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="θεμα-β"><span class="header-section-number">3.2</span> <strong>ΘΕΜΑ Β</strong></h3>
+<ul>
+<li><p><strong>Β1:</strong> Η <span class="math inline">\(f(x) = |x - 3| + 2\)</span> προκύπτει από οριζόντια μετατόπιση της <span class="math inline">\(\phi(x) = |x|\)</span> κατά <span class="math inline">\(3\)</span> μονάδες προς τα δεξιά και στη συνέχεια κατακόρυφη μετατόπιση κατά <span class="math inline">\(2\)</span> μονάδες προς τα πάνω.</p></li>
+<li><p><strong>Β2:</strong></p>
+<ul>
+<li><p>Πεδίο ορισμού: <span class="math inline">\(A = \mathbb{R}\)</span>.</p></li>
+<li><p>Επειδή <span class="math inline">\(|x - 3| \ge 0\)</span> για κάθε <span class="math inline">\(x \in \mathbb{R}\)</span>, έχουμε <span class="math inline">\(|x - 3| + 2 \ge 2 \iff f(x) \ge 2 = f(3)\)</span>.</p></li>
+<li><p>Άρα η <span class="math inline">\(f\)</span> παρουσιάζει <strong>ολικό ελάχιστο στη θέση</strong> <span class="math inline">\(x_0 = 3\)</span> με ελάχιστη τιμή <span class="math inline">\(f(3) = 2\)</span>.</p></li>
+<li><p>Σύνολο τιμών: <span class="math inline">\(f(A) = [2, +\infty)\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Β3:</strong></p>
+<ul>
+<li><p>Για <span class="math inline">\(x = 0 \implies f(0) = |0 - 3| + 2 = 3 + 2 = 5\)</span>. Τέμνει τον <span class="math inline">\(y'y\)</span> στο <span class="math inline">\((0, 5)\)</span>.</p></li>
+<li><p>Για την τομή με τον <span class="math inline">\(x'x\)</span>: <span class="math inline">\(f(x) = 0 \iff |x - 3| + 2 = 0 \iff |x - 3| = -2\)</span>, που είναι <strong>αδύνατη</strong>. Άρα η <span class="math inline">\(C_f\)</span> δεν τέμνει τον άξονα <span class="math inline">\(x'x\)</span>.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-γ" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="θεμα-γ"><span class="header-section-number">3.3</span> <strong>ΘΕΜΑ Γ</strong></h3>
+<ul>
+<li><p><strong>Γ1:</strong> Συμπληρώνουμε το τετράγωνο: <span class="math display">\[g(x) = x^2 - 6x + 9 + 2 = (x - 3)^2 + 2\]</span></p></li>
+<li><p><strong>Γ2:</strong> Η <span class="math inline">\(C_g\)</span> προκύπτει από την παραβολή <span class="math inline">\(y = x^2\)</span> με οριζόντια μετατόπιση κατά <span class="math inline">\(3\)</span> μονάδες προς τα δεξιά και κατακόρυφη μετατόπιση κατά <span class="math inline">\(2\)</span> μονάδες προς τα πάνω.</p>
+<ul>
+<li><p>Κορυφή: <span class="math inline">\(K(3, 2)\)</span>.</p></li>
+<li><p>Άξονας συμμετρίας: η ευθεία <span class="math inline">\(x = 3\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Γ3:</strong></p>
+<ul>
+<li><p>Η <span class="math inline">\(g(x)\)</span> είναι <strong>γνησίως φθίνουσα</strong> στο διάστημα <span class="math inline">\((-\infty, 3]\)</span> και <strong>γνησίως αύξουσα</strong> στο διάστημα <span class="math inline">\([3, +\infty)\)</span>.</p></li>
+<li><p>Παρουσιάζει <strong>ολικό ελάχιστο στη θέση</strong> <span class="math inline">\(x_0 = 3\)</span> με τιμή <span class="math inline">\(g(3) = 2\)</span>.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-δ" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="θεμα-δ"><span class="header-section-number">3.4</span> <strong>ΘΕΜΑ Δ</strong></h3>
+<ul>
+<li><p><strong>Δ1:</strong></p>
+<ul>
+<li><p>Για την <span class="math inline">\(f(x) = |x + 1| - 3\)</span>: <span class="math inline">\(|x + 1| \ge 0 \implies f(x) \ge -3\)</span>. Έχει <strong>ολικό ελάχιστο στο</strong> <span class="math inline">\(x = -1\)</span> με τιμή <span class="math inline">\(y = -3\)</span>.</p></li>
+<li><p>Για την <span class="math inline">\(g(x) = -(x + 1)^2 + 1\)</span>: <span class="math inline">\(-(x + 1)^2 \le 0 \implies g(x) \le 1\)</span>. Έχει <strong>ολικό μέγιστο στο</strong> <span class="math inline">\(x = -1\)</span> με τιμή <span class="math inline">\(y = 1\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Δ2:</strong> Εξισώνουμε <span class="math inline">\(f(x) = g(x)\)</span>: <span class="math display">\[|x + 1| - 3 = -(x + 1)^2 + 1 \iff (x + 1)^2 + |x + 1| - 4 = 0\]</span> Θέτουμε <span class="math inline">\(u = |x + 1| \ge 0\)</span> (οπότε <span class="math inline">\((x+1)^2 = u^2\)</span>): <span class="math display">\[u^2 + u - 4 = 0 \implies \Delta = 1 + 16 = 17 \implies u = \frac{-1 + \sqrt{17}}{2} \quad (\text{δεκτή, αφού } \sqrt{17} &gt; 1)\]</span> Άρα <span class="math inline">\(|x + 1| = \dfrac{\sqrt{17} - 1}{2} \iff x + 1 = \pm \dfrac{\sqrt{17} - 1}{2} \implies x = -1 \pm \dfrac{\sqrt{17} - 1}{2}\)</span>.</p></li>
+<li><p><strong>Δ3:</strong> Θέλουμε <span class="math inline">\(g(x) &gt; f(x) \iff -(x + 1)^2 + 1 &gt; |x + 1| - 3 \iff (x + 1)^2 + |x + 1| - 4 &lt; 0\)</span>. Με την ίδια αντικατάσταση <span class="math inline">\(u = |x + 1| \ge 0\)</span>, η ανίσωση <span class="math inline">\(u^2 + u - 4 &lt; 0\)</span> αληθεύει για <span class="math inline">\(0 \le u &lt; \dfrac{\sqrt{17} - 1}{2}\)</span>. Συνεπώς: <span class="math display">\[|x + 1| &lt; \dfrac{\sqrt{17} - 1}{2} \iff -\frac{\sqrt{17} - 1}{2} &lt; x + 1 &lt; \frac{\sqrt{17} - 1}{2}\]</span> <span class="math display">\[\iff -1 - \frac{\sqrt{17} - 1}{2} &lt; x &lt; -1 + \frac{\sqrt{17} - 1}{2}\]</span></p></li>
+</ul>
+<hr>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1519,12 +1963,12 @@ window.Quarto = {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Αντιγράφηκε!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
