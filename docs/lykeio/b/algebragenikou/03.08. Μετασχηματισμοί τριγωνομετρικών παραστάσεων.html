@@ -1,0 +1,2965 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-354c69268421870efe81aaea1804ef25.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-blalgebragenikou quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων.html">03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html">Άλγεβρα Γενικής</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebragenikou/03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων.html">03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων</a></li></ol></nav>
+      <h1 class="title">03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">20 Οκτώβριος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">25 Οκτώβριος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Γυμνάσιο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Δυνάμεις φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δυνάμεις φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Ευκλείδεια διαίρεση - Διαιρετότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ευκλείδεια διαίρεση - Διαιρετότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Η έννοια του κλάσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η έννοια του κλάσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Ισοδύναμα κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Ισοδύναμα κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Σύγκριση κλασμάτων  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Σύγκριση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Πρόσθεση και Αφαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Πρόσθεση και Αφαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Πολλαπλασιασμός κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πολλαπλασιασμός κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11. Διαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Διαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Τυποποιημένη μορφή μεγάλων αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Τυποποιημένη μορφή μεγάλων αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Μονάδες μέτρησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Μονάδες μέτρησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/18. Επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/20. Ποσοστά και επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Ποσοστά και επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/21.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/22. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/23.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/24. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/25.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/28. Πρόσθεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">28. Πρόσθεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/29. Αφαίρεση ρητών αριθμών  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">29. Αφαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/30. Πολλαπλασιασμός ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30. Πολλαπλασιασμός ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/31. Διαίρεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Διαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/32. Δεκαδική μορφή ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">32. Δεκαδική μορφή ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/Θέματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Θέματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση σύγκριση ισότητα τμημάτων-Απόσταση σημείων Μέσο τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση, σύγκριση και ισότητα ευθυγράμμων τμημάτων – Απόσταση σημείων – Μέσο ευθύγραμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 . Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13. Θέσεις ευθείας και κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Θέσεις ευθείας και κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Άξονας συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Άξονας συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/16. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/17. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/18. Κέντρο συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Κέντρο συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/19.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/20. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Προβλήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Προβλήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09.  Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/11. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/12. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Η συνάρτηση y=α/x - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01.1. Μονάδες μέτρησης επιφανειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.1. Μονάδες μέτρησης επιφανειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.1. Άθροισμα και διαφορά διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.1. Άθροισμα και διαφορά διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15.1. Όγκος πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1. Όγκος πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Η πυραμίδα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η πυραμίδα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Γ' Γυμνασίου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Αλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/15. Η έννοια της γραμμικής εξίσωσης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Η έννοια της γραμμικής εξίσωσης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/17. Αλγεβρική επίλυση γραμμικού συστήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Αλγεβρική επίλυση γραμμικού συστήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/18. Η συνάρτηση αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Η συνάρτηση <span class="math inline">\(αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/19. H συνάρτηση y = αx^2 + βx + γ με α ≠ 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. H συνάρτηση <span class="math inline">\(y = αx^2 + βx + γ\)</span> με α ≠ 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/20. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/21. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/01. Ισότητα τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Ισότητα τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/03. Θεώρημα του Θαλή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Θεώρημα του Θαλή</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/04. Ομοιοθεσία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ομοιοθεσία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/05. Ομοιότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ομοιότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Λύκειο</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Α' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Άλγεβρα</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Το λεξιλόγιο της λογικής</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/04. Η έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Η έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/05. Οι πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Οι πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/06. Η διάταξη των πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η διάταξη των πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/08. Ρίζες πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ρίζες πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/11. Η εξίσωση 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/12. Ανισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Ανισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/13. Ανισώσεις 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ανισώσεις <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Ακολουθίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/17. Γεωμετρική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Γεωμετρική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/18. Ανατοκισμός Ίσες καταθέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Ανατοκισμός Ίσες καταθέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/19. Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/20. Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/21. Η συνάρτηση ƒ(x) = αx + β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Η συνάρτηση ƒ(x) = αx + β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/24. Μελέτη της συνάρτησης f(x)=αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/25. Μελέτη της συνάρτησης f(x)=α προς x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=α/x\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Γεωμετρία</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.01. Οι πρωταρχικές γεωμετρικές έννοιες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Οι πρωταρχικές γεωμετρικές έννοιες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.02. Γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.03. O Κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03. O Κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.04. Ευθύγραμμα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04. Ευθύγραμμα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.01. Τρίγωνα Κριτήρια ισότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τρίγωνα Κριτήρια ισότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.02. Βασικοί γεωμετρικοί τόποι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικοί γεωμετρικοί τόποι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.03. Συμμετρικά σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Συμμετρικά σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.04. Ανισοτικές σχέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Ανισοτικές σχέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Ευθεία και κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.06. Γεωμετρικές κατασκευές.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Γεωμετρικές κατασκευές</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.01. Ευθείες στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01. Ευθείες στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.02. Ιδιότητες παράλληλων ευθειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02. Ιδιότητες παράλληλων ευθειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.04. Σχέσεις γωνιών σε επίπεδα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04. Σχέσεις γωνιών σε επίπεδα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.01. Παραλληλόγραμμο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01. Παραλληλόγραμμο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.02. Είδη παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02. Είδη παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.03. Εφαρμογές των παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03. Εφαρμογές των παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.04. Τραπέζια.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04. Τραπέζια</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.01. Εγγεγραμμένη γωνία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.01. Εγγεγραμμένη γωνία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.02. Εγγεγραμμένα και εγγράψιμα  τετράπλευρα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.02. Εγγεγραμμένα και εγγράψιμα τετράπλευρα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Β' Λυκείου – Μαθηματικά</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Άλγεβρα Γενικής</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Εναλλαγή ενότητας">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01. Γραμμικά Συστήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/01.02. Μη Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02. Μη Γραμμικά Συστήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/02.01. Μονοτονία - Ακρότατα - Συμμετρίες Συνάρτησης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Μονοτονία - Ακρότατα - Συμμετρίες Συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.01. Τριγωνομετρικοί αριθμοί γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τριγωνομετρικοί αριθμοί γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.02. Βασικές Τριγωνομετρικές Ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικές Τριγωνομετρικές Ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.03. Αναγωγή Στο 1o Τεταρτημόριο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Αναγωγή Στο <span class="math inline">\(1^o\)</span> Τεταρτημόριο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.04. Οι τριγωνομετρικές συναρτήσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Οι τριγωνομετρικές συναρτήσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.05. Βασικές τριγωνομετρικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Βασικές τριγωνομετρικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.06. Τριγωνομετρικοί αριθμοί αθροίσματος γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Τριγωνομετρικοί αριθμοί αθροίσματος γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.07. Τριγωνομετρικοί αριθμοί της γωνίας 2α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07. Τριγωνομετρικοί αριθμοί της γωνίας 2α</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Άλγεβρα Θετικών Σπουδών</span></span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#μετασχηματισμοί-τριγωνομετρικών-παραστάσεων" id="toc-μετασχηματισμοί-τριγωνομετρικών-παραστάσεων" class="nav-link active" data-scroll-target="#μετασχηματισμοί-τριγωνομετρικών-παραστάσεων"><span class="header-section-number">1</span> Μετασχηματισμοί τριγωνομετρικών παραστάσεων</a>
+  <ul>
+  <li><a href="#μετασχηματισμός-γινομένου-σε-άθροισμα" id="toc-μετασχηματισμός-γινομένου-σε-άθροισμα" class="nav-link" data-scroll-target="#μετασχηματισμός-γινομένου-σε-άθροισμα"><span class="header-section-number">1.1</span> Μετασχηματισμός Γινομένου σε Άθροισμα</a>
+  <ul>
+  <li><a href="#παραδείγματα" id="toc-παραδείγματα" class="nav-link" data-scroll-target="#παραδείγματα"><span class="header-section-number">1.1.1</span> <strong>Παραδείγματα</strong></a></li>
+  </ul></li>
+  <li><a href="#μετασχηματισμός-αθροίσματος-σε-γινόμενο" id="toc-μετασχηματισμός-αθροίσματος-σε-γινόμενο" class="nav-link" data-scroll-target="#μετασχηματισμός-αθροίσματος-σε-γινόμενο"><span class="header-section-number">1.2</span> Μετασχηματισμός Αθροίσματος σε Γινόμενο</a>
+  <ul>
+  <li><a href="#παραδείγματα-1" id="toc-παραδείγματα-1" class="nav-link" data-scroll-target="#παραδείγματα-1"><span class="header-section-number">1.2.1</span> <strong>Παραδείγματα</strong></a></li>
+  </ul></li>
+  <li><a href="#εφαρμογές-εξισώσεις-ταυτότητες" id="toc-εφαρμογές-εξισώσεις-ταυτότητες" class="nav-link" data-scroll-target="#εφαρμογές-εξισώσεις-ταυτότητες"><span class="header-section-number">1.3</span> Εφαρμογές (Εξισώσεις &amp; Ταυτότητες)</a></li>
+  <li><a href="#ασκήσεις-για-εξάσκηση" id="toc-ασκήσεις-για-εξάσκηση" class="nav-link" data-scroll-target="#ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.4</span> Ασκήσεις για Εξάσκηση</a>
+  <ul>
+  <li><a href="#κατηγορία-α-ασκήσεις-υπολογισμού-15" id="toc-κατηγορία-α-ασκήσεις-υπολογισμού-15" class="nav-link" data-scroll-target="#κατηγορία-α-ασκήσεις-υπολογισμού-15"><span class="header-section-number">1.4.1</span> <strong>Κατηγορία Α: Ασκήσεις Υπολογισμού (1–5)</strong></a></li>
+  <li><a href="#κατηγορία-β-μετατροπές-απλοποιήσεις-610" id="toc-κατηγορία-β-μετατροπές-απλοποιήσεις-610" class="nav-link" data-scroll-target="#κατηγορία-β-μετατροπές-απλοποιήσεις-610"><span class="header-section-number">1.4.2</span> <strong>Κατηγορία Β: Μετατροπές &amp; Απλοποιήσεις (6–10)</strong></a></li>
+  <li><a href="#κατηγορία-γ-αποδεικτικές-ταυτότητες-1115" id="toc-κατηγορία-γ-αποδεικτικές-ταυτότητες-1115" class="nav-link" data-scroll-target="#κατηγορία-γ-αποδεικτικές-ταυτότητες-1115"><span class="header-section-number">1.4.3</span> <strong>Κατηγορία Γ: Αποδεικτικές Ταυτότητες (11–15)</strong></a></li>
+  <li><a href="#κατηγορία-δ-τριγωνομετρικές-εξισώσεις-1620" id="toc-κατηγορία-δ-τριγωνομετρικές-εξισώσεις-1620" class="nav-link" data-scroll-target="#κατηγορία-δ-τριγωνομετρικές-εξισώσεις-1620"><span class="header-section-number">1.4.4</span> <strong>Κατηγορία Δ: Τριγωνομετρικές Εξισώσεις (16–20)</strong></a></li>
+  <li><a href="#κατηγορία-ε-ασκήσεις-με-τρίγωνα-2127" id="toc-κατηγορία-ε-ασκήσεις-με-τρίγωνα-2127" class="nav-link" data-scroll-target="#κατηγορία-ε-ασκήσεις-με-τρίγωνα-2127"><span class="header-section-number">1.4.5</span> <strong>Κατηγορία Ε: Ασκήσεις με Τρίγωνα (21–27)</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#διαγωνισμα-αξιολογησησ-μετασχηματισμοι-τριγωνομετρικων-παραστασεων" id="toc-διαγωνισμα-αξιολογησησ-μετασχηματισμοι-τριγωνομετρικων-παραστασεων" class="nav-link" data-scroll-target="#διαγωνισμα-αξιολογησησ-μετασχηματισμοι-τριγωνομετρικων-παραστασεων"><span class="header-section-number">2</span> ΔΙΑΓΩΝΙΣΜΑ ΑΞΙΟΛΟΓΗΣΗΣ: ΜΕΤΑΣΧΗΜΑΤΙΣΜΟΙ ΤΡΙΓΩΝΟΜΕΤΡΙΚΩΝ ΠΑΡΑΣΤΑΣΕΩΝ</a>
+  <ul>
+  <li><a href="#θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" id="toc-θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες"><span class="header-section-number">2.1</span> <strong>ΘΕΜΑ Α (Θεωρία &amp; Ερωτήσεις Κατανόησης - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-β-υπολογισμοί-μετατροπές-παραστάσεων---25-μονάδες" id="toc-θεμα-β-υπολογισμοί-μετατροπές-παραστάσεων---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-β-υπολογισμοί-μετατροπές-παραστάσεων---25-μονάδες"><span class="header-section-number">2.2</span> <strong>ΘΕΜΑ Β (Υπολογισμοί &amp; Μετατροπές Παραστάσεων - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-γ-αποδείξεις-ταυτοτήτων-εξισώσεις---25-μονάδες" id="toc-θεμα-γ-αποδείξεις-ταυτοτήτων-εξισώσεις---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-γ-αποδείξεις-ταυτοτήτων-εξισώσεις---25-μονάδες"><span class="header-section-number">2.3</span> <strong>ΘΕΜΑ Γ (Αποδείξεις Ταυτοτήτων &amp; Εξισώσεις - 25 Μονάδες)</strong></a></li>
+  <li><a href="#θεμα-δ-σύνθετη-εξίσωση-εφαρμογή-σε-τρίγωνα---25-μονάδες" id="toc-θεμα-δ-σύνθετη-εξίσωση-εφαρμογή-σε-τρίγωνα---25-μονάδες" class="nav-link" data-scroll-target="#θεμα-δ-σύνθετη-εξίσωση-εφαρμογή-σε-τρίγωνα---25-μονάδες"><span class="header-section-number">2.4</span> <strong>ΘΕΜΑ Δ (Σύνθετη Εξίσωση &amp; Εφαρμογή σε Τρίγωνα - 25 Μονάδες)</strong></a></li>
+  </ul></li>
+  <li><a href="#αναλυτικεσ-λυσεισ-διαγωνισματοσ" id="toc-αναλυτικεσ-λυσεισ-διαγωνισματοσ" class="nav-link" data-scroll-target="#αναλυτικεσ-λυσεισ-διαγωνισματοσ"><span class="header-section-number">3</span> ΑΝΑΛΥΤΙΚΕΣ ΛΥΣΕΙΣ ΔΙΑΓΩΝΙΣΜΑΤΟΣ</a>
+  <ul>
+  <li><a href="#θεμα-α" id="toc-θεμα-α" class="nav-link" data-scroll-target="#θεμα-α"><span class="header-section-number">3.1</span> <strong>ΘΕΜΑ Α</strong></a></li>
+  <li><a href="#θεμα-β" id="toc-θεμα-β" class="nav-link" data-scroll-target="#θεμα-β"><span class="header-section-number">3.2</span> <strong>ΘΕΜΑ Β</strong></a></li>
+  <li><a href="#θεμα-γ" id="toc-θεμα-γ" class="nav-link" data-scroll-target="#θεμα-γ"><span class="header-section-number">3.3</span> <strong>ΘΕΜΑ Γ</strong></a></li>
+  <li><a href="#θεμα-δ" id="toc-θεμα-δ" class="nav-link" data-scroll-target="#θεμα-δ"><span class="header-section-number">3.4</span> <strong>ΘΕΜΑ Δ</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="μετασχηματισμοί-τριγωνομετρικών-παραστάσεων" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="μετασχηματισμοί-τριγωνομετρικών-παραστάσεων"><span class="header-section-number">1</span> Μετασχηματισμοί τριγωνομετρικών παραστάσεων</h2>
+<section id="μετασχηματισμός-γινομένου-σε-άθροισμα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="μετασχηματισμός-γινομένου-σε-άθροισμα"><span class="header-section-number">1.1</span> Μετασχηματισμός Γινομένου σε Άθροισμα</h3>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Τύποι</strong></p>
+</div>
+<p>Για οποιεσδήποτε γωνίες <span class="math inline">\(α, β \in \mathbb{R}\)</span> ισχύουν οι παρακάτω θεμελιώδεις ταυτότητες:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\mathbf{2ημα συνβ = ημ(α + β) + ημ(α - β)}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{2συνα συνβ = συν(α - β) + συν(α + β)}\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{2ημα ημβ = συν(α - β) - συν(α + β)}\)</span></p></li>
+</ol>
+</div>
+<hr>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη</strong></p>
+</div>
+<p>Από τους τύπους αθροίσματος και διαφοράς γωνιών γνωρίζουμε ότι:</p>
+<p><span class="math display">\[ημ(α + β) = ημα συνβ + συνα ημβ \quad (1)\]</span></p>
+<p><span class="math display">\[ημ(α - β) = ημα συνβ - συνα ημβ \quad (2)\]</span></p>
+<p><span class="math display">\[συν(α + β) = συνα συνβ - ημα ημβ \quad (3)\]</span></p>
+<p><span class="math display">\[συν(α - β) = συνα συνβ + ημα ημβ \quad (4)\]</span></p>
+<ol type="1">
+<li><p>Προσθέτοντας κατά μέλη τις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>: <span class="math display">\[ημ(α + β) + ημ(α - β) = 2ημα συνβ\]</span></p></li>
+<li><p>Προσθέτοντας κατά μέλη τις <span class="math inline">\((3)\)</span> και <span class="math inline">\((4)\)</span>: <span class="math display">\[συν(α - β) + συν(α + β) = 2συνα συνβ\]</span></p></li>
+<li><p>Αφαιρώντας κατά μέλη την <span class="math inline">\((3)\)</span> από την <span class="math inline">\((4)\)</span>: <span class="math display">\[συν(α - β) - συν(α + β) = 2ημα ημβ\]</span></p></li>
+</ol>
+</div>
+<hr>
+<section id="παραδείγματα" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="παραδείγματα"><span class="header-section-number">1.1.1</span> <strong>Παραδείγματα</strong></h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Παράδειγμα 1:</strong></p>
+</div>
+<p>Να μετατραπεί σε άθροισμα το γινόμενο <span class="math inline">\(2ημ(5x)συν(3x)\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+</div>
+<p><span class="math inline">\(2ημ(5x)συν(3x) = ημ(5x + 3x) + ημ(5x - 3x) = \mathbf{ημ(8x) + ημ(2x)}\)</span>$</p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Παράδειγμα 2:</strong></p>
+</div>
+<p>Να υπολογιστεί η ακριβής τιμή του γινομένου <span class="math inline">\(A = συν 75^\circ \cdot συν 15^\circ\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+</div>
+<p><span class="math display">\[συν 75^\circ \cdot συν 15^\circ = \frac{1}{2} \left[ συν(75^\circ - 15^\circ) + συν(75^\circ + 15^\circ) \right]\]</span></p>
+<p><span class="math display">\[= \frac{1}{2} \left( συν 60^\circ + συν 90^\circ \right) = \frac{1}{2} \left( \frac{1}{2} + 0 \right) = \mathbf{\frac{1}{4}}\]</span></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="μετασχηματισμός-αθροίσματος-σε-γινόμενο" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="μετασχηματισμός-αθροίσματος-σε-γινόμενο"><span class="header-section-number">1.2</span> Μετασχηματισμός Αθροίσματος σε Γινόμενο</h3>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Τύποι</strong></p>
+</div>
+<p>Για οποιεσδήποτε γωνίες <span class="math inline">\(A, B \in \mathbb{R}\)</span> ισχύουν οι τύποι:</p>
+<ol type="1">
+<li><p><span class="math inline">\(ημ A + ημ B = 2ημ\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)\)</span></p></li>
+<li><p><span class="math inline">\(ημ A - ημ B = 2ημ\left(\dfrac{A-B}{2}\right)συν\left(\dfrac{A+B}{2}\right)\)</span></p></li>
+<li><p><span class="math inline">\(συν A + συν B = 2συν\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)\)</span></p></li>
+<li><p><span class="math inline">\(συν A - συν B = -2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{A-B}{2}\right) = 2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{B-A}{2}\right)\)</span></p></li>
+</ol>
+</div>
+<hr>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη</strong></p>
+</div>
+<p>Θέτουμε <span class="math inline">\(A = α + β\)</span> και <span class="math inline">\(B = α - β\)</span>.</p>
+<p>Προσθέτοντας και αφαιρώντας τις δύο εξισώσεις κατά μέλη προκύπτει: <span class="math display">\[α = \frac{A + B}{2} \quad \text{και} \quad β = \frac{A - B}{2}\]</span></p>
+<p>Αντικαθιστώντας τα <span class="math inline">\(α\)</span> και <span class="math inline">\(β\)</span> στους προηγούμενους τύπους μετασχηματισμού γινομένων σε αθροίσματα, λαμβάνουμε:</p>
+<ol type="1">
+<li><p>Από <span class="math inline">\(2ημασυνβ = ημ(α+β) + ημ(α-β)\)</span>: <span class="math display">\[ημ A + ημ B = 2ημ\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right)\]</span></p></li>
+<li><p>Αντικαθιστώντας το <span class="math inline">\(B\)</span> με <span class="math inline">\(-B\)</span> στον παραπάνω τύπο: <span class="math display">\[ημ A - ημ B = 2ημ\left(\frac{A-B}{2}\right)συν\left(\frac{A+B}{2}\right)\]</span></p></li>
+<li><p>Από <span class="math inline">\(2συνασυνβ = συν(α-β) + συν(α+β)\)</span>: <span class="math display">\[συν A + συν B = 2συν\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right)\]</span></p></li>
+<li><p>Από <span class="math inline">\(2ημαημβ = συν(α-β) - συν(α+β)\)</span>: <span class="math display">\[συν A - συν B = -2ημ\left(\frac{A+B}{2}\right)ημ\left(\frac{A-B}{2}\right)\]</span></p></li>
+</ol>
+</div>
+<hr>
+<section id="παραδείγματα-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="παραδείγματα-1"><span class="header-section-number">1.2.1</span> <strong>Παραδείγματα</strong></h4>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Παράδειγμα 1:</strong></p>
+</div>
+<p>Να μετατραπεί σε γινόμενο η παράσταση <span class="math inline">\(B = ημ(4x) + ημ(2x)\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+</div>
+<p><span class="math display">\[B = 2ημ\left(\frac{4x+2x}{2}\right)συν\left(\frac{4x-2x}{2}\right) = \mathbf{2ημ(3x)συν x}\]</span></p>
+</div>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Παράδειγμα 2:</strong></p>
+</div>
+<p>Να υπολογιστεί η τιμή της παράστασης <span class="math inline">\(γ = συν 75^\circ - συν 15^\circ\)</span>.</p>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p>Λύση</p>
+</div>
+<p><span class="math display">\[γ = -2ημ\left(\frac{75^\circ+15^\circ}{2}\right)ημ\left(\frac{75^\circ-15^\circ}{2}\right) = -2ημ 45^\circ \cdot ημ 30^\circ\]</span></p>
+<p><span class="math display">\[= -2 \cdot \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \mathbf{-\frac{\sqrt{2}}{2}}\]</span></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="εφαρμογές-εξισώσεις-ταυτότητες" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="εφαρμογές-εξισώσεις-ταυτότητες"><span class="header-section-number">1.3</span> Εφαρμογές (Εξισώσεις &amp; Ταυτότητες)</h3>
+<div class="math-box problem-box">
+<div class="math-title problem-title">
+<p><strong>Εφαρμογή 1 (Εξίσωση με Μετασχηματισμό Γινομένων)</strong></p>
+</div>
+<p><strong>Να λυθεί στο</strong> <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math display">\[ημ(3x)συν x = ημ(4x)συν(2x)\]</span></p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title problemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Πολλαπλασιάζουμε και τα δύο μέλη με <span class="math inline">\(2\)</span>:</p>
+<p><span class="math display">\[2ημ(3x)συν x = 2ημ(4x)συν(2x)\]</span></p>
+<p>Εφαρμόζουμε τους τύπους μετατροπής γινομένου σε άθροισμα:</p>
+<p><span class="math display">\[ημ(3x+x) + ημ(3x-x) = ημ(4x+2x) + ημ(4x-2x)\]</span> <span class="math display">\[ημ(4x) + ημ(2x) = ημ(6x) + ημ(2x)\]</span> <span class="math display">\[ημ(6x) - ημ(4x) = 0\]</span></p>
+<p>Μετατρέπουμε τη διαφορά ημιτόνων σε γινόμενο: <span class="math display">\[2ημ\left(\frac{6x-4x}{2}\right)συν\left(\frac{6x+4x}{2}\right) = 0 \iff 2ημ x συν(5x) = 0\]</span></p>
+<ul>
+<li><p>Από <span class="math inline">\(ημ x = 0 \iff \mathbf{x = k\pi}, \quad k \in \mathbb{Z}\)</span></p></li>
+<li><p>Από <span class="math inline">\(συν(5x) = 0 \iff 5x = k\pi + \dfrac{\pi}{2} \iff \mathbf{x = \dfrac{k\pi}{5} + \dfrac{\pi}{10}}, \quad k \in \mathbb{Z}\)</span></p></li>
+</ul>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title problem-title">
+<p><strong>Εφαρμογή 2 (Εξίσωση με Μετασχηματισμό Αθροίσματος)</strong></p>
+</div>
+<p><strong>Να λυθεί στο</strong> <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math display">\[ημ(5x) + ημ(3x) + ημ x = 0\]</span></p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title problemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Ομαδοποιούμε τον πρώτο και τον τρίτο όρο: <span class="math display">\[(ημ(5x) + ημ x) + ημ(3x) = 0\]</span></p>
+<p>Μετατρέπουμε το άθροισμα <span class="math inline">\(ημ(5x) + ημ x\)</span> σε γινόμενο: <span class="math display">\[2ημ\left(\frac{5x+x}{2}\right)συν\left(\frac{5x-x}{2}\right) + ημ(3x) = 0\]</span> <span class="math display">\[2ημ(3x)συν(2x) + ημ(3x) = 0\]</span></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(ημ(3x)\)</span>: <span class="math display">\[ημ(3x)\left(2συν(2x) + 1\right) = 0\]</span></p>
+<ul>
+<li><p>Από <span class="math inline">\(ημ(3x) = 0 \iff 3x = k\pi \iff \mathbf{x = \dfrac{k\pi}{3}}, \quad k \in \mathbb{Z}\)</span></p></li>
+<li><p>Από <span class="math inline">\(2συν(2x) + 1 = 0 \iff συν(2x) = -\dfrac{1}{2} = συν\left(\dfrac{2\pi}{3}\right) \iff 2x = 2k\pi \pm \dfrac{2\pi}{3} \iff \mathbf{x = k\pi \pm \dfrac{\pi}{3}}, \quad k \in \mathbb{Z}\)</span></p></li>
+</ul>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title problem-title">
+<p><strong>Εφαρμογή 3 (Ταυτότητα Απλοποίησης Κλάσματος)</strong></p>
+</div>
+<p><strong>Να αποδειχθεί η ταυτότητα:</strong> <span class="math display">\[\frac{ημ(3x) + ημ x}{συν(3x) + συν x} = εφ(2x) \quad \left(\text{για } συν(3x) + συν x \neq 0\right)\]</span></p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title problemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Μετατρέπουμε τον αριθμητή και τον παρονομαστή σε γινόμενα:</p>
+<p><span class="math display">\[\text{Αριθμητής: } ημ(3x) + ημ x = 2ημ\left(\frac{3x+x}{2}\right)συν\left(\frac{3x-x}{2}\right) = 2ημ(2x)συν x\]</span> <span class="math display">\[\text{Παρονομαστής: } συν(3x) + συν x = 2συν\left(\frac{3x+x}{2}\right)συν\left(\frac{3x-x}{2}\right) = 2συν(2x)συν x\]</span></p>
+<p>Συνθέτουμε το κλάσμα: <span class="math display">\[\frac{2ημ(2x)συν x}{2συν(2x)συν x} = \frac{ημ(2x)}{συν(2x)} = \mathbf{εφ(2x)}\]</span></p>
+</div>
+<hr>
+<div class="math-box problem-box">
+<div class="math-title problem-title">
+<p><strong>Εφαρμογή 4 (Ταυτότητα Γινομένων)</strong></p>
+</div>
+<p><strong>Να αποδειχθεί ότι:</strong> <span class="math display">\[συν(2x)συν x - ημ(4x)ημ x = συν(3x)συν(2x)\]</span></p>
+</div>
+<div class="math-box problemsolution-box">
+<div class="math-title problemsolution-title">
+<p><strong>Λύση:</strong></p>
+</div>
+<p>Μετατρέπουμε τα δύο γινόμενα του αριστερού μέλους σε αθροίσματα:</p>
+<ul>
+<li><p><span class="math inline">\(συν(2x)συν x = \dfrac{1}{2}\left[συν(2x-x) + συν(2x+x)\right] = \dfrac{1}{2}\left(συν x + συν(3x)\right)\)</span></p></li>
+<li><p><span class="math inline">\(ημ(4x)ημ x = \dfrac{1}{2}\left[συν(4x-x) - συν(4x+x)\right] = \dfrac{1}{2}\left(συν(3x) - συν(5x)\right)\)</span></p></li>
+</ul>
+<p>Αφαιρούμε τις δύο εκφράσεις: <span class="math display">\[\text{Αριστερό Μέλος} = \frac{1}{2}\left(συν x + συν(3x)\right) - \frac{1}{2}\left(συν(3x) - συν(5x)\right)\]</span> <span class="math display">\[= \frac{1}{2}\left(συν x + συν(5x)\right)\]</span></p>
+<p>Μετατρέπουμε το άθροισμα <span class="math inline">\(συν(5x) + συν x\)</span> σε γινόμενο: <span class="math display">\[= \frac{1}{2} \cdot 2συν\left(\frac{5x+x}{2}\right)συν\left(\frac{5x-x}{2}\right) = \mathbf{συν(3x)συν(2x)}\]</span></p>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-για-εξάσκηση" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ασκήσεις-για-εξάσκηση"><span class="header-section-number">1.4</span> Ασκήσεις για Εξάσκηση</h3>
+<section id="κατηγορία-α-ασκήσεις-υπολογισμού-15" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="κατηγορία-α-ασκήσεις-υπολογισμού-15"><span class="header-section-number">1.4.1</span> <strong>Κατηγορία Α: Ασκήσεις Υπολογισμού (1–5)</strong></h4>
+<ol type="1">
+<li><p>Να υπολογιστεί η ακριβής τιμή της παράστασης <span class="math inline">\(A = συν 105^\circ + συν 15^\circ\)</span>.</p></li>
+<li><p>Να υπολογιστεί η ακριβής τιμή της παράστασης <span class="math inline">\(B = ημ 75^\circ \cdot ημ 15^\circ\)</span>.</p></li>
+</ol>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="3" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Να αποδειχθεί ότι <span class="math inline">\(συν 20^\circ \cdot συν 40^\circ \cdot συν 80^\circ = \dfrac{1}{8}\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να αποδείξουμε την ισότητα: <span class="math display">\[συν 20^\circ \cdot συν 40^\circ \cdot συν 80^\circ = \frac{1}{8}\]</span></p>
+<p>θα χρησιμοποιήσουμε τον τριγωνομετρικό τύπο του διπλάσιου τόξου για το ημίτονο: <span class="math display">\[ημ(2x) = 2 ημ x συν x \iff ημ x συν x = \frac{1}{2} ημ(2x)\]</span></p>
+<hr>
+<p><strong>1: Ορισμός της παράστασης</strong></p>
+<p>Έστω <span class="math inline">\(P\)</span> η παράσταση που θέλουμε να υπολογίσουμε: <span class="math display">\[P = συν 20^\circ \cdot συν 40^\circ \cdot συν 80^\circ\]</span></p>
+<p>Πολλαπλασιάζουμε και τα δύο μέλη με το <span class="math inline">\(2ημ 20^\circ\)</span> (εφόσον <span class="math inline">\(ημ 20^\circ \neq 0\)</span>): <span class="math display">\[2ημ 20^\circ \cdot P = (2ημ 20^\circ συν 20^\circ) \cdot συν 40^\circ \cdot συν 80^\circ\]</span></p>
+<hr>
+<p><strong>2: Διαδοχική εφαρμογή του τύπου διπλάσιου τόξου</strong></p>
+<ol type="1">
+<li><p>Εφαρμόζουμε τον τύπο <span class="math inline">\(2ημ 20^\circ συν 20^\circ = ημ(2 \cdot 20^\circ) = ημ 40^\circ\)</span>: <span class="math display">\[2ημ 20^\circ \cdot P = ημ 40^\circ \cdot συν 40^\circ \cdot συν 80^\circ\]</span></p></li>
+<li><p>Πολλαπλασιάζουμε και τα δύο μέλη με το <span class="math inline">\(2\)</span>: <span class="math display">\[4ημ 20^\circ \cdot P = (2ημ 40^\circ συν 40^\circ) \cdot συν 80^\circ\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο <span class="math inline">\(2ημ 40^\circ συν 40^\circ = ημ(2 \cdot 40^\circ) = ημ 80^\circ\)</span>: <span class="math display">\[4ημ 20^\circ \cdot P = ημ 80^\circ \cdot συν 80^\circ\]</span></p></li>
+<li><p>Πολλαπλασιάζουμε ξανά και τα δύο μέλη με το <span class="math inline">\(2\)</span>: <span class="math display">\[8ημ 20^\circ \cdot P = 2ημ 80^\circ συν 80^\circ\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο <span class="math inline">\(2ημ 80^\circ συν 80^\circ = ημ(2 \cdot 80^\circ) = ημ 160^\circ\)</span>: <span class="math display">\[8ημ 20^\circ \cdot P = ημ 160^\circ\]</span></p></li>
+</ol>
+<hr>
+<p><strong>3: Απλοποίηση και τελικό αποτέλεσμα</strong></p>
+<p>Γνωρίζουμε ότι για παραπληρωματικές γωνίες ισχύει <span class="math inline">\(ημ(180^\circ - x) = ημ x\)</span>. Επομένως: <span class="math display">\[ημ 160^\circ = ημ(180^\circ - 20^\circ) = ημ 20^\circ\]</span></p>
+<p>Αντικαθιστούμε στην εξίσωση: <span class="math display">\[8ημ 20^\circ \cdot P = ημ 20^\circ\]</span></p>
+<p>Διαιρούμε και τα δύο μέλη με το <span class="math inline">\(ημ 20^\circ\)</span> (αφού <span class="math inline">\(ημ 20^\circ \neq 0\)</span>): <span class="math display">\[8P = 1 \iff P = \frac{1}{8}\]</span></p>
+<p>Άρα: <span class="math display">\[συν 20^\circ \cdot συν 40^\circ \cdot συν 80^\circ = \frac{1}{8}\]</span></p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="4" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Να υπολογιστεί το άθροισμα <span class="math inline">\(S = ημ 40^\circ + ημ 20^\circ - ημ 80^\circ\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να υπολογίσουμε το άθροισμα: <span class="math display">\[S = ημ 40^\circ + ημ 20^\circ - ημ 80^\circ\]</span></p>
+<p>θα χρησιμοποιήσουμε τον τριγωνομετρικό τύπο μετατροπής αθροίσματος ημιτόνων σε γινόμενο: <span class="math display">\[ημ A + ημ B = 2 ημ\left(\frac{A + B}{2}\right) συν\left(\frac{A - B}{2}\right)\]</span></p>
+<hr>
+<p><strong>1: Εφαρμογή του τύπου στο άθροισμα <span class="math inline">\(ημ 40^\circ + ημ 20^\circ\)</span></strong></p>
+<p>Θέτουμε <span class="math inline">\(A = 40^\circ\)</span> και <span class="math inline">\(B = 20^\circ\)</span>: <span class="math display">\[ημ 40^\circ + ημ 20^\circ = 2 ημ\left(\frac{40^\circ + 20^\circ}{2}\right) συν\left(\frac{40^\circ - 20^\circ}{2}\right)\]</span></p>
+<p>Υπολογίζουμε τις γωνίες: <span class="math display">\[\frac{40^\circ + 20^\circ}{2} = 30^\circ \quad \text{και} \quad \frac{40^\circ - 20^\circ}{2} = 10^\circ\]</span></p>
+<p>Επομένως: <span class="math display">\[ημ 40^\circ + ημ 20^\circ = 2 ημ 30^\circ συν 10^\circ\]</span></p>
+<hr>
+<p><strong>2: Αντικατάσταση της γνωστής τιμής <span class="math inline">\(ημ 30^\circ\)</span></strong></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(ημ 30^\circ = \dfrac{1}{2}\)</span>, άρα: <span class="math display">\[ημ 40^\circ + ημ 20^\circ = 2 \cdot \frac{1}{2} \cdot συν 10^\circ = συν 10^\circ\]</span></p>
+<hr>
+<p><strong>3: Υπολογισμός του <span class="math inline">\(S\)</span></strong></p>
+<p>Αντικαθιστούμε το αποτέλεσμα στην αρχική παράσταση: <span class="math display">\[S = συν 10^\circ - ημ 80^\circ\]</span></p>
+<p>Επειδή οι γωνίες <span class="math inline">\(10^\circ\)</span> και <span class="math inline">\(80^\circ\)</span> είναι συμπληρωματικές (<span class="math inline">\(10^\circ + 80^\circ = 90^\circ\)</span>), ισχύει: <span class="math display">\[συν 10^\circ = ημ(90^\circ - 10^\circ) = ημ 80^\circ\]</span></p>
+<p>Συνεπώς: <span class="math display">\[S = ημ 80^\circ - ημ 80^\circ = 0\]</span></p>
+<hr>
+<p><strong>Τελικό Αποτέλεσμα</strong> <span class="math display">\[S = 0\]</span></p>
+</div>
+<ol start="5" type="1">
+<li>Να υπολογιστεί η τιμή της παράστασης <span class="math inline">\(γ = \dfrac{ημ 70^\circ - ημ 10^\circ}{συν 40^\circ}\)</span>.</li>
+</ol>
+</section>
+<section id="κατηγορία-β-μετατροπές-απλοποιήσεις-610" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="κατηγορία-β-μετατροπές-απλοποιήσεις-610"><span class="header-section-number">1.4.2</span> <strong>Κατηγορία Β: Μετατροπές &amp; Απλοποιήσεις (6–10)</strong></h4>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="6" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Να μετατραπούν σε γινόμενα οι παραστάσεις:</p>
+<ul>
+<li><p>α) <span class="math inline">\(1 + ημ x\)</span></p></li>
+<li><p>β) <span class="math inline">\(1 - 2συν x\)</span></p></li>
+</ul>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<ul>
+<li><strong>α) Μετατροπή της παράστασης <span class="math inline">\(1 + ημ x\)</span> σε γινόμενο</strong></li>
+</ul>
+<p><strong>1ος Τρόπος (Μέσω του τύπου <span class="math inline">\(1 + συν\theta\)</span>):</strong></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(ημ x = συν\left(\dfrac{\pi}{2} - x\right)\)</span>. Επομένως: <span class="math display">\[1 + ημ x = 1 + συν\left(\dfrac{\pi}{2} - x\right)\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο αποτετραγωνισμού <span class="math inline">\(1 + συν\theta = 2συν^2\left(\dfrac{\theta}{2}\right)\)</span>: <span class="math display">\[1 + συν\left(\frac{\pi}{2} - x\right) = 2συν^2\left(\frac{\frac{\pi}{2} - x}{2}\right) = 2συν^2\left(\frac{\pi}{4} - \frac{x}{2}\right)\]</span></p>
+<p><strong>2ος Τρόπος (Μέσω αθροίσματος ημιτόνων):</strong></p>
+<p>Γράφουμε το <span class="math inline">\(1\)</span> ως <span class="math inline">\(ημ\left(\dfrac{\pi}{2}\right)\)</span>: <span class="math display">\[1 + ημ x = ημ\left(\frac{\pi}{2}\right) + ημ x\]</span></p>
+<p>Εφαρμόζουμε τον τύπο <span class="math inline">\(ημ A + ημ B = 2ημ\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)\)</span>: <span class="math display">\[1 + ημ x = 2ημ\left(\frac{\pi}{4} + \frac{x}{2}\right)συν\left(\frac{\pi}{4} - \frac{x}{2}\right)\]</span></p>
+<hr>
+<ul>
+<li><strong>β) Μετατροπή της παράστασης <span class="math inline">\(1 - 2συν x\)</span> σε γινόμενο</strong></li>
+</ul>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(2\)</span>: <span class="math display">\[1 - 2συν x = 2\left(\frac{1}{2} - συν x\right)\]</span></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(\dfrac{1}{2} = συν\left(\dfrac{\pi}{3}\right)\)</span> (ή <span class="math inline">\(συν 60^\circ\)</span>): <span class="math display">\[1 - 2συν x = 2\left[συν\left(\frac{\pi}{3}\right) - συν x\right]\]</span></p>
+<p>Εφαρμόζουμε τον τύπο διαφοράς συνημιτόνων <span class="math inline">\(συν A - συν B = -2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{A-B}{2}\right)\)</span>: <span class="math display">\[2\left[συν\left(\frac{\pi}{3}\right) - συν x\right] = 2\left[-2ημ\left(\frac{\frac{\pi}{3} + x}{2}\right)ημ\left(\frac{\frac{\pi}{3} - x}{2}\right)\right]\]</span> <span class="math display">\[= -4ημ\left(\frac{\pi}{6} + \frac{x}{2}\right)ημ\left(\frac{\pi}{6} - \frac{x}{2}\right)\]</span></p>
+<p>Επειδή <span class="math inline">\(ημ(-y) = -ημ y\)</span>, μπορούμε να γράψουμε το αποτέλεσμα ισοδύναμα και ως: <span class="math display">\[4ημ\left(\frac{x}{2} + \frac{\pi}{6}\right)ημ\left(\frac{x}{2} - \frac{\pi}{6}\right)\]</span></p>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="7" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Να μετατραπεί σε άθροισμα το γινόμενο <span class="math inline">\(P = 4ημ x \cdot ημ(2x) \cdot ημ(3x)\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Χρησιμοποιούμε τον τύπο μετατροπής γινομένου ημιτόνων σε διαφορά συνημιτόνων: <span class="math display">\[2ημ A ημ B = συν(A - B) - συν(A + B)\]</span></p>
+<p><strong>1: Συνδυασμός των δύο πρώτων παραγόντων</strong></p>
+<p>Αναλύουμε το <span class="math inline">\(4ημ x \cdot ημ(3x)\)</span>: <span class="math display">\[4ημ x \cdot ημ(2x) \cdot ημ(3x) = 2 \cdot [2ημ(3x)ημ x] \cdot ημ(2x)\]</span></p>
+<p>Εφαρμόζουμε τον τύπο για <span class="math inline">\(A = 3x\)</span> και <span class="math inline">\(B = x\)</span>: <span class="math display">\[2ημ(3x)ημ x = συν(3x - x) - συν(3x + x) = συν(2x) - συν(4x)\]</span></p>
+<p><strong>2: Πολλαπλασιασμός με τον τρίτο παράγοντα <span class="math inline">\(ημ(2x)\)</span></strong></p>
+<p>Αντικαθιστούμε στην έκφραση του <span class="math inline">\(P\)</span>: <span class="math display">\[P = 2[συν(2x) - συν(4x)]ημ(2x)\]</span> <span class="math display">\[P = 2ημ(2x)συν(2x) - 2ημ(2x)συν(4x)\]</span></p>
+<p><strong>3: Εφαρμογή τύπων στα επιμέρους γινόμενα</strong></p>
+<ol type="1">
+<li><p>Για τον πρώτο όρο, χρησιμοποιούμε τον τύπο διπλάσιου τόξου <span class="math inline">\(2ημ\thetaσυν\theta = ημ(2\theta)\)</span>: <span class="math display">\[2ημ(2x)συν(2x) = ημ(4x)\]</span></p></li>
+<li><p>Για τον δεύτερο όρο, χρησιμοποιούμε τον τύπο <span class="math inline">\(2ημ Aσυν B = ημ(A + B) + ημ(A - B)\)</span>: <span class="math display">\[2ημ(2x)συν(4x) = ημ(2x + 4x) + ημ(2x - 4x) = ημ(6x) + ημ(-2x)\]</span></p>
+<p>Επειδή <span class="math inline">\(ημ(-2x) = -ημ(2x)\)</span>: <span class="math display">\[2ημ(2x)συν(4x) = ημ(6x) - ημ(2x)\]</span></p></li>
+</ol>
+<p><strong>4: Τελική μορφή</strong></p>
+<p>Συνδυάζουμε τους όρους: <span class="math display">\[P = ημ(4x) - [ημ(6x) - ημ(2x)]\]</span> <span class="math display">\[P = ημ(2x) + ημ(4x) - ημ(6x)\]</span></p>
+</div>
+<ol start="8" type="1">
+<li>Να απλοποιηθεί το κλάσμα <span class="math inline">\(K = \dfrac{ημ(5x) - ημ(3x)}{συν(5x) + συν(3x)}\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<ul>
+<li><p><strong>Βασική ιδέα:</strong> Εφαρμόστε απευθείας τους τύπους μετατροπής αθροίσματος/διαφοράς σε γινόμενο στον αριθμητή και στον παρονομαστή:</p>
+<ul>
+<li><p>Για τον αριθμητή: <span class="math display">\[ημ A - ημ B = 2ημ\left(\frac{A - B}{2}\right)συν\left(\frac{A + B}{2}\right)\]</span></p></li>
+<li><p>Για τον παρονομαστή: <span class="math display">\[συν A + συν B = 2συν\left(\frac{A + B}{2}\right)συν\left(\frac{A - B}{2}\right)\]</span></p></li>
+</ul></li>
+<li><p><strong>Στόχος:</strong> Μετά την αντικατάσταση των <span class="math inline">\(A = 5x\)</span> και <span class="math inline">\(B = 3x\)</span>, θα εμφανιστεί κοινός παράγοντας <span class="math inline">\(2συν(4x)\)</span>, ο οποίος απλοποιείται, αφήνοντας έναν απλό λόγο <span class="math inline">\(\dfrac{ημ x}{συν x} = εφ x\)</span>.</p></li>
+</ul>
+</div>
+<ol start="9" type="1">
+<li>Να απλοποιηθεί η παράσταση <span class="math inline">\(L = \dfrac{ημ x + ημ(3x) + ημ(5x) + ημ(7x)}{συν x + συν(3x) + συν(5x) + συν(7x)}\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<ul>
+<li><p><strong>Βασική ιδέα (Κατάλληλη ομαδοποίηση):</strong> Παρατηρήστε τα αθροίσματα των γωνιών στα άκρα και στα μέσα: <span class="math display">\[x + 7x = 8x \quad \text{και} \quad 3x + 5x = 8x\]</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Ομαδοποιήστε στον αριθμητή: <span class="math display">\[[ημ(7x) + ημ x] + [ημ(5x) + ημ(3x)]\]</span></p></li>
+<li><p>Ομαδοποιήστε στον παρονομαστή: <span class="math display">\[[συν(7x) + συν x] + [συν(5x) + συν(3x)]\]</span></p></li>
+<li><p>Εφαρμόστε τους τύπους αθροίσματος σε γινόμενο. Θα δείτε να εμφανίζεται ο κοινός παράγοντας <span class="math inline">\(ημ(4x)\)</span> στον αριθμητή και ο <span class="math inline">\(συν(4x)\)</span> στον παρονομαστή.</p></li>
+<li><p>Βγάλτε τους κοινούς παράγοντες έξω από τις παρενθέσεις ώστε να απλοποιηθούν οι υπόλοιποι όροι.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="10" type="1">
+<li>Να μετατραπεί σε γινόμενο η παράσταση <span class="math inline">\(M = ημ x + ημ(2x) + ημ(3x)\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<ul>
+<li><p><strong>Βασική ιδέα (Συνδυασμός άκρων):</strong> Παρατηρήστε ότι ο μέσος όρος των γωνιών <span class="math inline">\(x\)</span> και <span class="math inline">\(3x\)</span> είναι ακριβώς η μεσαία γωνία <span class="math inline">\(2x\)</span>: <span class="math display">\[\frac{x + 3x}{2} = 2x\]</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Αλλάξτε τη σειρά των όρων συνδυάζοντας το πρώτο με το τρίτο ημίτονο: <span class="math display">\[M = [ημ(3x) + ημ x] + ημ(2x)\]</span></p></li>
+<li><p>Μετατρέψτε την παρένθεση σε γινόμενο με τον τύπο: <span class="math display">\[ημ(3x) + ημ x = 2ημ(2x)συν x\]</span></p></li>
+<li><p>Βγάλτε κοινό παράγοντα το <span class="math inline">\(ημ(2x)\)</span>: <span class="math display">\[M = ημ(2x) \cdot (2συν x + 1)\]</span></p></li>
+<li><p>Για την παράσταση <span class="math inline">\(2συν x + 1\)</span> δείτε την άσκηση 6.</p></li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="κατηγορία-γ-αποδεικτικές-ταυτότητες-1115" class="level4" data-number="1.4.3">
+<h4 data-number="1.4.3" class="anchored" data-anchor-id="κατηγορία-γ-αποδεικτικές-ταυτότητες-1115"><span class="header-section-number">1.4.3</span> <strong>Κατηγορία Γ: Αποδεικτικές Ταυτότητες (11–15)</strong></h4>
+<ol start="11" type="1">
+<li>Να αποδειχθεί ότι <span class="math inline">\(ημ(a+b)ημ(a-b) = ημ^2 a - ημ^2 b\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(ημ(a+b)ημ(a-b) = ημ^2 a - ημ^2 b\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Αναπτύξτε τα δύο ημίτονα με τους τύπους αθροίσματος και διαφοράς: <span class="math display">\[ημ(a+b) = ημ a συν b + συν a ημ b\]</span> <span class="math display">\[ημ(a-b) = ημ a συν b - συν a ημ b\]</span></p></li>
+<li><p>Πολλαπλασιάστε τα εφαρμόζοντας τη διαφορά τετραγώνων <span class="math inline">\((x+y)(x-y) = x^2 - y^2\)</span>: <span class="math display">\[ημ^2 a συν^2 b - συν^2 a ημ^2 b\]</span></p></li>
+<li><p>Αντικαταστήστε τα συνημίτονα μέσω της βασικής ταυτότητας (<span class="math inline">\(συν^2 b = 1 - ημ^2 b\)</span> και <span class="math inline">\(συν^2 a = 1 - ημ^2 a\)</span>) και κάντε τις πράξεις για να απλοποιηθούν οι ενδιάμεσοι όροι.</p></li>
+</ol></li>
+</ul>
+</div>
+<hr>
+<ol start="12" type="1">
+<li>Να αποδειχθεί ότι <span class="math inline">\(συν(a+b)συν(a-b) = συν^2 a - ημ^2 b\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(συν(a+b)συν(a-b) = συν^2 a - ημ^2 b\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Αναπτύξτε τα δύο συνημίτονα: <span class="math display">\[συν(a+b) = συν a συν b - ημ a ημ b\]</span> <span class="math display">\[συν(a-b) = συν a συν b + ημ a ημ b\]</span></p></li>
+<li><p>Χρησιμοποιήστε τη διαφορά τετραγώνων: <span class="math display">\[συν^2 a συν^2 b - ημ^2 a ημ^2 b\]</span></p></li>
+<li><p>Μετατρέψτε το <span class="math inline">\(συν^2 b\)</span> σε <span class="math inline">\(1 - ημ^2 b\)</span> και το <span class="math inline">\(ημ^2 a\)</span> σε <span class="math inline">\(1 - συν^2 a\)</span>. Κάνοντας τις επιμεριστικές, οι όροι <span class="math inline">\(συν^2 a ημ^2 b\)</span> θα απαλειφθούν.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="13" type="1">
+<li>Να αποδειχθεί η ισότητα <span class="math inline">\(\dfrac{ημ x + ημ(2x) + ημ(3x)}{συν x + συν(2x) + συν(3x)} = εφ(2x)\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(\dfrac{ημ x + ημ(2x) + ημ(3x)}{συν x + συν(2x) + συν(3x)} = εφ(2x)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Συνδυάστε τους ακραίους όρους τόσο στον αριθμητή όσο και στον παρονομαστή:</p>
+<ul>
+<li><p>Αριθμητής: <span class="math inline">\([ημ(3x) + ημ x] + ημ(2x)\)</span></p></li>
+<li><p>Παρονομαστής: <span class="math inline">\([συν(3x) + συν x] + συν(2x)\)</span></p></li>
+</ul></li>
+<li><p>Μετατρέψτε τις αγκύλες σε γινόμενα (<span class="math inline">\(ημ(3x) + ημ x = 2ημ(2x)συν x\)</span> και <span class="math inline">\(συν(3x) + συν x = 2συν(2x)συν x\)</span>).</p></li>
+<li><p>Βγάλτε κοινό παράγοντα το <span class="math inline">\(ημ(2x)\)</span> στον αριθμητή και το <span class="math inline">\(συν(2x)\)</span> στον παρονομαστή. Η παρένθεση <span class="math inline">\((2συν x + 1)\)</span> θα απλοποιηθεί πλήρως.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="14" type="1">
+<li>Να αποδειχθεί ότι <span class="math inline">\(1 + συν(2x) + συν(4x) + συν(6x) = 4συν x \cdot συν(2x) \cdot συν(3x)\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(1 + συν(2x) + συν(4x) + συν(6x) = 4συν x συν(2x) συν(3x)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Ομαδοποιήστε κατάλληλα:</p>
+<ul>
+<li><p>Χρησιμοποιήστε τον τύπο διπλάσιου τόξου για το πρώτο ζεύγος: <span class="math inline">\(1 + συν(2x) = 2συν^2 x\)</span>.</p></li>
+<li><p>Μετατρέψτε το δεύτερο ζεύγος σε γινόμενο: <span class="math inline">\(συν(6x) + συν(4x) = 2συν(5x)συν x\)</span>.</p></li>
+</ul>
+<p><em>(Εναλλακτικά: συνδυάστε <span class="math inline">\(1 + συν(6x) = 2συν^2(3x)\)</span> και <span class="math inline">\(συν(4x) + συν(2x) = 2συν(3x)συν x\)</span>, βγάζοντας κοινό παράγοντα το <span class="math inline">\(2συν(3x)\)</span>).</em></p></li>
+<li><p>Βγάλτε τον κοινό παράγοντα έξω και εφαρμόστε ξανά τύπο μετατροπής αθροίσματος σε γινόμενο για την έκφραση που μένει μέσα στην παρένθεση.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="15" type="1">
+<li>Να αποδειχθεί ότι <span class="math inline">\(ημ(20^\circ)ημ(40^\circ)ημ(80^\circ) = \dfrac{\sqrt{3}}{8}\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(ημ(20^\circ)ημ(40^\circ)ημ(80^\circ) = \dfrac{\sqrt{3}}{8}\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Μετατρέψτε το γινόμενο των δύο πρώτων όρων σε διαφορά συνημιτόνων χρησιμοποιώντας τον τύπο: <span class="math display">\[ημ A ημ B = \frac{1}{2}[συν(A-B) - συν(A+B)]\]</span> για <span class="math inline">\(A = 40^\circ\)</span> και <span class="math inline">\(B = 20^\circ\)</span>.</p></li>
+<li><p>Θα πάρετε <span class="math inline">\(\dfrac{1}{2}[συν(20^\circ) - συν(60^\circ)] = \dfrac{1}{2}\left[συν(20^\circ) - \dfrac{1}{2}\right]\)</span>.</p></li>
+<li><p>Πολλαπλασιάστε το αποτέλεσμα με το <span class="math inline">\(ημ(80^\circ)\)</span>, κάντε τις επιμεριστικές και εφαρμόστε εκ νέου τον τύπο μετατροπής του γινομένου <span class="math inline">\(συν(20^\circ)ημ(80^\circ)\)</span> σε άθροισμα ημιτόνων. Παρατηρήστε ότι θα εμφανιστεί το <span class="math inline">\(ημ(60^\circ) = \dfrac{\sqrt{3}}{2}\)</span>.</p></li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="κατηγορία-δ-τριγωνομετρικές-εξισώσεις-1620" class="level4" data-number="1.4.4">
+<h4 data-number="1.4.4" class="anchored" data-anchor-id="κατηγορία-δ-τριγωνομετρικές-εξισώσεις-1620"><span class="header-section-number">1.4.4</span> <strong>Κατηγορία Δ: Τριγωνομετρικές Εξισώσεις (16–20)</strong></h4>
+<ol start="16" type="1">
+<li><p>Να λυθεί στο <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math inline">\(ημ(4x) + ημ(2x) = 0\)</span>.</p></li>
+<li><p>Να λυθεί στο <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math inline">\(συν(3x) - συν x = 0\)</span>.</p></li>
+<li><p>Να λυθεί στο <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math inline">\(ημ(5x)συν x = ημ(7x)συν(3x)\)</span>.</p></li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Εξίσωση:</strong> <span class="math inline">\(ημ(5x)συν x = ημ(7x)συν(3x)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Πολλαπλασιάστε και τα δύο μέλη με το <span class="math inline">\(2\)</span>: <span class="math display">\[2ημ(5x)συν x = 2ημ(7x)συν(3x)\]</span></p></li>
+<li><p>Εφαρμόστε τον τύπο μετατροπής γινομένου σε άθροισμα: <span class="math display">\[2ημ Aσυν B = ημ(A+B) + ημ(A-B)\]</span></p>
+<ul>
+<li><p>Αριστερό μέλος: <span class="math inline">\(ημ(6x) + ημ(4x)\)</span></p></li>
+<li><p>Δεξί μέλος: <span class="math inline">\(ημ(10x) + ημ(4x)\)</span></p></li>
+</ul></li>
+<li><p>Απαλείψτε τον κοινό όρο <span class="math inline">\(ημ(4x)\)</span>, οπότε μένει η απλή τριγωνομετρική εξίσωση: <span class="math display">\[ημ(10x) = ημ(6x)\]</span></p></li>
+<li><p>Λύστε την εξίσωση χρησιμοποιώντας τους βασικούς τύπους: <span class="math display">\[10x = 2k\pi + 6x \quad \text{ή} \quad 10x = 2k\pi + \pi - 6x, \quad k \in \mathbb{Z}\]</span></p></li>
+</ol></li>
+</ul>
+</div>
+<hr>
+<ol start="19" type="1">
+<li>Να λυθεί στο <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math inline">\(συν(3x)συν(2x) = ημ x \cdot ημ(2x)\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Εξίσωση:</strong> <span class="math inline">\(συν(3x)συν(2x) = ημ x \cdot ημ(2x)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Μεταφέρετε όλους τους όρους στο πρώτο μέλος: <span class="math display">\[συν(3x)συν(2x) - ημ x ημ(2x) = 0\]</span></p></li>
+<li><p>Πολλαπλασιάστε με το <span class="math inline">\(2\)</span> και μετατρέψτε τα δύο γινόμενα σε αθροίσματα/διαφορές συνημιτόνων:</p>
+<ul>
+<li><p><span class="math inline">\(2συν(3x)συν(2x) = συν(5x) + συν x\)</span></p></li>
+<li><p><span class="math inline">\(2ημ(2x)ημ x = συν x - συν(3x)\)</span></p></li>
+</ul></li>
+<li><p>Αντικαταστήστε στην εξίσωση: <span class="math display">\[[συν(5x) + συν x] - [συν x - συν(3x)] = 0 \iff συν(5x) + συν(3x) = 0\]</span></p></li>
+<li><p>Γράψτε την εξίσωση στη μορφή: <span class="math display">\[συν(5x) = -συν(3x) \iff συν(5x) = συν(\pi - 3x)\]</span></p>
+<p>και εφαρμόστε τον τύπο επίλυσης <span class="math inline">\(συν \theta = συν \phi\)</span>.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="20" type="1">
+<li>Να λυθεί στο <span class="math inline">\(\mathbb{R}\)</span> η εξίσωση: <span class="math inline">\(ημ(3x) + ημ(2x) + ημ x = 0\)</span>.</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Εξίσωση:</strong> <span class="math inline">\(ημ(3x) + ημ(2x) + ημ x = 0\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Ομαδοποιήστε τους ακραίους όρους: <span class="math display">\[[ημ(3x) + ημ x] + ημ(2x) = 0\]</span></p></li>
+<li><p>Μετατρέψτε την παρένθεση σε γινόμενο: <span class="math display">\[ημ(3x) + ημ x = 2ημ(2x)συν x\]</span></p></li>
+<li><p>Βγάλτε κοινό παράγοντα το <span class="math inline">\(ημ(2x)\)</span>: <span class="math display">\[ημ(2x)(2συν x + 1) = 0\]</span></p></li>
+<li><p>Διαχωρίστε στις δύο βασικές εξισώσεις:</p>
+<ul>
+<li><p><span class="math inline">\(ημ(2x) = 0\)</span></p></li>
+<li><p><span class="math inline">\(2συν x + 1 = 0 \iff συν x = -\frac{1}{2} = συν\left(\frac{2\pi}{3}\right)\)</span></p></li>
+</ul>
+<p>και βρείτε τις λύσεις για κάθε περίπτωση (<span class="math inline">\(k \in \mathbb{Z}\)</span>).</p></li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="κατηγορία-ε-ασκήσεις-με-τρίγωνα-2127" class="level4" data-number="1.4.5">
+<h4 data-number="1.4.5" class="anchored" data-anchor-id="κατηγορία-ε-ασκήσεις-με-τρίγωνα-2127"><span class="header-section-number">1.4.5</span> <strong>Κατηγορία Ε: Ασκήσεις με Τρίγωνα (21–27)</strong></h4>
+<ol start="21" type="1">
+<li>Σε κάθε τρίγωνο <span class="math inline">\(ABC\)</span>, να αποδειχθεί ότι: <span class="math display">\[ημ A + ημ B + ημ C = 4συν\left(\frac{A}{2}\right)συν\left(\frac{B}{2}\right)συν\left(\frac{C}{2}\right)\]</span></li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<p>Σε όλες τις ασκήσεις τριγώνου <span class="math inline">\(ABC\)</span> αξιοποιούμε τη βασική σχέση: <span class="math display">\[A + B + C = 180^\circ \iff \frac{A+B}{2} = 90^\circ - \frac{C}{2}\]</span> η οποία δίνει: <span class="math display">\[ημ\left(\frac{A+B}{2}\right) = συν\left(\frac{C}{2}\right) \quad \text{και} \quad συν\left(\frac{A+B}{2}\right) = ημ\left(\frac{C}{2}\right)\]</span></p>
+<hr>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(ημ A + ημ B + ημ C = 4συν\left(\dfrac{A}{2}\right)συν\left(\dfrac{B}{2}\right)συν\left(\dfrac{C}{2}\right)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Μετατρέψτε το άθροισμα των δύο πρώτων όρων σε γινόμενο: <span class="math display">\[ημ A + ημ B = 2ημ\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right) = 2συν\left(\frac{C}{2}\right)συν\left(\frac{A-B}{2}\right)\]</span></p></li>
+<li><p>Αναπτύξτε τον τρίτο όρο με τον τύπο διπλάσιου τόξου: <span class="math display">\[ημ C = 2ημ\left(\frac{C}{2}\right)συν\left(\frac{C}{2}\right)\]</span></p></li>
+<li><p>Βγάλτε κοινό παράγοντα το <span class="math inline">\(2συν\left(\frac{C}{2}\right)\)</span>: <span class="math display">\[2συν\left(\frac{C}{2}\right)\left[συν\left(\frac{A-B}{2}\right) + ημ\left(\frac{C}{2}\right)\right]\]</span></p></li>
+<li><p>Αντικαταστήστε το <span class="math inline">\(ημ\left(\dfrac{C}{2}\right)\)</span> με <span class="math inline">\(συν\left(\dfrac{A+B}{2}\right)\)</span> και μετατρέψτε το άθροισμα των δύο συνημιτόνων μέσα στην αγκύλη σε γινόμενο.</p></li>
+</ol></li>
+</ul>
+</div>
+<hr>
+<ol start="22" type="1">
+<li>Σε κάθε τρίγωνο <span class="math inline">\(ABC\)</span>, να αποδειχθεί ότι: <span class="math display">\[συν A + συν B + συν C = 1 + 4ημ\left(\frac{A}{2}\right)ημ\left(\frac{B}{2}\right)ημ\left(\frac{C}{2}\right)\]</span></li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Ζητούμενο:</strong> <span class="math inline">\(συν A + συν B + συν C = 1 + 4ημ\left(\dfrac{A}{2}\right)ημ\left(\dfrac{B}{2}\right)ημ\left(\dfrac{C}{2}\right)\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Μετατρέψτε το άθροισμα <span class="math inline">\(συν A + συν B\)</span> σε γινόμενο: <span class="math display">\[συν A + συν B = 2συν\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right) = 2ημ\left(\frac{C}{2}\right)συν\left(\frac{A-B}{2}\right)\]</span></p></li>
+<li><p>Χρησιμοποιήστε για το <span class="math inline">\(συν C\)</span> τον τύπο αποτετραγωνισμού: <span class="math display">\[συν C = 1 - 2ημ^2\left(\frac{C}{2}\right)\]</span></p></li>
+<li><p>Κρατήστε το <span class="math inline">\(1\)</span> ξεχωριστά και βγάλτε από τους υπόλοιπους όρους κοινό παράγοντα το <span class="math inline">\(2ημ\left(\frac{C}{2}\right)\)</span>: <span class="math display">\[1 + 2ημ\left(\frac{C}{2}\right)\left[συν\left(\frac{A-B}{2}\right) - ημ\left(\frac{C}{2}\right)\right]\]</span></p></li>
+<li><p>Αντικαταστήστε το <span class="math inline">\(ημ\left(\frac{C}{2}\right)\)</span> με <span class="math inline">\(συν\left(\dfrac{A+B}{2}\right)\)</span> και μετατρέψτε τη διαφορά συνημιτόνων <span class="math inline">\(συν\left(\dfrac{A-B}{2}\right) - συν\left(\dfrac{A+B}{2}\right)\)</span> σε γινόμενο.</p></li>
+</ol></li>
+</ul>
+</div>
+<ol start="23" type="1">
+<li>Αν σε τρίγωνο <span class="math inline">\(ABC\)</span> ισχύει <span class="math inline">\(ημ A = \dfrac{ημ B + ημ C}{συν B + συν C}\)</span>, να αποδειχθεί ότι το τρίγωνο είναι ορθογώνιο (<span class="math inline">\(A = 90^\circ\)</span>).</li>
+</ol>
+<div class="math-box odigia-box">
+<p><strong>Υπόδειξη</strong></p>
+<ul>
+<li><p><strong>Δοσμένη σχέση:</strong> <span class="math inline">\(ημ A = \dfrac{ημ B + ημ C}{συν B + συν C}\)</span></p></li>
+<li><p><strong>Βήματα:</strong></p>
+<ol type="1">
+<li><p>Μετατρέψτε τον αριθμητή και τον παρονομαστή του δεξιού μέλους σε γινόμενα: <span class="math display">\[\frac{ημ B + ημ C}{συν B + συν C} = \frac{2ημ\left(\dfrac{B+C}{2}\right)συν\left(\dfrac{B-C}{2}\right)}{2συν\left(\dfrac{B+C}{2}\right)συν\left(\dfrac{B-C}{2}\right)} = εφ\left(\frac{B+C}{2}\right)\]</span></p></li>
+<li><p>Επειδή <span class="math inline">\(\dfrac{B+C}{2} = 90^\circ - \dfrac{A}{2}\)</span>, έχουμε <span class="math inline">\(εφ\left(\dfrac{B+C}{2}\right) = σφ\left(\dfrac{A}{2}\right)\)</span>.</p></li>
+<li><p>Η εξίσωση γίνεται: <span class="math display">\[ημ A = \frac{συν\left(\frac{A}{2}\right)}{ημ\left(\frac{A}{2}\right)}\]</span></p></li>
+<li><p>Αναπτύξτε το <span class="math inline">\(ημ A\)</span> ως <span class="math inline">\(2ημ\left(\dfrac{A}{2}\right)συν\left(\dfrac{A}{2}\right)\)</span> και παρατηρήστε ότι επειδή σε τρίγωνο είναι <span class="math inline">\(συν\left(\dfrac{A}{2}\right) \neq 0\)</span> (αφού <span class="math inline">\(0^\circ &lt; \dfrac{A}{2} &lt; 90^\circ\)</span>), μπορείτε να απλοποιήσετε για να καταλήξετε στο <span class="math inline">\(ημ\left(\dfrac{A}{2}\right) = \dfrac{\sqrt{2}}{2}\)</span>, άρα <span class="math inline">\(\dfrac{A}{2} = 45^\circ \iff A = 90^\circ\)</span>.</p></li>
+</ol></li>
+</ul>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="24" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Αν σε τρίγωνο <span class="math inline">\(ABC\)</span> ισχύει <span class="math inline">\(συν(2A) + συν(2B) + συν(2C) = -1\)</span>, να αποδειχθεί ότι το τρίγωνο είναι ορθογώνιο</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Σε κάθε τρίγωνο <span class="math inline">\(ABC\)</span> ισχύει ότι <span class="math inline">\(A + B + C = \pi\)</span> με <span class="math inline">\(0 &lt; A, B, C &lt; \pi\)</span>.</p>
+<hr>
+<p><strong>1: Μετατροπή των δύο πρώτων όρων σε γινόμενο</strong></p>
+<p>Ξεκινάμε από το αριστερό μέλος της δοσμένης σχέσης: <span class="math display">\[συν(2A) + συν(2B) + συν(2C) = -1\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο αθροίσματος συνημιτόνων για τους δύο πρώτους όρους: <span class="math display">\[συν(2A) + συν(2B) = 2συν(A + B)συν(A - B)\]</span></p>
+<hr>
+<p><strong>2: Χρήση της συνθήκης <span class="math inline">\(A + B + C = \pi\)</span></strong></p>
+<p>Εφόσον <span class="math inline">\(A + B = \pi - C\)</span>, έχουμε: <span class="math display">\[συν(A + B) = συν(\pi - C) = -συν C\]</span></p>
+<p>Επιπλέον, αναπτύσσουμε τον όρο <span class="math inline">\(συν(2C)\)</span> με τον τύπο διπλάσιας γωνίας: <span class="math display">\[συν(2C) = 2συν^2 C - 1\]</span></p>
+<p>Αντικαθιστούμε αυτά στην αρχική εξίσωση: <span class="math display">\[2(-συν C)συν(A - B) + (2συν^2 C - 1) = -1\]</span> <span class="math display">\[-2συν C συν(A - B) + 2συν^2 C - 1 = -1\]</span></p>
+<hr>
+<p><strong>3: Απλοποίηση και παραγοντοποίηση</strong></p>
+<p>Προσθέτουμε το <span class="math inline">\(1\)</span> και στα δύο μέλη: <span class="math display">\[-2συν C συν(A - B) + 2συν^2 C = 0\]</span></p>
+<p>Διαιρούμε ολόκληρη την εξίσωση με το <span class="math inline">\(-2\)</span>: <span class="math display">\[συν C συν(A - B) - συν^2 C = 0\]</span></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(συν C\)</span>: <span class="math display">\[συν C \big[συν(A - B) - συν C\big] = 0\]</span></p>
+<hr>
+<p><strong>4: Αντικατάσταση του <span class="math inline">\(συν C\)</span> μέσα στην αγκύλη</strong></p>
+<p>Γνωρίζουμε ότι <span class="math inline">\(C = \pi - (A + B)\)</span>, άρα: <span class="math display">\[συν C = -συν(A + B) \implies -συν C = συν(A + B)\]</span></p>
+<p>Αντικαθιστώντας μέσα στην αγκύλη: <span class="math display">\[συν C \big[συν(A - B) + συν(A + B)\big] = 0\]</span></p>
+<p>Από τη γνωστή τριγωνομετρική ταυτότητα: <span class="math display">\[συν(A - B) + συν(A + B) = 2συν A συν B\]</span></p>
+<p>Η εξίσωση γίνεται: <span class="math display">\[συν C \cdot (2συν A συν B) = 0\]</span> <span class="math display">\[2συν A συν B συν C = 0\]</span></p>
+<hr>
+<p><strong>5: Συμπέρασμα</strong></p>
+<p>Για να μηδενίζεται το γινόμενο, πρέπει τουλάχιστον ένας από τους παράγοντες να ισούται με το μηδέν: <span class="math display">\[συν A = 0 \quad \text{ή} \quad συν B = 0 \quad \text{ή} \quad συν C = 0\]</span></p>
+<p>Επειδή οι γωνίες <span class="math inline">\(A, B, C\)</span> είναι γωνίες τριγώνου (<span class="math inline">\(0 &lt; A, B, C &lt; \pi\)</span>), το συνημίτονο μηδενίζεται μόνο όταν η γωνία είναι ίση με <span class="math inline">\(\dfrac{\pi}{2}\)</span> (<span class="math inline">\(90^\circ\)</span>): <span class="math display">\[A = \frac{\pi}{2} \quad \text{ή} \quad B = \frac{\pi}{2} \quad \text{ή} \quad C = \frac{\pi}{2}\]</span></p>
+<p>Άρα, μία από τις γωνίες του τριγώνου είναι ορθή, επομένως το τρίγωνο <span class="math inline">\(ABC\)</span> είναι <strong>ορθογώνιο</strong>.</p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="25" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Αν <span class="math inline">\(α + β + γ = \pi\)</span>, να αποδειχθεί ότι <span class="math inline">\(ημ(2α) + ημ(2β) + ημ(2γ) = 4ημα ημβ ημγ\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να αποδείξουμε την ταυτότητα, θα συνδυάσουμε τους δύο πρώτους όρους με τον τύπο μετατροπής αθροίσματος σε γινόμενο και θα εκμεταλλευτούμε τη συνθήκη <span class="math inline">\(α + β + γ = \pi\)</span>.</p>
+<hr>
+<p><strong>1: Μετατροπή των δύο πρώτων όρων σε γινόμενο</strong></p>
+<p>Ξεκινάμε από το αριστερό μέλος (Α.Μ.):</p>
+<p><span class="math display">\[\text{A.M.} = ημ(2α) + ημ(2β) + ημ(2γ)\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο: <span class="math display">\[ημ A + ημ B = 2ημ\left(\frac{A + B}{2}\right)συν\left(\frac{A - B}{2}\right)\]</span></p>
+<p>Για <span class="math inline">\(A = 2α\)</span> και <span class="math inline">\(B = 2β\)</span>, έχουμε:</p>
+<p><span class="math display">\[ημ(2α) + ημ(2β) = 2ημ\left(\frac{2α + 2β}{2}\right)συν\left(\frac{2α - 2β}{2}\right) = 2ημ(α + β)συν(α - β)\]</span></p>
+<p>Επομένως, το αριστερό μέλος γίνεται: <span class="math display">\[\text{A.M.} = 2ημ(α + β)συν(α - β) + ημ(2γ)\]</span></p>
+<hr>
+<p><strong>2: Χρήση της συνθήκης <span class="math inline">\(α + β + γ = \pi\)</span></strong></p>
+<p>Εφόσον <span class="math inline">\(α + β + γ = \pi\)</span>, έχουμε: <span class="math display">\[α + β = \pi - γ\]</span></p>
+<p>Άρα: <span class="math display">\[ημ(α + β) = ημ(\pi - γ) = ημγ\]</span></p>
+<p>Επιπλέον, αναπτύσσουμε τον όρο <span class="math inline">\(ημ(2γ)\)</span> με τον τύπο διπλάσιας γωνίας: <span class="math display">\[ημ(2γ) = 2ημγσυνγ\]</span></p>
+<p>Αντικαθιστούμε τα παραπάνω στην έκφραση: <span class="math display">\[\text{A.M.} = 2ημγσυν(α - β) + 2ημγσυνγ\]</span></p>
+<hr>
+<p><strong>3: Κοινός παράγοντας</strong></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(2ημγ\)</span>: <span class="math display">\[\text{A.M.} = 2ημγ \big[συν(α - β) + συνγ\big]\]</span></p>
+<hr>
+<p><strong>4: Αντικατάσταση του <span class="math inline">\(συνγ\)</span></strong></p>
+<p>Από τη σχέση <span class="math inline">\(γ = \pi - (α + β)\)</span>, έχουμε: <span class="math display">\[συνγ = συν(\pi - (α + β)) = -συν(α + β)\]</span></p>
+<p>Αντικαθιστούμε μέσα στην αγκύλη: <span class="math display">\[\text{A.M.} = 2ημγ \big[συν(α - β) - συν(α + β)\big]\]</span></p>
+<hr>
+<p><strong>5: Υπολογισμός της διαφοράς συνημιτόνων</strong></p>
+<p>Χρησιμοποιούμε τον τύπο διαφοράς συνημιτόνων: <span class="math display">\[συν(x - y) - συν(x + y) = 2ημ xημ y\]</span></p>
+<p><em>(Αναλυτικά: <span class="math inline">\([συνασυνβ + ημαημβ] - [συνασυνβ - ημαημβ] = 2ημαημβ\)</span>)</em></p>
+<p>Επομένως: <span class="math display">\[συν(α - β) - συν(α + β) = 2ημαημβ\]</span></p>
+<hr>
+<p><strong>6: Τελικό γινόμενο</strong></p>
+<p>Αντικαθιστούμε στην παράσταση: <span class="math display">\[\text{A.M.} = 2ημγ \cdot (2ημαημβ) = 4ημαημβημγ\]</span></p>
+<hr>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Αποδείχθηκε ότι: <span class="math display">\[ημ(2α) + ημ(2β) + ημ(2γ) = 4ημαημβημγ\]</span></p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="26" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Αν <span class="math inline">\(α + β + γ = \pi\)</span>, να αποδειχθεί ότι <span class="math inline">\(συν(2α) + συν(2β) + συν(2γ) = -1 - 4συνα συνβ συνγ\)</span></p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να αποδείξουμε την ταυτότητα, θα μετατρέψουμε το άθροισμα των δύο πρώτων όρων σε γινόμενο και θα αξιοποιήσουμε τη σχέση <span class="math inline">\(α + β + γ = \pi\)</span>.</p>
+<hr>
+<p><strong>1: Μετατροπή των δύο πρώτων όρων σε γινόμενο</strong></p>
+<p>Ξεκινάμε από το αριστερό μέλος (Α.Μ.): <span class="math display">\[\text{A.M.} = συν(2α) + συν(2β) + συν(2γ)\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο αθροίσματος συνημιτόνων: <span class="math display">\[συν A + συν B = 2συν\left(\frac{A + B}{2}\right)συν\left(\frac{A - B}{2}\right)\]</span></p>
+<p>Για <span class="math inline">\(A = 2α\)</span> και <span class="math inline">\(B = 2β\)</span>, έχουμε: <span class="math display">\[συν(2α) + συν(2β) = 2συν\left(\frac{2α + 2β}{2}\right)συν\left(\frac{2α - 2β}{2}\right) = 2συν(α + β)συν(α - β)\]</span></p>
+<p>Επομένως: <span class="math display">\[\text{A.M.} = 2συν(α + β)συν(α - β) + συν(2γ)\]</span></p>
+<hr>
+<p><strong>2: Χρήση της συνθήκης <span class="math inline">\(α + β + γ = \pi\)</span></strong></p>
+<p>Εφόσον <span class="math inline">\(α + β = \pi - γ\)</span>, ισχύει: <span class="math display">\[συν(α + β) = συν(\pi - γ) = -συνγ\]</span></p>
+<p>Επιπλέον, αναπτύσσουμε τον όρο <span class="math inline">\(συν(2γ)\)</span> με τον τύπο διπλάσιας γωνίας: <span class="math display">\[συν(2γ) = 2συν^2γ - 1\]</span></p>
+<p>Αντικαθιστούμε τα παραπάνω στο αριστερό μέλος: <span class="math display">\[\text{A.M.} = 2(-συνγ)συν(α - β) + (2συν^2γ - 1)\]</span> <span class="math display">\[\text{A.M.} = -1 - 2συνγσυν(α - β) + 2συν^2γ\]</span></p>
+<hr>
+<p><strong>3: Κοινός παράγοντας</strong></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(-2συνγ\)</span> από τους δύο τελευταίους όρους: <span class="math display">\[\text{A.M.} = -1 - 2συνγ \big[συν(α - β) - συνγ\big]\]</span></p>
+<hr>
+<p><strong>4: Αντικατάσταση του <span class="math inline">\(συνγ\)</span> μέσα στην αγκύλη</strong></p>
+<p>Από τη σχέση <span class="math inline">\(γ = \pi - (α + β)\)</span>, έχουμε: <span class="math display">\[συνγ = -συν(α + β)\]</span></p>
+<p>Άρα: <span class="math display">\[-συνγ = συν(α + β)\]</span></p>
+<p>Αντικαθιστώντας μέσα στην αγκύλη: <span class="math display">\[συν(α - β) - συνγ = συν(α - β) + συν(α + β)\]</span></p>
+<hr>
+<p><strong>5: Υπολογισμός του αθροίσματος συνημιτόνων</strong></p>
+<p>Χρησιμοποιούμε την ταυτότητα: <span class="math display">\[συν(α + β) + συν(α - β) = 2συνασυνβ\]</span></p>
+<p><em>(Αναλυτικά: <span class="math inline">\([συνασυνβ - ημαημβ] + [συνασυνβ + ημαημβ] = 2συνασυνβ\)</span>)</em></p>
+<hr>
+<p><strong>6: Τελικό αποτέλεσμα</strong></p>
+<p>Αντικαθιστούμε πίσω στην έκφραση: <span class="math display">\[\text{A.M.} = -1 - 2συνγ \cdot (2συνασυνβ)\]</span> <span class="math display">\[\text{A.M.} = -1 - 4συνασυνβσυνγ\]</span></p>
+<hr>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Αποδείχθηκε ότι: <span class="math display">\[συν(2α) + συν(2β) + συν(2γ) = -1 - 4συνασυνβσυνγ\]</span></p>
+</div>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="27" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Αν <span class="math inline">\(α + β + γ = \dfrac{\pi}{2}\)</span>, να αποδειχθεί ότι <span class="math inline">\(ημ(2α) + ημ(2β) + ημ(2γ) = 4συνα συνβ συνγ\)</span></p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να αποδείξουμε την ταυτότητα, θα μετατρέψουμε το άθροισμα των δύο πρώτων όρων σε γινόμενο και θα χρησιμοποιήσουμε τη συνθήκη <span class="math inline">\(α + β + γ = \dfrac{\pi}{2}\)</span>.</p>
+<hr>
+<p><strong>1: Μετατροπή των δύο πρώτων όρων σε γινόμενο</strong></p>
+<p>Ξεκινάμε από το αριστερό μέλος (Α.Μ.): <span class="math display">\[\text{A.M.} = ημ(2α) + ημ(2β) + ημ(2γ)\]</span></p>
+<p>Χρησιμοποιούμε τον τύπο μετατροπής αθροίσματος ημιτόνων σε γινόμενο: <span class="math display">\[ημ A + ημ B = 2ημ\left(\frac{A + B}{2}\right)συν\left(\frac{A - B}{2}\right)\]</span></p>
+<p>Για <span class="math inline">\(A = 2α\)</span> και <span class="math inline">\(B = 2β\)</span>, έχουμε: <span class="math display">\[ημ(2α) + ημ(2β) = 2ημ\left(\frac{2α + 2β}{2}\right)συν\left(\frac{2α - 2β}{2}\right) = 2ημ(α + β)συν(α - β)\]</span></p>
+<p>Επομένως, το αριστερό μέλος γίνεται: <span class="math display">\[\text{A.M.} = 2ημ(α + β)συν(α - β) + ημ(2γ)\]</span></p>
+<hr>
+<p><strong>2: Χρήση της συνθήκης <span class="math inline">\(α + β + γ = \dfrac{\pi}{2}\)</span></strong></p>
+<p>Από τη δοσμένη συνθήκη έχουμε: <span class="math display">\[α + β = \frac{\pi}{2} - γ\]</span></p>
+<p>Επομένως: <span class="math display">\[ημ(α + β) = ημ\left(\frac{\pi}{2} - γ\right) = συνγ\]</span></p>
+<p>Επιπλέον, αναπτύσσουμε τον όρο <span class="math inline">\(ημ(2γ)\)</span> με τον τύπο διπλάσιας γωνίας: <span class="math display">\[ημ(2γ) = 2ημγσυνγ\]</span></p>
+<p>Αντικαθιστούμε τα παραπάνω στην παράσταση: <span class="math display">\[\text{A.M.} = 2συνγσυν(α - β) + 2ημγσυνγ\]</span></p>
+<hr>
+<p><strong>3: Κοινός παράγοντας</strong></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(2συνγ\)</span>: <span class="math display">\[\text{A.M.} = 2συνγ \big[συν(α - β) + ημγ\big]\]</span></p>
+<hr>
+<p><strong>4: Αντικατάσταση του <span class="math inline">\(ημγ\)</span></strong></p>
+<p>Από τη σχέση <span class="math inline">\(γ = \dfrac{\pi}{2} - (α + β)\)</span>, έχουμε: <span class="math display">\[ημγ = ημ\left(\frac{\pi}{2} - (α + β)\right) = συν(α + β)\]</span></p>
+<p>Αντικαθιστούμε μέσα στην αγκύλη: <span class="math display">\[\text{A.M.} = 2συνγ \big[συν(α - β) + συν(α + β)\big]\]</span></p>
+<hr>
+<p><strong>5: Υπολογισμός του αθροίσματος συνημιτόνων</strong></p>
+<p>Χρησιμοποιούμε τη βασική τριγωνομετρική ταυτότητα για το άθροισμα: <span class="math display">\[συν(α + β) + συν(α - β) = 2συνασυνβ\]</span></p>
+<p><em>(Αναλυτικά: <span class="math inline">\([συνασυνβ - ημαημβ] + [συνασυνβ + ημαημβ] = 2συνασυνβ\)</span>)</em></p>
+<hr>
+<p><strong>6: Τελικό γινόμενο</strong></p>
+<p>Αντικαθιστούμε πίσω στην έκφραση: <span class="math display">\[\text{A.M.} = 2συνγ \cdot (2συνασυνβ) = 4συνασυνβσυνγ\]</span></p>
+<hr>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Αποδείχθηκε ότι: <span class="math display">\[ημ(2α) + ημ(2β) + ημ(2γ) = 4συνασυνβσυνγ\]</span></p>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="διαγωνισμα-αξιολογησησ-μετασχηματισμοι-τριγωνομετρικων-παραστασεων" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="διαγωνισμα-αξιολογησησ-μετασχηματισμοι-τριγωνομετρικων-παραστασεων"><span class="header-section-number">2</span> ΔΙΑΓΩΝΙΣΜΑ ΑΞΙΟΛΟΓΗΣΗΣ: ΜΕΤΑΣΧΗΜΑΤΙΣΜΟΙ ΤΡΙΓΩΝΟΜΕΤΡΙΚΩΝ ΠΑΡΑΣΤΑΣΕΩΝ</h2>
+<p><strong>Μάθημα:</strong> Άλγεβρα Β’ Γενικού Λυκείου</p>
+<p><strong>Ενότητα:</strong> Μετασχηματισμοί Γινομένου σε Άθροισμα &amp; Αθροίσματος σε Γινόμενο</p>
+<p><strong>Διάρκεια:</strong> 60 λεπτά</p>
+<hr>
+<section id="θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="θεμα-α-θεωρία-ερωτήσεις-κατανόησης---25-μονάδες"><span class="header-section-number">2.1</span> <strong>ΘΕΜΑ Α (Θεωρία &amp; Ερωτήσεις Κατανόησης - 25 Μονάδες)</strong></h3>
+<p><strong>Α1.</strong></p>
+<ol type="1">
+<li><p>Να αποδείξετε ότι για οποιεσδήποτε γωνίες <span class="math inline">\(α, β \in \mathbb{R}\)</span> ισχύει ο τύπος: <span class="math display">\[2ημασυνβ = ημ(α + β) + ημ(α - β)\]</span> <strong>(5 μονάδες)</strong></p></li>
+<li><p>Να αποδείξετε τον τύπο μετασχηματισμού αθροίσματος ημιτόνων σε γινόμενο: <span class="math display">\[ημ A + ημ B = 2ημ\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right)\]</span> <strong>(5 μονάδες)</strong></p></li>
+</ol>
+<p><strong>Α2.</strong> Να χαρακτηρίσετε τις παρακάτω προτάσεις ως <strong>Σωστό (Σ)</strong> ή <strong>Λάθος (Λ)</strong>: <strong>(10 μονάδες)</strong></p>
+<ol type="1">
+<li><p>Για οποιεσδήποτε γωνίες <span class="math inline">\(α, β\)</span> ισχύει <span class="math inline">\(2συνασυνβ = συν(α - β) + συν(α + β)\)</span>.</p></li>
+<li><p>Ισχύει πάντοτε ότι <span class="math inline">\(συν A - συν B = 2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{A-B}{2}\right)\)</span>.</p></li>
+<li><p>Η παράσταση <span class="math inline">\(ημ(5x) + ημ(3x)\)</span> ισούται με <span class="math inline">\(2ημ(4x)συν x\)</span>.</p></li>
+<li><p>Η ακριβής τιμή του γινομένου <span class="math inline">\(ημ 75^\circ \cdot ημ 15^\circ\)</span> είναι <span class="math inline">\(\dfrac{1}{4}\)</span>.</p></li>
+<li><p>Σε κάθε τρίγωνο <span class="math inline">\(ABC\)</span> ισχύει <span class="math inline">\(ημ(2A) + ημ(2B) + ημ(2C) = 4ημ A ημ B ημ C\)</span>.</p></li>
+</ol>
+<p><strong>Α3.</strong> Να συμπληρώσετε τα κενά ώστε να προκύψουν αληθείς ισότητες: <strong>(5 μονάδες)</strong></p>
+<ul>
+<li><p>α) <span class="math inline">\(συν A + συν B = \text{...........}\)</span></p></li>
+<li><p>β) <span class="math inline">\(2ημαημβ = \text{...........}\)</span></p></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-β-υπολογισμοί-μετατροπές-παραστάσεων---25-μονάδες" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="θεμα-β-υπολογισμοί-μετατροπές-παραστάσεων---25-μονάδες"><span class="header-section-number">2.2</span> <strong>ΘΕΜΑ Β (Υπολογισμοί &amp; Μετατροπές Παραστάσεων - 25 Μονάδες)</strong></h3>
+<p><strong>Β1.</strong> Να υπολογίσετε την ακριβή τιμή των αριθμητικών παραστάσεων χωρίς τη χρήση υπολογιστή:</p>
+<ol type="1">
+<li><p><span class="math inline">\(A = συν 105^\circ + συν 15^\circ\)</span> <strong>(6 μονάδες)</strong></p></li>
+<li><p><span class="math inline">\(B = ημ 75^\circ \cdot ημ 15^\circ\)</span> <strong>(6 μονάδες)</strong></p></li>
+</ol>
+<p><strong>Β2.</strong> Να μετατρέψετε σε γινόμενα τριγωνομετρικών αριθμών τις παραστάσεις:</p>
+<ol type="1">
+<li><p><span class="math inline">\(γ = 1 + ημ x\)</span> <strong>(6 μονάδες)</strong></p></li>
+<li><p><span class="math inline">\(\Delta = ημ(5x) + ημ(3x) + 2ημ(4x)\)</span> <strong>(7 μονάδες)</strong></p></li>
+</ol>
+<hr>
+</section>
+<section id="θεμα-γ-αποδείξεις-ταυτοτήτων-εξισώσεις---25-μονάδες" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="θεμα-γ-αποδείξεις-ταυτοτήτων-εξισώσεις---25-μονάδες"><span class="header-section-number">2.3</span> <strong>ΘΕΜΑ Γ (Αποδείξεις Ταυτοτήτων &amp; Εξισώσεις - 25 Μονάδες)</strong></h3>
+<p><strong>Γ1.</strong> Να αποδείξετε ότι για κάθε γωνία <span class="math inline">\(x\)</span> για την οποία ορίζεται η παράσταση ισχύει: <span class="math display">\[\frac{ημ x + ημ(3x) + ημ(5x)}{συν x + συν(3x) + συν(5x)} = εφ(3x)\]</span> <strong>(12 μονάδες)</strong></p>
+<p><strong>Γ2.</strong> Να λύσετε στο <span class="math inline">\(\mathbb{R}\)</span> την εξίσωση: <span class="math display">\[ημ(3x)συν x = ημ(4x)συν(2x)\]</span> <strong>(13 μονάδες)</strong></p>
+<hr>
+</section>
+<section id="θεμα-δ-σύνθετη-εξίσωση-εφαρμογή-σε-τρίγωνα---25-μονάδες" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="θεμα-δ-σύνθετη-εξίσωση-εφαρμογή-σε-τρίγωνα---25-μονάδες"><span class="header-section-number">2.4</span> <strong>ΘΕΜΑ Δ (Σύνθετη Εξίσωση &amp; Εφαρμογή σε Τρίγωνα - 25 Μονάδες)</strong></h3>
+<p><strong>Δ1.</strong> Να λύσετε στο <span class="math inline">\(\mathbb{R}\)</span> την εξίσωση: <span class="math display">\[ημ(5x) + ημ(3x) + ημ x = 0\]</span> <strong>(12 μονάδες)</strong></p>
+<p><strong>Δ2.</strong> Σε κάθε τρίγωνο <span class="math inline">\(ABC\)</span>, να αποδείξετε τη θεμελιώδη τριγωνομετρική ταυτότητα: <span class="math display">\[ημ(2A) + ημ(2B) + ημ(2C) = 4ημ A \cdot ημ B \cdot ημ C\]</span> <strong>(13 μονάδες)</strong></p>
+<hr>
+</section>
+</section>
+<section id="αναλυτικεσ-λυσεισ-διαγωνισματοσ" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="αναλυτικεσ-λυσεισ-διαγωνισματοσ"><span class="header-section-number">3</span> ΑΝΑΛΥΤΙΚΕΣ ΛΥΣΕΙΣ ΔΙΑΓΩΝΙΣΜΑΤΟΣ</h2>
+<section id="θεμα-α" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="θεμα-α"><span class="header-section-number">3.1</span> <strong>ΘΕΜΑ Α</strong></h3>
+<ul>
+<li><p><strong>Α1.1:</strong> Από τους τύπους αθροίσματος και διαφοράς γωνιών γνωρίζουμε:</p>
+<p><span class="math display">\[ημ(α + β) = ημασυνβ + συναημβ \quad (1)\]</span> <span class="math display">\[ημ(α - β) = ημασυνβ - συναημβ \quad (2)\]</span></p>
+<p>Προσθέτοντας κατά μέλη τις εξισώσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>, προκύπτει: <span class="math display">\[ημ(α + β) + ημ(α - β) = 2ημασυνβ \iff \mathbf{2ημασυνβ = ημ(α + β) + ημ(α - β)}\]</span></p></li>
+<li><p><strong>Α1.2:</strong> Θέτουμε <span class="math inline">\(A = α + β\)</span> και <span class="math inline">\(B = α - β\)</span>.</p>
+<p>Προσθέτοντας και αφαιρώντας κατά μέλη τις δύο αυτές σχέσεις, λαμβάνουμε: <span class="math display">\[α = \frac{A + B}{2} \quad \text{και} \quad β = \frac{A - B}{2}\]</span></p>
+<p>Αντικαθιστώντας τα <span class="math inline">\(α\)</span> και <span class="math inline">\(β\)</span> στον τύπο <span class="math inline">\(2ημασυνβ = ημ(α + β) + ημ(α - β)\)</span>, προκύπτει: <span class="math display">\[\mathbf{ημ A + ημ B = 2ημ\left(\frac{A+B}{2}\right)συν\left(\frac{A-B}{2}\right)}\]</span></p></li>
+<li><p><strong>Α2:</strong></p>
+<ol type="1">
+<li><p><strong>Σωστό</strong> (προκύπτει από την πρόσθεση κατά μέλη των <span class="math inline">\(συν(α+β)\)</span> και <span class="math inline">\(συν(α-β)\)</span>).</p></li>
+<li><p><strong>Λάθος</strong> (το σωστό είναι <span class="math inline">\(συν A - συν B = -2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{A-B}{2}\right)\)</span> ή <span class="math inline">\(2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{B-A}{2}\right)\)</span>).</p></li>
+<li><p><strong>Σωστό</strong> (διότι <span class="math inline">\(ημ(5x) + ημ(3x) = 2ημ\left(\dfrac{5x+3x}{2}\right)συν\left(\dfrac{5x-3x}{2}\right) = 2ημ(4x)συν x\)</span>).</p></li>
+<li><p><strong>Σωστό</strong> (διότι <span class="math inline">\(ημ 75^\circ ημ 15^\circ = \dfrac{1}{2}[συν 60^\circ - συν 90^\circ] = \dfrac{1}{2}\left(\dfrac{1}{2} - 0\right) = \dfrac{1}{4}\)</span>).</p></li>
+<li><p><strong>Σωστό</strong> (βασική ταυτότητα διπλάσιων γωνιών σε τρίγωνο).</p></li>
+</ol></li>
+<li><p><strong>Α3:</strong></p>
+<ul>
+<li><p>α) <span class="math inline">\(\mathbf{2συν\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)}\)</span></p></li>
+<li><p>β) <span class="math inline">\(\mathbf{συν(α - β) - συν(α + β)}\)</span></p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-β" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="θεμα-β"><span class="header-section-number">3.2</span> <strong>ΘΕΜΑ Β</strong></h3>
+<ul>
+<li><p><strong>Β1.1:</strong> Εφαρμόζουμε τον τύπο μετατροπής αθροίσματος συνημιτόνων σε γινόμενο:</p>
+<p><span class="math display">\[A = συν 105^\circ + συν 15^\circ = 2συν\left(\frac{105^\circ + 15^\circ}{2}\right)συν\left(\frac{105^\circ - 15^\circ}{2}\right)\]</span></p>
+<p><span class="math display">\[= 2συν 60^\circ \cdot συν 45^\circ = 2 \cdot \frac{1}{2} \cdot \frac{\sqrt{2}}{2} = \mathbf{\frac{\sqrt{2}}{2}}\]</span></p></li>
+<li><p><strong>Β1.2:</strong> Εφαρμόζουμε τον τύπο μετατροπής γινομένου ημιτόνων σε άθροισμα:</p>
+<p><span class="math display">\[B = ημ 75^\circ \cdot ημ 15^\circ = \frac{1}{2}\left[συν(75^\circ - 15^\circ) - συν(75^\circ + 15^\circ)\right]\]</span></p>
+<p><span class="math display">\[= \frac{1}{2}\left(συν 60^\circ - συν 90^\circ\right) = \frac{1}{2}\left(\frac{1}{2} - 0\right) = \mathbf{\frac{1}{4}}\]</span></p></li>
+<li><p><strong>Β2.1:</strong> Γράφουμε το <span class="math inline">\(1\)</span> ως <span class="math inline">\(ημ 90^\circ\)</span> (ή <span class="math inline">\(ημ\dfrac{\pi}{2}\)</span>):</p>
+<p><span class="math display">\[γ = ημ\left(\frac{\pi}{2}\right) + ημ x = 2ημ\left(\frac{\dfrac{\pi}{2}+x}{2}\right)συν\left(\frac{\dfrac{\pi}{2}-x}{2}\right) = \mathbf{2ημ\left(\frac{\pi}{4} + \frac{x}{2}\right)συν\left(\frac{\pi}{4} - \frac{x}{2}\right)}\]</span></p></li>
+<li><p><strong>Β2.2:</strong> Ομαδοποιούμε τον πρώτο και τον δεύτερο όρο: <span class="math display">\[\Delta = (ημ(5x) + ημ(3x)) + 2ημ(4x) = 2ημ(4x)συν x + 2ημ(4x)\]</span></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(2ημ(4x)\)</span>: <span class="math display">\[\Delta = 2ημ(4x)(συν x + 1)\]</span></p>
+<p>Επειδή <span class="math inline">\(1 + συν x = 2συν^2\left(\dfrac{x}{2}\right)\)</span>: <span class="math display">\[\Delta = 2ημ(4x) \cdot 2συν^2\left(\frac{x}{2}\right) = \mathbf{4ημ(4x)συν^2\left(\frac{x}{2}\right)}\]</span></p></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-γ" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="θεμα-γ"><span class="header-section-number">3.3</span> <strong>ΘΕΜΑ Γ</strong></h3>
+<ul>
+<li><p><strong>Γ1:</strong> Ομαδοποιούμε τις άκρες γωνίες στον αριθμητή και στον παρονομαστή:</p>
+<ul>
+<li><p><strong>Αριθμητής:</strong> <span class="math display">\[(ημ(5x) + ημ x) + ημ(3x) = 2ημ(3x)συν(2x) + ημ(3x) = ημ(3x)(2συν(2x) + 1)\]</span></p></li>
+<li><p><strong>Παρονομαστής:</strong> <span class="math display">\[(συν(5x) + συν x) + συν(3x) = 2συν(3x)συν(2x) + συν(3x) = συν(3x)(2συν(2x) + 1)\]</span></p></li>
+</ul>
+<p>Συνθέτουμε το κλάσμα: <span class="math display">\[\frac{ημ(3x)(2συν(2x) + 1)}{συν(3x)(2συν(2x) + 1)} = \frac{ημ(3x)}{συν(3x)} = \mathbf{εφ(3x)}\]</span></p></li>
+<li><p><strong>Γ2:</strong> Πολλαπλασιάζουμε και τα δύο μέλη της εξίσωσης με το <span class="math inline">\(2\)</span>:</p>
+<p><span class="math display">\[2ημ(3x)συν x = 2ημ(4x)συν(2x)\]</span></p>
+<p>Εφαρμόζουμε τους τύπους μετατροπής γινομένου σε άθροισμα:</p>
+<p><span class="math display">\[ημ(3x + x) + ημ(3x - x) = ημ(4x + 2x) + ημ(4x - 2x)\]</span></p>
+<p><span class="math display">\[ημ(4x) + ημ(2x) = ημ(6x) + ημ(2x) \iff ημ(6x) - ημ(4x) = 0\]</span></p>
+<p>Μετατρέπουμε τη διαφορά ημιτόνων σε γινόμενο:</p>
+<p><span class="math display">\[2ημ\left(\frac{6x - 4x}{2}\right)συν\left(\frac{6x + 4x}{2}\right) = 0 \iff 2ημ x συν(5x) = 0\]</span></p>
+<ul>
+<li><p>Από <span class="math inline">\(ημ x = 0 \iff \mathbf{x = k\pi}, \ k \in \mathbb{Z}\)</span>.</p></li>
+<li><p>Από <span class="math inline">\(συν(5x) = 0 \iff 5x = k\pi + \dfrac{\pi}{2} \iff \mathbf{x = \dfrac{k\pi}{5} + \dfrac{\pi}{10}}, \ k \in \mathbb{Z}\)</span>.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="θεμα-δ" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="θεμα-δ"><span class="header-section-number">3.4</span> <strong>ΘΕΜΑ Δ</strong></h3>
+<ul>
+<li><p><strong>Δ1:</strong> Ομαδοποιούμε τον πρώτο και τον τρίτο όρο της εξίσωσης:</p>
+<p><span class="math display">\[(ημ(5x) + ημ x) + ημ(3x) = 0\]</span></p>
+<p>Μετατρέπουμε το άθροισμα σε γινόμενο:</p>
+<p><span class="math display">\[2ημ(3x)συν(2x) + ημ(3x) = 0 \iff ημ(3x)(2συν(2x) + 1) = 0\]</span></p>
+<ul>
+<li><p><strong>1η περίπτωση:</strong> <span class="math display">\[ημ(3x) = 0 \iff 3x = k\pi \iff \mathbf{x = \frac{k\pi}{3}}, \ k \in \mathbb{Z}\]</span></p></li>
+<li><p><strong>2η περίπτωση:</strong> <span class="math display">\[2συν(2x) + 1 = 0 \iff συν(2x) = -\frac{1}{2} = συν\left(\frac{2\pi}{3}\right)\]</span> <span class="math display">\[2x = 2k\pi \pm \frac{2\pi}{3} \iff \mathbf{x = k\pi \pm \frac{\pi}{3}}, \ k \in \mathbb{Z}\]</span></p></li>
+</ul></li>
+<li><p><strong>Δ2:</strong> Σε κάθε τρίγωνο ισχύει <span class="math inline">\(A + B + C = \pi \iff A + B = \pi - C\)</span>, οπότε: <span class="math display">\[ημ(A + B) = ημ(\pi - C) = ημ C \quad \text{και} \quad συν(A + B) = συν(\pi - C) = -συν C\]</span></p>
+<p>Εφαρμόζουμε τον μετασχηματισμό αθροίσματος στους δύο πρώτους όρους του αριστερού μέλους:</p>
+<p><span class="math display">\[ημ(2A) + ημ(2B) + ημ(2C) = 2ημ(A + B)συν(A - B) + 2ημ C συν C\]</span> <span class="math display">\[= 2ημ C συν(A - B) + 2ημ C συν C\]</span> <span class="math display">\[= 2ημ C \left[συν(A - B) + συν C\right]\]</span></p>
+<p>Αντικαθιστούμε το <span class="math inline">\(συν C\)</span> με το <span class="math inline">\(-συν(A + B)\)</span>: <span class="math display">\[= 2ημ C \left[συν(A - B) - συν(A + B)\right]\]</span></p>
+<p>Εφαρμόζουμε τον τύπο μετατροπής διαφοράς συνημιτόνων σε γινόμενο <span class="math inline">\(συν X - συν Y = -2ημ\left(\dfrac{X+Y}{2}\right)ημ\left(\dfrac{X-Y}{2}\right)\)</span>: <span class="math display">\[συν(A - B) - συν(A + B) = 2ημ A ημ B\]</span></p>
+<p>Άρα: <span class="math display">\[2ημ C \cdot (2ημ A ημ B) = \mathbf{4ημ A \cdot ημ B \cdot ημ C}\]</span></p></li>
+</ul>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled" style="color: brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Συμβουλή
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
