@@ -1,0 +1,273 @@
+---
+title: "03.11. Τυπολόγιο Τριγωνομετρίας"
+author: "ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ"
+format:
+  html:
+    title-block-banner: true
+    include-in-header:
+      text: |
+        <script>
+        window.MathJax = {
+          tex: {
+            macros: {
+              arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+            }
+          }
+        };
+        </script>
+page-layout: full
+body-classes: page-blalgebragenikou
+
+lang: el
+# date: today
+date: "10/20/2026"
+date-modified: today
+date-format: "D MMMM YYYY"
+
+
+header-includes:
+  
+ - |
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+      });
+    </script>
+include-in-header:
+      text: |
+        \usepackage{eurosym}
+
+
+execute:
+  echo: false
+  warning: false     
+        
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{=html}
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+```
+
+## Τυπολόγιο Τριγωνομετρίας
+
+
+### Βασικές Τριγωνομετρικές Ταυτότητες
+
+#### Πυθαγόρειες Ταυτότητες
+
+- $συν^2θ + ημ^2θ = 1$
+
+- $συν^2θ = 1 - ημ^2θ$
+
+- $ημ^2θ = 1 - συν^2θ$
+
+#### Ταυτότητες Πηλίκου (Σχέσεις Εφαπτομένης & Συνεφαπτομένης)
+
+- $εφθ = \dfrac{ημθ}{συνθ}$
+
+- $σφθ = \dfrac{συνθ}{ημθ} = \dfrac{1}{εφθ}$
+
+
+---
+
+### Τρίγωνα Χαρακτηριστικών Γωνιών & Πίνακας Τιμών
+
+| $θ$ | $0^\circ$ ($0\text{ rad}$) | $30^\circ$ ($\frac{\pi}{6}\text{ rad}$) | $45^\circ$ ($\frac{\pi}{4}\text{ rad}$) | $60^\circ$ ($\frac{\pi}{3}\text{ rad}$) | $90^\circ$ ($\frac{\pi}{2}\text{ rad}$) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| $συνθ$ | $1$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{2}}{2} = \dfrac{1}{\sqrt{2}}$ | $\dfrac{1}{2}$ | $0$ |
+| $ημθ$ | $0$ | $\dfrac{1}{2}$ | $\dfrac{\sqrt{2}}{2} = \dfrac{1}{\sqrt{2}}$ | $\dfrac{\sqrt{3}}{2}$ | $1$ |
+| $εφθ$ | $0$ | $\dfrac{\sqrt{3}}{3} = \dfrac{1}{\sqrt{3}}$ | $1$ | $\sqrt{3}$ | Δεν ορίζεται |
+
+---
+
+### Αναγωγή στο 1ο Τεταρτημόριο (Τεταρτημόρια & Πρόσημα)
+
+#### 1ο Τεταρτημόριο ($0^\circ < θ < 90^\circ$): Όλοι οι τριγωνομετρικοί αριθμοί είναι θετικοί ($+$)
+
+- $ημ(360^\circ + θ) = ημθ$
+
+- $συν(360^\circ + θ) = συνθ$
+
+- $εφ(360^\circ + θ) = εφθ$
+
+- $ημ(90^\circ - θ) = συνθ$
+
+- $συν(90^\circ - θ) = ημθ$
+
+#### 2ο Τεταρτημόριο ($90^\circ < θ < 180^\circ$): Μόνο το ημίτονο ($ημ$) είναι θετικό ($+$)
+
+- $ημ(180^\circ - θ) = ημθ$
+
+- $συν(180^\circ - θ) = -συνθ$
+
+- $εφ(180^\circ - θ) = -εφθ$
+
+- $ημ(90^\circ + θ) = συνθ$
+
+- $συν(90^\circ + θ) = -ημθ$
+
+#### 3ο Τεταρτημόριο ($180^\circ < θ < 270^\circ$): Μόνο η εφαπτομένη ($εφ$) είναι θετική ($+$)
+
+- $ημ(180^\circ + θ) = -ημθ$
+
+- $συν(180^\circ + θ) = -συνθ$
+
+- $εφ(180^\circ + θ) = εφθ$
+
+#### 4ο Τεταρτημόριο ($270^\circ < θ < 360^\circ$): Μόνο το συνημίτονο ($συν$) είναι θετικό ($+$)
+
+- $ημ(360^\circ - θ) = -ημθ$
+
+- $συν(360^\circ - θ) = συνθ$
+
+- $εφ(360^\circ - θ) = -εφθ$
+
+---
+
+### Αντίθετες Γωνίες, Περιοδικότητα & Συμπληρωματικές Γωνίες
+
+#### Αντίθετες Γωνίες ($-θ$)
+
+- $ημ(-θ) = -ημθ$
+
+- $συν(-θ) = συνθ$
+
+- $εφ(-θ) = -εφθ$
+
+#### Περιοδικότητα
+
+- $ημ(θ \pm 360^\circ) = ημθ$
+
+- $συν(θ \pm 360^\circ) = συνθ$
+
+- $εφ(θ \pm 180^\circ) = εφθ$
+
+#### Σχετιζόμενες Γωνίες με $90^\circ$
+
+- $ημ(90^\circ - θ) = συνθ$
+
+- $συν(90^\circ - θ) = ημθ$
+
+- $ημ(90^\circ + θ) = συνθ$
+
+- $συν(90^\circ + θ) = -ημθ$
+
+---
+
+### Τριγωνομετρία σε Τυχαίο Τρίγωνο $ABC$
+
+#### Τύποι Εμβαδού
+
+- $E = \dfrac{1}{2} b c \cdot ημ A$
+
+- $E = \dfrac{1}{2} a b \cdot ημ C$
+
+- $E = \dfrac{1}{2} a c \cdot ημ B$
+
+#### Νόμος Ημιτόνων
+
+$$\dfrac{a}{ημ A} = \dfrac{b}{ημ B} = \dfrac{c}{ημ C}$$
+Ισοδύναμα:
+
+- $a \cdot ημ B = b \cdot ημ A$
+
+- $b \cdot ημ C = c \cdot ημ B$
+
+- $a \cdot ημ C = c \cdot ημ A$
+
+#### Νόμος Συνημιτόνων
+
+- $a^2 = b^2 + c^2 - 2bc \cdot συν A$
+
+- $b^2 = a^2 + c^2 - 2ac \cdot συν B$
+
+- $c^2 = a^2 + b^2 - 2ab \cdot συν C$
+
+---
+
+### Τριγωνομετρικοί Αριθμοί Αθροίσματος / Διαφοράς & Διπλάσιας Γωνίας
+
+#### Τύποι Αθροίσματος και Διαφοράς Γωνιών
+
+- $ημ(\alpha + \beta) = ημ\alpha \cdot συν\beta + συν\alpha \cdot ημ\beta$
+
+- $ημ(\alpha - \beta) = ημ\alpha \cdot συν\beta - συν\alpha \cdot ημ\beta$
+
+- $συν(\alpha + \beta) = συν\alpha \cdot συν\beta - ημ\alpha \cdot ημ\beta$
+
+- $συν(\alpha - \beta) = συν\alpha \cdot συν\beta + ημ\alpha \cdot ημ\beta$
+
+#### Τύποι Διπλάσιας Γωνίας ($2θ$)
+
+- $ημ(2θ) = 2ημθ \cdot συνθ$
+
+- $συν(2θ) = συν^2θ - ημ^2θ$
+
+- $συν(2θ) = 1 - 2ημ^2θ$
+
+- $συν(2θ) = 2συν^2θ - 1$
+
+- $εφ(2θ) = \dfrac{ημ(2θ)}{συν(2θ)} = \dfrac{2εφθ}{1 - εφ^2θ}$
+
+### Μετασχηματισμός Γινομένου σε Άθροισμα
+
+:::: {.math-box .theorem-box}
+::: {.math-title .theorem-title}
+**Τύποι**
+:::
+
+Για οποιεσδήποτε γωνίες $α, β \in \mathbb{R}$ ισχύουν οι παρακάτω θεμελιώδεις ταυτότητες:
+
+1.  $\mathbf{2ημα συνβ = ημ(α + β) + ημ(α - β)}$
+
+2.  $\mathbf{2συνα συνβ = συν(α - β) + συν(α + β)}$
+
+3.  $\mathbf{2ημα ημβ = συν(α - β) - συν(α + β)}$
+::::
+
+
+### Μετασχηματισμός Αθροίσματος σε Γινόμενο
+
+:::: {.math-box .theorem-box}
+::: {.math-title .theorem-title}
+**Τύποι**
+:::
+
+Για οποιεσδήποτε γωνίες $A, B \in \mathbb{R}$ ισχύουν οι τύποι:
+
+1.  $ημ A + ημ B = 2ημ\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)$
+
+2.  $ημ A - ημ B = 2ημ\left(\dfrac{A-B}{2}\right)συν\left(\dfrac{A+B}{2}\right)$
+
+3.  $συν A + συν B = 2συν\left(\dfrac{A+B}{2}\right)συν\left(\dfrac{A-B}{2}\right)$
+
+4.  $συν A - συν B = -2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{A-B}{2}\right) = 2ημ\left(\dfrac{A+B}{2}\right)ημ\left(\dfrac{B-A}{2}\right)$
+::::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="color: brown;"}
+ΚΑΛΗ ΜΕΛΕΤΗ!
+:::
