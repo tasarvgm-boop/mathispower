@@ -1,0 +1,2935 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="el" xml:lang="el"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ">
+
+<title>01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα – Μαθηματικά Γυμνασίου &amp; Λυκείου</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-b4f6f61b79f130655a23a9cbcc8466d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Δεν βρέθηκαν αποτελέσματα",
+    "search-matching-documents-text": "ταιριάζοντα έγγραφα",
+    "search-copy-link-title": "Αντιγραφή συνδέσμου αναζήτησης",
+    "search-hide-matches-text": "Απόκρυψη επιπλέον αντιστοιχιών",
+    "search-more-match-text": "επιπλέον αντιστοιχία σε αυτό το έγγραφο",
+    "search-more-matches-text": "επιπλέον αντιστοιχίες σε αυτό το έγγραφο",
+    "search-clear-button-title": "Καθαρισμός",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Ακύρωση",
+    "search-submit-button-title": "Υποβολή",
+    "search-label": "Αναζήτηση"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      arc: ["\\overset{\\style{display: inline-block; transform: scale(2, 0.5);}{\\frown}}{#1}", 1]
+    }
+  }
+};
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "bbox.js"] }
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed page-blalgebrathetikis quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Ιστότοπος">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Μαθηματικά Γυμνασίου &amp; Λυκείου</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Εναλλαγή πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Γυμνάσιο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../gymnasio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Λύκειο</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/a/index.html">
+ <span class="dropdown-text">Α Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/b/index.html">
+ <span class="dropdown-text">Β Τάξη</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lykeio/g/index.html">
+ <span class="dropdown-text">Γ Τάξη</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Αναζήτηση"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Γραμμή εργαλείων">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Εναλλαγή πλαϊνής γραμμής πλοήγησης" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Διαδρομή"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebrathetikis/01.01. Η Εννοια Του Διανύσματος.html">Άλγεβρα Θετικών Σπουδών</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebrathetikis/01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα.html">01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Διαδρομή"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lykeio/a/index.html">Λύκειο</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/index.html">Β’ Λυκείου – Μαθηματικά</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebrathetikis/01.01. Η Εννοια Του Διανύσματος.html">Άλγεβρα Θετικών Σπουδών</a></li><li class="breadcrumb-item"><a href="../../../lykeio/b/algebrathetikis/01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα.html">01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα</a></li></ol></nav>
+      <h1 class="title">01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      <div>
+      <div class="quarto-title-meta-heading">Συγγραφέας</div>
+      <div class="quarto-title-meta-contents">
+               <p>ΤΑΣΟΣ ΑΡΒΑΝΙΤΗΣ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Δημοσιευμένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">6 Νοέμβριος 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Τροποποιημένο</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">16 Νοέμβριος 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Ενότητα">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">about</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Πίνακας Τριγωνομετρικών Αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Πίνακας Τριγωνομετρικών Αριθμών</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Γυμνάσιο</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Α' Γυμνασίου – Μαθηματικά</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="false" aria-label="Εναλλαγή ενότητας: Α' Γυμνασίου – Μαθηματικά">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Αλγεβρα</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Φυσικοί Αριθμοί - Διάταξη - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Πρόσθεση, αφαίρεση και πολλαπλασιασμός φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/03. Δυνάμεις φυσικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δυνάμεις φυσικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/04. Ευκλείδεια διαίρεση - Διαιρετότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ευκλείδεια διαίρεση - Διαιρετότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Χαρακτήρες διαιρετότητας - ΜΚΔ - ΕΚΠ - Ανάλυση αριθμού σε γινόμενο πρώτων παραγόντων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/06. Η έννοια του κλάσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η έννοια του κλάσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/07. Ισοδύναμα κλάσματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Ισοδύναμα κλάσματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/08. Σύγκριση κλασμάτων  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Σύγκριση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/09.  Πρόσθεση και Αφαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Πρόσθεση και Αφαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/10. Πολλαπλασιασμός κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πολλαπλασιασμός κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/11. Διαίρεση κλασμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Διαίρεση κλασμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Δεκαδικά κλάσματα - Δεκαδικοί αριθμοί - Διάταξη δεκαδικών αριθμών - Στρογγυλοποίηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Πράξεις με δεκαδικούς αριθμούς - Δυνάμεις με βάση δεκαδικό αριθμό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Υπολογισμοί με τη βοήθεια υπολογιστή τσέπης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/15. Τυποποιημένη μορφή μεγάλων αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Τυποποιημένη μορφή μεγάλων αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/16. Μονάδες μέτρησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Μονάδες μέτρησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Η έννοια της εξίσωσης – Στοιχειώδεις εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/18. Επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παραδείγματα επίλυσης προβλημάτων με την βοήθεια εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/20. Ποσοστά και επίλυση προβλημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Ποσοστά και επίλυση προβλημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/21.  Σύστημα Συντεταγμένων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Σύστημα Συντεταγμένων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/22. Αναλογίες - Ανάλογα ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Αναλογίες - Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/23.  Ανάλογα ποσά - Ιδιότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23.Ανάλογα Ποσά - Ιδιότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/24. Προβλήματα με Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Προβλήματα με Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/25.  Αντιστρόφως Ανάλογα Ποσά.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Αντιστρόφως Ανάλογα Ποσά</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Θετικοί και Αρνητικοί Αριθμοί (Ρητοί αριθμοί) - H ευθεία των ρητών - Τετμημένη σημείου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">27. Απόλυτη τιμή ρητού - Αντίθετοι ρητοί - Σύγκριση ρητών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/28. Πρόσθεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">28. Πρόσθεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/29. Αφαίρεση ρητών αριθμών  .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">29. Αφαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/30. Πολλαπλασιασμός ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30. Πολλαπλασιασμός ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/31. Διαίρεση ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Διαίρεση ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/32. Δεκαδική μορφή ρητών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">32. Δεκαδική μορφή ρητών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">33. Δυνάμεις ρητών αριθμών με εκθέτη φυσικό</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">34. Δυνάμεις ρητών αριθμών με εκθέτη ακέραιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">35. Τυποποιημένη μορφή μεγάλων και μικρών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/algebra/Θέματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Θέματα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Γεωμετρία</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/01. Σημείο Ευθύγραμμο Τμήμα ____Επίπεδο Ημιεπίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Σημείο-Ευθύγραμμο Τμήμα-Ευθεία-Ημιευθεία-Επίπεδο-Ημιεπίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/02. Γωνία - Επίπεδα σχήματα - Ευθύγραμμα σχήματα - Ίσα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Γωνία-Επίπεδα σχήματα-Ευθύγραμμα σχήματα-Ίσα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/03. Μέτρηση σύγκριση ισότητα τμημάτων-Απόσταση σημείων Μέσο τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Μέτρηση, σύγκριση και ισότητα ευθυγράμμων τμημάτων – Απόσταση σημείων – Μέσο ευθύγραμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/04. Πρόσθεση και αφαίρεση ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πρόσθεση και αφαίρεση ευθύγραμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Μέτρηση, σύγκριση και ισότητα γωνιών - Διχοτόμος γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/06. Είδη γωνιών - Κάθετες ευθείες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Είδη γωνιών - Κάθετες ευθείες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Eφεξής και διαδοχικές γωνίες - Άθροισμα γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Παραπληρωματικές και Συμπληρωματικές γωνίες – Κατακορυφήν γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/09. Θέσεις ευθειών στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Θέσεις ευθειών στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/10. Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 . Απόσταση σημείου από ευθεία - Απόσταση παραλλήλων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/11. Kύκλος και στοιχεία του κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Kύκλος και στοιχεία του κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Επίκεντρη γωνία – Σχέση επίκεντρης γωνίας και του αντίστοιχου τόξου – Μέτρηση τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/13. Θέσεις ευθείας και κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Θέσεις ευθείας και κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/14. Συμμετρία ως προς άξονα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Συμμετρία ως προς άξονα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/15. Άξονας συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Άξονας συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/16. Mεσοκάθετος ευθυγράμμου τμήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Mεσοκάθετος ευθυγράμμου τμήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/17. Συμμετρία ως προς σημείο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Συμμετρία ως προς σημείο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/18. Κέντρο συμμετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Κέντρο συμμετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/19.  Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Παράλληλες ευθείες που τέμνονται από μια άλλη ευθεία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/20. Στοιχεία τριγώνου - Είδη τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Στοιχεία τριγώνου - Είδη τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Άθροισμα γωνιών τριγώνου - Ιδιότητες ισοσκελούς τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Παραλληλόγραμμο-Ορθογώνιο-Ρόμβος-Τετράγωνο-Τραπέζιο-Ισοσκελές τραπέζιο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/a/geometria/23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Ιδιότητες Παραλληλογράμμου-Ορθογωνίου-Ρόμβου-Τετραγώνου-Τραπεζίου-Ισοσκελούς τραπεζίου</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Β' Γυμνασίου – Μαθηματικά</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false" aria-label="Εναλλαγή ενότητας: Β' Γυμνασίου – Μαθηματικά">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Αλγεβρα</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Η έννοια της μεταβλητής - Aλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/02. Eξισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Eξισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/03. Επίλυση τύπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Επίλυση τύπων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/04. Επίλυση προβλημάτων με τη χρήση εξισώσεων .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Επίλυση προβλημάτων με τη χρήση εξισώσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/05. Ανισώσεις α βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ανισώσεις α βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/06. Tετραγωνική ρίζα θετικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Tετραγωνική ρίζα θετικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/07. Άρρητοι αριθμοί Πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Άρρητοι αριθμοί Πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/08. Προβλήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Προβλήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/09.  Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Καρτεσιανές συντεταγμένες - Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/11. Ποσά ανάλογα - Η συνάρτηση y = αx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Ποσά ανάλογα - Η συνάρτηση y = αx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/12. Η συνάρτηση y = αx+β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Η συνάρτηση y = αx+β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/algebra/13. Ποσά αντιστρόφως ανάλογα - Η υπερβολή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Η συνάρτηση y=α/x - Η υπερβολή</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Γεωμετρία</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01. Εμβαδόν επίπεδης επιφάνειας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Εμβαδόν επίπεδης επιφάνειας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/01.1. Μονάδες μέτρησης επιφανειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.1. Μονάδες μέτρησης επιφανειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/02. Εμβαδά επίπεδων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Εμβαδά επίπεδων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/03. Πυθαγόρειο θεώρημα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πυθαγόρειο θεώρημα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/04. Εφαπτομένη οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Εφαπτομένη οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05. Ημίτονο και συνημίτονο οξείας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ημίτονο και συνημίτονο οξείας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.1. Μεταβολές ημιτόνου, συνημιτόνου και εφαπτομένης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30° 45° και 60° .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Οι τριγωνομετρικοί αριθμοί των γωνιών 30°, 45° και 60°</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07. Η έννοια του διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η έννοια του διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.1. Άθροισμα και διαφορά διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.1. Άθροισμα και διαφορά διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07.2. Ανάλυση διανύσματος σε δύο κάθετες συνιστώσες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/08. Εγγεγραμμένες γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Εγγεγραμμένες γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/09. Κανονικά πολύγωνα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Κανονικά πολύγωνα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/10. Μήκος κύκλου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Μήκος κύκλου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/11. Μήκος τόξου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Μήκος τόξου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/12. Εμβαδόν κυκλικού δίσκου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εμβαδόν κυκλικού δίσκου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/13. Εμβαδόν κυκλικού τομέα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Εμβαδόν κυκλικού τομέα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/14. Ευθείες και επίπεδα στο χώρο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ευθείες και επίπεδα στο χώρο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Στοιχεία και εμβαδόν πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/15.1. Όγκος πρίσματος και κυλίνδρου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15.1. Όγκος πρίσματος και κυλίνδρου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16. Η πυραμίδα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η πυραμίδα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/16.1. Ο κώνος και τα στοιχεία του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16.1. Ο κώνος και τα στοιχεία του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/17. H σφαίρα και τα στοιχεία της.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. H σφαίρα και τα στοιχεία της</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/b/geometria/18. Γεωγραφικές συντεταγμένες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Γεωγραφικές συντεταγμένες</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../gymnasio/g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-8-label">Γ' Γυμνασίου – Μαθηματικά</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="false" aria-label="Εναλλαγή ενότητας: Γ' Γυμνασίου – Μαθηματικά">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-9-label">Αλγεβρα</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/01. Πράξεις με πραγματικούς αριθμούς.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Πράξεις με πραγματικούς αριθμούς</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/02. Μονώνυμα - Πράξεις με μονώνυμα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Μονώνυμα - Πράξεις με μονώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Πολυώνυμα - Πρόσθεση και Αφαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/04. Πολλαπλασιασμός πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Πολλαπλασιασμός πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/05. Αξιοσημείωτες ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Αξιοσημείωτες ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/06. Παραγοντοποίηση αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Παραγοντοποίηση αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/07. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ε.Κ.Π. και Μ.Κ.Δ. ακεραίων αλγεβρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/09. Ρητές αλγεβρικές παραστάσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Ρητές αλγεβρικές παραστάσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/10. Πράξεις ρητών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Πράξεις ρητών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/11. Η εξίσωση αx + β = 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση αx + β = 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/12. Εξισώσεις δευτέρου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Εξισώσεις δευτέρου βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/13. Κλασματικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Κλασματικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/14. Ανισότητες - Ανισώσεις με έναν άγνωστο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισότητες - Ανισώσεις με έναν άγνωστο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/15. Η έννοια της γραμμικής εξίσωσης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Η έννοια της γραμμικής εξίσωσης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Η έννοια του γραμμικού συστήματος και η γραφική επίλυσή του</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/17. Αλγεβρική επίλυση γραμμικού συστήματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Αλγεβρική επίλυση γραμμικού συστήματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/18. Η συνάρτηση αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Η συνάρτηση <span class="math inline">\(αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/19. H συνάρτηση y = αx^2 + βx + γ με α ≠ 0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. H συνάρτηση <span class="math inline">\(y = αx^2 + βx + γ\)</span> με α ≠ 0</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/20. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/21. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/algebra/22.  Έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-10-label">Γεωμετρία</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/01. Ισότητα τριγώνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Ισότητα τριγώνων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/02. Λόγος ευθυγράμμων τμημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Λόγος ευθυγράμμων τμημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/03. Θεώρημα του Θαλή.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Θεώρημα του Θαλή</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/04. Ομοιοθεσία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Ομοιοθεσία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/05. Ομοιότητα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Ομοιότητα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/06. Λόγος εμβαδών ομοίων σχημάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Λόγος εμβαδών ομοίων σχημάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Τριγωνομετρικοί αριθμοί γωνίας με 0º ≤ω ≤ 180º</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Τριγωνομετρικοί αριθμοί παραπληρωματικών γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Σχέσεις μεταξύ τριγωνομετρικών αριθμών μιας γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../gymnasio/g/geometria/10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Νόμος των ημιτόνων - Νόμος των συνημιτόνων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-11-label">Λύκειο</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/a/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-12-label">Α' Λυκείου – Μαθηματικά</span></a>
+            <button type="button" class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-controls="quarto-sidebar-section-12" aria-expanded="false" aria-label="Εναλλαγή ενότητας: Α' Λυκείου – Μαθηματικά">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-12" aria-labelledby="quarto-sidebar-section-12-label" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-controls="quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-13-label">Άλγεβρα</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-13" aria-labelledby="quarto-sidebar-section-13-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/01. Το λεξιλόγιο της λογικής.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Το λεξιλόγιο της λογικής</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/02. Σύνολα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Σύνολα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/03. Δειγματικός χώρος - Ενδεχόμενα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. Δειγματικός χώρος - Ενδεχόμενα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/04. Η έννοια της πιθανότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. Η έννοια της πιθανότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/05. Οι πραγματικοί αριθμοί.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. Οι πραγματικοί αριθμοί</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/06. Η διάταξη των πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06. Η διάταξη των πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/07. Η απόλυτη τιμή πραγματικού αριθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07. Η απόλυτη τιμή πραγματικού αριθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/08. Ρίζες πραγματικών αριθμών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08. Ρίζες πραγματικών αριθμών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/09. Εξισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09. Εξισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/10. Η εξίσωση x^ν=α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Η εξίσωση <span class="math inline">\(x^ν=α\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/11. Η εξίσωση 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Η εξίσωση <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/12. Ανισώσεις 1ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Ανισώσεις <span class="math inline">\(1^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/13. Ανισώσεις 2ου βαθμού.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ανισώσεις <span class="math inline">\(2^{ου}\)</span> βαθμού</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Ανισώσεις γινόμενο και ανισώσεις πηλίκο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/15. Ακολουθίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15. Ακολουθίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/16. Αριθμητική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Αριθμητική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/17. Γεωμετρική πρόοδος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Γεωμετρική πρόοδος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/18. Ανατοκισμός Ίσες καταθέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Ανατοκισμός Ίσες καταθέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/19. Η έννοια της συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Η έννοια της συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/20. Γραφική παράσταση συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. Γραφική παράσταση συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/21. Η συνάρτηση ƒ(x) = αx + β.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Η συνάρτηση ƒ(x) = αx + β</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Κατακόρυφη και οριζόντια μετατόπιση καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">23. Μονοτονία Ακρότατα Συμμετρίες συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/24. Μελέτη της συνάρτησης f(x)=αx^2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">24. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/25. Μελέτη της συνάρτησης f(x)=α προς x.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">25. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=α/x\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/algebra/26. Μελέτη της συνάρτησης f(x)=αx^2+βx+γ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">26. Μελέτη της συνάρτησης <span class="math inline">\(f(x)=αx^2+βx+γ\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-controls="quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-14-label">Γεωμετρία</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-14" aria-labelledby="quarto-sidebar-section-14-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΥΚΛΕΙΔΕΙΑ ΓΕΩΜΕΤΡΙΑ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.01. Οι πρωταρχικές γεωμετρικές έννοιες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Οι πρωταρχικές γεωμετρικές έννοιες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.02. Γωνίες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Γωνίες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.03. O Κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03. O Κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/02.04. Ευθύγραμμα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04. Ευθύγραμμα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.01. Τρίγωνα Κριτήρια ισότητας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τρίγωνα Κριτήρια ισότητας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.02. Βασικοί γεωμετρικοί τόποι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικοί γεωμετρικοί τόποι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.03. Συμμετρικά σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Συμμετρικά σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.04. Ανισοτικές σχέσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Ανισοτικές σχέσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.05. Ευθεία και κύκλος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Ευθεία και κύκλος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/03.06. Γεωμετρικές κατασκευές.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Γεωμετρικές κατασκευές</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.01. Ευθείες στο επίπεδο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01. Ευθείες στο επίπεδο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.02. Ιδιότητες παράλληλων ευθειών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02. Ιδιότητες παράλληλων ευθειών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.03. Αξιοσημείωτοι κύκλοι τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03. Αξιοσημείωτοι κύκλοι τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/04.04. Σχέσεις γωνιών σε επίπεδα σχήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04. Σχέσεις γωνιών σε επίπεδα σχήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.01. Παραλληλόγραμμο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01. Παραλληλόγραμμο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.02. Είδη παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02. Είδη παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.03. Εφαρμογές των παραλληλογράμμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03. Εφαρμογές των παραλληλογράμμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/05.04. Τραπέζια.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04. Τραπέζια</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.01. Εγγεγραμμένη γωνία.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.01. Εγγεγραμμένη γωνία</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.02. Εγγεγραμμένα και εγγράψιμα  τετράπλευρα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.02. Εγγεγραμμένα και εγγράψιμα τετράπλευρα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/a/geometria/06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06.03. Γεωμετρικοί τόποι και γεωμετρικές κατασκευές με τη βοήθεια των γεωμετρικών τόπων</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../lykeio/b/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text" id="quarto-sidebar-section-15-label">Β' Λυκείου – Μαθηματικά</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-controls="quarto-sidebar-section-15" aria-expanded="true" aria-label="Εναλλαγή ενότητας: Β' Λυκείου – Μαθηματικά">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
+      </div>
+      <ul id="quarto-sidebar-section-15" aria-labelledby="quarto-sidebar-section-15-label" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-controls="quarto-sidebar-section-16" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-16-label">Άλγεβρα Γενικής</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-16" aria-labelledby="quarto-sidebar-section-16-label" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/01.01. Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01. Γραμμικά Συστήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/01.02. Μη Γραμμικά Συστήματα.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02. Μη Γραμμικά Συστήματα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/02.01. Μονοτονία - Ακρότατα - Συμμετρίες Συνάρτησης .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01. Μονοτονία - Ακρότατα - Συμμετρίες Συνάρτησης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02. Κατακόρυφη - Οριζόντια Μετατόπιση Καμπύλης</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.01. Τριγωνομετρικοί αριθμοί γωνίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01. Τριγωνομετρικοί αριθμοί γωνίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.02. Βασικές Τριγωνομετρικές Ταυτότητες.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02. Βασικές Τριγωνομετρικές Ταυτότητες</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.03. Αναγωγή Στο 1o Τεταρτημόριο.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03. Αναγωγή Στο <span class="math inline">\(1^o\)</span> Τεταρτημόριο</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.04. Οι τριγωνομετρικές συναρτήσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04. Οι τριγωνομετρικές συναρτήσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.05. Βασικές τριγωνομετρικές εξισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05. Βασικές τριγωνομετρικές εξισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.06. Τριγωνομετρικοί αριθμοί αθροίσματος γωνιών.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06. Τριγωνομετρικοί αριθμοί αθροίσματος γωνιών</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.07. Τριγωνομετρικοί αριθμοί της γωνίας 2α.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07. Τριγωνομετρικοί αριθμοί της γωνίας 2α</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08. Μετασχηματισμοί τριγωνομετρικών παραστάσεων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.09. Η συνάρτηση f(x) = αημx + βσυνx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09. Η συνάρτηση f(x) = αημx + βσυνx</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.10. Επίλυση τριγώνου.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.10. Επίλυση τριγώνου</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/03.11. Τυπολόγιο Τριγωνομετρίας.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.11. Τυπολόγιο Τριγωνομετρίας</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/04..01. Πολυώνυμα .html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01. Πολυώνυμα</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/04.02. Διαίρεση πολυωνύμων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02. Διαίρεση πολυωνύμων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/04.03. Πολυωνυμικές Εξισώσεις Και Ανισώσεις.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03. Πολυωνυμικές Εξισώσεις Και Ανισώσεις</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/04.04. Εξισώσεις και Ανισώσεις που Ανάγονται σε Πολυωνυμικές.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04. Εξισώσεις και Ανισώσεις που Ανάγονται σε Πολυωνυμικές</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/05.01. Εκθετική συνάρτηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01. Εκθετική συνάρτηση</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/05.02. Λογάριθμοι.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02. Λογάριθμοι</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebragenikou/05.03. Λογαριθμική συνάρτηση.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03. Λογαριθμική συνάρτηση</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-controls="quarto-sidebar-section-17" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-17-label">Άλγεβρα Θετικών Σπουδών</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-17" aria-labelledby="quarto-sidebar-section-17-label" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebrathetikis/01.01. Η Εννοια Του Διανύσματος.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01. Η Εννοια Του Διανύσματος</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebrathetikis/01.02. Πρόσθεση Και Αφαίρεση Διανυσμάτων.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02. Πρόσθεση Και Αφαίρεση Διανυσμάτων</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lykeio/b/algebrathetikis/01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01.03. Πολλαπλασιασμός Αριθμού με Διάνυσμα</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Γεωμετρία</span></span>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Σε αυτήν τη σελίδα</h2>
+   
+  <ul>
+  <li><a href="#πολλαπλασιασμός-αριθμού-με-διάνυσμα" id="toc-πολλαπλασιασμός-αριθμού-με-διάνυσμα" class="nav-link active" data-scroll-target="#πολλαπλασιασμός-αριθμού-με-διάνυσμα"><span class="header-section-number">1</span> Πολλαπλασιασμός Αριθμού με Διάνυσμα</a>
+  <ul>
+  <li><a href="#ορισμός-πολλαπλασιασμού-αριθμού-με-διάνυσμα" id="toc-ορισμός-πολλαπλασιασμού-αριθμού-με-διάνυσμα" class="nav-link" data-scroll-target="#ορισμός-πολλαπλασιασμού-αριθμού-με-διάνυσμα"><span class="header-section-number">1.1</span> Ορισμός Πολλαπλασιασμού Αριθμού με Διάνυσμα</a></li>
+  <li><a href="#ιδιότητες-πολλαπλασιασμού-αριθμού-με-διάνυσμα-αποδείξεις---πορίσματα" id="toc-ιδιότητες-πολλαπλασιασμού-αριθμού-με-διάνυσμα-αποδείξεις---πορίσματα" class="nav-link" data-scroll-target="#ιδιότητες-πολλαπλασιασμού-αριθμού-με-διάνυσμα-αποδείξεις---πορίσματα"><span class="header-section-number">1.2</span> Ιδιότητες Πολλαπλασιασμού Αριθμού με Διάνυσμα &amp; Αποδείξεις - Πορίσματα</a>
+  <ul>
+  <li><a href="#πορίσματα---συνέπειες" id="toc-πορίσματα---συνέπειες" class="nav-link" data-scroll-target="#πορίσματα---συνέπειες"><span class="header-section-number">1.2.1</span> <strong>Πορίσματα - Συνέπειες</strong></a></li>
+  </ul></li>
+  <li><a href="#γραμμικός-συνδυασμός-διανυσμάτων" id="toc-γραμμικός-συνδυασμός-διανυσμάτων" class="nav-link" data-scroll-target="#γραμμικός-συνδυασμός-διανυσμάτων"><span class="header-section-number">1.3</span> Γραμμικός Συνδυασμός Διανυσμάτων</a></li>
+  <li><a href="#συνθήκη-παραλληλίας-διανυσμάτων" id="toc-συνθήκη-παραλληλίας-διανυσμάτων" class="nav-link" data-scroll-target="#συνθήκη-παραλληλίας-διανυσμάτων"><span class="header-section-number">1.4</span> Συνθήκη Παραλληλίας Διανυσμάτων</a></li>
+  <li><a href="#πορίσματα---συνέπειες-1" id="toc-πορίσματα---συνέπειες-1" class="nav-link" data-scroll-target="#πορίσματα---συνέπειες-1"><span class="header-section-number">1.5</span> <strong>Πορίσματα - Συνέπειες</strong></a></li>
+  <li><a href="#διανυσματική-ακτίνα-μέσου-τμήματος" id="toc-διανυσματική-ακτίνα-μέσου-τμήματος" class="nav-link" data-scroll-target="#διανυσματική-ακτίνα-μέσου-τμήματος"><span class="header-section-number">1.6</span> Διανυσματική Ακτίνα Μέσου Τμήματος</a></li>
+  <li><a href="#εφαρμογές" id="toc-εφαρμογές" class="nav-link" data-scroll-target="#εφαρμογές"><span class="header-section-number">1.7</span> Εφαρμογές</a></li>
+  <li><a href="#ασκήσεις-στην-έννοια-τις-εφαρμογές-του-πολλαπλασιασμού-αριθμού-με-διάνυσμα" id="toc-ασκήσεις-στην-έννοια-τις-εφαρμογές-του-πολλαπλασιασμού-αριθμού-με-διάνυσμα" class="nav-link" data-scroll-target="#ασκήσεις-στην-έννοια-τις-εφαρμογές-του-πολλαπλασιασμού-αριθμού-με-διάνυσμα"><span class="header-section-number">1.8</span> Ασκήσεις στην Έννοια &amp; τις Εφαρμογές του Πολλαπλασιασμού Αριθμού με Διάνυσμα</a>
+  <ul>
+  <li><a href="#ομάδα-a-αλγεβρικοί-χειρισμοί-απλοποίηση-διανυσματικών-παραστάσεων" id="toc-ομάδα-a-αλγεβρικοί-χειρισμοί-απλοποίηση-διανυσματικών-παραστάσεων" class="nav-link" data-scroll-target="#ομάδα-a-αλγεβρικοί-χειρισμοί-απλοποίηση-διανυσματικών-παραστάσεων"><span class="header-section-number">1.8.1</span> <strong>Ομάδα A: Αλγεβρικοί Χειρισμοί &amp; Απλοποίηση Διανυσματικών Παραστάσεων</strong></a></li>
+  <li><a href="#ομάδα-b-γραμμικός-συνδυασμός-έκφραση-διανυσμάτων" id="toc-ομάδα-b-γραμμικός-συνδυασμός-έκφραση-διανυσμάτων" class="nav-link" data-scroll-target="#ομάδα-b-γραμμικός-συνδυασμός-έκφραση-διανυσμάτων"><span class="header-section-number">1.8.2</span> <strong>Ομάδα B: Γραμμικός Συνδυασμός &amp; Έκφραση Διανυσμάτων</strong></a></li>
+  <li><a href="#ομάδα-γ-συνθήκη-παραλληλίας-συνευθειακά-σημεία" id="toc-ομάδα-γ-συνθήκη-παραλληλίας-συνευθειακά-σημεία" class="nav-link" data-scroll-target="#ομάδα-γ-συνθήκη-παραλληλίας-συνευθειακά-σημεία"><span class="header-section-number">1.8.3</span> <strong>Ομάδα Γ: Συνθήκη Παραλληλίας &amp; Συνευθειακά Σημεία</strong></a></li>
+  <li><a href="#ομάδα-δ-διανυσματική-ακτίνα-μέσου-βαρύκεντρο-τριγώνου" id="toc-ομάδα-δ-διανυσματική-ακτίνα-μέσου-βαρύκεντρο-τριγώνου" class="nav-link" data-scroll-target="#ομάδα-δ-διανυσματική-ακτίνα-μέσου-βαρύκεντρο-τριγώνου"><span class="header-section-number">1.8.4</span> <strong>Ομάδα Δ: Διανυσματική Ακτίνα Μέσου &amp; Βαρύκεντρο Τριγώνου</strong></a></li>
+  <li><a href="#ομάδα-e-σύνθετες-αποδείξεις-γεωμετρικοί-σχηματισμοί" id="toc-ομάδα-e-σύνθετες-αποδείξεις-γεωμετρικοί-σχηματισμοί" class="nav-link" data-scroll-target="#ομάδα-e-σύνθετες-αποδείξεις-γεωμετρικοί-σχηματισμοί"><span class="header-section-number">1.8.5</span> <strong>Ομάδα E: Σύνθετες Αποδείξεις &amp; Γεωμετρικοί Σχηματισμοί</strong></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content" tabindex="-1">
+
+
+
+
+
+<!-- Φόρτωση βιβλιοθήκης GeoGebra -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<!-- Συνάρτηση δημιουργίας applets -->
+<script>
+function createGeoGebra(containerId, materialId, width = 700, height = 500) {
+  var params = {
+    "id": "ggb-" + containerId,
+    "material_id": materialId,
+    "width": width,
+    "height": height,
+    "showToolBar": true,
+    "showMenuBar": false,
+    "showAlgebraInput": true
+  };
+  
+  var applet = new GGBApplet(params, '5.2');
+  applet.inject(containerId);
+}
+</script>
+<section id="πολλαπλασιασμός-αριθμού-με-διάνυσμα" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="πολλαπλασιασμός-αριθμού-με-διάνυσμα"><span class="header-section-number">1</span> Πολλαπλασιασμός Αριθμού με Διάνυσμα</h2>
+<hr>
+<section id="ορισμός-πολλαπλασιασμού-αριθμού-με-διάνυσμα" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="ορισμός-πολλαπλασιασμού-αριθμού-με-διάνυσμα"><span class="header-section-number">1.1</span> Ορισμός Πολλαπλασιασμού Αριθμού με Διάνυσμα</h3>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p><strong>Ορισμός:</strong></p>
+</div>
+<p>Έστω <span class="math inline">\(λ \in \mathbb{R}\)</span> ένας πραγματικός αριθμός με <span class="math inline">\(λ \neq 0\)</span> και <span class="math inline">\(\vec{α}\)</span> ένα μη μηδενικό διάνυσμα. Ονομάζουμε <strong>γινόμενο του</strong> <span class="math inline">\(λ\)</span> με το <span class="math inline">\(\vec{α}\)</span> και συμβολίζουμε με <span class="math inline">\(λ \cdot \vec{α}\)</span> ή <span class="math inline">\(λ \vec{α}\)</span> ένα διάνυσμα το οποίο:</p>
+<ol type="1">
+<li><p>Είναι <strong>ομόρροπο</strong> του <span class="math inline">\(\vec{α}\)</span> (<span class="math inline">\(λ \vec{α} \uparrow\uparrow \vec{α}\)</span>), αν <span class="math inline">\(λ &gt; 0\)</span>, και <strong>αντίρροπο</strong> του <span class="math inline">\(\vec{α}\)</span> (<span class="math inline">\(λ \vec{α} \uparrow\downarrow \vec{α}\)</span>), αν <span class="math inline">\(λ &lt; 0\)</span>.</p></li>
+<li><p>Έχει <strong>μέτρο</strong> <span class="math inline">\(|λ \vec{α}| = |λ| \cdot |\vec{α}|\)</span>.</p></li>
+</ol>
+<ul>
+<li><p><strong>Ειδική περίπτωση:</strong> Αν <span class="math inline">\(λ = 0\)</span> ή <span class="math inline">\(\vec{α} = \vec{0}\)</span>, τότε ορίζουμε ως <span class="math inline">\(λ \vec{α}\)</span> το μηδενικό διάνυσμα <span class="math inline">\(\vec{0}\)</span>.</p></li>
+<li><p><strong>Συμβολισμός κλάσματος:</strong> Το γινόμενο <span class="math inline">\(\dfrac{1}{λ} \cdot \vec{α}\)</span> συμβολίζεται και ως <span class="math inline">\(\dfrac{\vec{α}}{λ}\)</span>.</p></li>
+</ul>
+</div>
+<iframe src="https://www.geogebra.org/calculator/u9dh66yr?embed" width="730" height="600" allowfullscreen="" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
+<div class="math-box odigia-box">
+<div class="math-title odigia-title">
+<p>Οδηγία</p>
+</div>
+<p>Αλλάξτε την τιμή του α και του λ από τους αντίστοιχους δρομείς.</p>
+<p>Επιλέξτε τον δρομέα και μετά <kbd>Shift</kbd>+<kbd>&gt; ή &lt;</kbd> για μεγαλύτερη ακρίβεια.</p>
+<p>Διερευνήστε όσα αναφέρονται στον ορισμό, όταν λ&gt;0 και όταν λ&lt;0.</p>
+</div>
+<hr>
+<ul>
+<li><p><strong>Παράδειγμα:</strong> Αν το διάνυσμα <span class="math inline">\(\vec{α}\)</span> έχει μέτρο <span class="math inline">\(|\vec{α}| = 2\)</span>:</p>
+<ul>
+<li><p>Το διάνυσμα <span class="math inline">\(3\vec{α}\)</span> είναι ομόρροπο με το <span class="math inline">\(\vec{α}\)</span> και έχει μέτρο <span class="math inline">\(|3\vec{α}| = 3 \cdot |\vec{α}| = 3 \cdot 2 = 6\)</span>.</p></li>
+<li><p>Το διάνυσμα <span class="math inline">\(-3\vec{α}\)</span> είναι αντίρροπο του <span class="math inline">\(\vec{α}\)</span> και έχει μέτρο <span class="math inline">\(|-3\vec{α}| = |-3| \cdot |\vec{α}| = 3 \cdot 2 = 6\)</span>.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="ιδιότητες-πολλαπλασιασμού-αριθμού-με-διάνυσμα-αποδείξεις---πορίσματα" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ιδιότητες-πολλαπλασιασμού-αριθμού-με-διάνυσμα-αποδείξεις---πορίσματα"><span class="header-section-number">1.2</span> Ιδιότητες Πολλαπλασιασμού Αριθμού με Διάνυσμα &amp; Αποδείξεις - Πορίσματα</h3>
+<div class="math-box property-box">
+<div class="math-title property-title">
+<p>Για οποιαδήποτε διανύσματα <span class="math inline">\(\vec{α}, \vec{β}\)</span> και πραγματικούς αριθμούς <span class="math inline">\(λ, \mu \in \mathbb{R}\)</span>, ισχύουν οι παρακάτω θεμελιώδεις αλγεβρικές ιδιότητες:</p>
+</div>
+<ol type="1">
+<li><p><strong>Επιμεριστική ως προς το άθροισμα διανυσμάτων:</strong> <span class="math display">\[λ(\vec{α} + \vec{β}) = λ\vec{α} + λ\vec{β}\]</span></p></li>
+<li><p><strong>Επιμεριστική ως προς το άθροισμα αριθμών:</strong> <span class="math display">\[(λ + \mu)\vec{α} = λ\vec{α} + \mu\vec{α}\]</span></p></li>
+<li><p><strong>Προσεταιριστική ιδιότητα:</strong> <span class="math display">\[λ(\mu\vec{α}) = (λ\mu)\vec{α}\]</span></p></li>
+</ol>
+</div>
+<div class="math-box propertyproof-box">
+<div class="math-title propertyproof-title">
+<p><strong>Απόδειξη της Ιδιότητας</strong> <span class="math inline">\(λ(\vec{α} + \vec{β}) = λ\vec{α} + λ\vec{β}\)</span></p>
+</div>
+<ul>
+<li><p><strong>Υπόθεση:</strong> Θεωρούμε ότι τα διανύσματα <span class="math inline">\(\vec{α}, \vec{β}\)</span> είναι μη μηδενικά, μη συγγραμμικά και <span class="math inline">\(λ &gt; 0\)</span>.</p></li>
+<li><p><strong>Κατασκευή:</strong></p>
+<ul>
+<li><p>Με αρχή ένα σημείο <span class="math inline">\(O\)</span>, σχεδιάζουμε τα διαδοχικά διανύσματα <span class="math inline">\(\vec{OA} = \vec{α}\)</span> και <span class="math inline">\(\vec{AB} = \vec{β}\)</span>. Τότε, από τον κανόνα του τριγώνου, ισχύει <span class="math inline">\(\vec{OB} = \vec{α} + \vec{β}\)</span>.</p></li>
+<li><p>Στην ημιευθεία <span class="math inline">\(OA\)</span> παίρνουμε σημείο <span class="math inline">\(A'\)</span> τέτοιο ώστε <span class="math inline">\(\vec{OA'} = λ\vec{α}\)</span> και στην ημιευθεία <span class="math inline">\(OB\)</span> σημείο <span class="math inline">\(B'\)</span> τέτοιο ώστε <span class="math inline">\(\vec{OB'} = λ(\vec{α} + \vec{β})\)</span>.</p></li>
+</ul></li>
+<li><p><strong>Γεωμετρικός Συλλογισμός:</strong></p>
+<ol type="1">
+<li><p>Επειδή <span class="math inline">\(\dfrac{(OA')}{(OA)} = \dfrac{(OB')}{(OB)} = λ\)</span>, από το αντίστροφο του Θεωρήματος Θαλή τα τμήματα <span class="math inline">\(A'B'\)</span> και <span class="math inline">\(AB\)</span> είναι παράλληλα (<span class="math inline">\(A'B' \parallel AB\)</span>).</p></li>
+<li><p>Τα τρίγωνα <span class="math inline">\(OAB\)</span> και <span class="math inline">\(OA'B'\)</span> είναι όμοια με λόγο ομοιότητας <span class="math inline">\(λ\)</span>, οπότε: <span class="math display">\[\frac{(A'B')}{(AB)} = λ \implies (A'B') = λ (AB)\]</span></p></li>
+<li><p>Επειδή τα ευθύγραμμα τμήματα <span class="math inline">\(A'B'\)</span> και <span class="math inline">\(AB\)</span> είναι παράλληλα και έχουν την ίδια φορά, προκύπτει ότι: <span class="math display">\[\vec{A'B'} = λ \vec{AB} = λ\vec{β}\]</span></p></li>
+<li><p>Από τον κανόνα πρόσθεσης στο τρίγωνο <span class="math inline">\(OA'B'\)</span> έχουμε: <span class="math display">\[\vec{OB'} = \vec{OA'} + \vec{A'B'} \implies λ(\vec{α} + \vec{β}) = λ\vec{α} + λ\vec{β}\]</span></p></li>
+</ol></li>
+<li><p><em>(Σημείωση: Η ιδιότητα αποδεικνύεται ανάλογα αν</em> <span class="math inline">\(λ &lt; 0\)</span> με χρήση αντίθετων ημιευθειών, καθώς και αν κάποιο διάνυσμα είναι μηδενικό ή <span class="math inline">\(λ = 0\)</span>).</p></li>
+</ul>
+</div>
+<hr>
+<section id="πορίσματα---συνέπειες" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="πορίσματα---συνέπειες"><span class="header-section-number">1.2.1</span> <strong>Πορίσματα - Συνέπειες</strong></h4>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<p>Από τον ορισμό και τις ιδιότητες προκύπτουν οι παρακάτω χρήσιμες σχέσεις:</p>
+</div>
+<ol type="1">
+<li><p><span class="math inline">\(λ\vec{α} = \vec{0} \iff λ = 0 \quad \text{ή} \quad \vec{α} = \vec{0}\)</span></p></li>
+<li><p><span class="math inline">\((-λ)\vec{α} = λ(-\vec{α}) = -(λ\vec{α})\)</span></p></li>
+<li><p><span class="math inline">\(λ(\vec{α} - \vec{β}) = λ\vec{α} - λ\vec{β}\)</span></p></li>
+<li><p><span class="math inline">\((λ - \mu)\vec{α} = λ\vec{α} - \mu\vec{α}\)</span></p></li>
+<li><p><strong>Διαγραφή αριθμητικού παράγοντα:</strong> Αν <span class="math inline">\(λ\vec{α} = λ\vec{β}\)</span> και <span class="math inline">\(λ \neq 0\)</span>, τότε <span class="math inline">\(\vec{α} = \vec{β}\)</span>.</p></li>
+<li><p><strong>Διαγραφή διανυσματικού παράγοντα:</strong> Αν <span class="math inline">\(λ\vec{α} = \mu\vec{α}\)</span> και <span class="math inline">\(\vec{α} \neq \vec{0}\)</span>, τότε <span class="math inline">\(λ = \mu\)</span>.</p></li>
+</ol>
+</div>
+<hr>
+</section>
+</section>
+<section id="γραμμικός-συνδυασμός-διανυσμάτων" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="γραμμικός-συνδυασμός-διανυσμάτων"><span class="header-section-number">1.3</span> Γραμμικός Συνδυασμός Διανυσμάτων</h3>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p><strong>Ορισμός:</strong></p>
+</div>
+<p><strong>Γραμμικός συνδυασμός</strong> δύο διανυσμάτων <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span> ονομάζεται κάθε διάνυσμα της μορφής: <span class="math display">\[\vec{v} = κ\vec{α} + λ\vec{β} \quad \text{με } κ, λ \in \mathbb{R}\]</span></p>
+<ul>
+<li>Γενικότερα, για <span class="math inline">\(\nu \ge 3\)</span> διανύσματα <span class="math inline">\(\vec{α}_1, \vec{α}_2, \dots, \vec{α}_\nu\)</span>, γραμμικός συνδυασμός ονομάζεται κάθε διάνυσμα της μορφής: <span class="math display">\[\vec{u} = κ_1\vec{α}_1 + κ_2\vec{α}_2 + \dots + κ_\nu\vec{α}_\nu \quad \text{όπου } κ_1, κ_2, \dots, κ_\nu \in \mathbb{R}\]</span></li>
+</ul>
+</div>
+<ul>
+<li><p><strong>Παραδείγματα:</strong></p>
+<ol type="1">
+<li><p>Το διάνυσμα <span class="math inline">\(\vec{v} = 3\vec{α} - 2\vec{β} + 5\vec{Γ}\)</span> είναι γραμμικός συνδυασμός των διανυσμάτων <span class="math inline">\(\vec{α}, \vec{β}, \vec{Γ}\)</span> με συντελεστές <span class="math inline">\(3, -2, 5\)</span>.</p></li>
+<li><p>Στο καρτεσιανό επίπεδο <span class="math inline">\(Oxy\)</span>, κάθε διάνυσμα <span class="math inline">\(\vec{α} = (x, y)\)</span> γράφεται μονοσήμαντα ως γραμμικός συνδυασμός των μοναδιαίων διανυσμάτων <span class="math inline">\(\vec{i} = (1, 0)\)</span> και <span class="math inline">\(\vec{j} = (0, 1)\)</span> των αξόνων: <span class="math inline">\(\vec{α} = x\vec{i} + y\vec{j}\)</span>.</p></li>
+</ol></li>
+</ul>
+<hr>
+</section>
+<section id="συνθήκη-παραλληλίας-διανυσμάτων" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="συνθήκη-παραλληλίας-διανυσμάτων"><span class="header-section-number">1.4</span> Συνθήκη Παραλληλίας Διανυσμάτων</h3>
+<div class="math-box theorem-box">
+<div class="math-title theorem-title">
+<p><strong>Θεώρημα</strong></p>
+</div>
+<p>Αν <span class="math inline">\(\vec{α}, \vec{β}\)</span> είναι δύο διανύσματα, με <span class="math inline">\(\vec{β} \neq \vec{0}\)</span>, τότε: <span class="math display">\[\vec{α} \parallel \vec{β} \iff \vec{α} = λ\vec{β} \quad \text{για κάποιον μοναδικό } λ \in \mathbb{R}\]</span></p>
+</div>
+<div class="math-box apodeixi-box">
+<div class="math-title apodeixi-title">
+<p><strong>Απόδειξη</strong></p>
+</div>
+<ul>
+<li><p><strong>Ευθύ (</strong><span class="math inline">\(\Leftarrow\)</span>): Έστω ότι <span class="math inline">\(\vec{α} = λ\vec{β}\)</span>. Από τον ορισμό του πολλαπλασιασμού αριθμού με διάνυσμα, το διάνυσμα <span class="math inline">\(λ\vec{β}\)</span> έχει τον ίδιο ή παράλληλο φορέα με το <span class="math inline">\(\vec{β}\)</span>, άρα <span class="math inline">\(\vec{α} \parallel \vec{β}\)</span>.</p></li>
+<li><p><strong>Αντίστροφο (</strong><span class="math inline">\(\Rightarrow\)</span>): Έστω <span class="math inline">\(\vec{α} \parallel \vec{β}\)</span> με <span class="math inline">\(\vec{β} \neq \vec{0}\)</span>.</p>
+<ul>
+<li>Θέτουμε <span class="math inline">\(κ = \dfrac{|\vec{α}|}{|\vec{β}|} \ge 0\)</span>, οπότε <span class="math inline">\(|\vec{α}| = κ |\vec{β}|\)</span>.</li>
+</ul>
+<ol type="1">
+<li><p>Αν <span class="math inline">\(\vec{α} \uparrow\uparrow \vec{β}\)</span> (ομόρροπα), τότε <span class="math inline">\(\vec{α} = κ\vec{β}\)</span> (όπου <span class="math inline">\(λ = κ &gt; 0\)</span>).</p></li>
+<li><p>Αν <span class="math inline">\(\vec{α} \uparrow\downarrow \vec{β}\)</span> (αντίρροπα), τότε <span class="math inline">\(\vec{α} = -κ\vec{β}\)</span> (όπου <span class="math inline">\(λ = -κ &lt; 0\)</span>).</p></li>
+<li><p>Αν <span class="math inline">\(\vec{α} = \vec{0}\)</span>, τότε <span class="math inline">\(\vec{α} = 0 \cdot \vec{β}\)</span> (όπου <span class="math inline">\(λ = 0\)</span>).</p></li>
+</ol>
+<ul>
+<li>Συνεπώς, σε κάθε περίπτωση υπάρχει μοναδικός αριθμός <span class="math inline">\(λ \in \mathbb{R}\)</span> τέτοιος ώστε <span class="math inline">\(\vec{α} = λ\vec{β}\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="πορίσματα---συνέπειες-1" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="πορίσματα---συνέπειες-1"><span class="header-section-number">1.5</span> <strong>Πορίσματα - Συνέπειες</strong></h3>
+<div class="math-box corollary-box">
+<div class="math-title corollary-title">
+<p>Πορίσματα</p>
+</div>
+<ol type="1">
+<li><p><strong>Συνθήκη Συνευθειακότητας Τριών Σημείων:</strong> Τρία σημεία <span class="math inline">\(A, B, Γ\)</span> είναι συνευθειακά αν και μόνο αν τα διανύσματα <span class="math inline">\(\vec{AB}\)</span> και <span class="math inline">\(\vec{AΓ}\)</span> είναι παράλληλα, δηλαδή αν υπάρχει <span class="math inline">\(λ \in \mathbb{R}\)</span> τέτοιο ώστε: <span class="math display">\[\vec{AB} = λ\vec{AΓ}\]</span></p></li>
+<li><p><strong>Γραμμική Ανεξαρτησία στο Επίπεδο:</strong> Αν τα διανύσματα <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span> είναι μη συγγραμμικά (μη παράλληλα), τότε: <span class="math display">\[λ\vec{α} + \mu\vec{β} = \vec{0} \iff λ = 0 \quad \text{και} \quad \mu = 0\]</span></p></li>
+</ol>
+</div>
+<hr>
+<ul>
+<li><p><strong>Παράδειγμα:</strong> Αν σε τρίγωνο <span class="math inline">\(ABΓ\)</span>, <span class="math inline">\(Δ\)</span> και <span class="math inline">\(E\)</span> είναι τα μέσα των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(AΓ\)</span> αντίστοιχα, τότε: <span class="math display">\[\vec{BΓ} = \vec{BA} + \vec{AΓ} = 2\vec{ΔA} + 2\vec{AE} = 2(\vec{ΔA} + \vec{AE}) = 2\vec{ΔE}\]</span></p>
+<p>Επειδή <span class="math inline">\(\vec{BΓ} = 2\vec{ΔE}\)</span>, συμπεραίνουμε ότι <span class="math inline">\(BΓ \parallel ΔE\)</span> και <span class="math inline">\(BΓ = 2ΔE\)</span>.</p></li>
+</ul>
+<hr>
+</section>
+<section id="διανυσματική-ακτίνα-μέσου-τμήματος" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="διανυσματική-ακτίνα-μέσου-τμήματος"><span class="header-section-number">1.6</span> Διανυσματική Ακτίνα Μέσου Τμήματος</h3>
+<div class="math-box definition-box">
+<div class="math-title definition-title">
+<p><strong>Ορισμός:</strong></p>
+</div>
+<p>Αν <span class="math inline">\(M\)</span> είναι το μέσο ενός ευθύγραμμου τμήματος <span class="math inline">\(AB\)</span> και <span class="math inline">\(O\)</span> ένα τυχαίο σημείο αναφοράς του επιπέδου ή του χώρου, ονομάζουμε <strong>διανυσματική ακτίνα (ή διάνυσμα θέσεως) του μέσου</strong> <span class="math inline">\(M\)</span> το διάνυσμα <span class="math inline">\(\vec{OM}\)</span>.</p>
+<ul>
+<li><strong>Τύπος:</strong> <span class="math display">\[\vec{OM} = \frac{\vec{OA} + \vec{OB}}{2}\]</span></li>
+</ul>
+</div>
+<div class="math-box definitionsolution-box">
+<div class="math-title definitionsolution-title">
+<p><strong>Απόδειξη</strong></p>
+</div>
+<ul>
+<li><p><strong>1ος Τρόπος (με διαφορά διανυσματικών ακτινών):</strong></p>
+<p>Επειδή το <span class="math inline">\(M\)</span> είναι μέσο του <span class="math inline">\(AB\)</span>, ισχύει: <span class="math display">\[\vec{AM} = \vec{MB} \iff \vec{OM} - \vec{OA} = \vec{OB} - \vec{OM}\]</span></p>
+<p>Μεταφέροντας τους όρους με το <span class="math inline">\(\vec{OM}\)</span> στο πρώτο μέλος: <span class="math display">\[\vec{OM} + \vec{OM} = \vec{OA} + \vec{OB} \iff 2\vec{OM} = \vec{OA} + \vec{OB} \iff \vec{OM} = \frac{\vec{OA} + \vec{OB}}{2}\]</span></p></li>
+<li><p><strong>2ος Τρόπος (με πρόσθεση κατά μέλη):</strong></p>
+<p>Από τη σχέση Chasles έχουμε: <span class="math display">\[\vec{OM} = \vec{OA} + \vec{AM} \quad \text{και} \quad \vec{OM} = \vec{OB} + \vec{BM}\]</span></p>
+<p>Προσθέτοντας τις δύο ισότητες κατά μέλη: <span class="math display">\[2\vec{OM} = \vec{OA} + \vec{OB} + (\vec{AM} + \vec{BM})\]</span></p>
+<p>Επειδή το <span class="math inline">\(M\)</span> είναι μέσο του <span class="math inline">\(AB\)</span>, τα διανύσματα <span class="math inline">\(\vec{AM}\)</span> και <span class="math inline">\(\vec{BM}\)</span> είναι αντίθετα, οπότε <span class="math inline">\(\vec{AM} + \vec{BM} = \vec{0}\)</span>. Άρα: <span class="math display">\[2\vec{OM} = \vec{OA} + \vec{OB} \iff \vec{OM} = \frac{\vec{OA} + \vec{OB}}{2}\]</span></p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="εφαρμογές" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="εφαρμογές"><span class="header-section-number">1.7</span> Εφαρμογές</h3>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 1: Διάνυσμα Θέσεως Μέσου Τμήματος</strong></p>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Δίνεται τετράπλευρο <span class="math inline">\(ABΓΔ\)</span>. Αν <span class="math inline">\(K\)</span> είναι το μέσο της πλευράς <span class="math inline">\(AB\)</span> και <span class="math inline">\(L\)</span> το μέσο της πλευράς <span class="math inline">\(ΓΔ\)</span>, να αποδείξετε ότι:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\vec{KL} = \dfrac{\vec{AΓ} + \vec{BΔ}}{2}\)</span></p></li>
+<li><p><span class="math inline">\(\vec{AΔ} + \vec{BΓ} = 2\vec{KL}\)</span></p></li>
+</ol>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3294198509.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+</div>
+<p><span class="math inline">\(\mathbf{1^{ος}}\)</span> <strong>τρόπος</strong></p>
+<ol type="1">
+<li><p>Θεωρούμε τυχαίο σημείο αναφοράς <span class="math inline">\(O\)</span> στο επίπεδο.</p>
+<ul>
+<li><p>Επειδή το <span class="math inline">\(K\)</span> είναι μέσο του ευθύγραμμου τμήματος <span class="math inline">\(AB\)</span>, η διανυσματική του ακτίνα είναι: <span class="math display">\[\vec{OK} = \frac{\vec{OA} + \vec{OB}}{2}\]</span></p></li>
+<li><p>Επειδή το <span class="math inline">\(L\)</span> είναι μέσο του ευθύγραμμου τμήματος <span class="math inline">\(ΓΔ\)</span>, η διανυσματική του ακτίνα είναι: <span class="math display">\[\vec{OL} = \frac{\vec{OΓ} + \vec{OΔ}}{2}\]</span></p></li>
+</ul>
+<p>Υπολογίζουμε το διάνυσμα <span class="math inline">\(\vec{KL}\)</span>: <span class="math display">\[\vec{KL} = \vec{OL} - \vec{OK} = \frac{\vec{OΓ} + \vec{OΔ}}{2} - \frac{\vec{OA} + \vec{OB}}{2} = \frac{(\vec{OΓ} - \vec{OA}) + (\vec{OΔ} - \vec{OB})}{2}\]</span></p>
+<p>Επειδή <span class="math inline">\(\vec{OΓ} - \vec{OA} = \vec{AΓ}\)</span> και <span class="math inline">\(\vec{OΔ} - \vec{OB} = \vec{BΔ}\)</span>, λαμβάνουμε: <span class="math display">\[\vec{KL} = \frac{\vec{AΓ} + \vec{BΔ}}{2}\]</span></p></li>
+<li><p>Ομαδοποιώντας διαφορετικά τους όρους στο ίδιο κλάσμα: <span class="math display">\[\vec{KL} = \frac{(\vec{OΔ} - \vec{OA}) + (\vec{OΓ} - \vec{OB})}{2} = \frac{\vec{AΔ} + \vec{BΓ}}{2}\]</span></p>
+<p>Πολλαπλασιάζοντας επί <span class="math inline">\(2\)</span>: <span class="math display">\[2\vec{KL} = \vec{AΔ} + \vec{BΓ} \iff \vec{AΔ} + \vec{BΓ} = 2\vec{KL}\]</span></p></li>
+</ol>
+<hr>
+<p><span class="math inline">\(\mathbf{2^{ος}}\)</span> <strong>τρόπος</strong></p>
+<p>Από το σχήμα βλέπουμε ότι:</p>
+<p><span class="math display">\[\vec{KL}=\begin{cases} \vec{ΚΒ}+\vec{ΒΓ}+\vec{ΓL} \\ \vec{KA}+\vec{ΑΔ}+\vec{ΔL}\end{cases}\]</span></p>
+<p>Προσθέτοντας έχουμε <span class="math display">\[2\vec{KL}=\vec{ΚΒ}+\vec{ΒΓ}+\vec{ΓL} + \vec{KA}+\vec{ΑΔ}+\vec{ΔL}\]</span></p>
+<p><span class="math display">\[2\vec{KL}=\textcolor{red}{\cancel{\vec{ΚΒ}}}+\vec{ΒΓ}+\textcolor{green}{\cancel{\vec{ΓL}}} + \textcolor{red}{\cancel{\vec{KA}}}+\vec{ΑΔ}+\textcolor{green}{\cancel{\vec{ΔL}}}\]</span></p>
+<p>και τελικά <span class="math display">\[2\vec{KL}=\vec{ΒΓ}+\vec{ΑΔ}\]</span> Αποδείξαμε την (2)</p>
+<p>Όμως <span class="math display">\[\vec{ΑΓ}=\begin{cases} \textcolor{red}{\vec{ΑΒ}+\vec{ΒΓ}}\\ \vec{ΑΔ}+\vec{ΔΓ}\end{cases} \quad (1)\]</span> και</p>
+<p><span class="math display">\[\vec{ΒΑ}=\begin{cases} \vec{ΒΓ}+\vec{ΓΔ}\\ \textcolor{red}{\vec{ΒA}+\vec{ΑΔ}}\end{cases} \quad  (2)\]</span></p>
+<p>(1)+(2)<span class="math inline">\(\overset{Κόκκινα}{\longrightarrow} \vec{AΓ}+\vec{ΒΔ}=\textcolor{red}{\cancel{\vec{ΑΒ}}+\vec{ΒΓ}}+\textcolor{red}{\cancel{\vec{ΒA}}+\vec{ΑΔ}}=\vec{ΒΓ}+\vec{AΔ}\quad\)</span> Το οποίο όπως δείξαμε ισούται με <span class="math inline">\(2\vec{KL}\)</span></p>
+<p>Άρα <span class="math display">\[\vec{ΚL}=\dfrac{\vec{ΑΓ}+\vec{ΒΔ}}{2}\]</span></p>
+</div>
+<hr>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 2: Χαρακτηριστική Ιδιότητα &amp; Διάνυσμα Θέσεως Κέντρου Βάρους</strong></p>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<p>Δίνεται τρίγωνο <span class="math inline">\(ABΓ\)</span>.</p>
+<ol type="1">
+<li><p>Να αποδείξετε ότι το σημείο <span class="math inline">\(G\)</span> είναι το κέντρο βάρους (βαρύκεντρο) του τριγώνου <span class="math inline">\(ABΓ\)</span> αν και μόνο αν ισχύει: <span class="math display">\[\vec{GA} + \vec{GB} + \vec{GΓ} = \vec{0}\]</span></p></li>
+<li><p>Αν <span class="math inline">\(G\)</span> είναι το κέντρο βάρους του τριγώνου <span class="math inline">\(ABΓ\)</span>, να αποδείξετε ότι για οποιοδήποτε σημείο <span class="math inline">\(O\)</span> ισχύει: <span class="math display">\[\vec{OG} = \frac{\vec{OA} + \vec{OB} + \vec{OΓ}}{3}\]</span></p></li>
+</ol>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4286030613.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
+</figure>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>Ευθύ (</strong><span class="math inline">\(\implies\)</span>): Έστω <span class="math inline">\(G\)</span> το κέντρο βάρους του τριγώνου <span class="math inline">\(ABΓ\)</span> και <span class="math inline">\(D\)</span> το μέσο της πλευράς <span class="math inline">\(BΓ\)</span>.</p>
+<ul>
+<li><p>Από τη Γεωμετρία γνωρίζουμε ότι το κέντρο βάρους διαιρεί τη διάμεσο <span class="math inline">\(AD\)</span> σε λόγο <span class="math inline">\(2:1\)</span> από την κορυφή, άρα <span class="math inline">\(\vec{AG} = 2\vec{GD} \iff \vec{GA} = -2\vec{GD}\)</span>.</p></li>
+<li><p>Επειδή το <span class="math inline">\(D\)</span> είναι μέσο της <span class="math inline">\(BΓ\)</span>, ισχύει <span class="math inline">\(\vec{GB} + \vec{GΓ} =\vec{GG'}= 2\vec{GD}\)</span>.</p></li>
+</ul>
+<p>Προσθέτοντας κατά μέλη: <span class="math display">\[\vec{GA} + \vec{GB} + \vec{GΓ} = -2\vec{GD} + 2\vec{GD} = \vec{0}\]</span></p>
+<p><strong>Αντίστροφο (</strong><span class="math inline">\(\impliedby\)</span>): Έστω ότι για ένα σημείο <span class="math inline">\(G\)</span> ισχύει <span class="math inline">\(\vec{GA} + \vec{GB} + \vec{GΓ} = \vec{0}\)</span>.</p>
+<ul>
+<li><p>Αν <span class="math inline">\(D\)</span> είναι το μέσο της <span class="math inline">\(BΓ\)</span>, αντικαθιστούμε <span class="math inline">\(\vec{GB} + \vec{GΓ} = 2\vec{GD}\)</span>: <span class="math display">\[\vec{GA} + 2\vec{GD} = \vec{0} \iff \vec{AG} = 2\vec{GD}\]</span></p></li>
+<li><p>Η σχέση αυτή δηλώνει ότι το <span class="math inline">\(G\)</span> βρίσκεται πάνω στη διάμεσο <span class="math inline">\(AD\)</span> και απέχει από την κορυφή <span class="math inline">\(A\)</span> διπλάσια απόσταση από ό,τι από το μέσο <span class="math inline">\(D\)</span>, άρα το <span class="math inline">\(G\)</span> είναι το κέντρο βάρους του τριγώνου.</p></li>
+</ul></li>
+<li><p>Εκφράζουμε τη σχέση <span class="math inline">\(\vec{GA} + \vec{GB} + \vec{GΓ} = \vec{0}\)</span> με σημείο αναφοράς το <span class="math inline">\(O\)</span>: <span class="math display">\[(\vec{OA} - \vec{OG}) + (\vec{OB} - \vec{OG}) + (\vec{OΓ} - \vec{OG}) = \vec{0}\]</span> <span class="math display">\[\vec{OA} + \vec{OB} + \vec{OΓ} - 3\vec{OG} = \vec{0} \iff 3\vec{OG} = \vec{OA} + \vec{OB} + \vec{OΓ}\]</span> <span class="math display">\[\vec{OG} = \frac{\vec{OA} + \vec{OB} + \vec{OΓ}}{3}\]</span></p></li>
+</ol>
+</div>
+<hr>
+<div class="math-box example-box">
+<div class="math-title example-title">
+<p><strong>Εφαρμογή 3: Μέτρο Αθροίσματος &amp; Γεωμετρικός Τόπος</strong></p>
+<p><strong>Εκφώνηση:</strong></p>
+</div>
+<ol type="1">
+<li><p>Δίνονται διανύσματα <span class="math inline">\(\vec{a}\)</span> και <span class="math inline">\(\vec{b}\)</span> με μέτρα <span class="math inline">\(|\vec{a}| = 5\)</span> και <span class="math inline">\(|\vec{b}| = 3\)</span>. Να βρείτε την ελάχιστη και τη μέγιστη τιμή που μπορεί να λάβει το μέτρο <span class="math inline">\(|\vec{a} + \vec{b}|\)</span> και να προσδιορίσετε τη σχετική θέση των διανυσμάτων σε κάθε περίπτωση.</p></li>
+<li><p>Δίνεται ευθύγραμμο τμήμα <span class="math inline">\(AB\)</span> μήκους <span class="math inline">\(6\text{ cm}\)</span>. Να βρεθεί ο γεωμετρικός τόπος των σημείων <span class="math inline">\(M\)</span> του επιπέδου για τα οποία ισχύει: <span class="math display">\[|\vec{MA} + \vec{MB}| = |\vec{MA} - \vec{MB}|\]</span></p></li>
+</ol>
+</div>
+<div class="math-box examplesolution-box">
+<div class="math-title examplesolution-title">
+<p><strong>Λύση:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1253358235.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+</div>
+<ol type="1">
+<li><p>Από την τριγωνική ανισότητα διανυσμάτων ισχύει η διπλή ανισότητα: <span class="math display">\[||\vec{a}| - |\vec{b}|| \le |\vec{a} + \vec{b}| \le |\vec{a}| + |\vec{b}|\]</span></p>
+<p>Αντικαθιστώντας τα μέτρα <span class="math inline">\(|\vec{a}| = 5\)</span> και <span class="math inline">\(|\vec{b}| = 3\)</span>: <span class="math display">\[|5 - 3| \le |\vec{a} + \vec{b}| \le 5 + 3 \iff 2 \le |\vec{a} + \vec{b}| \le 8\]</span></p>
+<ul>
+<li><p><strong>Μέγιστη τιμή:</strong> <span class="math inline">\(8\)</span>, όταν τα διανύσματα είναι <strong>ομόρροπα</strong> (<span class="math inline">\(\vec{a} \uparrow\uparrow \vec{b}\)</span>).</p></li>
+<li><p><strong>Ελάχιστη τιμή:</strong> <span class="math inline">\(2\)</span>, όταν τα διανύσματα είναι <strong>αντίρροπα</strong> (<span class="math inline">\(\vec{a} \uparrow\downarrow \vec{b}\)</span>).</p></li>
+</ul></li>
+<li><p>Αναλύουμε τα δύο μέλη της δοσμένης εξίσωσης:</p>
+<ul>
+<li><p><strong>Πρώτο μέλος:</strong> Αν <span class="math inline">\(K\)</span> είναι το μέσο του ευθύγραμμου τμήματος <span class="math inline">\(AB\)</span>, τότε <span class="math inline">\(\vec{MA} + \vec{MB} = 2\vec{MK}\)</span>.</p>
+<p>Άρα: <span class="math display">\[|\vec{MA} + \vec{MB}| = |2\vec{MK}| = 2|\vec{MK}| = 2(MK)\]</span></p></li>
+<li><p><strong>Δεύτερο μέλος:</strong> Από τον κανόνα αφαίρεσης διανυσμάτων ισχύει <span class="math inline">\(\vec{MA} - \vec{MB} = \vec{BA}\)</span>.</p>
+<p>Άρα: <span class="math display">\[|\vec{MA} - \vec{MB}| = |\vec{BA}| = (AB) = 6\text{ cm}\]</span></p></li>
+</ul>
+<p>Εξισώνοντας τα δύο μέλη: <span class="math display">\[2(MK) = 6 \iff (MK) = 3\text{ cm}\]</span></p>
+<p>Επειδή το σημείο <span class="math inline">\(K\)</span> (μέσο του <span class="math inline">\(AB\)</span>) είναι σταθερό, η σχέση <span class="math inline">\((MK) = 3\text{ cm}\)</span> σημαίνει ότι το σημείο <span class="math inline">\(M\)</span> απέχει σταθερή απόσταση <span class="math inline">\(3\text{ cm}\)</span> από το <span class="math inline">\(K\)</span>.</p>
+<p><strong>Συμπέρασμα:</strong> Ο γεωμετρικός τόπος του σημείου <span class="math inline">\(M\)</span> είναι <strong>κύκλος με κέντρο το μέσο</strong> <span class="math inline">\(K\)</span> του τμήματος <span class="math inline">\(AB\)</span> και ακτίνα <span class="math inline">\(R = 3\text{ cm}\)</span> (δηλαδή ο κύκλος με διάμετρο το τμήμα <span class="math inline">\(AB\)</span>).</p></li>
+</ol>
+</div>
+<hr>
+</section>
+<section id="ασκήσεις-στην-έννοια-τις-εφαρμογές-του-πολλαπλασιασμού-αριθμού-με-διάνυσμα" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="ασκήσεις-στην-έννοια-τις-εφαρμογές-του-πολλαπλασιασμού-αριθμού-με-διάνυσμα"><span class="header-section-number">1.8</span> Ασκήσεις στην Έννοια &amp; τις Εφαρμογές του Πολλαπλασιασμού Αριθμού με Διάνυσμα</h3>
+<section id="ομάδα-a-αλγεβρικοί-χειρισμοί-απλοποίηση-διανυσματικών-παραστάσεων" class="level4" data-number="1.8.1">
+<h4 data-number="1.8.1" class="anchored" data-anchor-id="ομάδα-a-αλγεβρικοί-χειρισμοί-απλοποίηση-διανυσματικών-παραστάσεων"><span class="header-section-number">1.8.1</span> <strong>Ομάδα A: Αλγεβρικοί Χειρισμοί &amp; Απλοποίηση Διανυσματικών Παραστάσεων</strong></h4>
+<ol type="1">
+<li><p><strong>Άσκηση 1:</strong> Να λύσετε ως προς το διάνυσμα <span class="math inline">\(\vec{x}\)</span> τις παρακάτω εξισώσεις:</p>
+<ul>
+<li><p>α) <span class="math inline">\(3(\vec{x} + 2\vec{α}) - 2(\vec{x} - \vec{β}) = 4\vec{α} + 5\vec{β}\)</span></p></li>
+<li><p>β) <span class="math inline">\(\dfrac{1}{2}(3\vec{x} + 5\vec{α}) = \dfrac{1}{3}(2\vec{x} - 7\vec{β})\)</span></p></li>
+</ul></li>
+</ol>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη (α)</p>
+</div>
+<p><span class="math inline">\(3(\vec{x} + 2\vec{α}) - 2(\vec{x} - \vec{β}) = 4\vec{α} + 5\vec{β} \implies 3\vec x+6 \vec a -2 \vec x+2 \vec β =4 \vec a+5 \vec β \implies \\ 3 \vec x -2 \vec x= .......................\)</span></p>
+</div>
+<hr>
+<ol start="2" type="1">
+<li><strong>Άσκηση 2:</strong> Αν για τα διανύσματα <span class="math inline">\(\vec{u}\)</span> και <span class="math inline">\(\vec{v}\)</span> ισχύουν οι σχέσεις <span class="math inline">\(\vec{u} - 2\vec{v} = 2\vec{α}\)</span> και <span class="math inline">\(3\vec{u} + \vec{v} = \vec{β}\)</span>, να εκφράσετε τα διανύσματα <span class="math inline">\(\vec{u}\)</span> και <span class="math inline">\(\vec{v}\)</span> ως γραμμικό συνδυασμό των <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span>.</li>
+</ol>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p>Λύστε το σύστημα <span class="math display">\[\begin{cases} \vec{u} - 2\vec{v} = 2\vec{α} \\ 3\vec{u} + \vec{v} = \vec{β} \end{cases}\]</span></p>
+</div>
+<hr>
+<ol start="3" type="1">
+<li><p><strong>Άσκηση 3:</strong> Να απλοποιήσετε τη διανυσματική παράσταση: <span class="math display">\[\vec{w} = 2(\vec{AB} - 3\vec{BΓ}) + 3(\vec{BΓ} + 2\vec{AΓ}) - 4\vec{AΓ}\]</span></p></li>
+<li><p><strong>Άσκηση 4:</strong> Δίνεται διάνυσμα <span class="math inline">\(\vec{α} \neq \vec{0}\)</span>. Να προσδιορίσετε το μέτρο και την κατεύθυνση των διανυσμάτων <span class="math inline">\(\vec{v} = -4\vec{α}\)</span> και <span class="math inline">\(\vec{u} = \dfrac{1}{|\vec{α}|}\vec{α}\)</span>.</p></li>
+</ol>
+<hr>
+</section>
+<section id="ομάδα-b-γραμμικός-συνδυασμός-έκφραση-διανυσμάτων" class="level4" data-number="1.8.2">
+<h4 data-number="1.8.2" class="anchored" data-anchor-id="ομάδα-b-γραμμικός-συνδυασμός-έκφραση-διανυσμάτων"><span class="header-section-number">1.8.2</span> <strong>Ομάδα B: Γραμμικός Συνδυασμός &amp; Έκφραση Διανυσμάτων</strong></h4>
+<ol start="5" type="1">
+<li><strong>Άσκηση 5:</strong> Δίνεται τρίγωνο <span class="math inline">\(ABΓ\)</span>. Αν <span class="math inline">\(M\)</span> είναι το μέσο της <span class="math inline">\(BΓ\)</span>, να εκφράσετε το διάνυσμα <span class="math inline">\(\vec{AM}\)</span> ως γραμμικό συνδυασμό των διανυσμάτων <span class="math inline">\(\vec{AB}\)</span> και <span class="math inline">\(\vec{AΓ}\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3153747055.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p><span class="math inline">\(\vec{ΑΒ} +\vec{ΑΓ}=2\vec{ΑΜ} \implies ...................\)</span></p>
+</div>
+<hr>
+<ol start="6" type="1">
+<li><strong>Άσκηση 6:</strong> Δίνεται παραλληλόγραμμο <span class="math inline">\(ABΓΔ\)</span> και <span class="math inline">\(M\)</span> το μέσο της πλευράς <span class="math inline">\(AB\)</span>. Αν <span class="math inline">\(\vec{AΔ} = \vec{α}\)</span> και <span class="math inline">\(\vec{AB} = \vec{β}\)</span>, να εκφράσετε τα διανύσματα <span class="math inline">\(\vec{Δ M}\)</span> και <span class="math inline">\(\vec{ΔΓ}\)</span> ως γραμμικό συνδυασμό των <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1471715072.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p><span class="math inline">\(\vec{ΑΜ}=\dfrac{\vec{β}}{2}\)</span></p>
+<p><span class="math inline">\(\vec{ΔM}=\vec{ΑΜ}-\vec{ΑΔ}=\dfrac{\vec{β}}{2}-\vec{α}= .......................\)</span></p>
+<p><span class="math inline">\(\vec{ΔΓ}=\vec{β}= 0\cdot \vec{a}+ .........\)</span></p>
+</div>
+<hr>
+<ol start="7" type="1">
+<li><strong>Άσκηση 7:</strong> Σε τρίγωνο <span class="math inline">\(ABΓ\)</span>, θεωρούμε σημείο <span class="math inline">\(Δ\)</span> στην πλευρά <span class="math inline">\(BΓ\)</span> τέτοιο ώστε <span class="math inline">\(\vec{BΔ} = 2\vec{ΔΓ}\)</span>. Να αποδείξετε ότι:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-365071338.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360"></p>
+</figure>
+</div>
+<p><span class="math display">\[\vec{AΔ} = \frac{1}{3}\vec{AB} + \frac{2}{3}\vec{AΓ}\]</span></p>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p><span class="math inline">\(\vec{ΑΔ}=\vec{ΑΒ}+\vec{ΒΔ} \qquad  (1)\)</span></p>
+<p><span class="math inline">\(\vec{AΔ}=\vec{ΑΓ}+(-\vec{ΔΓ}) \qquad  (2)\)</span></p>
+<p>Προσθέτουμε (1)+(2)=</p>
+<p><span class="math inline">\(2\vec{ΑΔ}=\vec{ΑΒ}+\vec{ΑΓ}+\vec{ΒΔ}-\vec{ΔΓ} \implies 2\vec{ΑΔ}=\vec{ΑΒ}+\vec{ΑΓ}+\dfrac{1}{3}\vec{BΓ} \implies \\ 2\vec{ΑΔ}=\vec{ΑΒ}+\vec{ΑΓ}+\dfrac{1}{3}(\vec{AΓ}-\vec{ΑΒ}) \implies\)</span></p>
+<p>…………………………………………………….</p>
+<p>…………………………………………………..</p>
+</div>
+<hr>
+<ol start="8" type="1">
+<li><strong>Άσκηση 8:</strong> Δίνεται παραλληλόγραμμο <span class="math inline">\(ABΓΔ\)</span> με κέντρο <span class="math inline">\(O\)</span>. Να εκφράσετε τα διανύσματα <span class="math inline">\(\vec{AB}, \vec{BΓ}, \vec{ΓΔ}, \vec{Δ A}\)</span> ως γραμμικό συνδυασμό των διανυσμάτων <span class="math inline">\(\vec{α} = \vec{AO}\)</span> και <span class="math inline">\(\vec{β} = \vec{BO}\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4198995371.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<ul>
+<li><p><span class="math inline">\(\vec{ΑΒ}=\vec{ΑO}+\vec{ΟΒ} = \vec{α}+(-\vec{β})=\vec{α}  -\vec{β}=1\cdot \vec a +(-1) \cdot \vec β\)</span></p></li>
+<li><p><span class="math inline">\(\vec{ΒΓ}=\vec{β}+\vec{α} =\vec{α}+\vec{β}\)</span></p></li>
+<li><p>………………………………………………….</p></li>
+<li><p>…………………………………………………..</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="ομάδα-γ-συνθήκη-παραλληλίας-συνευθειακά-σημεία" class="level4" data-number="1.8.3">
+<h4 data-number="1.8.3" class="anchored" data-anchor-id="ομάδα-γ-συνθήκη-παραλληλίας-συνευθειακά-σημεία"><span class="header-section-number">1.8.3</span> <strong>Ομάδα Γ: Συνθήκη Παραλληλίας &amp; Συνευθειακά Σημεία</strong></h4>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="9" type="1">
+<li><strong>Άσκηση 9:</strong></li>
+</ol>
+</div>
+<p>Δίνονται τα μη συγγραμμικά διανύσματα <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span>. Να βρείτε την τιμή του <span class="math inline">\(κ \in \mathbb{R}\)</span> ώστε τα διανύσματα <span class="math inline">\(\vec{u} = (κ - 1)\vec{α} + \vec{β}\)</span> και <span class="math inline">\(\vec{v} = (3κ + 2)\vec{α} - 2\vec{β}\)</span> να είναι παράλληλα.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Για να είναι τα διανύσματα <span class="math inline">\(\vec{u}\)</span> και <span class="math inline">\(\vec{v}\)</span> παράλληλα (<span class="math inline">\(\vec{u} \parallel \vec{v}\)</span>), πρέπει να υπάρχει πραγματικός αριθμός <span class="math inline">\(\lambda \in \mathbb{R}\)</span> τέτοιος ώστε: <span class="math display">\[\vec{v} = \lambda \vec{u}\]</span></p>
+<p>Αντικαθιστούμε τα διανύσματα <span class="math inline">\(\vec{u} = (\kappa - 1)\vec{\alpha} + \vec{\beta}\)</span> και <span class="math inline">\(\vec{v} = (3\kappa + 2)\vec{\alpha} - 2\vec{\beta}\)</span>: <span class="math display">\[(3\kappa + 2)\vec{\alpha} - 2\vec{\beta} = \lambda \big((\kappa - 1)\vec{\alpha} + \vec{\beta}\big)\]</span> <span class="math display">\[(3\kappa + 2)\vec{\alpha} - 2\vec{\beta} = \lambda(\kappa - 1)\vec{\alpha} + \lambda\vec{\beta}\]</span></p>
+<p>Μεταφέρουμε όλους τους όρους στο αριστερό μέλος: <span class="math display">\[\big[(3\kappa + 2) - \lambda(\kappa - 1)\big]\vec{\alpha} + (-2 - \lambda)\vec{\beta} = \vec{0}\]</span></p>
+<hr>
+<p><strong>Εξίσωση συντελεστών</strong></p>
+<p>Επειδή τα διανύσματα <span class="math inline">\(\vec{\alpha}\)</span> και <span class="math inline">\(\vec{\beta}\)</span> είναι <strong>μη συγγραμμικά</strong>, οι συντελεστές τους πρέπει να είναι ίσοι με μηδέν: <span class="math display">\[\begin{cases}
+-2 - \lambda = 0 \\[5pt]
+(3\kappa + 2) - \lambda(\kappa - 1) = 0
+\end{cases}\]</span></p>
+<hr>
+<p><strong>Επίλυση</strong></p>
+<p>Από την πρώτη εξίσωση βρίσκουμε: <span class="math display">\[\lambda = -2\]</span></p>
+<p>Αντικαθιστούμε την τιμή του <span class="math inline">\(\lambda\)</span> στη δεύτερη εξίσωση: <span class="math display">\[(3\kappa + 2) - (-2)(\kappa - 1) = 0\]</span> <span class="math display">\[(3\kappa + 2) + 2(\kappa - 1) = 0\]</span> <span class="math display">\[3\kappa + 2 + 2\kappa - 2 = 0\]</span> <span class="math display">\[5\kappa = 0 \implies \kappa = 0\]</span></p>
+<hr>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Η τιμή του <span class="math inline">\(\kappa \in \mathbb{R}\)</span> ώστε τα διανύσματα να είναι παράλληλα είναι: <span class="math display">\[\kappa = 0\]</span></p>
+</div>
+<hr>
+<ol start="10" type="1">
+<li><strong>Άσκηση 10:</strong> Δίνεται τρίγωνο <span class="math inline">\(ABΓ\)</span>. Θεωρούμε τα σημεία <span class="math inline">\(Δ\)</span> και <span class="math inline">\(E\)</span> τέτοια ώστε <span class="math inline">\(\vec{AΔ} = 3\vec{AB}\)</span> και <span class="math inline">\(\vec{AE} = 3\vec{AΓ}\)</span>. Να αποδείξετε ότι τα διανύσματα <span class="math inline">\(\vec{ΔE}\)</span> και <span class="math inline">\(\vec{BΓ}\)</span> είναι παράλληλα.</li>
+</ol>
+<p><img src="images/clipboard-3737134013.png" class="img-fluid" width="400"></p>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p><span class="math inline">\(\vec{ΔΕ}=\vec{ΑΔ}-\vec{ΑΕ}=3\vec{ΑΒ}-3\vec{ΑΓ}=3(\vec{ΑΒ}-\vec{ΑΓ})=3\vec{ΒΓ} \implies\)</span></p>
+<p>……………………………………………………..</p>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="11" type="1">
+<li><strong>Άσκηση 11:</strong></li>
+</ol>
+</div>
+<p>Έστω <span class="math inline">\(ABΓ\)</span> τρίγωνο. Θεωρούμε τα σημεία <span class="math inline">\(E, Z\)</span> τέτοια ώστε <span class="math inline">\(\vec{ΑΕ} = \dfrac{4}{3}\vec{AB}\)</span> και <span class="math inline">\(\vec{AZ} = 2\vec{AΓ} - \vec{AE}\)</span>. Να αποδείξετε ότι τα σημεία <span class="math inline">\(E, Γ, Z\)</span> είναι συνευθειακά.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2292076469.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+</div>
+<p>Για να αποδείξουμε ότι τα σημεία <span class="math inline">\(E, \Gamma, Z\)</span> είναι συνευθειακά, αρκεί να δείξουμε ότι τα διανύσματα <span class="math inline">\(\vec{E\Gamma}\)</span> και <span class="math inline">\(\vec{EZ}\)</span> (ή <span class="math inline">\(\vec{\Gamma Z}\)</span>) είναι συγγραμμικά (δηλαδή <span class="math inline">\(\vec{EZ} = \lambda \vec{E\Gamma}\)</span> για κάποιο <span class="math inline">\(\lambda \in \mathbb{R}\)</span>).</p>
+<hr>
+<p><strong>Μέθοδος 1: Μέσω της σχέσης των διανυσμάτων</strong> <span class="math inline">\(\vec{E\Gamma}\)</span> και <span class="math inline">\(\vec{EZ}\)</span></p>
+<ol type="1">
+<li><p><strong>Υπολογισμός του διανύσματος</strong> <span class="math inline">\(\vec{E\Gamma}\)</span>:</p>
+<p>Αναλύουμε το διάνυσμα <span class="math inline">\(\vec{E\Gamma}\)</span> με αρχή το σημείο <span class="math inline">\(A\)</span>: <span class="math display">\[\vec{E\Gamma} = \vec{A\Gamma} - \vec{AE}\]</span></p></li>
+<li><p><strong>Υπολογισμός του διανύσματος</strong> <span class="math inline">\(\vec{EZ}\)</span>:</p>
+<p>Ομοίως, αναλύουμε το <span class="math inline">\(\vec{EZ}\)</span> με αρχή το σημείο <span class="math inline">\(A\)</span>: <span class="math display">\[\vec{EZ} = \vec{AZ} - \vec{AE}\]</span></p>
+<p>Χρησιμοποιούμε τη δοσμένη σχέση <span class="math inline">\(\vec{AZ} = 2\vec{A\Gamma} - \vec{AE}\)</span>: <span class="math display">\[\vec{EZ} = (2\vec{A\Gamma} - \vec{AE}) - \vec{AE} = 2\vec{A\Gamma} - 2\vec{AE}\]</span></p>
+<p>Βγάζουμε κοινό παράγοντα το <span class="math inline">\(2\)</span>: <span class="math display">\[\vec{EZ} = 2(\vec{A\Gamma} - \vec{AE})\]</span></p></li>
+<li><p><strong>Σύγκριση:</strong></p>
+<p>Επειδή <span class="math inline">\(\vec{A\Gamma} - \vec{AE} = \vec{E\Gamma}\)</span>, έχουμε άμεσα: <span class="math display">\[\vec{EZ} = 2\vec{E\Gamma}\]</span></p></li>
+</ol>
+<p>Επομένως, τα διανύσματα <span class="math inline">\(\vec{EZ}\)</span> και <span class="math inline">\(\vec{E\Gamma}\)</span> είναι συγγραμμικά με κοινό σημείο το <span class="math inline">\(E\)</span>, πράγμα που σημαίνει ότι τα σημεία <span class="math inline">\(E, \Gamma, Z\)</span> είναι <strong>συνευθειακά</strong> (και μάλιστα το <span class="math inline">\(\Gamma\)</span> είναι το μέσον του τμήματος <span class="math inline">\(EZ\)</span>).</p>
+<hr>
+<p><strong>Μέθοδος 2: Άμεση απόδειξη ότι το</strong> <span class="math inline">\(\Gamma\)</span> είναι το μέσον του <span class="math inline">\(EZ\)</span></p>
+<p>Από τη δοσμένη σχέση: <span class="math display">\[\vec{AZ} = 2\vec{A\Gamma} - \vec{AE}\]</span></p>
+<p>Μεταφέρουμε το <span class="math inline">\(-\vec{AE}\)</span> στο αριστερό μέλος: <span class="math display">\[\vec{AE} + \vec{AZ} = 2\vec{A\Gamma} \iff \vec{A\Gamma} = \frac{\vec{AE} + \vec{AZ}}{2}\]</span></p>
+<p>Η παραπάνω σχέση αποτελεί τη διανυσματική έκφραση του <strong>μέσου ευθύγραμμου τμήματος</strong> με σημείο αναφοράς το <span class="math inline">\(A\)</span>.</p>
+<p>Συνεπώς, το σημείο <span class="math inline">\(\Gamma\)</span> είναι το <strong>μέσον</strong> του τμήματος <span class="math inline">\(EZ\)</span>, άρα τα σημεία <span class="math inline">\(E, \Gamma, Z\)</span> είναι αναγκαστικά <strong>συνευθειακά</strong>.</p>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="12" type="1">
+<li><strong>Άσκηση 12:</strong></li>
+</ol>
+</div>
+<p>Δίνονται τρία σημεία <span class="math inline">\(A, B, Γ\)</span>. Αν ισχύει η σχέση <span class="math inline">\(2\vec{PA} + 3\vec{PB} - 5\vec{PΓ} = \vec{0}\)</span> για ένα σημείο <span class="math inline">\(P\)</span>, να αποδείξετε ότι τα σημεία <span class="math inline">\(A, B, Γ\)</span> είναι συνευθειακά.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Δίνεται η σχέση: <span class="math display">\[2\vec{PA} + 3\vec{PB} - 5\vec{P\Gamma} = \vec{0}\]</span></p>
+<p>Αναλύουμε τα διανύσματα <span class="math inline">\(\vec{PA}\)</span> και <span class="math inline">\(\vec{PB}\)</span> μέσω του σημείου <span class="math inline">\(\Gamma\)</span> (ή θεωρούμε ως σημείο αναφοράς <span class="math inline">\(P\)</span> το ίδιο το <span class="math inline">\(\Gamma\)</span>):</p>
+<ul>
+<li><p><span class="math inline">\(\vec{PA} = \vec{P\Gamma} + \vec{\Gamma A}\)</span></p></li>
+<li><p><span class="math inline">\(\vec{PB} = \vec{P\Gamma} + \vec{\Gamma B}\)</span></p></li>
+</ul>
+<p>Αντικαθιστούμε στη σχέση:</p>
+<p><span class="math display">\[2(\vec{P\Gamma} + \vec{\Gamma A}) + 3(\vec{P\Gamma} + \vec{\Gamma B}) - 5\vec{P\Gamma} = \vec{0}\]</span> <span class="math display">\[2\vec{P\Gamma} + 2\vec{\Gamma A} + 3\vec{P\Gamma} + 3\vec{\Gamma B} - 5\vec{P\Gamma} = \vec{0}\]</span> <span class="math display">\[(2 + 3 - 5)\vec{P\Gamma} + 2\vec{\Gamma A} + 3\vec{\Gamma B} = \vec{0}\]</span> <span class="math display">\[0\vec{P\Gamma} + 2\vec{\Gamma A} + 3\vec{\Gamma B} = \vec{0}\]</span> <span class="math display">\[2\vec{\Gamma A} + 3\vec{\Gamma B} = \vec{0}\]</span> <span class="math display">\[3\vec{\Gamma B} = -2\vec{\Gamma A} \implies \vec{\Gamma B} = -\frac{2}{3}\vec{\Gamma A}\]</span></p>
+<p>Επειδή τα διανύσματα <span class="math inline">\(\vec{\Gamma B}\)</span> και <span class="math inline">\(\vec{\Gamma A}\)</span> είναι συγγραμμικά και έχουν κοινό σημείο το <span class="math inline">\(\Gamma\)</span>, τα σημεία <span class="math inline">\(A, B, \Gamma\)</span> είναι <strong>συνευθειακά</strong>.</p>
+</div>
+<hr>
+<ol start="13" type="1">
+<li><strong>Άσκηση 13:</strong> Αν για τα μη συγγραμμικά διανύσματα <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span> ισχύει <span class="math inline">\((κ + λ - 2)\vec{α} + (2κ - λ + 5)\vec{β} = \vec{0}\)</span>, να υπολογίσετε τους πραγματικούς αριθμούς <span class="math inline">\(κ\)</span> και <span class="math inline">\(λ\)</span>.</li>
+</ol>
+<hr>
+</section>
+<section id="ομάδα-δ-διανυσματική-ακτίνα-μέσου-βαρύκεντρο-τριγώνου" class="level4" data-number="1.8.4">
+<h4 data-number="1.8.4" class="anchored" data-anchor-id="ομάδα-δ-διανυσματική-ακτίνα-μέσου-βαρύκεντρο-τριγώνου"><span class="header-section-number">1.8.4</span> <strong>Ομάδα Δ: Διανυσματική Ακτίνα Μέσου &amp; Βαρύκεντρο Τριγώνου</strong></h4>
+<ol start="14" type="1">
+<li><strong>Άσκηση 14:</strong> Αν <span class="math inline">\(K, Λ\)</span> είναι τα μέσα των πλευρών <span class="math inline">\(AB\)</span> και <span class="math inline">\(AΓ\)</span> τριγώνου <span class="math inline">\(ABΓ\)</span> αντίστοιχα, να αποδείξετε ότι για τυχαίο σημείο αναφοράς <span class="math inline">\(O\)</span> ισχύει: <span class="math display">\[\vec{OK} + \vec{OΛ} = \vec{OA} + \vec{OM}\]</span> όπου <span class="math inline">\(M\)</span> είναι το μέσο της <span class="math inline">\(BΓ\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1649077158.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<ol type="1">
+<li><p><span class="math inline">\(ΚΛ=||\dfrac{ΒΓ}{2}\)</span></p></li>
+<li><p>Άρα και το <span class="math inline">\(Δ\)</span> μέσον της <span class="math inline">\(ΑΜ\)</span> και της <span class="math inline">\(ΚΛ\)</span> διότι <span class="math inline">\(ΑΚΜΛ\)</span> παραλληλόγραμμο.</p></li>
+<li><p><span class="math display">\[\vec{OK} + \vec{OΛ} =2\vec{OΔ} = \vec{OA} + \vec{OM}\]</span></p></li>
+</ol>
+</div>
+<hr>
+<ol start="15" type="1">
+<li><strong>Άσκηση 15:</strong> Δίνεται τετράπλευρο <span class="math inline">\(ABΓΔ\)</span>. Αν <span class="math inline">\(E\)</span> είναι το μέσο της διαγωνίου <span class="math inline">\(AΓ\)</span> και <span class="math inline">\(Z\)</span> το μέσο της διαγωνίου <span class="math inline">\(BΔ\)</span>, να αποδείξετε ότι για τυχαίο σημείο <span class="math inline">\(O\)</span> ισχύει: <span class="math display">\[\vec{OA} + \vec{OB} + \vec{OΓ} + \vec{OΔ} = 2(\vec{OE} + \vec{OZ})\]</span><img src="images/clipboard-1138803915.png" class="img-fluid" width="400"></li>
+</ol>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="16" type="1">
+<li><strong>Άσκηση 16:</strong></li>
+</ol>
+</div>
+<p>Δίνεται τετράπλευρο ΑΒΓΔ και έστω Μ και Ν τα μέσα των διαγωνίων του ΑΓ και ΒΔ αντιστοίχως. Να αποδείξετε ότι αν <span class="math inline">\(4\vec{MN}=\vec{AΔ}-\vec{ΒΓ}\)</span> τότε το τετράπλευρο αυτό είναι παραλληλόγραμμο.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-2921422744.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="370"></p>
+</figure>
+</div>
+</div>
+<p>Θεωρούμε ένα αυθαίρετο σημείο αναφοράς <span class="math inline">\(O\)</span> στο επίπεδο και τα διανύσματα θέσης <span class="math inline">\(\vec{OA}, \vec{OB}, \vec{O\Gamma}, \vec{O\Delta}\)</span> των κορυφών του τετραπλεύρου <span class="math inline">\(AB\Gamma\Delta\)</span>.</p>
+<hr>
+<p><strong>1: Έκφραση των διανυσμάτων θέσης των μέσων</strong> <span class="math inline">\(M\)</span> και <span class="math inline">\(N\)</span></p>
+<p>Επειδή το <span class="math inline">\(M\)</span> είναι το μέσον του τμήματος <span class="math inline">\(A\Gamma\)</span>, το διάνυσμα θέσης του είναι: <span class="math display">\[\vec{OM} = \frac{\vec{OA} + \vec{O\Gamma}}{2}\]</span></p>
+<p>Επειδή το <span class="math inline">\(N\)</span> είναι το μέσον του τμήματος <span class="math inline">\(B\Delta\)</span>, το διάνυσμα θέσης του είναι: <span class="math display">\[\vec{ON} = \frac{\vec{OB} + \vec{O\Delta}}{2}\]</span></p>
+<hr>
+<p><strong>2: Έκφραση του διανύσματος</strong> <span class="math inline">\(\vec{MN}\)</span></p>
+<p>Το διάνυσμα <span class="math inline">\(\vec{MN}\)</span> εκφράζεται μέσω των διανυσμάτων θέσης ως εξής: <span class="math display">\[\vec{MN} = \vec{ON} - \vec{OM}\]</span></p>
+<p>Αντικαθιστούμε τα <span class="math inline">\(\vec{OM}\)</span> και <span class="math inline">\(\vec{ON}\)</span>: <span class="math display">\[\vec{MN} = \frac{\vec{OB} + \vec{O\Delta}}{2} - \frac{\vec{OA} + \vec{O\Gamma}}{2} = \frac{\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}}{2}\]</span></p>
+<p>Πολλαπλασιάζοντας και τα δύο μέλη με <span class="math inline">\(4\)</span>: <span class="math display">\[4\vec{MN} = 4 \cdot \frac{\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}}{2} = 2(\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma})\]</span></p>
+<hr>
+<p><strong>3: Έκφραση της διαφοράς</strong> <span class="math inline">\(\vec{A\Delta} - \vec{B\Gamma}\)</span></p>
+<p>Εκφράζουμε τα διανύσματα <span class="math inline">\(\vec{A\Delta}\)</span> και <span class="math inline">\(\vec{B\Gamma}\)</span> μέσω των διανυσμάτων θέσης των άκρων τους: <span class="math display">\[\vec{A\Delta} = \vec{O\Delta} - \vec{OA}\]</span> <span class="math display">\[\vec{B\Gamma} = \vec{O\Gamma} - \vec{OB}\]</span></p>
+<p>Επομένως: <span class="math display">\[\vec{A\Delta} - \vec{B\Gamma} = (\vec{O\Delta} - \vec{OA}) - (\vec{O\Gamma} - \vec{OB}) = \vec{O\Delta} - \vec{OA} - \vec{O\Gamma} + \vec{OB}\]</span></p>
+<p>Παρατηρούμε ότι: <span class="math display">\[\vec{A\Delta} - \vec{B\Gamma} = \vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}\]</span></p>
+<hr>
+<p><strong>4: Χρήση της δοσμένης υπόθεσης</strong></p>
+<p>Δίνεται ότι: <span class="math display">\[4\vec{MN} = \vec{A\Delta} - \vec{B\Gamma}\]</span></p>
+<p>Αντικαθιστώντας τις εκφράσεις που βρήκαμε: <span class="math display">\[2(\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}) = \vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}\]</span></p>
+<p>Μεταφέρουμε όλους τους όρους στο αριστερό μέλος: <span class="math display">\[2(\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}) - (\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma}) = \vec{0}\]</span> <span class="math display">\[\vec{OB} + \vec{O\Delta} - \vec{OA} - \vec{O\Gamma} = \vec{0}\]</span></p>
+<hr>
+<p><strong>5: Συμπέρασμα για το τετράπλευρο</strong> <span class="math inline">\(AB\Gamma\Delta\)</span></p>
+<p>Αναδιατάσσουμε τους όρους της εξίσωσης: <span class="math display">\[\vec{OB} - \vec{OA} = \vec{O\Gamma} - \vec{O\Delta}\]</span></p>
+<p>Από τον ορισμό των διανυσμάτων:</p>
+<ul>
+<li><p><span class="math inline">\(\vec{OB} - \vec{OA} = \vec{AB}\)</span></p></li>
+<li><p><span class="math inline">\(\vec{O\Gamma} - \vec{O\Delta} = \vec{\Delta\Gamma}\)</span></p></li>
+</ul>
+<p>Άρα προκύπτει: <span class="math display">\[\vec{AB} = \vec{\Delta\Gamma}\]</span></p>
+<p>Επειδή τα διανύσματα των απέναντι πλευρών είναι ίσα (<span class="math inline">\(\vec{AB} = \vec{\Delta\Gamma}\)</span>), οι πλευρές <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Delta\Gamma\)</span> είναι παράλληλες και έχουν ίσα μήκη.</p>
+<p>Συνεπώς, το τετράπλευρο <span class="math inline">\(AB\Gamma\Delta\)</span> είναι <strong>παραλληλόγραμμο</strong>.</p>
+</div>
+<ol start="17" type="1">
+<li><strong>Άσκηση 17:</strong> Δίνεται παραλληλόγραμμο <span class="math inline">\(ABΓΔ\)</span> με κέντρο <span class="math inline">\(O\)</span> και τυχαίο σημείο <span class="math inline">\(M\)</span>. Να αποδείξετε ότι: <span class="math display">\[\vec{MA} + \vec{MB} + \vec{MΓ} + \vec{MΔ} = 4\vec{MO}\]</span></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3058750139.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<ul>
+<li><p>Το Ο είναι μέσο των ΑΓ και ΒΔ.</p></li>
+<li><p>Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΜΑΓ} \quad\)</span>: <span class="math inline">\(\vec{MA}+\vec{MΓ}=2\vec{ΜΟ}\)</span></p></li>
+<li><p>Στο τρίγωνο <span class="math inline">\(\overset{\triangle}{ΜΔΒ} \quad\)</span>: <span class="math inline">\(\vec{MΔ}+\vec{MΒ}=2\vec{ΜΟ}\)</span></p></li>
+<li><p>……………………………………………………………</p></li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="ομάδα-e-σύνθετες-αποδείξεις-γεωμετρικοί-σχηματισμοί" class="level4" data-number="1.8.5">
+<h4 data-number="1.8.5" class="anchored" data-anchor-id="ομάδα-e-σύνθετες-αποδείξεις-γεωμετρικοί-σχηματισμοί"><span class="header-section-number">1.8.5</span> <strong>Ομάδα E: Σύνθετες Αποδείξεις &amp; Γεωμετρικοί Σχηματισμοί</strong></h4>
+<ol start="18" type="1">
+<li><strong>Άσκηση 18:</strong> Σε τρίγωνο <span class="math inline">\(ABΓ\)</span>, <span class="math inline">\(M\)</span> είναι το μέσο της <span class="math inline">\(BΓ\)</span>. Στην προέκταση της <span class="math inline">\(AM\)</span> παίρνουμε σημείο <span class="math inline">\(N\)</span> τέτοιο ώστε <span class="math inline">\(\vec{AN} = 3\vec{AM}\)</span>. Να εκφράσετε το διάνυσμα <span class="math inline">\(\vec{BN}\)</span> ως γραμμικό συνδυασμό των <span class="math inline">\(\vec{AB}\)</span> και <span class="math inline">\(\vec{AΓ}\)</span>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3560218171.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="270"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<ol type="1">
+<li><p><span class="math inline">\(\vec{ΑΒ}+\vec{ΑΓ}=2\vec{ΑΜ} \implies \vec{AM}= ................\)</span></p></li>
+<li><p><span class="math inline">\(\vec{ΒΝ}=\vec{ΑΝ}-\vec{ΑΒ}=3\vec{AM}-\vec{AB}=3\dfrac{\vec{ΑΒ}+\vec{ΑΓ}}{2}-\vec{ΑΒ}=\)</span></p></li>
+</ol>
+<p>……………………………………………………….</p>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="19" type="1">
+<li><strong>Άσκηση 19:</strong></li>
+</ol>
+</div>
+<p>Δίνεται παραλληλόγραμμο <span class="math inline">\(ABΓΔ\)</span>. Στις πλευρές <span class="math inline">\(AB\)</span> και <span class="math inline">\(AΔ\)</span> παίρνουμε σημεία <span class="math inline">\(E\)</span> και <span class="math inline">\(Z\)</span> αντίστοιχα, τέτοια ώστε <span class="math inline">\(\vec{AE} = \dfrac{1}{3}\vec{AB}\)</span> και <span class="math inline">\(\vec{AZ} = \dfrac{1}{4}\vec{AΔ}\)</span>. Αν <span class="math inline">\(K\)</span> είναι το σημείο τομής των <span class="math inline">\(EZ\)</span> και <span class="math inline">\(AΓ\)</span>, να βρεθεί ο λόγος <span class="math inline">\(\dfrac{AK}{AΓ}\)</span>.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-432948914.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+</div>
+<p>Θεωρούμε ως σημείο αναφοράς την κορυφή <span class="math inline">\(A\)</span> και θέτουμε τα μη συγγραμμικά διανύσματα: <span class="math display">\[\vec{AB} = \vec{b} \quad \text{και} \quad \vec{A\Delta} = \vec{d}\]</span></p>
+<p>Επειδή το <span class="math inline">\(AB\Gamma\Delta\)</span> είναι παραλληλόγραμμο, από τον κανόνα του παραλληλογράμμου ισχύει: <span class="math display">\[\vec{A\Gamma} = \vec{AB} + \vec{A\Delta} = \vec{b} + \vec{d}\]</span></p>
+<p>Από τα δεδομένα της άσκησης έχουμε: <span class="math display">\[\vec{AE} = \frac{1}{3}\vec{AB} = \frac{1}{3}\vec{b}\]</span> <span class="math display">\[\vec{AZ} = \frac{1}{4}\vec{A\Delta} = \frac{1}{4}\vec{d}\]</span></p>
+<hr>
+<p><strong>1: Το σημείο</strong> <span class="math inline">\(K\)</span> ανήκει στην ευθεία <span class="math inline">\(A\Gamma\)</span></p>
+<p>Εφόσον το <span class="math inline">\(K\)</span> είναι σημείο της διαγωνίου <span class="math inline">\(A\Gamma\)</span>, τα διανύσματα <span class="math inline">\(\vec{AK}\)</span> και <span class="math inline">\(\vec{A\Gamma}\)</span> είναι ομόρροπα και συγγραμμικά. Υπάρχει πραγματικός αριθμός <span class="math inline">\(k \in (0, 1)\)</span> τέτοιος ώστε: <span class="math display">\[\vec{AK} = k \cdot \vec{A\Gamma} = k(\vec{b} + \vec{d}) = k\vec{b} + k\vec{d} \quad (1)\]</span></p>
+<p>Παρατηρούμε ότι ο ζητούμενος λόγος είναι: <span class="math display">\[\frac{AK}{A\Gamma} = \frac{|\vec{AK}|}{|\vec{A\Gamma}|} = k\]</span></p>
+<hr>
+<p><strong>2: Το σημείο</strong> <span class="math inline">\(K\)</span> ανήκει στο ευθύγραμμο τμήμα <span class="math inline">\(EZ\)</span></p>
+<p>Εφόσον το <span class="math inline">\(K\)</span> ανήκει στο τμήμα <span class="math inline">\(EZ\)</span>, τα σημεία <span class="math inline">\(E, K, Z\)</span> είναι συνευθειακά. Υπάρχει πραγματικός αριθμός <span class="math inline">\(\lambda \in [0, 1]\)</span> τέτοιος ώστε: <span class="math display">\[\vec{EK} = \lambda \cdot \vec{EZ}\]</span></p>
+<p>Αναλύουμε ως προς το σημείο <span class="math inline">\(A\)</span>: <span class="math display">\[\vec{AK} - \vec{AE} = \lambda(\vec{AZ} - \vec{AE})\]</span> <span class="math display">\[\vec{AK} = (1 - \lambda)\vec{AE} + \lambda\vec{AZ}\]</span></p>
+<p>Αντικαθιστούμε τα <span class="math inline">\(\vec{AE} = \dfrac{1}{3}\vec{b}\)</span> και <span class="math inline">\(\vec{AZ} = \dfrac{1}{4}\vec{d}\)</span>: <span class="math display">\[\vec{AK} = \frac{1 - \lambda}{3}\vec{b} + \frac{\lambda}{4}\vec{d} \quad (2)\]</span></p>
+<hr>
+<p><strong>3: Εξίσωση των συντελεστών</strong></p>
+<p>Επειδή τα διανύσματα <span class="math inline">\(\vec{b}\)</span> και <span class="math inline">\(\vec{d}\)</span> είναι μη συγγραμμικά, η παράσταση του <span class="math inline">\(\vec{AK}\)</span> ως γραμμικός συνδυασμός τους είναι μοναδική. Εξισώνοντας τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>, προκύπτει το σύστημα: <span class="math display">\[\begin{cases}
+k = \dfrac{1 - \lambda}{3} \\[8pt]
+k = \dfrac{\lambda}{4}
+\end{cases}\]</span></p>
+<hr>
+<p><strong>4: Υπολογισμός του λόγου</strong> <span class="math inline">\(k\)</span></p>
+<p>Από τη δεύτερη εξίσωση έχουμε: <span class="math display">\[\lambda = 4k\]</span></p>
+<p>Αντικαθιστούμε στην πρώτη εξίσωση: <span class="math display">\[k = \frac{1 - 4k}{3}\]</span> <span class="math display">\[3k = 1 - 4k\]</span> <span class="math display">\[7k = 1 \implies k = \frac{1}{7}\]</span></p>
+<hr>
+<p><strong>Συμπέρασμα</strong></p>
+<p>Ο ζητούμενος λόγος είναι: <span class="math display">\[\frac{AK}{A\Gamma} = \frac{1}{7}\]</span></p>
+</div>
+<hr>
+<ol start="20" type="1">
+<li><strong>Άσκηση 20:</strong> Δίνονται τα διανύσματα <span class="math inline">\(\vec{α}, \vec{β}\)</span> με <span class="math inline">\(|\vec{α}| = 2\)</span> και <span class="math inline">\(\vec{u} = \vec{α} + 2\vec{β}\)</span>, <span class="math inline">\(\vec{v} = 3\vec{α} - \vec{β}\)</span>. Αν τα διανύσματα <span class="math inline">\(\vec{u}\)</span> και <span class="math inline">\(\vec{v}\)</span> είναι παράλληλα, να αποδείξετε ότι τα διανύσματα <span class="math inline">\(\vec{α}\)</span> και <span class="math inline">\(\vec{β}\)</span> είναι παράλληλα και να υπολογίσετε το μέτρο του <span class="math inline">\(\vec{β}\)</span>.</li>
+</ol>
+<hr>
+<ol start="21" type="1">
+<li><strong>Άσκηση 21:</strong> Δίνονται τέσσερα σημεία <span class="math inline">\(A, B, Γ, Δ\)</span>. Αν για το σημείο <span class="math inline">\(O\)</span> ισχύει <span class="math inline">\(\vec{OA} + \vec{OΓ} = \vec{OB} + \vec{OΔ}\)</span>, να αποδείξετε ότι το τετράπλευρο <span class="math inline">\(ABΓΔ\)</span> είναι παραλληλόγραμμο.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-829759852.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+</figure>
+</div>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle{ΑΓΟ} : \quad\)</span> <span class="math inline">\(\vec{OA} + \vec{OΓ}=2\vec{OE} \quad\)</span>, όπου Ε το μέσον της ΑΓ.</p>
+<p>Στο τρίγωνο <span class="math inline">\(\triangle{ΔΒΟ} : \quad\)</span> <span class="math inline">\(\vec{OB} + \vec{OΔ}=2\vec{OE'} \quad\)</span>, όπου Ε’ το μέσον της ΔΒ.</p>
+<p>…………………………………………….</p>
+<p>………………………………………………..</p>
+</div>
+<hr>
+<ol start="22" type="1">
+<li><strong>Άσκηση 22:</strong> Δίνεται τρίγωνο <span class="math inline">\(ABΓ\)</span> και <span class="math inline">\(M, N, P\)</span> τα μέσα των πλευρών <span class="math inline">\(BΓ, Γ A, AB\)</span> αντίστοιχα. Να αποδείξετε ότι:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-294839817.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<p><span class="math display">\[\vec{AM} + \vec{BN} + \vec{Γ P} = \vec{0}\]</span></p>
+<div class="my-callout-theory">
+<div class="my-callout-theory callout-title">
+<p>Υπόδειξη</p>
+</div>
+<p><span class="math inline">\(\vec{AB} + \vec{ΑΓ}=2 \vec{AM} \qquad  (1)\)</span></p>
+<p>Όμοια <span class="math inline">\(\qquad \vec{BΑ} + \vec{ΒΓ}=2 \vec{ΒΝ} \qquad  (2)\)</span></p>
+<p>και …………………………………… (3)</p>
+<p>Προσθέτουμε (1)+(2)+(3)= ……………………………………..</p>
+</div>
+<hr>
+<div class="math-box exercise-box">
+<div class="math-title exercise-title">
+<ol start="23" type="1">
+<li>Εκφώνηση</li>
+</ol>
+</div>
+<p>Τα σημεία Α, Β, Γ και Δ ενός επιπέδου έχουν διανύσματα θέσεως <span class="math inline">\(\vec α, \vec β, 5\vec α\)</span> και <span class="math inline">\(3\vec β\)</span> αντιστοίχως, όπου τα διανύσματα <span class="math inline">\(\vec a\)</span> και <span class="math inline">\(\vec β\)</span> είναι μη συγγραμμικά. Να βρείτε το διάνυσμα θέσεως <span class="math inline">\(\vec r\)</span> του σημείου τομής των ευθειών ΑΒ και ΓΔ.</p>
+</div>
+<div class="math-box solution-box">
+<div class="math-title solution-title">
+<p>Λύση</p>
+</div>
+<p>Έστω <span class="math inline">\(E\)</span> το σημείο τομής των ευθειών <span class="math inline">\(AB\)</span> και <span class="math inline">\(\Gamma\Delta\)</span>, με διάνυσμα θέσεως <span class="math inline">\(\vec{r} = \vec{OE}\)</span> ως προς την αρχή <span class="math inline">\(O\)</span>.</p>
+<p>Τα δεδομένα διανύσματα θέσεως των σημείων είναι: <span class="math display">\[\vec{OA} = \vec{\alpha}, \quad \vec{OB} = \vec{\beta}, \quad \vec{O\Gamma} = 5\vec{\alpha}, \quad \vec{O\Delta} = 3\vec{\beta}\]</span></p>
+<hr>
+<p><strong>1: Το σημείο</strong> <span class="math inline">\(E\)</span> ανήκει στην ευθεία <span class="math inline">\(AB\)</span></p>
+<p>Εφόσον το σημείο <span class="math inline">\(E\)</span> ανήκει στην ευθεία <span class="math inline">\(AB\)</span>, τα διανύσματα <span class="math inline">\(\vec{AE}\)</span> και <span class="math inline">\(\vec{AB}\)</span> είναι συγγραμμικά. Υπάρχει επομένως πραγματικός αριθμός <span class="math inline">\(k \in \mathbb{R}\)</span> τέτοιος ώστε: <span class="math display">\[\vec{AE} = k \cdot \vec{AB}\]</span></p>
+<p>Αναλύουμε τα διανύσματα ως προς το σημείο αναφοράς <span class="math inline">\(O\)</span>: <span class="math display">\[\vec{OE} - \vec{OA} = k(\vec{OB} - \vec{OA})\]</span> <span class="math display">\[\vec{r} - \vec{\alpha} = k(\vec{\beta} - \vec{\alpha})\]</span> <span class="math display">\[\vec{r} = (1 - k)\vec{\alpha} + k\vec{\beta} \quad (1)\]</span></p>
+<hr>
+<p><strong>2: Το σημείο</strong> <span class="math inline">\(E\)</span> ανήκει στην ευθεία <span class="math inline">\(\Gamma\Delta\)</span></p>
+<p>Εφόσον το σημείο <span class="math inline">\(E\)</span> ανήκει και στην ευθεία <span class="math inline">\(\Gamma\Delta\)</span>, τα διανύσματα <span class="math inline">\(\vec{\Gamma E}\)</span> και <span class="math inline">\(\vec{\Gamma\Delta}\)</span> είναι συγγραμμικά. Υπάρχει επομένως πραγματικός αριθμός <span class="math inline">\(\lambda \in \mathbb{R}\)</span> τέτοιος ώστε: <span class="math display">\[\vec{\Gamma E} = \lambda \cdot \vec{\Gamma\Delta}\]</span></p>
+<p>Αναλύουμε ως προς το <span class="math inline">\(O\)</span>: <span class="math display">\[\vec{OE} - \vec{O\Gamma} = \lambda(\vec{O\Delta} - \vec{O\Gamma})\]</span> <span class="math display">\[\vec{r} - 5\vec{\alpha} = \lambda(3\vec{\beta} - 5\vec{\alpha})\]</span> <span class="math display">\[\vec{r} = 5(1 - \lambda)\vec{\alpha} + 3\lambda\vec{\beta} \quad (2)\]</span></p>
+<hr>
+<p><strong>3: Εξίσωση των εκφράσεων του</strong> <span class="math inline">\(\vec{r}\)</span></p>
+<p>Εξισώνοντας τις σχέσεις <span class="math inline">\((1)\)</span> και <span class="math inline">\((2)\)</span>: <span class="math display">\[(1 - k)\vec{\alpha} + k\vec{\beta} = 5(1 - \lambda)\vec{\alpha} + 3\lambda\vec{\beta}\]</span> <span class="math display">\[[(1 - k) - 5(1 - \lambda)]\vec{\alpha} + (k - 3\lambda)\vec{\beta} = \vec{0}\]</span></p>
+<p>Επειδή τα διανύσματα <span class="math inline">\(\vec{\alpha}\)</span> και <span class="math inline">\(\vec{\beta}\)</span> είναι <strong>μη συγγραμμικά</strong> (γραμμικώς ανεξάρτητα), οι συντελεστές τους πρέπει να μηδενίζονται ταυτόχρονα: <span class="math display">\[\begin{cases}
+(1 - k) - 5(1 - \lambda) = 0 \\
+k - 3\lambda = 0
+\end{cases}\]</span></p>
+<hr>
+<p><strong>4: Επίλυση του συστήματος</strong></p>
+<p>Από τη δεύτερη εξίσωση έχουμε: <span class="math display">\[k = 3\lambda\]</span></p>
+<p>Αντικαθιστούμε στην πρώτη εξίσωση: <span class="math display">\[1 - 3\lambda - 5 + 5\lambda = 0\]</span> <span class="math display">\[2\lambda - 4 = 0\]</span> <span class="math display">\[2\lambda = 4 \implies \lambda = 2\]</span></p>
+<p>Βρίσκουμε και το <span class="math inline">\(k\)</span>: <span class="math display">\[k = 3 \cdot 2 = 6\]</span></p>
+<hr>
+<p><strong>5: Υπολογισμός του διανύσματος θέσεως</strong> <span class="math inline">\(\vec{r}\)</span></p>
+<p>Αντικαθιστούμε την τιμή <span class="math inline">\(k = 6\)</span> στη σχέση <span class="math inline">\((1)\)</span> [ή ισοδύναμα <span class="math inline">\(\lambda = 2\)</span> στη σχέση <span class="math inline">\((2)\)</span>]: <span class="math display">\[\vec{r} = (1 - 6)\vec{\alpha} + 6\vec{\beta}\]</span> <span class="math display">\[\vec{r} = -5\vec{\alpha} + 6\vec{\beta}\]</span></p>
+</div>
+<hr>
+<div class="callout-sos">
+<div class="callout-sos callout-title">
+<p>Εύχομαι</p>
+</div>
+<p>ΚΑΛΗ ΜΕΛΕΤΗ!</p>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Αντιγράφηκε!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Αντιγράφηκε!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Κώδικας με δυνατότητα κύλισης","output":"Έξοδος με δυνατότητα κύλισης"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
